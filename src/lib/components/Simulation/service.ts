@@ -1,3 +1,4 @@
+import type p5 from 'p5';
 import type { Cell, Coordinates } from './types';
 
 export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[] => {
@@ -18,14 +19,34 @@ export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[
     return cells;
 };
 
-const distance = (a: Coordinates, b: Coordinates) => {
-    return Math.sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y));
+const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
+    // Take into consideration the fact that the map is wrapping
+    // https://stackoverflow.com/a/3041398
+    let dx = Math.abs(b.x - a.x);
+    if (dx > p5.width / 2) {
+        dx = p5.width - dx;
+    }
+    let dy = Math.abs(b.y - a.y);
+    if (dy > p5.width / 2) {
+        dy = p5.width - dy;
+    }
+    return Math.sqrt(dx * dx + dy * dy);
 };
 
 const MIN_ATTRACTION_RADIUS = 30;
 const MAX_ATTRACTION_RADIUS = 60;
-const getAttractionForce = (a: Cell, b: Cell) => {
-    const dist = distance(a.pos, b.pos);
+const attractionTable = {
+    white: {
+        white: 1,
+        red: -1
+    },
+    red: {
+        white: 1,
+        red: 1
+    }
+};
+const getAttractionForce = (p5: p5, a: Cell, b: Cell) => {
+    const dist = distance(p5, a.pos, b.pos);
     if (dist > MAX_ATTRACTION_RADIUS) {
         return 0;
     }
@@ -33,10 +54,7 @@ const getAttractionForce = (a: Cell, b: Cell) => {
         return -1;
     }
 
-    if (a.color === b.color) {
-        return 1;
-    }
-    return -1;
+    return attractionTable[a.color][b.color] ?? 0;
 };
 
 export const updateCells = (p5: p5, cells: Cell[]) => {
@@ -50,13 +68,16 @@ export const updateCells = (p5: p5, cells: Cell[]) => {
             }
 
             const other = cells[j];
-            const attractionForce = getAttractionForce(cell, other);
+            const attractionForce = getAttractionForce(p5, cell, other);
 
             const direction = {
                 x: other.pos.x - cell.pos.x,
                 y: other.pos.y - cell.pos.y
             };
             const directionMag = Math.sqrt(direction.x * direction.x + direction.y * direction.y);
+            if (directionMag === 0) {
+                continue;
+            }
             const normalizedDirection = {
                 x: direction.x * (1 / directionMag),
                 y: direction.y * (1 / directionMag)
@@ -82,14 +103,14 @@ export const updateCells = (p5: p5, cells: Cell[]) => {
         cell.pos.y += cell.vel.y;
 
         if (cell.pos.x < 0) {
-            cell.pos.x = p5.width;
+            cell.pos.x = p5.width - 1;
         } else if (cell.pos.x > p5.width) {
-            cell.pos.x = 0;
+            cell.pos.x = 1;
         }
         if (cell.pos.y < 0) {
-            cell.pos.y = p5.height;
+            cell.pos.y = p5.height - 1;
         } else if (cell.pos.y > p5.height) {
-            cell.pos.y = 0;
+            cell.pos.y = 1;
         }
     }
 };

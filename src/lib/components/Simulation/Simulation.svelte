@@ -12,7 +12,7 @@
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
-            p5.createCanvas(800, 500);
+            p5.createCanvas(1000, 700);
 
             cells = getNewCells({ x: p5.width, y: p5.height }, 1000);
         };
