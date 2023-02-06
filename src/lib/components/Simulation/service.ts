@@ -1,5 +1,5 @@
 import type p5 from 'p5';
-import type { Cell, Color, Coordinates } from './types';
+import type { AttractionTable, Cell, Color, Coordinates } from './types';
 
 const colors: Color[] = ['white', 'red', 'green', 'blue'];
 
@@ -42,26 +42,30 @@ const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
 
 const MIN_ATTRACTION_RADIUS = 30;
 const MAX_ATTRACTION_RADIUS = 60;
-const attractionTable = {
+const attractionTable: AttractionTable = {
     white: {
-        blue: -1,
         white: 2,
-        red: 1
+        red: 1,
+        green: 0,
+        blue: -1
     },
     red: {
         white: -1,
         red: 2,
-        green: 1
+        green: 1,
+        blue: -0
     },
     green: {
+        white: 0,
         red: -1,
         green: 2,
         blue: 1
     },
     blue: {
+        white: 1,
+        red: 0,
         green: -1,
-        blue: 2,
-        white: 1
+        blue: 2
     }
 };
 const getAttractionForce = (p5: p5, a: Cell, b: Cell) => {
