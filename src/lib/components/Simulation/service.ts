@@ -40,36 +40,38 @@ const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
     return Math.sqrt(dx * dx + dy * dy);
 };
 
+export const getRandomAttractionTable = (): AttractionTable => {
+    return {
+        white: {
+            white: Math.floor(Math.random() * 4 - 1),
+            red: Math.floor(Math.random() * 4 - 1),
+            green: Math.floor(Math.random() * 4 - 1),
+            blue: Math.floor(Math.random() * 4 - 1)
+        },
+        red: {
+            white: Math.floor(Math.random() * 4 - 1),
+            red: Math.floor(Math.random() * 4 - 1),
+            green: Math.floor(Math.random() * 4 - 1),
+            blue: Math.floor(Math.random() * 4 - 1)
+        },
+        green: {
+            white: Math.floor(Math.random() * 4 - 1),
+            red: Math.floor(Math.random() * 4 - 1),
+            green: Math.floor(Math.random() * 4 - 1),
+            blue: Math.floor(Math.random() * 4 - 1)
+        },
+        blue: {
+            white: Math.floor(Math.random() * 4 - 1),
+            red: Math.floor(Math.random() * 4 - 1),
+            green: Math.floor(Math.random() * 4 - 1),
+            blue: Math.floor(Math.random() * 4 - 1)
+        }
+    };
+};
 const MIN_ATTRACTION_RADIUS = 30;
 const MAX_ATTRACTION_RADIUS = 60;
-const attractionTable: AttractionTable = {
-    white: {
-        white: Math.floor(Math.random() * 4 - 1),
-        red: Math.floor(Math.random() * 4 - 1),
-        green: Math.floor(Math.random() * 4 - 1),
-        blue: Math.floor(Math.random() * 4 - 1)
-    },
-    red: {
-        white: Math.floor(Math.random() * 4 - 1),
-        red: Math.floor(Math.random() * 4 - 1),
-        green: Math.floor(Math.random() * 4 - 1),
-        blue: Math.floor(Math.random() * 4 - 1)
-    },
-    green: {
-        white: Math.floor(Math.random() * 4 - 1),
-        red: Math.floor(Math.random() * 4 - 1),
-        green: Math.floor(Math.random() * 4 - 1),
-        blue: Math.floor(Math.random() * 4 - 1)
-    },
-    blue: {
-        white: Math.floor(Math.random() * 4 - 1),
-        red: Math.floor(Math.random() * 4 - 1),
-        green: Math.floor(Math.random() * 4 - 1),
-        blue: Math.floor(Math.random() * 4 - 1)
-    }
-};
 
-const getAttractionForce = (p5: p5, a: Cell, b: Cell) => {
+const getAttractionForce = (p5: p5, attractionTable: AttractionTable, a: Cell, b: Cell) => {
     const dist = distance(p5, a.pos, b.pos);
     if (dist > MAX_ATTRACTION_RADIUS) {
         return 0;
@@ -81,7 +83,7 @@ const getAttractionForce = (p5: p5, a: Cell, b: Cell) => {
     return attractionTable[a.color][b.color] ?? 0;
 };
 
-export const updateCells = (p5: p5, cells: Cell[]) => {
+export const updateCells = (p5: p5, attractionTable: AttractionTable, cells: Cell[]) => {
     for (let i = 0; i < cells.length; i++) {
         const cell = cells[i];
         cell.vel = { x: 0, y: 0 };
@@ -92,7 +94,7 @@ export const updateCells = (p5: p5, cells: Cell[]) => {
             }
 
             const other = cells[j];
-            const attractionForce = getAttractionForce(p5, cell, other);
+            const attractionForce = getAttractionForce(p5, attractionTable, cell, other);
 
             const direction = {
                 x: other.pos.x - cell.pos.x,
