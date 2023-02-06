@@ -1,5 +1,12 @@
 import type p5 from 'p5';
-import type { Cell, Coordinates } from './types';
+import type { Cell, Color, Coordinates } from './types';
+
+const colors: Color[] = ['white', 'red', 'green', 'blue'];
+
+const randColor = (): Color => {
+    const randIndex = Math.floor(Math.random() * colors.length);
+    return colors[randIndex];
+};
 
 export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[] => {
     const cells = [] as Cell[];
@@ -13,7 +20,7 @@ export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[
                 x: 0,
                 y: 0
             },
-            color: Math.random() < 0.5 ? 'white' : 'red'
+            color: randColor()
         });
     }
     return cells;
@@ -27,8 +34,8 @@ const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
         dx = p5.width - dx;
     }
     let dy = Math.abs(b.y - a.y);
-    if (dy > p5.width / 2) {
-        dy = p5.width - dy;
+    if (dy > p5.height / 2) {
+        dy = p5.height - dy;
     }
     return Math.sqrt(dx * dx + dy * dy);
 };
@@ -37,12 +44,24 @@ const MIN_ATTRACTION_RADIUS = 30;
 const MAX_ATTRACTION_RADIUS = 60;
 const attractionTable = {
     white: {
-        white: 1,
-        red: -1
+        blue: -1,
+        white: 2,
+        red: 1
     },
     red: {
-        white: 1,
-        red: 1
+        white: -1,
+        red: 2,
+        green: 1
+    },
+    green: {
+        red: -1,
+        green: 2,
+        blue: 1
+    },
+    blue: {
+        green: -1,
+        blue: 2,
+        white: 1
     }
 };
 const getAttractionForce = (p5: p5, a: Cell, b: Cell) => {
@@ -103,14 +122,14 @@ export const updateCells = (p5: p5, cells: Cell[]) => {
         cell.pos.y += cell.vel.y;
 
         if (cell.pos.x < 0) {
-            cell.pos.x = p5.width - 1;
+            cell.pos.x = p5.width - 5;
         } else if (cell.pos.x > p5.width) {
-            cell.pos.x = 1;
+            cell.pos.x = 5;
         }
         if (cell.pos.y < 0) {
-            cell.pos.y = p5.height - 1;
+            cell.pos.y = p5.height - 5;
         } else if (cell.pos.y > p5.height) {
-            cell.pos.y = 1;
+            cell.pos.y = 5;
         }
     }
 };

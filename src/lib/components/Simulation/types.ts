@@ -3,7 +3,7 @@ export type Coordinates = {
     y: number;
 };
 
-export type Color = 'white' | 'red';
+export type Color = 'white' | 'red' | 'green' | 'blue';
 
 export interface Cell {
     pos: Coordinates;
