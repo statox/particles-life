@@ -3,7 +3,7 @@
     import P5, { type Sketch } from 'p5-svelte';
     import { onDestroy } from 'svelte';
     import { drawCells } from './drawing';
-    import { getNewCells } from './service';
+    import { getNewCells, updateCells } from './service';
     import type { Cell } from './types';
 
     let _p5: p5;
@@ -12,12 +12,13 @@
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
-            p5.createCanvas(p5.windowWidth * 0.5, (7 / 16) * p5.windowWidth * 0.5);
+            p5.createCanvas(800, 500);
 
-            cells = getNewCells({ x: p5.width, y: p5.height }, 50);
+            cells = getNewCells({ x: p5.width, y: p5.height }, 1000);
         };
         p5.draw = () => {
             p5.background(0);
+            updateCells(p5, cells);
             drawCells(p5, cells);
         };
     };
@@ -26,8 +27,6 @@
         _p5?.remove();
     });
 </script>
-
-<span>Hello Game</span>
 
 <div class="d-flex justify-content-center">
     <P5 {sketch} />
