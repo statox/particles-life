@@ -1,5 +1,5 @@
 <header>
-    <h1>P5+Svelte template</h1>
+    <h1>Particles Life</h1>
 
     <nav>
         <a href="/">Home</a> |
