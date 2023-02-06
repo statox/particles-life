@@ -23,6 +23,10 @@
         };
     };
 
+    const reset = () => {
+        cells = getNewCells({ x: _p5.width, y: _p5.height }, 1000);
+    };
+
     onDestroy(() => {
         _p5?.remove();
     });
@@ -30,4 +34,8 @@
 
 <div class="d-flex justify-content-center">
     <P5 {sketch} />
+</div>
+
+<div>
+    <button on:click={reset}>Reset cells</button>
 </div>

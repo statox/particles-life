@@ -44,30 +44,31 @@ const MIN_ATTRACTION_RADIUS = 30;
 const MAX_ATTRACTION_RADIUS = 60;
 const attractionTable: AttractionTable = {
     white: {
-        white: 2,
-        red: 1,
-        green: 0,
-        blue: -1
+        white: Math.floor(Math.random() * 4 - 1),
+        red: Math.floor(Math.random() * 4 - 1),
+        green: Math.floor(Math.random() * 4 - 1),
+        blue: Math.floor(Math.random() * 4 - 1)
     },
     red: {
-        white: -1,
-        red: 2,
-        green: 1,
-        blue: -0
+        white: Math.floor(Math.random() * 4 - 1),
+        red: Math.floor(Math.random() * 4 - 1),
+        green: Math.floor(Math.random() * 4 - 1),
+        blue: Math.floor(Math.random() * 4 - 1)
     },
     green: {
-        white: 0,
-        red: -1,
-        green: 2,
-        blue: 1
+        white: Math.floor(Math.random() * 4 - 1),
+        red: Math.floor(Math.random() * 4 - 1),
+        green: Math.floor(Math.random() * 4 - 1),
+        blue: Math.floor(Math.random() * 4 - 1)
     },
     blue: {
-        white: 1,
-        red: 0,
-        green: -1,
-        blue: 2
+        white: Math.floor(Math.random() * 4 - 1),
+        red: Math.floor(Math.random() * 4 - 1),
+        green: Math.floor(Math.random() * 4 - 1),
+        blue: Math.floor(Math.random() * 4 - 1)
     }
 };
+
 const getAttractionForce = (p5: p5, a: Cell, b: Cell) => {
     const dist = distance(p5, a.pos, b.pos);
     if (dist > MAX_ATTRACTION_RADIUS) {
