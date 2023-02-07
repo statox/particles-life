@@ -3,6 +3,7 @@
 
     <nav>
         <a href="/">Home</a> |
+        <a href="/distance">Distance test</a> |
     </nav>
 </header>
 
