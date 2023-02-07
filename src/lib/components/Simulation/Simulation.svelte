@@ -3,7 +3,7 @@
     import P5, { type Sketch } from 'p5-svelte';
     import { onDestroy } from 'svelte';
     import { drawCells } from './drawing';
-    import { getNewCells, getRandomAttractionTable, updateCells } from './service';
+    import { getNewCells, getRandomAttractionTable, updateCells } from './cells';
     import type { AttractionTable, Cell } from './types';
 
     let _p5: p5;

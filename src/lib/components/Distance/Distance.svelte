@@ -3,7 +3,7 @@
     import P5, { type Sketch } from 'p5-svelte';
     import { onDestroy, onMount } from 'svelte';
     import { drawCells } from '../Simulation/drawing';
-    import { distance } from '../Simulation/service';
+    import { distance } from '../Simulation/cells';
     import type { Cell } from '../Simulation/types';
 
     let _p5: p5;
