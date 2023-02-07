@@ -5,29 +5,37 @@
     import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell } from './types';
-    import { getRandomAttractionTable } from './attraction';
+    import { getRandomAttractionTable, MAX_ATTRACTION_RADIUS } from './attraction';
+    import type { CellsMap } from './location';
 
     let _p5: p5;
 
     let cells: Cell[];
+    let cellsMap: CellsMap;
     let attractionTable: AttractionTable;
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
             p5.createCanvas(1000, 700);
 
-            cells = getNewCells({ x: p5.width, y: p5.height }, 1000);
+            resetCells();
             attractionTable = getRandomAttractionTable();
         };
         p5.draw = () => {
             p5.background(0);
-            updateCells(p5, attractionTable, cells);
+            updateCells(p5, attractionTable, cells, cellsMap);
             drawCells(p5, cells);
         };
     };
 
     const resetCells = () => {
-        cells = getNewCells({ x: _p5.width, y: _p5.height }, 1000);
+        const newValues = getNewCells(
+            { x: MAX_ATTRACTION_RADIUS * 100, y: MAX_ATTRACTION_RADIUS * 60 },
+            2000,
+            MAX_ATTRACTION_RADIUS
+        );
+        cells = newValues.cells;
+        cellsMap = newValues.cellsMap;
     };
     const resetTable = () => {
         attractionTable = getRandomAttractionTable();

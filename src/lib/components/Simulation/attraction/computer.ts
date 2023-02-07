@@ -31,7 +31,7 @@ export const getRandomAttractionTable = (): AttractionTable => {
     };
 };
 const MIN_ATTRACTION_RADIUS = 30;
-const MAX_ATTRACTION_RADIUS = 60;
+export const MAX_ATTRACTION_RADIUS = 60;
 
 export const getAttractionForce = (p5: p5, attractionTable: AttractionTable, a: Cell, b: Cell) => {
     const dist = distance(p5, a.pos, b.pos);

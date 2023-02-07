@@ -173,18 +173,15 @@ describe('CellsMap', () => {
 
         it('should retrieve neighbors from the right squares', () => {
             const screenSize = { x: 100, y: 100 };
-            const m = new CellsMap({
-                screenSize,
-                maxAttractionRadius: 10
-            });
-            const cells = getNewCells(screenSize, 100);
+            const maxAttractionRadius = 10;
+            const { cells, cellsMap: m } = getNewCells(screenSize, 100, maxAttractionRadius);
 
             let i = 0;
             for (const cell of cells) {
                 const y = Math.floor(i / 10) * 10;
                 const x = (i % 10) * 10;
                 cell.pos = { x, y };
-                m.insert(cell);
+                m.updateCell(cell);
                 i++;
             }
 

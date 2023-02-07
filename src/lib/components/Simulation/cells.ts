@@ -1,5 +1,6 @@
 import type p5 from 'p5';
 import { getAttractionForce } from './attraction';
+import { CellsMap } from './location';
 import type { AttractionTable, Cell, Color, Coordinates } from './types';
 
 const colors: Color[] = ['white', 'red', 'green', 'blue'];
@@ -9,10 +10,15 @@ const randColor = (): Color => {
     return colors[randIndex];
 };
 
-export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[] => {
+export const getNewCells = (
+    screenSize: Coordinates,
+    nbParticles: number,
+    maxAttractionRadius: number
+): { cells: Cell[]; cellsMap: CellsMap } => {
     const cells = [] as Cell[];
+    const cellsMap = new CellsMap({ screenSize, maxAttractionRadius });
     for (let i = 0; i < nbParticles; i++) {
-        cells.push({
+        const cell = {
             id: i,
             pos: {
                 x: Math.random() * screenSize.x,
@@ -23,9 +29,11 @@ export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[
                 y: 0
             },
             color: randColor()
-        });
+        };
+        cells.push(cell);
+        cellsMap.insert(cell);
     }
-    return cells;
+    return { cells, cellsMap };
 };
 
 export const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
@@ -42,12 +50,18 @@ export const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
     return Math.sqrt(dx * dx + dy * dy);
 };
 
-export const updateCells = (p5: p5, attractionTable: AttractionTable, cells: Cell[]) => {
+export const updateCells = (
+    p5: p5,
+    attractionTable: AttractionTable,
+    cells: Cell[],
+    cellsMap: CellsMap
+) => {
     for (let i = 0; i < cells.length; i++) {
         const cell = cells[i];
         cell.vel = { x: 0, y: 0 };
 
-        for (let j = 0; j < cells.length; j++) {
+        const neigborIds = cellsMap.getNeighborsIds(cell);
+        for (const j of neigborIds) {
             if (i === j) {
                 continue;
             }
@@ -83,22 +97,28 @@ export const updateCells = (p5: p5, attractionTable: AttractionTable, cells: Cel
         }
         cell.vel.x *= 1 / velocityMag;
         cell.vel.y *= 1 / velocityMag;
+
+        // The update of the cell position could be done in a separate loop.
+        // That would match what I am used too in the particles simulations I have done before.
+        // However here updating the cells position as we compute the attraction of the other ones
+        // seems to create more moving patterns
+        updateCellPos(p5, cell);
+        cellsMap.updateCell(cell);
     }
+};
 
-    for (let i = 0; i < cells.length; i++) {
-        const cell = cells[i];
-        cell.pos.x += cell.vel.x;
-        cell.pos.y += cell.vel.y;
+const updateCellPos = (p5: p5, cell: Cell) => {
+    cell.pos.x += cell.vel.x;
+    cell.pos.y += cell.vel.y;
 
-        if (cell.pos.x < 0) {
-            cell.pos.x = p5.width + cell.pos.x;
-        } else if (cell.pos.x > p5.width) {
-            cell.pos.x = p5.width - cell.pos.x;
-        }
-        if (cell.pos.y < 0) {
-            cell.pos.y = p5.height + cell.pos.y;
-        } else if (cell.pos.y > p5.height) {
-            cell.pos.y = p5.height - cell.pos.y;
-        }
+    if (cell.pos.x < 0) {
+        cell.pos.x = p5.width + cell.pos.x;
+    } else if (cell.pos.x > p5.width) {
+        cell.pos.x = cell.pos.x - p5.width;
+    }
+    if (cell.pos.y < 0) {
+        cell.pos.y = p5.height + cell.pos.y;
+    } else if (cell.pos.y > p5.height) {
+        cell.pos.y = cell.pos.y - p5.height;
     }
 };

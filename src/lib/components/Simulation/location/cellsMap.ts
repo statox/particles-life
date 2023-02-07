@@ -37,7 +37,9 @@ export class CellsMap {
             cellPos.y < 0 ||
             cellPos.y > this.screenSize.y
         ) {
-            throw new Error('The cell is outside of the screen');
+            throw new Error(
+                `The cell at position ${cellPos.x},${cellPos.y} is outside of the screen ${this.screenSize.x},${this.screenSize.y} `
+            );
         }
     }
 
