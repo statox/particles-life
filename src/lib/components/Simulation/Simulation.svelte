@@ -50,7 +50,10 @@
             {#each Object.keys(attractionTable) as selfColor}
                 <span>{selfColor}</span>
                 {#each Object.keys(attractionTable[selfColor]) as otherColor}
-                    <span>{otherColor} {attractionTable[selfColor][otherColor]}</span>
+                    <span>
+                        {otherColor}
+                        <input bind:value={attractionTable[selfColor][otherColor]} type="number" />
+                    </span>
                 {/each}
             {/each}
         </div>
