@@ -26,7 +26,7 @@ export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[
     return cells;
 };
 
-const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
+export const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
     // Take into consideration the fact that the map is wrapping
     // https://stackoverflow.com/a/3041398
     let dx = Math.abs(b.x - a.x);
@@ -124,19 +124,22 @@ export const updateCells = (p5: p5, attractionTable: AttractionTable, cells: Cel
         }
         cell.vel.x *= 1 / velocityMag;
         cell.vel.y *= 1 / velocityMag;
+    }
 
+    for (let i = 0; i < cells.length; i++) {
+        const cell = cells[i];
         cell.pos.x += cell.vel.x;
         cell.pos.y += cell.vel.y;
 
         if (cell.pos.x < 0) {
-            cell.pos.x = p5.width - 5;
+            cell.pos.x = p5.width + cell.pos.x;
         } else if (cell.pos.x > p5.width) {
-            cell.pos.x = 5;
+            cell.pos.x = p5.width - cell.pos.x;
         }
         if (cell.pos.y < 0) {
-            cell.pos.y = p5.height - 5;
+            cell.pos.y = p5.height + cell.pos.y;
         } else if (cell.pos.y > p5.height) {
-            cell.pos.y = 5;
+            cell.pos.y = p5.height - cell.pos.y;
         }
     }
 };
