@@ -12,6 +12,7 @@ export type AttractionTable = {
 export type Color = 'white' | 'red' | 'green' | 'blue';
 
 export interface Cell {
+    id: number;
     pos: Coordinates;
     vel: Coordinates;
     color: Color;

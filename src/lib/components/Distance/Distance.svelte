@@ -17,6 +17,7 @@
             p5.createCanvas(1000, 700);
 
             cell1 = {
+                id: 1,
                 pos: {
                     x: 200,
                     y: 350
@@ -29,6 +30,7 @@
             };
 
             cell2 = {
+                id: 2,
                 pos: {
                     x: 800,
                     y: 350

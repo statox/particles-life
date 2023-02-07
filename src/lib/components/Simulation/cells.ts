@@ -11,8 +11,9 @@ const randColor = (): Color => {
 
 export const getNewCells = (screenSize: Coordinates, nbParticles: number): Cell[] => {
     const cells = [] as Cell[];
-    for (let _ = 0; _ < nbParticles; _++) {
+    for (let i = 0; i < nbParticles; i++) {
         cells.push({
+            id: i,
             pos: {
                 x: Math.random() * screenSize.x,
                 y: Math.random() * screenSize.y
