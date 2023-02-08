@@ -32,7 +32,7 @@
     const resetCells = () => {
         const newValues = getNewCells(
             { x: MAX_ATTRACTION_RADIUS * 100, y: MAX_ATTRACTION_RADIUS * 60 },
-            2000,
+            3000,
             MAX_ATTRACTION_RADIUS
         );
         cells = newValues.cells;
