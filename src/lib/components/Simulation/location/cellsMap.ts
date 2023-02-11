@@ -4,23 +4,23 @@ import type { Cell, Coordinates } from '../types';
 export class CellsMap {
     squares: Set<number>[][];
     squareByCellId: Map<number, Coordinates>;
-    screenSize: Coordinates;
+    worldSize: Coordinates;
     maxAttractionRadius: number;
 
-    constructor(params: { screenSize: Coordinates; maxAttractionRadius: number }) {
-        const { screenSize, maxAttractionRadius } = params;
-        if (screenSize.x % maxAttractionRadius !== 0 || screenSize.y % maxAttractionRadius !== 0) {
+    constructor(params: { worldSize: Coordinates; maxAttractionRadius: number }) {
+        const { worldSize, maxAttractionRadius } = params;
+        if (worldSize.x % maxAttractionRadius !== 0 || worldSize.y % maxAttractionRadius !== 0) {
             throw new Error('Screen size is not a multiple of maxAttractionRadius');
         }
 
-        this.screenSize = { ...screenSize };
+        this.worldSize = { ...worldSize };
         this.maxAttractionRadius = maxAttractionRadius;
         this.squareByCellId = new Map<number, Coordinates>();
         this.squares = [] as Set<number>[][];
 
         const squareSize = maxAttractionRadius;
-        const cols = screenSize.x / squareSize;
-        const rows = screenSize.y / squareSize;
+        const cols = worldSize.x / squareSize;
+        const rows = worldSize.y / squareSize;
 
         for (let y = 0; y < rows; y++) {
             this.squares.push([]);
@@ -33,12 +33,12 @@ export class CellsMap {
     checkCoord(cellPos: Coordinates) {
         if (
             cellPos.x < 0 ||
-            cellPos.x > this.screenSize.x ||
+            cellPos.x > this.worldSize.x ||
             cellPos.y < 0 ||
-            cellPos.y > this.screenSize.y
+            cellPos.y > this.worldSize.y
         ) {
             throw new Error(
-                `The cell at position ${cellPos.x},${cellPos.y} is outside of the screen ${this.screenSize.x},${this.screenSize.y} `
+                `The cell at position ${cellPos.x},${cellPos.y} is outside of the screen ${this.worldSize.x},${this.worldSize.y} `
             );
         }
     }
@@ -47,8 +47,8 @@ export class CellsMap {
         this.checkCoord(cellPos);
 
         return {
-            x: Math.floor((cellPos.x * this.squares[0].length) / this.screenSize.x),
-            y: Math.floor((cellPos.y * this.squares.length) / this.screenSize.y)
+            x: Math.floor((cellPos.x * this.squares[0].length) / this.worldSize.x),
+            y: Math.floor((cellPos.y * this.squares.length) / this.worldSize.y)
         };
     }
 

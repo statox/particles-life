@@ -1,6 +1,5 @@
-import type p5 from 'p5';
 import { distance } from '../cells';
-import type { AttractionTable, Cell } from '../types';
+import type { AttractionTable, Cell, Coordinates } from '../types';
 
 export const getRandomAttractionTable = (): AttractionTable => {
     return {
@@ -30,15 +29,19 @@ export const getRandomAttractionTable = (): AttractionTable => {
         }
     };
 };
-const MIN_ATTRACTION_RADIUS = 30;
-export const MAX_ATTRACTION_RADIUS = 60;
 
-export const getAttractionForce = (p5: p5, attractionTable: AttractionTable, a: Cell, b: Cell) => {
-    const dist = distance(p5, a.pos, b.pos);
-    if (dist > MAX_ATTRACTION_RADIUS) {
+export const getAttractionForce = (
+    worldSize: Coordinates,
+    attractionTable: AttractionTable,
+    maxAttractionRadius: number,
+    a: Cell,
+    b: Cell
+) => {
+    const dist = distance(worldSize, a.pos, b.pos);
+    if (dist > maxAttractionRadius) {
         return 0;
     }
-    if (dist < MIN_ATTRACTION_RADIUS) {
+    if (dist < maxAttractionRadius / 2) {
         return -1;
     }
 

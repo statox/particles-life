@@ -5,7 +5,7 @@
     import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell } from './types';
-    import { getRandomAttractionTable, MAX_ATTRACTION_RADIUS } from './attraction';
+    import { getRandomAttractionTable } from './attraction';
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
 
@@ -14,6 +14,9 @@
     let cells: Cell[];
     let cellsMap: CellsMap;
     let attractionTable: AttractionTable;
+
+    const worldSize = { x: 1600, y: 960 };
+    const maxAttractionRadius = 32;
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
@@ -24,17 +27,13 @@
         };
         p5.draw = () => {
             p5.background(0);
-            updateCells(p5, attractionTable, cells, cellsMap);
-            drawCells(p5, cells);
+            updateCells(attractionTable, maxAttractionRadius, cells, cellsMap);
+            drawCells(p5, cells, cellsMap.worldSize);
         };
     };
 
     const resetCells = () => {
-        const newValues = getNewCells(
-            { x: MAX_ATTRACTION_RADIUS * 100, y: MAX_ATTRACTION_RADIUS * 60 },
-            3000,
-            MAX_ATTRACTION_RADIUS
-        );
+        const newValues = getNewCells(worldSize, 2000, maxAttractionRadius);
         cells = newValues.cells;
         cellsMap = newValues.cellsMap;
     };

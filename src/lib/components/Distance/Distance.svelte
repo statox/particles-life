@@ -11,6 +11,8 @@
     let cell1: Cell;
     let cell2: Cell;
     let d = 0;
+
+    const worldSize = { x: 100, y: 70 };
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
@@ -44,17 +46,19 @@
         };
         p5.draw = () => {
             p5.background(0);
-            drawCells(p5, [cell1, cell2]);
-            d = distance(p5, cell1.pos, cell2.pos);
+            drawCells(p5, [cell1, cell2], worldSize);
+            d = distance(worldSize, cell1.pos, cell2.pos);
 
             if (p5.mouseIsPressed) {
+                let newPos = {
+                    x: p5.map(p5.mouseX, 0, p5.width, 0, worldSize.x),
+                    y: p5.map(p5.mouseY, 0, p5.height, 0, worldSize.y)
+                };
                 if (p5.mouseButton === p5.LEFT) {
-                    cell1.pos.x = p5.mouseX;
-                    cell1.pos.y = p5.mouseY;
+                    cell1.pos = newPos;
                 }
                 if (p5.mouseButton === p5.RIGHT) {
-                    cell2.pos.x = p5.mouseX;
-                    cell2.pos.y = p5.mouseY;
+                    cell2.pos = newPos;
                 }
             }
         };

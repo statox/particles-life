@@ -9,7 +9,7 @@ describe('CellsMap', () => {
             expect(
                 () =>
                     new CellsMap({
-                        screenSize: {
+                        worldSize: {
                             x: 21,
                             y: 10
                         },
@@ -20,7 +20,7 @@ describe('CellsMap', () => {
 
         it('should return a proper cell map', () => {
             const cellsMap = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 20,
                     y: 10
                 },
@@ -34,7 +34,7 @@ describe('CellsMap', () => {
     describe('getSquareCoords', () => {
         it('should work', () => {
             const m = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 100,
                     y: 25
                 },
@@ -48,9 +48,9 @@ describe('CellsMap', () => {
             expect(m.getSquareCoords({ x: 17, y: 22 })).toStrictEqual({ x: 3, y: 4 });
         });
         it('should also work', () => {
-            const screenSize = { x: 100, y: 100 };
+            const worldSize = { x: 100, y: 100 };
             const m = new CellsMap({
-                screenSize,
+                worldSize,
                 maxAttractionRadius: 10
             });
 
@@ -68,7 +68,7 @@ describe('CellsMap', () => {
     describe('insert', () => {
         it('should throw is the cell is already in map', () => {
             const m = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 100,
                     y: 25
                 },
@@ -87,7 +87,7 @@ describe('CellsMap', () => {
 
         it('should insert cell at the right position', () => {
             const m = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 100,
                     y: 25
                 },
@@ -110,7 +110,7 @@ describe('CellsMap', () => {
     describe('updateCell', () => {
         it('should throw is the cell is not in map', () => {
             const m = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 100,
                     y: 25
                 },
@@ -128,7 +128,7 @@ describe('CellsMap', () => {
 
         it('should update cell at the right position', () => {
             const m = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 100,
                     y: 25
                 },
@@ -155,7 +155,7 @@ describe('CellsMap', () => {
     describe('getNeighborsIds', () => {
         it('should throw is the cell is not in map', () => {
             const m = new CellsMap({
-                screenSize: {
+                worldSize: {
                     x: 100,
                     y: 25
                 },
@@ -172,9 +172,9 @@ describe('CellsMap', () => {
         });
 
         it('should retrieve neighbors from the right squares', () => {
-            const screenSize = { x: 100, y: 100 };
+            const worldSize = { x: 100, y: 100 };
             const maxAttractionRadius = 10;
-            const { cells, cellsMap: m } = getNewCells(screenSize, 100, maxAttractionRadius);
+            const { cells, cellsMap: m } = getNewCells(worldSize, 100, maxAttractionRadius);
 
             let i = 0;
             for (const cell of cells) {

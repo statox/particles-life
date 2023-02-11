@@ -1,4 +1,3 @@
-import type p5 from 'p5';
 import { getAttractionForce } from './attraction';
 import { CellsMap } from './location';
 import type { AttractionTable, Cell, Color, Coordinates } from './types';
@@ -11,18 +10,18 @@ const randColor = (): Color => {
 };
 
 export const getNewCells = (
-    screenSize: Coordinates,
+    worldSize: Coordinates,
     nbParticles: number,
     maxAttractionRadius: number
 ): { cells: Cell[]; cellsMap: CellsMap } => {
     const cells = [] as Cell[];
-    const cellsMap = new CellsMap({ screenSize, maxAttractionRadius });
+    const cellsMap = new CellsMap({ worldSize, maxAttractionRadius });
     for (let i = 0; i < nbParticles; i++) {
         const cell = {
             id: i,
             pos: {
-                x: Math.random() * screenSize.x,
-                y: Math.random() * screenSize.y
+                x: Math.random() * worldSize.x,
+                y: Math.random() * worldSize.y
             },
             vel: {
                 x: 0,
@@ -36,23 +35,23 @@ export const getNewCells = (
     return { cells, cellsMap };
 };
 
-export const distance = (p5: p5, a: Coordinates, b: Coordinates) => {
+export const distance = (worldSize: Coordinates, a: Coordinates, b: Coordinates) => {
     // Take into consideration the fact that the map is wrapping
     // https://stackoverflow.com/a/3041398
     let dx = Math.abs(b.x - a.x);
-    if (dx > p5.width / 2) {
-        dx = p5.width - dx;
+    if (dx > worldSize.x / 2) {
+        dx = worldSize.x - dx;
     }
     let dy = Math.abs(b.y - a.y);
-    if (dy > p5.height / 2) {
-        dy = p5.height - dy;
+    if (dy > worldSize.y / 2) {
+        dy = worldSize.y - dy;
     }
     return Math.sqrt(dx * dx + dy * dy);
 };
 
 export const updateCells = (
-    p5: p5,
     attractionTable: AttractionTable,
+    maxAttractionRadius: number,
     cells: Cell[],
     cellsMap: CellsMap
 ) => {
@@ -67,7 +66,13 @@ export const updateCells = (
             }
 
             const other = cells[j];
-            const attractionForce = getAttractionForce(p5, attractionTable, cell, other);
+            const attractionForce = getAttractionForce(
+                cellsMap.worldSize,
+                attractionTable,
+                maxAttractionRadius,
+                cell,
+                other
+            );
 
             const direction = {
                 x: other.pos.x - cell.pos.x,
@@ -102,23 +107,23 @@ export const updateCells = (
         // That would match what I am used too in the particles simulations I have done before.
         // However here updating the cells position as we compute the attraction of the other ones
         // seems to create more moving patterns
-        updateCellPos(p5, cell);
+        updateCellPos(cellsMap.worldSize, cell);
         cellsMap.updateCell(cell);
     }
 };
 
-const updateCellPos = (p5: p5, cell: Cell) => {
+const updateCellPos = (worldSize: Coordinates, cell: Cell) => {
     cell.pos.x += cell.vel.x;
     cell.pos.y += cell.vel.y;
 
     if (cell.pos.x < 0) {
-        cell.pos.x = p5.width + cell.pos.x;
-    } else if (cell.pos.x > p5.width) {
-        cell.pos.x = cell.pos.x - p5.width;
+        cell.pos.x = worldSize.x + cell.pos.x;
+    } else if (cell.pos.x > worldSize.x) {
+        cell.pos.x = cell.pos.x - worldSize.x;
     }
     if (cell.pos.y < 0) {
-        cell.pos.y = p5.height + cell.pos.y;
-    } else if (cell.pos.y > p5.height) {
-        cell.pos.y = cell.pos.y - p5.height;
+        cell.pos.y = worldSize.y + cell.pos.y;
+    } else if (cell.pos.y > worldSize.y) {
+        cell.pos.y = cell.pos.y - worldSize.y;
     }
 };
