@@ -5,7 +5,12 @@
     import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell, Color } from './types';
-    import { getCustomAttractionTable1, getRandomAttractionTable } from './attraction';
+    import {
+        getCustomAttractionTable1,
+        getCustomAttractionTable2,
+        getCustomAttractionTableSnake,
+        getRandomAttractionTable
+    } from './attraction';
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
 
@@ -23,7 +28,7 @@
     const maxAttractionRadius = 32;
 
     const resetCells = () => {
-        const newValues = getNewCells(worldSize, 2000, maxAttractionRadius);
+        const newValues = getNewCells(worldSize, 1000, maxAttractionRadius);
         cells = newValues.cells;
         cellsMap = newValues.cellsMap;
     };
@@ -38,6 +43,8 @@
     resetCells();
     attractionTable = getRandomAttractionTable();
     attractionTable = getCustomAttractionTable1();
+    attractionTable = getCustomAttractionTable2();
+    attractionTable = getCustomAttractionTableSnake();
     simulationLoop();
 
     const sketch: Sketch = (p5) => {
@@ -56,6 +63,9 @@
     };
 
     const rainbow = () => {
+        // const colors: Color[] = ['white', 'red', 'green', 'blue'].sort(
+        //     () => Math.random() - 0.5
+        // ) as Color[];
         const colors: Color[] = ['white', 'red', 'green', 'blue'];
         const sectionWidth = worldSize.x / 4;
         for (const cell of cells) {
