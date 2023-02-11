@@ -49,6 +49,14 @@ export const distance = (worldSize: Coordinates, a: Coordinates, b: Coordinates)
     return Math.sqrt(dx * dx + dy * dy);
 };
 
+const distanceSqaredNoWrap = (a: Coordinates, b: Coordinates) => {
+    // Take into consideration the fact that the map is wrapping
+    // https://stackoverflow.com/a/3041398
+    let dx = Math.abs(b.x - a.x);
+    let dy = Math.abs(b.y - a.y);
+    return dx * dx + dy * dy;
+};
+
 export const updateCells = (
     attractionTable: AttractionTable,
     maxAttractionRadius: number,
@@ -66,13 +74,26 @@ export const updateCells = (
             }
 
             const other = cells[j];
-            const attractionForce = getAttractionForce(
+            let attractionForce = getAttractionForce(
                 cellsMap.worldSize,
                 attractionTable,
                 maxAttractionRadius,
                 cell,
                 other
             );
+
+            // IMPORTANT
+            // If other was in neigborIds it means that its distance on a wrap world
+            // is close enough.
+            // But if distanceSqaredNoWrap is big enough it means it is on the other side
+            // of the (not wraped) map so we need to invert the attractionForce to Take
+            // that into account
+            if (
+                distanceSqaredNoWrap(cell.pos, other.pos) >
+                (cellsMap.worldSize.y * cellsMap.worldSize.y) / 2
+            ) {
+                attractionForce *= -1;
+            }
 
             const direction = {
                 x: other.pos.x - cell.pos.x,
