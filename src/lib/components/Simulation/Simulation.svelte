@@ -17,25 +17,31 @@
 
     const worldSize = { x: 1600, y: 960 };
     const maxAttractionRadius = 32;
-    const sketch: Sketch = (p5) => {
-        p5.setup = () => {
-            _p5 = p5;
-            p5.createCanvas(1000, 700);
-
-            resetCells();
-            attractionTable = getRandomAttractionTable();
-        };
-        p5.draw = () => {
-            p5.background(0);
-            updateCells(attractionTable, maxAttractionRadius, cells, cellsMap);
-            drawCells(p5, cells, cellsMap.worldSize);
-        };
-    };
 
     const resetCells = () => {
         const newValues = getNewCells(worldSize, 2000, maxAttractionRadius);
         cells = newValues.cells;
         cellsMap = newValues.cellsMap;
+    };
+
+    const simulationLoop = () => {
+        updateCells(attractionTable, maxAttractionRadius, cells, cellsMap);
+        setTimeout(simulationLoop, 1);
+    };
+
+    resetCells();
+    attractionTable = getRandomAttractionTable();
+    simulationLoop();
+
+    const sketch: Sketch = (p5) => {
+        p5.setup = () => {
+            _p5 = p5;
+            p5.createCanvas(1000, 700);
+        };
+        p5.draw = () => {
+            p5.background(0);
+            drawCells(p5, cells, cellsMap.worldSize);
+        };
     };
 
     const updateAttractionTable = (newAttractionTable: AttractionTable) => {
