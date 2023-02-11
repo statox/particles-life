@@ -25,6 +25,26 @@
         onUpdateTable(attractionTable);
     };
 
+    const increaseInTable = (selfColor: Color, otherColor: Color) => {
+        let val = attractionTable[selfColor][otherColor];
+        val++;
+        if (val === 3) {
+            val = 2;
+        }
+        attractionTable[selfColor][otherColor] = val;
+        onUpdateTable(attractionTable);
+    };
+
+    const decreaseInTable = (selfColor: Color, otherColor: Color) => {
+        let val = attractionTable[selfColor][otherColor];
+        val--;
+        if (val === -3) {
+            val = -2;
+        }
+        attractionTable[selfColor][otherColor] = val;
+        onUpdateTable(attractionTable);
+    };
+
     const randomizeTable = () => {
         for (const selfColor of Object.keys(attractionTable) as Color[]) {
             for (const otherColor of Object.keys(attractionTable[selfColor]) as Color[]) {
@@ -73,10 +93,14 @@
             <button style="background-color: {selfColor}" disabled>{selfColor}</button>
             {#each colors as otherColor}
                 {@const color = valuesColors.get(attractionTable[selfColor][otherColor])}
-                <button
-                    style="background-color: {color}"
-                    on:click={() => updateTable(selfColor, otherColor)}
-                />
+                <span class="grid1row3cols">
+                    <button on:click={() => decreaseInTable(selfColor, otherColor)}>-</button>
+                    <button
+                        style="background-color: {color}"
+                        on:click={() => updateTable(selfColor, otherColor)}
+                    />
+                    <button on:click={() => increaseInTable(selfColor, otherColor)}>+</button>
+                </span>
             {/each}
         {/each}
     </div>
@@ -86,6 +110,12 @@
     .grid5cols {
         display: grid;
         grid-template-columns: repeat(5, auto);
+        grid-auto-flow: row;
+    }
+
+    .grid1row3cols {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
         grid-auto-flow: row;
     }
 </style>
