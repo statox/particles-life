@@ -8,6 +8,7 @@
     import {
         getCustomAttractionTable1,
         getCustomAttractionTable2,
+        getCustomAttractionTableFishes,
         getCustomAttractionTableSnake,
         getRandomAttractionTable
     } from './attraction';
@@ -45,6 +46,7 @@
     attractionTable = getCustomAttractionTable1();
     attractionTable = getCustomAttractionTable2();
     attractionTable = getCustomAttractionTableSnake();
+    attractionTable = getCustomAttractionTableFishes();
     simulationLoop();
 
     const sketch: Sketch = (p5) => {

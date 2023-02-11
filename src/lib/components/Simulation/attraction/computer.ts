@@ -118,6 +118,35 @@ export const getCustomAttractionTableSnake = (): AttractionTable => {
     };
 };
 
+export const getCustomAttractionTableFishes = (): AttractionTable => {
+    return {
+        white: {
+            white: 0,
+            red: 1,
+            green: -1,
+            blue: -2
+        },
+        red: {
+            white: 2,
+            red: 0,
+            green: 1,
+            blue: -1
+        },
+        green: {
+            white: -2,
+            red: -2,
+            green: -2,
+            blue: 1
+        },
+        blue: {
+            white: 2,
+            red: -1,
+            green: 1,
+            blue: -2
+        }
+    };
+};
+
 // This was the first version which didn't do map to soften the attraction based
 // on the distance.
 // Keeping it to debug in case of issues
