@@ -87,10 +87,10 @@ export class CellsMap {
         }
 
         const { x, y } = currentSquare;
-        const prevX = x > 0 ? x - 1 : this.squares[0].length - 1;
-        const nextX = x < this.squares[0].length - 1 ? x + 1 : 0;
-        const prevY = y > 0 ? y - 1 : this.squares.length - 1;
-        const nextY = y < this.squares.length - 1 ? y + 1 : 0;
+        const prevX = x === 0 ? this.squares[0].length - 1 : x - 1;
+        const nextX = x === this.squares[0].length - 1 ? 0 : x + 1;
+        const prevY = y === 0 ? this.squares.length - 1 : y - 1;
+        const nextY = y === this.squares.length - 1 ? 0 : y + 1;
 
         const neighborSquares = [
             { x: prevX, y: prevY },
