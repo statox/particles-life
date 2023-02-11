@@ -2,7 +2,7 @@
     import type { AttractionTable, Color } from '../types';
 
     export let attractionTable: AttractionTable;
-    export let onUpdateTable: (AttractionTable) => void;
+    export let onUpdateTable: (attractionTable: AttractionTable) => void;
 
     const valuesColors = new Map([
         [-2, '#ff0000'],
