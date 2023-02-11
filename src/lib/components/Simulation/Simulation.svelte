@@ -4,7 +4,7 @@
     import { onDestroy } from 'svelte';
     import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
-    import type { AttractionTable, Cell } from './types';
+    import type { AttractionTable, Cell, Color } from './types';
     import { getCustomAttractionTable1, getRandomAttractionTable } from './attraction';
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
@@ -55,6 +55,16 @@
         attractionTable = newAttractionTable;
     };
 
+    const rainbow = () => {
+        const colors: Color[] = ['white', 'red', 'green', 'blue'];
+        const sectionWidth = worldSize.x / 4;
+        for (const cell of cells) {
+            const colorIndex = Math.floor(cell.pos.x / sectionWidth);
+            const color = colors[colorIndex];
+            cell.color = color;
+        }
+    };
+
     onDestroy(() => {
         _p5?.remove();
     });
@@ -70,6 +80,7 @@
             {simulationControls.pause ? 'Run' : 'Pause'}
         </button>
         <button on:click={resetCells}>Reset cells</button>
+        <button on:click={rainbow}>Rainbow</button>
     </div>
 
     <AttractionTableComponent {attractionTable} onUpdateTable={updateAttractionTable} />
