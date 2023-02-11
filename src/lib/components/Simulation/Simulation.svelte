@@ -5,7 +5,7 @@
     import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell } from './types';
-    import { getRandomAttractionTable } from './attraction';
+    import { getCustomAttractionTable1, getRandomAttractionTable } from './attraction';
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
 
@@ -37,6 +37,7 @@
 
     resetCells();
     attractionTable = getRandomAttractionTable();
+    attractionTable = getCustomAttractionTable1();
     simulationLoop();
 
     const sketch: Sketch = (p5) => {
