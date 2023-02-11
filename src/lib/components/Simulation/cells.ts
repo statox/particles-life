@@ -50,10 +50,8 @@ export const distance = (worldSize: Coordinates, a: Coordinates, b: Coordinates)
 };
 
 const distanceSqaredNoWrap = (a: Coordinates, b: Coordinates) => {
-    // Take into consideration the fact that the map is wrapping
-    // https://stackoverflow.com/a/3041398
-    let dx = Math.abs(b.x - a.x);
-    let dy = Math.abs(b.y - a.y);
+    const dx = Math.abs(b.x - a.x);
+    const dy = Math.abs(b.y - a.y);
     return dx * dx + dy * dy;
 };
 
