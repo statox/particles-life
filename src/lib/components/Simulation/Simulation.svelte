@@ -15,6 +15,10 @@
     let cellsMap: CellsMap;
     let attractionTable: AttractionTable;
 
+    const simulationControls = {
+        pause: false
+    };
+
     const worldSize = { x: 1600, y: 960 };
     const maxAttractionRadius = 32;
 
@@ -25,7 +29,9 @@
     };
 
     const simulationLoop = () => {
-        updateCells(attractionTable, maxAttractionRadius, cells, cellsMap);
+        if (simulationControls.pause === false) {
+            updateCells(attractionTable, maxAttractionRadius, cells, cellsMap);
+        }
         setTimeout(simulationLoop, 1);
     };
 
@@ -58,7 +64,12 @@
 </div>
 
 <div>
-    <button on:click={resetCells}>Reset cells</button>
+    <div>
+        <button on:click={() => (simulationControls.pause = !simulationControls.pause)}>
+            {simulationControls.pause ? 'Run' : 'Pause'}
+        </button>
+        <button on:click={resetCells}>Reset cells</button>
+    </div>
 
     <AttractionTableComponent {attractionTable} onUpdateTable={updateAttractionTable} />
 </div>
