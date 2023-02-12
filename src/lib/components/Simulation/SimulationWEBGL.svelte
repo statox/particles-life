@@ -63,12 +63,13 @@ void main() {
 }
 `;
 
+    const nbShaderUniforms = 100;
     const fragSrc =
         `precision mediump float;
 varying vec2 vTexCoord;
 
 uniform float aspectRatio;\n` +
-        new Array(100)
+        new Array(nbShaderUniforms)
             .fill(0)
             .map((_, i) => `uniform vec3 particle${i};`)
             .join('\n') +
@@ -80,19 +81,30 @@ uniform float aspectRatio;\n` +
 
 void main() {
   vec2 coord = vTexCoord;
-  vec3 particles[100];\n` +
-        new Array(100)
+  vec3 particles[${nbShaderUniforms}];\n` +
+        new Array(nbShaderUniforms)
             .fill(0)
             .map((_, i) => `particles[${i}] = particle${i};`)
             .join('\n') +
         `\nvec3 color = vec3(0.0);
   
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < ${nbShaderUniforms}; i++) {
     vec2 pos = vec2(particles[i].x, particles[i].y);
-    float brightness = 1.0;
+    float brightness = particles[i].z;
     vec3 part = vec3(circle(coord + pos, 0.0001));
-    part *= vec3(0.59, 0.16, 0.31);
-    part *= vec3(brightness);
+    if (particles[i].z == 0.0) {
+        part *= vec3(1.0, 1.0, 1.0);
+    }
+    if (particles[i].z == 1.0) {
+        part *= vec3(1.0, 0.0, 0.0);
+    }
+    if (particles[i].z == 2.0) {
+        part *= vec3(0.0, 1.0, 0.0);
+    }
+    if (particles[i].z == 3.0) {
+        part *= vec3(0.0, 0.0, 1.0);
+    }
+    part *= vec3(1.0);
     color += part;
   }
   
@@ -116,8 +128,12 @@ void main() {
     };
 
     const arrayUniform = (shader: Shader, uniformName: string, cells: Cell[]) => {
-        for (let i = 0; i < 100; i++) {
-            shader.setUniform(uniformName + i, [cells[i].pos.x / 3200, cells[i].pos.y / 1920, 1]);
+        for (let i = 0; i < nbShaderUniforms; i++) {
+            shader.setUniform(uniformName + i, [
+                cells[i].pos.x / 3200,
+                cells[i].pos.y / 1920,
+                ['white', 'green', 'red', 'blue'].indexOf(cells[i].color)
+            ]);
         }
     };
 
