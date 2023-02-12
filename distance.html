@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="./_app/immutable/start-10987129.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-71905c10.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-329927b5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-37853c00.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/distance/_page.svelte-f399d1b3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/cells-8607423a.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/drawing-302ee9ee.js">
+</head>
+
+<body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+
+
+<header><h1>Particles Life</h1>
+
+    <nav><a href="/">Home</a> |
+        <a href="/webgl">WebGL</a> |
+        <a href="/distance">Distance test</a> |
+    </nav></header>
+
+<div><p>Click left and right buttons to place the particles. This page is used to check the distance
+        function works properly with wrapping map
+    </p>
+    <span>Distance between cells: 0</span></div>
+
+<div class="d-flex justify-content-center"><div style="display: block;" class="m-0"></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="twuahe">
+			import { start } from "./_app/immutable/start-10987129.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="twuahe"]').parentNode,
+				version: "1676228662224",
+				hydrate: {
+					node_ids: [0, 3],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+</body>
+
+<!-- Override newcss -->
+<style>
+    body {
+        max-width: 900px;
+    }
+
+    :root {
+        --nc-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        --nc-font-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
+        --is-light-theme: 1;
+
+
+        /* Dark theme */
+        --nc-tx-1: #FFFFFF;
+        --nc-tx-2: #B7B7B7;
+        --nc-tx-3: #8a8d87;
+        --nc-bg-1: #1E272C;
+        --nc-bg-2: #161d21;
+        --nc-bg-3: #263238;
+        --nc-lk-1: #5E92FF;
+        --nc-lk-2: #99b2e8;
+        --nc-lk-tx: #2E3C43;
+        --nc-ac-1: #C3E88D;
+        --nc-ac-tx: #263238;
+    }
+</style>
+
+</html>
