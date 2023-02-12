@@ -159,6 +159,41 @@ void main() {
     });
 </script>
 
+<div>
+    <p>
+        This is an attempt to use p5.js' ability to render glsl shaders to speed up the animation.
+    </p>
+    <p>
+        This is a complete failure <b>but</b> I learned things so that's cool. The principle of this
+        simulation is that the neighbors detection and the position updates are still done in javascript.
+        The role of the shader is only to render the different particles on the canvas.
+    </p>
+    <p>
+        To do that the vertex shader is as simple as possible it just handles the position properly.
+        The fragment shader is where things happen: We pass all the particles as uniforms. Since the
+        shader is ran on each vertex (i.e. each pixel of the screen), for each vertex we check the
+        distance of each cell to the current vertex. Based on the distance we increment the color of
+        the vertex so that the particles appear.
+    </p>
+    <p>There are several issues with this approach:</p>
+    <ul>
+        <li>
+            Passing more than 100 or 200 uniforms to the shader seems to overload the GPU which
+            drastically limits our number of particles.
+        </li>
+        <li>
+            The hard calculations are not done in the shader so not parallelized so the performences
+            are still not great
+        </li>
+    </ul>
+    <p>
+        The approach described in
+        <a href="https://gpfault.net/posts/webgl2-particles.txt.html" target="blank">
+            this article
+        </a> seems much better.
+    </p>
+</div>
+
 <div class="d-flex justify-content-center">
     <P5 {sketch} />
 </div>
