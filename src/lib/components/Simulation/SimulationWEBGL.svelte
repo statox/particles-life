@@ -4,13 +4,7 @@
     import { onDestroy } from 'svelte';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell, Color } from './types';
-    import {
-        getCustomAttractionTable1,
-        getCustomAttractionTable2,
-        getCustomAttractionTableFishes,
-        getCustomAttractionTableSnake,
-        getRandomAttractionTable
-    } from './attraction';
+    import { getRandomAttractionTable } from './attraction';
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
     import type { Shader } from 'p5';
@@ -43,10 +37,6 @@
 
     resetCells();
     attractionTable = getRandomAttractionTable();
-    attractionTable = getCustomAttractionTable1();
-    attractionTable = getCustomAttractionTable2();
-    attractionTable = getCustomAttractionTableSnake();
-    attractionTable = getCustomAttractionTableFishes();
     simulationLoop();
 
     const vertSrc = `attribute vec3 aPosition;

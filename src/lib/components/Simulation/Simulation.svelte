@@ -1,19 +1,14 @@
 <script lang="ts">
     import type p5 from 'p5';
     import P5, { type Sketch } from 'p5-svelte';
-    import { onDestroy } from 'svelte';
+    import { onDestroy, onMount } from 'svelte';
     import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell, Color } from './types';
-    import {
-        getCustomAttractionTable1,
-        getCustomAttractionTable2,
-        getCustomAttractionTableFishes,
-        getCustomAttractionTableSnake,
-        getRandomAttractionTable
-    } from './attraction';
+    import { getRandomAttractionTable } from './attraction';
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
+    import AttractionTableChoice from './attraction/AttractionTableChoice.svelte';
 
     let _p5: p5;
 
@@ -41,14 +36,6 @@
         setTimeout(simulationLoop, 1);
     };
 
-    resetCells();
-    attractionTable = getRandomAttractionTable();
-    attractionTable = getCustomAttractionTable1();
-    attractionTable = getCustomAttractionTable2();
-    attractionTable = getCustomAttractionTableSnake();
-    attractionTable = getCustomAttractionTableFishes();
-    simulationLoop();
-
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
@@ -65,9 +52,6 @@
     };
 
     const rainbow = () => {
-        // const colors: Color[] = ['white', 'red', 'green', 'blue'].sort(
-        //     () => Math.random() - 0.5
-        // ) as Color[];
         const colors: Color[] = ['white', 'red', 'green', 'blue'];
         const sectionWidth = worldSize.x / 4;
         for (const cell of cells) {
@@ -77,6 +61,11 @@
         }
     };
 
+    onMount(() => {
+        resetCells();
+        attractionTable = getRandomAttractionTable();
+        simulationLoop();
+    });
     onDestroy(() => {
         _p5?.remove();
     });
@@ -95,5 +84,6 @@
         <button on:click={rainbow}>Rainbow</button>
     </div>
 
+    <AttractionTableChoice updateTable={updateAttractionTable} />
     <AttractionTableComponent {attractionTable} onUpdateTable={updateAttractionTable} />
 </div>

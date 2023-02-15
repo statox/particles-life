@@ -9,6 +9,12 @@ export type AttractionTable = {
     };
 };
 
+export type StoredTable = {
+    name: string;
+    description: string;
+    table: AttractionTable;
+};
+
 export type Color = 'white' | 'red' | 'green' | 'blue';
 
 export interface Cell {
