@@ -1,3 +1,5 @@
+import { getRandomAttractionTable, tables } from '$lib/components/Simulation/attraction';
+import type { AttractionTable } from '$lib/components/Simulation/types';
 import type { CallbackErrorOnly } from '$lib/tsUtils';
 import { CellsMap } from '../cellsMap';
 import type { Cell, Color, UpdateCellsWorkerResponse, WorldSize } from './types';
@@ -17,16 +19,19 @@ export class Engine {
     _workers: Worker[];
     _nbWorkers: number;
     _cellsMap: CellsMap;
+    attractionTable: AttractionTable;
     worldSize: WorldSize;
     cells: Cell[];
 
     constructor(nbCells: number) {
         this._running = false;
         this._stepInterval = undefined;
-        this._nbWorkers = 6;
+        this._nbWorkers = 4;
         this._workers = [];
         this.worldSize = { x: 1600, y: 960 };
         this.cells = [] as Cell[];
+        this.attractionTable = getRandomAttractionTable();
+        // this.attractionTable = tables.filter((t) => t.name === 'Infinite motion')[0].table;
 
         this._cellsMap = new CellsMap({ worldSize: this.worldSize, maxAttractionRadius: 32 });
 
@@ -58,22 +63,24 @@ export class Engine {
         }
         this._running = true;
 
-        this._stepInterval = setInterval(() => {
+        const runSteps = () => {
             if (!this._running) {
                 return;
             }
-
             this.step((error?: Error) => {
                 if (error) {
                     throw error;
                 }
+
+                this._stepInterval = setTimeout(runSteps, 1);
             });
-        }, 1);
+        };
+        runSteps();
     }
 
     pause() {
         this._running = false;
-        clearInterval(this._stepInterval);
+        clearTimeout(this._stepInterval);
     }
 
     step(cb: CallbackErrorOnly) {
@@ -84,6 +91,7 @@ export class Engine {
         const onMessage = (response: MessageEvent<UpdateCellsWorkerResponse>) => {
             const { minIndex, maxIndex, cells } = response.data;
             for (let i = minIndex; i < maxIndex; i++) {
+                // console.log(i);
                 this.cells[i].pos = cells[i].nextPos;
                 this._cellsMap.updateCell(this.cells[i]);
             }
@@ -110,7 +118,8 @@ export class Engine {
                 maxIndex,
                 cells: this.cells,
                 cellsMap: this._cellsMap,
-                worldSize: this.worldSize
+                worldSize: this.worldSize,
+                attractionTable: this.attractionTable
             });
         }
     }

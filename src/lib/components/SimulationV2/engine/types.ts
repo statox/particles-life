@@ -1,3 +1,4 @@
+import type { AttractionTable } from '$lib/components/Simulation/types';
 import type { CellsMap } from '../cellsMap';
 
 export type Coordinates = {
@@ -18,6 +19,7 @@ export interface Cell {
 }
 
 export type UpdateCellsWorkerRequest = {
+    attractionTable: AttractionTable;
     worldSize: WorldSize;
     minIndex: number;
     maxIndex: number;

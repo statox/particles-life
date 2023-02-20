@@ -1,8 +1,15 @@
+import { getAttractionForce } from '$lib/components/Simulation/attraction';
 import { getNeighborsIds } from '../cellsMap';
-import type { Cell, UpdateCellsWorkerRequest, WorldSize } from './types';
+import type { Cell, Coordinates, UpdateCellsWorkerRequest, WorldSize } from './types';
+
+const distanceSqaredNoWrap = (a: Coordinates, b: Coordinates) => {
+    const dx = Math.abs(b.x - a.x);
+    const dy = Math.abs(b.y - a.y);
+    return dx * dx + dy * dy;
+};
 
 onmessage = (request: MessageEvent<UpdateCellsWorkerRequest>) => {
-    const { minIndex, maxIndex, cells, cellsMap, worldSize } = request.data;
+    const { minIndex, maxIndex, cells, cellsMap, worldSize, attractionTable } = request.data;
 
     for (let i = minIndex; i < maxIndex; i++) {
         const cell = cells[i];
@@ -16,6 +23,26 @@ onmessage = (request: MessageEvent<UpdateCellsWorkerRequest>) => {
             }
 
             const other = cells[j];
+            let attractionForce = getAttractionForce(
+                cellsMap.worldSize,
+                attractionTable,
+                cellsMap.maxAttractionRadius,
+                cell,
+                other
+            );
+
+            // IMPORTANT
+            // If other was in neigborIds it means that its distance on a wrap world
+            // is close enough.
+            // But if distanceSqaredNoWrap is big enough it means it is on the other side
+            // of the (not wraped) map so we need to invert the attractionForce to Take
+            // that into account
+            if (
+                distanceSqaredNoWrap(cell.pos, other.pos) >
+                (cellsMap.worldSize.y * cellsMap.worldSize.y) / 2
+            ) {
+                attractionForce *= -1;
+            }
 
             const direction = {
                 x: other.pos.x - cell.pos.x,
@@ -29,14 +56,22 @@ onmessage = (request: MessageEvent<UpdateCellsWorkerRequest>) => {
                 x: direction.x * (1 / directionMag),
                 y: direction.y * (1 / directionMag)
             };
-            const invertedDirection = {
-                x: 1 * normalizedDirection.x,
-                y: 1 * normalizedDirection.y
+            const correctedDirection = {
+                x: normalizedDirection.x * attractionForce,
+                y: normalizedDirection.y * attractionForce
             };
 
-            cell.vel.x += invertedDirection.x;
-            cell.vel.y += invertedDirection.y;
+            cell.vel.x += correctedDirection.x;
+            cell.vel.y += correctedDirection.y;
         }
+
+        const velocityMag = Math.sqrt(cell.vel.x * cell.vel.x + cell.vel.y * cell.vel.y);
+
+        if (velocityMag === 0) {
+            continue;
+        }
+        cell.vel.x *= 1 / velocityMag;
+        cell.vel.y *= 1 / velocityMag;
 
         updateAndLimitCellNextnextPos(worldSize, cell);
     }

@@ -6,6 +6,6 @@ export const drawCells = (p5: p5, cells: Cell[], worldSize: WorldSize) => {
         p5.fill(cell.color);
         const x = p5.map(cell.pos.x, 0, worldSize.x, 0, p5.width);
         const y = p5.map(cell.pos.y, 0, worldSize.y, 0, p5.height);
-        p5.circle(x, y, 2);
+        p5.circle(x, y, 3);
     }
 };
