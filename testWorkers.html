@@ -15,9 +15,7 @@
 		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-fb63dc3e.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/distance/_page.svelte-e9afeec0.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/P5-16fb71b6.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/drawing-302ee9ee.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/testWorkers/_page.svelte-a2c10ba0.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/cells-998dd681.js">
 </head>
 
@@ -33,24 +31,45 @@
         <a href="/testWorkers">Workers test</a> |
     </nav></header>
 
-<div><p>Click left and right buttons to place the particles. This page is used to check the distance
-        function works properly with wrapping map
-    </p>
-    <span>Distance between cells: 0</span></div>
-
-<div class="d-flex justify-content-center"><div style="display: block;" class="m-0"></div></div>
 
 
-		<script type="module" data-sveltekit-hydrate="1hph0m8">
+
+<h1>Web worker test</h1>
+
+<p>This page is used to test web workers implementation. The buttons launch the same computations
+    with different way to do them.
+</p>
+<p><b>The computation:</b> To test our mecanism we generate a bunch of coordinates. The goal is to compute
+    the distance from each coordinates to each others. We choose this computation because it is somewhat
+    expensive and is good enough to do a proof of concept.
+</p>
+
+<p><b>Test sync</b> runs the computation directly in a sync function in the component</p>
+<p><b>Test worker</b> does the same thing but in a web worker. The computation time is similar to the
+    sync test case with some overhead probably due to the worker creation.
+</p>
+<p><b>Test workers</b> splits the array of coordinates into several chuncks, each chunk is processed
+    by a different worker which are executing in parallel. This leads to shorter execution times which
+    makes this POC a success.
+</p>
+
+<p><b>For now the workers only work with Chrome-based browser.</b> I need to figure out why.</p>
+
+<button>Test sync</button>
+<button>Test worker</button>
+<button>Test workers</button>
+
+
+		<script type="module" data-sveltekit-hydrate="1aifdl5">
 			import { start } from "./_app/immutable/start-e75ef7ab.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1hph0m8"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="1aifdl5"]').parentNode,
 				version: "1676919731332",
 				hydrate: {
-					node_ids: [0, 3],
+					node_ids: [0, 4],
 					data: [null,null],
 					form: null
 				}
