@@ -87,6 +87,7 @@ export class Engine {
         if (!this._workers.length) {
             return cb(new Error('_workers is undefined'));
         }
+
         let finished = 0;
         const onMessage = (response: MessageEvent<UpdateCellsWorkerResponse>) => {
             const { minIndex, maxIndex, cells } = response.data;
