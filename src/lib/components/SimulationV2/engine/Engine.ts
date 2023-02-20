@@ -6,13 +6,16 @@ const UpdateCellsWorker = await import('./updateCells.worker?worker');
 export class Engine {
     _running: boolean;
     _stepInterval: NodeJS.Timer | undefined;
-    _worker: Worker | undefined;
+    _workers: Worker[];
+    _nbWorkers: number;
     worldSize: WorldSize;
     cells: Cell[];
 
     constructor(worldSize: WorldSize, nbCells: number) {
         this._running = false;
         this._stepInterval = undefined;
+        this._nbWorkers = 1;
+        this._workers = [];
         this.worldSize = worldSize;
         this.cells = [] as Cell[];
 
@@ -31,8 +34,11 @@ export class Engine {
         if (!UpdateCellsWorker) {
             throw new Error('UpdateCellsWorker is undefined');
         }
-        if (!this._worker) {
-            this._worker = new UpdateCellsWorker.default();
+        if (!this._workers.length) {
+            this._workers = [];
+            for (let i = 0; i < this._nbWorkers; i++) {
+                this._workers.push(new UpdateCellsWorker.default());
+            }
         }
         this._running = true;
 
@@ -55,16 +61,38 @@ export class Engine {
     }
 
     step(cb: CallbackErrorOnly) {
-        if (!this._worker) {
-            return cb(new Error('_worker is undefined'));
+        if (!this._workers.length) {
+            return cb(new Error('_workers is undefined'));
         }
-        this._worker.onmessage = (response: MessageEvent<UpdateCellsWorkerResponse>) => {
+        let finished = 0;
+        const onMessage = (response: MessageEvent<UpdateCellsWorkerResponse>) => {
             const { minIndex, maxIndex, cells } = response.data;
             for (let i = minIndex; i < maxIndex; i++) {
                 this.cells[i].pos = cells[i].pos;
             }
-            return cb();
+            finished++;
+            if (finished === this._workers.length) {
+                return cb();
+            }
         };
-        this._worker.postMessage({ minIndex: 0, maxIndex: this.cells.length, cells: this.cells });
+
+        const batchSize = Math.floor(this.cells.length / this._workers.length);
+
+        for (let i = 0; i < this._workers.length; i++) {
+            const worker = this._workers[i];
+            worker.onmessage = onMessage;
+
+            const minIndex = i * batchSize;
+            const maxIndex =
+                i === this._workers.length - 1 ? this.cells.length - 1 : (i + 1) * batchSize - 1;
+
+            // console.log('starting worker', minIndex, maxIndex, this.cells.length);
+
+            worker.postMessage({
+                minIndex,
+                maxIndex,
+                cells: this.cells
+            });
+        }
     }
 }
