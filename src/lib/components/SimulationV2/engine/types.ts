@@ -20,3 +20,9 @@ export type UpdateCellsWorkerRequest = {
     maxIndex: number;
     cells: Cell[];
 };
+
+export type UpdateCellsWorkerResponse = {
+    minIndex: number;
+    maxIndex: number;
+    cells: Cell[];
+};

@@ -3,7 +3,7 @@
     import Canvas from './graphics/Canvas.svelte';
 
     const worldSize = { x: 100, y: 100 };
-    const engine = new Engine(worldSize, 100);
+    const engine = new Engine(worldSize, 10000);
 </script>
 
 <h2>V2 WIP</h2>

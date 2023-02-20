@@ -2,7 +2,7 @@ import type { UpdateCellsWorkerRequest } from './types';
 
 onmessage = (request: MessageEvent<UpdateCellsWorkerRequest>) => {
     const { minIndex, maxIndex, cells } = request.data;
-    console.log('in worker', minIndex, minIndex, cells);
+    console.log('in worker', minIndex, maxIndex);
 
     for (let i = minIndex; i < maxIndex; i++) {
         const cell = cells[i];
@@ -10,5 +10,5 @@ onmessage = (request: MessageEvent<UpdateCellsWorkerRequest>) => {
         cell.pos.y += Math.random() * 2 - 1;
     }
 
-    postMessage({});
+    postMessage({ minIndex, maxIndex, cells });
 };

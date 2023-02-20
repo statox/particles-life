@@ -1,5 +1,7 @@
 import type { CallbackErrorOnly } from '$lib/tsUtils';
-import type { Cell, WorldSize } from './types';
+import type { Cell, UpdateCellsWorkerResponse, WorldSize } from './types';
+
+const UpdateCellsWorker = await import('./updateCells.worker?worker');
 
 export class Engine {
     _running: boolean;
@@ -26,6 +28,12 @@ export class Engine {
     }
 
     async run() {
+        if (!UpdateCellsWorker) {
+            throw new Error('UpdateCellsWorker is undefined');
+        }
+        if (!this._worker) {
+            this._worker = new UpdateCellsWorker.default();
+        }
         this._running = true;
 
         this._stepInterval = setInterval(() => {
@@ -38,7 +46,7 @@ export class Engine {
                     throw error;
                 }
             });
-        }, 1000);
+        }, 1);
     }
 
     pause() {
@@ -47,11 +55,16 @@ export class Engine {
     }
 
     step(cb: CallbackErrorOnly) {
-        console.log('Doing step');
-        for (const cell of this.cells) {
-            cell.pos.x += Math.random() * 2 - 1;
-            cell.pos.y += Math.random() * 2 - 1;
+        if (!this._worker) {
+            return cb(new Error('_worker is undefined'));
         }
-        return cb();
+        this._worker.onmessage = (response: MessageEvent<UpdateCellsWorkerResponse>) => {
+            const { minIndex, maxIndex, cells } = response.data;
+            for (let i = minIndex; i < maxIndex; i++) {
+                this.cells[i].pos = cells[i].pos;
+            }
+            return cb();
+        };
+        this._worker.postMessage({ minIndex: 0, maxIndex: this.cells.length, cells: this.cells });
     }
 }
