@@ -1,32 +1,48 @@
 import type { CallbackErrorOnly } from '$lib/tsUtils';
-import type { Cell, UpdateCellsWorkerResponse, WorldSize } from './types';
+import { CellsMap } from '../cellsMap';
+import type { Cell, Color, UpdateCellsWorkerResponse, WorldSize } from './types';
 
 const UpdateCellsWorker = await import('./updateCells.worker?worker');
+
+const colors: Color[] = ['white', 'red', 'green', 'blue'];
+
+const randColor = (): Color => {
+    const randIndex = Math.floor(Math.random() * colors.length);
+    return colors[randIndex];
+};
 
 export class Engine {
     _running: boolean;
     _stepInterval: NodeJS.Timer | undefined;
     _workers: Worker[];
     _nbWorkers: number;
+    _cellsMap: CellsMap;
     worldSize: WorldSize;
     cells: Cell[];
 
-    constructor(worldSize: WorldSize, nbCells: number) {
+    constructor(nbCells: number) {
         this._running = false;
         this._stepInterval = undefined;
-        this._nbWorkers = 1;
+        this._nbWorkers = 6;
         this._workers = [];
-        this.worldSize = worldSize;
+        this.worldSize = { x: 1600, y: 960 };
         this.cells = [] as Cell[];
 
+        this._cellsMap = new CellsMap({ worldSize: this.worldSize, maxAttractionRadius: 32 });
+
         for (let i = 0; i < nbCells; i++) {
-            this.cells.push({
+            const cell: Cell = {
                 id: i,
-                pos: { x: worldSize.x / 2, y: worldSize.y / 2 },
+                pos: {
+                    x: Math.floor(Math.random() * this.worldSize.x),
+                    y: Math.floor(Math.random() * this.worldSize.y)
+                },
                 nextPos: { x: 0, y: 0 },
                 vel: { x: 0, y: 0 },
-                color: 'white'
-            });
+                color: randColor()
+            };
+            this.cells.push(cell);
+            this._cellsMap.insert(cell);
         }
     }
 
@@ -68,7 +84,8 @@ export class Engine {
         const onMessage = (response: MessageEvent<UpdateCellsWorkerResponse>) => {
             const { minIndex, maxIndex, cells } = response.data;
             for (let i = minIndex; i < maxIndex; i++) {
-                this.cells[i].pos = cells[i].pos;
+                this.cells[i].pos = cells[i].nextPos;
+                this._cellsMap.updateCell(this.cells[i]);
             }
             finished++;
             if (finished === this._workers.length) {
@@ -91,7 +108,9 @@ export class Engine {
             worker.postMessage({
                 minIndex,
                 maxIndex,
-                cells: this.cells
+                cells: this.cells,
+                cellsMap: this._cellsMap,
+                worldSize: this.worldSize
             });
         }
     }

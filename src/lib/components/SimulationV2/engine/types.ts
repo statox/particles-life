@@ -1,3 +1,5 @@
+import type { CellsMap } from '../cellsMap';
+
 export type Coordinates = {
     x: number;
     y: number;
@@ -16,9 +18,11 @@ export interface Cell {
 }
 
 export type UpdateCellsWorkerRequest = {
+    worldSize: WorldSize;
     minIndex: number;
     maxIndex: number;
     cells: Cell[];
+    cellsMap: CellsMap;
 };
 
 export type UpdateCellsWorkerResponse = {

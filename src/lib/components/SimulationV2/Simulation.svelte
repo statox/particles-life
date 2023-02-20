@@ -2,13 +2,12 @@
     import { Engine } from './engine';
     import Canvas from './graphics/Canvas.svelte';
 
-    const worldSize = { x: 100, y: 100 };
-    const engine = new Engine(worldSize, 10000);
+    const engine = new Engine(5000);
 </script>
 
 <h2>V2 WIP</h2>
 
-<Canvas cells={engine.cells} {worldSize} />
+<Canvas cells={engine.cells} worldSize={engine.worldSize} />
 
 <div>
     <button
