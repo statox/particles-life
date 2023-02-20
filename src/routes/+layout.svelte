@@ -6,6 +6,7 @@
         <a href="/webgl">WebGL</a> |
         <a href="/distance">Distance test</a> |
         <a href="/testWorkers">Workers test</a> |
+        <a href="/v2">V2</a> |
     </nav>
 </header>
 
