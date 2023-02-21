@@ -243,5 +243,36 @@ export const tables: StoredTable[] = [
                 blue: -1
             }
         }
+    },
+    {
+        name: 'Large vessels',
+        description:
+            'Create large gliders with branches. The cells are ordered white, blue, red green',
+        table: {
+            white: {
+                white: 0,
+                red: 1,
+                green: 0,
+                blue: 2
+            },
+            red: {
+                white: 0,
+                red: 1,
+                green: 1,
+                blue: -1
+            },
+            green: {
+                white: -1,
+                red: 1,
+                green: 0,
+                blue: 1
+            },
+            blue: {
+                white: -1,
+                red: 2,
+                green: 2,
+                blue: 2
+            }
+        }
     }
 ];
