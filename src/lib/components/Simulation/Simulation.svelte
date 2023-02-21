@@ -25,16 +25,17 @@
     const maxAttractionRadius = 32;
 
     const resetCells = () => {
-        const newValues = getNewCells(worldSize, 2500, maxAttractionRadius);
+        const newValues = getNewCells(worldSize, 2000, maxAttractionRadius);
         cells = newValues.cells;
         cellsMap = newValues.cellsMap;
     };
 
+    let simulationTimeout: unknown; // Can't type the return of setTimeout
     const simulationLoop = () => {
         if (simulationControls.pause === false) {
             updateCells(attractionTable, maxAttractionRadius, cells, cellsMap);
         }
-        setTimeout(simulationLoop, 1);
+        simulationTimeout = setTimeout(simulationLoop, 1);
     };
 
     const sketch: Sketch = (p5) => {
@@ -62,6 +63,22 @@
         }
     };
 
+    const centerCells = () => {
+        for (const cell of cells) {
+            const r = 2 * Math.random();
+            const theta = Math.random() * 2 * Math.PI;
+            const x = worldSize.x / 2 + r * Math.cos(theta);
+            const y = worldSize.y / 2 + r * Math.sin(theta);
+
+            cell.pos = {
+                // x: worldSize.x / 2 + (Math.random() * 100 - 50),
+                // y: worldSize.y / 2 + (Math.random() * 100 - 50)
+                x: x,
+                y: y
+            };
+        }
+    };
+
     onMount(() => {
         resetCells();
         attractionTable = getRandomAttractionTable();
@@ -69,6 +86,7 @@
     });
     onDestroy(() => {
         _p5?.remove();
+        clearTimeout(simulationTimeout as any);
     });
 </script>
 
@@ -84,6 +102,7 @@
         </button>
         <button on:click={resetCells}>Reset cells</button>
         <button on:click={rainbow}>Rainbow</button>
+        <button on:click={centerCells}>Center</button>
     </div>
 
     <AttractionTableChoice updateTable={updateAttractionTable} />
