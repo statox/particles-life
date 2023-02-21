@@ -1,4 +1,4 @@
-import { distance } from '../cells';
+import { distance, distanceSqrd } from '../cells';
 import type { AttractionTable, Cell, Coordinates } from '../types';
 
 // This was the first version which didn't do map to soften the attraction based
@@ -29,19 +29,23 @@ export const getAttractionForce = (
     a: Cell,
     b: Cell
 ) => {
-    const dist = distance(worldSize, a.pos, b.pos);
-    if (dist > maxAttractionRadius) {
+    const distSqrd = distanceSqrd(worldSize, a.pos, b.pos);
+    const radiusSqrd = maxAttractionRadius * maxAttractionRadius;
+    if (distSqrd > radiusSqrd) {
         return 0;
     }
-    if (dist < maxAttractionRadius / 2) {
-        return linearMap(dist, 0, maxAttractionRadius / 2, -1, 0);
+    // push cells apart if they are too close
+    const cellRadius = 3;
+    const minDistanceSqrd = (2 * cellRadius) ** 2;
+    if (distSqrd < minDistanceSqrd) {
+        return -1;
     }
 
     const attractionValue = attractionTable[a.color][b.color] ?? 0;
     if (attractionValue === 0) {
         return 0;
     }
-    return triangleMap(dist, maxAttractionRadius / 2, maxAttractionRadius, 0, attractionValue);
+    return triangleMap(distSqrd, radiusSqrd / 2, radiusSqrd, 0, attractionValue);
 };
 
 const triangleMap = function (
