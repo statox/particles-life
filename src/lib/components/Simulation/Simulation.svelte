@@ -9,6 +9,7 @@
     import type { CellsMap } from './location';
     import AttractionTableComponent from './attraction/AttractionTableComponent.svelte';
     import AttractionTableChoice from './attraction/AttractionTableChoice.svelte';
+    import Canvas from './graphics/Canvas.svelte';
 
     let _p5: p5;
 
@@ -72,7 +73,8 @@
 </script>
 
 <div class="d-flex justify-content-center">
-    <P5 {sketch} />
+    <!-- <P5 {sketch} /> -->
+    <Canvas {cells} worldSize={cellsMap?.worldSize} />
 </div>
 
 <div>

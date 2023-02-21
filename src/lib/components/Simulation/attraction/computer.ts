@@ -58,7 +58,7 @@ const triangleMap = function (
     return linearMap(n, middle, stop1, stop2, start2);
 };
 
-const linearMap = function (
+export const linearMap = function (
     n: number,
     start1: number,
     stop1: number,
