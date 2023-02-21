@@ -128,26 +128,26 @@ export const tables: StoredTable[] = [
         table: {
             white: {
                 white: -1,
-                red: -1,
-                green: -1,
-                blue: -1
+                red: 1,
+                green: 0,
+                blue: 0
             },
             red: {
-                white: -1,
+                white: 0,
                 red: -1,
-                green: -1,
-                blue: -1
+                green: 1,
+                blue: 0
             },
             green: {
-                white: -1,
-                red: -1,
+                white: 0,
+                red: 0,
                 green: -1,
-                blue: -1
+                blue: 1
             },
             blue: {
-                white: -1,
-                red: -1,
-                green: -1,
+                white: 1,
+                red: 0,
+                green: 0,
                 blue: -1
             }
         }
