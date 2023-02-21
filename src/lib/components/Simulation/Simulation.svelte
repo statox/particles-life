@@ -24,7 +24,7 @@
     const maxAttractionRadius = 32;
 
     const resetCells = () => {
-        const newValues = getNewCells(worldSize, 1000, maxAttractionRadius);
+        const newValues = getNewCells(worldSize, 2500, maxAttractionRadius);
         cells = newValues.cells;
         cellsMap = newValues.cellsMap;
     };
