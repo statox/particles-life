@@ -4,7 +4,7 @@
     import AttractionTableChoice from '../Simulation/attraction/AttractionTableChoice.svelte';
     import AttractionTableComponent from '../Simulation/attraction/AttractionTableComponent.svelte';
     import type { AttractionTable } from '../Simulation/types';
-    import type { Cell, Coordinates, UpdateCellsResponse } from './engine';
+    import type { Cell, Color, Coordinates, UpdateCellsResponse } from './engine';
     import { getRandomAttractionTable } from './engine/attraction';
     import { getNewCells } from './engine/cells';
 
@@ -60,7 +60,36 @@
         start();
     };
 
-    const start = () => {
+    const centerCells = () => {
+        for (const cell of cells) {
+            const r = 2 * Math.random();
+            const theta = Math.random() * 2 * Math.PI;
+            const x = worldSize.x / 2 + r * Math.cos(theta);
+            const y = worldSize.y / 2 + r * Math.sin(theta);
+
+            cell.pos = { x, y };
+        }
+
+        start(true, true);
+    };
+
+    const rainbowCells = () => {
+        const colors: Color[] = ['white', 'red', 'green', 'blue'];
+        const sectionWidth = worldSize.x / 4;
+        for (const cell of cells) {
+            const colorIndex = Math.floor(cell.pos.x / sectionWidth);
+            const color = colors[colorIndex];
+            cell.color = color;
+        }
+
+        start(true, true);
+    };
+
+    const resetSimulation = () => {
+        start(false, false);
+    };
+
+    const start = (keepCells?: boolean, keepTable?: boolean) => {
         if (WorkerConstructor === undefined) {
             throw new Error('Worker is not initialized');
         }
@@ -74,8 +103,12 @@
         };
         worker.onmessage = onCellsUpdate;
 
-        cells = getNewCells(worldSize, nbParticles);
-        attractionTable = getRandomAttractionTable();
+        if (!keepCells) {
+            cells = getNewCells(worldSize, nbParticles);
+        }
+        if (!keepTable) {
+            attractionTable = getRandomAttractionTable();
+        }
         history = [] as Coordinates[][];
         worker.postMessage({
             msg: 'start',
@@ -153,7 +186,9 @@
 <Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
 
 <div>
-    <button on:click={start}> Start </button>
+    <button on:click={resetSimulation}> Reset simulation </button>
+    <button on:click={centerCells}> Center cells </button>
+    <button on:click={rainbowCells}> Rainbow cells </button>
 </div>
 
 <AttractionTableChoice updateTable={updateAttractionTable} />
