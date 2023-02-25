@@ -1,6 +1,6 @@
 export type CallbackErrorOnly = (error?: Error) => void;
 
-export type Callback<T> = (error: Error, results?: T) => void;
+export type Callback<T> = (error?: Error, results?: T) => void;
 
 export type Dictionary<T> = { [key: string]: T };
 
