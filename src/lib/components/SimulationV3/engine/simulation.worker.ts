@@ -19,6 +19,10 @@ onmessage = (request: MessageEvent<EngineRequest>) => {
     if (msg === 'unpause') {
         engine.unpause();
     }
+
+    if (msg === 'updateTable') {
+        engine.updateAttractionTable(request.data.attractionTable);
+    }
 };
 
 const onUpdatedCells: Callback<Cell[]> = (error, cells) => {

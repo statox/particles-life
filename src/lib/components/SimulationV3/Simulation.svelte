@@ -25,7 +25,14 @@
 
     const updateAttractionTable = (newAttractionTable: AttractionTable) => {
         attractionTable = newAttractionTable;
-        console.error('Not implemented');
+        // This doesn't work completely because of the history buffer.
+        // There is a delay between the press of the button and the moment
+        // the frames affected by the change pop out of the buffer.
+        worker.postMessage({
+            msg: 'updateTable',
+            attractionTable
+        });
+        history = [cells.map((c) => c.pos)];
     };
 
     const start = () => {
@@ -37,7 +44,7 @@
         };
         worker.onmessage = onCellsUpdate;
 
-        cells = getNewCells(worldSize, 1000);
+        cells = getNewCells(worldSize, 4000);
         attractionTable = getRandomAttractionTable();
         history = [] as Coordinates[][];
         worker.postMessage({
