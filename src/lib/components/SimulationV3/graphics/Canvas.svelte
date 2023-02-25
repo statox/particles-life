@@ -25,6 +25,13 @@
         green: 2,
         blue: 3
     };
+    const realColors = {
+        white: '#ffedff',
+        red: '#fc2a51',
+        green: '#8ff97c',
+        blue: '#77cfff',
+        background: '#383b3d'
+    };
     const n = colors.length;
     const r = cellSize;
     const d = r * 2;
@@ -37,7 +44,7 @@
         const ctx = canvas.getContext('2d');
 
         // Background
-        ctx.fillStyle = '#040411';
+        ctx.fillStyle = realColors.background;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         if (!cells?.length) {
@@ -93,7 +100,9 @@
         }
 
         for (var i = 0; i < n; ++i) {
-            offCtx.fillStyle = colors[i];
+            const color = colors[i];
+            const realColor = realColors[color];
+            offCtx.fillStyle = realColor;
             offCtx.beginPath();
             offCtx.arc(i * d + r, r, r, 0, 2 * Math.PI);
             offCtx.closePath();
