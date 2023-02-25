@@ -13,7 +13,12 @@ export class Engine {
     worldSize: WorldSize;
     cells: Cell[];
 
-    constructor(cells: Cell[], attractionTable: AttractionTable, worldSize: WorldSize) {
+    constructor(
+        cells: Cell[],
+        attractionTable: AttractionTable,
+        worldSize: WorldSize,
+        maxAttractionRadius: number
+    ) {
         this._stepTimeout = undefined;
         this._stepCb = console.log; // The actual function is provided to run()
         this._running = false;
@@ -21,7 +26,7 @@ export class Engine {
         this.attractionTable = attractionTable;
         this.worldSize = worldSize;
 
-        this._cellsMap = new CellsMap({ worldSize: this.worldSize, maxAttractionRadius: 32 });
+        this._cellsMap = new CellsMap({ worldSize: this.worldSize, maxAttractionRadius });
 
         for (const cell of this.cells) {
             this._cellsMap.insert(cell);

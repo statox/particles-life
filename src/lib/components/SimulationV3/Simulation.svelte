@@ -15,6 +15,8 @@
     let history: Coordinates[][];
     let attractionTable: AttractionTable;
     const worldSize = { x: 1600, y: 960 };
+    const maxAttractionRadius = 32;
+    const nbParticles = 4000;
 
     const loadWorker = async () => {
         const SimulationWorker = await import(
@@ -44,14 +46,15 @@
         };
         worker.onmessage = onCellsUpdate;
 
-        cells = getNewCells(worldSize, 4000);
+        cells = getNewCells(worldSize, nbParticles);
         attractionTable = getRandomAttractionTable();
         history = [] as Coordinates[][];
         worker.postMessage({
             msg: 'start',
             cells,
             attractionTable,
-            worldSize
+            worldSize,
+            maxAttractionRadius
         });
     };
 

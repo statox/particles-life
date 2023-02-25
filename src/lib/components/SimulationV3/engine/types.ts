@@ -22,6 +22,7 @@ export type StartEngineRequest = {
     cells: Cell[];
     attractionTable: AttractionTable;
     worldSize: WorldSize;
+    maxAttractionRadius: number;
 };
 
 export type PauseEngineRequest = {
