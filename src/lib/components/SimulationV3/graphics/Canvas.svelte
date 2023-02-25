@@ -25,7 +25,7 @@
         blue: 3
     };
     const n = colors.length;
-    const r = 3;
+    const r = 1;
     const d = r * 2;
 
     function draw() {
@@ -44,23 +44,12 @@
             return;
         }
 
-        const size = 3;
-
         // Sorting the cells by colors allow to limit the times we change the fil color
-        const sortedCells = [...cells].sort((a, b) => colorsIndex[a.color] - colorsIndex[b.color]);
-        for (let i = 0; i < sortedCells.length; i++) {
-            const cell = sortedCells[i];
+        // const sortedCells = [...cells].sort((a, b) => colorsIndex[a.color] - colorsIndex[b.color]);
+        for (let i = 0; i < cells.length; i++) {
+            const cell = cells[i];
             const x = Math.floor(linearMap(cell.pos.x, 0, worldSize.x, 0, canvas.width));
             const y = Math.floor(linearMap(cell.pos.y, 0, worldSize.y, 0, canvas.height));
-
-            // Limit the number of time we change the color to improve perfs
-            if (i === 0 || cell.color !== sortedCells[i - 1].color) {
-                ctx.fill();
-                ctx.fillStyle = cell.color;
-            }
-            ctx.beginPath();
-            ctx.arc(x, y, size, 0, 2 * Math.PI);
-            ctx.closePath();
 
             var c = colorsIndex[cell.color];
 
@@ -76,7 +65,6 @@
 
             ctx.drawImage(off, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
         }
-        ctx.fill();
         drewFrame();
 
         window.requestAnimationFrame(draw);
