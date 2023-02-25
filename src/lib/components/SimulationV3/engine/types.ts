@@ -33,6 +33,10 @@ export type UnpauseEngineRequest = {
     msg: 'unpause';
 };
 
+export type DestroyEngineRequest = {
+    msg: 'destroy';
+};
+
 export type UpdateTableEngineRequest = {
     msg: 'updateTable';
     attractionTable: AttractionTable;
@@ -42,7 +46,8 @@ export type EngineRequest =
     | StartEngineRequest
     | PauseEngineRequest
     | UnpauseEngineRequest
-    | UpdateTableEngineRequest;
+    | UpdateTableEngineRequest
+    | DestroyEngineRequest;
 
 export type UpdateCellsResponse = {
     positions: Coordinates[];

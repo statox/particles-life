@@ -26,6 +26,12 @@ onmessage = (request: MessageEvent<EngineRequest>) => {
     if (msg === 'updateTable') {
         engine.updateAttractionTable(request.data.attractionTable);
     }
+
+    if (msg === 'destroy') {
+        if (engine) {
+            engine.destroy();
+        }
+    }
 };
 
 const onUpdatedCells: Callback<Cell[]> = (error, cells) => {

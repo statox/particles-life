@@ -21,22 +21,23 @@
     // let maxAttractionRadius = 32;
     // let nbParticles = 1000;
 
-    // const worldSize = { x: 1600, y: 960 };
-    // let maxAttractionRadius = 32;
-    // let nbParticles = 4000;
-
-    const worldSize = { x: 1920, y: 1280 };
+    const worldSize = { x: 1600, y: 960 };
     let maxAttractionRadius = 32;
-    let nbParticles = 8000;
+    let nbParticles = 4000;
+
+    // const worldSize = { x: 1920, y: 1280 };
+    // let maxAttractionRadius = 32;
+    // let nbParticles = 8000;
 
     let horizontalResolution = 60;
     let verticalResolution = 40;
 
+    let WorkerConstructor: new () => Worker;
     const loadWorker = async () => {
         const SimulationWorker = await import(
             '$lib/components/SimulationV3/engine/simulation.worker?worker'
         );
-        worker = new SimulationWorker.default();
+        WorkerConstructor = SimulationWorker.default;
         start();
     };
 
@@ -56,26 +57,18 @@
         worldSize.x = maxAttractionRadius * horizontalResolution;
         worldSize.y = maxAttractionRadius * verticalResolution;
 
-        history = [] as Coordinates[][];
-        const onCellsUpdate = (response: MessageEvent<UpdateCellsResponse>) => {
-            history.push(response.data.positions);
-        };
-        worker.onmessage = onCellsUpdate;
-
-        cells = getNewCells(worldSize, nbParticles);
-        worker.postMessage({
-            msg: 'start',
-            cells,
-            attractionTable,
-            worldSize,
-            maxAttractionRadius
-        });
+        start();
     };
 
     const start = () => {
-        if (!worker) {
+        if (WorkerConstructor === undefined) {
             throw new Error('Worker is not initialized');
         }
+        if (worker) {
+            worker.postMessage({ msg: 'destroy' });
+            worker.terminate();
+        }
+        worker = new WorkerConstructor();
         const onCellsUpdate = (response: MessageEvent<UpdateCellsResponse>) => {
             history.push(response.data.positions);
         };
