@@ -46,6 +46,10 @@ export class Engine {
         runSteps();
     }
 
+    destroy() {
+        clearTimeout(this._stepTimeout);
+    }
+
     pause() {
         if (this._running) {
             this._running = false;

@@ -8,6 +8,9 @@ onmessage = (request: MessageEvent<EngineRequest>) => {
 
     if (msg === 'start') {
         const { cells, attractionTable, worldSize, maxAttractionRadius } = request.data;
+        if (engine) {
+            engine.destroy();
+        }
         engine = new Engine(cells, attractionTable, worldSize, maxAttractionRadius);
         engine.run(onUpdatedCells);
     }
