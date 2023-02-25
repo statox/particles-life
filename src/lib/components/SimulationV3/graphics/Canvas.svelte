@@ -13,6 +13,7 @@
     import type { Cell, Color, Coordinates } from '../engine';
     import { linearMap } from '../engine/attraction';
 
+    export let cellSize: number;
     export let cells: Cell[];
     export let worldSize: Coordinates;
     export let drewFrame: () => void;
@@ -25,7 +26,7 @@
         blue: 3
     };
     const n = colors.length;
-    const r = 1;
+    const r = cellSize;
     const d = r * 2;
 
     function draw() {

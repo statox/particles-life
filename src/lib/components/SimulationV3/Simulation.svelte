@@ -14,9 +14,14 @@
     let cells: Cell[];
     let history: Coordinates[][];
     let attractionTable: AttractionTable;
-    const worldSize = { x: 1600, y: 960 };
+    // const worldSize = { x: 1600, y: 960 };
+    // const maxAttractionRadius = 32;
+    // const nbParticles = 4000;
+    // const cellSize = 3;
+    const worldSize = { x: 1920, y: 1280 };
     const maxAttractionRadius = 32;
-    const nbParticles = 4000;
+    const nbParticles = 8000;
+    const cellSize = 1;
 
     const loadWorker = async () => {
         const SimulationWorker = await import(
@@ -75,7 +80,7 @@
 
 <h2>V3 WIP</h2>
 
-<Canvas {cells} {worldSize} drewFrame={updateFrame} />
+<Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
 
 <div>
     <button on:click={start}> Start </button>
