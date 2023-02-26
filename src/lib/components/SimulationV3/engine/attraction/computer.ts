@@ -1,37 +1,16 @@
-import { distance, distanceSqrd } from '../cells';
-import type { AttractionTable, Cell, Coordinates } from '../types';
-
-// This was the first version which didn't do map to soften the attraction based
-// on the distance.
-// Keeping it to debug in case of issues
-export const getConstantAttractionForce = (
-    worldSize: Coordinates,
-    attractionTable: AttractionTable,
-    maxAttractionRadius: number,
-    a: Cell,
-    b: Cell
-) => {
-    const dist = distance(worldSize, a.pos, b.pos);
-    if (dist > maxAttractionRadius) {
-        return 0;
-    }
-    if (dist < maxAttractionRadius / 2) {
-        return -1;
-    }
-
-    return attractionTable[a.color][b.color] ?? 0;
-};
+import type { AttractionTable } from '$lib/components/Simulation/types';
+import { distanceSqrd } from '../cells';
+import type { Cell, Coordinates } from '../types';
 
 export const getAttractionForce = (
     worldSize: Coordinates,
     attractionTable: AttractionTable,
-    maxAttractionRadius: number,
+    maxAttractionRadiusSqrd: number,
     a: Cell,
     b: Cell
 ) => {
     const distSqrd = distanceSqrd(worldSize, a.pos, b.pos);
-    const radiusSqrd = maxAttractionRadius * maxAttractionRadius;
-    if (distSqrd > radiusSqrd) {
+    if (distSqrd > maxAttractionRadiusSqrd) {
         return 0;
     }
     // push cells apart if they are too close
@@ -45,7 +24,13 @@ export const getAttractionForce = (
     if (attractionValue === 0) {
         return 0;
     }
-    return triangleMap(distSqrd, radiusSqrd / 2, radiusSqrd, 0, attractionValue);
+    return triangleMap(
+        distSqrd,
+        maxAttractionRadiusSqrd / 2,
+        maxAttractionRadiusSqrd,
+        0,
+        attractionValue
+    );
 };
 
 const triangleMap = function (

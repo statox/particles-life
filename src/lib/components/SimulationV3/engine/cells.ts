@@ -28,20 +28,6 @@ export const getNewCells = (worldSize: Coordinates, nbParticles: number): Cell[]
     return cells;
 };
 
-export const distance = (worldSize: Coordinates, a: Coordinates, b: Coordinates) => {
-    // Take into consideration the fact that the map is wrapping
-    // https://stackoverflow.com/a/3041398
-    let dx = Math.abs(b.x - a.x);
-    if (dx > worldSize.x / 2) {
-        dx = worldSize.x - dx;
-    }
-    let dy = Math.abs(b.y - a.y);
-    if (dy > worldSize.y / 2) {
-        dy = worldSize.y - dy;
-    }
-    return Math.sqrt(dx * dx + dy * dy);
-};
-
 export const distanceSqrd = (worldSize: Coordinates, a: Coordinates, b: Coordinates) => {
     // Take into consideration the fact that the map is wrapping
     // https://stackoverflow.com/a/3041398
@@ -68,6 +54,11 @@ export const updateCells = (
     cells: Cell[],
     cellsMap: CellsMap
 ) => {
+    const smallestDimension =
+        cellsMap.worldSize.x < cellsMap.worldSize.y ? cellsMap.worldSize.x : cellsMap.worldSize.y;
+    const halfWorldDistance = (smallestDimension * smallestDimension) / 2;
+    const maxAttractionRadiusSqrd = maxAttractionRadius * maxAttractionRadius;
+
     for (let i = 0; i < cells.length; i++) {
         const cell = cells[i];
         cell.vel = { x: 0, y: 0 };
@@ -82,7 +73,7 @@ export const updateCells = (
             let attractionForce = getAttractionForce(
                 cellsMap.worldSize,
                 attractionTable,
-                maxAttractionRadius,
+                maxAttractionRadiusSqrd,
                 cell,
                 other
             );
@@ -93,10 +84,7 @@ export const updateCells = (
             // But if distanceSqaredNoWrap is big enough it means it is on the other side
             // of the (not wraped) map so we need to invert the attractionForce to Take
             // that into account
-            if (
-                distanceSqaredNoWrap(cell.pos, other.pos) >
-                (cellsMap.worldSize.y * cellsMap.worldSize.y) / 2
-            ) {
+            if (distanceSqaredNoWrap(cell.pos, other.pos) > halfWorldDistance) {
                 attractionForce *= -1;
             }
 
