@@ -16,6 +16,7 @@
     let attractionTable: AttractionTable;
     let lastFrameTimestamp = 0;
     let timeToFrame = 0;
+    let renderPaused = false;
 
     const cellSize = 1;
 
@@ -148,7 +149,9 @@
             timeToFrame = now - lastFrameTimestamp;
             lastFrameTimestamp = now;
 
-            frameIndex++;
+            if (!renderPaused) {
+                frameIndex++;
+            }
             const positions = buffer[frameIndex];
             buffer = buffer;
 
@@ -213,11 +216,26 @@
 
 <Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
 <div>
-    <span>Buffer size: {(buffer?.length || 0) - frameIndex}</span>
-    <span>Current frame: {frameIndex}</span>
-    <span>Frame length (ms): {timeToFrame}</span>
+    <div>
+        <span>Buffer size: {(buffer?.length || 0) - frameIndex}</span>
+        <span>Current frame: {frameIndex}</span>
+        <span>Frame length (ms): {timeToFrame}</span>
+    </div>
+
+    <input
+        type="range"
+        min="1"
+        max={buffer?.length ? buffer.length - 1 : 0}
+        bind:value={frameIndex}
+        class="slider"
+        id="frameIndexSlider"
+    />
 
     <button on:click={replayFromStart}>Replay from start</button>
+    <button on:click={() => (frameIndex = buffer.length - 1 || 0)}>Catchup last frame</button>
+    <button on:click={() => (renderPaused = !renderPaused)}>
+        {renderPaused ? 'Play' : 'Pause'}
+    </button>
 </div>
 
 <div>
