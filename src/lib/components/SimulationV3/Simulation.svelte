@@ -14,6 +14,8 @@
     let cells: Cell[];
     let buffer: Coordinates[][];
     let attractionTable: AttractionTable;
+    let lastFrameTimestamp = 0;
+    let timeToFrame = 0;
 
     const cellSize = 1;
 
@@ -123,6 +125,9 @@
         // Keep a buffer of frames which is useful at the beginning
         // when the simulation worker is faster than the drawing loop
         if (buffer.length > 0) {
+            const now = Date.now();
+            timeToFrame = now - lastFrameTimestamp;
+            lastFrameTimestamp = now;
             const positions = buffer.shift() || [];
             // Used to refresh counter in UI
             buffer = buffer;
@@ -186,7 +191,10 @@
 </div>
 
 <Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
-<span>Buffer size: {buffer?.length || 0}</span>
+<div>
+    <span>Buffer size: {buffer?.length || 0}</span>
+    <span>Waited for frame: {timeToFrame}</span>
+</div>
 
 <div>
     <button on:click={resetSimulation}> Reset simulation </button>
