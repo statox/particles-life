@@ -125,6 +125,7 @@
             attractionTable = getRandomAttractionTable();
         }
         buffer = [] as Coordinates[][];
+        frameIndex = 0;
         worker.postMessage({
             msg: 'start',
             cells,
@@ -134,16 +135,23 @@
         });
     };
 
+    const replayFromStart = () => {
+        frameIndex = 0;
+    };
+
+    let frameIndex = 0;
     const updateFrame = () => {
         // Keep a buffer of frames which is useful at the beginning
         // when the simulation worker is faster than the drawing loop
-        if (buffer.length > 0) {
+        if (buffer.length - 1 > frameIndex) {
             const now = Date.now();
             timeToFrame = now - lastFrameTimestamp;
             lastFrameTimestamp = now;
-            const positions = buffer.shift() || [];
-            // Used to refresh counter in UI
+
+            frameIndex++;
+            const positions = buffer[frameIndex];
             buffer = buffer;
+
             if (positions.length !== cells.length) {
                 return;
             }
@@ -205,8 +213,11 @@
 
 <Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
 <div>
-    <span>Buffer size: {buffer?.length || 0}</span>
-    <span>Waited for frame: {timeToFrame}</span>
+    <span>Buffer size: {(buffer?.length || 0) - frameIndex}</span>
+    <span>Current frame: {frameIndex}</span>
+    <span>Frame length (ms): {timeToFrame}</span>
+
+    <button on:click={replayFromStart}>Replay from start</button>
 </div>
 
 <div>
