@@ -1,7 +1,8 @@
+import { getZeroedAttractionTable } from '$lib/components/Simulation/attraction';
 import type { AttractionTable } from '$lib/components/Simulation/types';
 import type { Callback } from '$lib/tsUtils';
 import { CellsMap } from '../cellsMap';
-import { updateCells } from './cells';
+import { pullCellsAppart, updateCells } from './cells';
 import type { Cell, WorldSize } from './types';
 
 export class Engine {
@@ -17,7 +18,10 @@ export class Engine {
         cells: Cell[],
         attractionTable: AttractionTable,
         worldSize: WorldSize,
-        maxAttractionRadius: number
+        maxAttractionRadius: number,
+        params: {
+            pullAppartAtStart: boolean;
+        }
     ) {
         this._stepTimeout = undefined;
         this._stepCb = console.log; // The actual function is provided to run()
@@ -30,6 +34,16 @@ export class Engine {
 
         for (const cell of this.cells) {
             this._cellsMap.insert(cell);
+        }
+        if (params.pullAppartAtStart) {
+            for (let i = 0; i < 100; i++) {
+                updateCells(
+                    getZeroedAttractionTable(),
+                    this._cellsMap.maxAttractionRadius,
+                    this.cells,
+                    this._cellsMap
+                );
+            }
         }
     }
 

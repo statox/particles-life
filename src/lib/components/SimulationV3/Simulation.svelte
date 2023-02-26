@@ -102,7 +102,7 @@
     };
 
     const resetSimulation = () => {
-        start(false, false);
+        start(false, true);
     };
 
     const start = (keepCells?: boolean, keepTable?: boolean) => {
@@ -239,7 +239,7 @@
 </div>
 
 <div>
-    <button on:click={resetSimulation}> Reset simulation </button>
+    <button on:click={resetSimulation}> Reset cells </button>
     <button on:click={centerCells}> Center cells </button>
     <button on:click={largeCenterCells}> Large Center cells </button>
     <button on:click={rainbowCells}> Rainbow cells </button>

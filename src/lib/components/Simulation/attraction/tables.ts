@@ -28,7 +28,66 @@ export const getRandomAttractionTable = (): AttractionTable => {
         }
     };
 };
+
+export const getZeroedAttractionTable = (): AttractionTable => {
+    return {
+        white: {
+            white: 0,
+            red: 0,
+            green: 0,
+            blue: 0
+        },
+        red: {
+            white: 0,
+            red: 0,
+            green: 0,
+            blue: 0
+        },
+        green: {
+            white: 0,
+            red: 0,
+            green: 0,
+            blue: 0
+        },
+        blue: {
+            white: 0,
+            red: 0,
+            green: 0,
+            blue: 0
+        }
+    };
+};
 export const tables: StoredTable[] = [
+    {
+        name: 'Negs',
+        description: 'Only -1',
+        table: {
+            white: {
+                white: -1,
+                red: -1,
+                green: -1,
+                blue: -1
+            },
+            red: {
+                white: -1,
+                red: -1,
+                green: -1,
+                blue: -1
+            },
+            green: {
+                white: -1,
+                red: -1,
+                green: -1,
+                blue: -1
+            },
+            blue: {
+                white: -1,
+                red: -1,
+                green: -1,
+                blue: -1
+            }
+        }
+    },
     {
         name: 'Infinite motion',
         description:

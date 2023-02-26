@@ -11,7 +11,9 @@ onmessage = (request: MessageEvent<EngineRequest>) => {
         if (engine) {
             engine.destroy();
         }
-        engine = new Engine(cells, attractionTable, worldSize, maxAttractionRadius);
+        engine = new Engine(cells, attractionTable, worldSize, maxAttractionRadius, {
+            pullAppartAtStart: true
+        });
         engine.run(onUpdatedCells);
     }
 
