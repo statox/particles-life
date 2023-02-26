@@ -17,10 +17,9 @@
 		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-2802687f.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-9db5ff61.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/cells-3d58d19f.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/AttractionTableComponent-d5de4049.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/v3/_page.svelte-019a05eb.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/AttractionTableChoice-fd543907.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/AttractionTableComponent-d5de4049.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -37,16 +36,30 @@
         <a href="/v3">V3</a> |
     </nav></header>
 
-<div class="d-flex justify-content-center">
-    <div class="container svelte-bkdgvm"><canvas id="canvas" class="svelte-bkdgvm"></canvas>
-</div></div>
+<h2>V3 WIP</h2>
 
-<div><div><button>Pause</button>
-        <button>Reset cells</button>
-        <button>Rainbow</button>
-        <button>Center</button></div>
+<div><p><label for="attractionRadius">Simulation definition</label>
+        <input id="attractionRadius" type="number" value="32"></p>
 
-    <div><label for="tables">Select a new attraction table</label>
+    <p><label for="horizontalResolution">Simulation horizontal resolution</label>
+        <input id="horizontalResolution" type="number" value="60">
+        = 1920</p>
+
+    <p><label for="verticalResolution">Simulation vertical resolution</label>
+        <input id="verticalResolution" type="number" value="40">
+        = 1280</p>
+
+    <p><label for="nbParticles">Number of particles</label>
+        <input id="nbParticles" type="number" value="4000"></p></div>
+
+<div class="container svelte-bkdgvm"><canvas id="canvas" class="svelte-bkdgvm"></canvas>
+</div>
+
+<div><button>Reset simulation </button>
+    <button>Center cells </button>
+    <button>Rainbow cells </button></div>
+
+<div><label for="tables">Select a new attraction table</label>
     <select><option value="[object Object]">Random - A randomly generated table</option><option value="[object Object]">Infinite motion -
                 Some very simple patterns of reds chasing whites in a seemlingly infinite randomness
             </option><option value="[object Object]">No cohesion -
@@ -64,19 +77,19 @@
             </option><option value="[object Object]">Large vessels -
                 Create large gliders with branches. The cells are ordered white, blue, red green
             </option></select></div>
-    </div>
 
 
-		<script type="module" data-sveltekit-hydrate="18nfugm">
+
+		<script type="module" data-sveltekit-hydrate="1xxc5t2">
 			import { start } from "./_app/immutable/start-1a6b6950.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="18nfugm"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="1xxc5t2"]').parentNode,
 				version: "1677431003645",
 				hydrate: {
-					node_ids: [0, 2],
+					node_ids: [0, 6],
 					data: [null,null],
 					form: null
 				}
