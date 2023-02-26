@@ -12,7 +12,7 @@
 
     let worker: Worker;
     let cells: Cell[];
-    let history: Coordinates[][];
+    let buffer: Coordinates[][];
     let attractionTable: AttractionTable;
 
     const cellSize = 1;
@@ -50,7 +50,7 @@
             msg: 'updateTable',
             attractionTable
         });
-        history = [cells.map((c) => c.pos)];
+        buffer = [cells.map((c) => c.pos)];
     };
 
     const updateWorldSettings = () => {
@@ -99,7 +99,7 @@
         }
         worker = new WorkerConstructor();
         const onCellsUpdate = (response: MessageEvent<UpdateCellsResponse>) => {
-            history.push(response.data.positions);
+            buffer.push(response.data.positions);
         };
         worker.onmessage = onCellsUpdate;
 
@@ -109,7 +109,7 @@
         if (!keepTable) {
             attractionTable = getRandomAttractionTable();
         }
-        history = [] as Coordinates[][];
+        buffer = [] as Coordinates[][];
         worker.postMessage({
             msg: 'start',
             cells,
@@ -122,8 +122,10 @@
     const updateFrame = () => {
         // Keep a buffer of frames which is useful at the beginning
         // when the simulation worker is faster than the drawing loop
-        if (history.length > 0) {
-            const positions = history.shift() || [];
+        if (buffer.length > 0) {
+            const positions = buffer.shift() || [];
+            // Used to refresh counter in UI
+            buffer = buffer;
             if (positions.length !== cells.length) {
                 return;
             }
@@ -184,6 +186,7 @@
 </div>
 
 <Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
+<span>Buffer size: {buffer?.length || 0}</span>
 
 <div>
     <button on:click={resetSimulation}> Reset simulation </button>
