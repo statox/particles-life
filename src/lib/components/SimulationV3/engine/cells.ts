@@ -58,6 +58,8 @@ export const updateCells = (
         cellsMap.worldSize.x < cellsMap.worldSize.y ? cellsMap.worldSize.x : cellsMap.worldSize.y;
     const halfWorldDistance = (smallestDimension * smallestDimension) / 2;
     const maxAttractionRadiusSqrd = maxAttractionRadius * maxAttractionRadius;
+    const cellRadius = 3;
+    const minDistanceSqrd = (2 * cellRadius) ** 2;
 
     for (let i = 0; i < cells.length; i++) {
         const cell = cells[i];
@@ -68,15 +70,9 @@ export const updateCells = (
             if (i === j) {
                 continue;
             }
-
             const other = cells[j];
-            let attractionForce = getAttractionForce(
-                cellsMap.worldSize,
-                attractionTable,
-                maxAttractionRadiusSqrd,
-                cell,
-                other
-            );
+
+            const distSqrdNoWrap = distanceSqaredNoWrap(cell.pos, other.pos);
 
             // IMPORTANT
             // If other was in neigborIds it means that its distance on a wrap world
@@ -84,7 +80,23 @@ export const updateCells = (
             // But if distanceSqaredNoWrap is big enough it means it is on the other side
             // of the (not wraped) map so we need to invert the attractionForce to Take
             // that into account
-            if (distanceSqaredNoWrap(cell.pos, other.pos) > halfWorldDistance) {
+            let distSqrd = distSqrdNoWrap;
+            let wrapped = false;
+            if (distSqrdNoWrap > halfWorldDistance) {
+                distSqrd = distanceSqrd(cellsMap.worldSize, cell.pos, other.pos);
+                wrapped = true;
+            }
+
+            let attractionForce = getAttractionForce(
+                attractionTable,
+                maxAttractionRadiusSqrd,
+                minDistanceSqrd,
+                distSqrd,
+                cell.color,
+                other.color
+            );
+
+            if (wrapped) {
                 attractionForce *= -1;
             }
 

@@ -1,26 +1,23 @@
 import type { AttractionTable } from '$lib/components/Simulation/types';
-import { distanceSqrd } from '../cells';
-import type { Cell, Coordinates } from '../types';
+import type { Color } from '../types';
 
 export const getAttractionForce = (
-    worldSize: Coordinates,
     attractionTable: AttractionTable,
     maxAttractionRadiusSqrd: number,
-    a: Cell,
-    b: Cell
+    minDistanceSqrd: number,
+    distSqrd: number,
+    colorA: Color,
+    colorB: Color
 ) => {
-    const distSqrd = distanceSqrd(worldSize, a.pos, b.pos);
     if (distSqrd > maxAttractionRadiusSqrd) {
         return 0;
     }
     // push cells apart if they are too close
-    const cellRadius = 3;
-    const minDistanceSqrd = (2 * cellRadius) ** 2;
     if (distSqrd < minDistanceSqrd) {
         return -1;
     }
 
-    const attractionValue = attractionTable[a.color][b.color] ?? 0;
+    const attractionValue = attractionTable[colorA][colorB] ?? 0;
     if (attractionValue === 0) {
         return 0;
     }
