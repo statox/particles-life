@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
     <meta http-equiv="content-security-policy" content="">
 		<link href="/particles-life/_app/immutable/assets/AttractionTableComponent-e1a75a2c.css" rel="stylesheet">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/start-b7dd14ce.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/start-17454584.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-689c9b92.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/singletons-60c296f1.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/paths-b4419565.js">
@@ -17,9 +17,9 @@
 		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/_layout.svelte-3018ced2.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/v2/_page.svelte-09fc06ed.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableChoice-fd543907.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableComponent-d5de4049.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/v2/_page.svelte-06b4f51b.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableChoice-54d975cc.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableComponent-68b8dc88.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/P5-a2aedab4.js">
 </head>
 
@@ -45,7 +45,9 @@
 <div><button>Play</button></div>
 
 <div><label for="tables">Select a new attraction table</label>
-    <select><option value="[object Object]">Random - A randomly generated table</option><option value="[object Object]">Infinite motion -
+    <select><option value="[object Object]">Random - A randomly generated table</option><option value="[object Object]">Negs -
+                Only -1
+            </option><option value="[object Object]">Infinite motion -
                 Some very simple patterns of reds chasing whites in a seemlingly infinite randomness
             </option><option value="[object Object]">No cohesion -
                 Cells of the same color repulse each other
@@ -72,22 +74,26 @@
         <button style="background-color: white" disabled>white</button>
             
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #ff7d7d"></button>
+                    <button style="background-color: #000000"></button>
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #7dff7d"></button>
+                    <button style="background-color: #00ff00"></button>
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #7dff7d"></button>
+                    <button style="background-color: #00ff00"></button>
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #ff7d7d"></button>
+                    <button style="background-color: #000000"></button>
                     <button>+</button>
                 </span><button style="background-color: red" disabled>red</button>
             
+                <span class="grid1row3cols svelte-41p0gs"><button>-</button>
+                    <button style="background-color: #7dff7d"></button>
+                    <button>+</button>
+                </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
                     <button style="background-color: #00ff00"></button>
                     <button>+</button>
@@ -97,28 +103,24 @@
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
+                    <button style="background-color: #00ff00"></button>
+                    <button>+</button>
+                </span><button style="background-color: green" disabled>green</button>
+            
+                <span class="grid1row3cols svelte-41p0gs"><button>-</button>
                     <button style="background-color: #7dff7d"></button>
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #7dff7d"></button>
+                    <button style="background-color: #ff7d7d"></button>
                     <button>+</button>
-                </span><button style="background-color: green" disabled>green</button>
-            
+                </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
                     <button style="background-color: #ff7d7d"></button>
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
                     <button style="background-color: #000000"></button>
-                    <button>+</button>
-                </span>
-                <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #ff7d7d"></button>
-                    <button>+</button>
-                </span>
-                <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #00ff00"></button>
                     <button>+</button>
                 </span><button style="background-color: blue" disabled>blue</button>
             
@@ -131,23 +133,23 @@
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #00ff00"></button>
+                    <button style="background-color: #ff7d7d"></button>
                     <button>+</button>
                 </span>
                 <span class="grid1row3cols svelte-41p0gs"><button>-</button>
-                    <button style="background-color: #000000"></button>
+                    <button style="background-color: #7dff7d"></button>
                     <button>+</button>
                 </span></div>
 
 
-		<script type="module" data-sveltekit-hydrate="14uv9xi">
-			import { start } from "/particles-life/_app/immutable/start-b7dd14ce.js";
+		<script type="module" data-sveltekit-hydrate="fgc75v">
+			import { start } from "/particles-life/_app/immutable/start-17454584.js";
 
 			start({
 				env: {},
 				paths: {"base":"/particles-life","assets":"/particles-life"},
-				target: document.querySelector('[data-sveltekit-hydrate="14uv9xi"]').parentNode,
-				version: "1677452511593",
+				target: document.querySelector('[data-sveltekit-hydrate="fgc75v"]').parentNode,
+				version: "1677454479524",
 				hydrate: {
 					node_ids: [0, 5],
 					data: [null,null],
