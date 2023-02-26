@@ -75,6 +75,19 @@
         start(true, true);
     };
 
+    const largeCenterCells = () => {
+        for (const cell of cells) {
+            const r = 200 * Math.random();
+            const theta = Math.random() * 2 * Math.PI;
+            const x = worldSize.x / 2 + r * Math.cos(theta);
+            const y = worldSize.y / 2 + r * Math.sin(theta);
+
+            cell.pos = { x, y };
+        }
+
+        start(true, true);
+    };
+
     const rainbowCells = () => {
         const colors: Color[] = ['white', 'red', 'green', 'blue'];
         const sectionWidth = worldSize.x / 4;
@@ -199,6 +212,7 @@
 <div>
     <button on:click={resetSimulation}> Reset simulation </button>
     <button on:click={centerCells}> Center cells </button>
+    <button on:click={largeCenterCells}> Large Center cells </button>
     <button on:click={rainbowCells}> Rainbow cells </button>
 </div>
 
