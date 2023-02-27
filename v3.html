@@ -10,7 +10,7 @@
     <meta http-equiv="content-security-policy" content="">
 		<link href="/particles-life/_app/immutable/assets/_page-f1438e97.css" rel="stylesheet">
 		<link href="/particles-life/_app/immutable/assets/AttractionTableComponent-e1a75a2c.css" rel="stylesheet">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/start-17dbb5d4.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/start-accd488f.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-689c9b92.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/singletons-60c296f1.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/paths-b4419565.js">
@@ -18,9 +18,9 @@
 		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/_layout.svelte-3018ced2.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/v3/_page.svelte-98ecb9c3.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableChoice-54d975cc.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableComponent-68b8dc88.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/v3/_page.svelte-bec25988.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableChoice-fc32f805.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableComponent-c88af04d.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -63,9 +63,10 @@
 
     <input type="range" min="1" max="0" class="slider" id="frameIndexSlider" value="0">
 
-    <button>Replay from start</button>
-    <button>Catchup last frame</button>
-    <button>Pause</button></div>
+    <div><button>Replay from start</button>
+        <button>Catchup last frame</button>
+        <button>Pause</button></div>
+    <div><button>Hide colors</button></div></div>
 
 <div><button>Reset cells </button>
     <button>Center cells </button>
@@ -91,18 +92,20 @@
                 Create movers propelled by groups of white cells
             </option><option value="[object Object]">Large vessels -
                 Create large gliders with branches. The cells are ordered white, blue, red green
+            </option><option value="[object Object]">Universe -
+                Galaxies with blue center, red and white rings turning around evolving in a green goo
             </option></select></div>
 
 
 
-		<script type="module" data-sveltekit-hydrate="ff11ds">
-			import { start } from "/particles-life/_app/immutable/start-17dbb5d4.js";
+		<script type="module" data-sveltekit-hydrate="1xtin13">
+			import { start } from "/particles-life/_app/immutable/start-accd488f.js";
 
 			start({
 				env: {},
 				paths: {"base":"/particles-life","assets":"/particles-life"},
-				target: document.querySelector('[data-sveltekit-hydrate="ff11ds"]').parentNode,
-				version: "1677456861638",
+				target: document.querySelector('[data-sveltekit-hydrate="1xtin13"]').parentNode,
+				version: "1677458788991",
 				hydrate: {
 					node_ids: [0, 6],
 					data: [null,null],
