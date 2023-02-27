@@ -36,11 +36,33 @@
     const r = cellSize;
     const d = r * 2;
 
+    // Controls to limit FPS
+    // https://stackoverflow.com/a/19772220
+    let maxFPS = 25;
+    let maxFPSInput = maxFPS;
+    let fpsInterval: number;
+    let then: number;
+    let now: number;
+    let elapsed: number;
+
     function draw() {
         const canvas = document.getElementById('canvas');
         if (!canvas || !off) {
             throw new Error('Canvas is not ready');
         }
+        window.requestAnimationFrame(draw);
+
+        // Calc elapsed time since last loop
+        now = Date.now();
+        elapsed = now - then;
+        // If enough time has elapsed, draw the next frame
+        if (elapsed <= fpsInterval) {
+            return;
+        }
+        // Get ready for next frame by setting then=now, but also adjust for your
+        // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+        then = now - (elapsed % fpsInterval);
+
         const ctx = canvas.getContext('2d');
 
         // Background
@@ -74,8 +96,6 @@
             ctx.drawImage(off, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
         }
         drewFrame();
-
-        window.requestAnimationFrame(draw);
     }
 
     onMount(() => {
@@ -109,12 +129,26 @@
             offCtx.fill();
         }
 
+        fpsInterval = 1000 / maxFPS;
+        then = Date.now();
+
         window.requestAnimationFrame(draw);
     });
 </script>
 
 <div class="container">
     <canvas id="canvas" />
+    <label for="maxFPSInput">Limit FPS</label>
+    <input
+        id="maxFPSInput"
+        bind:value={maxFPSInput}
+        type="number"
+        on:change={() => {
+            maxFPS = maxFPSInput;
+            fpsInterval = 1000 / maxFPS;
+        }}
+        min="1"
+    />
 </div>
 
 <style>
