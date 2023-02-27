@@ -1,4 +1,4 @@
-import type { Color } from '$lib/components/SimulationV3/engine';
+import type { Color } from '$lib/engine';
 
 export type AttractionTable = {
     [selfColor in Color]: {

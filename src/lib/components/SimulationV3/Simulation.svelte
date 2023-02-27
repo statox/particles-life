@@ -4,11 +4,11 @@
     import AttractionTableChoice from '$lib/attraction/AttractionTableChoice.svelte';
     import AttractionTableComponent from '$lib/attraction/AttractionTableComponent.svelte';
     import type { AttractionTable } from '$lib/attraction';
-    import type { Cell, Color, Coordinates, UpdateCellsResponse } from './engine';
+    import type { Cell, Color, Coordinates, UpdateCellsResponse } from '$lib/engine';
     import { getRandomAttractionTable } from '$lib/attraction';
-    import { getNewCells } from './engine/cells';
 
     import Canvas from '$lib/graphics/Canvas.svelte';
+    import { getNewCells } from '$lib/engine/cells';
 
     let worker: Worker;
     let cells: Cell[];
@@ -43,9 +43,7 @@
 
     let WorkerConstructor: new () => Worker;
     const loadWorker = async () => {
-        const SimulationWorker = await import(
-            '$lib/components/SimulationV3/engine/simulation.worker?worker'
-        );
+        const SimulationWorker = await import('$lib/engine/simulation.worker?worker');
         WorkerConstructor = SimulationWorker.default;
         start();
     };

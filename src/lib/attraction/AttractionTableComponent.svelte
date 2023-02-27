@@ -1,6 +1,5 @@
 <script lang="ts">
-    import type { Color } from '$lib/components/SimulationV3/engine';
-
+    import type { Color } from '$lib/engine';
     import type { AttractionTable } from './types';
 
     export let attractionTable: AttractionTable;

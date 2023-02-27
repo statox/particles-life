@@ -1,6 +1,6 @@
 // See ./README.md for details and explanations
 
-import type { Cell, Coordinates } from '$lib/components/SimulationV3/engine';
+import type { Cell, Coordinates } from '$lib/engine';
 
 export class CellsMap {
     squares: Set<number>[][];

@@ -10,7 +10,7 @@
      */
 
     import { onMount } from 'svelte';
-    import type { Cell, Color, Coordinates } from '../engine';
+    import type { Cell, Color, Coordinates } from '$lib/engine';
     import { linearMap } from '$lib/attraction';
 
     export let cellSize: number;
