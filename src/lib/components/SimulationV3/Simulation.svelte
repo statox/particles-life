@@ -59,6 +59,7 @@
             attractionTable
         });
         buffer = [cells.map((c) => c.pos)];
+        frameIndex = 0;
     };
 
     const updateWorldSettings = () => {
