@@ -1,7 +1,6 @@
 <script lang="ts">
-    import type { AttractionTable } from './types';
+    import { getRandomAttractionTable, tables, type AttractionTable } from '$lib/attraction';
 
-    import { getRandomAttractionTable, tables } from './tables';
     let selectedTable: AttractionTable;
     export let updateTable: (table: AttractionTable) => void;
 </script>

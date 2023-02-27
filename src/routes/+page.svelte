@@ -1,5 +1,5 @@
 <script>
-    import Simulation from '$lib/components/SimulationV3/Simulation.svelte';
+    import Simulation from '$lib/components/Simulation.svelte';
 </script>
 
 <Simulation />
