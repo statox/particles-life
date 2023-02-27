@@ -20,20 +20,25 @@
 
     const cellSize = 1;
 
-    // const worldSize = { x: 1600, y: 960 };
     // let maxAttractionRadius = 32;
     // let nbParticles = 1000;
+    // let horizontalResolution = 60;
+    // let verticalResolution = 40;
 
-    const worldSize = { x: 1600, y: 960 };
+    // let maxAttractionRadius = 32;
+    // let nbParticles = 4000;
+    // let horizontalResolution = 60;
+    // let verticalResolution = 40;
+
     let maxAttractionRadius = 32;
     let nbParticles = 4000;
+    let horizontalResolution = 30;
+    let verticalResolution = 20;
 
-    // const worldSize = { x: 1920, y: 1280 };
-    // let maxAttractionRadius = 32;
-    // let nbParticles = 8000;
-
-    let horizontalResolution = 60;
-    let verticalResolution = 40;
+    const worldSize = {
+        x: maxAttractionRadius * horizontalResolution,
+        y: maxAttractionRadius * verticalResolution
+    };
 
     let WorkerConstructor: new () => Worker;
     const loadWorker = async () => {
