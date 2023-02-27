@@ -8,7 +8,7 @@
     import { getRandomAttractionTable } from '$lib/attraction';
     import { getNewCells } from './engine/cells';
 
-    import Canvas from './graphics/Canvas.svelte';
+    import Canvas from '$lib/graphics/Canvas.svelte';
 
     let worker: Worker;
     let cells: Cell[];
