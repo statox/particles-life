@@ -84,7 +84,7 @@ export const attractionForce = (params: {
     const velocityMag = Math.sqrt(vel.x * vel.x + vel.y * vel.y);
 
     if (velocityMag === 0) {
-        return { x: 0, y: 0 };
+        return vel;
     }
     vel.x *= 1 / velocityMag;
     vel.y *= 1 / velocityMag;
