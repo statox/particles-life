@@ -15,7 +15,7 @@
 
     export let cells: Cell[];
     export let worldSize: Coordinates;
-    let off: HTMLElement | undefined;
+    let off: HTMLCanvasElement | undefined;
     const colors: Color[] = ['white', 'red', 'green', 'blue'];
     const colorsIndex = {
         white: 0,
@@ -28,11 +28,14 @@
     const d = r * 2;
 
     function draw() {
-        const canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
         if (!canvas || !off) {
             throw new Error('Canvas is not ready');
         }
         const ctx = canvas.getContext('2d');
+        if (!ctx) {
+            throw new Error('Ctx is not ready');
+        }
 
         // Background
         ctx.fillStyle = '#040411';
@@ -82,11 +85,10 @@
 
     onMount(() => {
         // Prepare canvas
-        const canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
         if (!canvas) {
             throw new Error('Canvas is not ready');
         }
-        const ctx = canvas.getContext('2d');
         canvas.width = 1600;
         canvas.height = 960;
 

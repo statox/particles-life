@@ -1,6 +1,6 @@
+import { getNewCells } from '$lib/components/Simulation/cells';
 import { describe, expect, it } from 'vitest';
-import { getNewCells } from '../cells';
-import type { Cell } from '../types';
+import type { Cell } from '../engine';
 import { CellsMap } from './cellsMap';
 
 describe('CellsMap', () => {
@@ -77,6 +77,7 @@ describe('CellsMap', () => {
             const c: Cell = {
                 id: 1,
                 pos: { x: 1, y: 1 },
+                nextPos: { x: 1, y: 1 },
                 vel: { x: 0, y: 0 },
                 color: 'white'
             };
@@ -96,6 +97,7 @@ describe('CellsMap', () => {
             const c: Cell = {
                 id: 1,
                 pos: { x: 1, y: 1 },
+                nextPos: { x: 1, y: 1 },
                 vel: { x: 0, y: 0 },
                 color: 'white'
             };
@@ -119,6 +121,7 @@ describe('CellsMap', () => {
             const c: Cell = {
                 id: 1,
                 pos: { x: 1, y: 1 },
+                nextPos: { x: 1, y: 1 },
                 vel: { x: 0, y: 0 },
                 color: 'white'
             };
@@ -137,6 +140,7 @@ describe('CellsMap', () => {
             const c: Cell = {
                 id: 1,
                 pos: { x: 1, y: 1 },
+                nextPos: { x: 1, y: 1 },
                 vel: { x: 0, y: 0 },
                 color: 'white'
             };
@@ -164,6 +168,7 @@ describe('CellsMap', () => {
             const c: Cell = {
                 id: 1,
                 pos: { x: 1, y: 1 },
+                nextPos: { x: 1, y: 1 },
                 vel: { x: 0, y: 0 },
                 color: 'white'
             };

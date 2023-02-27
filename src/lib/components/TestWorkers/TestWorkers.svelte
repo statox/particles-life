@@ -1,7 +1,5 @@
 <!-- https://medium.com/geekculture/sveltekit-web-worker-8cfc0c86abf6 -->
 <script lang="ts">
-    import type { PostMessage, PostMessageDataResponse } from './types';
-
     import { onMount } from 'svelte';
     import { distance } from '../Simulation/cells';
     import type { Coordinates } from '../Simulation/types';
@@ -59,9 +57,7 @@
 
         let finished = 0;
 
-        const onMessage = ({
-            data: { msg, data }
-        }: MessageEvent<PostMessage<PostMessageDataResponse>>) => {
+        const onMessage = () => {
             finished++;
             // console.log('no more pairs to treat', { finished });
             if (finished !== workers.length) {
@@ -91,9 +87,7 @@
         }
         const coords = getXCoords(nbPairs);
 
-        worker.onmessage = ({
-            data: { msg, data }
-        }: MessageEvent<PostMessage<PostMessageDataResponse>>) => {
+        worker.onmessage = () => {
             const end = Date.now();
             const elapsedTime = end - start;
             console.log('worker compute took', elapsedTime, 'ms');

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { AttractionTable } from '../types';
+    import type { AttractionTable } from '$lib/components/Simulation/types';
 
     import { getRandomAttractionTable, tables } from './tables';
     let selectedTable: AttractionTable;

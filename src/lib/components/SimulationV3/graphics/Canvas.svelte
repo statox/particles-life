@@ -18,7 +18,7 @@
     export let worldSize: Coordinates;
     export let drewFrame: () => void;
     export let showColors: boolean;
-    let off: HTMLElement | undefined;
+    let off: HTMLCanvasElement | undefined;
     const colors: Color[] = ['white', 'red', 'green', 'blue'];
     const colorsIndex = {
         white: 0,
@@ -47,7 +47,7 @@
     let elapsed: number;
 
     function draw() {
-        const canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
         if (!canvas || !off) {
             throw new Error('Canvas is not ready');
         }
@@ -65,6 +65,9 @@
         then = now - (elapsed % fpsInterval);
 
         const ctx = canvas.getContext('2d');
+        if (!ctx) {
+            throw new Error('Ctx is not ready');
+        }
 
         // Background
         ctx.fillStyle = realColors.background;
@@ -101,18 +104,17 @@
 
     onMount(() => {
         // Prepare canvas
-        const canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
         if (!canvas) {
             throw new Error('Canvas is not ready');
         }
-        const ctx = canvas.getContext('2d');
         canvas.width = 1600;
         canvas.height = 960;
 
         // Draw circles in offscreen buffer to speed up drawing
         // https://stackoverflow.com/a/13916313
 
-        off = document.createElement('canvas');
+        off = document.createElement('canvas') as HTMLCanvasElement;
         off.width = n * d;
         off.height = d;
         const offCtx = off.getContext('2d');

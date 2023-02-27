@@ -1,4 +1,4 @@
-import { getRandomAttractionTable, tables } from '$lib/components/Simulation/attraction';
+import { getRandomAttractionTable } from '$lib/components/Simulation/attraction';
 import type { AttractionTable } from '$lib/components/Simulation/types';
 import type { CallbackErrorOnly } from '$lib/tsUtils';
 import { CellsMap } from '../cellsMap';

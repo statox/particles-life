@@ -1,8 +1,7 @@
 <script lang="ts">
     import type p5 from 'p5';
-    import P5, { type Sketch } from 'p5-svelte';
+    // import { type Sketch } from 'p5-svelte';
     import { onDestroy, onMount } from 'svelte';
-    import { drawCells } from './drawing';
     import { getNewCells, updateCells } from './cells';
     import type { AttractionTable, Cell, Color } from './types';
     import { getRandomAttractionTable } from './attraction';
@@ -38,16 +37,16 @@
         simulationTimeout = setTimeout(simulationLoop, 1);
     };
 
-    const sketch: Sketch = (p5) => {
-        p5.setup = () => {
-            _p5 = p5;
-            p5.createCanvas(1000, 700);
-        };
-        p5.draw = () => {
-            p5.background(0);
-            drawCells(p5, cells, cellsMap.worldSize);
-        };
-    };
+    // const sketch: Sketch = (p5) => {
+    //     p5.setup = () => {
+    //         _p5 = p5;
+    //         p5.createCanvas(1000, 700);
+    //     };
+    //     p5.draw = () => {
+    //         p5.background(0);
+    //         drawCells(p5, cells, cellsMap.worldSize);
+    //     };
+    // };
 
     const updateAttractionTable = (newAttractionTable: AttractionTable) => {
         attractionTable = newAttractionTable;

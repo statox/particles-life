@@ -2,7 +2,7 @@ import { getZeroedAttractionTable } from '$lib/components/Simulation/attraction'
 import type { AttractionTable } from '$lib/components/Simulation/types';
 import type { Callback } from '$lib/tsUtils';
 import { CellsMap } from '../cellsMap';
-import { pullCellsAppart, updateCells } from './cells';
+import { updateCells } from './cells';
 import type { Cell, WorldSize } from './types';
 
 export class Engine {

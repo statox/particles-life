@@ -1,4 +1,4 @@
-import type { AttractionTable, StoredTable } from '../types';
+import type { AttractionTable, StoredTable } from '$lib/components/Simulation/types';
 
 export const getRandomAttractionTable = (): AttractionTable => {
     return {
