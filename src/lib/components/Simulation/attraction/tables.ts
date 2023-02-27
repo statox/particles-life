@@ -333,5 +333,36 @@ export const tables: StoredTable[] = [
                 blue: 2
             }
         }
+    },
+    {
+        name: 'Universe',
+        description:
+            'Galaxies with blue center, red and white rings turning around evolving in a green goo',
+        table: {
+            white: {
+                white: -1,
+                red: 1,
+                green: 1,
+                blue: 1
+            },
+            red: {
+                white: -1,
+                red: -1,
+                green: -1,
+                blue: 2
+            },
+            green: {
+                white: -2,
+                red: -1,
+                green: 0,
+                blue: -1
+            },
+            blue: {
+                white: 1,
+                red: 2,
+                green: -2,
+                blue: 2
+            }
+        }
     }
 ];
