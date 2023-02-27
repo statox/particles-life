@@ -17,6 +17,7 @@
     let lastFrameTimestamp = 0;
     let timeToFrame = 0;
     let renderPaused = false;
+    let showColors = true;
 
     const cellSize = 1;
 
@@ -220,7 +221,7 @@
     </p>
 </div>
 
-<Canvas {cells} {worldSize} {cellSize} drewFrame={updateFrame} />
+<Canvas {cells} {worldSize} {cellSize} {showColors} drewFrame={updateFrame} />
 <div>
     <div>
         <span>Buffer size: {(buffer?.length || 0) - frameIndex}</span>
@@ -237,11 +238,18 @@
         id="frameIndexSlider"
     />
 
-    <button on:click={replayFromStart}>Replay from start</button>
-    <button on:click={() => (frameIndex = buffer.length - 1 || 0)}>Catchup last frame</button>
-    <button on:click={() => (renderPaused = !renderPaused)}>
-        {renderPaused ? 'Play' : 'Pause'}
-    </button>
+    <div>
+        <button on:click={replayFromStart}>Replay from start</button>
+        <button on:click={() => (frameIndex = buffer.length - 1 || 0)}>Catchup last frame</button>
+        <button on:click={() => (renderPaused = !renderPaused)}>
+            {renderPaused ? 'Play' : 'Pause'}
+        </button>
+    </div>
+    <div>
+        <button on:click={() => (showColors = !showColors)}>
+            {showColors ? 'Hide colors' : 'Show colors'}
+        </button>
+    </div>
 </div>
 
 <div>

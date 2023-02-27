@@ -17,6 +17,7 @@
     export let cells: Cell[];
     export let worldSize: Coordinates;
     export let drewFrame: () => void;
+    export let showColors: boolean;
     let off: HTMLElement | undefined;
     const colors: Color[] = ['white', 'red', 'green', 'blue'];
     const colorsIndex = {
@@ -81,7 +82,7 @@
             const x = Math.floor(linearMap(cell.pos.x, 0, worldSize.x, 0, canvas.width));
             const y = Math.floor(linearMap(cell.pos.y, 0, worldSize.y, 0, canvas.height));
 
-            var c = colorsIndex[cell.color];
+            var c = showColors ? colorsIndex[cell.color] : 0;
 
             const sx = c * d;
             const sy = 0;
