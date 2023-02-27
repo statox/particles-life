@@ -10,7 +10,7 @@
     <meta http-equiv="content-security-policy" content="">
 		<link href="/particles-life/_app/immutable/assets/_page-f1438e97.css" rel="stylesheet">
 		<link href="/particles-life/_app/immutable/assets/AttractionTableComponent-e1a75a2c.css" rel="stylesheet">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/start-17454584.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/start-74a253f1.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-689c9b92.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/singletons-60c296f1.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/paths-b4419565.js">
@@ -18,7 +18,7 @@
 		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/_layout.svelte-3018ced2.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/v3/_page.svelte-212bdb4a.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/v3/_page.svelte-b6e41ac3.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableChoice-54d975cc.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/AttractionTableComponent-68b8dc88.js">
 </head>
@@ -54,6 +54,8 @@
         <input id="nbParticles" type="number" value="4000"></p></div>
 
 <div class="container svelte-bkdgvm"><canvas id="canvas" class="svelte-bkdgvm"></canvas>
+    <label for="maxFPSInput">Limit FPS</label>
+    <input id="maxFPSInput" type="number" min="1" value="2">
 </div>
 <div><div><span>Buffer size: 0</span>
         <span>Current frame: 0</span>
@@ -93,14 +95,14 @@
 
 
 
-		<script type="module" data-sveltekit-hydrate="cx0h5v">
-			import { start } from "/particles-life/_app/immutable/start-17454584.js";
+		<script type="module" data-sveltekit-hydrate="jmpn5m">
+			import { start } from "/particles-life/_app/immutable/start-74a253f1.js";
 
 			start({
 				env: {},
 				paths: {"base":"/particles-life","assets":"/particles-life"},
-				target: document.querySelector('[data-sveltekit-hydrate="cx0h5v"]').parentNode,
-				version: "1677454479524",
+				target: document.querySelector('[data-sveltekit-hydrate="jmpn5m"]').parentNode,
+				version: "1677456030259",
 				hydrate: {
 					node_ids: [0, 6],
 					data: [null,null],
