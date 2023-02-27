@@ -7,7 +7,6 @@
 
     <nav>
         <a href="{base}/">Home</a> |
-        <a href="{base}/v3">V3</a> |
     </nav>
 </header>
 
