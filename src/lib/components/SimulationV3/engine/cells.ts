@@ -1,6 +1,6 @@
-import type { AttractionTable } from '$lib/components/Simulation/types';
+import type { AttractionTable } from '$lib/attraction';
 import { getNeighborsIds, type CellsMap } from '../cellsMap';
-import { getAttractionForce } from './attraction';
+import { getAttractionForce } from '$lib/attraction';
 import type { Cell, Color, Coordinates } from './types';
 
 const colors: Color[] = ['white', 'red', 'green', 'blue'];

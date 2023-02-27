@@ -1,11 +1,11 @@
 <script lang="ts">
     import { onDestroy, onMount } from 'svelte';
 
-    import AttractionTableChoice from '../Simulation/attraction/AttractionTableChoice.svelte';
-    import AttractionTableComponent from '../Simulation/attraction/AttractionTableComponent.svelte';
-    import type { AttractionTable } from '../Simulation/types';
+    import AttractionTableChoice from '$lib/attraction/AttractionTableChoice.svelte';
+    import AttractionTableComponent from '$lib/attraction/AttractionTableComponent.svelte';
+    import type { AttractionTable } from '$lib/attraction';
     import type { Cell, Color, Coordinates, UpdateCellsResponse } from './engine';
-    import { getRandomAttractionTable } from './engine/attraction';
+    import { getRandomAttractionTable } from '$lib/attraction';
     import { getNewCells } from './engine/cells';
 
     import Canvas from './graphics/Canvas.svelte';

@@ -1,5 +1,5 @@
-import { getZeroedAttractionTable } from '$lib/components/Simulation/attraction';
-import type { AttractionTable } from '$lib/components/Simulation/types';
+import { getZeroedAttractionTable } from '$lib/attraction';
+import type { AttractionTable } from '$lib/attraction';
 import type { Callback } from '$lib/tsUtils';
 import { CellsMap } from '../cellsMap';
 import { updateCells } from './cells';

@@ -1,4 +1,4 @@
-import type { AttractionTable } from '$lib/components/Simulation/types';
+import type { AttractionTable } from '$lib/attraction';
 
 export type Coordinates = {
     x: number;

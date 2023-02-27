@@ -1,6 +1,7 @@
 <script lang="ts">
-    import type { AttractionTable } from '$lib/components/Simulation/types';
-    import type { Color } from '../types';
+    import type { Color } from '$lib/components/SimulationV3/engine';
+
+    import type { AttractionTable } from './types';
 
     export let attractionTable: AttractionTable;
     export let onUpdateTable: (attractionTable: AttractionTable) => void;

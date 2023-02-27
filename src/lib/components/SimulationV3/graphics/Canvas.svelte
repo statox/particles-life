@@ -11,7 +11,7 @@
 
     import { onMount } from 'svelte';
     import type { Cell, Color, Coordinates } from '../engine';
-    import { linearMap } from '../engine/attraction';
+    import { linearMap } from '$lib/attraction';
 
     export let cellSize: number;
     export let cells: Cell[];
