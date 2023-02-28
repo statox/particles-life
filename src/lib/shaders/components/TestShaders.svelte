@@ -27,7 +27,7 @@
     `;
 
         const dstWidth = 3;
-        const dstHeight = 2;
+        const dstHeight = 3;
 
         // make a 3x2 canvas for 6 results
         const canvas = document.createElement('canvas');
@@ -40,6 +40,9 @@
         }
 
         const program = createProgramFromSources(gl, [vs, fs]);
+        if (!program) {
+            throw 'Could not get program';
+        }
         const positionLoc = gl.getAttribLocation(program, 'position');
         const srcTexLoc = gl.getUniformLocation(program, 'srcTex');
         const srcDimensionsLoc = gl.getUniformLocation(program, 'srcDimensions');
@@ -67,7 +70,7 @@
 
         // create our source texture
         const srcWidth = 3;
-        const srcHeight = 2;
+        const srcHeight = 3;
         const tex = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, tex);
         gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1); // see https://webglfundamentals.org/webgl/lessons/webgl-data-textures.html
@@ -80,7 +83,7 @@
             0, // border
             gl.LUMINANCE, // format
             gl.UNSIGNED_BYTE, // type
-            new Uint8Array([1, 2, 3, 4, 5, 6])
+            new Uint8Array([1, 2, 3, 4, 5, 6, 70, 80, 90])
         );
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
