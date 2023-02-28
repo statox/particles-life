@@ -102,8 +102,13 @@
 
         // print the results
         for (let i = 0; i < dstWidth * dstHeight; ++i) {
-            console.log(results[i * 4]);
+            log(results[i * 4]);
         }
+    }
+    function log(arg: number) {
+        const elem = document.createElement('div');
+        elem.textContent = arg.toString();
+        document.body.appendChild(elem);
     }
 
     onMount(init);
