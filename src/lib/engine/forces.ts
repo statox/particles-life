@@ -86,7 +86,10 @@ export const attractionForce = (params: {
     if (velocityMag === 0) {
         return vel;
     }
-    vel.x *= 1 / velocityMag;
-    vel.y *= 1 / velocityMag;
+    const maxVelMag = 1;
+    if (velocityMag > maxVelMag) {
+        vel.x *= maxVelMag / velocityMag;
+        vel.y *= maxVelMag / velocityMag;
+    }
     return vel;
 };

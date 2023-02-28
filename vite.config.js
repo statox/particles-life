@@ -5,6 +5,7 @@ const config = {
     plugins: [sveltekit()],
     test: {},
     build: {
+        // minify: false,
         // This build target is necessary to make top-level await work
         // and I use top-level await to load workers
         target: 'esnext'

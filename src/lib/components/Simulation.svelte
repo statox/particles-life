@@ -172,8 +172,6 @@
     onDestroy(() => worker?.terminate());
 </script>
 
-<h2>V3 WIP</h2>
-
 <div>
     <p>
         <label for="attractionRadius">Simulation definition</label>
