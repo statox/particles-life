@@ -1,6 +1,4 @@
-# P5 + svelte
+# Readings
 
-Just a boilerplate.
-
-- `npm init`
-- `npm run dev`
+https://github.com/9ballsyndrome/WebGL_Compute_shader
+http://www.bantherewind.com/wrap-your-mind-around-your-gpu
