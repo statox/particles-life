@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { AttractionTable } from '$lib/attraction';
-    import type { Color } from '$lib/engine';
+    import type { AttractionTable } from '$lib/particles/attraction';
+    import type { Color } from '$lib/particles/engine';
 
     export let attractionTable: AttractionTable;
     export let onUpdateTable: (attractionTable: AttractionTable) => void;

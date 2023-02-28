@@ -1,6 +1,6 @@
 // See ./README.md for details and explanations
 
-import type { Cell, Coordinates } from '$lib/engine';
+import type { Cell, Coordinates } from '$lib/particles/engine';
 
 export class CellsMap {
     squares: Set<number>[][];

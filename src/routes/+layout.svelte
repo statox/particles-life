@@ -6,7 +6,7 @@
     <h1>Particles Life</h1>
 
     <nav>
-        <a href="{base}/">Home</a> |
+        <a href="{base}/">Particles life</a> |
     </nav>
 </header>
 

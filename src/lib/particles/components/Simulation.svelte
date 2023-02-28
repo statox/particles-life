@@ -1,13 +1,13 @@
 <script lang="ts">
     import { onDestroy, onMount } from 'svelte';
 
-    import AttractionTableChoice from '$lib/components/AttractionTableChoice.svelte';
-    import AttractionTableComponent from '$lib/components/AttractionTableComponent.svelte';
-    import Canvas from '$lib/components/Canvas.svelte';
-    import type { AttractionTable } from '$lib/attraction';
-    import type { Cell, Color, Coordinates, UpdateCellsResponse } from '$lib/engine';
-    import { getRandomAttractionTable } from '$lib/attraction';
-    import { getNewCells } from '$lib/engine/cells';
+    import AttractionTableChoice from '$lib/particles/components/AttractionTableChoice.svelte';
+    import AttractionTableComponent from '$lib/particles/components/AttractionTableComponent.svelte';
+    import Canvas from '$lib/particles/components/Canvas.svelte';
+    import type { AttractionTable } from '$lib/particles/attraction';
+    import type { Cell, Color, Coordinates, UpdateCellsResponse } from '$lib/particles/engine';
+    import { getRandomAttractionTable } from '$lib/particles/attraction';
+    import { getNewCells } from '$lib/particles/engine/cells';
 
     let worker: Worker;
     let cells: Cell[];
@@ -42,7 +42,7 @@
 
     let WorkerConstructor: new () => Worker;
     const loadWorker = async () => {
-        const SimulationWorker = await import('$lib/engine/simulation.worker?worker');
+        const SimulationWorker = await import('$lib/particles/engine/simulation.worker?worker');
         WorkerConstructor = SimulationWorker.default;
         start();
     };

@@ -1,7 +1,7 @@
-import { getZeroedAttractionTable } from '$lib/attraction';
-import type { AttractionTable } from '$lib/attraction';
 import type { Callback } from '$lib/tsUtils';
-import { CellsMap } from '$lib/cellsMap';
+import { getZeroedAttractionTable } from '$lib/particles/attraction';
+import type { AttractionTable } from '$lib/particles/attraction';
+import { CellsMap } from '$lib/particles/cellsMap';
 import { updateCells } from './cells';
 import type { Cell, WorldSize } from './types';
 

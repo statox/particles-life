@@ -1,4 +1,4 @@
-import type { AttractionTable } from '$lib/attraction';
+import type { AttractionTable } from '$lib/particles/attraction';
 
 export type Coordinates = {
     x: number;

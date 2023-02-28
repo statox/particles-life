@@ -1,5 +1,5 @@
-import type { AttractionTable } from '$lib/attraction';
-import { getNeighborsIds, type CellsMap } from '$lib/cellsMap';
+import type { AttractionTable } from '$lib/particles/attraction';
+import { getNeighborsIds, type CellsMap } from '$lib/particles/cellsMap';
 import type { Cell, Color, Coordinates } from './types';
 import { distanceSqaredNoWrap, distanceSqrd } from './math';
 import { attractionForce } from './forces';

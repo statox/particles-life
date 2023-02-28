@@ -1,4 +1,4 @@
-import type { Color } from '$lib/engine';
+import type { Color } from '$lib/particles/engine';
 import type { AttractionTable } from './types';
 
 export const getAttractionForce = (

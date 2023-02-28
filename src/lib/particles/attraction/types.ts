@@ -1,4 +1,4 @@
-import type { Color } from '$lib/engine';
+import type { Color } from '$lib/particles/engine';
 
 export type AttractionTable = {
     [selfColor in Color]: {
