@@ -14,7 +14,6 @@ const MatType = Float32Array;
  * @param {number} top The y coordinate of the right plane of the box.
  * @param {number} near The negative z coordinate of the near plane of the box.
  * @param {number} far The negative z coordinate of the far plane of the box.
- * @param {Matrix4} [dst] optional matrix to store result
  * @return {Matrix4} dst or a new matrix if none provided
  * @memberOf module:webgl-3d-math
  */

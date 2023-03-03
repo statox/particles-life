@@ -71,7 +71,7 @@
         const drawParticlesFS = `
   precision highp float;
   void main() {
-    gl_FragColor = vec4(1, 0, 0, 1);
+    gl_FragColor = vec4(0.4, 0.2, 0.9, 0.5);
   }
   `;
 
@@ -140,8 +140,8 @@
         );
 
         // setup an id buffer
-        const particleTexWidth = 100;
-        const particleTexHeight = 50;
+        const particleTexWidth = 300;
+        const particleTexHeight = 20;
         const numParticles = particleTexWidth * particleTexHeight;
         const ids = new Array(numParticles).fill(0).map((_, i) => i);
         const idBuffer = gl.createBuffer();

@@ -24,11 +24,18 @@ export function createProgramFromSources(
     opt_locations?: number[],
     opt_errorCallback?: CallbackErrorOnly
 ) {
-    const shaders = [];
+    const shaders: WebGLShader[] = [];
     for (let ii = 0; ii < shaderSources.length; ++ii) {
-        shaders.push(
-            loadShader(gl, shaderSources[ii], gl[defaultShaderType[ii]], opt_errorCallback)
+        const shader = loadShader(
+            gl,
+            shaderSources[ii],
+            gl[defaultShaderType[ii]],
+            opt_errorCallback
         );
+        if (!shader) {
+            throw 'Can not create shader';
+        }
+        shaders.push(shader);
     }
     return createProgram(gl, shaders, opt_attribs, opt_locations, opt_errorCallback);
 }
