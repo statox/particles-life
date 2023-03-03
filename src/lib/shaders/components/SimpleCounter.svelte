@@ -3,7 +3,7 @@
     // https://webglfundamentals.org/webgl/lessons/webgl-gpgpu.html
 
     import { onMount } from 'svelte';
-    import { createProgramFromSources } from '../webglUtils';
+    import * as webglUtils from '../webglUtils';
 
     function init() {
         const vs = `
@@ -39,7 +39,7 @@
             throw 'Coulndt get context';
         }
 
-        const program = createProgramFromSources(gl, [vs, fs]);
+        const program = webglUtils.createProgramFromSources(gl, [vs, fs]);
         if (!program) {
             throw 'Could not get program';
         }
@@ -106,9 +106,13 @@
         }
     }
     function log(arg: number) {
-        const elem = document.createElement('div');
+        const elem = document.createElement('li');
         elem.textContent = arg.toString();
-        document.body.appendChild(elem);
+        const resultElement = document.getElementById('result');
+        if (!resultElement) {
+            throw 'result element undefined';
+        }
+        resultElement.appendChild(elem);
     }
 
     onMount(init);
@@ -118,4 +122,7 @@
     This is not super impressive but this page takes 9 integers and uses a compute shader to
     multiply them by two. It's a first step!
 </p>
+
+<ul id="result" />
+
 <canvas id="canvas" />
