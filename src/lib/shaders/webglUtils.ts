@@ -2,6 +2,62 @@ import type { CallbackErrorOnly } from '$lib/tsUtils';
 
 const defaultShaderType = ['VERTEX_SHADER', 'FRAGMENT_SHADER'];
 
+export function checkWebGlCapabilities(gl: WebGLRenderingContext) {
+    if (!gl.getExtension('OES_texture_float')) {
+        alert('Need OES_texture_float');
+        throw 'Need OES_texture_float';
+    }
+    // check we can render to floating point textures
+    if (!gl.getExtension('WEBGL_color_buffer_float')) {
+        alert('Need WEBGL_color_buffer_float');
+        throw 'Need WEBGL_color_buffer_float';
+    }
+    // check we can use textures in a vertex shader
+    if (gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS) < 1) {
+        alert('Can not use textures in vertex shaders');
+        throw 'Can not use textures in vertex shaders';
+    }
+}
+
+export function createTexture(
+    gl: WebGLRenderingContext,
+    data: ArrayBufferView | null,
+    width: number,
+    height: number
+) {
+    const tex = gl.createTexture();
+    if (!tex) {
+        throw 'Can not create texture';
+    }
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(
+        gl.TEXTURE_2D,
+        0, // mip level
+        gl.RGBA, // internal format
+        width,
+        height,
+        0, // border
+        gl.RGBA, // format
+        gl.FLOAT, // type
+        data
+    );
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    return tex;
+}
+
+export function createFramebuffer(gl: WebGLRenderingContext, tex: WebGLTexture) {
+    const fb = gl.createFramebuffer();
+    if (!fb) {
+        throw 'Can not create frame buffer';
+    }
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
+    return fb;
+}
+
 /**
  * Creates a program from 2 sources.
  *
@@ -37,7 +93,11 @@ export function createProgramFromSources(
         }
         shaders.push(shader);
     }
-    return createProgram(gl, shaders, opt_attribs, opt_locations, opt_errorCallback);
+    const program = createProgram(gl, shaders, opt_attribs, opt_locations, opt_errorCallback);
+    if (!program) {
+        throw 'Can not create program';
+    }
+    return program;
 }
 
 function loadShader(

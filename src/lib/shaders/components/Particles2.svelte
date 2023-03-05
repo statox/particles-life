@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import * as webglUtils from '../webglUtils';
     import * as m4 from '../m4';
+    import { getArrays } from '../simulationUtils';
 
     function main() {
         const updatePositionVS = `
@@ -85,23 +86,7 @@
         if (!gl) {
             throw 'gl undefined';
         }
-        // check we can use floating point textures
-        const ext1 = gl.getExtension('OES_texture_float');
-        if (!ext1) {
-            alert('Need OES_texture_float');
-            throw 'Need OES_texture_float';
-        }
-        // check we can render to floating point textures
-        const ext2 = gl.getExtension('WEBGL_color_buffer_float');
-        if (!ext2) {
-            alert('Need WEBGL_color_buffer_float');
-            throw 'Need WEBGL_color_buffer_float';
-        }
-        // check we can use textures in a vertex shader
-        if (gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS) < 1) {
-            alert('Can not use textures in vertex shaders');
-            throw 'Can not use textures in vertex shaders';
-        }
+        webglUtils.checkWebGlCapabilities(gl);
 
         const updatePositionProgram = webglUtils.createProgramFromSources(gl, [
             updatePositionVS,
@@ -111,9 +96,6 @@
             drawParticlesVS,
             drawParticlesFS
         ]);
-        if (!updatePositionProgram || !drawParticlesProgram) {
-            throw 'Can not create programs';
-        }
 
         const updatePositionPrgLocs = {
             position: gl.getAttribLocation(updatePositionProgram, 'position'),
@@ -143,8 +125,12 @@
         // setup an id buffer
         const particleTexWidth = 300;
         const particleTexHeight = 20;
-        const numParticles = particleTexWidth * particleTexHeight;
-        const ids = new Array(numParticles).fill(0).map((_, i) => i);
+        const { numParticles, ids, positions, velocities } = getArrays(
+            particleTexWidth,
+            particleTexHeight,
+            canvas.width,
+            canvas.height
+        );
         const idBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ids), gl.STATIC_DRAW);
@@ -154,67 +140,31 @@
         // to the initial size we want
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        // create random positions and velocities.
-        const rand = (min: number, max?: number) => {
-            if (max === undefined) {
-                max = min;
-                min = 0;
-            }
-            return Math.random() * (max - min) + min;
-        };
-        const positions = new Float32Array(
-            ids.map((_) => [rand(canvas.width), rand(canvas.height), 0, 0]).flat()
-        );
-        const velocities = new Float32Array(
-            ids.map((_) => [rand(-300, 300), rand(-300, 300), 0, 0]).flat()
-        );
-
-        function createTexture(
-            gl: WebGLRenderingContext,
-            data: ArrayBufferView | null,
-            width: number,
-            height: number
-        ) {
-            const tex = gl.createTexture();
-            gl.bindTexture(gl.TEXTURE_2D, tex);
-            gl.texImage2D(
-                gl.TEXTURE_2D,
-                0, // mip level
-                gl.RGBA, // internal format
-                width,
-                height,
-                0, // border
-                gl.RGBA, // format
-                gl.FLOAT, // type
-                data
-            );
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-            return tex;
-        }
-
         // create a texture for the velocity and 2 textures for the positions.
-        const velocityTex = createTexture(gl, velocities, particleTexWidth, particleTexHeight);
-        const positionTex1 = createTexture(gl, positions, particleTexWidth, particleTexHeight);
-        const positionTex2 = createTexture(gl, null, particleTexWidth, particleTexHeight);
-        if (!positionTex1 || !positionTex2) {
-            throw 'Can not create position textures';
-        }
-
-        function createFramebuffer(gl: WebGLRenderingContext, tex: WebGLTexture) {
-            const fb = gl.createFramebuffer();
-            gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
-            gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
-            return fb;
-        }
+        const velocityTex = webglUtils.createTexture(
+            gl,
+            velocities,
+            particleTexWidth,
+            particleTexHeight
+        );
+        const positionTex1 = webglUtils.createTexture(
+            gl,
+            positions,
+            particleTexWidth,
+            particleTexHeight
+        );
+        const positionTex2 = webglUtils.createTexture(
+            gl,
+            null,
+            particleTexWidth,
+            particleTexHeight
+        );
 
         // create 2 framebuffers. One that renders to positionTex1 one
         // and another that renders to positionTex2
 
-        const positionsFB1 = createFramebuffer(gl, positionTex1);
-        const positionsFB2 = createFramebuffer(gl, positionTex2);
+        const positionsFB1 = webglUtils.createFramebuffer(gl, positionTex1);
+        const positionsFB2 = webglUtils.createFramebuffer(gl, positionTex2);
 
         let oldPositionsInfo = {
             fb: positionsFB1,
