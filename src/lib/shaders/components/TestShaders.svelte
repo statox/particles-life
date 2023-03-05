@@ -5,6 +5,7 @@
     import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
     import SimpleCounter from './SimpleCounter.svelte';
     import SimpleParticles from './SimpleParticles.svelte';
+    import Particles2 from './Particles2.svelte';
 </script>
 
 <div>
@@ -13,6 +14,7 @@
             <Tab>About</Tab>
             <Tab>Simple counter</Tab>
             <Tab>Particles</Tab>
+            <Tab>Particles 2</Tab>
         </TabList>
 
         <TabPanel>
@@ -35,6 +37,10 @@
 
         <TabPanel>
             <SimpleParticles />
+        </TabPanel>
+
+        <TabPanel>
+            <Particles2 />
         </TabPanel>
     </Tabs>
 </div>
