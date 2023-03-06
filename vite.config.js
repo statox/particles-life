@@ -1,8 +1,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import plainText from 'vite-plugin-plain-text';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-    plugins: [sveltekit()],
+    plugins: [
+        plainText(['**/*.glsl'], { namedExport: false, dtsAutoGen: true, distAutoClean: true }),
+        sveltekit()
+    ],
     test: {},
     build: {
         // minify: false,

@@ -4,6 +4,11 @@
     import * as m4 from '../m4';
     import { getArrays } from '../simulationUtils';
 
+    import updatePositionVS from '../glsl/updatePosition.vert.glsl';
+    import updatePositionFS from '../glsl/updatePosition.frag.glsl';
+    import drawParticlesVS from '../glsl/drawParticles.vert.glsl';
+    import drawParticlesFS from '../glsl/drawParticles.frag.glsl';
+
     type PositionsInfo = {
         fb: WebGLFramebuffer;
         tex: WebGLTexture;
@@ -12,78 +17,6 @@
     type ProgLocs = { [name: string]: number | WebGLUniformLocation | null };
 
     function main() {
-        const updatePositionVS = `
-  attribute vec4 position;
-  void main() {
-    gl_Position = position;
-  }
-  `;
-
-        const updatePositionFS = `
-  precision highp float;
-
-  uniform sampler2D positionTex;
-  uniform sampler2D velocityTex;
-  uniform vec2 texDimensions;
-  uniform vec2 canvasDimensions;
-  uniform float deltaTime;
-
-  vec2 euclideanModulo(vec2 n, vec2 m) {
-  	return mod(mod(n, m) + m, m);
-  }
-
-  void main() {
-    // there will be one velocity per position
-    // so the velocity texture and position texture
-    // are the same size.
-
-    // further, we're generating new positions
-    // so we know our destination is the same size
-    // as our source so we only need one set of 
-    // shared texture dimensions
-
-    // compute texcoord from gl_FragCoord;
-    vec2 texcoord = gl_FragCoord.xy / texDimensions;
-
-    vec2 position = texture2D(positionTex, texcoord).xy;
-    //vec2 velocity = texture2D(velocityTex, texcoord).xy;
-    vec2 velocity = vec2(0.0, -100);
-    vec2 newPosition = euclideanModulo(position + velocity * deltaTime, canvasDimensions);
-
-    gl_FragColor = vec4(newPosition, 0, 1);
-  }
-  `;
-
-        const drawParticlesVS = `
-  attribute float id;
-  uniform sampler2D positionTex;
-  uniform vec2 texDimensions;
-  uniform mat4 matrix;
-
-  vec4 getValueFrom2DTextureAs1DArray(sampler2D tex, vec2 dimensions, float index) {
-    float y = floor(index / dimensions.x);
-    float x = mod(index, dimensions.x);
-    vec2 texcoord = (vec2(x, y) + 0.5) / dimensions;
-    return texture2D(tex, texcoord);
-  }
-
-  void main() {
-    // pull the position from the texture
-    vec4 position = getValueFrom2DTextureAs1DArray(positionTex, texDimensions, id);
-
-    // do the common matrix math
-    gl_Position = matrix * vec4(position.xy, 0, 1);
-    gl_PointSize = 10.0;
-  }
-  `;
-
-        const drawParticlesFS = `
-  precision highp float;
-  void main() {
-    gl_FragColor = vec4(0.4, 0.2, 0.9, 0.5);
-  }
-  `;
-
         // Get A WebGL context
         const canvas = document.getElementById('canvas') as HTMLCanvasElement;
         if (!canvas) {
