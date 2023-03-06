@@ -5,7 +5,7 @@
     import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
     import SimpleCounter from './SimpleCounter.svelte';
     import SimpleParticles from './SimpleParticles.svelte';
-    import Particles2 from './Particles2.svelte';
+    import Particles2 from '../Particles2/Particles2.svelte';
 </script>
 
 <div>

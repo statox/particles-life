@@ -2,12 +2,12 @@
     import { onMount } from 'svelte';
     import * as webglUtils from '../webglUtils';
     import * as m4 from '../m4';
-    import { getArrays } from '../simulationUtils';
+    import { getArrays } from './simulationUtils';
 
-    import updatePositionVS from '../glsl/updatePosition.vert.glsl';
-    import updatePositionFS from '../glsl/updatePosition.frag.glsl';
-    import drawParticlesVS from '../glsl/drawParticles.vert.glsl';
-    import drawParticlesFS from '../glsl/drawParticles.frag.glsl';
+    import updatePositionVS from './glsl/updatePosition.vert.glsl';
+    import updatePositionFS from './glsl/updatePosition.frag.glsl';
+    import drawParticlesVS from './glsl/drawParticles.vert.glsl';
+    import drawParticlesFS from './glsl/drawParticles.frag.glsl';
 
     type PositionsInfo = {
         fb: WebGLFramebuffer;
