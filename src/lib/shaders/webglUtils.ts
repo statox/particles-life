@@ -61,16 +61,12 @@ export function createFramebuffer(gl: WebGLRenderingContext, tex: WebGLTexture) 
 /**
  * Creates a program from 2 sources.
  *
- * @param {WebGLRenderingContext} gl The WebGLRenderingContext
- *        to use.
- * @param {string[]} shaderSourcess Array of sources for the
- *        shaders. The first is assumed to be the vertex shader,
- *        the second the fragment shader.
- * @param {string[]} [opt_attribs] An array of attribs names. Locations will be assigned by index if not passed in
- * @param {number[]} [opt_locations] The locations for the. A parallel array to opt_attribs letting you assign locations.
- * @param {module:webgl-utils.ErrorCallback} opt_errorCallback callback for errors. By default it just prints an error to the console
- *        on error. If you want something else pass an callback. It's passed an error message.
- * @return {WebGLProgram} The created program.
+ * @param gl The WebGLRenderingContext to use.
+ * @param shaderSourcess Array of sources for the shaders. The first is assumed to be the vertex shader, the second the fragment shader.
+ * @param [opt_attribs] An array of attribs names. Locations will be assigned by index if not passed in
+ * @param [opt_locations] The locations for the. A parallel array to opt_attribs letting you assign locations.
+ * @param opt_errorCallback callback for errors. By default it just prints an error to the console on error. If you want something else pass an callback. It's passed an error message.
+ * @return The created program.
  * @memberOf module:webgl-utils
  */
 export function createProgramFromSources(
@@ -82,10 +78,11 @@ export function createProgramFromSources(
 ) {
     const shaders: WebGLShader[] = [];
     for (let ii = 0; ii < shaderSources.length; ++ii) {
+        const shaderType = defaultShaderType[ii] === 'VERTEX_SHADER' ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER;
         const shader = loadShader(
             gl,
             shaderSources[ii],
-            gl[defaultShaderType[ii]],
+            shaderType,
             opt_errorCallback
         );
         if (!shader) {
@@ -127,14 +124,14 @@ function loadShader(
         errFn(
             new Error(
                 "*** Error compiling shader '" +
-                    shader +
-                    "':" +
-                    lastError +
-                    `\n` +
-                    shaderSource
-                        .split('\n')
-                        .map((l, i) => `${i + 1}: ${l}`)
-                        .join('\n')
+                shader +
+                "':" +
+                lastError +
+                `\n` +
+                shaderSource
+                    .split('\n')
+                    .map((l, i) => `${i + 1}: ${l}`)
+                    .join('\n')
             )
         );
         gl.deleteShader(shader);
@@ -166,11 +163,11 @@ function createProgram(
     if (!program) {
         throw 'Could not create program';
     }
-    shaders.forEach(function (shader) {
+    shaders.forEach(function(shader) {
         gl.attachShader(program, shader);
     });
     if (opt_attribs) {
-        opt_attribs.forEach(function (attrib, ndx) {
+        opt_attribs.forEach(function(attrib, ndx) {
             gl.bindAttribLocation(program, opt_locations ? opt_locations[ndx] : ndx, attrib);
         });
     }
@@ -191,10 +188,10 @@ function createProgram(
 
 /**
  * Resize a canvas to match the size its displayed.
- * @param {HTMLCanvasElement} canvas The canvas to resize.
- * @param {number} [multiplier] amount to multiply by.
+ * @param canvas The canvas to resize.
+ * @param [multiplier] amount to multiply by.
  *    Pass in window.devicePixelRatio for native pixels.
- * @return {boolean} true if the canvas was resized.
+ * @return true if the canvas was resized.
  * @memberOf module:webgl-utils
  */
 export function resizeCanvasToDisplaySize(canvas: HTMLCanvasElement, multiplier?: number) {

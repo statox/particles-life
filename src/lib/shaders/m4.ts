@@ -8,13 +8,13 @@ const MatType = Float32Array;
  * are not z coordinates, but rather they are distances along the negative
  * z-axis.  We assume a unit box extending from -1 to 1 in the x and y
  * dimensions and from -1 to 1 in the z dimension.
- * @param {number} left The x coordinate of the left plane of the box.
- * @param {number} right The x coordinate of the right plane of the box.
- * @param {number} bottom The y coordinate of the bottom plane of the box.
- * @param {number} top The y coordinate of the right plane of the box.
- * @param {number} near The negative z coordinate of the near plane of the box.
- * @param {number} far The negative z coordinate of the far plane of the box.
- * @return {Matrix4} dst or a new matrix if none provided
+ * @param left The x coordinate of the left plane of the box.
+ * @param right The x coordinate of the right plane of the box.
+ * @param bottom The y coordinate of the bottom plane of the box.
+ * @param top The y coordinate of the right plane of the box.
+ * @param near The negative z coordinate of the near plane of the box.
+ * @param far The negative z coordinate of the far plane of the box.
+ * @return  dst or a new matrix if none provided
  * @memberOf module:webgl-3d-math
  */
 export function orthographic(
