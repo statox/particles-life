@@ -4,8 +4,11 @@
 
     import drawPositionsBufferVS from './glsl/drawPositionsBuffer.vert.glsl';
     import drawPositionsBufferFS from './glsl/drawPositionsBuffer.frag.glsl';
+    import { getInitialPositions } from './simulationUtils';
 
-    const positions = [50, 50, 50, 150, 150, 150, 150, 50, 200, 200];
+    const screenWidth = 800;
+    const screenHeight = 600;
+    const positions = getInitialPositions(screenWidth, screenHeight);
     function main() {
         // Get A WebGL context
         const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -84,8 +87,8 @@
     }
 
     const addPosition = () => {
-        positions.push(Math.random() * 800);
-        positions.push(Math.random() * 600);
+        positions.push(Math.random() * screenWidth);
+        positions.push(Math.random() * screenHeight);
     };
 
     onMount(() => main());
@@ -96,6 +99,6 @@
     each <code>requestAnimationFrame</code> update the positions randomly with javascript and use the
     shader program to render each position as a point.
 </p>
-<canvas id="canvas" style="background-color: black" width="800" height="600" />
+<canvas id="canvas" style="background-color: black" width={screenWidth} height={screenHeight} />
 
 <button on:click={() => addPosition()}>Add position</button>
