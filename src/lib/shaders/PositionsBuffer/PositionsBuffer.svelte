@@ -5,6 +5,7 @@
     import drawPositionsBufferVS from './glsl/drawPositionsBuffer.vert.glsl';
     import drawPositionsBufferFS from './glsl/drawPositionsBuffer.frag.glsl';
 
+    const positions = [50, 50, 50, 150, 150, 150, 150, 50, 200, 200];
     function main() {
         // Get A WebGL context
         const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -30,7 +31,6 @@
         const positionBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 
-        const positions = [50, 50, 50, 150, 150, 150, 150, 50, 200, 200];
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
 
         function render() {
@@ -75,13 +75,18 @@
             );
 
             var primitiveType = gl.POINTS;
-            var count = 5;
+            var count = positions.length / 2;
             gl.drawArrays(primitiveType, offset, count);
 
             requestAnimationFrame(render);
         }
         requestAnimationFrame(render);
     }
+
+    const addPosition = () => {
+        positions.push(Math.random() * 800);
+        positions.push(Math.random() * 600);
+    };
 
     onMount(() => main());
 </script>
@@ -92,3 +97,5 @@
     shader program to render each position as a point.
 </p>
 <canvas id="canvas" style="background-color: black" width="800" height="600" />
+
+<button on:click={() => addPosition()}>Add position</button>
