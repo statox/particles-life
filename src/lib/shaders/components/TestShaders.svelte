@@ -6,6 +6,7 @@
     import SimpleCounter from './SimpleCounter.svelte';
     import SimpleParticles from './SimpleParticles.svelte';
     import Particles2 from '../Particles2/Particles2.svelte';
+    import PositionsBuffer from '../PositionsBuffer/PositionsBuffer.svelte';
 </script>
 
 <div>
@@ -15,6 +16,7 @@
             <Tab>Simple counter</Tab>
             <Tab>Particles</Tab>
             <Tab>Particles 2</Tab>
+            <Tab>Positions Buffer</Tab>
         </TabList>
 
         <TabPanel>
@@ -41,6 +43,10 @@
 
         <TabPanel>
             <Particles2 />
+        </TabPanel>
+
+        <TabPanel>
+            <PositionsBuffer />
         </TabPanel>
     </Tabs>
 </div>

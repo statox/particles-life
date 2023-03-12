@@ -1,0 +1,8 @@
+export function getArrays(particleTexWidth: number, particleTexHeight: number) {
+    const numParticles = particleTexWidth * particleTexHeight;
+    const ids = new Array(numParticles).fill(0).map((_, i) => i);
+
+    const cells = new Float32Array(ids.map((_) => [Math.floor(Math.random() * 2), 0, 0, 1]).flat());
+
+    return { numParticles, cells };
+}
