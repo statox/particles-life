@@ -8,6 +8,7 @@
     import Particles2 from '../Particles2/Particles2.svelte';
     import PositionsBuffer from '../PositionsBuffer/PositionsBuffer.svelte';
     import PositionsTexture from '../PositionsTexture/PositionsTexture.svelte';
+    import PositionsTexture2 from '../PositionsTexture2/PositionsTexture.svelte';
 </script>
 
 <div>
@@ -19,6 +20,7 @@
             <Tab>Particles 2</Tab>
             <Tab>Positions Buffer</Tab>
             <Tab>Positions Texture</Tab>
+            <Tab>Positions Texture Draw & Update</Tab>
         </TabList>
 
         <TabPanel>
@@ -53,6 +55,10 @@
 
         <TabPanel>
             <PositionsTexture />
+        </TabPanel>
+
+        <TabPanel>
+            <PositionsTexture2 />
         </TabPanel>
     </Tabs>
 </div>
