@@ -11,7 +11,7 @@
         const gl = webglUtils.getWebGLContext();
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { ids, positions, texDimensions, colors } = getInitialData(600, {
+        const { ids, positions, texDimensions, colors } = getInitialData(10000, {
             width: screenWidth,
             height: screenHeight
         });
