@@ -8,15 +8,20 @@ type ProgramInfo = {
     resolutionUniformLocation: WebGLUniformLocation | null;
 };
 let programInfo: ProgramInfo;
-let program: any;
+let program: WebGLProgram;
+let idBuffer: WebGLBuffer;
 
-export const initProgram = (gl: WebGLRenderingContext) => {
+export const initProgram = (gl: WebGLRenderingContext, ids: number[]) => {
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
     programInfo = {
         idAttributeLocation: gl.getAttribLocation(program, 'id'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
     }
+
+    idBuffer = gl.createBuffer() as WebGLBuffer;
+    gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ids), gl.STATIC_DRAW);
 }
 
 export const runProgram = (params: {
@@ -33,9 +38,7 @@ export const runProgram = (params: {
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    const idBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ids), gl.STATIC_DRAW);
 
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, positionTex);
@@ -46,7 +49,6 @@ export const runProgram = (params: {
     gl.uniform2f(programInfo.texDimensionsUniformLocation, textureDimension.width, textureDimension.height);
 
     gl.enableVertexAttribArray(programInfo.idAttributeLocation);
-    gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
 
     // Tell the attribute how to get data out of positionBuffer (ARRAY_BUFFER)
     const size = 1; // 1 components per iteration
@@ -56,7 +58,5 @@ export const runProgram = (params: {
     const offset = 0; // start at the beginning of the buffer
     gl.vertexAttribPointer(programInfo.idAttributeLocation, size, type, normalize, stride, offset);
 
-    const primitiveType = gl.POINTS;
-    const count = ids.length;
-    gl.drawArrays(primitiveType, offset, count);
+    gl.drawArrays(gl.POINTS, offset, ids.length);
 };

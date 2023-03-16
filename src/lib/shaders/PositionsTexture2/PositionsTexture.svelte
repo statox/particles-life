@@ -9,9 +9,6 @@
     function main() {
         const gl = webglUtils.getWebGLContext();
 
-        drawPositions.initProgram(gl);
-        updatePositions.initProgram(gl);
-
         const ids = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
         const positions = ids
@@ -22,6 +19,9 @@
             width: 3,
             height: 3
         };
+
+        drawPositions.initProgram(gl, ids);
+        updatePositions.initProgram(gl);
 
         // create 2 textures for the positions.
         const positionTex1 = webglUtils.createTexture(
@@ -84,10 +84,12 @@
     onMount(() => main());
 </script>
 
+<p>Create an array of render-size positions. Store this array in a texture.</p>
 <p>
-    Create an array of render-size positions. Store this array in a texture. In each <code>
+    Create 2 textures which will be used to update the positions with a shader. In each <code>
         requestAnimationFrame</code
-    > update the positions randomly with javascript and create a new texture holding the positions then
-    use a shader to render the texture.
+    > update the positions with the simple shader reading from the first texture and writing to the new
+    one. Then use the drawing shader to render the new texture to the canvas.
 </p>
+<p>Finally switch the two textures to read and write in the updated textures</p>
 <canvas id="canvas" style="background-color: black" width={screenWidth} height={screenHeight} />

@@ -14,7 +14,8 @@ type ProgramInfo = {
 };
 
 let programInfo: ProgramInfo;
-let program: any;
+let program: WebGLProgram;
+let updatePositionBuffer: WebGLBuffer;
 
 export const initProgram = (gl: WebGLRenderingContext) => {
     program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFS]);
@@ -25,6 +26,19 @@ export const initProgram = (gl: WebGLRenderingContext) => {
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
     };
+
+    // setup our attributes to tell WebGL how to pull
+    // the data from the buffer above to the position attribute
+    // this buffer just contains a -1 to +1 quad for rendering
+    // to every pixel
+    // setup a full canvas clip space quad
+    updatePositionBuffer = gl.createBuffer() as WebGLBuffer;
+    gl.bindBuffer(gl.ARRAY_BUFFER, updatePositionBuffer);
+    gl.bufferData(
+        gl.ARRAY_BUFFER,
+        new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
+        gl.STATIC_DRAW
+    );
 }
 
 export const runProgram = (params: {
@@ -43,21 +57,10 @@ export const runProgram = (params: {
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);
     gl.viewport(0, 0, texDimensions.width, texDimensions.height);
 
-    // setup our attributes to tell WebGL how to pull
-    // the data from the buffer above to the position attribute
-    // this buffer just contains a -1 to +1 quad for rendering
-    // to every pixel
-    // setup a full canvas clip space quad
-    const updatePositionBuffer = gl.createBuffer() as WebGLBuffer;
     gl.bindBuffer(gl.ARRAY_BUFFER, updatePositionBuffer);
-    gl.bufferData(
-        gl.ARRAY_BUFFER,
-        new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
-        gl.STATIC_DRAW
-    );
     gl.enableVertexAttribArray(programInfo.positionAttributeLocation as number);
     gl.vertexAttribPointer(
-        programInfo.positionAttributeLocation as number,
+        programInfo.positionAttributeLocation,
         2, // size (num components)
         gl.FLOAT, // type of data in buffer
         false, // normalize
