@@ -11,12 +11,12 @@
         const gl = webglUtils.getWebGLContext();
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { ids, positions, texDimensions } = getInitialData(600, {
+        const { ids, positions, texDimensions, colors } = getInitialData(600, {
             width: screenWidth,
             height: screenHeight
         });
 
-        drawPositions.initProgram(gl, ids);
+        drawPositions.initProgram(gl, { ids, colors, texDimensions });
         updatePositions.initProgram(gl, { positions, texDimensions });
 
         function render() {

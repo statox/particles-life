@@ -24,7 +24,10 @@ void main() {
         vec2 diff = position - otherPosition;
         float mag = length(diff);
         if (mag < 20.0) {
-            direction = direction + diff;
+            if (mag == 0.0) {
+                mag = 0.1;
+            }
+            direction = direction + (diff * vec2(10.0/mag, 10.0/mag));
         }
     }
     direction = direction * vec2(0.01, 0.01);

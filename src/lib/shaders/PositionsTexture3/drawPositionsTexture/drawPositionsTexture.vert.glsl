@@ -1,8 +1,11 @@
 attribute float id;
+attribute float color;
 uniform sampler2D positionTex;
 uniform vec2 texDimensions;
 
 uniform vec2 u_resolution;
+
+varying float v_color;
 
 vec2 getValueFrom2DTextureAs1DArray(sampler2D tex, vec2 dimensions, float index) {
     float y = floor(index / dimensions.x);
@@ -27,5 +30,6 @@ void main() {
  
     // Translate to have 0, 0 on top left
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
-    gl_PointSize = 3.0;
+    gl_PointSize = 5.0;
+    v_color = color;
 }
