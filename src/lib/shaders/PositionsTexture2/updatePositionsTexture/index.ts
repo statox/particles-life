@@ -16,8 +16,15 @@ type ProgramInfo = {
 let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let updatePositionBuffer: WebGLBuffer;
+let positionTex1: WebGLTexture;
+let positionTex2: WebGLTexture;
+let positionsFB1: WebGLFramebuffer;
+let positionsFB2: WebGLFramebuffer;
+let oldPositionsInfo: PositionsInfo;
+let newPositionsInfo: PositionsInfo;
 
-export const initProgram = (gl: WebGLRenderingContext) => {
+export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
+    const { positions, texDimensions } = params;
     program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFS]);
 
     programInfo = {
@@ -39,20 +46,45 @@ export const initProgram = (gl: WebGLRenderingContext) => {
         new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
         gl.STATIC_DRAW
     );
+
+    // create 2 textures for the positions.
+    positionTex1 = webglUtils.createTexture(
+        gl,
+        new Float32Array(positions),
+        texDimensions.width,
+        texDimensions.height
+    );
+    positionTex2 = webglUtils.createTexture(
+        gl,
+        null,
+        texDimensions.width,
+        texDimensions.height
+    );
+
+    // create 2 framebuffers. One that renders to positionTex1
+    // and another that renders to positionTex2
+    positionsFB1 = webglUtils.createFramebuffer(gl, positionTex1);
+    positionsFB2 = webglUtils.createFramebuffer(gl, positionTex2);
+
+    oldPositionsInfo = {
+        fb: positionsFB1,
+        tex: positionTex1
+    };
+    newPositionsInfo = {
+        fb: positionsFB2,
+        tex: positionTex2
+    };
 }
 
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
-    newPositionsInfo: PositionsInfo;
-    oldPositionsInfo: PositionsInfo;
     texDimensions: { width: number; height: number };
 }) => {
     const {
         gl,
-        newPositionsInfo,
-        oldPositionsInfo,
         texDimensions
     } = params;
+
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);
     gl.viewport(0, 0, texDimensions.width, texDimensions.height);
@@ -81,4 +113,14 @@ export const runProgram = (params: {
     gl.uniform2f(programInfo.resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
+
+    // swap which texture we will read from
+    // and which one we will write to
+    {
+        const temp = oldPositionsInfo;
+        oldPositionsInfo = newPositionsInfo;
+        newPositionsInfo = temp;
+    }
+
+    return oldPositionsInfo.tex;
 };

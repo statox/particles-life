@@ -21,60 +21,22 @@
         };
 
         drawPositions.initProgram(gl, ids);
-        updatePositions.initProgram(gl);
-
-        // create 2 textures for the positions.
-        const positionTex1 = webglUtils.createTexture(
-            gl,
-            new Float32Array(positions),
-            texDimensions.width,
-            texDimensions.height
-        );
-        const positionTex2 = webglUtils.createTexture(
-            gl,
-            null,
-            texDimensions.width,
-            texDimensions.height
-        );
-        // create 2 framebuffers. One that renders to positionTex1
-        // and another that renders to positionTex2
-        const positionsFB1 = webglUtils.createFramebuffer(gl, positionTex1);
-        const positionsFB2 = webglUtils.createFramebuffer(gl, positionTex2);
-
-        let oldPositionsInfo = {
-            fb: positionsFB1,
-            tex: positionTex1
-        };
-        let newPositionsInfo = {
-            fb: positionsFB2,
-            tex: positionTex2
-        };
+        updatePositions.initProgram(gl, { positions, texDimensions });
 
         function render() {
             webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-            updatePositions.runProgram({
+            const positionTex = updatePositions.runProgram({
                 gl,
-                newPositionsInfo,
-                oldPositionsInfo,
                 texDimensions: texDimensions
             });
 
-            const positionTex = newPositionsInfo.tex;
             drawPositions.runProgram({
                 gl,
                 positionTex,
                 textureDimension: texDimensions,
                 ids
             });
-
-            // swap which texture we will read from
-            // and which one we will write to
-            {
-                const temp = oldPositionsInfo;
-                oldPositionsInfo = newPositionsInfo;
-                newPositionsInfo = temp;
-            }
 
             requestAnimationFrame(render);
         }
