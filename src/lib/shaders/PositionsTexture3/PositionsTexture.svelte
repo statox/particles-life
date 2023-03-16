@@ -24,13 +24,12 @@
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
-        updatePositions.initProgram(gl, { positions, texDimensions });
+        let positionTex = updatePositions.initProgram(gl, { positions, texDimensions });
 
-        let positionTex: WebGLTexture;
         function render() {
             webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-            if (!positionTex || !pause) {
+            if (!pause) {
                 for (let _ = 0; _ < 10; _++) {
                     positionTex = updatePositions.runProgram({
                         gl,

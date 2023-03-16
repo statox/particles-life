@@ -74,6 +74,8 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         fb: positionsFB2,
         tex: positionTex2
     };
+
+    return positionTex1;
 }
 
 export const runProgram = (params: {
