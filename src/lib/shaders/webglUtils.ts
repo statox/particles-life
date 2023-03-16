@@ -2,6 +2,21 @@ import type { CallbackErrorOnly } from '$lib/tsUtils';
 
 const defaultShaderType = ['VERTEX_SHADER', 'FRAGMENT_SHADER'];
 
+export function getWebGLContext() {
+    // Get A WebGL context
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+    if (!canvas) {
+        throw 'canvas undefined';
+    }
+    const gl = canvas.getContext('webgl');
+    if (!gl) {
+        throw 'gl undefined';
+    }
+    checkWebGlCapabilities(gl);
+    return gl;
+
+}
+
 export function checkWebGlCapabilities(gl: WebGLRenderingContext) {
     if (!gl.getExtension('OES_texture_float')) {
         alert('Need OES_texture_float');

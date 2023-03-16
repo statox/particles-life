@@ -28,6 +28,7 @@ export const runProgram = (params: {
     const { gl, positionTex, textureDimension, ids } = params;
 
     webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
@@ -48,7 +49,7 @@ export const runProgram = (params: {
     gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
 
     // Tell the attribute how to get data out of positionBuffer (ARRAY_BUFFER)
-    const size = 1; // 2 components per iteration
+    const size = 1; // 1 components per iteration
     const type = gl.FLOAT; // the data is 32bit floats
     const normalize = false; // don't normalize the data
     const stride = 0; // 0 = move forward size * sizeof(type) each iteration to get the next position
