@@ -5,16 +5,22 @@
     import { getInitialData } from './simulationUtils';
     import * as updatePositions from './updatePositionsTexture';
 
-    const screenWidth = 800;
-    const screenHeight = 600;
+    const screenDimensions = {
+        width: 800,
+        height: 600
+    };
+    const texDimensions = {
+        width: 100,
+        height: 50
+    };
     let pause = true;
     function main() {
         const gl = webglUtils.getWebGLContext();
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { ids, positions, texDimensions, colors } = getInitialData(1000, {
-            width: screenWidth,
-            height: screenHeight
+        const { ids, positions, colors } = getInitialData(texDimensions, {
+            width: screenDimensions.width,
+            height: screenDimensions.height
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
@@ -51,8 +57,14 @@
     This time the update shader iterate through the texture to compute the distance of the particle
     to each other particle and if they are too close it pushes them appart.
 </p>
-<canvas id="canvas" style="background-color: black" width={screenWidth} height={screenHeight} />
+<canvas
+    id="canvas"
+    style="background-color: black"
+    width={screenDimensions.width}
+    height={screenDimensions.height}
+/>
 
 <div>
     <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'}</button>
+    <span>particles: {texDimensions.width * texDimensions.height}</span>
 </div>

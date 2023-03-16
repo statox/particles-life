@@ -4,6 +4,11 @@ uniform sampler2D positionTex;
 uniform vec2 texDimensions;
 uniform vec2 u_resolution;
 
+// We need to define the texture dimensions in constants
+// because loops work only with constant values
+const float texWidth = 100.0;
+const float texHeight = 50.0;
+
 vec2 euclideanModulo(vec2 n, vec2 m) {
     return mod(mod(n, m) + m, m);
 }
@@ -15,18 +20,20 @@ void main() {
     vec2 direction = vec2(0.0, 0.0);
 
     // Iterate on the texture coordinates to compare with each other cell
-    const float texWidth = 10000.0;
-    for (float x=0.0; x<1.0; x += 1.0 / texWidth) {
-        vec2 otherTextCoord = vec2(x, 0.5);
-        vec2 otherPosition = texture2D(positionTex, otherTextCoord).xy;
 
-        vec2 diff = position - otherPosition;
-        float mag = length(diff);
-        if (mag < 9.0) {
-            if (mag == 0.0) {
-                mag = 0.1;
+    for (float y=0.0; y<1.0; y += 1.0 / texHeight) {
+        for (float x=0.0; x<1.0; x += 1.0 / texWidth) {
+            vec2 otherTextCoord = vec2(x, y);
+            vec2 otherPosition = texture2D(positionTex, otherTextCoord).xy;
+
+            vec2 diff = position - otherPosition;
+            float mag = length(diff);
+            if (mag < 9.0) {
+                if (mag == 0.0) {
+                    mag = 0.1;
+                }
+                direction = direction + (diff * 10.0/mag);
             }
-            direction = direction + (diff * 10.0/mag);
         }
     }
     direction = direction * vec2(0.01, 0.01);
