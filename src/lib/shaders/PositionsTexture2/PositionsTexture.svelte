@@ -2,23 +2,19 @@
     import { onMount } from 'svelte';
     import * as webglUtils from '../webglUtils';
     import * as drawPositions from './drawPositionsTexture';
+    import { getInitialData } from './simulationUtils';
     import * as updatePositions from './updatePositionsTexture';
 
     const screenWidth = 800;
     const screenHeight = 600;
     function main() {
         const gl = webglUtils.getWebGLContext();
-
-        const ids = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
-        const positions = ids
-            .map((_) => [Math.random() * screenWidth, Math.random() * screenHeight, 0, 0])
-            .flat();
 
-        const texDimensions = {
-            width: 3,
-            height: 3
-        };
+        const { ids, positions, texDimensions } = getInitialData(100, {
+            width: screenWidth,
+            height: screenHeight
+        });
 
         drawPositions.initProgram(gl, ids);
         updatePositions.initProgram(gl, { positions, texDimensions });

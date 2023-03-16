@@ -1,15 +1,13 @@
-export function getInitialPositions(screenWidth: number, screenHeight: number) {
-    const numParticles = 20;
-    return new Array(numParticles).fill(0).map((_) => {
-        return [Math.random() * screenWidth, Math.random() * screenHeight];
-    }).flat();
-}
+export function getInitialData(nbParticles: number, screenDimensions: { width: number, height: number }) {
+    const ids = new Array(nbParticles).fill(0).map((_, i) => i);
+    const positions = ids
+        .map((_) => [Math.random() * screenDimensions.width, Math.random() * screenDimensions.height, 0, 0])
+        .flat();
 
-export function getArrays(particleTexWidth: number, particleTexHeight: number) {
-    const numParticles = particleTexWidth * particleTexHeight;
-    const ids = new Array(numParticles).fill(0).map((_, i) => i);
+    const texDimensions = {
+        width: ids.length,
+        height: 1
+    };
 
-    const cells = new Float32Array(ids.map((_) => [Math.floor(Math.random() * 2), 0, 0, 1]).flat());
-
-    return { numParticles, cells };
+    return { ids, positions, texDimensions };
 }
