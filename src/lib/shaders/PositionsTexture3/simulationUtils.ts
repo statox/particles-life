@@ -4,15 +4,35 @@ export function getInitialData(texDimensions: { width: number, height: number },
     const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * 4));
 
     const positions = ids
-        .map((_) => {
-            const r = 10 * Math.random();
-            const theta = Math.random() * 2 * Math.PI;
-            const x = screenDimensions.width / 2 + r * Math.cos(theta);
-            const y = screenDimensions.height / 2 + r * Math.sin(theta);
+        .map((id) => {
+            const mode = 'square';
+            if (mode === 'circle') {
+                const edgeSize = 200;   // In screen pixels
+                const { x, y } = randomCoordInCircle(screenDimensions, edgeSize);
+                return [x, y, 0, 0];
+            }
 
-            return [x, y, 0, 0];
+            if (mode === 'square') {
+                const edgeSize = 300;   // In screen pixels
+                const { x, y } = randomCoordInSquare(screenDimensions, edgeSize);
+                return [x, y, 0, 0];
+            }
         })
         .flat();
 
     return { ids, positions, texDimensions, colors };
+}
+
+const randomCoordInSquare = (screenDimensions: { width: number, height: number }, edgeSize: number) => {
+    const x = (Math.random() * edgeSize - edgeSize / 2) + screenDimensions.width / 2;
+    const y = (Math.random() * edgeSize - edgeSize / 2) + screenDimensions.height / 2;
+    return { x, y };
+}
+
+const randomCoordInCircle = (screenDimensions: { width: number, height: number }, edgeSize: number) => {
+    const r = edgeSize * Math.random();
+    const theta = Math.random() * 2 * Math.PI;
+    const x = r * Math.cos(theta) + screenDimensions.width / 2;
+    const y = r * Math.sin(theta) + screenDimensions.height / 2
+    return { x, y };
 }
