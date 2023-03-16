@@ -11,7 +11,7 @@
     };
     const texDimensions = {
         width: 100,
-        height: 50
+        height: 100
     };
     let pause = true;
     function main() {

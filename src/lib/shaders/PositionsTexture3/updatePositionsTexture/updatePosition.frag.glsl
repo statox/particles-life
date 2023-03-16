@@ -7,7 +7,7 @@ uniform vec2 u_resolution;
 // We need to define the texture dimensions in constants
 // because loops work only with constant values
 const float texWidth = 100.0;
-const float texHeight = 50.0;
+const float texHeight = 100.0;
 
 vec2 euclideanModulo(vec2 n, vec2 m) {
     return mod(mod(n, m) + m, m);
