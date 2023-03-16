@@ -11,7 +11,7 @@
         const gl = webglUtils.getWebGLContext();
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { ids, positions, texDimensions } = getInitialData(100, {
+        const { ids, positions, texDimensions } = getInitialData(600, {
             width: screenWidth,
             height: screenHeight
         });
@@ -42,12 +42,9 @@
     onMount(() => main());
 </script>
 
-<p>Create an array of render-size positions. Store this array in a texture.</p>
+<p>Same principle with a shader to update positions and a shader to draw particles.</p>
 <p>
-    Create 2 textures which will be used to update the positions with a shader. In each <code>
-        requestAnimationFrame</code
-    > update the positions with the simple shader reading from the first texture and writing to the new
-    one. Then use the drawing shader to render the new texture to the canvas.
+    This time the update shader iterate through the texture to compute the distance of the particle
+    to each other particle and if they are too close it pushes them appart.
 </p>
-<p>Finally switch the two textures to read and write in the updated textures</p>
 <canvas id="canvas" style="background-color: black" width={screenWidth} height={screenHeight} />
