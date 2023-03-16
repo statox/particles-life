@@ -9,6 +9,7 @@
     import PositionsBuffer from '../PositionsBuffer/PositionsBuffer.svelte';
     import PositionsTexture from '../PositionsTexture/PositionsTexture.svelte';
     import PositionsTexture2 from '../PositionsTexture2/PositionsTexture.svelte';
+    import PositionsTexture3 from '../PositionsTexture3/PositionsTexture.svelte';
 </script>
 
 <div>
@@ -21,6 +22,7 @@
             <Tab>Positions Buffer</Tab>
             <Tab>Positions Texture</Tab>
             <Tab>Positions Texture Draw & Update</Tab>
+            <Tab>Positions Texture Advanced shader</Tab>
         </TabList>
 
         <TabPanel>
@@ -59,6 +61,10 @@
 
         <TabPanel>
             <PositionsTexture2 />
+        </TabPanel>
+
+        <TabPanel>
+            <PositionsTexture3 />
         </TabPanel>
     </Tabs>
 </div>
