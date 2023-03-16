@@ -7,11 +7,12 @@
 
     const screenWidth = 800;
     const screenHeight = 600;
+    let pause = true;
     function main() {
         const gl = webglUtils.getWebGLContext();
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { ids, positions, texDimensions, colors } = getInitialData(10000, {
+        const { ids, positions, texDimensions, colors } = getInitialData(1000, {
             width: screenWidth,
             height: screenHeight
         });
@@ -19,13 +20,16 @@
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
         updatePositions.initProgram(gl, { positions, texDimensions });
 
+        let positionTex: WebGLTexture;
         function render() {
             webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-            const positionTex = updatePositions.runProgram({
-                gl,
-                texDimensions: texDimensions
-            });
+            if (!positionTex || !pause) {
+                positionTex = updatePositions.runProgram({
+                    gl,
+                    texDimensions: texDimensions
+                });
+            }
 
             drawPositions.runProgram({
                 gl,
@@ -48,3 +52,7 @@
     to each other particle and if they are too close it pushes them appart.
 </p>
 <canvas id="canvas" style="background-color: black" width={screenWidth} height={screenHeight} />
+
+<div>
+    <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'}</button>
+</div>
