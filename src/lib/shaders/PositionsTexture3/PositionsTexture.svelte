@@ -31,10 +31,12 @@
             webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
             if (!positionTex || !pause) {
-                positionTex = updatePositions.runProgram({
-                    gl,
-                    texDimensions: texDimensions
-                });
+                for (let _ = 0; _ < 10; _++) {
+                    positionTex = updatePositions.runProgram({
+                        gl,
+                        texDimensions: texDimensions
+                    });
+                }
             }
 
             drawPositions.runProgram({
