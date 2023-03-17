@@ -13,6 +13,8 @@
         width: 100,
         height: 100
     };
+    let steps = 1;
+    let slowMo = false;
     let pause = true;
     function main() {
         const gl = webglUtils.getWebGLContext();
@@ -30,7 +32,7 @@
             webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
             if (!pause) {
-                for (let _ = 0; _ < 10; _++) {
+                for (let _ = 0; _ < steps; _++) {
                     positionTex = updatePositions.runProgram({
                         gl,
                         texDimensions: texDimensions
@@ -45,7 +47,13 @@
                 ids
             });
 
-            requestAnimationFrame(render);
+            if (pause) {
+                return requestAnimationFrame(render);
+            }
+            if (slowMo) {
+                return setTimeout(() => requestAnimationFrame(render), 1000);
+            }
+            return requestAnimationFrame(render);
         }
         requestAnimationFrame(render);
     }
@@ -67,5 +75,8 @@
 
 <div>
     <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'}</button>
+    <button on:click={() => (slowMo = !slowMo)}>{slowMo ? 'Normal Speed' : 'Slow Mo'}</button>
     <span>particles: {texDimensions.width * texDimensions.height}</span>
+    <label for="steps">Smooth steps</label>
+    <input bind:value={steps} type="number" min={0} />
 </div>
