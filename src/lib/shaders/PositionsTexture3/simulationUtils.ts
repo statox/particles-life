@@ -5,9 +5,9 @@ export function getInitialData(texDimensions: { width: number, height: number },
 
     const positions = ids
         .map((id) => {
-            const mode = 'circle';
+            const mode = 'disk';
             if (mode === 'disk') {
-                const edgeSize = 200;   // In screen pixels
+                const edgeSize = 20;   // In screen pixels
                 const { x, y } = randomCoordInDisk(screenDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
@@ -33,7 +33,7 @@ export function getInitialData(texDimensions: { width: number, height: number },
                 return [x, y, 0, 0];
             }
         })
-        .flat();
+        .flat() as number[];
 
     return { ids, positions, texDimensions, colors };
 }
