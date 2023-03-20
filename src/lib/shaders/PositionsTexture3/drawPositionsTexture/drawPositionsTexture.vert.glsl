@@ -6,6 +6,7 @@ uniform vec2 texDimensions;
 uniform vec2 u_resolution;
 
 varying float v_color;
+varying float v_id;
 
 vec2 getValueFrom2DTextureAs1DArray(sampler2D tex, vec2 dimensions, float index) {
     float y = floor(index / dimensions.x);
@@ -32,4 +33,5 @@ void main() {
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
     gl_PointSize = 2.0;
     v_color = color;
+    v_id = id / (texDimensions.x * texDimensions.y);
 }

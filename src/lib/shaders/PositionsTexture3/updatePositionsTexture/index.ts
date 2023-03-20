@@ -9,6 +9,7 @@ type PositionsInfo = {
 type ProgramInfo = {
     positionAttributeLocation: number;
     positionTexLocation: WebGLUniformLocation | null;
+    deltaTimeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
     resolutionUniformLocation: WebGLUniformLocation | null;
 };
@@ -22,6 +23,7 @@ let positionsFB1: WebGLFramebuffer;
 let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
+let lastTime: number;
 
 export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
     const { positions, texDimensions } = params;
@@ -30,6 +32,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
         positionTexLocation: gl.getUniformLocation(program, 'positionTex'),
+        deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
     };
@@ -87,6 +90,13 @@ export const runProgram = (params: {
         texDimensions
     } = params;
 
+    const now = Date.now();
+    if (!lastTime) {
+        lastTime = now - 1;
+    }
+    const deltaTime = now - lastTime;
+    lastTime = now;
+
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);
     gl.viewport(0, 0, texDimensions.width, texDimensions.height);
@@ -107,6 +117,7 @@ export const runProgram = (params: {
 
     gl.useProgram(program);
     gl.uniform1i(programInfo.positionTexLocation, 0); // tell the shader the position texture is on texture unit 0
+    gl.uniform1f(programInfo.deltaTimeUniformLocation, deltaTime);
     gl.uniform2f(
         programInfo.texDimensionsUniformLocation,
         texDimensions.width,

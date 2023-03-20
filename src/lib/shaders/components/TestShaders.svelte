@@ -16,13 +16,13 @@
     <Tabs>
         <TabList>
             <Tab>About</Tab>
-            <Tab>Simple counter</Tab>
-            <Tab>Particles</Tab>
-            <Tab>Particles 2</Tab>
-            <Tab>Positions Buffer</Tab>
-            <Tab>Positions Texture</Tab>
-            <Tab>Positions Texture Draw & Update</Tab>
-            <Tab>Positions Texture Advanced shader</Tab>
+            <Tab>Test 1</Tab>
+            <Tab>Test 2</Tab>
+            <Tab>Test 3</Tab>
+            <Tab>Test 4</Tab>
+            <Tab>Test 5</Tab>
+            <Tab>Test 6</Tab>
+            <Tab>Test 7</Tab>
         </TabList>
 
         <TabPanel>

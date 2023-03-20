@@ -1,8 +1,11 @@
 precision highp float;
 
+#define MIN_DISTANCE 9.0
+
 uniform sampler2D positionTex;
 uniform vec2 texDimensions;
 uniform vec2 u_resolution;
+uniform float deltaTime;
 
 // We need to define the texture dimensions in constants
 // because loops work only with constant values
@@ -28,15 +31,15 @@ void main() {
 
             vec2 diff = position - otherPosition;
             float mag = length(diff);
-            if (mag < 9.0) {
+            if (mag < MIN_DISTANCE) {
                 if (mag == 0.0) {
-                    mag = 0.1;
+                    mag = 1.0e-10;
                 }
                 direction = direction + (diff * 10.0/mag);
             }
         }
     }
-    direction = direction * vec2(0.01, 0.01);
+    direction = (direction * 0.0001) * deltaTime;
 
     vec2 newPosition = euclideanModulo(position + direction, u_resolution);
 
