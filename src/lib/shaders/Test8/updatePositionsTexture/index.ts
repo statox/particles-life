@@ -9,6 +9,7 @@ type PositionsInfo = {
 type ProgramInfo = {
     positionAttributeLocation: number;
     positionTexLocation: WebGLUniformLocation | null;
+    interactionRangeUniformLocation: WebGLUniformLocation | null;
     deltaTimeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
     resolutionUniformLocation: WebGLUniformLocation | null;
@@ -32,6 +33,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
         positionTexLocation: gl.getUniformLocation(program, 'positionTex'),
+        interactionRangeUniformLocation: gl.getUniformLocation(program, 'interactionRange'),
         deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
@@ -84,10 +86,12 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
     texDimensions: { width: number; height: number };
+    interactionRange: number;
 }) => {
     const {
         gl,
-        texDimensions
+        texDimensions,
+        interactionRange
     } = params;
 
     const now = Date.now();
@@ -117,6 +121,7 @@ export const runProgram = (params: {
 
     gl.useProgram(program);
     gl.uniform1i(programInfo.positionTexLocation, 0); // tell the shader the position texture is on texture unit 0
+    gl.uniform1f(programInfo.interactionRangeUniformLocation, interactionRange);
     gl.uniform1f(programInfo.deltaTimeUniformLocation, deltaTime);
     gl.uniform2f(
         programInfo.texDimensionsUniformLocation,

@@ -10,19 +10,27 @@
         height: 600
     };
     const texDimensions = {
-        width: 100,
-        height: 100
+        width: 50,
+        height: 10
     };
     let steps = 1;
     let slowMo = false;
     let pause = true;
+
+    const simulationParams = {
+        interactionRange: 40
+    };
     function main() {
         const gl = webglUtils.getWebGLContext();
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { ids, positions, colors } = getInitialData(texDimensions, {
-            width: screenDimensions.width,
-            height: screenDimensions.height
+        const { ids, positions, colors } = getInitialData({
+            texDimensions,
+            screenDimensions: {
+                width: screenDimensions.width,
+                height: screenDimensions.height
+            },
+            mode: 'square'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
@@ -35,7 +43,8 @@
                 for (let _ = 0; _ < steps; _++) {
                     positionTex = updatePositions.runProgram({
                         gl,
-                        texDimensions: texDimensions
+                        texDimensions: texDimensions,
+                        interactionRange: simulationParams.interactionRange
                     });
                 }
             }
@@ -79,4 +88,8 @@
     <span>particles: {texDimensions.width * texDimensions.height}</span>
     <label for="steps">Smooth steps</label>
     <input bind:value={steps} type="number" min={0} />
+</div>
+<div>
+    <label for="steps">Interaction Ranger</label>
+    <input bind:value={simulationParams.interactionRange} type="number" min={0} />
 </div>

@@ -1,11 +1,13 @@
-export function getInitialData(texDimensions: { width: number, height: number }, screenDimensions: { width: number, height: number }) {
+export type InitialCellsMode = 'disk' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
+
+export function getInitialData(params: { texDimensions: { width: number, height: number }, screenDimensions: { width: number, height: number }, mode: InitialCellsMode }) {
+    const { texDimensions, screenDimensions, mode } = params;
     const nbParticles = texDimensions.width * texDimensions.height;
     const ids = new Array(nbParticles).fill(0).map((_, i) => i);
     const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * 4));
 
     const positions = ids
         .map((id) => {
-            const mode = 'disk';
             if (mode === 'disk') {
                 const edgeSize = 20;   // In screen pixels
                 const { x, y } = randomCoordInDisk(screenDimensions, edgeSize);
@@ -13,7 +15,7 @@ export function getInitialData(texDimensions: { width: number, height: number },
             }
 
             if (mode === 'square') {
-                const edgeSize = 300;   // In screen pixels
+                const edgeSize = 550;   // In screen pixels
                 const { x, y } = randomCoordInSquare(screenDimensions, edgeSize);
                 return [x, y, 0, 0];
             }

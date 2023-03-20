@@ -1,10 +1,9 @@
 precision highp float;
 
-#define MIN_DISTANCE 9.0
-
 uniform sampler2D positionTex;
 uniform vec2 texDimensions;
 uniform vec2 u_resolution;
+uniform float interactionRange;
 uniform float deltaTime;
 
 // We need to define the texture dimensions in constants
@@ -31,7 +30,7 @@ void main() {
 
             vec2 diff = position - otherPosition;
             float mag = length(diff);
-            if (mag < MIN_DISTANCE) {
+            if (mag < interactionRange) {
                 if (mag == 0.0) {
                     mag = 1.0e-10;
                 }
