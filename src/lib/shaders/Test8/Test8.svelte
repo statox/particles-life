@@ -10,7 +10,7 @@
         height: 600
     };
     const texDimensions = {
-        width: 50,
+        width: 10,
         height: 10
     };
     let steps = 1;
@@ -18,7 +18,9 @@
     let pause = true;
 
     const simulationParams = {
-        interactionRange: 40
+        interactionRange: 70,
+        drag: 1000,
+        timeStep: 10
     };
     function main() {
         const gl = webglUtils.getWebGLContext();
@@ -30,7 +32,7 @@
                 width: screenDimensions.width,
                 height: screenDimensions.height
             },
-            mode: 'square'
+            mode: 'circle'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
@@ -44,7 +46,9 @@
                     positionTex = updatePositions.runProgram({
                         gl,
                         texDimensions: texDimensions,
-                        interactionRange: simulationParams.interactionRange
+                        interactionRange: simulationParams.interactionRange,
+                        drag: simulationParams.drag,
+                        deltaTime: simulationParams.timeStep
                     });
                 }
             }
@@ -90,6 +94,26 @@
     <input bind:value={steps} type="number" min={0} />
 </div>
 <div>
-    <label for="steps">Interaction Ranger</label>
-    <input bind:value={simulationParams.interactionRange} type="number" min={0} />
+    <ul>
+        <li>
+            <label for="interactionRange">Interaction Range</label>
+            <input
+                id="interactionRange"
+                bind:value={simulationParams.interactionRange}
+                type="number"
+                min={0}
+            />
+        </li>
+
+        <li>
+            <label for="drag">Drag</label>
+            <input id="drag" bind:value={simulationParams.drag} type="number" min={0} />
+        </li>
+
+        <li>
+            <label for="deltaTime">Time step</label>
+            <input id="deltaTime" bind:value={simulationParams.timeStep} type="number" min={0} />
+        </li>
+        <ul />
+    </ul>
 </div>

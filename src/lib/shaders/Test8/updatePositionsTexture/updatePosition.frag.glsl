@@ -5,6 +5,7 @@ uniform vec2 texDimensions;
 uniform vec2 u_resolution;
 uniform float interactionRange;
 uniform float deltaTime;
+uniform float drag;
 
 // We need to define the texture dimensions in constants
 // because loops work only with constant values
@@ -31,14 +32,15 @@ void main() {
             vec2 diff = position - otherPosition;
             float mag = length(diff);
             if (mag < interactionRange) {
-                if (mag == 0.0) {
-                    mag = 1.0e-10;
+                float diffCoef = 1.0 / mag;
+                if (mag < 1.0) {
+                    diffCoef = 1.0;
                 }
-                direction = direction + (diff * 10.0/mag);
+                direction = direction + (diff * diffCoef);
             }
         }
     }
-    direction = (direction * 0.0001) * deltaTime;
+    direction = (direction * deltaTime) / drag;
 
     vec2 newPosition = euclideanModulo(position + direction, u_resolution);
 

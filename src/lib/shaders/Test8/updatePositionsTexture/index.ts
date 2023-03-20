@@ -10,6 +10,7 @@ type ProgramInfo = {
     positionAttributeLocation: number;
     positionTexLocation: WebGLUniformLocation | null;
     interactionRangeUniformLocation: WebGLUniformLocation | null;
+    dragUniformLocation: WebGLUniformLocation | null;
     deltaTimeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
     resolutionUniformLocation: WebGLUniformLocation | null;
@@ -34,6 +35,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
         positionTexLocation: gl.getUniformLocation(program, 'positionTex'),
         interactionRangeUniformLocation: gl.getUniformLocation(program, 'interactionRange'),
+        dragUniformLocation: gl.getUniformLocation(program, 'drag'),
         deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
@@ -87,19 +89,16 @@ export const runProgram = (params: {
     gl: WebGLRenderingContext;
     texDimensions: { width: number; height: number };
     interactionRange: number;
+    drag: number;
+    deltaTime: number;
 }) => {
     const {
         gl,
         texDimensions,
-        interactionRange
+        interactionRange,
+        drag,
+        deltaTime
     } = params;
-
-    const now = Date.now();
-    if (!lastTime) {
-        lastTime = now - 1;
-    }
-    const deltaTime = now - lastTime;
-    lastTime = now;
 
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);
@@ -121,6 +120,7 @@ export const runProgram = (params: {
 
     gl.useProgram(program);
     gl.uniform1i(programInfo.positionTexLocation, 0); // tell the shader the position texture is on texture unit 0
+    gl.uniform1f(programInfo.dragUniformLocation, drag);
     gl.uniform1f(programInfo.interactionRangeUniformLocation, interactionRange);
     gl.uniform1f(programInfo.deltaTimeUniformLocation, deltaTime);
     gl.uniform2f(

@@ -31,7 +31,7 @@ void main() {
  
     // Translate to have 0, 0 on top left
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
-    gl_PointSize = 2.0;
+    gl_PointSize = 5.0;
     v_color = color;
     v_id = id / (texDimensions.x * texDimensions.y);
 }
