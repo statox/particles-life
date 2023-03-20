@@ -122,6 +122,12 @@
     This is not super impressive but this page takes 9 integers and uses a compute shader to
     multiply them by two. It's a first step!
 </p>
+<p>
+    It is reusing the code from
+    <a target="none" href="https://webglfundamentals.org/webgl/lessons/webgl-gpgpu.html">
+        this site
+    </a>.
+</p>
 
 <ul id="result" />
 

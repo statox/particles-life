@@ -10,6 +10,7 @@
     import PositionsTexture from '../PositionsTexture/PositionsTexture.svelte';
     import PositionsTexture2 from '../PositionsTexture2/PositionsTexture.svelte';
     import PositionsTexture3 from '../PositionsTexture3/PositionsTexture.svelte';
+    import Test8 from '../Test8/Test8.svelte';
 </script>
 
 <div>
@@ -23,20 +24,11 @@
             <Tab>Test 5</Tab>
             <Tab>Test 6</Tab>
             <Tab>Test 7</Tab>
+            <Tab>Test 8</Tab>
         </TabList>
 
         <TabPanel>
             <p>This page is an experiment to run simulation on the GPU.</p>
-            <p>
-                I am copying code from
-                <a
-                    target="none"
-                    href="https://webglfundamentals.org/webgl/lessons/webgl-gpgpu.html"
-                >
-                    this site
-                </a>
-                and adding basic typings for typescript.
-            </p>
         </TabPanel>
 
         <TabPanel>
@@ -65,6 +57,10 @@
 
         <TabPanel>
             <PositionsTexture3 />
+        </TabPanel>
+
+        <TabPanel>
+            <Test8 />
         </TabPanel>
     </Tabs>
 </div>

@@ -317,4 +317,10 @@
     onMount(() => main());
 </script>
 
+<p>
+    This is the simple particles simulation from
+    <a target="none" href="https://webglfundamentals.org/webgl/lessons/webgl-gpgpu.html">
+        webglfundamentals
+    </a> directly copied in a svelte component.
+</p>
 <canvas id="canvas" style="background-color: black" width="800" height="600" />
