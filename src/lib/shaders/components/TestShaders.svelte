@@ -12,6 +12,7 @@
     import PositionsTexture3 from '../PositionsTexture3/PositionsTexture.svelte';
     import Test8 from '../Test8/Test8.svelte';
     import Test9 from '../Test9/Test9.svelte';
+    import Test10 from '../Test10/Test10.svelte';
 </script>
 
 <div>
@@ -27,6 +28,7 @@
             <Tab>Test 7</Tab>
             <Tab>Test 8</Tab>
             <Tab>Test 9</Tab>
+            <Tab>Test 10</Tab>
         </TabList>
 
         <TabPanel>
@@ -67,6 +69,10 @@
 
         <TabPanel>
             <Test9 />
+        </TabPanel>
+
+        <TabPanel>
+            <Test10 />
         </TabPanel>
     </Tabs>
 </div>
