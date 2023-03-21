@@ -13,7 +13,7 @@ type ProgramInfo = {
     dragUniformLocation: WebGLUniformLocation | null;
     deltaTimeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
-    resolutionUniformLocation: WebGLUniformLocation | null;
+    worldDimensionsUniformLocation: WebGLUniformLocation | null;
 };
 
 let programInfo: ProgramInfo;
@@ -42,7 +42,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         dragUniformLocation: gl.getUniformLocation(program, 'drag'),
         deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
-        resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
+        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions')
     };
 
     // setup our attributes to tell WebGL how to pull
@@ -92,6 +92,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
     texDimensions: { width: number; height: number };
+    worldDimensions: { width: number; height: number };
     interactionRange: number;
     drag: number;
     deltaTime: number;
@@ -99,6 +100,7 @@ export const runProgram = (params: {
     const {
         gl,
         texDimensions,
+        worldDimensions,
         interactionRange,
         drag,
         deltaTime
@@ -132,7 +134,7 @@ export const runProgram = (params: {
         texDimensions.width,
         texDimensions.height
     );
-    gl.uniform2f(programInfo.resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
+    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 

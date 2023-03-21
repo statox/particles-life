@@ -10,11 +10,11 @@
         height: 600
     };
     const worldDimensions = {
-        width: 800,
-        height: 600
+        width: 1600,
+        height: 1200
     };
     const texDimensions = {
-        width: 500,
+        width: 200,
         height: 20
     };
     let steps = 1;
@@ -25,7 +25,7 @@
         interactionRange: 6,
         drag: 5,
         timeStep: 10,
-        particlesSize: 15
+        particlesSize: 4
     };
     function main() {
         const gl = webglUtils.getWebGLContext();
@@ -47,7 +47,8 @@
                 for (let _ = 0; _ < steps; _++) {
                     positionTex = updatePositions.runProgram({
                         gl,
-                        texDimensions: texDimensions,
+                        texDimensions,
+                        worldDimensions,
                         interactionRange: simulationParams.interactionRange,
                         drag: simulationParams.drag,
                         deltaTime: simulationParams.timeStep
@@ -58,14 +59,12 @@
             drawPositions.runProgram({
                 gl,
                 positionTex,
-                textureDimension: texDimensions,
+                texDimensions,
+                worldDimensions,
                 particlesSize: simulationParams.particlesSize,
                 ids
             });
 
-            if (pause) {
-                return requestAnimationFrame(render);
-            }
             if (slowMo) {
                 return setTimeout(() => requestAnimationFrame(render), 1000);
             }
@@ -121,6 +120,14 @@
                 type="number"
                 min={0}
             />
+        </li>
+
+        <li>
+            <label for="worldWidth">World: width</label>
+            <input id="worldWidth" bind:value={worldDimensions.width} type="number" min={0} />
+
+            <label for="worldHeight">height</label>
+            <input id="worldHeight" bind:value={worldDimensions.height} type="number" min={0} />
         </li>
         <ul />
     </ul>

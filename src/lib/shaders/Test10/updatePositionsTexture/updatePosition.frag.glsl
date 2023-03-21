@@ -2,7 +2,7 @@ precision highp float;
 
 uniform sampler2D positionTex;
 uniform vec2 texDimensions;
-uniform vec2 u_resolution;
+uniform vec2 worldDimensions;
 uniform float interactionRange;
 uniform float deltaTime;
 uniform float drag;
@@ -50,14 +50,14 @@ void main() {
     direction = direction + gravity;
 
     vec2 newPosition = position + direction;
-    newPosition.x = euclideanModulo(position.x + direction.x, u_resolution.x);
+    newPosition.x = euclideanModulo(position.x + direction.x, worldDimensions.x);
 
-    if (newPosition.y >= u_resolution.y - 5.0) {
-        newPosition.y = u_resolution.y - 7.0;
+    if (newPosition.y >= worldDimensions.y - 5.0) {
+        newPosition.y = worldDimensions.y - 7.0;
     }
 
-    // if (newPosition.x >= u_resolution.x - 5.0) {
-    //     newPosition.x = u_resolution.x - 7.0;
+    // if (newPosition.x >= worldDimensions.x - 5.0) {
+    //     newPosition.x = worldDimensions.x - 7.0;
     // }
 
     // if (newPosition.x <  5.0) {

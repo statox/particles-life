@@ -7,7 +7,7 @@ type ProgramInfo = {
     colorAttributeLocation: number;
     sizeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
-    resolutionUniformLocation: WebGLUniformLocation | null;
+    worldDimensionsUniformLocation: WebGLUniformLocation | null;
 };
 let programInfo: ProgramInfo;
 let program: WebGLProgram;
@@ -22,7 +22,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], 
         colorAttributeLocation: gl.getAttribLocation(program, 'color'),
         sizeUniformLocation: gl.getUniformLocation(program, 'size'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
-        resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
+        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions')
     }
 
     idBuffer = gl.createBuffer() as WebGLBuffer;
@@ -37,11 +37,12 @@ export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], 
 export const runProgram = (params: {
     gl: WebGLRenderingContext,
     positionTex: WebGLTexture,
-    textureDimension: { width: number, height: number },
+    texDimensions: { width: number, height: number },
+    worldDimensions: { width: number, height: number },
     particlesSize: number,
     ids: number[]
 }) => {
-    const { gl, positionTex, textureDimension, particlesSize, ids } = params;
+    const { gl, positionTex, texDimensions, worldDimensions, particlesSize, ids } = params;
 
     // Tell the attribute how to get data out of positionBuffer (ARRAY_BUFFER)
     const size = 1; // 1 components per iteration
@@ -70,8 +71,8 @@ export const runProgram = (params: {
     gl.useProgram(program);
 
     gl.uniform1f(programInfo.sizeUniformLocation, particlesSize);
-    gl.uniform2f(programInfo.resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
-    gl.uniform2f(programInfo.texDimensionsUniformLocation, textureDimension.width, textureDimension.height);
+    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
+    gl.uniform2f(programInfo.texDimensionsUniformLocation, texDimensions.width, texDimensions.height);
 
     gl.drawArrays(gl.POINTS, offset, ids.length);
 };
