@@ -25,11 +25,15 @@ let positionsFB1: WebGLFramebuffer;
 let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
-let lastTime: number;
 
 export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
     const { positions, texDimensions } = params;
-    program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFS]);
+
+    const updatePositionFSTemplated = updatePositionFS
+        .replace('{{TEX_WIDTH}}', texDimensions.width.toFixed(1))
+        .replace('{{TEX_HEIGHT}}', texDimensions.height.toFixed(1));
+
+    program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFSTemplated]);
 
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),

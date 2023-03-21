@@ -9,10 +9,16 @@ uniform float drag;
 
 // We need to define the texture dimensions in constants
 // because loops work only with constant values
-const float texWidth = 100.0;
-const float texHeight = 100.0;
+const float texWidth = {{TEX_WIDTH}};
+const float texHeight = {{TEX_HEIGHT}};
+
+const vec2 gravity = vec2(0.0, 0.5);
 
 vec2 euclideanModulo(vec2 n, vec2 m) {
+    return mod(mod(n, m) + m, m);
+}
+
+float euclideanModulo(float n, float m) {
     return mod(mod(n, m) + m, m);
 }
 
@@ -41,8 +47,22 @@ void main() {
         }
     }
     direction = (direction * deltaTime) / drag;
+    direction = direction + gravity;
 
-    vec2 newPosition = euclideanModulo(position + direction, u_resolution);
+    vec2 newPosition = position + direction;
+    newPosition.x = euclideanModulo(position.x + direction.x, u_resolution.x);
+
+    if (newPosition.y >= u_resolution.y - 5.0) {
+        newPosition.y = u_resolution.y - 7.0;
+    }
+
+    // if (newPosition.x >= u_resolution.x - 5.0) {
+    //     newPosition.x = u_resolution.x - 7.0;
+    // }
+
+    // if (newPosition.x <  5.0) {
+    //     newPosition.x = 7.0;
+    // }
 
     gl_FragColor = vec4(newPosition, 0, 1);
 }

@@ -1,4 +1,4 @@
-export type InitialCellsMode = 'disk' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
+export type InitialCellsMode = 'random' | 'disk' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
 
 export function getInitialData(params: { texDimensions: { width: number, height: number }, screenDimensions: { width: number, height: number }, mode: InitialCellsMode }) {
     const { texDimensions, screenDimensions, mode } = params;
@@ -8,14 +8,19 @@ export function getInitialData(params: { texDimensions: { width: number, height:
 
     const positions = ids
         .map((id) => {
+            if (mode === 'random') {
+                const { x, y } = randomCoord(screenDimensions);
+                return [x, y, 0, 0];
+            }
+
             if (mode === 'disk') {
-                const edgeSize = 20;   // In screen pixels
+                const edgeSize = 200;   // In screen pixels
                 const { x, y } = randomCoordInDisk(screenDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
 
             if (mode === 'square') {
-                const edgeSize = 550;   // In screen pixels
+                const edgeSize = 300;   // In screen pixels
                 const { x, y } = randomCoordInSquare(screenDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
@@ -38,6 +43,14 @@ export function getInitialData(params: { texDimensions: { width: number, height:
         .flat() as number[];
 
     return { ids, positions, texDimensions, colors };
+}
+
+
+const randomCoord = (screenDimensions: { width: number, height: number }) => {
+    const x = 20 + Math.random() * (screenDimensions.width - 40);
+    const y = Math.random() * (screenDimensions.height - 150);
+
+    return { x, y };
 }
 
 const randomCoordInSquare = (screenDimensions: { width: number, height: number }, edgeSize: number) => {

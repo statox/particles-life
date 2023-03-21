@@ -10,16 +10,16 @@
         height: 600
     };
     const texDimensions = {
-        width: 10,
-        height: 10
+        width: 500,
+        height: 20
     };
     let steps = 1;
     let slowMo = false;
     let pause = true;
 
     const simulationParams = {
-        interactionRange: 70,
-        drag: 1000,
+        interactionRange: 6,
+        drag: 5,
         timeStep: 10
     };
     function main() {
@@ -32,7 +32,7 @@
                 width: screenDimensions.width,
                 height: screenDimensions.height
             },
-            mode: 'circle'
+            mode: 'disk'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
@@ -74,11 +74,12 @@
     onMount(() => main());
 </script>
 
-<p>Same principle with a shader to update positions and a shader to draw particles.</p>
+<p>This could be a kind of water simulation.</p>
 <p>
-    This time the update shader iterate through the texture to compute the distance of the particle
-    to each other particle and if they are too close it pushes them appart.
+    Here we added a gravity force to the shader which pulls cells apart and we can experiment with
+    different values of the parameters.
 </p>
+<p>For now creating vertical walls create a bug so we warp the horizontal coordinates.</p>
 <canvas
     id="canvas"
     style="background-color: black"
