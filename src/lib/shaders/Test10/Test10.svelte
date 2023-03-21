@@ -9,6 +9,10 @@
         width: 800,
         height: 600
     };
+    const worldDimensions = {
+        width: 800,
+        height: 600
+    };
     const texDimensions = {
         width: 500,
         height: 20
@@ -29,10 +33,7 @@
 
         const { ids, positions, colors } = getInitialData({
             texDimensions,
-            screenDimensions: {
-                width: screenDimensions.width,
-                height: screenDimensions.height
-            },
+            worldDimensions,
             mode: 'disk'
         });
 

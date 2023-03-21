@@ -1,7 +1,7 @@
 export type InitialCellsMode = 'random' | 'disk' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
 
-export function getInitialData(params: { texDimensions: { width: number, height: number }, screenDimensions: { width: number, height: number }, mode: InitialCellsMode }) {
-    const { texDimensions, screenDimensions, mode } = params;
+export function getInitialData(params: { texDimensions: { width: number, height: number }, worldDimensions: { width: number, height: number }, mode: InitialCellsMode }) {
+    const { texDimensions, worldDimensions, mode } = params;
     const nbParticles = texDimensions.width * texDimensions.height;
     const ids = new Array(nbParticles).fill(0).map((_, i) => i);
     const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * 4));
@@ -9,34 +9,34 @@ export function getInitialData(params: { texDimensions: { width: number, height:
     const positions = ids
         .map((id) => {
             if (mode === 'random') {
-                const { x, y } = randomCoord(screenDimensions);
+                const { x, y } = randomCoord(worldDimensions);
                 return [x, y, 0, 0];
             }
 
             if (mode === 'disk') {
                 const edgeSize = 200;   // In screen pixels
-                const { x, y } = randomCoordInDisk(screenDimensions, edgeSize);
+                const { x, y } = randomCoordInDisk(worldDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
 
             if (mode === 'square') {
                 const edgeSize = 300;   // In screen pixels
-                const { x, y } = randomCoordInSquare(screenDimensions, edgeSize);
+                const { x, y } = randomCoordInSquare(worldDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
 
             if (mode === 'idDiagonal') {
-                const { x, y } = CoordIndiagonalOrderedByIds(screenDimensions, id, ids.length);
+                const { x, y } = CoordIndiagonalOrderedByIds(worldDimensions, id, ids.length);
                 return [x, y, 0, 0];
             }
 
             if (mode === 'sinusoidal') {
-                const { x, y } = CoordInSinusoidal(screenDimensions, id, ids.length, { x: 1, y: 5 });
+                const { x, y } = CoordInSinusoidal(worldDimensions, id, ids.length, { x: 1, y: 5 });
                 return [x, y, 0, 0];
             }
 
             if (mode === 'circle') {
-                const { x, y } = CoordInSinusoidal(screenDimensions, id, ids.length, { x: 1, y: 1 });
+                const { x, y } = CoordInSinusoidal(worldDimensions, id, ids.length, { x: 1, y: 1 });
                 return [x, y, 0, 0];
             }
         })
@@ -46,43 +46,43 @@ export function getInitialData(params: { texDimensions: { width: number, height:
 }
 
 
-const randomCoord = (screenDimensions: { width: number, height: number }) => {
-    const x = 20 + Math.random() * (screenDimensions.width - 40);
-    const y = Math.random() * (screenDimensions.height - 150);
+const randomCoord = (worldDimensions: { width: number, height: number }) => {
+    const x = 20 + Math.random() * (worldDimensions.width - 40);
+    const y = Math.random() * (worldDimensions.height - 150);
 
     return { x, y };
 }
 
-const randomCoordInSquare = (screenDimensions: { width: number, height: number }, edgeSize: number) => {
-    const x = (Math.random() * edgeSize - edgeSize / 2) + screenDimensions.width / 2;
-    const y = (Math.random() * edgeSize - edgeSize / 2) + screenDimensions.height / 2;
+const randomCoordInSquare = (worldDimensions: { width: number, height: number }, edgeSize: number) => {
+    const x = (Math.random() * edgeSize - edgeSize / 2) + worldDimensions.width / 2;
+    const y = (Math.random() * edgeSize - edgeSize / 2) + worldDimensions.height / 2;
     return { x, y };
 }
 
-const randomCoordInDisk = (screenDimensions: { width: number, height: number }, edgeSize: number) => {
+const randomCoordInDisk = (worldDimensions: { width: number, height: number }, edgeSize: number) => {
     const r = edgeSize * Math.random();
     const theta = Math.random() * 2 * Math.PI;
-    const x = r * Math.cos(theta) + screenDimensions.width / 2;
-    const y = r * Math.sin(theta) + screenDimensions.height / 2
+    const x = r * Math.cos(theta) + worldDimensions.width / 2;
+    const y = r * Math.sin(theta) + worldDimensions.height / 2
     return { x, y };
 }
 
-const CoordIndiagonalOrderedByIds = (screenDimensions: { width: number, height: number }, id: number, nbParticles: number) => {
-    const x = map(id, 0, nbParticles, 0, screenDimensions.width, false)
-    const y = map(id, 0, nbParticles, 0, screenDimensions.height, false)
+const CoordIndiagonalOrderedByIds = (worldDimensions: { width: number, height: number }, id: number, nbParticles: number) => {
+    const x = map(id, 0, nbParticles, 0, worldDimensions.width, false)
+    const y = map(id, 0, nbParticles, 0, worldDimensions.height, false)
     return { x, y };
 }
 
-const CoordInSinusoidal = (screenDimensions: { width: number, height: number }, id: number, nbParticles: number, frequencies: { x: number, y: number }) => {
+const CoordInSinusoidal = (worldDimensions: { width: number, height: number }, id: number, nbParticles: number, frequencies: { x: number, y: number }) => {
     const toRad = map(id, 0, nbParticles, 0, 1, true) * 2 * Math.PI;
 
     const freqX = frequencies.x;
     const dx = Math.cos(freqX * toRad) * 200
-    const x = dx + screenDimensions.width / 2;
+    const x = dx + worldDimensions.width / 2;
 
     const freqY = frequencies.y;
     const dy = Math.sin(freqY * toRad) * 200;
-    const y = dy + screenDimensions.height / 2;
+    const y = dy + worldDimensions.height / 2;
 
     return { x, y };
 }
