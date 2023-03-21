@@ -20,7 +20,8 @@
     const simulationParams = {
         interactionRange: 6,
         drag: 5,
-        timeStep: 10
+        timeStep: 10,
+        particlesSize: 15
     };
     function main() {
         const gl = webglUtils.getWebGLContext();
@@ -57,6 +58,7 @@
                 gl,
                 positionTex,
                 textureDimension: texDimensions,
+                particlesSize: simulationParams.particlesSize,
                 ids
             });
 
@@ -108,6 +110,16 @@
         <li>
             <label for="deltaTime">Time step</label>
             <input id="deltaTime" bind:value={simulationParams.timeStep} type="number" min={0} />
+        </li>
+
+        <li>
+            <label for="particlesSize">Particles size</label>
+            <input
+                id="particlesSize"
+                bind:value={simulationParams.particlesSize}
+                type="number"
+                min={0}
+            />
         </li>
         <ul />
     </ul>

@@ -5,6 +5,7 @@ import drawPositionsFS from './drawPositionsTexture.frag.glsl';
 type ProgramInfo = {
     idAttributeLocation: number;
     colorAttributeLocation: number;
+    sizeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
     resolutionUniformLocation: WebGLUniformLocation | null;
 };
@@ -19,6 +20,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], 
     programInfo = {
         idAttributeLocation: gl.getAttribLocation(program, 'id'),
         colorAttributeLocation: gl.getAttribLocation(program, 'color'),
+        sizeUniformLocation: gl.getUniformLocation(program, 'size'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
     }
@@ -36,9 +38,10 @@ export const runProgram = (params: {
     gl: WebGLRenderingContext,
     positionTex: WebGLTexture,
     textureDimension: { width: number, height: number },
+    particlesSize: number,
     ids: number[]
 }) => {
-    const { gl, positionTex, textureDimension, ids } = params;
+    const { gl, positionTex, textureDimension, particlesSize, ids } = params;
 
     // Tell the attribute how to get data out of positionBuffer (ARRAY_BUFFER)
     const size = 1; // 1 components per iteration
@@ -66,6 +69,7 @@ export const runProgram = (params: {
 
     gl.useProgram(program);
 
+    gl.uniform1f(programInfo.sizeUniformLocation, particlesSize);
     gl.uniform2f(programInfo.resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
     gl.uniform2f(programInfo.texDimensionsUniformLocation, textureDimension.width, textureDimension.height);
 
