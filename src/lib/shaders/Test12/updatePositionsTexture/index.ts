@@ -9,6 +9,7 @@ type PositionsInfo = {
 type ProgramInfo = {
     positionAttributeLocation: number;
 
+    wallsModeUniformLocation: WebGLUniformLocation | null;
     gravityFactorUniformLocation: WebGLUniformLocation | null;
     interactionRangeUniformLocation: WebGLUniformLocation | null;
     dragUniformLocation: WebGLUniformLocation | null;
@@ -44,6 +45,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
 
+        wallsModeUniformLocation: gl.getUniformLocation(program, 'wallsMode'),
         gravityFactorUniformLocation: gl.getUniformLocation(program, 'gravityFactor'),
         interactionRangeUniformLocation: gl.getUniformLocation(program, 'interactionRange'),
         dragUniformLocation: gl.getUniformLocation(program, 'drag'),
@@ -107,11 +109,13 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     return positionTex1;
 }
 
+export type WallsMode = 'wraped' | 'box' | 'bottom_wall';
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
     texDimensions: { width: number; height: number };
     worldDimensions: { width: number; height: number };
     gravityFactor: number; //should be in [-1.0, 1.0]
+    wallsMode: WallsMode;
     interactionRange: number;
     drag: number;
     deltaTime: number;
@@ -120,6 +124,7 @@ export const runProgram = (params: {
         gl,
         texDimensions,
         worldDimensions,
+        wallsMode,
         gravityFactor,
         interactionRange,
         drag,
@@ -151,6 +156,9 @@ export const runProgram = (params: {
     gl.uniform1i(programInfo.positionTexUniformLocation, 0); // tell the shader the position texture is on texture unit 0
     gl.uniform1i(programInfo.colorTexUniformLocation, 1); // tell the shader the position texture is on texture unit 0
 
+    const modesToNumber = { 'wraped': 0, 'box': 1, 'bottom_wall': 2 };
+    const modeAsNumber = modesToNumber[wallsMode];
+    gl.uniform1f(programInfo.wallsModeUniformLocation, modeAsNumber);
     gl.uniform1f(programInfo.gravityFactorUniformLocation, gravityFactor);
     gl.uniform1f(programInfo.dragUniformLocation, drag);
     gl.uniform1f(programInfo.interactionRangeUniformLocation, interactionRange);

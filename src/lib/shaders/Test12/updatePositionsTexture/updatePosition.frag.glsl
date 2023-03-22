@@ -1,5 +1,6 @@
 precision highp float;
 
+uniform float wallsMode;    // 0.0: wraped 1.0: box 2.0: bottom wall
 uniform float gravityFactor;
 uniform float interactionRange;
 uniform float drag;
@@ -23,6 +24,35 @@ vec2 euclideanModulo(vec2 n, vec2 m) {
 
 float euclideanModulo(float n, float m) {
     return mod(mod(n, m) + m, m);
+}
+
+vec2 newPosition_box(vec2 position, vec2 direction) {
+    vec2 newPosition = position + direction;
+    if (newPosition.y >= worldDimensions.y - 5.0) {
+        newPosition.y = worldDimensions.y - 7.0;
+    } else if (newPosition.y <  5.0) {
+        newPosition.y = 7.0;
+    }
+
+    if (newPosition.x >= worldDimensions.x - 5.0) {
+        newPosition.x = worldDimensions.x - 7.0;
+    } else if (newPosition.x <  5.0) {
+        newPosition.x = 7.0;
+    }
+    return newPosition;
+}
+
+vec2 newPosition_bottomWall(vec2 position, vec2 direction) {
+    vec2 newPosition = position + direction;
+    newPosition.x = euclideanModulo(position.x + direction.x, worldDimensions.x);
+    if (newPosition.y >= worldDimensions.y - 5.0) {
+        newPosition.y = worldDimensions.y - 7.0;
+    }
+    return newPosition;
+}
+
+vec2 newPosition_wrapWorld(vec2 position, vec2 direction) {
+    return euclideanModulo(position + direction, worldDimensions);
 }
 
 void main() {
@@ -50,7 +80,7 @@ void main() {
 
                 float colorCoef = 1.0;
                 if (color == otherColor) {
-                    colorCoef = -1.0;
+                    colorCoef = 2.0;
                 }
 
                 direction = direction + (diff * diffCoef * colorCoef);
@@ -61,21 +91,17 @@ void main() {
     direction = direction + gravity * gravityFactor;
 
     vec2 newPosition = position + direction;
-    // newPosition.x = euclideanModulo(position.x + direction.x, worldDimensions.x);
-    newPosition = euclideanModulo(position + direction, worldDimensions);
 
-    // if (newPosition.y >= worldDimensions.y - 5.0) {
-    //     newPosition.y = worldDimensions.y - 7.0;
-    // }
-
-    // if (newPosition.x >= worldDimensions.x - 5.0) {
-    //     newPosition.x = worldDimensions.x - 7.0;
-    // }
-
-    // if (newPosition.x <  5.0) {
-    //     newPosition.x = 7.0;
-    // }
+    if (wallsMode == 0.0) {
+        // Wrapped world
+        newPosition = newPosition_wrapWorld(position, direction);
+    } else if (wallsMode == 1.0) {
+        // Box
+        newPosition = newPosition_box(position, direction);
+    } else {
+        // Bottom wall - horizontal wrap
+        newPosition = newPosition_bottomWall(position, direction);
+    }
 
     gl_FragColor = vec4(newPosition, 0, 1);
 }
-

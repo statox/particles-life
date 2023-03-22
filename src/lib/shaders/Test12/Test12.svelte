@@ -4,6 +4,7 @@
     import * as drawPositions from './drawPositionsTexture';
     import { setupFullscreenElement } from './fullscreen';
     import { getInitialData } from './simulationUtils';
+    import type { WallsMode } from './updatePositionsTexture';
     import * as updatePositions from './updatePositionsTexture';
 
     const screenDimensions = {
@@ -11,8 +12,8 @@
         height: 600
     };
     const worldDimensions = {
-        width: 1600,
-        height: 1200
+        width: 800,
+        height: 600
     };
     const texDimensions = {
         width: 500,
@@ -23,11 +24,12 @@
     let pause = true;
 
     const simulationParams = {
-        interactionRange: 30,
+        interactionRange: 10,
         drag: 5,
         timeStep: 10,
-        particlesSize: 6,
-        gravityFactor: 1
+        particlesSize: 3,
+        gravityFactor: 0,
+        wallsMode: 'box' as WallsMode
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -41,7 +43,7 @@
         const { ids, positions, colors } = getInitialData({
             texDimensions,
             worldDimensions,
-            mode: 'random'
+            mode: 'disk'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
@@ -57,7 +59,8 @@
                         interactionRange: simulationParams.interactionRange,
                         drag: simulationParams.drag,
                         deltaTime: simulationParams.timeStep,
-                        gravityFactor: simulationParams.gravityFactor
+                        gravityFactor: simulationParams.gravityFactor,
+                        wallsMode: simulationParams.wallsMode
                     });
                 }
             }
@@ -160,6 +163,15 @@
 
             <label for="worldHeight">height</label>
             <input id="worldHeight" bind:value={worldDimensions.height} type="number" min={0} />
+        </li>
+
+        <li>
+            <label for="wallsMode">Walls mode</label>
+            <select bind:value={simulationParams.wallsMode}>
+                {#each ['box', 'wraped', 'bottom_wall'] as mode}
+                    <option value={mode}>{mode}</option>
+                {/each}
+            </select>
         </li>
         <ul />
     </ul>
