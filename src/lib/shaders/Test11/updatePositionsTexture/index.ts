@@ -8,12 +8,15 @@ type PositionsInfo = {
 };
 type ProgramInfo = {
     positionAttributeLocation: number;
-    positionTexLocation: WebGLUniformLocation | null;
+
     interactionRangeUniformLocation: WebGLUniformLocation | null;
     dragUniformLocation: WebGLUniformLocation | null;
     deltaTimeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
     worldDimensionsUniformLocation: WebGLUniformLocation | null;
+
+    positionTexUniformLocation: WebGLUniformLocation | null;
+    colorTexUniformLocation: WebGLUniformLocation | null;
 };
 
 let programInfo: ProgramInfo;
@@ -26,8 +29,10 @@ let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
-    const { positions, texDimensions } = params;
+let colorTex: WebGLTexture;
+
+export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
+    const { positions, colors, texDimensions } = params;
 
     const updatePositionFSTemplated = updatePositionFS
         .replace('{{TEX_WIDTH}}', texDimensions.width.toFixed(1))
@@ -37,12 +42,15 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
 
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
-        positionTexLocation: gl.getUniformLocation(program, 'positionTex'),
+
         interactionRangeUniformLocation: gl.getUniformLocation(program, 'interactionRange'),
         dragUniformLocation: gl.getUniformLocation(program, 'drag'),
         deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
-        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions')
+        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions'),
+
+        positionTexUniformLocation: gl.getUniformLocation(program, 'positionTex'),
+        colorTexUniformLocation: gl.getUniformLocation(program, 'colorTex')
     };
 
     // setup our attributes to tell WebGL how to pull
@@ -68,6 +76,14 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     positionTex2 = webglUtils.createTexture(
         gl,
         null,
+        texDimensions.width,
+        texDimensions.height
+    );
+
+    const colorsForTexture = colors.map(c => [c, 0, 0, 0]).flat();
+    colorTex = webglUtils.createTexture(
+        gl,
+        new Float32Array(colorsForTexture),
         texDimensions.width,
         texDimensions.height
     );
@@ -124,8 +140,12 @@ export const runProgram = (params: {
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, oldPositionsInfo.tex);
 
+    gl.activeTexture(gl.TEXTURE1);
+    gl.bindTexture(gl.TEXTURE_2D, colorTex);
+
     gl.useProgram(program);
-    gl.uniform1i(programInfo.positionTexLocation, 0); // tell the shader the position texture is on texture unit 0
+    gl.uniform1i(programInfo.positionTexUniformLocation, 0); // tell the shader the position texture is on texture unit 0
+    gl.uniform1i(programInfo.colorTexUniformLocation, 1); // tell the shader the position texture is on texture unit 0
     gl.uniform1f(programInfo.dragUniformLocation, drag);
     gl.uniform1f(programInfo.interactionRangeUniformLocation, interactionRange);
     gl.uniform1f(programInfo.deltaTimeUniformLocation, deltaTime);

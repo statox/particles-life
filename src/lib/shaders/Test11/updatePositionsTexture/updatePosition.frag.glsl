@@ -1,11 +1,13 @@
 precision highp float;
 
-uniform sampler2D positionTex;
+uniform float interactionRange;
+uniform float drag;
+uniform float deltaTime;
 uniform vec2 texDimensions;
 uniform vec2 worldDimensions;
-uniform float interactionRange;
-uniform float deltaTime;
-uniform float drag;
+
+uniform sampler2D positionTex;
+uniform sampler2D colorTex;
 
 // We need to define the texture dimensions in constants
 // because loops work only with constant values
@@ -25,6 +27,7 @@ float euclideanModulo(float n, float m) {
 void main() {
     vec2 texcoord = gl_FragCoord.xy / texDimensions;
     vec2 position = texture2D(positionTex, texcoord).xy;
+    float color = texture2D(colorTex, texcoord).x;
 
     vec2 direction = vec2(0.0, 0.0);
 
@@ -46,7 +49,7 @@ void main() {
             }
         }
     }
-    direction = (direction * deltaTime) / drag;
+    direction = (direction * deltaTime * color) / drag;
     direction = direction + gravity;
 
     vec2 newPosition = position + direction;

@@ -44,7 +44,7 @@
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
-        let positionTex = updatePositions.initProgram(gl, { positions, texDimensions });
+        let positionTex = updatePositions.initProgram(gl, { positions, colors, texDimensions });
 
         function render() {
             if (!pause) {
