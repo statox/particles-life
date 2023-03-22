@@ -13,66 +13,40 @@
     import Test8 from '../Test8/Test8.svelte';
     import Test9 from '../Test9/Test9.svelte';
     import Test10 from '../Test10/Test10.svelte';
+    import Test11 from '../Test11/Test11.svelte';
+
+    const tabs = [
+        { title: 'test 1', component: SimpleCounter },
+        { title: 'test 2', component: SimpleParticles },
+        { title: 'test 3', component: Particles2 },
+        { title: 'test 4', component: PositionsBuffer },
+        { title: 'test 5', component: PositionsTexture },
+        { title: 'test 6', component: PositionsTexture2 },
+        { title: 'test 7', component: PositionsTexture3 },
+        { title: 'test 8', component: Test8 },
+        { title: 'test 9', component: Test9 },
+        { title: 'test 10', component: Test10 },
+        { title: 'test 11', component: Test11 }
+    ];
 </script>
 
 <div>
     <Tabs>
         <TabList>
             <Tab>About</Tab>
-            <Tab>Test 1</Tab>
-            <Tab>Test 2</Tab>
-            <Tab>Test 3</Tab>
-            <Tab>Test 4</Tab>
-            <Tab>Test 5</Tab>
-            <Tab>Test 6</Tab>
-            <Tab>Test 7</Tab>
-            <Tab>Test 8</Tab>
-            <Tab>Test 9</Tab>
-            <Tab>Test 10</Tab>
+            {#each tabs as tab}
+                <Tab>{tab.title}</Tab>
+            {/each}
         </TabList>
 
         <TabPanel>
             <p>This page is an experiment to run simulation on the GPU.</p>
         </TabPanel>
 
-        <TabPanel>
-            <SimpleCounter />
-        </TabPanel>
-
-        <TabPanel>
-            <SimpleParticles />
-        </TabPanel>
-
-        <TabPanel>
-            <Particles2 />
-        </TabPanel>
-
-        <TabPanel>
-            <PositionsBuffer />
-        </TabPanel>
-
-        <TabPanel>
-            <PositionsTexture />
-        </TabPanel>
-
-        <TabPanel>
-            <PositionsTexture2 />
-        </TabPanel>
-
-        <TabPanel>
-            <PositionsTexture3 />
-        </TabPanel>
-
-        <TabPanel>
-            <Test8 />
-        </TabPanel>
-
-        <TabPanel>
-            <Test9 />
-        </TabPanel>
-
-        <TabPanel>
-            <Test10 />
-        </TabPanel>
+        {#each tabs as tab}
+            <TabPanel>
+                <svelte:component this={tab.component} />
+            </TabPanel>
+        {/each}
     </Tabs>
 </div>
