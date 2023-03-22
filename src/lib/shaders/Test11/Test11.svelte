@@ -10,14 +10,14 @@
         height: 600
     };
     const worldDimensions = {
-        width: 1600,
-        height: 1200
+        width: 1200,
+        height: 500
     };
     const texDimensions = {
         width: 200,
         height: 20
     };
-    let steps = 1;
+    let steps = 10;
     let slowMo = false;
     let pause = true;
 
@@ -25,7 +25,7 @@
         interactionRange: 6,
         drag: 5,
         timeStep: 10,
-        particlesSize: 4
+        particlesSize: 20
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -46,8 +46,6 @@
         let positionTex = updatePositions.initProgram(gl, { positions, texDimensions });
 
         function render() {
-            webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
-
             if (!pause) {
                 for (let _ = 0; _ < steps; _++) {
                     positionTex = updatePositions.runProgram({
