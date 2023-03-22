@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import * as webglUtils from '../webglUtils';
     import * as drawPositions from './drawPositionsTexture';
+    import { setupFullscreenElement } from './fullscreen';
     import { getInitialData } from './simulationUtils';
     import * as updatePositions from './updatePositionsTexture';
 
@@ -79,6 +80,8 @@
         animationFrameRequest = requestAnimationFrame(render);
     }
 
+    const { enableFullscreen } = setupFullscreenElement(document, 'canvas', screenDimensions);
+
     onMount(() => main());
 </script>
 
@@ -96,6 +99,7 @@
     <label for="steps">Smooth steps</label>
     <input bind:value={steps} type="number" min={0} />
     <button on:click={() => main()}>Reset</button>
+    <button on:click={enableFullscreen}>Fullscreen</button>
 </div>
 <div>
     <ul>
