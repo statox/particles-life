@@ -84,6 +84,11 @@
     onMount(() => main());
 </script>
 
+<p>
+    Add parameters to the simulation. The dimensions of the world in which the particles evolve can
+    be changed as well as their size. With larger particles size the effect looks more like a fluid.
+</p>
+
 <canvas
     id="canvas"
     style="background-color: black"
