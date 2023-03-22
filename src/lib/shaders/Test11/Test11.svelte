@@ -15,18 +15,18 @@
         height: 600
     };
     const texDimensions = {
-        width: 20,
+        width: 500,
         height: 10
     };
-    let steps = 1;
-    let slowMo = true;
+    let steps = 10;
+    let slowMo = false;
     let pause = true;
 
     const simulationParams = {
-        interactionRange: 25,
+        interactionRange: 6,
         drag: 5,
         timeStep: 10,
-        particlesSize: 10
+        particlesSize: 4
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
