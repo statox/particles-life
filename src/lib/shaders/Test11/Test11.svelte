@@ -82,6 +82,14 @@
 
     const { enableFullscreen } = setupFullscreenElement(document, 'canvas', screenDimensions);
 
+    document.addEventListener('keydown', (event) => {
+        if (event.code === 'Space') {
+            // Space bar was pressed
+            pause = !pause;
+            event.preventDefault();
+        }
+    });
+
     onMount(() => main());
 </script>
 
