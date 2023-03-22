@@ -11,8 +11,8 @@
         height: 600
     };
     const worldDimensions = {
-        width: 800,
-        height: 600
+        width: 1600,
+        height: 1200
     };
     const texDimensions = {
         width: 500,
@@ -23,10 +23,10 @@
     let pause = true;
 
     const simulationParams = {
-        interactionRange: 6,
+        interactionRange: 30,
         drag: 5,
         timeStep: 10,
-        particlesSize: 4
+        particlesSize: 6
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -40,7 +40,7 @@
         const { ids, positions, colors } = getInitialData({
             texDimensions,
             worldDimensions,
-            mode: 'disk'
+            mode: 'random'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });

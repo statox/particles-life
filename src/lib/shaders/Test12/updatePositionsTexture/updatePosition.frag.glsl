@@ -14,6 +14,7 @@ uniform sampler2D colorTex;
 const float texWidth = {{TEX_WIDTH}};
 const float texHeight = {{TEX_HEIGHT}};
 
+// const vec2 gravity = vec2(0.0, 0.5);
 const vec2 gravity = vec2(0.0, 0.5);
 
 vec2 euclideanModulo(vec2 n, vec2 m) {
@@ -37,6 +38,7 @@ void main() {
         for (float x=0.0; x<1.0; x += 1.0 / texWidth) {
             vec2 otherTextCoord = vec2(x, y);
             vec2 otherPosition = texture2D(positionTex, otherTextCoord).xy;
+            float otherColor = texture2D(colorTex, otherTextCoord).x;
 
             vec2 diff = position - otherPosition;
             float mag = length(diff);
@@ -45,19 +47,26 @@ void main() {
                 if (mag < 1.0) {
                     diffCoef = 1.0;
                 }
-                direction = direction + (diff * diffCoef);
+
+                float colorCoef = 1.0;
+                if (color == otherColor) {
+                    colorCoef = -1.0;
+                }
+
+                direction = direction + (diff * diffCoef * colorCoef);
             }
         }
     }
-    direction = (direction * deltaTime * color) / drag;
+    direction = (direction * deltaTime) / drag;
     direction = direction + gravity;
 
     vec2 newPosition = position + direction;
-    newPosition.x = euclideanModulo(position.x + direction.x, worldDimensions.x);
+    // newPosition.x = euclideanModulo(position.x + direction.x, worldDimensions.x);
+    newPosition = euclideanModulo(position + direction, worldDimensions);
 
-    if (newPosition.y >= worldDimensions.y - 5.0) {
-        newPosition.y = worldDimensions.y - 7.0;
-    }
+    // if (newPosition.y >= worldDimensions.y - 5.0) {
+    //     newPosition.y = worldDimensions.y - 7.0;
+    // }
 
     // if (newPosition.x >= worldDimensions.x - 5.0) {
     //     newPosition.x = worldDimensions.x - 7.0;
