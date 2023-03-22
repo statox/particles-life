@@ -1,11 +1,11 @@
 attribute float id;
-attribute float color;
-uniform sampler2D positionTex;
-uniform vec2 texDimensions;
 
-uniform vec2 worldDimensions;
 uniform float size;
+uniform vec2 texDimensions;
+uniform vec2 worldDimensions;
 
+uniform sampler2D positionTex;
+uniform sampler2D colorTex;
 
 varying float v_color;
 varying float v_id;
@@ -19,6 +19,9 @@ vec2 getValueFrom2DTextureAs1DArray(sampler2D tex, vec2 dimensions, float index)
 
 // all shaders have a main function
 void main() {
+    // pull the color from the texture
+    float colorFromTex = getValueFrom2DTextureAs1DArray(colorTex, texDimensions, id).x;
+
     // pull the position from the texture
     vec2 position = getValueFrom2DTextureAs1DArray(positionTex, texDimensions, id);
 
@@ -34,6 +37,6 @@ void main() {
     // Translate to have 0, 0 on top left
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
     gl_PointSize = size;
-    v_color = color;
+    v_color = colorFromTex;
     v_id = id / (texDimensions.x * texDimensions.y);
 }

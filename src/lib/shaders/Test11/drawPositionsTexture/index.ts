@@ -4,34 +4,45 @@ import drawPositionsFS from './drawPositionsTexture.frag.glsl';
 
 type ProgramInfo = {
     idAttributeLocation: number;
-    colorAttributeLocation: number;
+
     sizeUniformLocation: WebGLUniformLocation | null;
     texDimensionsUniformLocation: WebGLUniformLocation | null;
     worldDimensionsUniformLocation: WebGLUniformLocation | null;
+
+    positionTexUniformLocation: WebGLUniformLocation | null;
+    colorTexUniformLocation: WebGLUniformLocation | null;
 };
 let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let idBuffer: WebGLBuffer;
-let colorBuffer: WebGLBuffer;
+
+let colorTex: WebGLTexture;
 
 export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
-    const { ids, colors } = params;
+    const { ids, colors, texDimensions } = params;
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
     programInfo = {
         idAttributeLocation: gl.getAttribLocation(program, 'id'),
-        colorAttributeLocation: gl.getAttribLocation(program, 'color'),
+
         sizeUniformLocation: gl.getUniformLocation(program, 'size'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
-        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions')
+        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions'),
+
+        positionTexUniformLocation: gl.getUniformLocation(program, 'positionTex'),
+        colorTexUniformLocation: gl.getUniformLocation(program, 'colorTex')
     }
 
     idBuffer = gl.createBuffer() as WebGLBuffer;
     gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ids), gl.STATIC_DRAW);
 
-    colorBuffer = gl.createBuffer() as WebGLBuffer;
-    gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+    const colorsForTexture = colors.map(c => [c, 0, 0, 0]).flat();
+    colorTex = webglUtils.createTexture(
+        gl,
+        new Float32Array(colorsForTexture),
+        texDimensions.width,
+        texDimensions.height
+    );
 }
 
 export const runProgram = (params: {
@@ -61,18 +72,20 @@ export const runProgram = (params: {
     gl.vertexAttribPointer(programInfo.idAttributeLocation, size, type, normalize, stride, offset);
     gl.enableVertexAttribArray(programInfo.idAttributeLocation);
 
-    gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-    gl.vertexAttribPointer(programInfo.colorAttributeLocation, size, type, normalize, stride, offset);
-    gl.enableVertexAttribArray(programInfo.colorAttributeLocation);
-
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, positionTex);
+
+    gl.activeTexture(gl.TEXTURE1);
+    gl.bindTexture(gl.TEXTURE_2D, colorTex);
 
     gl.useProgram(program);
 
     gl.uniform1f(programInfo.sizeUniformLocation, particlesSize);
     gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
     gl.uniform2f(programInfo.texDimensionsUniformLocation, texDimensions.width, texDimensions.height);
+
+    gl.uniform1i(programInfo.positionTexUniformLocation, 0);
+    gl.uniform1i(programInfo.colorTexUniformLocation, 1);
 
     gl.drawArrays(gl.POINTS, offset, ids.length);
 };
