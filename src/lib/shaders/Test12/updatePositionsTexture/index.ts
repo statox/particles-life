@@ -9,6 +9,7 @@ type PositionsInfo = {
 type ProgramInfo = {
     positionAttributeLocation: number;
 
+    gravityFactorUniformLocation: WebGLUniformLocation | null;
     interactionRangeUniformLocation: WebGLUniformLocation | null;
     dragUniformLocation: WebGLUniformLocation | null;
     deltaTimeUniformLocation: WebGLUniformLocation | null;
@@ -43,6 +44,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
 
+        gravityFactorUniformLocation: gl.getUniformLocation(program, 'gravityFactor'),
         interactionRangeUniformLocation: gl.getUniformLocation(program, 'interactionRange'),
         dragUniformLocation: gl.getUniformLocation(program, 'drag'),
         deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
@@ -109,6 +111,7 @@ export const runProgram = (params: {
     gl: WebGLRenderingContext;
     texDimensions: { width: number; height: number };
     worldDimensions: { width: number; height: number };
+    gravityFactor: number; //should be in [-1.0, 1.0]
     interactionRange: number;
     drag: number;
     deltaTime: number;
@@ -117,6 +120,7 @@ export const runProgram = (params: {
         gl,
         texDimensions,
         worldDimensions,
+        gravityFactor,
         interactionRange,
         drag,
         deltaTime
@@ -146,9 +150,12 @@ export const runProgram = (params: {
     gl.useProgram(program);
     gl.uniform1i(programInfo.positionTexUniformLocation, 0); // tell the shader the position texture is on texture unit 0
     gl.uniform1i(programInfo.colorTexUniformLocation, 1); // tell the shader the position texture is on texture unit 0
+
+    gl.uniform1f(programInfo.gravityFactorUniformLocation, gravityFactor);
     gl.uniform1f(programInfo.dragUniformLocation, drag);
     gl.uniform1f(programInfo.interactionRangeUniformLocation, interactionRange);
     gl.uniform1f(programInfo.deltaTimeUniformLocation, deltaTime);
+
     gl.uniform2f(
         programInfo.texDimensionsUniformLocation,
         texDimensions.width,

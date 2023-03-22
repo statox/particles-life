@@ -26,7 +26,8 @@
         interactionRange: 30,
         drag: 5,
         timeStep: 10,
-        particlesSize: 6
+        particlesSize: 6,
+        gravityFactor: 1
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -55,7 +56,8 @@
                         worldDimensions,
                         interactionRange: simulationParams.interactionRange,
                         drag: simulationParams.drag,
-                        deltaTime: simulationParams.timeStep
+                        deltaTime: simulationParams.timeStep,
+                        gravityFactor: simulationParams.gravityFactor
                     });
                 }
             }
@@ -129,6 +131,17 @@
         <li>
             <label for="deltaTime">Time step</label>
             <input id="deltaTime" bind:value={simulationParams.timeStep} type="number" min={0} />
+        </li>
+
+        <li>
+            <label for="gravityFactor">Gravity factor</label>
+            <input
+                id="gravityFactor"
+                bind:value={simulationParams.gravityFactor}
+                type="number"
+                min={-5}
+                max={5}
+            />
         </li>
 
         <li>

@@ -1,5 +1,6 @@
 precision highp float;
 
+uniform float gravityFactor;
 uniform float interactionRange;
 uniform float drag;
 uniform float deltaTime;
@@ -14,7 +15,6 @@ uniform sampler2D colorTex;
 const float texWidth = {{TEX_WIDTH}};
 const float texHeight = {{TEX_HEIGHT}};
 
-// const vec2 gravity = vec2(0.0, 0.5);
 const vec2 gravity = vec2(0.0, 0.5);
 
 vec2 euclideanModulo(vec2 n, vec2 m) {
@@ -58,7 +58,7 @@ void main() {
         }
     }
     direction = (direction * deltaTime) / drag;
-    direction = direction + gravity;
+    direction = direction + gravity * gravityFactor;
 
     vec2 newPosition = position + direction;
     // newPosition.x = euclideanModulo(position.x + direction.x, worldDimensions.x);
