@@ -27,8 +27,13 @@
         timeStep: 10,
         particlesSize: 4
     };
+    let gl: WebGLRenderingContext;
+    let animationFrameRequest: number;
     function main() {
-        const gl = webglUtils.getWebGLContext();
+        cancelAnimationFrame(animationFrameRequest);
+
+        gl = webglUtils.getWebGLContext();
+
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
         const { ids, positions, colors } = getInitialData({
@@ -66,11 +71,14 @@
             });
 
             if (slowMo) {
-                return setTimeout(() => requestAnimationFrame(render), 1000);
+                return setTimeout(
+                    () => (animationFrameRequest = requestAnimationFrame(render)),
+                    1000
+                );
             }
-            return requestAnimationFrame(render);
+            return (animationFrameRequest = requestAnimationFrame(render));
         }
-        requestAnimationFrame(render);
+        animationFrameRequest = requestAnimationFrame(render);
     }
 
     onMount(() => main());
@@ -89,6 +97,7 @@
     <span>particles: {texDimensions.width * texDimensions.height}</span>
     <label for="steps">Smooth steps</label>
     <input bind:value={steps} type="number" min={0} />
+    <button on:click={() => main()}>Reset</button>
 </div>
 <div>
     <ul>
