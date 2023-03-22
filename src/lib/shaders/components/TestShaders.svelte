@@ -14,6 +14,7 @@
     import Test9 from '../Test9/Test9.svelte';
     import Test10 from '../Test10/Test10.svelte';
     import Test11 from '../Test11/Test11.svelte';
+    import Test12 from '../Test12/Test12.svelte';
 
     const tabs = [
         { title: 'test 1', component: SimpleCounter },
@@ -26,7 +27,8 @@
         { title: 'test 8', component: Test8 },
         { title: 'test 9', component: Test9 },
         { title: 'test 10', component: Test10 },
-        { title: 'test 11', component: Test11 }
+        { title: 'test 11', component: Test11 },
+        { title: 'test 12', component: Test12 }
     ];
 </script>
 
