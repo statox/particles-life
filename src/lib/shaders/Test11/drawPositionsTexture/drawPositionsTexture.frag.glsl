@@ -9,5 +9,11 @@ void main() {
     if (dist > u_radius) { // If outside the circle, discard the fragment
         discard;
     }
-    gl_FragColor = vec4(0.2, 0.2, 1.0, 0.4);
+
+    if (v_color == 0.0) {
+        gl_FragColor = vec4(1.0, 0.3, 0.6, 1.0);
+    } else {
+        gl_FragColor = vec4(0.6, 0.3, 1.0, 1.0);
+    }
+
 }
