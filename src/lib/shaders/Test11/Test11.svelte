@@ -25,7 +25,7 @@
         interactionRange: 6,
         drag: 5,
         timeStep: 10,
-        particlesSize: 20
+        particlesSize: 4
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -39,7 +39,7 @@
         const { ids, positions, colors } = getInitialData({
             texDimensions,
             worldDimensions,
-            mode: 'disk'
+            mode: 'sinusoidal'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
