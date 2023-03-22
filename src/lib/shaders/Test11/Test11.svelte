@@ -11,22 +11,22 @@
         height: 600
     };
     const worldDimensions = {
-        width: 1200,
-        height: 500
+        width: 800,
+        height: 600
     };
     const texDimensions = {
-        width: 200,
-        height: 20
+        width: 20,
+        height: 10
     };
-    let steps = 10;
-    let slowMo = false;
+    let steps = 1;
+    let slowMo = true;
     let pause = true;
 
     const simulationParams = {
-        interactionRange: 6,
+        interactionRange: 25,
         drag: 5,
         timeStep: 10,
-        particlesSize: 4
+        particlesSize: 10
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -40,7 +40,7 @@
         const { ids, positions, colors } = getInitialData({
             texDimensions,
             worldDimensions,
-            mode: 'sinusoidal'
+            mode: 'disk'
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });

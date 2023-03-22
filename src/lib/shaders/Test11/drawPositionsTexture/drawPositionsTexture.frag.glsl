@@ -10,10 +10,20 @@ void main() {
         discard;
     }
 
+    // if (v_color == 0.0) {
+    //     gl_FragColor = vec4(1.0, 0.3, 0.6, 1.0);
+    // } else {
+    //     gl_FragColor = vec4(0.6, 0.3, 1.0, 1.0);
+    // }
+
     if (v_color == 0.0) {
-        gl_FragColor = vec4(1.0, 0.3, 0.6, 1.0);
+        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    } else if (v_color == 1.0) {
+        gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+    } else if (v_color == 2.0) {
+        gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
     } else {
-        gl_FragColor = vec4(0.6, 0.3, 1.0, 1.0);
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
     }
 
 }
