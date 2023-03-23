@@ -1042,14 +1042,13 @@ vec2 newPosition_box(vec2 position, vec2 direction) {
     vec2 newPosition = position + direction;
     if (newPosition.y >= worldDimensions.y - 5.0) {
         newPosition.y = worldDimensions.y - 7.0;
-    }
-    if (newPosition.x >= worldDimensions.x - 5.0) {
-        newPosition.x = worldDimensions.x - 7.0;
-    }
-    if (newPosition.y <  5.0) {
+    } else if (newPosition.y <  5.0) {
         newPosition.y = 7.0;
     }
-    if (newPosition.x <  5.0) {
+
+    if (newPosition.x >= worldDimensions.x - 5.0) {
+        newPosition.x = worldDimensions.x - 7.0;
+    } else if (newPosition.x <  5.0) {
         newPosition.x = 7.0;
     }
     return newPosition;
