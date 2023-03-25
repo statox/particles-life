@@ -55,6 +55,21 @@ vec2 newPosition_wrapWorld(vec2 position, vec2 direction) {
     return euclideanModulo(position + direction, worldDimensions);
 }
 
+vec2 getNewPosition(float wallsMode, vec2 position, vec2 direction) {
+    if (wallsMode == 0.0) {
+        // Wrapped world
+        return newPosition_wrapWorld(position, direction);
+    }
+
+    if (wallsMode == 1.0) {
+        // Box
+        return newPosition_box(position, direction);
+    }
+
+    // Bottom wall - horizontal wrap
+    return newPosition_bottomWall(position, direction);
+}
+
 void main() {
     vec2 texcoord = gl_FragCoord.xy / texDimensions;
     vec2 position = texture2D(positionTex, texcoord).xy;
@@ -90,18 +105,7 @@ void main() {
     direction = (direction * deltaTime) / drag;
     direction = direction + gravity * gravityFactor;
 
-    vec2 newPosition = position + direction;
-
-    if (wallsMode == 0.0) {
-        // Wrapped world
-        newPosition = newPosition_wrapWorld(position, direction);
-    } else if (wallsMode == 1.0) {
-        // Box
-        newPosition = newPosition_box(position, direction);
-    } else {
-        // Bottom wall - horizontal wrap
-        newPosition = newPosition_bottomWall(position, direction);
-    }
+    vec2 newPosition = getNewPosition(wallsMode, position, direction);
 
     gl_FragColor = vec4(newPosition, 0, 1);
 }
