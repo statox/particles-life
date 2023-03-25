@@ -94,9 +94,9 @@ void main() {
                 }
 
                 float colorCoef = 1.0;
-                if (color == otherColor) {
-                    colorCoef = 2.0;
-                }
+                // if (color == otherColor) {
+                //     colorCoef = 2.0;
+                // }
 
                 direction = direction + (diff * diffCoef * colorCoef);
             }

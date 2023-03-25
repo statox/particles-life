@@ -1,10 +1,10 @@
-export type InitialCellsMode = 'random' | 'disk' | 'disk_offset' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
+export type InitialCellsMode = 'random' | 'disk' | 'disk_offset' | 'mesh' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
 
-export function getInitialData(params: { texDimensions: { width: number, height: number }, worldDimensions: { width: number, height: number }, mode: InitialCellsMode }) {
-    const { texDimensions, worldDimensions, mode } = params;
+export function getInitialData(params: { texDimensions: { width: number, height: number }, worldDimensions: { width: number, height: number }, mode: InitialCellsMode, nbColors: number }) {
+    const { texDimensions, worldDimensions, mode, nbColors } = params;
     const nbParticles = texDimensions.width * texDimensions.height;
     const ids = new Array(nbParticles).fill(0).map((_, i) => i);
-    const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * 2));
+    const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * nbColors));
     // const colors = new Array(nbParticles).fill(0).map((_) => Math.random() < 0.1 ? 0 : 1);
 
     const positions = ids
@@ -14,8 +14,13 @@ export function getInitialData(params: { texDimensions: { width: number, height:
                 return [x, y, 0, 0];
             }
 
+            if (mode === 'mesh') {
+                const { x, y } = regularMeshCoord(worldDimensions, id, nbParticles);
+                return [x, y, 0, 0];
+            }
+
             if (mode === 'disk') {
-                const edgeSize = 200;   // In screen pixels
+                const edgeSize = Math.min(worldDimensions.width, worldDimensions.height) * 0.3;   // In screen pixels
                 const { x, y } = randomCoordInDisk(worldDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
@@ -102,6 +107,20 @@ const CoordInSinusoidal = (worldDimensions: { width: number, height: number }, i
     const y = dy + worldDimensions.height / 2;
 
     return { x, y };
+}
+
+const regularMeshCoord = (worldDimensions: { width: number, height: number }, id: number, nbParticles: number): { x: number, y: number } => {
+    const rows = Math.sqrt(nbParticles);
+    const cols = Math.ceil(nbParticles / rows);
+
+    const cellWidth = worldDimensions.width / cols;
+    const cellHeight = worldDimensions.height / rows;
+
+    const x = (id % cols) * cellWidth + cellWidth / 2;
+    const y = Math.floor(id / cols) * cellHeight + cellHeight / 2;
+
+    return { x, y };
+
 }
 
 

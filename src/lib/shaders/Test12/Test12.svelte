@@ -29,7 +29,7 @@
         timeStep: 10,
         particlesSize: 3,
         gravityFactor: 0,
-        wallsMode: 'box' as WallsMode
+        wallsMode: 'wraped' as WallsMode
     };
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -43,7 +43,8 @@
         const { ids, positions, colors } = getInitialData({
             texDimensions,
             worldDimensions,
-            mode: 'disk'
+            mode: 'mesh',
+            nbColors: 1
         });
 
         drawPositions.initProgram(gl, { ids, colors, texDimensions });
