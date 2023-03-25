@@ -1,10 +1,10 @@
-export type InitialCellsMode = 'random' | 'disk' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
+export type InitialCellsMode = 'random' | 'disk' | 'disk_offset' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
 
 export function getInitialData(params: { texDimensions: { width: number, height: number }, worldDimensions: { width: number, height: number }, mode: InitialCellsMode }) {
     const { texDimensions, worldDimensions, mode } = params;
     const nbParticles = texDimensions.width * texDimensions.height;
     const ids = new Array(nbParticles).fill(0).map((_, i) => i);
-    const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * 3));
+    const colors = new Array(nbParticles).fill(0).map((_) => Math.floor(Math.random() * 2));
     // const colors = new Array(nbParticles).fill(0).map((_) => Math.random() < 0.1 ? 0 : 1);
 
     const positions = ids
@@ -19,6 +19,14 @@ export function getInitialData(params: { texDimensions: { width: number, height:
                 const { x, y } = randomCoordInDisk(worldDimensions, edgeSize);
                 return [x, y, 0, 0];
             }
+
+            if (mode === 'disk_offset') {
+                const edgeSize = 100;   // In screen pixels
+                const offset = -150;
+                const { x, y } = randomCoordInOffsetedDisk(worldDimensions, edgeSize, offset);
+                return [x, y, 0, 0];
+            }
+
 
             if (mode === 'square') {
                 const edgeSize = 300;   // In screen pixels
@@ -66,6 +74,14 @@ const randomCoordInDisk = (worldDimensions: { width: number, height: number }, e
     const x = r * Math.cos(theta) + worldDimensions.width / 2;
     const y = r * Math.sin(theta) + worldDimensions.height / 2
     return { x, y };
+}
+
+const randomCoordInOffsetedDisk = (worldDimensions: { width: number, height: number }, edgeSize: number, offset: number) => {
+    const r = edgeSize * Math.random();
+    const theta = Math.random() * 2 * Math.PI;
+    const x = r * Math.cos(theta) + worldDimensions.width / 2;
+    const y = r * Math.sin(theta) + worldDimensions.height / 2
+    return { x: x + offset, y };
 }
 
 const CoordIndiagonalOrderedByIds = (worldDimensions: { width: number, height: number }, id: number, nbParticles: number) => {
