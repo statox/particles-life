@@ -14,8 +14,8 @@
         width: 90,
         height: 30
     };
-    let slowMo = false;
     let pause = true;
+    let cellsTex: WebGLTexture;
 
     let gl: WebGLRenderingContext;
     let animationFrameRequest: number;
@@ -26,15 +26,10 @@
 
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const { cells } = getInitialData({ worldDimensions });
+        const initialData = getInitialData(gl, { worldDimensions });
+        cellsTex = initialData.cellsTex;
 
         drawCells.initProgram(gl, { screenDimensions });
-        let cellsTex = webglUtils.createTexture(
-            gl,
-            new Float32Array(cells.map((v) => [v, 0, 0, 0]).flat()),
-            worldDimensions.width,
-            worldDimensions.height
-        );
 
         function render() {
             // if (!pause) {
@@ -74,6 +69,11 @@
             }
         });
     });
+
+    const resetTexture = () => {
+        const initialData = getInitialData(gl, { worldDimensions });
+        cellsTex = initialData.cellsTex;
+    };
 </script>
 
 <canvas
@@ -84,12 +84,14 @@
 />
 
 <div>
-    <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'}</button>
-    <button on:click={() => (slowMo = !slowMo)}>{slowMo ? 'Normal Speed' : 'Slow Mo'}</button>
     <span>
         World {worldDimensions.width} x {worldDimensions.height} ({worldDimensions.width *
             worldDimensions.height} cells)
     </span>
-    <button on:click={() => main()}>Reset</button>
+    <button on:click={() => main()}>Reload program</button>
     <button on:click={enableFullscreen}>Fullscreen</button>
+</div>
+
+<div>
+    <button on:click={() => resetTexture()}>Reset texture</button>
 </div>
