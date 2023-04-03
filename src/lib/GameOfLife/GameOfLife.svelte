@@ -7,12 +7,12 @@
     // import * as updatePositions from './updatePositionsTexture';
 
     const screenDimensions = {
-        width: 900,
-        height: 300
+        width: 700,
+        height: 700
     };
     const worldDimensions = {
-        width: 90,
-        height: 30
+        width: 10,
+        height: 10
     };
     let pause = true;
     let cellsTex: WebGLTexture;
@@ -71,6 +71,8 @@
     });
 
     const resetTexture = () => {
+        worldDimensions.width = Math.min(worldDimensions.width, screenDimensions.width);
+        worldDimensions.height = Math.min(worldDimensions.height, screenDimensions.height);
         const initialData = getInitialData(gl, { worldDimensions });
         cellsTex = initialData.cellsTex;
     };
@@ -93,5 +95,25 @@
 </div>
 
 <div>
-    <button on:click={() => resetTexture()}>Reset texture</button>
+    <button on:click={resetTexture}>Reset world</button>
+
+    <span>
+        <label for="worldWidth">World: width</label>
+        <input
+            id="worldWidth"
+            on:change={resetTexture}
+            bind:value={worldDimensions.width}
+            type="number"
+            min={0}
+        />
+
+        <label for="worldHeight">height</label>
+        <input
+            id="worldHeight"
+            on:change={resetTexture}
+            bind:value={worldDimensions.height}
+            type="number"
+            min={0}
+        />
+    </span>
 </div>
