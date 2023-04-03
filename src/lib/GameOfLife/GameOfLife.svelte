@@ -11,8 +11,8 @@
         height: 300
     };
     const worldDimensions = {
-        width: 30,
-        height: 30
+        width: 10,
+        height: 10
     };
     let slowMo = false;
     let pause = true;
@@ -49,7 +49,7 @@
             //     });
             // }
 
-            drawCells.runProgram({ gl, cellsTex });
+            drawCells.runProgram({ gl, cellsTex, worldDimensions });
 
             return (animationFrameRequest = requestAnimationFrame(render));
         }

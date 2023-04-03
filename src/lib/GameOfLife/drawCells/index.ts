@@ -5,6 +5,7 @@ import drawPositionsFS from './drawCells.frag.glsl';
 type ProgramInfo = {
     positionLocation: number;
     textureLocation: WebGLUniformLocation | null;
+    worldSizeLocation: WebGLUniformLocation | null;
 };
 let programInfo: ProgramInfo;
 let program: WebGLProgram;
@@ -14,8 +15,8 @@ export const initProgram = (gl: WebGLRenderingContext) => {
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
     programInfo = {
         positionLocation: gl.getAttribLocation(program, 'a_position'),
-        textureLocation: gl.getUniformLocation(program, 'u_texture')
-
+        textureLocation: gl.getUniformLocation(program, 'u_texture'),
+        worldSizeLocation: gl.getUniformLocation(program, 'u_worldSize')
     };
 
     // Create a buffer to hold the vertex data
@@ -37,8 +38,9 @@ export const initProgram = (gl: WebGLRenderingContext) => {
 export const runProgram = (params: {
     gl: WebGLRenderingContext,
     cellsTex: WebGLTexture,
+    worldDimensions: { width: number, height: number }
 }) => {
-    const { gl, cellsTex } = params;
+    const { gl, cellsTex, worldDimensions } = params;
 
     gl.bindTexture(gl.TEXTURE_2D, cellsTex);
 
@@ -48,6 +50,7 @@ export const runProgram = (params: {
     gl.enableVertexAttribArray(programInfo.positionLocation);
     gl.vertexAttribPointer(programInfo.positionLocation, 2, gl.FLOAT, false, 0, 0);
     gl.uniform1i(programInfo.textureLocation, 0);
+    gl.uniform2f(programInfo.worldSizeLocation, worldDimensions.width, worldDimensions.height);
 
     // Draw the texture
     gl.drawArrays(gl.TRIANGLES, 0, 6);
