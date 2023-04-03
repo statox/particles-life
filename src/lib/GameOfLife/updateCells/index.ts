@@ -1,6 +1,6 @@
 import * as webglUtils from '../webglUtils';
-import updatePositionVS from './updatePosition.vert.glsl';
-import updatePositionFS from './updatePosition.frag.glsl';
+import updateCellsVS from './updateCells.vert.glsl';
+import updateCellsFS from './updateCells.frag.glsl';
 
 type PositionsInfo = {
     fb: WebGLFramebuffer;
@@ -36,11 +36,7 @@ let colorTex: WebGLTexture;
 export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
     const { positions, colors, texDimensions } = params;
 
-    const updatePositionFSTemplated = updatePositionFS
-        .replace('{{TEX_WIDTH}}', texDimensions.width.toFixed(1))
-        .replace('{{TEX_HEIGHT}}', texDimensions.height.toFixed(1));
-
-    program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFSTemplated]);
+    program = webglUtils.createProgramFromSources(gl, [updateCellsVS, updateCellsFS]);
 
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
