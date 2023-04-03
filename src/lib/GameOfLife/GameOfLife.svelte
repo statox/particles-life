@@ -7,12 +7,12 @@
     // import * as updatePositions from './updatePositionsTexture';
 
     const screenDimensions = {
-        width: 300,
+        width: 900,
         height: 300
     };
     const worldDimensions = {
-        width: 10,
-        height: 10
+        width: 90,
+        height: 30
     };
     let slowMo = false;
     let pause = true;
@@ -28,7 +28,7 @@
 
         const { cells } = getInitialData({ worldDimensions });
 
-        drawCells.initProgram(gl);
+        drawCells.initProgram(gl, { screenDimensions });
         let cellsTex = webglUtils.createTexture(
             gl,
             new Float32Array(cells.map((v) => [v, 0, 0, 0]).flat()),

@@ -11,7 +11,9 @@ let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
-export const initProgram = (gl: WebGLRenderingContext) => {
+export const initProgram = (gl: WebGLRenderingContext, params: { screenDimensions: { width: number, height: number } }) => {
+    const { screenDimensions } = params;
+    const { height, width } = screenDimensions;
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
     programInfo = {
         positionLocation: gl.getAttribLocation(program, 'a_position'),
@@ -27,11 +29,11 @@ export const initProgram = (gl: WebGLRenderingContext) => {
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
         0, 0,
-        0, 300,
-        300, 0,
-        300, 0,
-        0, 300,
-        300, 300,
+        0, height,
+        width, 0,
+        width, 0,
+        0, height,
+        width, height,
     ]), gl.STATIC_DRAW);
 }
 
