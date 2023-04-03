@@ -7,6 +7,7 @@
 
     <nav>
         <a href="{base}/">Particles life</a> |
+        <a href="{base}/gameoflife">Game Of Life</a> |
         <a href="{base}/shaders">Test shaders</a> |
     </nav>
 </header>
