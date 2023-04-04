@@ -7,12 +7,12 @@
     import * as updateCells from './updateCells';
 
     const screenDimensions = {
-        width: 700,
-        height: 700
+        width: 1600,
+        height: 900
     };
     const worldDimensions = {
-        width: 100,
-        height: 100
+        width: 800,
+        height: 450
     };
     let pause = true;
     let cellsTex: WebGLTexture;
@@ -73,7 +73,10 @@
         worldDimensions.width = Math.min(worldDimensions.width, screenDimensions.width);
         worldDimensions.height = Math.min(worldDimensions.height, screenDimensions.height);
         const initialData = getInitialData(gl, { worldDimensions });
-        cellsTex = initialData.cellsTex;
+        cellsTex = updateCells.initProgram(gl, {
+            cellsTex: initialData.cellsTex,
+            texDimensions: worldDimensions
+        });
     };
 </script>
 
