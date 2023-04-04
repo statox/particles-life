@@ -11,8 +11,8 @@
         height: 700
     };
     const worldDimensions = {
-        width: 10,
-        height: 10
+        width: 100,
+        height: 100
     };
     let pause = true;
     let cellsTex: WebGLTexture;
