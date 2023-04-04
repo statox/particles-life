@@ -7,23 +7,14 @@ type PositionsInfo = {
     tex: WebGLTexture;
 };
 type ProgramInfo = {
-    positionAttributeLocation: number;
-
-    wallsModeUniformLocation: WebGLUniformLocation | null;
-    gravityFactorUniformLocation: WebGLUniformLocation | null;
-    interactionRangeUniformLocation: WebGLUniformLocation | null;
-    dragUniformLocation: WebGLUniformLocation | null;
-    deltaTimeUniformLocation: WebGLUniformLocation | null;
-    texDimensionsUniformLocation: WebGLUniformLocation | null;
-    worldDimensionsUniformLocation: WebGLUniformLocation | null;
-
-    positionTexUniformLocation: WebGLUniformLocation | null;
-    colorTexUniformLocation: WebGLUniformLocation | null;
+    uInputTextureLocation: WebGLUniformLocation | null;
+    uTextureSizeLocation: WebGLUniformLocation | null;
+    positionLocation: number;
 };
 
 let programInfo: ProgramInfo;
 let program: WebGLProgram;
-let updatePositionBuffer: WebGLBuffer;
+let vertexBuffer: WebGLBuffer;
 let positionTex1: WebGLTexture;
 let positionTex2: WebGLTexture;
 let positionsFB1: WebGLFramebuffer;
@@ -31,26 +22,15 @@ let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
 
-let colorTex: WebGLTexture;
-
-export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
-    const { positions, colors, texDimensions } = params;
+export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGLTexture, texDimensions: { width: number, height: number } }) => {
+    const { cellsTex, texDimensions } = params;
 
     program = webglUtils.createProgramFromSources(gl, [updateCellsVS, updateCellsFS]);
 
     programInfo = {
-        positionAttributeLocation: gl.getAttribLocation(program, 'position'),
-
-        wallsModeUniformLocation: gl.getUniformLocation(program, 'wallsMode'),
-        gravityFactorUniformLocation: gl.getUniformLocation(program, 'gravityFactor'),
-        interactionRangeUniformLocation: gl.getUniformLocation(program, 'interactionRange'),
-        dragUniformLocation: gl.getUniformLocation(program, 'drag'),
-        deltaTimeUniformLocation: gl.getUniformLocation(program, 'deltaTime'),
-        texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
-        worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions'),
-
-        positionTexUniformLocation: gl.getUniformLocation(program, 'positionTex'),
-        colorTexUniformLocation: gl.getUniformLocation(program, 'colorTex')
+        uInputTextureLocation: gl.getUniformLocation(program, 'uInputTexture'),
+        uTextureSizeLocation: gl.getUniformLocation(program, 'uTextureSize'),
+        positionLocation: gl.getAttribLocation(program, 'aPosition')
     };
 
     // setup our attributes to tell WebGL how to pull
@@ -58,8 +38,8 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     // this buffer just contains a -1 to +1 quad for rendering
     // to every pixel
     // setup a full canvas clip space quad
-    updatePositionBuffer = gl.createBuffer() as WebGLBuffer;
-    gl.bindBuffer(gl.ARRAY_BUFFER, updatePositionBuffer);
+    vertexBuffer = gl.createBuffer() as WebGLBuffer;
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
@@ -67,23 +47,10 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     );
 
     // create 2 textures for the positions.
-    positionTex1 = webglUtils.createTexture(
-        gl,
-        new Float32Array(positions),
-        texDimensions.width,
-        texDimensions.height
-    );
+    positionTex1 = cellsTex;
     positionTex2 = webglUtils.createTexture(
         gl,
         null,
-        texDimensions.width,
-        texDimensions.height
-    );
-
-    const colorsForTexture = colors.map(c => [c, 0, 0, 0]).flat();
-    colorTex = webglUtils.createTexture(
-        gl,
-        new Float32Array(colorsForTexture),
         texDimensions.width,
         texDimensions.height
     );
@@ -108,33 +75,23 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
 export type WallsMode = 'wraped' | 'box' | 'bottom_wall';
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
-    texDimensions: { width: number; height: number };
     worldDimensions: { width: number; height: number };
-    gravityFactor: number; //should be in [-1.0, 1.0]
-    wallsMode: WallsMode;
-    interactionRange: number;
-    drag: number;
-    deltaTime: number;
+    screenDimensions: { width: number; height: number };
 }) => {
     const {
         gl,
-        texDimensions,
         worldDimensions,
-        wallsMode,
-        gravityFactor,
-        interactionRange,
-        drag,
-        deltaTime
+        screenDimensions
     } = params;
 
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);
-    gl.viewport(0, 0, texDimensions.width, texDimensions.height);
+    gl.viewport(0, 0, screenDimensions.width, screenDimensions.height);
 
-    gl.bindBuffer(gl.ARRAY_BUFFER, updatePositionBuffer);
-    gl.enableVertexAttribArray(programInfo.positionAttributeLocation as number);
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.enableVertexAttribArray(programInfo.positionLocation as number);
     gl.vertexAttribPointer(
-        programInfo.positionAttributeLocation,
+        programInfo.positionLocation,
         2, // size (num components)
         gl.FLOAT, // type of data in buffer
         false, // normalize
@@ -145,29 +102,14 @@ export const runProgram = (params: {
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, oldPositionsInfo.tex);
 
-    gl.activeTexture(gl.TEXTURE1);
-    gl.bindTexture(gl.TEXTURE_2D, colorTex);
-
     gl.useProgram(program);
-    gl.uniform1i(programInfo.positionTexUniformLocation, 0); // tell the shader the position texture is on texture unit 0
-    gl.uniform1i(programInfo.colorTexUniformLocation, 1); // tell the shader the position texture is on texture unit 0
+    gl.uniform1i(programInfo.uInputTextureLocation, 0); // tell the shader the position texture is on texture unit 0
 
-    const modesToNumber = { 'wraped': 0, 'box': 1, 'bottom_wall': 2 };
-    const modeAsNumber = modesToNumber[wallsMode];
-    gl.uniform1f(programInfo.wallsModeUniformLocation, modeAsNumber);
-    gl.uniform1f(programInfo.gravityFactorUniformLocation, gravityFactor);
-    gl.uniform1f(programInfo.dragUniformLocation, drag);
-    gl.uniform1f(programInfo.interactionRangeUniformLocation, interactionRange);
-    gl.uniform1f(programInfo.deltaTimeUniformLocation, deltaTime);
+    gl.uniform2f(programInfo.uTextureSizeLocation, worldDimensions.width, worldDimensions.height); // Set the texture size
 
-    gl.uniform2f(
-        programInfo.texDimensionsUniformLocation,
-        texDimensions.width,
-        texDimensions.height
-    );
-    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
+    // gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
-    gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 
     // swap which texture we will read from
     // and which one we will write to

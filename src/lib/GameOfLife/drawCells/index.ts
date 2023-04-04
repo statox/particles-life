@@ -44,6 +44,7 @@ export const runProgram = (params: {
 }) => {
     const { gl, cellsTex, worldDimensions } = params;
 
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.bindTexture(gl.TEXTURE_2D, cellsTex);
 
     // Bind the program and set the attribute and uniform values

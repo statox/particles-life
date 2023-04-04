@@ -4,7 +4,7 @@
     import * as drawCells from './drawCells';
     import { setupFullscreenElement } from './fullscreen';
     import { getInitialData } from './simulationUtils';
-    // import * as updatePositions from './updatePositionsTexture';
+    import * as updateCells from './updateCells';
 
     const screenDimensions = {
         width: 700,
@@ -27,22 +27,21 @@
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
         const initialData = getInitialData(gl, { worldDimensions });
-        cellsTex = initialData.cellsTex;
+        cellsTex = updateCells.initProgram(gl, {
+            cellsTex: initialData.cellsTex,
+            texDimensions: worldDimensions
+        });
 
         drawCells.initProgram(gl, { screenDimensions });
 
         function render() {
-            // if (!pause) {
-            //     cellsTex = updatePositions.runProgram({
-            //         gl,
-            //         worldDimensions,
-            //         interactionRange: simulationParams.interactionRange,
-            //         drag: simulationParams.drag,
-            //         deltaTime: simulationParams.timeStep,
-            //         gravityFactor: simulationParams.gravityFactor,
-            //         wallsMode: simulationParams.wallsMode
-            //     });
-            // }
+            if (!pause) {
+                cellsTex = updateCells.runProgram({
+                    gl,
+                    worldDimensions,
+                    screenDimensions
+                });
+            }
 
             drawCells.runProgram({ gl, cellsTex, worldDimensions });
 
@@ -84,6 +83,10 @@
     width={screenDimensions.width}
     height={screenDimensions.height}
 />
+
+<div>
+    <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'}</button>
+</div>
 
 <div>
     <span>
