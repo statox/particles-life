@@ -106,6 +106,7 @@
     <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'} (Space)</button>
     <button on:click={() => (zoomLevel += 1)}>Zoom in</button>
     <button on:click={() => (zoomLevel = Math.max(zoomLevel - 1, 1))}>Zoom out</button>
+    <button on:click={() => (zoomLevel = 1)}>Reset zoom</button>
 </div>
 
 <div>
