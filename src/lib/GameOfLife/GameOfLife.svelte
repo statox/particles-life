@@ -1,8 +1,12 @@
 <script lang="ts">
     import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
     import V1 from './v1/v1.svelte';
+    import V2 from './v2/v2.svelte';
 
-    const tabs = [{ title: 'V1', component: V1 }];
+    const tabs = [
+        { title: 'V1', component: V1 },
+        { title: 'V2', component: V2 }
+    ];
 </script>
 
 <div>
