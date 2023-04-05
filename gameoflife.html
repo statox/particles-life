@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
     <meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/start-82f7cff1.js">
+		<link href="/particles-life/_app/immutable/assets/TabPanel-6417fb07.css" rel="stylesheet">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/start-4612bae4.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-46ced799.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/singletons-a4896559.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-0f65b51c.js">
@@ -17,7 +18,8 @@
 		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/_layout.svelte-7900267c.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/gameoflife/_page.svelte-586b123f.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/gameoflife/_page.svelte-17015ad4.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/TabPanel-3f95d051.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -31,32 +33,22 @@
         <a href="/particles-life/shaders">Test shaders</a> |
     </nav></header>
 
-<canvas id="canvas" style="background-color: black" width="1600" height="900"></canvas>
+<div><div class="svelte-tabs"><ul role="tablist" class="svelte-tabs__tab-list svelte-12yby2a"><li role="tab" id="svelte-tabs-1" aria-selected="true" tabindex="0" class="svelte-tabs__tab svelte-1fbofsd svelte-tabs__selected">About</li>
+            <li role="tab" id="svelte-tabs-2" aria-selected="false" tabindex="-1" class="svelte-tabs__tab svelte-1fbofsd">V1</li></ul>
 
-<div><button>Play</button></div>
+        <div id="svelte-tabs-3" class="svelte-tabs__tab-panel svelte-epfyet" role="tabpanel"><p>Experiments running Conway&#39;s Game of Life in WebGL shaders.</p></div>
 
-<div><span>World 800 x 450 (360000 cells)
-    </span>
-    <button>Reload program</button>
-    <button>Fullscreen</button></div>
-
-<div><button>Reset world</button>
-
-    <span><label for="worldWidth">World: width</label>
-        <input id="worldWidth" type="number" min="0" value="800">
-
-        <label for="worldHeight">height</label>
-        <input id="worldHeight" type="number" min="0" value="450"></span></div>
+        <div id="svelte-tabs-4" class="svelte-tabs__tab-panel svelte-epfyet" role="tabpanel"></div></div></div>
 
 
-		<script type="module" data-sveltekit-hydrate="79jbko">
-			import { start } from "/particles-life/_app/immutable/start-82f7cff1.js";
+		<script type="module" data-sveltekit-hydrate="1xbq1jd">
+			import { start } from "/particles-life/_app/immutable/start-4612bae4.js";
 
 			start({
 				env: {},
 				paths: {"base":"/particles-life","assets":"/particles-life"},
-				target: document.querySelector('[data-sveltekit-hydrate="79jbko"]').parentNode,
-				version: "1680649325726",
+				target: document.querySelector('[data-sveltekit-hydrate="1xbq1jd"]').parentNode,
+				version: "1680688394000",
 				hydrate: {
 					node_ids: [0, 3],
 					data: [null,null],
