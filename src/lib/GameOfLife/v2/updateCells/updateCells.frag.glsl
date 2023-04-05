@@ -22,7 +22,9 @@ vec2 wrapCoord(vec2 coord) {
 
 void main() {
     vec2 texcoord = gl_FragCoord.xy / uTextureSize;
-    float alive = texture2D(uInputTexture, texcoord).x;
+    vec4 cell = texture2D(uInputTexture, texcoord);
+    float alive = cell.x;
+    float id = cell.y;
 
     vec2 topLeftCoord  = wrapCoord(texcoord + (vec2(-1.0, -1.0) / uTextureSize));
     vec2 topCoord      = wrapCoord(texcoord + (vec2(0.0, -1.0) / uTextureSize));
@@ -56,5 +58,5 @@ void main() {
     }
 
 
-    gl_FragColor = vec4(nextAlive, 0.0, 0.0, 0.0);
+    gl_FragColor = vec4(nextAlive, id, 0.0, 0.0);
 }

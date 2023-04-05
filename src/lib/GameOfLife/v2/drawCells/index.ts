@@ -1,6 +1,7 @@
 import * as webglUtils from '../webglUtils';
-import drawPositionsVS from './drawCells.vert.glsl';
-import drawPositionsFS from './drawCells.frag.glsl';
+import drawCellsVS from './drawCells.vert.glsl';
+import drawCellsFS from './drawCells.frag.glsl';
+import drawCellsGradiantFS from './drawCellsGradiant.frag.glsl';
 
 type ProgramInfo = {
     positionLocation: number;
@@ -13,10 +14,15 @@ let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { screenDimensions: { width: number, height: number } }) => {
-    const { screenDimensions } = params;
+type Mode = 'white' | 'gradiant';
+export const initProgram = (gl: WebGLRenderingContext, params: { mode: Mode, screenDimensions: { width: number, height: number } }) => {
+    const { screenDimensions, mode } = params;
     const { height, width } = screenDimensions;
-    program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
+    let fragShaderSource = drawCellsFS
+    if (mode === 'gradiant') {
+        fragShaderSource = drawCellsGradiantFS;
+    }
+    program = webglUtils.createProgramFromSources(gl, [drawCellsVS, fragShaderSource]);
     programInfo = {
         positionLocation: gl.getAttribLocation(program, 'a_position'),
         textureLocation: gl.getUniformLocation(program, 'u_texture'),

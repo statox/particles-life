@@ -13,7 +13,7 @@ export function getInitialData(gl: WebGLRenderingContext, params: { initialDensi
 
     const cellsTex = webglUtils.createTexture(
         gl,
-        new Float32Array(cells.map((v) => [v, 0, 0, 0]).flat()),
+        new Float32Array(cells.map((v, id) => [v, id, 0, 0]).flat()),
         worldDimensions.width,
         worldDimensions.height
     );

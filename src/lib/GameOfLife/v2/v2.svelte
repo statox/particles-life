@@ -37,7 +37,7 @@
             texDimensions: worldDimensions
         });
 
-        drawCells.initProgram(gl, { screenDimensions });
+        drawCells.initProgram(gl, { screenDimensions, mode: 'gradiant' });
 
         function render() {
             if (!pause) {
