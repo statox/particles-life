@@ -6,35 +6,69 @@
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
     import type { InitialCellsMode } from './simulationUtils';
+    import * as dat from 'dat.gui';
 
-    const screenDimensions = {
-        width: 1200,
-        height: 900
-    };
-
-    const worldDimensions = {
-        width: 1200,
-        height: 900
-    };
+    const gui = new dat.GUI();
 
     const mouseCoordinates = {
         x: -100,
         y: -100
     };
+    let mouseMode: updateCells.MouseMode = 0;
+
+    const screenDimensions = {
+        width: 1200,
+        height: 900
+    };
+    let zoomLevel = 1;
     const pan = {
         x: 0,
         y: 0
     };
-    let mouseMode: updateCells.MouseMode = 0;
-    let infiniteSource = true;
+    const settings = {
+        pause: true,
+        infiniteSource: true,
 
-    let zoomLevel = 1;
-    let initialDensity = 0.05;
+        'Reset grid': () => resetTexture('random'),
+        'Empty grid': () => resetTexture('zero'),
+        'Initial density': 0.05,
+        'World width': screenDimensions.width,
+        'World height': screenDimensions.height,
 
-    let pause = true;
-    let cellsTex: WebGLTexture;
+        'Zoom in': () => zoomLevel++,
+        'Zoom out': () => {
+            zoomLevel = Math.max(zoomLevel - 1, 1);
+            if (zoomLevel === 1) {
+                pan.x = 0;
+                pan.y = 0;
+            }
+        },
+        'Zoom reset': () => {
+            zoomLevel = 1;
+            pan.x = 0;
+            pan.y = 0;
+        },
+
+        'Reload progam': () => main()
+    };
+
+    gui.add(settings, 'pause').listen();
+    gui.add(settings, 'infiniteSource').listen();
+
+    gui.add(settings, 'Reset grid');
+    gui.add(settings, 'Empty grid');
+    gui.add(settings, 'Initial density', 0, 1, 0.01);
+    gui.add(settings, 'World width', 1, screenDimensions.width, 1);
+    gui.add(settings, 'World height', 1, screenDimensions.height, 1);
+
+    gui.add(settings, 'Zoom in');
+    gui.add(settings, 'Zoom out');
+    gui.add(settings, 'Zoom reset');
+
+    gui.add(settings, 'Reload progam');
 
     let gl: WebGLRenderingContext;
+    let cellsTex: WebGLTexture;
     let animationFrameRequest: number;
     function main() {
         cancelAnimationFrame(animationFrameRequest);
@@ -43,23 +77,30 @@
 
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const initialData = getInitialData(gl, { mode: 'random', worldDimensions, initialDensity });
+        const initialData = getInitialData(gl, {
+            mode: 'random',
+            worldDimensions: { width: settings['World width'], height: settings['World height'] },
+            initialDensity: settings['Initial density']
+        });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
-            texDimensions: worldDimensions
+            texDimensions: { width: settings['World width'], height: settings['World height'] }
         });
 
         drawCells.initProgram(gl, { screenDimensions, mode: 'gradiant' });
 
         function render() {
-            if (!pause) {
+            if (!settings.pause) {
                 cellsTex = updateCells.runProgram({
                     gl,
-                    worldDimensions,
+                    worldDimensions: {
+                        width: settings['World width'],
+                        height: settings['World height']
+                    },
                     screenDimensions,
                     mouseCoordinates,
                     mouseMode,
-                    infiniteSource
+                    infiniteSource: settings.infiniteSource
                 });
             }
 
@@ -77,7 +118,16 @@
                 pan.y += step;
             }
 
-            drawCells.runProgram({ gl, cellsTex, worldDimensions, zoomLevel, pan });
+            drawCells.runProgram({
+                gl,
+                cellsTex,
+                worldDimensions: {
+                    width: settings['World width'],
+                    height: settings['World height']
+                },
+                zoomLevel,
+                pan
+            });
 
             return (animationFrameRequest = requestAnimationFrame(render));
         }
@@ -96,7 +146,7 @@
 
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
-                pause = !pause;
+                settings.pause = !settings.pause;
                 event.preventDefault();
             }
             if (event.code === 'KeyF') {
@@ -116,7 +166,7 @@
                 return;
             }
             if (event.code === 'KeyS') {
-                infiniteSource = !infiniteSource;
+                settings.infiniteSource = !settings.infiniteSource;
                 return;
             }
             if (event.code === 'KeyO') {
@@ -176,12 +226,14 @@
     });
 
     const resetTexture = (mode: InitialCellsMode) => {
-        worldDimensions.width = Math.min(worldDimensions.width, screenDimensions.width);
-        worldDimensions.height = Math.min(worldDimensions.height, screenDimensions.height);
-        const initialData = getInitialData(gl, { mode, worldDimensions, initialDensity });
+        const initialData = getInitialData(gl, {
+            mode,
+            worldDimensions: { width: settings['World width'], height: settings['World height'] },
+            initialDensity: settings['Initial density']
+        });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
-            texDimensions: worldDimensions
+            texDimensions: { width: settings['World width'], height: settings['World height'] }
         });
     };
 </script>
@@ -194,58 +246,8 @@
 />
 
 <div>
-    <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'} (Space)</button>
-    <button on:click={() => (infiniteSource = !infiniteSource)}>
-        {infiniteSource ? 'Disable' : 'Enable'} constant cells generation (E)
-    </button>
-    <button on:click={() => (zoomLevel += 1)}>Zoom in (I)</button>
-    <button
-        on:click={() => {
-            zoomLevel = Math.max(zoomLevel - 1, 1);
-            if (zoomLevel === 1) {
-                pan.x = 0;
-                pan.y = 0;
-            }
-        }}>Zoom out (O)</button
-    >
-    <button on:click={() => (zoomLevel = 1)}>Reset zoom (Z)</button>
-</div>
-
-<div>
     <span>
-        World {worldDimensions.width} x {worldDimensions.height} ({worldDimensions.width *
-            worldDimensions.height} cells)
+        {settings['World width'] * settings['World height']} cells
     </span>
-    <button on:click={() => main()}>Reload program</button>
     <button on:click={enableFullscreen}>Fullscreen (f)</button>
-</div>
-
-<div>
-    <button on:click={() => resetTexture('random')}>Reset world (R)</button>
-    <button on:click={() => resetTexture('zero')}>Empty world (E)</button>
-
-    <span>
-        <label for="initialDensity">Initial density [0-1]</label>
-        <input id="initialDensity" bind:value={initialDensity} type="number" min={0} max={1} />
-    </span>
-
-    <span>
-        <label for="worldWidth">World: width</label>
-        <input
-            id="worldWidth"
-            on:change={() => resetTexture('random')}
-            bind:value={worldDimensions.width}
-            type="number"
-            min={0}
-        />
-
-        <label for="worldHeight">height</label>
-        <input
-            id="worldHeight"
-            on:change={() => resetTexture('random')}
-            bind:value={worldDimensions.height}
-            type="number"
-            min={0}
-        />
-    </span>
 </div>
