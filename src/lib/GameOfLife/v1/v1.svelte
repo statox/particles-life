@@ -6,15 +6,13 @@
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
 
-    // There must be some scaling issues because when the worldDimensions are larger
-    // than half of the screenDimensions, the bottom right part of the texture is not updated
     const screenDimensions = {
         width: 1600,
         height: 900
     };
     const worldDimensions = {
-        width: 800,
-        height: 450
+        width: 1600,
+        height: 900
     };
     let pause = true;
     let cellsTex: WebGLTexture;

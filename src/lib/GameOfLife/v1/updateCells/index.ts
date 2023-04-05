@@ -107,9 +107,7 @@ export const runProgram = (params: {
 
     gl.uniform2f(programInfo.uTextureSizeLocation, worldDimensions.width, worldDimensions.height); // Set the texture size
 
-    // gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-
+    gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 
     // swap which texture we will read from
     // and which one we will write to
