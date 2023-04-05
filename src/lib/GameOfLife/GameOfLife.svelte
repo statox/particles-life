@@ -1,125 +1,27 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import * as webglUtils from './webglUtils';
-    import * as drawCells from './drawCells';
-    import { setupFullscreenElement } from './fullscreen';
-    import { getInitialData } from './simulationUtils';
-    import * as updateCells from './updateCells';
+    import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
+    import V1 from './v1/v1.svelte';
 
-    const screenDimensions = {
-        width: 1600,
-        height: 900
-    };
-    const worldDimensions = {
-        width: 800,
-        height: 450
-    };
-    let pause = true;
-    let cellsTex: WebGLTexture;
-
-    let gl: WebGLRenderingContext;
-    let animationFrameRequest: number;
-    function main() {
-        cancelAnimationFrame(animationFrameRequest);
-
-        gl = webglUtils.getWebGLContext();
-
-        webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
-
-        const initialData = getInitialData(gl, { worldDimensions });
-        cellsTex = updateCells.initProgram(gl, {
-            cellsTex: initialData.cellsTex,
-            texDimensions: worldDimensions
-        });
-
-        drawCells.initProgram(gl, { screenDimensions });
-
-        function render() {
-            if (!pause) {
-                cellsTex = updateCells.runProgram({
-                    gl,
-                    worldDimensions,
-                    screenDimensions
-                });
-            }
-
-            drawCells.runProgram({ gl, cellsTex, worldDimensions });
-
-            return (animationFrameRequest = requestAnimationFrame(render));
-        }
-        animationFrameRequest = requestAnimationFrame(render);
-    }
-
-    let enableFullscreen: () => void;
-    onMount(() => {
-        main();
-
-        enableFullscreen = setupFullscreenElement(
-            document,
-            'canvas',
-            screenDimensions
-        ).enableFullscreen;
-
-        document.addEventListener('keydown', (event) => {
-            if (event.code === 'Space') {
-                // Space bar was pressed
-                pause = !pause;
-                event.preventDefault();
-            }
-        });
-    });
-
-    const resetTexture = () => {
-        worldDimensions.width = Math.min(worldDimensions.width, screenDimensions.width);
-        worldDimensions.height = Math.min(worldDimensions.height, screenDimensions.height);
-        const initialData = getInitialData(gl, { worldDimensions });
-        cellsTex = updateCells.initProgram(gl, {
-            cellsTex: initialData.cellsTex,
-            texDimensions: worldDimensions
-        });
-    };
+    const tabs = [{ title: 'V1', component: V1 }];
 </script>
 
-<canvas
-    id="canvas"
-    style="background-color: black"
-    width={screenDimensions.width}
-    height={screenDimensions.height}
-/>
-
 <div>
-    <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'}</button>
-</div>
+    <Tabs>
+        <TabList>
+            <Tab>About</Tab>
+            {#each tabs as tab}
+                <Tab>{tab.title}</Tab>
+            {/each}
+        </TabList>
 
-<div>
-    <span>
-        World {worldDimensions.width} x {worldDimensions.height} ({worldDimensions.width *
-            worldDimensions.height} cells)
-    </span>
-    <button on:click={() => main()}>Reload program</button>
-    <button on:click={enableFullscreen}>Fullscreen</button>
-</div>
+        <TabPanel>
+            <p>Experiments running Conway's Game of Life in WebGL shaders.</p>
+        </TabPanel>
 
-<div>
-    <button on:click={resetTexture}>Reset world</button>
-
-    <span>
-        <label for="worldWidth">World: width</label>
-        <input
-            id="worldWidth"
-            on:change={resetTexture}
-            bind:value={worldDimensions.width}
-            type="number"
-            min={0}
-        />
-
-        <label for="worldHeight">height</label>
-        <input
-            id="worldHeight"
-            on:change={resetTexture}
-            bind:value={worldDimensions.height}
-            type="number"
-            min={0}
-        />
-    </span>
+        {#each tabs as tab}
+            <TabPanel>
+                <svelte:component this={tab.component} />
+            </TabPanel>
+        {/each}
+    </Tabs>
 </div>
