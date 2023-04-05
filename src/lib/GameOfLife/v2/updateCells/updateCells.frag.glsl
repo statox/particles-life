@@ -2,6 +2,19 @@ precision highp float;
 
 uniform sampler2D uInputTexture;
 uniform vec2 uTextureSize;
+uniform vec2 uMouseCoordinates;
+uniform int uMouseMode; // 0 do nothing; 1 draw; 2 erase
+
+// Gold Noise 2015 dcerisano@standard3d.com
+// - based on the Golden Ratio
+// - uniform normalized distribution
+// - fastest static noise generator function (also runs at low precision)
+// - use with indicated fractional seeding method.
+float PHI = 1.61803398874989484820459;  //  Golden Ratio
+
+float gold_noise(in vec2 xy, in float seed){
+       return fract(tan(distance(xy*PHI, xy)*seed)*xy.x);
+}
 
 vec2 wrapCoord(vec2 coord) {
     if (coord.x >= 1.0) {
@@ -57,6 +70,16 @@ void main() {
         nextAlive = 1.0;
     }
 
+    if (uMouseMode != 0 && distance(texcoord, uMouseCoordinates) < 0.02) {
+        // if (gold_noise(texcoord, 121234.0) < 0.05) {
+        //     nextAlive = 1.0;
+        // }
+        if (uMouseMode == 1 && gold_noise(texcoord, 121234.0) < 0.05) {
+            nextAlive = 1.0;
+        } else if (uMouseMode == 2) {
+            nextAlive = 0.0;
+        }
+    }
 
     gl_FragColor = vec4(nextAlive, id, 0.0, 0.0);
 }

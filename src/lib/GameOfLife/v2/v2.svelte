@@ -7,14 +7,20 @@
     import * as updateCells from './updateCells';
 
     const screenDimensions = {
-        width: 1600,
+        width: 1200,
         height: 900
     };
 
     const worldDimensions = {
-        width: 1600,
+        width: 1200,
         height: 900
     };
+
+    const mouseCoordinates = {
+        x: -100,
+        y: -100
+    };
+    let mouseMode: updateCells.MouseMode = 0;
 
     let zoomLevel = 1;
     let initialDensity = 0.05;
@@ -37,14 +43,16 @@
             texDimensions: worldDimensions
         });
 
-        drawCells.initProgram(gl, { screenDimensions, mode: 'gradiant' });
+        drawCells.initProgram(gl, { screenDimensions, mode: 'white' });
 
         function render() {
             if (!pause) {
                 cellsTex = updateCells.runProgram({
                     gl,
                     worldDimensions,
-                    screenDimensions
+                    screenDimensions,
+                    mouseCoordinates,
+                    mouseMode
                 });
             }
 
@@ -81,6 +89,46 @@
                 resetTexture();
                 return;
             }
+        });
+
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+        if (!canvas) {
+            throw new Error('Canvas unavailable');
+        }
+
+        canvas.addEventListener('mousemove', (event) => {
+            // const mousePos = getMousePos(canvas, event);
+
+            const rect = canvas.getBoundingClientRect(); // abs. size of element
+            const scaleX = canvas.width / rect.width; // relationship bitmap vs. element for x
+            const scaleY = canvas.height / rect.height; // relationship bitmap vs. element for y
+
+            const mousePos = {
+                x: (event.clientX - rect.left) * scaleX, // scale mouse coordinates after they have
+                y: (event.clientY - rect.top) * scaleY // been adjusted to be relative to element
+            };
+
+            mouseCoordinates.x = mousePos.x / screenDimensions.width;
+            mouseCoordinates.y = mousePos.y / screenDimensions.height;
+        });
+
+        canvas.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            if (event.button === 0) {
+                mouseMode = 1;
+            } else if (event.button === 2) {
+                mouseMode = 2;
+            }
+        });
+
+        canvas.addEventListener('mouseup', (event) => {
+            event.preventDefault();
+            mouseMode = 0;
+        });
+
+        canvas.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            return false;
         });
     });
 

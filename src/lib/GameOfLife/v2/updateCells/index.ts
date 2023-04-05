@@ -9,6 +9,8 @@ type PositionsInfo = {
 type ProgramInfo = {
     uInputTextureLocation: WebGLUniformLocation | null;
     uTextureSizeLocation: WebGLUniformLocation | null;
+    uMouseCoordinatesLocation: WebGLUniformLocation | null;
+    uMouseModeLocation: WebGLUniformLocation | null;
     positionLocation: number;
 };
 
@@ -30,6 +32,8 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
     programInfo = {
         uInputTextureLocation: gl.getUniformLocation(program, 'uInputTexture'),
         uTextureSizeLocation: gl.getUniformLocation(program, 'uTextureSize'),
+        uMouseCoordinatesLocation: gl.getUniformLocation(program, 'uMouseCoordinates'),
+        uMouseModeLocation: gl.getUniformLocation(program, 'uMouseMode'),
         positionLocation: gl.getAttribLocation(program, 'aPosition')
     };
 
@@ -72,16 +76,20 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
     return positionTex1;
 }
 
-export type WallsMode = 'wraped' | 'box' | 'bottom_wall';
+export type MouseMode = 0 | 1 | 2;
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
     worldDimensions: { width: number; height: number };
     screenDimensions: { width: number; height: number };
+    mouseCoordinates: { x: number; y: number }; // in range [0, 1] for screen dimensions
+    mouseMode: MouseMode;
 }) => {
     const {
         gl,
         worldDimensions,
-        screenDimensions
+        screenDimensions,
+        mouseCoordinates,
+        mouseMode
     } = params;
 
     // render to the new positions
@@ -106,6 +114,8 @@ export const runProgram = (params: {
     gl.uniform1i(programInfo.uInputTextureLocation, 0); // tell the shader the position texture is on texture unit 0
 
     gl.uniform2f(programInfo.uTextureSizeLocation, worldDimensions.width, worldDimensions.height); // Set the texture size
+    gl.uniform2f(programInfo.uMouseCoordinatesLocation, mouseCoordinates.x, mouseCoordinates.y);
+    gl.uniform1i(programInfo.uMouseModeLocation, mouseMode);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 
