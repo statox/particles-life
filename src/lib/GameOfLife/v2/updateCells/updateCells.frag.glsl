@@ -4,6 +4,7 @@ uniform sampler2D uInputTexture;
 uniform vec2 uTextureSize;
 uniform vec2 uMouseCoordinates;
 uniform int uMouseMode; // 0 do nothing; 1 draw; 2 erase
+uniform int uInfiniteSource; // 0 do nothing; 1 generate cells
 
 // Gold Noise 2015 dcerisano@standard3d.com
 // - based on the Golden Ratio
@@ -78,6 +79,12 @@ void main() {
             nextAlive = 1.0;
         } else if (uMouseMode == 2) {
             nextAlive = 0.0;
+        }
+    }
+
+    if (uInfiniteSource == 1 && distance(texcoord, vec2(0.5, 0.5)) < 0.02) {
+        if (gold_noise(texcoord, 155790.0) < 0.05) {
+            nextAlive = 1.0;
         }
     }
 

@@ -11,6 +11,7 @@ type ProgramInfo = {
     uTextureSizeLocation: WebGLUniformLocation | null;
     uMouseCoordinatesLocation: WebGLUniformLocation | null;
     uMouseModeLocation: WebGLUniformLocation | null;
+    uInfiniteSourceLocation: WebGLUniformLocation | null;
     positionLocation: number;
 };
 
@@ -34,6 +35,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
         uTextureSizeLocation: gl.getUniformLocation(program, 'uTextureSize'),
         uMouseCoordinatesLocation: gl.getUniformLocation(program, 'uMouseCoordinates'),
         uMouseModeLocation: gl.getUniformLocation(program, 'uMouseMode'),
+        uInfiniteSourceLocation: gl.getUniformLocation(program, 'uInfiniteSource'),
         positionLocation: gl.getAttribLocation(program, 'aPosition')
     };
 
@@ -83,13 +85,15 @@ export const runProgram = (params: {
     screenDimensions: { width: number; height: number };
     mouseCoordinates: { x: number; y: number }; // in range [0, 1] for screen dimensions
     mouseMode: MouseMode;
+    infiniteSource: boolean;
 }) => {
     const {
         gl,
         worldDimensions,
         screenDimensions,
         mouseCoordinates,
-        mouseMode
+        mouseMode,
+        infiniteSource
     } = params;
 
     // render to the new positions
@@ -116,6 +120,7 @@ export const runProgram = (params: {
     gl.uniform2f(programInfo.uTextureSizeLocation, worldDimensions.width, worldDimensions.height); // Set the texture size
     gl.uniform2f(programInfo.uMouseCoordinatesLocation, mouseCoordinates.x, mouseCoordinates.y);
     gl.uniform1i(programInfo.uMouseModeLocation, mouseMode);
+    gl.uniform1i(programInfo.uInfiniteSourceLocation, infiniteSource ? 1 : 0);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 

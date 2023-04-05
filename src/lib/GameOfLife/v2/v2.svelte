@@ -25,6 +25,7 @@
         y: 0
     };
     let mouseMode: updateCells.MouseMode = 0;
+    let infiniteSource = true;
 
     let zoomLevel = 1;
     let initialDensity = 0.05;
@@ -56,7 +57,8 @@
                     worldDimensions,
                     screenDimensions,
                     mouseCoordinates,
-                    mouseMode
+                    mouseMode,
+                    infiniteSource
                 });
             }
 
@@ -184,6 +186,9 @@
 
 <div>
     <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'} (Space)</button>
+    <button on:click={() => (infiniteSource = !infiniteSource)}>
+        {infiniteSource ? 'Disable' : 'Enable'} constant cells generation
+    </button>
     <button on:click={() => (zoomLevel += 1)}>Zoom in (I)</button>
     <button
         on:click={() => {
