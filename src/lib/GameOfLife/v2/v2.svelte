@@ -5,6 +5,7 @@
     import { setupFullscreenElement } from './fullscreen';
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
+    import type { InitialCellsMode } from './simulationUtils';
 
     const screenDimensions = {
         width: 1200,
@@ -42,7 +43,7 @@
 
         webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
-        const initialData = getInitialData(gl, { worldDimensions, initialDensity });
+        const initialData = getInitialData(gl, { mode: 'random', worldDimensions, initialDensity });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
             texDimensions: worldDimensions
@@ -103,11 +104,19 @@
                 return;
             }
             if (event.code === 'KeyR') {
-                resetTexture();
+                resetTexture('random');
+                return;
+            }
+            if (event.code === 'KeyE') {
+                resetTexture('zero');
                 return;
             }
             if (event.code === 'KeyI') {
                 zoomLevel++;
+                return;
+            }
+            if (event.code === 'KeyS') {
+                infiniteSource = !infiniteSource;
                 return;
             }
             if (event.code === 'KeyO') {
@@ -166,10 +175,10 @@
         });
     });
 
-    const resetTexture = () => {
+    const resetTexture = (mode: InitialCellsMode) => {
         worldDimensions.width = Math.min(worldDimensions.width, screenDimensions.width);
         worldDimensions.height = Math.min(worldDimensions.height, screenDimensions.height);
-        const initialData = getInitialData(gl, { worldDimensions, initialDensity });
+        const initialData = getInitialData(gl, { mode, worldDimensions, initialDensity });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
             texDimensions: worldDimensions
@@ -187,7 +196,7 @@
 <div>
     <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'} (Space)</button>
     <button on:click={() => (infiniteSource = !infiniteSource)}>
-        {infiniteSource ? 'Disable' : 'Enable'} constant cells generation
+        {infiniteSource ? 'Disable' : 'Enable'} constant cells generation (E)
     </button>
     <button on:click={() => (zoomLevel += 1)}>Zoom in (I)</button>
     <button
@@ -212,25 +221,19 @@
 </div>
 
 <div>
-    <button on:click={resetTexture}>Reset world (r)</button>
+    <button on:click={() => resetTexture('random')}>Reset world (R)</button>
+    <button on:click={() => resetTexture('zero')}>Empty world (E)</button>
 
     <span>
         <label for="initialDensity">Initial density [0-1]</label>
-        <input
-            id="initialDensity"
-            on:change={resetTexture}
-            bind:value={initialDensity}
-            type="number"
-            min={0}
-            max={1}
-        />
+        <input id="initialDensity" bind:value={initialDensity} type="number" min={0} max={1} />
     </span>
 
     <span>
         <label for="worldWidth">World: width</label>
         <input
             id="worldWidth"
-            on:change={resetTexture}
+            on:change={() => resetTexture('random')}
             bind:value={worldDimensions.width}
             type="number"
             min={0}
@@ -239,7 +242,7 @@
         <label for="worldHeight">height</label>
         <input
             id="worldHeight"
-            on:change={resetTexture}
+            on:change={() => resetTexture('random')}
             bind:value={worldDimensions.height}
             type="number"
             min={0}
