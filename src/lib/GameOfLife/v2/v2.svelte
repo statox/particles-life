@@ -20,6 +20,10 @@
         x: -100,
         y: -100
     };
+    const pan = {
+        x: 0,
+        y: 0
+    };
     let mouseMode: updateCells.MouseMode = 0;
 
     let zoomLevel = 1;
@@ -43,7 +47,7 @@
             texDimensions: worldDimensions
         });
 
-        drawCells.initProgram(gl, { screenDimensions, mode: 'white' });
+        drawCells.initProgram(gl, { screenDimensions, mode: 'gradiant' });
 
         function render() {
             if (!pause) {
@@ -56,7 +60,21 @@
                 });
             }
 
-            drawCells.runProgram({ gl, cellsTex, worldDimensions, zoomLevel });
+            const step = 0.005;
+            if (mouseCoordinates.x < 0.2 && pan.x >= step) {
+                pan.x -= step;
+            }
+            if (mouseCoordinates.x > 0.8 && pan.x < 1 - 1 / zoomLevel) {
+                pan.x += step;
+            }
+            if (mouseCoordinates.y < 0.2 && pan.y >= step) {
+                pan.y -= step;
+            }
+            if (mouseCoordinates.y > 0.8 && pan.y < 1 - 1 / zoomLevel) {
+                pan.y += step;
+            }
+
+            drawCells.runProgram({ gl, cellsTex, worldDimensions, zoomLevel, pan });
 
             return (animationFrameRequest = requestAnimationFrame(render));
         }
@@ -75,18 +93,34 @@
 
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
-                // Space bar was pressed
                 pause = !pause;
                 event.preventDefault();
             }
             if (event.code === 'KeyF') {
-                // Space bar was pressed
                 enableFullscreen();
                 return;
             }
             if (event.code === 'KeyR') {
-                // Space bar was pressed
                 resetTexture();
+                return;
+            }
+            if (event.code === 'KeyI') {
+                zoomLevel++;
+                return;
+            }
+            if (event.code === 'KeyO') {
+                zoomLevel = Math.max(zoomLevel - 1, 1);
+                if (zoomLevel === 1) {
+                    pan.x = 0;
+                    pan.y = 0;
+                }
+
+                return;
+            }
+            if (event.code === 'KeyZ') {
+                zoomLevel = 1;
+                pan.x = 0;
+                pan.y = 0;
                 return;
             }
         });
@@ -97,8 +131,6 @@
         }
 
         canvas.addEventListener('mousemove', (event) => {
-            // const mousePos = getMousePos(canvas, event);
-
             const rect = canvas.getBoundingClientRect(); // abs. size of element
             const scaleX = canvas.width / rect.width; // relationship bitmap vs. element for x
             const scaleY = canvas.height / rect.height; // relationship bitmap vs. element for y
@@ -152,9 +184,17 @@
 
 <div>
     <button on:click={() => (pause = !pause)}>{pause ? 'Play' : 'Pause'} (Space)</button>
-    <button on:click={() => (zoomLevel += 1)}>Zoom in</button>
-    <button on:click={() => (zoomLevel = Math.max(zoomLevel - 1, 1))}>Zoom out</button>
-    <button on:click={() => (zoomLevel = 1)}>Reset zoom</button>
+    <button on:click={() => (zoomLevel += 1)}>Zoom in (I)</button>
+    <button
+        on:click={() => {
+            zoomLevel = Math.max(zoomLevel - 1, 1);
+            if (zoomLevel === 1) {
+                pan.x = 0;
+                pan.y = 0;
+            }
+        }}>Zoom out (O)</button
+    >
+    <button on:click={() => (zoomLevel = 1)}>Reset zoom (Z)</button>
 </div>
 
 <div>

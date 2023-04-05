@@ -51,9 +51,10 @@ export const runProgram = (params: {
     gl: WebGLRenderingContext,
     cellsTex: WebGLTexture,
     worldDimensions: { width: number, height: number },
-    zoomLevel: number
+    zoomLevel: number,
+    pan: { x: number, y: number }
 }) => {
-    const { gl, cellsTex, worldDimensions, zoomLevel } = params;
+    const { gl, cellsTex, worldDimensions, zoomLevel, pan } = params;
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.bindTexture(gl.TEXTURE_2D, cellsTex);
@@ -66,7 +67,7 @@ export const runProgram = (params: {
     gl.uniform1i(programInfo.textureLocation, 0);
     gl.uniform2f(programInfo.worldSizeLocation, worldDimensions.width, worldDimensions.height);
     gl.uniform1f(programInfo.zoomLocation, Math.max(zoomLevel, 1));
-    gl.uniform2f(programInfo.panLocation, 0, 0);
+    gl.uniform2f(programInfo.panLocation, pan.x, pan.y);
 
     // Draw the texture
     gl.drawArrays(gl.TRIANGLES, 0, 6);
