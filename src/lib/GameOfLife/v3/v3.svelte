@@ -16,7 +16,6 @@
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
     };
-    let zoomLevel = 1;
     const pan = {
         x: 0,
         y: 0
@@ -32,16 +31,8 @@
         'World height': screenDimensions.height,
         Cells: (screenDimensions.width * screenDimensions.height).toString(),
 
-        'Zoom in': () => zoomLevel++,
-        'Zoom out': () => {
-            zoomLevel = Math.max(zoomLevel - 1, 1);
-            if (zoomLevel === 1) {
-                pan.x = 0;
-                pan.y = 0;
-            }
-        },
-        'Zoom reset': () => {
-            zoomLevel = 1;
+        'Zoom level': 1,
+        'Pan reset': () => {
             pan.x = 0;
             pan.y = 0;
         },
@@ -65,9 +56,8 @@
     });
     gui.add(settings, 'Cells').listen();
 
-    gui.add(settings, 'Zoom in');
-    gui.add(settings, 'Zoom out');
-    gui.add(settings, 'Zoom reset');
+    gui.add(settings, 'Zoom level', 1, 10);
+    gui.add(settings, 'Pan reset');
 
     gui.add(settings, 'Reload progam');
 
@@ -109,16 +99,16 @@
             }
 
             const step = 0.005;
-            if (mouseCoordinates.x < 0.2 && pan.x >= step) {
+            if (mouseCoordinates.x < 0.1 && pan.x >= step) {
                 pan.x -= step;
             }
-            if (mouseCoordinates.x > 0.8 && pan.x < 1 - 1 / zoomLevel) {
+            if (mouseCoordinates.x > 0.9 && pan.x < 1 - 1 / settings['Zoom level']) {
                 pan.x += step;
             }
-            if (mouseCoordinates.y < 0.2 && pan.y >= step) {
+            if (mouseCoordinates.y < 0.1 && pan.y >= step) {
                 pan.y -= step;
             }
-            if (mouseCoordinates.y > 0.8 && pan.y < 1 - 1 / zoomLevel) {
+            if (mouseCoordinates.y > 0.9 && pan.y < 1 - 1 / settings['Zoom level']) {
                 pan.y += step;
             }
 
@@ -129,7 +119,7 @@
                     width: settings['World width'],
                     height: settings['World height']
                 },
-                zoomLevel,
+                zoomLevel: settings['Zoom level'],
                 pan
             });
 
@@ -154,27 +144,8 @@
                 resetTexture('zero');
                 return;
             }
-            if (event.code === 'KeyI') {
-                zoomLevel++;
-                return;
-            }
             if (event.code === 'KeyS') {
                 settings['Infinite source'] = !settings['Infinite source'];
-                return;
-            }
-            if (event.code === 'KeyO') {
-                zoomLevel = Math.max(zoomLevel - 1, 1);
-                if (zoomLevel === 1) {
-                    pan.x = 0;
-                    pan.y = 0;
-                }
-
-                return;
-            }
-            if (event.code === 'KeyZ') {
-                zoomLevel = 1;
-                pan.x = 0;
-                pan.y = 0;
                 return;
             }
         });
