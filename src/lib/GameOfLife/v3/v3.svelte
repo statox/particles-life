@@ -5,9 +5,6 @@
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
     import type { InitialCellsMode } from './simulationUtils';
-    import * as dat from 'dat.gui';
-
-    const gui = new dat.GUI();
 
     const mouseCoordinates = { x: 0, y: 0 };
     let mouseMode: updateCells.MouseMode = 0;
@@ -40,26 +37,34 @@
         'Reload progam': () => main()
     };
 
-    gui.add(settings, 'Pause').listen();
-    gui.add(settings, 'Infinite source').listen();
+    const initGUI = async () => {
+        // Imported here to avoid "window is not defined" error
+        // https://github.com/dataarts/dat.gui/issues/271
+        const dat = await import('dat.gui');
+        const gui = new dat.GUI();
+        gui.add(settings, 'Pause').listen();
+        gui.add(settings, 'Infinite source').listen();
 
-    gui.add(settings, 'Reset grid');
-    gui.add(settings, 'Empty grid');
-    gui.add(settings, 'Initial density', 0, 1, 0.01).onFinishChange(() => resetTexture('random'));
-    gui.add(settings, 'World width', 1, screenDimensions.width, 1).onFinishChange(() => {
-        settings.Cells = (settings['World height'] * settings['World width']).toString();
-        resetTexture('random');
-    });
-    gui.add(settings, 'World height', 1, screenDimensions.height, 1).onFinishChange(() => {
-        settings.Cells = (settings['World height'] * settings['World width']).toString();
-        resetTexture('random');
-    });
-    gui.add(settings, 'Cells').listen();
+        gui.add(settings, 'Reset grid');
+        gui.add(settings, 'Empty grid');
+        gui.add(settings, 'Initial density', 0, 1, 0.01).onFinishChange(() =>
+            resetTexture('random')
+        );
+        gui.add(settings, 'World width', 1, screenDimensions.width, 1).onFinishChange(() => {
+            settings.Cells = (settings['World height'] * settings['World width']).toString();
+            resetTexture('random');
+        });
+        gui.add(settings, 'World height', 1, screenDimensions.height, 1).onFinishChange(() => {
+            settings.Cells = (settings['World height'] * settings['World width']).toString();
+            resetTexture('random');
+        });
+        gui.add(settings, 'Cells').listen();
 
-    gui.add(settings, 'Zoom level', 1, 10);
-    gui.add(settings, 'Pan reset');
+        gui.add(settings, 'Zoom level', 1, 10);
+        gui.add(settings, 'Pan reset');
 
-    gui.add(settings, 'Reload progam');
+        gui.add(settings, 'Reload progam');
+    };
 
     let gl: WebGLRenderingContext;
     let cellsTex: WebGLTexture;
@@ -130,6 +135,7 @@
 
     onMount(() => {
         main();
+        initGUI();
 
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
