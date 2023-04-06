@@ -5,6 +5,7 @@ uniform vec2 uTextureSize;
 uniform vec2 uMouseCoordinates;
 uniform int uMouseMode; // 0 do nothing; 1 draw; 2 erase
 uniform int uInfiniteSource; // 0 do nothing; 1 generate cells
+uniform float uIteration;
 
 // Gold Noise 2015 dcerisano@standard3d.com
 // - based on the Golden Ratio
@@ -39,6 +40,7 @@ void main() {
     vec4 cell = texture2D(uInputTexture, texcoord);
     float alive = cell.x;
     float id = cell.y;
+    float updatedAt = cell.z;
 
     vec2 topLeftCoord  = wrapCoord(texcoord + (vec2(-1.0, -1.0) / uTextureSize));
     vec2 topCoord      = wrapCoord(texcoord + (vec2(0.0, -1.0) / uTextureSize));
@@ -83,10 +85,15 @@ void main() {
     }
 
     if (uInfiniteSource == 1 && distance(texcoord, vec2(0.5, 0.5)) < 0.02) {
-        if (gold_noise(texcoord, 155790.0) < 0.05) {
+        if (gold_noise(texcoord * uIteration, 155790.0) < 0.05) {
             nextAlive = 1.0;
         }
     }
 
-    gl_FragColor = vec4(nextAlive, id, 0.0, 0.0);
+
+    if (alive != nextAlive) {
+        updatedAt = uIteration;
+    }
+
+    gl_FragColor = vec4(nextAlive, id, updatedAt, 0.0);
 }

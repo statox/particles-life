@@ -26,7 +26,7 @@
         Iteration: 0,
         TimeInSeconds: 0,
         fps: 0,
-        'Draw mode': 'white' as drawCells.DrawingMode,
+        'Draw mode': 'age_gradiant' as drawCells.DrawingMode,
 
         'Reset grid': () => resetTexture('random'),
         'Empty grid': () => resetTexture('zero'),
@@ -57,7 +57,8 @@
         gui.add(settings, 'fps').listen();
         gui.add(settings, 'Draw mode', {
             White: 'white',
-            Gradiant: 'gradiant'
+            'Age Gradiant': 'age_gradiant',
+            'Position Gradiant': 'gradiant'
         }).onFinishChange(() =>
             drawCells.initProgram(gl, { screenDimensions, mode: settings['Draw mode'] })
         );
@@ -113,7 +114,7 @@
                 settings.fps = 1 / deltaTime;
                 lastFrameUpdate = now;
 
-                settings.TimeInSeconds = (Date.now() - startTime) / 1000;
+                settings.TimeInSeconds = now - startTime;
                 settings.Iteration++;
                 cellsTex = updateCells.runProgram({
                     gl,
@@ -124,7 +125,8 @@
                     screenDimensions,
                     mouseCoordinates,
                     mouseMode,
-                    infiniteSource: settings['Infinite source']
+                    infiniteSource: settings['Infinite source'],
+                    iteration: settings.Iteration
                 });
             }
 
@@ -150,7 +152,8 @@
                     height: settings['World height']
                 },
                 zoomLevel: settings['Zoom level'],
-                pan
+                pan,
+                iteration: settings.Iteration
             });
 
             return (animationFrameRequest = requestAnimationFrame(render));
@@ -221,6 +224,8 @@
     });
 
     const resetTexture = (mode: InitialCellsMode) => {
+        settings.Iteration = 0;
+        settings.TimeInSeconds = 0;
         const initialData = getInitialData(gl, {
             mode,
             worldDimensions: { width: settings['World width'], height: settings['World height'] },

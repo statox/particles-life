@@ -2,6 +2,7 @@ import * as webglUtils from '../webglUtils';
 import drawCellsVS from './drawCells.vert.glsl';
 import drawCellsFS from './drawCells.frag.glsl';
 import drawCellsGradiantFS from './drawCellsGradiant.frag.glsl';
+import drawCellsAgeGradiantFS from './drawCellsAgeGradiant.frag.glsl';
 
 type ProgramInfo = {
     positionLocation: number;
@@ -9,18 +10,21 @@ type ProgramInfo = {
     worldSizeLocation: WebGLUniformLocation | null;
     zoomLocation: WebGLUniformLocation | null;
     panLocation: WebGLUniformLocation | null;
+    iterationLocation: WebGLUniformLocation | null;
 };
 let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
-export type DrawingMode = 'white' | 'gradiant';
+export type DrawingMode = 'white' | 'gradiant' | 'age_gradiant';
 export const initProgram = (gl: WebGLRenderingContext, params: { mode: DrawingMode, screenDimensions: { width: number, height: number } }) => {
     const { screenDimensions, mode } = params;
     const { height, width } = screenDimensions;
     let fragShaderSource = drawCellsFS
     if (mode === 'gradiant') {
         fragShaderSource = drawCellsGradiantFS;
+    } else if (mode === 'age_gradiant') {
+        fragShaderSource = drawCellsAgeGradiantFS;
     }
     program = webglUtils.createProgramFromSources(gl, [drawCellsVS, fragShaderSource]);
     programInfo = {
@@ -28,7 +32,8 @@ export const initProgram = (gl: WebGLRenderingContext, params: { mode: DrawingMo
         textureLocation: gl.getUniformLocation(program, 'u_texture'),
         worldSizeLocation: gl.getUniformLocation(program, 'u_worldSize'),
         zoomLocation: gl.getUniformLocation(program, 'u_zoom'),
-        panLocation: gl.getUniformLocation(program, 'u_pan')
+        panLocation: gl.getUniformLocation(program, 'u_pan'),
+        iterationLocation: gl.getUniformLocation(program, 'u_iteration')
     };
 
     // Create a buffer to hold the vertex data
@@ -52,9 +57,10 @@ export const runProgram = (params: {
     cellsTex: WebGLTexture,
     worldDimensions: { width: number, height: number },
     zoomLevel: number,
-    pan: { x: number, y: number }
+    pan: { x: number, y: number },
+    iteration: number
 }) => {
-    const { gl, cellsTex, worldDimensions, zoomLevel, pan } = params;
+    const { gl, cellsTex, worldDimensions, zoomLevel, pan, iteration } = params;
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.bindTexture(gl.TEXTURE_2D, cellsTex);
@@ -68,6 +74,7 @@ export const runProgram = (params: {
     gl.uniform2f(programInfo.worldSizeLocation, worldDimensions.width, worldDimensions.height);
     gl.uniform1f(programInfo.zoomLocation, Math.max(zoomLevel, 1));
     gl.uniform2f(programInfo.panLocation, pan.x, pan.y);
+    gl.uniform1f(programInfo.iterationLocation, iteration);
 
     // Draw the texture
     gl.drawArrays(gl.TRIANGLES, 0, 6);

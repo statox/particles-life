@@ -12,6 +12,7 @@ type ProgramInfo = {
     uMouseCoordinatesLocation: WebGLUniformLocation | null;
     uMouseModeLocation: WebGLUniformLocation | null;
     uInfiniteSourceLocation: WebGLUniformLocation | null;
+    uIterationLocation: WebGLUniformLocation | null;
     positionLocation: number;
 };
 
@@ -36,6 +37,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
         uMouseCoordinatesLocation: gl.getUniformLocation(program, 'uMouseCoordinates'),
         uMouseModeLocation: gl.getUniformLocation(program, 'uMouseMode'),
         uInfiniteSourceLocation: gl.getUniformLocation(program, 'uInfiniteSource'),
+        uIterationLocation: gl.getUniformLocation(program, 'uIteration'),
         positionLocation: gl.getAttribLocation(program, 'aPosition')
     };
 
@@ -86,6 +88,7 @@ export const runProgram = (params: {
     mouseCoordinates: { x: number; y: number }; // in range [0, 1] for screen dimensions
     mouseMode: MouseMode;
     infiniteSource: boolean;
+    iteration: number;
 }) => {
     const {
         gl,
@@ -93,7 +96,8 @@ export const runProgram = (params: {
         screenDimensions,
         mouseCoordinates,
         mouseMode,
-        infiniteSource
+        infiniteSource,
+        iteration
     } = params;
 
     // render to the new positions
@@ -121,6 +125,7 @@ export const runProgram = (params: {
     gl.uniform2f(programInfo.uMouseCoordinatesLocation, mouseCoordinates.x, mouseCoordinates.y);
     gl.uniform1i(programInfo.uMouseModeLocation, mouseMode);
     gl.uniform1i(programInfo.uInfiniteSourceLocation, infiniteSource ? 1 : 0);
+    gl.uniform1f(programInfo.uIterationLocation, iteration);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 
