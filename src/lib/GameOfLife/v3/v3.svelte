@@ -2,7 +2,6 @@
     import { onMount } from 'svelte';
     import * as webglUtils from './webglUtils';
     import * as drawCells from './drawCells';
-    import { setupFullscreenElement } from './fullscreen';
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
     import type { InitialCellsMode } from './simulationUtils';
@@ -17,8 +16,8 @@
     let mouseMode: updateCells.MouseMode = 0;
 
     const screenDimensions = {
-        width: 1200,
-        height: 900
+        width: window.innerWidth - 50,
+        height: window.innerHeight - 10
     };
     let zoomLevel = 1;
     const pan = {
@@ -26,14 +25,15 @@
         y: 0
     };
     const settings = {
-        pause: true,
-        infiniteSource: true,
+        Pause: true,
+        'Infinite source': true,
 
         'Reset grid': () => resetTexture('random'),
         'Empty grid': () => resetTexture('zero'),
         'Initial density': 0.05,
         'World width': screenDimensions.width,
         'World height': screenDimensions.height,
+        Cells: (screenDimensions.width * screenDimensions.height).toString(),
 
         'Zoom in': () => zoomLevel++,
         'Zoom out': () => {
@@ -52,14 +52,21 @@
         'Reload progam': () => main()
     };
 
-    gui.add(settings, 'pause').listen();
-    gui.add(settings, 'infiniteSource').listen();
+    gui.add(settings, 'Pause').listen();
+    gui.add(settings, 'Infinite source').listen();
 
     gui.add(settings, 'Reset grid');
     gui.add(settings, 'Empty grid');
-    gui.add(settings, 'Initial density', 0, 1, 0.01);
-    gui.add(settings, 'World width', 1, screenDimensions.width, 1);
-    gui.add(settings, 'World height', 1, screenDimensions.height, 1);
+    gui.add(settings, 'Initial density', 0, 1, 0.01).onFinishChange(() => resetTexture('random'));
+    gui.add(settings, 'World width', 1, screenDimensions.width, 1).onFinishChange(() => {
+        settings.Cells = (settings['World height'] * settings['World width']).toString();
+        resetTexture('random');
+    });
+    gui.add(settings, 'World height', 1, screenDimensions.height, 1).onFinishChange(() => {
+        settings.Cells = (settings['World height'] * settings['World width']).toString();
+        resetTexture('random');
+    });
+    gui.add(settings, 'Cells').listen();
 
     gui.add(settings, 'Zoom in');
     gui.add(settings, 'Zoom out');
@@ -90,7 +97,7 @@
         drawCells.initProgram(gl, { screenDimensions, mode: 'gradiant' });
 
         function render() {
-            if (!settings.pause) {
+            if (!settings.Pause) {
                 cellsTex = updateCells.runProgram({
                     gl,
                     worldDimensions: {
@@ -100,7 +107,7 @@
                     screenDimensions,
                     mouseCoordinates,
                     mouseMode,
-                    infiniteSource: settings.infiniteSource
+                    infiniteSource: settings['Infinite source']
                 });
             }
 
@@ -134,24 +141,13 @@
         animationFrameRequest = requestAnimationFrame(render);
     }
 
-    let enableFullscreen: () => void;
     onMount(() => {
         main();
 
-        enableFullscreen = setupFullscreenElement(
-            document,
-            'canvas',
-            screenDimensions
-        ).enableFullscreen;
-
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
-                settings.pause = !settings.pause;
+                settings.Pause = !settings.Pause;
                 event.preventDefault();
-            }
-            if (event.code === 'KeyF') {
-                enableFullscreen();
-                return;
             }
             if (event.code === 'KeyR') {
                 resetTexture('random');
@@ -166,7 +162,7 @@
                 return;
             }
             if (event.code === 'KeyS') {
-                settings.infiniteSource = !settings.infiniteSource;
+                settings['Infinite source'] = !settings['Infinite source'];
                 return;
             }
             if (event.code === 'KeyO') {
@@ -245,9 +241,10 @@
     height={screenDimensions.height}
 />
 
-<div>
-    <span>
-        {settings['World width'] * settings['World height']} cells
-    </span>
-    <button on:click={enableFullscreen}>Fullscreen (f)</button>
-</div>
+<style>
+    #canvas {
+        position: absolute;
+        right: 25px;
+        margin-bottom: 50px;
+    }
+</style>
