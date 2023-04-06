@@ -123,6 +123,23 @@
             mouseCoordinates.y = mousePos.y / screenDimensions.height;
         });
 
+        setInterval(() => {
+            console.log('update pan');
+            const step = 0.005;
+            if (mouseCoordinates.x < 0.1 && pan.x >= step) {
+                pan.x -= step;
+            }
+            if (mouseCoordinates.x > 0.9 && pan.x < 1 - 1 / settings['Zoom level']) {
+                pan.x += step;
+            }
+            if (mouseCoordinates.y < 0.1 && pan.y >= step) {
+                pan.y -= step;
+            }
+            if (mouseCoordinates.y > 0.9 && pan.y < 1 - 1 / settings['Zoom level']) {
+                pan.y += step;
+            }
+        }, 50);
+
         canvas.addEventListener('mousedown', (event) => {
             event.preventDefault();
             if (event.button === 0) {
@@ -189,20 +206,6 @@
                 iteration: settings.Iteration,
                 pause: settings.Pause
             });
-
-            const step = 0.005;
-            if (mouseCoordinates.x < 0.1 && pan.x >= step) {
-                pan.x -= step;
-            }
-            if (mouseCoordinates.x > 0.9 && pan.x < 1 - 1 / settings['Zoom level']) {
-                pan.x += step;
-            }
-            if (mouseCoordinates.y < 0.1 && pan.y >= step) {
-                pan.y -= step;
-            }
-            if (mouseCoordinates.y > 0.9 && pan.y < 1 - 1 / settings['Zoom level']) {
-                pan.y += step;
-            }
 
             drawCells.runProgram({
                 gl,
