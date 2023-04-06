@@ -35,12 +35,8 @@ vec2 wrapCoord(vec2 coord) {
     return coord;
 }
 
-void main() {
-    vec2 texcoord = gl_FragCoord.xy / uTextureSize;
-    vec4 cell = texture2D(uInputTexture, texcoord);
+float getNextState(vec2 texcoord, vec4 cell) {
     float alive = cell.x;
-    float id = cell.y;
-    float updatedAt = cell.z;
 
     vec2 topLeftCoord  = wrapCoord(texcoord + (vec2(-1.0, -1.0) / uTextureSize));
     vec2 topCoord      = wrapCoord(texcoord + (vec2(0.0, -1.0) / uTextureSize));
@@ -66,31 +62,54 @@ void main() {
 
     float aliveNeighbors = topLeftAlive + topAlive + topRightAlive + leftAlive + rightAlive + bottomLeftAlive + bottomAlive + bottomRightAlive;
 
-    float nextAlive = 0.0;
     if (alive == 1.0 && (aliveNeighbors == 2.0 || aliveNeighbors == 3.0)) {
-        nextAlive = 1.0;
+        return 1.0;
     } else if (alive == 0.0 && aliveNeighbors == 3.0) {
-        nextAlive = 1.0;
+        return 1.0;
     }
+    return 0.0;
+}
 
-    if (uMouseMode != 0 && distance(texcoord, uMouseCoordinates) < 0.02) {
+float getSourceDecision(vec2 texcoord, float currentDecision) {
+    if (uInfiniteSource == 0 || distance(texcoord, vec2(0.5, 0.5)) > 0.02) {
+        return currentDecision;
+    }
+    if (gold_noise(texcoord, 155790.0 + uIteration) < 0.05) {
+        return 1.0;
+    }
+    return currentDecision;
+}
+
+float getMouseDecision(vec2 texcoord, float currentDecision) {
+    if (uMouseMode == 0) {
+        return currentDecision;
+    }
+    if (distance(texcoord, uMouseCoordinates) < 0.02) {
         if (uMouseMode == 1 && gold_noise(texcoord, 121234.0 + uIteration) < 0.1) {
-            nextAlive = 1.0;
+            return 1.0;
         } else if (uMouseMode == 2) {
-            nextAlive = 0.0;
+            return 0.0;
         }
     }
+    return currentDecision;
+}
 
-    if (uInfiniteSource == 1 && distance(texcoord, vec2(0.5, 0.5)) < 0.02) {
-        if (gold_noise(texcoord, 155790.0 + uIteration) < 0.05) {
-            nextAlive = 1.0;
-        }
-    }
+void main() {
+    vec2 texcoord = gl_FragCoord.xy / uTextureSize;
+    vec4 cell = texture2D(uInputTexture, texcoord);
+    float alive = cell.x;
+    float id = cell.y;
+    float updatedAt = cell.z;
 
+    // Each decision function needs the previous decision in case
+    // the decision is to do nothing
+    float golDecision = getNextState(texcoord, cell);
+    float sourceDecision = getSourceDecision(texcoord, golDecision);
+    float finalDecision = getMouseDecision(texcoord, sourceDecision);
 
-    if (alive != nextAlive) {
+    if (alive != finalDecision) {
         updatedAt = uIteration;
     }
 
-    gl_FragColor = vec4(nextAlive, id, updatedAt, 0.0);
+    gl_FragColor = vec4(finalDecision, id, updatedAt, 0.0);
 }
