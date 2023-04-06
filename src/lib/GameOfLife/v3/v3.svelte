@@ -8,6 +8,7 @@
 
     const mouseCoordinates = { x: 0, y: 0 };
     let mouseMode: updateCells.MouseMode = 0;
+    let startTime: number;
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -21,6 +22,8 @@
         Pause: true,
         'Infinite source': true,
 
+        Iteration: 0,
+        TimeInSeconds: 0,
         'Draw mode': 'white' as drawCells.DrawingMode,
 
         'Reset grid': () => resetTexture('random'),
@@ -47,6 +50,8 @@
         gui.add(settings, 'Pause').listen();
         gui.add(settings, 'Infinite source').listen();
 
+        gui.add(settings, 'TimeInSeconds').listen();
+        gui.add(settings, 'Iteration').listen();
         gui.add(settings, 'Draw mode', {
             White: 'white',
             Gradiant: 'gradiant'
@@ -79,6 +84,7 @@
     let cellsTex: WebGLTexture;
     let animationFrameRequest: number;
     function main() {
+        startTime = Date.now();
         cancelAnimationFrame(animationFrameRequest);
 
         gl = webglUtils.getWebGLContext();
@@ -99,6 +105,8 @@
 
         function render() {
             if (!settings.Pause) {
+                settings.TimeInSeconds = (Date.now() - startTime) / 1000;
+                settings.Iteration++;
                 cellsTex = updateCells.runProgram({
                     gl,
                     worldDimensions: {
