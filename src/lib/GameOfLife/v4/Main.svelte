@@ -175,19 +175,20 @@
 
                 settings.TimeInSeconds = now - startTime;
                 settings.Iteration++;
-                cellsTex = updateCells.runProgram({
-                    gl,
-                    worldDimensions: {
-                        width: settings['World width'],
-                        height: settings['World height']
-                    },
-                    screenDimensions,
-                    mouseCoordinates,
-                    mouseMode,
-                    infiniteSource: settings['Infinite source'],
-                    iteration: settings.Iteration
-                });
             }
+            cellsTex = updateCells.runProgram({
+                gl,
+                worldDimensions: {
+                    width: settings['World width'],
+                    height: settings['World height']
+                },
+                screenDimensions,
+                mouseCoordinates,
+                mouseMode,
+                infiniteSource: settings['Infinite source'],
+                iteration: settings.Iteration,
+                pause: settings.Pause
+            });
 
             const step = 0.005;
             if (mouseCoordinates.x < 0.1 && pan.x >= step) {

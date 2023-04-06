@@ -5,6 +5,8 @@ uniform vec2 uTextureSize;
 uniform vec2 uMouseCoordinates;
 uniform int uMouseMode; // 0 do nothing; 1 draw; 2 erase
 uniform int uInfiniteSource; // 0 do nothing; 1 generate cells
+uniform int uPause; // 1 Don't compute game of life rules but compute other decisions like source and mouse;
+                    // 0 Also compute game of life rules
 uniform float uIteration;
 
 // Gold Noise 2015 dcerisano@standard3d.com
@@ -37,6 +39,10 @@ vec2 wrapCoord(vec2 coord) {
 
 float getNextState(vec2 texcoord, vec4 cell) {
     float alive = cell.x;
+
+    if (uPause == 1) {
+        return alive;
+    }
 
     vec2 topLeftCoord  = wrapCoord(texcoord + (vec2(-1.0, -1.0) / uTextureSize));
     vec2 topCoord      = wrapCoord(texcoord + (vec2(0.0, -1.0) / uTextureSize));
@@ -71,7 +77,7 @@ float getNextState(vec2 texcoord, vec4 cell) {
 }
 
 float getSourceDecision(vec2 texcoord, float currentDecision) {
-    if (uInfiniteSource == 0 || distance(texcoord, vec2(0.5, 0.5)) > 0.02) {
+    if (uPause == 1 || uInfiniteSource == 0 || distance(texcoord, vec2(0.5, 0.5)) > 0.02) {
         return currentDecision;
     }
     if (gold_noise(texcoord, 155790.0 + uIteration) < 0.05) {

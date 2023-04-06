@@ -13,6 +13,7 @@ type ProgramInfo = {
     uMouseModeLocation: WebGLUniformLocation | null;
     uInfiniteSourceLocation: WebGLUniformLocation | null;
     uIterationLocation: WebGLUniformLocation | null;
+    uPauseLocation: WebGLUniformLocation | null;
     positionLocation: number;
 };
 
@@ -38,6 +39,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
         uMouseModeLocation: gl.getUniformLocation(program, 'uMouseMode'),
         uInfiniteSourceLocation: gl.getUniformLocation(program, 'uInfiniteSource'),
         uIterationLocation: gl.getUniformLocation(program, 'uIteration'),
+        uPauseLocation: gl.getUniformLocation(program, 'uPause'),
         positionLocation: gl.getAttribLocation(program, 'aPosition')
     };
 
@@ -89,6 +91,7 @@ export const runProgram = (params: {
     mouseMode: MouseMode;
     infiniteSource: boolean;
     iteration: number;
+    pause: boolean;
 }) => {
     const {
         gl,
@@ -97,7 +100,8 @@ export const runProgram = (params: {
         mouseCoordinates,
         mouseMode,
         infiniteSource,
-        iteration
+        iteration,
+        pause
     } = params;
 
     // render to the new positions
@@ -126,6 +130,7 @@ export const runProgram = (params: {
     gl.uniform1i(programInfo.uMouseModeLocation, mouseMode);
     gl.uniform1i(programInfo.uInfiniteSourceLocation, infiniteSource ? 1 : 0);
     gl.uniform1f(programInfo.uIterationLocation, iteration);
+    gl.uniform1i(programInfo.uPauseLocation, pause ? 1 : 0);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 
