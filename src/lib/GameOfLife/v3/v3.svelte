@@ -9,10 +9,7 @@
 
     const gui = new dat.GUI();
 
-    const mouseCoordinates = {
-        x: -100,
-        y: -100
-    };
+    const mouseCoordinates = { x: 0, y: 0 };
     let mouseMode: updateCells.MouseMode = 0;
 
     const screenDimensions = {
