@@ -3,11 +3,13 @@
     import V1 from './v1/v1.svelte';
     import V2 from './v2/v2.svelte';
     import V3 from './v3/v3.svelte';
+    import V4 from './v4/v4.svelte';
 
     const tabs = [
-        { title: 'V1', component: V1 },
+        { title: 'V4', component: V4 },
+        { title: 'V3', component: V3 },
         { title: 'V2', component: V2 },
-        { title: 'V3', component: V3 }
+        { title: 'V1', component: V1 }
     ];
 </script>
 
