@@ -21,6 +21,8 @@
         Pause: true,
         'Infinite source': true,
 
+        'Draw mode': 'white' as drawCells.DrawingMode,
+
         'Reset grid': () => resetTexture('random'),
         'Empty grid': () => resetTexture('zero'),
         'Initial density': 0.05,
@@ -44,6 +46,13 @@
         const gui = new dat.GUI();
         gui.add(settings, 'Pause').listen();
         gui.add(settings, 'Infinite source').listen();
+
+        gui.add(settings, 'Draw mode', {
+            White: 'white',
+            Gradiant: 'gradiant'
+        }).onFinishChange(() =>
+            drawCells.initProgram(gl, { screenDimensions, mode: settings['Draw mode'] })
+        );
 
         gui.add(settings, 'Reset grid');
         gui.add(settings, 'Empty grid');
@@ -86,7 +95,7 @@
             texDimensions: { width: settings['World width'], height: settings['World height'] }
         });
 
-        drawCells.initProgram(gl, { screenDimensions, mode: 'gradiant' });
+        drawCells.initProgram(gl, { screenDimensions, mode: settings['Draw mode'] });
 
         function render() {
             if (!settings.Pause) {

@@ -14,8 +14,8 @@ let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
-type Mode = 'white' | 'gradiant';
-export const initProgram = (gl: WebGLRenderingContext, params: { mode: Mode, screenDimensions: { width: number, height: number } }) => {
+export type DrawingMode = 'white' | 'gradiant';
+export const initProgram = (gl: WebGLRenderingContext, params: { mode: DrawingMode, screenDimensions: { width: number, height: number } }) => {
     const { screenDimensions, mode } = params;
     const { height, width } = screenDimensions;
     let fragShaderSource = drawCellsFS
