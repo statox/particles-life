@@ -20,7 +20,7 @@
         y: 0
     };
     const settings = {
-        Pause: true,
+        Pause: false,
         'Infinite source': true,
 
         Iteration: 0,

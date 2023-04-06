@@ -74,10 +74,7 @@ void main() {
     }
 
     if (uMouseMode != 0 && distance(texcoord, uMouseCoordinates) < 0.02) {
-        // if (gold_noise(texcoord, 121234.0) < 0.05) {
-        //     nextAlive = 1.0;
-        // }
-        if (uMouseMode == 1 && gold_noise(texcoord, 121234.0) < 0.05) {
+        if (uMouseMode == 1 && gold_noise(texcoord, 121234.0 + uIteration) < 0.1) {
             nextAlive = 1.0;
         } else if (uMouseMode == 2) {
             nextAlive = 0.0;
@@ -85,7 +82,7 @@ void main() {
     }
 
     if (uInfiniteSource == 1 && distance(texcoord, vec2(0.5, 0.5)) < 0.02) {
-        if (gold_noise(texcoord * uIteration, 155790.0) < 0.05) {
+        if (gold_noise(texcoord, 155790.0 + uIteration) < 0.05) {
             nextAlive = 1.0;
         }
     }
