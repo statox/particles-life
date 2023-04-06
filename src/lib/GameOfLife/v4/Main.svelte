@@ -5,6 +5,7 @@
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
     import type { InitialCellsMode } from './simulationUtils';
+    import type { GUIController } from 'dat.gui';
 
     const mouseCoordinates = { x: 0, y: 0 };
     let mouseMode: updateCells.MouseMode = 0;
@@ -14,10 +15,6 @@
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
-    };
-    const pan = {
-        x: 0,
-        y: 0
     };
     const settings = {
         Pause: false,
@@ -36,9 +33,12 @@
         Cells: (screenDimensions.width * screenDimensions.height).toString(),
 
         'Zoom level': 1,
-        'Pan reset': () => {
-            pan.x = 0;
-            pan.y = 0;
+        previousZoomLevel: 1,
+        Pan: {
+            x: 0,
+            y: 0,
+            xController: null as GUIController | null,
+            yController: null as GUIController | null
         },
 
         'Reload progam': () => main()
@@ -78,8 +78,23 @@
         });
         gui.add(settings, 'Cells').listen();
 
-        gui.add(settings, 'Zoom level', 1, 10);
-        gui.add(settings, 'Pan reset');
+        gui.add(settings, 'Zoom level', 1, 10).onChange((newValue) => {
+            const levelDiff = newValue - settings.previousZoomLevel;
+            settings.previousZoomLevel = newValue;
+
+            if (!settings.Pan?.xController || !settings.Pan?.yController || levelDiff === 0) {
+                return;
+            }
+            settings.Pan.xController.max(1 - 1 / settings['Zoom level']);
+            settings.Pan.yController.max(1 - 1 / settings['Zoom level']);
+
+            console.log({ levelDiff });
+        });
+
+        const panFolder = gui.addFolder('Pan');
+        settings.Pan.xController = panFolder.add(settings.Pan, 'x', 0, 0, 0.01).listen();
+        settings.Pan.yController = panFolder.add(settings.Pan, 'y', 0, 0, 0.01).listen();
+        panFolder.open();
 
         gui.add(settings, 'Reload progam');
     };
@@ -124,19 +139,18 @@
         });
 
         setInterval(() => {
-            console.log('update pan');
             const step = 0.005;
-            if (mouseCoordinates.x < 0.1 && pan.x >= step) {
-                pan.x -= step;
+            if (mouseCoordinates.x < 0.1 && settings.Pan.x >= step) {
+                settings.Pan.x -= step;
             }
-            if (mouseCoordinates.x > 0.9 && pan.x < 1 - 1 / settings['Zoom level']) {
-                pan.x += step;
+            if (mouseCoordinates.x > 0.9 && settings.Pan.x < 1 - 1 / settings['Zoom level']) {
+                settings.Pan.x += step;
             }
-            if (mouseCoordinates.y < 0.1 && pan.y >= step) {
-                pan.y -= step;
+            if (mouseCoordinates.y < 0.1 && settings.Pan.y >= step) {
+                settings.Pan.y -= step;
             }
-            if (mouseCoordinates.y > 0.9 && pan.y < 1 - 1 / settings['Zoom level']) {
-                pan.y += step;
+            if (mouseCoordinates.y > 0.9 && settings.Pan.y < 1 - 1 / settings['Zoom level']) {
+                settings.Pan.y += step;
             }
         }, 50);
 
@@ -215,7 +229,7 @@
                     height: settings['World height']
                 },
                 zoomLevel: settings['Zoom level'],
-                pan,
+                pan: settings.Pan,
                 iteration: settings.Iteration
             });
 
