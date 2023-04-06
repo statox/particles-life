@@ -84,6 +84,65 @@
         gui.add(settings, 'Reload progam');
     };
 
+    const initEvents = () => {
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Space') {
+                settings.Pause = !settings.Pause;
+                event.preventDefault();
+            }
+            if (event.code === 'KeyR') {
+                resetTexture('random');
+                return;
+            }
+            if (event.code === 'KeyE') {
+                resetTexture('zero');
+                return;
+            }
+            if (event.code === 'KeyS') {
+                settings['Infinite source'] = !settings['Infinite source'];
+                return;
+            }
+        });
+
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+        if (!canvas) {
+            throw new Error('Canvas unavailable');
+        }
+
+        canvas.addEventListener('mousemove', (event) => {
+            const rect = canvas.getBoundingClientRect(); // abs. size of element
+            const scaleX = canvas.width / rect.width; // relationship bitmap vs. element for x
+            const scaleY = canvas.height / rect.height; // relationship bitmap vs. element for y
+
+            const mousePos = {
+                x: (event.clientX - rect.left) * scaleX, // scale mouse coordinates after they have
+                y: (event.clientY - rect.top) * scaleY // been adjusted to be relative to element
+            };
+
+            mouseCoordinates.x = mousePos.x / screenDimensions.width;
+            mouseCoordinates.y = mousePos.y / screenDimensions.height;
+        });
+
+        canvas.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            if (event.button === 0) {
+                mouseMode = 1;
+            } else if (event.button === 2) {
+                mouseMode = 2;
+            }
+        });
+
+        canvas.addEventListener('mouseup', (event) => {
+            event.preventDefault();
+            mouseMode = 0;
+        });
+
+        canvas.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            return false;
+        });
+    };
+
     let gl: WebGLRenderingContext;
     let cellsTex: WebGLTexture;
     let animationFrameRequest: number;
@@ -164,63 +223,7 @@
     onMount(() => {
         main();
         initGUI();
-
-        document.addEventListener('keydown', (event) => {
-            if (event.code === 'Space') {
-                settings.Pause = !settings.Pause;
-                event.preventDefault();
-            }
-            if (event.code === 'KeyR') {
-                resetTexture('random');
-                return;
-            }
-            if (event.code === 'KeyE') {
-                resetTexture('zero');
-                return;
-            }
-            if (event.code === 'KeyS') {
-                settings['Infinite source'] = !settings['Infinite source'];
-                return;
-            }
-        });
-
-        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-        if (!canvas) {
-            throw new Error('Canvas unavailable');
-        }
-
-        canvas.addEventListener('mousemove', (event) => {
-            const rect = canvas.getBoundingClientRect(); // abs. size of element
-            const scaleX = canvas.width / rect.width; // relationship bitmap vs. element for x
-            const scaleY = canvas.height / rect.height; // relationship bitmap vs. element for y
-
-            const mousePos = {
-                x: (event.clientX - rect.left) * scaleX, // scale mouse coordinates after they have
-                y: (event.clientY - rect.top) * scaleY // been adjusted to be relative to element
-            };
-
-            mouseCoordinates.x = mousePos.x / screenDimensions.width;
-            mouseCoordinates.y = mousePos.y / screenDimensions.height;
-        });
-
-        canvas.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-            if (event.button === 0) {
-                mouseMode = 1;
-            } else if (event.button === 2) {
-                mouseMode = 2;
-            }
-        });
-
-        canvas.addEventListener('mouseup', (event) => {
-            event.preventDefault();
-            mouseMode = 0;
-        });
-
-        canvas.addEventListener('contextmenu', (event) => {
-            event.preventDefault();
-            return false;
-        });
+        initEvents();
     });
 
     const resetTexture = (mode: InitialCellsMode) => {
