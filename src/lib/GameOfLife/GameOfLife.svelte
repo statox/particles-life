@@ -1,9 +1,9 @@
 <script lang="ts">
     import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
-    import V1 from './v1/v1.svelte';
-    import V2 from './v2/v2.svelte';
-    import V3 from './v3/v3.svelte';
-    import V4 from './v4/v4.svelte';
+    import V1 from './v1/Main.svelte';
+    import V2 from './v2/Main.svelte';
+    import V3 from './v3/Main.svelte';
+    import V4 from './v4/Main.svelte';
 
     const tabs = [
         { title: 'V4', component: V4 },
