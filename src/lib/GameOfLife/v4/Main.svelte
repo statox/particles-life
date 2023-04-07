@@ -1,16 +1,15 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import * as webglUtils from './webglUtils';
-    import * as drawCells from './drawCells';
-    import { getInitialData } from './simulationUtils';
-    import * as updateCells from './updateCells';
-    import type { InitialCellsMode } from './simulationUtils';
     import type { GUIController } from 'dat.gui';
+    import type { InitialCellsMode } from './simulationUtils';
+    import type { MouseMode } from './updateCells';
+    import type { DrawingMode } from './drawCells';
+    import { init, resetTexture, iteration, changeDrawingProgram } from './simulation';
 
     const mouseCoordinates = { x: 0, y: 0 };
-    let mouseMode: updateCells.MouseMode = 0;
+    let mouseMode: MouseMode = 0;
     let startTime: number;
-    let lastFrameUpdate: number;
+    let lastFrameUpdate = 0;
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -20,7 +19,7 @@
         program: {
             pause: false,
             infiniteSource: true,
-            drawMode: 'age_gradiant' as drawCells.DrawingMode,
+            drawMode: 'age_gradiant' as DrawingMode,
             reloadProgram: () => main()
         },
 
@@ -31,8 +30,8 @@
         },
 
         grid: {
-            resetGrid: () => resetTexture('random'),
-            emptyGrid: () => resetTexture('zero'),
+            resetGrid: () => resetWorld('random'),
+            emptyGrid: () => resetWorld('zero'),
 
             initialDensity: 0.5,
             worldWidth: screenDimensions.width,
@@ -68,7 +67,7 @@
             })
             .name('Drawing mode')
             .onFinishChange(() =>
-                drawCells.initProgram(gl, { screenDimensions, mode: settings.program.drawMode })
+                changeDrawingProgram({ screenDimensions, drawMode: settings.program.drawMode })
             );
         programFolder.add(settings.program, 'reloadProgram').name('Reload program');
 
@@ -85,7 +84,7 @@
         gridFolder
             .add(settings.grid, 'initialDensity', 0, 1, 0.01)
             .name('Initial density')
-            .onFinishChange(() => resetTexture('random'));
+            .onFinishChange(() => resetWorld('random'));
 
         gridFolder
             .add(settings.grid, 'worldWidth', 1, screenDimensions.width, 1)
@@ -94,7 +93,7 @@
                 settings.grid.nbCells = (
                     settings.grid.worldHeight * settings.grid.worldWidth
                 ).toString();
-                resetTexture('random');
+                resetWorld('random');
             });
         gridFolder
             .add(settings.grid, 'worldHeight', 1, screenDimensions.height, 1)
@@ -103,7 +102,7 @@
                 settings.grid.nbCells = (
                     settings.grid.worldHeight * settings.grid.worldWidth
                 ).toString();
-                resetTexture('random');
+                resetWorld('random');
             });
         gridFolder.add(settings.grid, 'nbCells').name('Cells count').listen();
 
@@ -158,11 +157,11 @@
                 event.preventDefault();
             }
             if (event.code === 'KeyR') {
-                resetTexture('random');
+                resetWorld('random');
                 return;
             }
             if (event.code === 'KeyE') {
-                resetTexture('zero');
+                resetWorld('zero');
                 return;
             }
             if (event.code === 'KeyS') {
@@ -226,92 +225,73 @@
         });
     };
 
-    let gl: WebGLRenderingContext;
-    let cellsTex: WebGLTexture;
     let animationFrameRequest: number;
-    function main() {
-        startTime = Date.now() / 1000;
+    const main = () => {
+        init({
+            initialDensity: settings.grid.initialDensity,
+            worldDimensions: {
+                width: settings.grid.worldWidth,
+                height: settings.grid.worldHeight
+            },
+            screenDimensions,
+            drawMode: settings.program.drawMode
+        });
+
         cancelAnimationFrame(animationFrameRequest);
+        startTime = Date.now() / 1000;
+        frameAction();
+    };
 
-        gl = webglUtils.getWebGLContext();
+    const frameAction = () => {
+        const now = Date.now() / 1000;
+        const deltaTime = now - lastFrameUpdate;
+        lastFrameUpdate = now;
+        settings.simulation.fps = 1 / deltaTime;
 
-        webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
-
-        const initialData = getInitialData(gl, {
-            mode: 'random',
-            worldDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight },
-            initialDensity: settings.grid.initialDensity
-        });
-        cellsTex = updateCells.initProgram(gl, {
-            cellsTex: initialData.cellsTex,
-            texDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight }
-        });
-
-        drawCells.initProgram(gl, { screenDimensions, mode: settings.program.drawMode });
-
-        function render() {
-            if (!settings.program.pause) {
-                const now = Date.now() / 1000;
-                const deltaTime = now - lastFrameUpdate;
-                settings.simulation.fps = 1 / deltaTime;
-                lastFrameUpdate = now;
-
-                settings.simulation.timeInSeconds = now - startTime;
-                settings.simulation.iteration++;
-            }
-            cellsTex = updateCells.runProgram({
-                gl,
-                worldDimensions: {
-                    width: settings.grid.worldWidth,
-                    height: settings.grid.worldHeight
-                },
-                screenDimensions,
-                mouseCoordinates,
-                mouseMode,
-                infiniteSource: settings.program.infiniteSource,
-                iteration: settings.simulation.iteration,
-                pause: settings.program.pause
-            });
-
-            drawCells.runProgram({
-                gl,
-                cellsTex,
-                worldDimensions: {
-                    width: settings.grid.worldWidth,
-                    height: settings.grid.worldHeight
-                },
-                zoomLevel: settings.zoom.level,
-                pan: {
-                    x: settings.zoom.x,
-                    y: settings.zoom.y
-                },
-                iteration: settings.simulation.iteration
-            });
-
-            return (animationFrameRequest = requestAnimationFrame(render));
+        if (!settings.program.pause) {
+            settings.simulation.timeInSeconds = now - startTime;
+            settings.simulation.iteration++;
         }
-        animationFrameRequest = requestAnimationFrame(render);
-    }
 
-    onMount(() => {
-        main();
-        initGUI();
-        initEvents();
-    });
+        iteration({
+            infiniteSource: settings.program.infiniteSource,
+            iteration: settings.simulation.iteration,
+            mouseCoordinates,
+            mouseMode,
+            pause: settings.program.pause,
+            pan: {
+                x: settings.zoom.x,
+                y: settings.zoom.y
+            },
+            screenDimensions,
+            worldDimensions: {
+                width: settings.grid.worldWidth,
+                height: settings.grid.worldHeight
+            },
+            zoomLevel: settings.zoom.level
+        });
 
-    const resetTexture = (mode: InitialCellsMode) => {
+        animationFrameRequest = requestAnimationFrame(frameAction);
+    };
+
+    const resetWorld = (mode: InitialCellsMode) => {
         settings.simulation.iteration = 0;
         settings.simulation.timeInSeconds = 0;
-        const initialData = getInitialData(gl, {
-            mode,
-            worldDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight },
-            initialDensity: settings.grid.initialDensity
-        });
-        cellsTex = updateCells.initProgram(gl, {
-            cellsTex: initialData.cellsTex,
-            texDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight }
+        resetTexture({
+            initialDensity: settings.grid.initialDensity,
+            worldDimensions: {
+                width: settings.grid.worldWidth,
+                height: settings.grid.worldHeight
+            },
+            mode
         });
     };
+
+    onMount(() => {
+        initGUI();
+        initEvents();
+        main();
+    });
 </script>
 
 <canvas
