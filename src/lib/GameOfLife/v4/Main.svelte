@@ -27,7 +27,7 @@
 
         'Reset grid': () => resetTexture('random'),
         'Empty grid': () => resetTexture('zero'),
-        'Initial density': 0.05,
+        'Initial density': 0.5,
         'World width': screenDimensions.width,
         'World height': screenDimensions.height,
         Cells: (screenDimensions.width * screenDimensions.height).toString(),
@@ -78,17 +78,34 @@
         });
         gui.add(settings, 'Cells').listen();
 
-        gui.add(settings, 'Zoom level', 1, 10).onChange((newValue) => {
-            const levelDiff = newValue - settings.previousZoomLevel;
-            settings.previousZoomLevel = newValue;
+        gui.add(settings, 'Zoom level', 1, 10).onChange(function (newZoomLevel) {
+            const levelDiff = newZoomLevel - settings.previousZoomLevel;
 
             if (!settings.Pan?.xController || !settings.Pan?.yController || levelDiff === 0) {
                 return;
             }
-            settings.Pan.xController.max(1 - 1 / settings['Zoom level']);
-            settings.Pan.yController.max(1 - 1 / settings['Zoom level']);
 
-            console.log({ levelDiff });
+            // When zoom level changes we need to update the panning to keep looking
+            // at the same place in the texture
+
+            const maxPan = 1 - 1 / settings.previousZoomLevel;
+            const newMaxPan = 1 - 1 / newZoomLevel;
+            settings.Pan.xController.max(newMaxPan);
+            settings.Pan.xController.min(0);
+            settings.Pan.yController.max(newMaxPan);
+            settings.Pan.yController.min(0);
+
+            const previousRatio = {
+                x: settings.Pan.x / maxPan,
+                y: settings.Pan.y / maxPan
+            };
+
+            // The second case newMaxPan/2 handles the case where previousZoomLevel was 1
+            // so we didn't have a reference point to zoom in. In this case we zoom into the middle
+            settings.Pan.x = newMaxPan * previousRatio.x || newMaxPan / 2;
+            settings.Pan.y = newMaxPan * previousRatio.y || newMaxPan / 2;
+
+            settings.previousZoomLevel = newZoomLevel;
         });
 
         const panFolder = gui.addFolder('Pan');
