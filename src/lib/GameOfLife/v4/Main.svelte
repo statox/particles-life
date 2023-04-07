@@ -17,14 +17,18 @@
         height: window.innerHeight - 10
     };
     const settings = {
-        pause: false,
-        infiniteSource: true,
-        iteration: 0,
-        timeInSeconds: 0,
-        fps: 0,
-        drawMode: 'age_gradiant' as drawCells.DrawingMode,
+        program: {
+            pause: false,
+            infiniteSource: true,
+            drawMode: 'age_gradiant' as drawCells.DrawingMode,
+            reloadProgram: () => main()
+        },
 
-        reloadProgram: () => main(),
+        simulation: {
+            iteration: 0,
+            timeInSeconds: 0,
+            fps: 0
+        },
 
         grid: {
             resetGrid: () => resetTexture('random'),
@@ -51,21 +55,28 @@
         // https://github.com/dataarts/dat.gui/issues/271
         const dat = await import('dat.gui');
         const gui = new dat.GUI();
-        gui.add(settings, 'pause').name('Pause').listen();
-        gui.add(settings, 'infiniteSource').name('Infinite Source').listen();
 
-        gui.add(settings, 'timeInSeconds').name('Time (s)').listen();
-        gui.add(settings, 'iteration').name('Iteration').listen();
-        gui.add(settings, 'fps').listen();
-        gui.add(settings, 'drawMode', {
-            White: 'white',
-            'Age Gradiant': 'age_gradiant',
-            'Position Gradiant': 'gradiant'
-        })
+        const programFolder = gui.addFolder('Program');
+        programFolder.open();
+        programFolder.add(settings.program, 'pause').name('Pause').listen();
+        programFolder.add(settings.program, 'infiniteSource').name('Infinite Source').listen();
+        programFolder
+            .add(settings.program, 'drawMode', {
+                White: 'white',
+                'Age Gradiant': 'age_gradiant',
+                'Position Gradiant': 'gradiant'
+            })
             .name('Drawing mode')
             .onFinishChange(() =>
-                drawCells.initProgram(gl, { screenDimensions, mode: settings.drawMode })
+                drawCells.initProgram(gl, { screenDimensions, mode: settings.program.drawMode })
             );
+        programFolder.add(settings.program, 'reloadProgram').name('Reload program');
+
+        const simulationFolder = gui.addFolder('Simulation');
+        simulationFolder.open();
+        simulationFolder.add(settings.simulation, 'timeInSeconds').name('Time (s)').listen();
+        simulationFolder.add(settings.simulation, 'iteration').name('Iteration').listen();
+        simulationFolder.add(settings.simulation, 'fps').listen();
 
         const gridFolder = gui.addFolder('Grid');
         gridFolder.open();
@@ -138,14 +149,12 @@
             .add(settings.zoom, 'y', 0, 0, 0.01)
             .name('Y offset')
             .listen();
-
-        gui.add(settings, 'reloadProgram').name('Reload program');
     };
 
     const initEvents = () => {
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
-                settings.pause = !settings.pause;
+                settings.program.pause = !settings.program.pause;
                 event.preventDefault();
             }
             if (event.code === 'KeyR') {
@@ -157,7 +166,7 @@
                 return;
             }
             if (event.code === 'KeyS') {
-                settings.infiniteSource = !settings.infiniteSource;
+                settings.program.infiniteSource = !settings.program.infiniteSource;
                 return;
             }
         });
@@ -238,17 +247,17 @@
             texDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight }
         });
 
-        drawCells.initProgram(gl, { screenDimensions, mode: settings.drawMode });
+        drawCells.initProgram(gl, { screenDimensions, mode: settings.program.drawMode });
 
         function render() {
-            if (!settings.pause) {
+            if (!settings.program.pause) {
                 const now = Date.now() / 1000;
                 const deltaTime = now - lastFrameUpdate;
-                settings.fps = 1 / deltaTime;
+                settings.simulation.fps = 1 / deltaTime;
                 lastFrameUpdate = now;
 
-                settings.timeInSeconds = now - startTime;
-                settings.iteration++;
+                settings.simulation.timeInSeconds = now - startTime;
+                settings.simulation.iteration++;
             }
             cellsTex = updateCells.runProgram({
                 gl,
@@ -259,9 +268,9 @@
                 screenDimensions,
                 mouseCoordinates,
                 mouseMode,
-                infiniteSource: settings.infiniteSource,
-                iteration: settings.iteration,
-                pause: settings.pause
+                infiniteSource: settings.program.infiniteSource,
+                iteration: settings.simulation.iteration,
+                pause: settings.program.pause
             });
 
             drawCells.runProgram({
@@ -276,7 +285,7 @@
                     x: settings.zoom.x,
                     y: settings.zoom.y
                 },
-                iteration: settings.iteration
+                iteration: settings.simulation.iteration
             });
 
             return (animationFrameRequest = requestAnimationFrame(render));
@@ -291,8 +300,8 @@
     });
 
     const resetTexture = (mode: InitialCellsMode) => {
-        settings.iteration = 0;
-        settings.timeInSeconds = 0;
+        settings.simulation.iteration = 0;
+        settings.simulation.timeInSeconds = 0;
         const initialData = getInitialData(gl, {
             mode,
             worldDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight },
