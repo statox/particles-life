@@ -33,13 +33,13 @@
         worldHeight: screenDimensions.height,
         nbCells: (screenDimensions.width * screenDimensions.height).toString(),
 
-        zoomLevel: 1,
-        previousZoomLevel: 1,
-        pan: {
+        zoom: {
             x: 0,
             y: 0,
             xController: null as GUIController | null,
-            yController: null as GUIController | null
+            yController: null as GUIController | null,
+            level: 1,
+            previousLevel: 1
         }
     };
 
@@ -84,42 +84,48 @@
             });
         gui.add(settings, 'nbCells').name('Cells count').listen();
 
-        gui.add(settings, 'zoomLevel', 1, 10)
-            .name('Zoom level')
+        const zoomFolder = gui.addFolder('Zoom');
+        zoomFolder.open();
+        zoomFolder
+            .add(settings.zoom, 'level', 1, 10)
+            .name('Level')
             .onChange(function (newZoomLevel) {
-                const levelDiff = newZoomLevel - settings.previousZoomLevel;
+                const levelDiff = newZoomLevel - settings.zoom.previousLevel;
 
-                if (!settings.pan?.xController || !settings.pan?.yController || levelDiff === 0) {
+                if (!settings.zoom.xController || !settings.zoom.yController || levelDiff === 0) {
                     return;
                 }
 
                 // When zoom level changes we need to update the panning to keep looking
                 // at the same place in the texture
 
-                const maxPan = 1 - 1 / settings.previousZoomLevel;
+                const maxPan = 1 - 1 / settings.zoom.previousLevel;
                 const newMaxPan = 1 - 1 / newZoomLevel;
-                settings.pan.xController.max(newMaxPan);
-                settings.pan.xController.min(0);
-                settings.pan.yController.max(newMaxPan);
-                settings.pan.yController.min(0);
+                settings.zoom.xController.max(newMaxPan);
+                settings.zoom.xController.min(0);
+                settings.zoom.yController.max(newMaxPan);
+                settings.zoom.yController.min(0);
 
                 const previousRatio = {
-                    x: settings.pan.x / maxPan,
-                    y: settings.pan.y / maxPan
+                    x: settings.zoom.x / maxPan,
+                    y: settings.zoom.y / maxPan
                 };
 
                 // The second case newMaxPan/2 handles the case where previousZoomLevel was 1
                 // so we didn't have a reference point to zoom in. In this case we zoom into the middle
-                settings.pan.x = newMaxPan * previousRatio.x || newMaxPan / 2;
-                settings.pan.y = newMaxPan * previousRatio.y || newMaxPan / 2;
+                settings.zoom.x = newMaxPan * previousRatio.x || newMaxPan / 2;
+                settings.zoom.y = newMaxPan * previousRatio.y || newMaxPan / 2;
 
-                settings.previousZoomLevel = newZoomLevel;
+                settings.zoom.previousLevel = newZoomLevel;
             });
-
-        const panFolder = gui.addFolder('Pan');
-        settings.pan.xController = panFolder.add(settings.pan, 'x', 0, 0, 0.01).listen();
-        settings.pan.yController = panFolder.add(settings.pan, 'y', 0, 0, 0.01).listen();
-        panFolder.open();
+        settings.zoom.xController = zoomFolder
+            .add(settings.zoom, 'x', 0, 0, 0.01)
+            .name('X offset')
+            .listen();
+        settings.zoom.yController = zoomFolder
+            .add(settings.zoom, 'y', 0, 0, 0.01)
+            .name('Y offset')
+            .listen();
 
         gui.add(settings, 'reloadProgram').name('Reload program');
     };
@@ -165,17 +171,17 @@
 
         setInterval(() => {
             const step = 0.005;
-            if (mouseCoordinates.x < 0.1 && settings.pan.x >= step) {
-                settings.pan.x -= step;
+            if (mouseCoordinates.x < 0.1 && settings.zoom.x >= step) {
+                settings.zoom.x -= step;
             }
-            if (mouseCoordinates.x > 0.9 && settings.pan.x < 1 - 1 / settings.zoomLevel) {
-                settings.pan.x += step;
+            if (mouseCoordinates.x > 0.9 && settings.zoom.x < 1 - 1 / settings.zoom.level) {
+                settings.zoom.x += step;
             }
-            if (mouseCoordinates.y < 0.1 && settings.pan.y >= step) {
-                settings.pan.y -= step;
+            if (mouseCoordinates.y < 0.1 && settings.zoom.y >= step) {
+                settings.zoom.y -= step;
             }
-            if (mouseCoordinates.y > 0.9 && settings.pan.y < 1 - 1 / settings.zoomLevel) {
-                settings.pan.y += step;
+            if (mouseCoordinates.y > 0.9 && settings.zoom.y < 1 - 1 / settings.zoom.level) {
+                settings.zoom.y += step;
             }
         }, 50);
 
@@ -253,8 +259,11 @@
                     width: settings.worldWidth,
                     height: settings.worldHeight
                 },
-                zoomLevel: settings.zoomLevel,
-                pan: settings.pan,
+                zoomLevel: settings.zoom.level,
+                pan: {
+                    x: settings.zoom.x,
+                    y: settings.zoom.y
+                },
                 iteration: settings.iteration
             });
 
