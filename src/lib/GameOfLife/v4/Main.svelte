@@ -25,13 +25,16 @@
         drawMode: 'age_gradiant' as drawCells.DrawingMode,
 
         reloadProgram: () => main(),
-        resetGrid: () => resetTexture('random'),
-        emptyGrid: () => resetTexture('zero'),
 
-        initialDensity: 0.5,
-        worldWidth: screenDimensions.width,
-        worldHeight: screenDimensions.height,
-        nbCells: (screenDimensions.width * screenDimensions.height).toString(),
+        grid: {
+            resetGrid: () => resetTexture('random'),
+            emptyGrid: () => resetTexture('zero'),
+
+            initialDensity: 0.5,
+            worldWidth: screenDimensions.width,
+            worldHeight: screenDimensions.height,
+            nbCells: (screenDimensions.width * screenDimensions.height).toString()
+        },
 
         zoom: {
             x: 0,
@@ -64,25 +67,34 @@
                 drawCells.initProgram(gl, { screenDimensions, mode: settings.drawMode })
             );
 
-        gui.add(settings, 'resetGrid').name('Reset grid');
-        gui.add(settings, 'emptyGrid').name('Empty grid');
-        gui.add(settings, 'initialDensity', 0, 1, 0.01)
+        const gridFolder = gui.addFolder('Grid');
+        gridFolder.open();
+        gridFolder.add(settings.grid, 'resetGrid').name('Reset grid');
+        gridFolder.add(settings.grid, 'emptyGrid').name('Empty grid');
+        gridFolder
+            .add(settings.grid, 'initialDensity', 0, 1, 0.01)
             .name('Initial density')
             .onFinishChange(() => resetTexture('random'));
 
-        gui.add(settings, 'worldWidth', 1, screenDimensions.width, 1)
+        gridFolder
+            .add(settings.grid, 'worldWidth', 1, screenDimensions.width, 1)
             .name('World width')
             .onFinishChange(() => {
-                settings.nbCells = (settings.worldHeight * settings.worldWidth).toString();
+                settings.grid.nbCells = (
+                    settings.grid.worldHeight * settings.grid.worldWidth
+                ).toString();
                 resetTexture('random');
             });
-        gui.add(settings, 'worldHeight', 1, screenDimensions.height, 1)
+        gridFolder
+            .add(settings.grid, 'worldHeight', 1, screenDimensions.height, 1)
             .name('World height')
             .onFinishChange(() => {
-                settings.nbCells = (settings.worldHeight * settings.worldWidth).toString();
+                settings.grid.nbCells = (
+                    settings.grid.worldHeight * settings.grid.worldWidth
+                ).toString();
                 resetTexture('random');
             });
-        gui.add(settings, 'nbCells').name('Cells count').listen();
+        gridFolder.add(settings.grid, 'nbCells').name('Cells count').listen();
 
         const zoomFolder = gui.addFolder('Zoom');
         zoomFolder.open();
@@ -218,12 +230,12 @@
 
         const initialData = getInitialData(gl, {
             mode: 'random',
-            worldDimensions: { width: settings.worldWidth, height: settings.worldHeight },
-            initialDensity: settings.initialDensity
+            worldDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight },
+            initialDensity: settings.grid.initialDensity
         });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
-            texDimensions: { width: settings.worldWidth, height: settings.worldHeight }
+            texDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight }
         });
 
         drawCells.initProgram(gl, { screenDimensions, mode: settings.drawMode });
@@ -241,8 +253,8 @@
             cellsTex = updateCells.runProgram({
                 gl,
                 worldDimensions: {
-                    width: settings.worldWidth,
-                    height: settings.worldHeight
+                    width: settings.grid.worldWidth,
+                    height: settings.grid.worldHeight
                 },
                 screenDimensions,
                 mouseCoordinates,
@@ -256,8 +268,8 @@
                 gl,
                 cellsTex,
                 worldDimensions: {
-                    width: settings.worldWidth,
-                    height: settings.worldHeight
+                    width: settings.grid.worldWidth,
+                    height: settings.grid.worldHeight
                 },
                 zoomLevel: settings.zoom.level,
                 pan: {
@@ -283,12 +295,12 @@
         settings.timeInSeconds = 0;
         const initialData = getInitialData(gl, {
             mode,
-            worldDimensions: { width: settings.worldWidth, height: settings.worldHeight },
-            initialDensity: settings.initialDensity
+            worldDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight },
+            initialDensity: settings.grid.initialDensity
         });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
-            texDimensions: { width: settings.worldWidth, height: settings.worldHeight }
+            texDimensions: { width: settings.grid.worldWidth, height: settings.grid.worldHeight }
         });
     };
 </script>
