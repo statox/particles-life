@@ -17,31 +17,30 @@
         height: window.innerHeight - 10
     };
     const settings = {
-        Pause: false,
-        'Infinite source': true,
-
-        Iteration: 0,
-        TimeInSeconds: 0,
+        pause: false,
+        infiniteSource: true,
+        iteration: 0,
+        timeInSeconds: 0,
         fps: 0,
-        'Draw mode': 'age_gradiant' as drawCells.DrawingMode,
+        drawMode: 'age_gradiant' as drawCells.DrawingMode,
 
-        'Reset grid': () => resetTexture('random'),
-        'Empty grid': () => resetTexture('zero'),
-        'Initial density': 0.5,
-        'World width': screenDimensions.width,
-        'World height': screenDimensions.height,
-        Cells: (screenDimensions.width * screenDimensions.height).toString(),
+        reloadProgram: () => main(),
+        resetGrid: () => resetTexture('random'),
+        emptyGrid: () => resetTexture('zero'),
 
-        'Zoom level': 1,
+        initialDensity: 0.5,
+        worldWidth: screenDimensions.width,
+        worldHeight: screenDimensions.height,
+        nbCells: (screenDimensions.width * screenDimensions.height).toString(),
+
+        zoomLevel: 1,
         previousZoomLevel: 1,
-        Pan: {
+        pan: {
             x: 0,
             y: 0,
             xController: null as GUIController | null,
             yController: null as GUIController | null
-        },
-
-        'Reload progam': () => main()
+        }
     };
 
     const initGUI = async () => {
@@ -49,77 +48,86 @@
         // https://github.com/dataarts/dat.gui/issues/271
         const dat = await import('dat.gui');
         const gui = new dat.GUI();
-        gui.add(settings, 'Pause').listen();
-        gui.add(settings, 'Infinite source').listen();
+        gui.add(settings, 'pause').name('Pause').listen();
+        gui.add(settings, 'infiniteSource').name('Infinite Source').listen();
 
-        gui.add(settings, 'TimeInSeconds').listen();
-        gui.add(settings, 'Iteration').listen();
+        gui.add(settings, 'timeInSeconds').name('Time (s)').listen();
+        gui.add(settings, 'iteration').name('Iteration').listen();
         gui.add(settings, 'fps').listen();
-        gui.add(settings, 'Draw mode', {
+        gui.add(settings, 'drawMode', {
             White: 'white',
             'Age Gradiant': 'age_gradiant',
             'Position Gradiant': 'gradiant'
-        }).onFinishChange(() =>
-            drawCells.initProgram(gl, { screenDimensions, mode: settings['Draw mode'] })
-        );
+        })
+            .name('Drawing mode')
+            .onFinishChange(() =>
+                drawCells.initProgram(gl, { screenDimensions, mode: settings.drawMode })
+            );
 
-        gui.add(settings, 'Reset grid');
-        gui.add(settings, 'Empty grid');
-        gui.add(settings, 'Initial density', 0, 1, 0.01).onFinishChange(() =>
-            resetTexture('random')
-        );
-        gui.add(settings, 'World width', 1, screenDimensions.width, 1).onFinishChange(() => {
-            settings.Cells = (settings['World height'] * settings['World width']).toString();
-            resetTexture('random');
-        });
-        gui.add(settings, 'World height', 1, screenDimensions.height, 1).onFinishChange(() => {
-            settings.Cells = (settings['World height'] * settings['World width']).toString();
-            resetTexture('random');
-        });
-        gui.add(settings, 'Cells').listen();
+        gui.add(settings, 'resetGrid').name('Reset grid');
+        gui.add(settings, 'emptyGrid').name('Empty grid');
+        gui.add(settings, 'initialDensity', 0, 1, 0.01)
+            .name('Initial density')
+            .onFinishChange(() => resetTexture('random'));
 
-        gui.add(settings, 'Zoom level', 1, 10).onChange(function (newZoomLevel) {
-            const levelDiff = newZoomLevel - settings.previousZoomLevel;
+        gui.add(settings, 'worldWidth', 1, screenDimensions.width, 1)
+            .name('World width')
+            .onFinishChange(() => {
+                settings.nbCells = (settings.worldHeight * settings.worldWidth).toString();
+                resetTexture('random');
+            });
+        gui.add(settings, 'worldHeight', 1, screenDimensions.height, 1)
+            .name('World height')
+            .onFinishChange(() => {
+                settings.nbCells = (settings.worldHeight * settings.worldWidth).toString();
+                resetTexture('random');
+            });
+        gui.add(settings, 'nbCells').name('Cells count').listen();
 
-            if (!settings.Pan?.xController || !settings.Pan?.yController || levelDiff === 0) {
-                return;
-            }
+        gui.add(settings, 'zoomLevel', 1, 10)
+            .name('Zoom level')
+            .onChange(function (newZoomLevel) {
+                const levelDiff = newZoomLevel - settings.previousZoomLevel;
 
-            // When zoom level changes we need to update the panning to keep looking
-            // at the same place in the texture
+                if (!settings.pan?.xController || !settings.pan?.yController || levelDiff === 0) {
+                    return;
+                }
 
-            const maxPan = 1 - 1 / settings.previousZoomLevel;
-            const newMaxPan = 1 - 1 / newZoomLevel;
-            settings.Pan.xController.max(newMaxPan);
-            settings.Pan.xController.min(0);
-            settings.Pan.yController.max(newMaxPan);
-            settings.Pan.yController.min(0);
+                // When zoom level changes we need to update the panning to keep looking
+                // at the same place in the texture
 
-            const previousRatio = {
-                x: settings.Pan.x / maxPan,
-                y: settings.Pan.y / maxPan
-            };
+                const maxPan = 1 - 1 / settings.previousZoomLevel;
+                const newMaxPan = 1 - 1 / newZoomLevel;
+                settings.pan.xController.max(newMaxPan);
+                settings.pan.xController.min(0);
+                settings.pan.yController.max(newMaxPan);
+                settings.pan.yController.min(0);
 
-            // The second case newMaxPan/2 handles the case where previousZoomLevel was 1
-            // so we didn't have a reference point to zoom in. In this case we zoom into the middle
-            settings.Pan.x = newMaxPan * previousRatio.x || newMaxPan / 2;
-            settings.Pan.y = newMaxPan * previousRatio.y || newMaxPan / 2;
+                const previousRatio = {
+                    x: settings.pan.x / maxPan,
+                    y: settings.pan.y / maxPan
+                };
 
-            settings.previousZoomLevel = newZoomLevel;
-        });
+                // The second case newMaxPan/2 handles the case where previousZoomLevel was 1
+                // so we didn't have a reference point to zoom in. In this case we zoom into the middle
+                settings.pan.x = newMaxPan * previousRatio.x || newMaxPan / 2;
+                settings.pan.y = newMaxPan * previousRatio.y || newMaxPan / 2;
+
+                settings.previousZoomLevel = newZoomLevel;
+            });
 
         const panFolder = gui.addFolder('Pan');
-        settings.Pan.xController = panFolder.add(settings.Pan, 'x', 0, 0, 0.01).listen();
-        settings.Pan.yController = panFolder.add(settings.Pan, 'y', 0, 0, 0.01).listen();
+        settings.pan.xController = panFolder.add(settings.pan, 'x', 0, 0, 0.01).listen();
+        settings.pan.yController = panFolder.add(settings.pan, 'y', 0, 0, 0.01).listen();
         panFolder.open();
 
-        gui.add(settings, 'Reload progam');
+        gui.add(settings, 'reloadProgram').name('Reload program');
     };
 
     const initEvents = () => {
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
-                settings.Pause = !settings.Pause;
+                settings.pause = !settings.pause;
                 event.preventDefault();
             }
             if (event.code === 'KeyR') {
@@ -131,7 +139,7 @@
                 return;
             }
             if (event.code === 'KeyS') {
-                settings['Infinite source'] = !settings['Infinite source'];
+                settings.infiniteSource = !settings.infiniteSource;
                 return;
             }
         });
@@ -157,17 +165,17 @@
 
         setInterval(() => {
             const step = 0.005;
-            if (mouseCoordinates.x < 0.1 && settings.Pan.x >= step) {
-                settings.Pan.x -= step;
+            if (mouseCoordinates.x < 0.1 && settings.pan.x >= step) {
+                settings.pan.x -= step;
             }
-            if (mouseCoordinates.x > 0.9 && settings.Pan.x < 1 - 1 / settings['Zoom level']) {
-                settings.Pan.x += step;
+            if (mouseCoordinates.x > 0.9 && settings.pan.x < 1 - 1 / settings.zoomLevel) {
+                settings.pan.x += step;
             }
-            if (mouseCoordinates.y < 0.1 && settings.Pan.y >= step) {
-                settings.Pan.y -= step;
+            if (mouseCoordinates.y < 0.1 && settings.pan.y >= step) {
+                settings.pan.y -= step;
             }
-            if (mouseCoordinates.y > 0.9 && settings.Pan.y < 1 - 1 / settings['Zoom level']) {
-                settings.Pan.y += step;
+            if (mouseCoordinates.y > 0.9 && settings.pan.y < 1 - 1 / settings.zoomLevel) {
+                settings.pan.y += step;
             }
         }, 50);
 
@@ -204,50 +212,50 @@
 
         const initialData = getInitialData(gl, {
             mode: 'random',
-            worldDimensions: { width: settings['World width'], height: settings['World height'] },
-            initialDensity: settings['Initial density']
+            worldDimensions: { width: settings.worldWidth, height: settings.worldHeight },
+            initialDensity: settings.initialDensity
         });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
-            texDimensions: { width: settings['World width'], height: settings['World height'] }
+            texDimensions: { width: settings.worldWidth, height: settings.worldHeight }
         });
 
-        drawCells.initProgram(gl, { screenDimensions, mode: settings['Draw mode'] });
+        drawCells.initProgram(gl, { screenDimensions, mode: settings.drawMode });
 
         function render() {
-            if (!settings.Pause) {
+            if (!settings.pause) {
                 const now = Date.now() / 1000;
                 const deltaTime = now - lastFrameUpdate;
                 settings.fps = 1 / deltaTime;
                 lastFrameUpdate = now;
 
-                settings.TimeInSeconds = now - startTime;
-                settings.Iteration++;
+                settings.timeInSeconds = now - startTime;
+                settings.iteration++;
             }
             cellsTex = updateCells.runProgram({
                 gl,
                 worldDimensions: {
-                    width: settings['World width'],
-                    height: settings['World height']
+                    width: settings.worldWidth,
+                    height: settings.worldHeight
                 },
                 screenDimensions,
                 mouseCoordinates,
                 mouseMode,
-                infiniteSource: settings['Infinite source'],
-                iteration: settings.Iteration,
-                pause: settings.Pause
+                infiniteSource: settings.infiniteSource,
+                iteration: settings.iteration,
+                pause: settings.pause
             });
 
             drawCells.runProgram({
                 gl,
                 cellsTex,
                 worldDimensions: {
-                    width: settings['World width'],
-                    height: settings['World height']
+                    width: settings.worldWidth,
+                    height: settings.worldHeight
                 },
-                zoomLevel: settings['Zoom level'],
-                pan: settings.Pan,
-                iteration: settings.Iteration
+                zoomLevel: settings.zoomLevel,
+                pan: settings.pan,
+                iteration: settings.iteration
             });
 
             return (animationFrameRequest = requestAnimationFrame(render));
@@ -262,16 +270,16 @@
     });
 
     const resetTexture = (mode: InitialCellsMode) => {
-        settings.Iteration = 0;
-        settings.TimeInSeconds = 0;
+        settings.iteration = 0;
+        settings.timeInSeconds = 0;
         const initialData = getInitialData(gl, {
             mode,
-            worldDimensions: { width: settings['World width'], height: settings['World height'] },
-            initialDensity: settings['Initial density']
+            worldDimensions: { width: settings.worldWidth, height: settings.worldHeight },
+            initialDensity: settings.initialDensity
         });
         cellsTex = updateCells.initProgram(gl, {
             cellsTex: initialData.cellsTex,
-            texDimensions: { width: settings['World width'], height: settings['World height'] }
+            texDimensions: { width: settings.worldWidth, height: settings.worldHeight }
         });
     };
 </script>
