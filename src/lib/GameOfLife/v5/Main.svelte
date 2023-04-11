@@ -84,10 +84,15 @@
             .add(settings.grid, 'configName', {
                 Random: 'random',
                 Empty: 'empty',
+                '131c31 Climber': 'climber131c31',
+                'Big Glider': 'bigglider',
+                Candelabra: 'candelabra',
+                'E-heptomino': 'eheptomino',
+                'Garden of Eden 5x45': 'gardenofeden5x45',
                 Glider: 'glider',
-                Laputa: 'laputa',
+                'Glider by the dozen': 'glidersbythedozen',
                 'Glider loop': 'gliderLoop',
-                '131c31 Climber': 'climber131c31'
+                Laputa: 'laputa'
             } as { [name: string]: ConfigurationName | 'random' | 'empty' })
             .name('Configuration')
             .onFinishChange(() => resetWorld(settings.grid.configName));
