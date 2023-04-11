@@ -61,14 +61,23 @@ export const parseConfigurationString = (fileAsString: string) => {
                 i++;
             }
         } else if (char === '$') {
+            while (pattern[pattern.length - 1].length < properties.x) {
+                pattern[pattern.length - 1].push(0);
+            }
             pattern.push([]);
             continue;
         } else if (char === '!') {
             if (patternList.length) {
                 throw new Error('Invalid ending char position in pattern file');
             }
-            for (let j = i; j < pattern.length; j++) {
+
+            // Fill the end of the last line if necessary
+            while (pattern[pattern.length - 1].length < properties.x) {
                 pattern[pattern.length - 1].push(0);
+            }
+            // Push enough empty lines if necessary
+            for (let j = i; j < pattern.length; j++) {
+                pattern.push(new Array(properties.x).fill(0));
             }
         } else if (['b', 'o'].includes(char)) {
             pattern[pattern.length - 1].push(char === 'b' ? 0 : 1);

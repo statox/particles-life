@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { getConfiguration } from './configurations';
 import { parseConfigurationString } from './parser';
 
 import gliderString from './patterns/glider.rle';
@@ -78,5 +79,20 @@ y = 3, y = 3
 ooo$3b$2ob!
 `;
         expect(() => parseConfigurationString(patternString)).toThrow();
+    });
+});
+
+describe('getConfiguration', () => {
+    it('sould should bypass to parseConfigurationString() properly', () => {
+        const config = getConfiguration('glider');
+        expect(config).toEqual({
+            width: 3,
+            height: 3,
+            pattern: [
+                [0, 1, 0],
+                [0, 0, 1],
+                [1, 1, 1]
+            ]
+        });
     });
 });
