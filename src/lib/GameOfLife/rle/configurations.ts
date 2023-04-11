@@ -6,7 +6,7 @@ import Climber131c31 from './patterns/131c31climber.rle';
 
 const CONFIGURATION_NAMES = ['glider', 'laputa', 'gliderLoop', 'climber131c31'] as const;
 type ConfigurationNamesTuple = typeof CONFIGURATION_NAMES;
-type ConfigurationName = ConfigurationNamesTuple[number];
+export type ConfigurationName = ConfigurationNamesTuple[number];
 
 const configurations: {
     [configName in ConfigurationName]: string;

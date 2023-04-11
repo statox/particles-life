@@ -1,7 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import type { GUIController } from 'dat.gui';
-    import type { InitialCellsMode } from './simulationUtils';
     import type { MouseMode } from './updateCells';
     import type { DrawingMode } from './drawCells';
     import { init, resetTexture, iteration, changeDrawingProgram } from './simulation';
@@ -17,8 +16,8 @@
     };
     const settings = {
         program: {
-            pause: false,
-            infiniteSource: true,
+            pause: true,
+            infiniteSource: false,
             drawMode: 'age_gradiant' as DrawingMode,
             reloadProgram: () => main()
         },
@@ -31,11 +30,13 @@
 
         grid: {
             resetGrid: () => resetWorld('random'),
-            emptyGrid: () => resetWorld('zero'),
+            emptyGrid: () => resetWorld('empty'),
 
             initialDensity: 0.5,
-            worldWidth: screenDimensions.width,
-            worldHeight: screenDimensions.height,
+            // worldWidth: screenDimensions.width,
+            // worldHeight: screenDimensions.height,
+            worldWidth: 500,
+            worldHeight: 500,
             nbCells: (screenDimensions.width * screenDimensions.height).toString()
         },
 
@@ -161,7 +162,7 @@
                 return;
             }
             if (event.code === 'KeyE') {
-                resetWorld('zero');
+                resetWorld('empty');
                 return;
             }
             if (event.code === 'KeyS') {
@@ -274,7 +275,7 @@
         animationFrameRequest = requestAnimationFrame(frameAction);
     };
 
-    const resetWorld = (mode: InitialCellsMode) => {
+    const resetWorld = (configuration: 'empty' | 'random') => {
         settings.simulation.iteration = 0;
         settings.simulation.timeInSeconds = 0;
         resetTexture({
@@ -283,7 +284,7 @@
                 width: settings.grid.worldWidth,
                 height: settings.grid.worldHeight
             },
-            mode
+            configuration
         });
     };
 

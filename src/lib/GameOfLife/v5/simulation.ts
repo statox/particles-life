@@ -1,5 +1,4 @@
 import { getInitialData } from './simulationUtils';
-import type { InitialCellsMode } from './simulationUtils';
 import * as webglUtils from './webglUtils';
 import * as updateCells from './updateCells';
 import * as drawCells from './drawCells';
@@ -20,7 +19,7 @@ export function init(params: {
     webglUtils.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
 
     const initialData = getInitialData(gl, {
-        mode: 'random',
+        configuration: 'random',
         worldDimensions,
         initialDensity
     });
@@ -79,11 +78,11 @@ export function iteration(params: {
 export const resetTexture = (params: {
     initialDensity: number;
     worldDimensions: { width: number; height: number };
-    mode: InitialCellsMode;
+    configuration: 'empty' | 'random';
 }) => {
-    const { worldDimensions, mode, initialDensity } = params;
+    const { worldDimensions, configuration, initialDensity } = params;
     const initialData = getInitialData(gl, {
-        mode,
+        configuration,
         worldDimensions,
         initialDensity: initialDensity
     });
