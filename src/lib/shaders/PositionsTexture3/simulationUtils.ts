@@ -114,6 +114,6 @@ const map = function (
         return constrain(newval, stop2, start2);
     }
 };
-const constrain = function (n, low, high) {
+const constrain = function (n: number, low: number, high: number) {
     return Math.max(Math.min(n, high), low);
 };

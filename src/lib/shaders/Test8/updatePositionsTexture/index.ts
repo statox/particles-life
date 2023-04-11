@@ -25,7 +25,6 @@ let positionsFB1: WebGLFramebuffer;
 let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
-let lastTime: number;
 
 export const initProgram = (
     gl: WebGLRenderingContext,
