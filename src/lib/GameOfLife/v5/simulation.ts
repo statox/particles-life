@@ -2,6 +2,7 @@ import { getInitialData } from './simulationUtils';
 import * as webglUtils from './webglUtils';
 import * as updateCells from './updateCells';
 import * as drawCells from './drawCells';
+import type { ConfigurationName } from '../rle/configurations';
 
 let gl: WebGLRenderingContext;
 let cellsTex: WebGLTexture;
@@ -78,7 +79,7 @@ export function iteration(params: {
 export const resetTexture = (params: {
     initialDensity: number;
     worldDimensions: { width: number; height: number };
-    configuration: 'empty' | 'random';
+    configuration: 'random' | 'empty' | ConfigurationName;
 }) => {
     const { worldDimensions, configuration, initialDensity } = params;
     const initialData = getInitialData(gl, {

@@ -4,6 +4,7 @@
     import type { MouseMode } from './updateCells';
     import type { DrawingMode } from './drawCells';
     import { init, resetTexture, iteration, changeDrawingProgram } from './simulation';
+    import type { ConfigurationName } from '../rle/configurations';
 
     const mouseCoordinates = { x: 0, y: 0 };
     let mouseMode: MouseMode = 0;
@@ -29,8 +30,7 @@
         },
 
         grid: {
-            resetGrid: () => resetWorld('random'),
-            emptyGrid: () => resetWorld('empty'),
+            configName: 'random' as 'empty' | 'random' | ConfigurationName,
 
             initialDensity: 0.5,
             // worldWidth: screenDimensions.width,
@@ -56,6 +56,8 @@
         const dat = await import('dat.gui');
         const gui = new dat.GUI();
 
+        gui.domElement.setAttribute('style', 'background-color: black');
+
         const programFolder = gui.addFolder('Program');
         programFolder.open();
         programFolder.add(settings.program, 'pause').name('Pause').listen();
@@ -80,8 +82,18 @@
 
         const gridFolder = gui.addFolder('Grid');
         gridFolder.open();
-        gridFolder.add(settings.grid, 'resetGrid').name('Reset grid');
-        gridFolder.add(settings.grid, 'emptyGrid').name('Empty grid');
+        gridFolder
+            .add(settings.grid, 'configName', {
+                Random: 'random',
+                Empty: 'empty',
+                Glider: 'glider',
+                Laputa: 'laputa',
+                'Glider loop': 'gliderLoop',
+                '131c31 Climber': 'climber131c31'
+            } as { [name: string]: ConfigurationName | 'random' | 'empty' })
+            .name('Initial configuration')
+            .onFinishChange(() => resetWorld(settings.grid.configName));
+
         gridFolder
             .add(settings.grid, 'initialDensity', 0, 1, 0.01)
             .name('Initial density')
@@ -275,7 +287,7 @@
         animationFrameRequest = requestAnimationFrame(frameAction);
     };
 
-    const resetWorld = (configuration: 'empty' | 'random') => {
+    const resetWorld = (configuration: ConfigurationName | 'random' | 'empty') => {
         settings.simulation.iteration = 0;
         settings.simulation.timeInSeconds = 0;
         resetTexture({
