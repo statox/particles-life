@@ -4,8 +4,10 @@
     import V2 from './v2/Main.svelte';
     import V3 from './v3/Main.svelte';
     import V4 from './v4/Main.svelte';
+    import V5 from './v5/Main.svelte';
 
     const tabs = [
+        { title: 'V5', component: V5 },
         { title: 'V4', component: V4 },
         { title: 'V3', component: V3 },
         { title: 'V2', component: V2 },
