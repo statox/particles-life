@@ -33,10 +33,8 @@
             configName: 'random' as 'empty' | 'random' | ConfigurationName,
 
             initialDensity: 0.5,
-            // worldWidth: screenDimensions.width,
-            // worldHeight: screenDimensions.height,
-            worldWidth: 500,
-            worldHeight: 500,
+            worldWidth: screenDimensions.width,
+            worldHeight: screenDimensions.height,
             nbCells: (screenDimensions.width * screenDimensions.height).toString()
         },
 
@@ -91,7 +89,7 @@
                 'Glider loop': 'gliderLoop',
                 '131c31 Climber': 'climber131c31'
             } as { [name: string]: ConfigurationName | 'random' | 'empty' })
-            .name('Initial configuration')
+            .name('Configuration')
             .onFinishChange(() => resetWorld(settings.grid.configName));
 
         gridFolder

@@ -22,6 +22,10 @@ export function getInitialData(
     } else if (configuration !== 'empty') {
         cells = insertConfigurationInCells({
             cells,
+            insertPosition: {
+                x: Math.floor(worldDimensions.width / 2),
+                y: Math.floor(worldDimensions.height / 2)
+            },
             worldDimensions,
             configurationName: configuration
         });
@@ -39,19 +43,26 @@ export function getInitialData(
 
 const insertConfigurationInCells = (params: {
     cells: number[];
+    insertPosition: { x: number; y: number };
     worldDimensions: { width: number; height: number };
     configurationName: ConfigurationName;
 }) => {
-    const { cells, worldDimensions, configurationName } = params;
+    const { cells, insertPosition, worldDimensions, configurationName } = params;
     const config = getConfiguration(configurationName);
 
     if (worldDimensions.width < config.width || worldDimensions.height < config.height) {
         throw new Error('World is too small for this configuration');
     }
+    if (
+        insertPosition.x + config.width > worldDimensions.width ||
+        insertPosition.y + config.height > worldDimensions.height
+    ) {
+        throw new Error('Configuration can be imported at this point');
+    }
 
     for (let y = 0; y < config.height; y++) {
         for (let x = 0; x < config.width; x++) {
-            const index = y * worldDimensions.width + x;
+            const index = (insertPosition.y + y) * worldDimensions.width + (insertPosition.x + x);
             cells[index] = config.pattern[y][x];
         }
     }
