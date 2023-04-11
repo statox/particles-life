@@ -27,7 +27,10 @@ let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
 let lastTime: number;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { positions: number[]; texDimensions: { width: number; height: number } }
+) => {
     const { positions, texDimensions } = params;
     program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFS]);
 
@@ -61,12 +64,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         texDimensions.width,
         texDimensions.height
     );
-    positionTex2 = webglUtils.createTexture(
-        gl,
-        null,
-        texDimensions.width,
-        texDimensions.height
-    );
+    positionTex2 = webglUtils.createTexture(gl, null, texDimensions.width, texDimensions.height);
 
     // create 2 framebuffers. One that renders to positionTex1
     // and another that renders to positionTex2
@@ -83,7 +81,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     };
 
     return positionTex1;
-}
+};
 
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
@@ -92,13 +90,7 @@ export const runProgram = (params: {
     drag: number;
     deltaTime: number;
 }) => {
-    const {
-        gl,
-        texDimensions,
-        interactionRange,
-        drag,
-        deltaTime
-    } = params;
+    const { gl, texDimensions, interactionRange, drag, deltaTime } = params;
 
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);

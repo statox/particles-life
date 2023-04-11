@@ -5,7 +5,11 @@
  * and the eventListener makes sure disableFullscreen() is called when the user presses Esc
  * to exit fullscreen.
  */
-export function setupFullscreenElement(document: Document, elementId: string, elementDimensions: { width: number, height: number }) {
+export function setupFullscreenElement(
+    document: Document,
+    elementId: string,
+    elementDimensions: { width: number; height: number }
+) {
     function disableFullscreen() {
         const canvas = document.getElementById(elementId) as HTMLCanvasElement;
         if (!canvas) {
@@ -38,4 +42,3 @@ export function setupFullscreenElement(document: Document, elementId: string, el
 
     return { enableFullscreen, disableFullscreen };
 }
-

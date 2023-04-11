@@ -25,7 +25,10 @@ let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
 let lastTime: number;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { positions: number[]; texDimensions: { width: number; height: number } }
+) => {
     const { positions, texDimensions } = params;
     program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFS]);
 
@@ -57,12 +60,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         texDimensions.width,
         texDimensions.height
     );
-    positionTex2 = webglUtils.createTexture(
-        gl,
-        null,
-        texDimensions.width,
-        texDimensions.height
-    );
+    positionTex2 = webglUtils.createTexture(gl, null, texDimensions.width, texDimensions.height);
 
     // create 2 framebuffers. One that renders to positionTex1
     // and another that renders to positionTex2
@@ -79,16 +77,13 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     };
 
     return positionTex1;
-}
+};
 
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
     texDimensions: { width: number; height: number };
 }) => {
-    const {
-        gl,
-        texDimensions
-    } = params;
+    const { gl, texDimensions } = params;
 
     const now = Date.now();
     if (!lastTime) {

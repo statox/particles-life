@@ -17,18 +17,18 @@ export const initProgram = (gl: WebGLRenderingContext, ids: number[]) => {
         idAttributeLocation: gl.getAttribLocation(program, 'id'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         resolutionUniformLocation: gl.getUniformLocation(program, 'u_resolution')
-    }
+    };
 
     idBuffer = gl.createBuffer() as WebGLBuffer;
     gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ids), gl.STATIC_DRAW);
-}
+};
 
 export const runProgram = (params: {
-    gl: WebGLRenderingContext,
-    positionTex: WebGLTexture,
-    textureDimension: { width: number, height: number },
-    ids: number[]
+    gl: WebGLRenderingContext;
+    positionTex: WebGLTexture;
+    textureDimension: { width: number; height: number };
+    ids: number[];
 }) => {
     const { gl, positionTex, textureDimension, ids } = params;
 
@@ -46,7 +46,11 @@ export const runProgram = (params: {
     gl.useProgram(program);
 
     gl.uniform2f(programInfo.resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
-    gl.uniform2f(programInfo.texDimensionsUniformLocation, textureDimension.width, textureDimension.height);
+    gl.uniform2f(
+        programInfo.texDimensionsUniformLocation,
+        textureDimension.width,
+        textureDimension.height
+    );
 
     gl.enableVertexAttribArray(programInfo.idAttributeLocation);
 

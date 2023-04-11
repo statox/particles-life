@@ -26,14 +26,20 @@ let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { positions: number[]; texDimensions: { width: number; height: number } }
+) => {
     const { positions, texDimensions } = params;
 
     const updatePositionFSTemplated = updatePositionFS
         .replace('{{TEX_WIDTH}}', texDimensions.width.toFixed(1))
         .replace('{{TEX_HEIGHT}}', texDimensions.height.toFixed(1));
 
-    program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFSTemplated]);
+    program = webglUtils.createProgramFromSources(gl, [
+        updatePositionVS,
+        updatePositionFSTemplated
+    ]);
 
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
@@ -65,12 +71,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         texDimensions.width,
         texDimensions.height
     );
-    positionTex2 = webglUtils.createTexture(
-        gl,
-        null,
-        texDimensions.width,
-        texDimensions.height
-    );
+    positionTex2 = webglUtils.createTexture(gl, null, texDimensions.width, texDimensions.height);
 
     // create 2 framebuffers. One that renders to positionTex1
     // and another that renders to positionTex2
@@ -87,7 +88,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     };
 
     return positionTex1;
-}
+};
 
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
@@ -97,14 +98,7 @@ export const runProgram = (params: {
     drag: number;
     deltaTime: number;
 }) => {
-    const {
-        gl,
-        texDimensions,
-        worldDimensions,
-        interactionRange,
-        drag,
-        deltaTime
-    } = params;
+    const { gl, texDimensions, worldDimensions, interactionRange, drag, deltaTime } = params;
 
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);
@@ -134,7 +128,11 @@ export const runProgram = (params: {
         texDimensions.width,
         texDimensions.height
     );
-    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
+    gl.uniform2f(
+        programInfo.worldDimensionsUniformLocation,
+        worldDimensions.width,
+        worldDimensions.height
+    );
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 

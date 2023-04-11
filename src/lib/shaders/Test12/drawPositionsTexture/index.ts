@@ -18,7 +18,10 @@ let idBuffer: WebGLBuffer;
 
 let colorTex: WebGLTexture;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { ids: number[]; colors: number[]; texDimensions: { width: number; height: number } }
+) => {
     const { ids, colors, texDimensions } = params;
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
     programInfo = {
@@ -30,28 +33,28 @@ export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], 
 
         positionTexUniformLocation: gl.getUniformLocation(program, 'positionTex'),
         colorTexUniformLocation: gl.getUniformLocation(program, 'colorTex')
-    }
+    };
 
     idBuffer = gl.createBuffer() as WebGLBuffer;
     gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ids), gl.STATIC_DRAW);
 
-    const colorsForTexture = colors.map(c => [c, 0, 0, 0]).flat();
+    const colorsForTexture = colors.map((c) => [c, 0, 0, 0]).flat();
     colorTex = webglUtils.createTexture(
         gl,
         new Float32Array(colorsForTexture),
         texDimensions.width,
         texDimensions.height
     );
-}
+};
 
 export const runProgram = (params: {
-    gl: WebGLRenderingContext,
-    positionTex: WebGLTexture,
-    texDimensions: { width: number, height: number },
-    worldDimensions: { width: number, height: number },
-    particlesSize: number,
-    ids: number[]
+    gl: WebGLRenderingContext;
+    positionTex: WebGLTexture;
+    texDimensions: { width: number; height: number };
+    worldDimensions: { width: number; height: number };
+    particlesSize: number;
+    ids: number[];
 }) => {
     const { gl, positionTex, texDimensions, worldDimensions, particlesSize, ids } = params;
 
@@ -81,8 +84,16 @@ export const runProgram = (params: {
     gl.useProgram(program);
 
     gl.uniform1f(programInfo.sizeUniformLocation, particlesSize);
-    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
-    gl.uniform2f(programInfo.texDimensionsUniformLocation, texDimensions.width, texDimensions.height);
+    gl.uniform2f(
+        programInfo.worldDimensionsUniformLocation,
+        worldDimensions.width,
+        worldDimensions.height
+    );
+    gl.uniform2f(
+        programInfo.texDimensionsUniformLocation,
+        texDimensions.width,
+        texDimensions.height
+    );
 
     gl.uniform1i(programInfo.positionTexUniformLocation, 0);
     gl.uniform1i(programInfo.colorTexUniformLocation, 1);

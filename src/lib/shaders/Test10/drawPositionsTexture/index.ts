@@ -14,7 +14,10 @@ let program: WebGLProgram;
 let idBuffer: WebGLBuffer;
 let colorBuffer: WebGLBuffer;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { ids: number[]; colors: number[]; texDimensions: { width: number; height: number } }
+) => {
     const { ids, colors } = params;
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
     programInfo = {
@@ -23,7 +26,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], 
         sizeUniformLocation: gl.getUniformLocation(program, 'size'),
         texDimensionsUniformLocation: gl.getUniformLocation(program, 'texDimensions'),
         worldDimensionsUniformLocation: gl.getUniformLocation(program, 'worldDimensions')
-    }
+    };
 
     idBuffer = gl.createBuffer() as WebGLBuffer;
     gl.bindBuffer(gl.ARRAY_BUFFER, idBuffer);
@@ -32,15 +35,15 @@ export const initProgram = (gl: WebGLRenderingContext, params: { ids: number[], 
     colorBuffer = gl.createBuffer() as WebGLBuffer;
     gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
-}
+};
 
 export const runProgram = (params: {
-    gl: WebGLRenderingContext,
-    positionTex: WebGLTexture,
-    texDimensions: { width: number, height: number },
-    worldDimensions: { width: number, height: number },
-    particlesSize: number,
-    ids: number[]
+    gl: WebGLRenderingContext;
+    positionTex: WebGLTexture;
+    texDimensions: { width: number; height: number };
+    worldDimensions: { width: number; height: number };
+    particlesSize: number;
+    ids: number[];
 }) => {
     const { gl, positionTex, texDimensions, worldDimensions, particlesSize, ids } = params;
 
@@ -62,7 +65,14 @@ export const runProgram = (params: {
     gl.enableVertexAttribArray(programInfo.idAttributeLocation);
 
     gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-    gl.vertexAttribPointer(programInfo.colorAttributeLocation, size, type, normalize, stride, offset);
+    gl.vertexAttribPointer(
+        programInfo.colorAttributeLocation,
+        size,
+        type,
+        normalize,
+        stride,
+        offset
+    );
     gl.enableVertexAttribArray(programInfo.colorAttributeLocation);
 
     gl.activeTexture(gl.TEXTURE0);
@@ -71,8 +81,16 @@ export const runProgram = (params: {
     gl.useProgram(program);
 
     gl.uniform1f(programInfo.sizeUniformLocation, particlesSize);
-    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
-    gl.uniform2f(programInfo.texDimensionsUniformLocation, texDimensions.width, texDimensions.height);
+    gl.uniform2f(
+        programInfo.worldDimensionsUniformLocation,
+        worldDimensions.width,
+        worldDimensions.height
+    );
+    gl.uniform2f(
+        programInfo.texDimensionsUniformLocation,
+        texDimensions.width,
+        texDimensions.height
+    );
 
     gl.drawArrays(gl.POINTS, offset, ids.length);
 };

@@ -33,14 +33,24 @@ let newPositionsInfo: PositionsInfo;
 
 let colorTex: WebGLTexture;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { positions: number[], colors: number[], texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: {
+        positions: number[];
+        colors: number[];
+        texDimensions: { width: number; height: number };
+    }
+) => {
     const { positions, colors, texDimensions } = params;
 
     const updatePositionFSTemplated = updatePositionFS
         .replace('{{TEX_WIDTH}}', texDimensions.width.toFixed(1))
         .replace('{{TEX_HEIGHT}}', texDimensions.height.toFixed(1));
 
-    program = webglUtils.createProgramFromSources(gl, [updatePositionVS, updatePositionFSTemplated]);
+    program = webglUtils.createProgramFromSources(gl, [
+        updatePositionVS,
+        updatePositionFSTemplated
+    ]);
 
     programInfo = {
         positionAttributeLocation: gl.getAttribLocation(program, 'position'),
@@ -77,14 +87,9 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
         texDimensions.width,
         texDimensions.height
     );
-    positionTex2 = webglUtils.createTexture(
-        gl,
-        null,
-        texDimensions.width,
-        texDimensions.height
-    );
+    positionTex2 = webglUtils.createTexture(gl, null, texDimensions.width, texDimensions.height);
 
-    const colorsForTexture = colors.map(c => [c, 0, 0, 0]).flat();
+    const colorsForTexture = colors.map((c) => [c, 0, 0, 0]).flat();
     colorTex = webglUtils.createTexture(
         gl,
         new Float32Array(colorsForTexture),
@@ -107,7 +112,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { positions: numb
     };
 
     return positionTex1;
-}
+};
 
 export type WallsMode = 'wraped' | 'box' | 'bottom_wall';
 export const runProgram = (params: {
@@ -156,7 +161,7 @@ export const runProgram = (params: {
     gl.uniform1i(programInfo.positionTexUniformLocation, 0); // tell the shader the position texture is on texture unit 0
     gl.uniform1i(programInfo.colorTexUniformLocation, 1); // tell the shader the position texture is on texture unit 0
 
-    const modesToNumber = { 'wraped': 0, 'box': 1, 'bottom_wall': 2 };
+    const modesToNumber = { wraped: 0, box: 1, bottom_wall: 2 };
     const modeAsNumber = modesToNumber[wallsMode];
     gl.uniform1f(programInfo.wallsModeUniformLocation, modeAsNumber);
     gl.uniform1f(programInfo.gravityFactorUniformLocation, gravityFactor);
@@ -169,7 +174,11 @@ export const runProgram = (params: {
         texDimensions.width,
         texDimensions.height
     );
-    gl.uniform2f(programInfo.worldDimensionsUniformLocation, worldDimensions.width, worldDimensions.height);
+    gl.uniform2f(
+        programInfo.worldDimensionsUniformLocation,
+        worldDimensions.width,
+        worldDimensions.height
+    );
 
     gl.drawArrays(gl.TRIANGLES, 0, 6); // draw 2 triangles (6 vertices)
 
