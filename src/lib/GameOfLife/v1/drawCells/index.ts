@@ -11,7 +11,10 @@ let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { screenDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { screenDimensions: { width: number; height: number } }
+) => {
     const { screenDimensions } = params;
     const { height, width } = screenDimensions;
     program = webglUtils.createProgramFromSources(gl, [drawPositionsVS, drawPositionsFS]);
@@ -27,20 +30,17 @@ export const initProgram = (gl: WebGLRenderingContext, params: { screenDimension
         throw new Error('cant create buffer');
     }
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-        0, 0,
-        0, height,
-        width, 0,
-        width, 0,
-        0, height,
-        width, height,
-    ]), gl.STATIC_DRAW);
-}
+    gl.bufferData(
+        gl.ARRAY_BUFFER,
+        new Float32Array([0, 0, 0, height, width, 0, width, 0, 0, height, width, height]),
+        gl.STATIC_DRAW
+    );
+};
 
 export const runProgram = (params: {
-    gl: WebGLRenderingContext,
-    cellsTex: WebGLTexture,
-    worldDimensions: { width: number, height: number }
+    gl: WebGLRenderingContext;
+    cellsTex: WebGLTexture;
+    worldDimensions: { width: number; height: number };
 }) => {
     const { gl, cellsTex, worldDimensions } = params;
 

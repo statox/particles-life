@@ -6,7 +6,15 @@ import gliderString from './patterns/glider.rle';
 describe('parsePatternFile', () => {
     it('sould read from file', () => {
         const pattern = parseConfigurationString(gliderString);
-        expect(pattern).toEqual({ width: 3, height: 3, pattern: [[0, 1, 0], [0, 0, 1], [1, 1, 1]] });
+        expect(pattern).toEqual({
+            width: 3,
+            height: 3,
+            pattern: [
+                [0, 1, 0],
+                [0, 0, 1],
+                [1, 1, 1]
+            ]
+        });
     });
 
     it('should read a simple pattern', () => {
@@ -15,7 +23,15 @@ x = 3, y = 3
 ooo$3b$2ob!
 `;
         const pattern = parseConfigurationString(patternString);
-        expect(pattern).toEqual({ width: 3, height: 3, pattern: [[1, 1, 1], [0, 0, 0], [1, 1, 0]] });
+        expect(pattern).toEqual({
+            width: 3,
+            height: 3,
+            pattern: [
+                [1, 1, 1],
+                [0, 0, 0],
+                [1, 1, 0]
+            ]
+        });
     });
 
     it('should read double digits', () => {
@@ -24,8 +40,15 @@ x = 13, y = 3
 13o$13b$12ob!
 `;
         const pattern = parseConfigurationString(patternString);
-        expect(pattern).toEqual({ width: 13, height: 3, pattern: [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]] });
-
+        expect(pattern).toEqual({
+            width: 13,
+            height: 3,
+            pattern: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+            ]
+        });
     });
 
     it('should ignore comments', () => {
@@ -38,9 +61,16 @@ x = 3, y = 3
 ooo$3b$2ob!
 `;
         const pattern = parseConfigurationString(patternString);
-        expect(pattern).toEqual({ width: 3, height: 3, pattern: [[1, 1, 1], [0, 0, 0], [1, 1, 0]] });
+        expect(pattern).toEqual({
+            width: 3,
+            height: 3,
+            pattern: [
+                [1, 1, 1],
+                [0, 0, 0],
+                [1, 1, 0]
+            ]
+        });
     });
-
 
     it('should fail on invalid dimensions', () => {
         const patternString = `

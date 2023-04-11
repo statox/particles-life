@@ -17,10 +17,13 @@ let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
 export type DrawingMode = 'white' | 'gradiant' | 'age_gradiant';
-export const initProgram = (gl: WebGLRenderingContext, params: { mode: DrawingMode, screenDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { mode: DrawingMode; screenDimensions: { width: number; height: number } }
+) => {
     const { screenDimensions, mode } = params;
     const { height, width } = screenDimensions;
-    let fragShaderSource = drawCellsFS
+    let fragShaderSource = drawCellsFS;
     if (mode === 'gradiant') {
         fragShaderSource = drawCellsGradiantFS;
     } else if (mode === 'age_gradiant') {
@@ -42,23 +45,20 @@ export const initProgram = (gl: WebGLRenderingContext, params: { mode: DrawingMo
         throw new Error('cant create buffer');
     }
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-        0, 0,
-        0, height,
-        width, 0,
-        width, 0,
-        0, height,
-        width, height,
-    ]), gl.STATIC_DRAW);
-}
+    gl.bufferData(
+        gl.ARRAY_BUFFER,
+        new Float32Array([0, 0, 0, height, width, 0, width, 0, 0, height, width, height]),
+        gl.STATIC_DRAW
+    );
+};
 
 export const runProgram = (params: {
-    gl: WebGLRenderingContext,
-    cellsTex: WebGLTexture,
-    worldDimensions: { width: number, height: number },
-    zoomLevel: number,
-    pan: { x: number, y: number },
-    iteration: number
+    gl: WebGLRenderingContext;
+    cellsTex: WebGLTexture;
+    worldDimensions: { width: number; height: number };
+    zoomLevel: number;
+    pan: { x: number; y: number };
+    iteration: number;
 }) => {
     const { gl, cellsTex, worldDimensions, zoomLevel, pan, iteration } = params;
 

@@ -8,10 +8,10 @@ let gl: WebGLRenderingContext;
 let cellsTex: WebGLTexture;
 
 export function init(params: {
-    initialDensity: number,
-    worldDimensions: { width: number, height: number },
-    screenDimensions: { width: number, height: number },
-    drawMode: drawCells.DrawingMode
+    initialDensity: number;
+    worldDimensions: { width: number; height: number };
+    screenDimensions: { width: number; height: number };
+    drawMode: drawCells.DrawingMode;
 }) {
     const { drawMode, initialDensity, screenDimensions, worldDimensions } = params;
 
@@ -30,18 +30,17 @@ export function init(params: {
     });
 
     drawCells.initProgram(gl, { screenDimensions, mode: drawMode });
-
 }
 
 export function iteration(params: {
-    infiniteSource: boolean,
-    iteration: number,
-    mouseCoordinates: { x: number, y: number },
-    mouseMode: updateCells.MouseMode,
-    pan: { x: number, y: number },
-    pause: boolean,
-    screenDimensions: { width: number, height: number },
-    worldDimensions: { width: number, height: number },
+    infiniteSource: boolean;
+    iteration: number;
+    mouseCoordinates: { x: number; y: number };
+    mouseMode: updateCells.MouseMode;
+    pan: { x: number; y: number };
+    pause: boolean;
+    screenDimensions: { width: number; height: number };
+    worldDimensions: { width: number; height: number };
     zoomLevel: number;
 }) {
     const {
@@ -77,8 +76,11 @@ export function iteration(params: {
     });
 }
 
-
-export const resetTexture = (params: { initialDensity: number, worldDimensions: { width: number, height: number }, mode: InitialCellsMode }) => {
+export const resetTexture = (params: {
+    initialDensity: number;
+    worldDimensions: { width: number; height: number };
+    mode: InitialCellsMode;
+}) => {
     const { worldDimensions, mode, initialDensity } = params;
     const initialData = getInitialData(gl, {
         mode,
@@ -92,8 +94,8 @@ export const resetTexture = (params: { initialDensity: number, worldDimensions: 
 };
 
 export const changeDrawingProgram = (params: {
-    drawMode: drawCells.DrawingMode,
-    screenDimensions: { width: number, height: number }
+    drawMode: drawCells.DrawingMode;
+    screenDimensions: { width: number; height: number };
 }) => {
-    drawCells.initProgram(gl, { screenDimensions: params.screenDimensions, mode: params.drawMode })
+    drawCells.initProgram(gl, { screenDimensions: params.screenDimensions, mode: params.drawMode });
 };

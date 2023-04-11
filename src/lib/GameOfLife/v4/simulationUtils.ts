@@ -1,8 +1,24 @@
 import * as webglUtils from './webglUtils';
 
-export type InitialCellsMode = 'zero' | 'random' | 'disk' | 'disk_offset' | 'mesh' | 'square' | 'idDiagonal' | 'sinusoidal' | 'circle';
+export type InitialCellsMode =
+    | 'zero'
+    | 'random'
+    | 'disk'
+    | 'disk_offset'
+    | 'mesh'
+    | 'square'
+    | 'idDiagonal'
+    | 'sinusoidal'
+    | 'circle';
 
-export function getInitialData(gl: WebGLRenderingContext, params: { mode: InitialCellsMode, initialDensity: number, worldDimensions: { width: number, height: number } }) {
+export function getInitialData(
+    gl: WebGLRenderingContext,
+    params: {
+        mode: InitialCellsMode;
+        initialDensity: number;
+        worldDimensions: { width: number; height: number };
+    }
+) {
     const { worldDimensions, initialDensity, mode } = params;
     let density = initialDensity;
     if (density > 1) {
@@ -12,7 +28,7 @@ export function getInitialData(gl: WebGLRenderingContext, params: { mode: Initia
     let cells = new Array(nbParticles).fill(0);
 
     if (mode === 'random') {
-        cells = cells.map((_) => Math.random() < density ? 1.0 : 0.0);
+        cells = cells.map((_) => (Math.random() < density ? 1.0 : 0.0));
     }
 
     const cellsTex = webglUtils.createTexture(

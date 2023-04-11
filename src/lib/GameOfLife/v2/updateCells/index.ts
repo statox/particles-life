@@ -25,7 +25,10 @@ let positionsFB2: WebGLFramebuffer;
 let oldPositionsInfo: PositionsInfo;
 let newPositionsInfo: PositionsInfo;
 
-export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGLTexture, texDimensions: { width: number, height: number } }) => {
+export const initProgram = (
+    gl: WebGLRenderingContext,
+    params: { cellsTex: WebGLTexture; texDimensions: { width: number; height: number } }
+) => {
     const { cellsTex, texDimensions } = params;
 
     program = webglUtils.createProgramFromSources(gl, [updateCellsVS, updateCellsFS]);
@@ -54,12 +57,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
 
     // create 2 textures for the positions.
     positionTex1 = cellsTex;
-    positionTex2 = webglUtils.createTexture(
-        gl,
-        null,
-        texDimensions.width,
-        texDimensions.height
-    );
+    positionTex2 = webglUtils.createTexture(gl, null, texDimensions.width, texDimensions.height);
 
     // create 2 framebuffers. One that renders to positionTex1
     // and another that renders to positionTex2
@@ -76,7 +74,7 @@ export const initProgram = (gl: WebGLRenderingContext, params: { cellsTex: WebGL
     };
 
     return positionTex1;
-}
+};
 
 export type MouseMode = 0 | 1 | 2;
 export const runProgram = (params: {
@@ -87,14 +85,8 @@ export const runProgram = (params: {
     mouseMode: MouseMode;
     infiniteSource: boolean;
 }) => {
-    const {
-        gl,
-        worldDimensions,
-        screenDimensions,
-        mouseCoordinates,
-        mouseMode,
-        infiniteSource
-    } = params;
+    const { gl, worldDimensions, screenDimensions, mouseCoordinates, mouseMode, infiniteSource } =
+        params;
 
     // render to the new positions
     gl.bindFramebuffer(gl.FRAMEBUFFER, newPositionsInfo.fb);

@@ -14,7 +14,6 @@ export function getWebGLContext() {
     }
     checkWebGlCapabilities(gl);
     return gl;
-
 }
 
 export function checkWebGlCapabilities(gl: WebGLRenderingContext) {
@@ -93,13 +92,9 @@ export function createProgramFromSources(
 ) {
     const shaders: WebGLShader[] = [];
     for (let ii = 0; ii < shaderSources.length; ++ii) {
-        const shaderType = defaultShaderType[ii] === 'VERTEX_SHADER' ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER;
-        const shader = loadShader(
-            gl,
-            shaderSources[ii],
-            shaderType,
-            opt_errorCallback
-        );
+        const shaderType =
+            defaultShaderType[ii] === 'VERTEX_SHADER' ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER;
+        const shader = loadShader(gl, shaderSources[ii], shaderType, opt_errorCallback);
         if (!shader) {
             throw 'Can not create shader';
         }
@@ -139,14 +134,14 @@ function loadShader(
         errFn(
             new Error(
                 "*** Error compiling shader '" +
-                shader +
-                "':" +
-                lastError +
-                `\n` +
-                shaderSource
-                    .split('\n')
-                    .map((l, i) => `${i + 1}: ${l}`)
-                    .join('\n')
+                    shader +
+                    "':" +
+                    lastError +
+                    `\n` +
+                    shaderSource
+                        .split('\n')
+                        .map((l, i) => `${i + 1}: ${l}`)
+                        .join('\n')
             )
         );
         gl.deleteShader(shader);
@@ -178,11 +173,11 @@ function createProgram(
     if (!program) {
         throw 'Could not create program';
     }
-    shaders.forEach(function(shader) {
+    shaders.forEach(function (shader) {
         gl.attachShader(program, shader);
     });
     if (opt_attribs) {
-        opt_attribs.forEach(function(attrib, ndx) {
+        opt_attribs.forEach(function (attrib, ndx) {
             gl.bindAttribLocation(program, opt_locations ? opt_locations[ndx] : ndx, attrib);
         });
     }
