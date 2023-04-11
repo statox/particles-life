@@ -26,7 +26,15 @@
 
         <TabPanel>
             <p>Experiments running Conway's Game of Life in WebGL shaders.</p>
-        </TabPanel>
+            <p>
+                List of patterns available <a
+                    target="none"
+                    href="https://conwaylife.com/wiki/Category:Patterns"
+                >
+                    in the wiki
+                </a>
+            </p></TabPanel
+        >
 
         {#each tabs as tab}
             <TabPanel>
