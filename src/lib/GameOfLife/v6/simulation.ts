@@ -37,11 +37,9 @@ export function iteration(params: {
     iteration: number;
     mouseCoordinates: { x: number; y: number };
     mouseMode: updateCells.MouseMode;
-    pan: { x: number; y: number };
     pause: boolean;
     screenDimensions: { width: number; height: number };
     worldDimensions: { width: number; height: number };
-    zoomLevel: number;
 }) {
     const {
         infiniteSource,
@@ -49,10 +47,8 @@ export function iteration(params: {
         mouseCoordinates,
         mouseMode,
         pause,
-        pan,
         screenDimensions,
-        worldDimensions,
-        zoomLevel
+        worldDimensions
     } = params;
 
     cellsTex = updateCells.runProgram({
@@ -70,8 +66,6 @@ export function iteration(params: {
         gl,
         cellsTex,
         worldDimensions,
-        zoomLevel,
-        pan,
         iteration
     });
 }

@@ -1,13 +1,11 @@
 precision mediump float;
 uniform sampler2D u_texture;
 uniform vec2 u_worldSize;
-uniform float u_zoom;
-uniform vec2 u_pan;
 
 varying vec2 v_texcoord;
 
 void main() {
-    vec2 texCoord = (v_texcoord / u_zoom) + u_pan;
+    vec2 texCoord = v_texcoord;
 
     vec4 cell = texture2D(u_texture, texCoord);
     float alive = cell.x;

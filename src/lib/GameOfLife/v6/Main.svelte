@@ -275,16 +275,11 @@
             mouseCoordinates,
             mouseMode,
             pause: settings.program.pause,
-            pan: {
-                x: settings.zoom.x,
-                y: settings.zoom.y
-            },
             screenDimensions,
             worldDimensions: {
                 width: settings.grid.worldWidth,
                 height: settings.grid.worldHeight
-            },
-            zoomLevel: settings.zoom.level
+            }
         });
 
         animationFrameRequest = requestAnimationFrame(frameAction);

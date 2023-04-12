@@ -8,8 +8,6 @@ type ProgramInfo = {
     positionLocation: number;
     textureLocation: WebGLUniformLocation | null;
     worldSizeLocation: WebGLUniformLocation | null;
-    zoomLocation: WebGLUniformLocation | null;
-    panLocation: WebGLUniformLocation | null;
     iterationLocation: WebGLUniformLocation | null;
 };
 let programInfo: ProgramInfo;
@@ -34,8 +32,6 @@ export const initProgram = (
         positionLocation: gl.getAttribLocation(program, 'a_position'),
         textureLocation: gl.getUniformLocation(program, 'u_texture'),
         worldSizeLocation: gl.getUniformLocation(program, 'u_worldSize'),
-        zoomLocation: gl.getUniformLocation(program, 'u_zoom'),
-        panLocation: gl.getUniformLocation(program, 'u_pan'),
         iterationLocation: gl.getUniformLocation(program, 'u_iteration')
     };
 
@@ -56,11 +52,9 @@ export const runProgram = (params: {
     gl: WebGLRenderingContext;
     cellsTex: WebGLTexture;
     worldDimensions: { width: number; height: number };
-    zoomLevel: number;
-    pan: { x: number; y: number };
     iteration: number;
 }) => {
-    const { gl, cellsTex, worldDimensions, zoomLevel, pan, iteration } = params;
+    const { gl, cellsTex, worldDimensions, iteration } = params;
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.bindTexture(gl.TEXTURE_2D, cellsTex);
@@ -72,8 +66,6 @@ export const runProgram = (params: {
     gl.vertexAttribPointer(programInfo.positionLocation, 2, gl.FLOAT, false, 0, 0);
     gl.uniform1i(programInfo.textureLocation, 0);
     gl.uniform2f(programInfo.worldSizeLocation, worldDimensions.width, worldDimensions.height);
-    gl.uniform1f(programInfo.zoomLocation, Math.max(zoomLevel, 1));
-    gl.uniform2f(programInfo.panLocation, pan.x, pan.y);
     gl.uniform1f(programInfo.iterationLocation, iteration);
 
     // Draw the texture
