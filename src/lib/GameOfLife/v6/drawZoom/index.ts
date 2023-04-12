@@ -39,8 +39,9 @@ export const runProgram = (params: {
     gl: WebGLRenderingContext;
     screenTex: WebGLTexture;
     worldDimensions: { width: number; height: number };
+    zoom: number;
 }) => {
-    const { gl, screenTex } = params;
+    const { gl, screenTex, zoom } = params;
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.bindTexture(gl.TEXTURE_2D, screenTex);
@@ -51,6 +52,7 @@ export const runProgram = (params: {
     gl.enableVertexAttribArray(programInfo.positionLocation);
     gl.vertexAttribPointer(programInfo.positionLocation, 2, gl.FLOAT, false, 0, 0);
     gl.uniform1i(programInfo.textureLocation, 0);
+    gl.uniform1f(programInfo.zoomLocation, zoom);
 
     // Draw the texture
     gl.drawArrays(gl.TRIANGLES, 0, 6);

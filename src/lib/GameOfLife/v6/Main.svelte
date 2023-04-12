@@ -125,7 +125,7 @@
         const zoomFolder = gui.addFolder('Zoom');
         zoomFolder.open();
         zoomFolder
-            .add(settings.zoom, 'level', 1, 10)
+            .add(settings.zoom, 'level', 1, 50, 0.1)
             .name('Level')
             .onChange(function (newZoomLevel) {
                 const levelDiff = newZoomLevel - settings.zoom.previousLevel;
@@ -279,7 +279,8 @@
             worldDimensions: {
                 width: settings.grid.worldWidth,
                 height: settings.grid.worldHeight
-            }
+            },
+            zoom: settings.zoom.level
         });
 
         animationFrameRequest = requestAnimationFrame(frameAction);
