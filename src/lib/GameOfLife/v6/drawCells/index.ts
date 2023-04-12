@@ -14,6 +14,9 @@ let programInfo: ProgramInfo;
 let program: WebGLProgram;
 let positionBuffer: WebGLBuffer;
 
+let screenTex: WebGLTexture;
+let screenFB: WebGLFramebuffer;
+
 export type DrawingMode = 'white' | 'gradiant' | 'age_gradiant';
 export const initProgram = (
     gl: WebGLRenderingContext,
@@ -37,26 +40,28 @@ export const initProgram = (
 
     // Create a buffer to hold the vertex data
     positionBuffer = gl.createBuffer() as WebGLBuffer;
-    if (!positionBuffer) {
-        throw new Error('cant create buffer');
-    }
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([0, 0, 0, height, width, 0, width, 0, 0, height, width, height]),
         gl.STATIC_DRAW
     );
+
+    screenTex = webglUtils.createTexture(gl, null, screenDimensions.width, screenDimensions.height);
+    screenFB = webglUtils.createFramebuffer(gl, screenTex);
 };
 
 export const runProgram = (params: {
     gl: WebGLRenderingContext;
     cellsTex: WebGLTexture;
     worldDimensions: { width: number; height: number };
+    screenDimensions: { width: number; height: number };
     iteration: number;
 }) => {
-    const { gl, cellsTex, worldDimensions, iteration } = params;
+    const { gl, cellsTex, worldDimensions, screenDimensions, iteration } = params;
 
-    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, screenFB);
+    gl.viewport(0, 0, screenDimensions.width, screenDimensions.height);
     gl.bindTexture(gl.TEXTURE_2D, cellsTex);
 
     // Bind the program and set the attribute and uniform values
@@ -70,4 +75,5 @@ export const runProgram = (params: {
 
     // Draw the texture
     gl.drawArrays(gl.TRIANGLES, 0, 6);
+    return screenTex
 };

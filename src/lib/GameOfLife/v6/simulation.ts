@@ -2,6 +2,7 @@ import { getInitialData } from './simulationUtils';
 import * as webglUtils from './webglUtils';
 import * as updateCells from './updateCells';
 import * as drawCells from './drawCells';
+import * as drawZoom from './drawZoom';
 import type { ConfigurationName } from '../rle/configurations';
 
 let gl: WebGLRenderingContext;
@@ -30,6 +31,7 @@ export function init(params: {
     });
 
     drawCells.initProgram(gl, { screenDimensions, mode: drawMode });
+    drawZoom.initProgram(gl, { screenDimensions });
 }
 
 export function iteration(params: {
@@ -62,11 +64,18 @@ export function iteration(params: {
         pause
     });
 
-    drawCells.runProgram({
+    const screenTex = drawCells.runProgram({
         gl,
         cellsTex,
         worldDimensions,
+        screenDimensions,
         iteration
+    });
+
+    drawZoom.runProgram({
+        gl,
+        screenTex,
+        worldDimensions
     });
 }
 
