@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import type { GUIController } from 'dat.gui';
+    import { onDestroy, onMount } from 'svelte';
+    import type { GUI, GUIController } from 'dat.gui';
     import type { MouseMode } from './updateCells';
     import type { DrawingMode } from './drawCells';
     import { init, resetTexture, iteration, changeDrawingProgram } from './simulation';
@@ -48,11 +48,12 @@
         }
     };
 
+    let gui: GUI;
     const initGUI = async () => {
         // Imported here to avoid "window is not defined" error
         // https://github.com/dataarts/dat.gui/issues/271
         const dat = await import('dat.gui');
-        const gui = new dat.GUI();
+        gui = new dat.GUI();
 
         gui.domElement.setAttribute('style', 'background-color: black');
 
@@ -307,6 +308,10 @@
         initGUI();
         initEvents();
         main();
+    });
+
+    onDestroy(() => {
+        gui.destroy();
     });
 </script>
 

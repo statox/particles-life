@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { onDestroy, onMount } from 'svelte';
     import * as webglUtils from './webglUtils';
     import * as drawCells from './drawCells';
     import { getInitialData } from './simulationUtils';
     import * as updateCells from './updateCells';
     import type { InitialCellsMode } from './simulationUtils';
+    import type { GUI } from 'dat.gui';
 
     const mouseCoordinates = { x: 0, y: 0 };
     let mouseMode: updateCells.MouseMode = 0;
@@ -44,11 +45,12 @@
         'Reload progam': () => main()
     };
 
+    let gui: GUI;
     const initGUI = async () => {
         // Imported here to avoid "window is not defined" error
         // https://github.com/dataarts/dat.gui/issues/271
         const dat = await import('dat.gui');
-        const gui = new dat.GUI();
+        gui = new dat.GUI();
         gui.add(settings, 'Pause').listen();
         gui.add(settings, 'Infinite source').listen();
 
@@ -221,6 +223,10 @@
             event.preventDefault();
             return false;
         });
+    });
+
+    onDestroy(() => {
+        gui.destroy();
     });
 
     const resetTexture = (mode: InitialCellsMode) => {
