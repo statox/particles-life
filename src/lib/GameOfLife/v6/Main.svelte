@@ -124,46 +124,9 @@
 
         const zoomFolder = gui.addFolder('Zoom');
         zoomFolder.open();
-        zoomFolder
-            .add(settings.zoom, 'level', 1, 50, 0.1)
-            .name('Level')
-            .onChange(function (newZoomLevel) {
-                const levelDiff = newZoomLevel - settings.zoom.previousLevel;
-
-                if (!settings.zoom.xController || !settings.zoom.yController || levelDiff === 0) {
-                    return;
-                }
-
-                // When zoom level changes we need to update the panning to keep looking
-                // at the same place in the texture
-
-                const maxPan = 1 - 1 / settings.zoom.previousLevel;
-                const newMaxPan = 1 - 1 / newZoomLevel;
-                settings.zoom.xController.max(newMaxPan);
-                settings.zoom.xController.min(0);
-                settings.zoom.yController.max(newMaxPan);
-                settings.zoom.yController.min(0);
-
-                const previousRatio = {
-                    x: settings.zoom.x / maxPan,
-                    y: settings.zoom.y / maxPan
-                };
-
-                // The second case newMaxPan/2 handles the case where previousZoomLevel was 1
-                // so we didn't have a reference point to zoom in. In this case we zoom into the middle
-                settings.zoom.x = newMaxPan * previousRatio.x || newMaxPan / 2;
-                settings.zoom.y = newMaxPan * previousRatio.y || newMaxPan / 2;
-
-                settings.zoom.previousLevel = newZoomLevel;
-            });
-        settings.zoom.xController = zoomFolder
-            .add(settings.zoom, 'x', 0, 0, 0.01)
-            .name('X offset')
-            .listen();
-        settings.zoom.yController = zoomFolder
-            .add(settings.zoom, 'y', 0, 0, 0.01)
-            .name('Y offset')
-            .listen();
+        zoomFolder.add(settings.zoom, 'level', 1, 50, 0.1).name('Level');
+        zoomFolder.add(settings.zoom, 'x', 0, 1, 0.01).name('X offset').listen();
+        zoomFolder.add(settings.zoom, 'y', 0, 1, 0.01).name('Y offset').listen();
     };
 
     const initEvents = () => {
@@ -204,22 +167,6 @@
             mouseCoordinates.x = mousePos.x / screenDimensions.width;
             mouseCoordinates.y = mousePos.y / screenDimensions.height;
         });
-
-        setInterval(() => {
-            const step = 0.005;
-            if (mouseCoordinates.x < 0.1 && settings.zoom.x >= step) {
-                settings.zoom.x -= step;
-            }
-            if (mouseCoordinates.x > 0.9 && settings.zoom.x < 1 - 1 / settings.zoom.level) {
-                settings.zoom.x += step;
-            }
-            if (mouseCoordinates.y < 0.1 && settings.zoom.y >= step) {
-                settings.zoom.y -= step;
-            }
-            if (mouseCoordinates.y > 0.9 && settings.zoom.y < 1 - 1 / settings.zoom.level) {
-                settings.zoom.y += step;
-            }
-        }, 50);
 
         canvas.addEventListener('mousedown', (event) => {
             event.preventDefault();
@@ -280,7 +227,11 @@
                 width: settings.grid.worldWidth,
                 height: settings.grid.worldHeight
             },
-            zoom: settings.zoom.level
+            zoom: settings.zoom.level,
+            zoomPoint: {
+                x: settings.zoom.x,
+                y: settings.zoom.y
+            }
         });
 
         animationFrameRequest = requestAnimationFrame(frameAction);

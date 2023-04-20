@@ -43,6 +43,7 @@ export function iteration(params: {
     screenDimensions: { width: number; height: number };
     worldDimensions: { width: number; height: number };
     zoom: number;
+    zoomPoint: { x: number; y: number };
 }) {
     const {
         infiniteSource,
@@ -52,7 +53,8 @@ export function iteration(params: {
         pause,
         screenDimensions,
         worldDimensions,
-        zoom
+        zoom,
+        zoomPoint
     } = params;
 
     cellsTex = updateCells.runProgram({
@@ -78,7 +80,8 @@ export function iteration(params: {
         gl,
         screenTex,
         worldDimensions,
-        zoom
+        zoom,
+        zoomPoint
     });
 }
 
