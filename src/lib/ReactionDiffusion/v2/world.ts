@@ -1,12 +1,21 @@
 import type p5 from 'p5';
 import type { Cell, Coordinates, Dimensions } from './types';
 
+let world: Cell[][];
+let next: Cell[][];
+
 export const initWorld = (worldDimensions: Dimensions) => {
-    const world: Cell[][] = [];
+    world = [];
+    next = [];
     for (let y = 0; y < worldDimensions.height; y++) {
         world.push([]);
+        next.push([]);
         for (let x = 0; x < worldDimensions.width; x++) {
             world[world.length - 1].push({
+                A: 1,
+                B: 0
+            });
+            next[world.length - 1].push({
                 A: 1,
                 B: 0
             });
@@ -27,7 +36,7 @@ export const initWorld = (worldDimensions: Dimensions) => {
     return world;
 };
 
-export const drawWorld = (p5: p5, world: Cell[][]) => {
+export const drawWorld = (p5: p5) => {
     const cellDimensions = {
         width: p5.width / world[0].length,
         height: p5.height / world.length
@@ -52,11 +61,8 @@ const Da = 1.0;
 const Db = 0.5;
 const f = 0.055;
 const k = 0.062;
-export const updateWorld = (world: Cell[][]): Cell[][] => {
-    const newWorld: Cell[][] = [];
-
+export const updateWorld = (): Cell[][] => {
     for (let y = 0; y < world.length; y++) {
-        newWorld.push([]);
         for (let x = 0; x < world[0].length; x++) {
             const { A, B } = world[y][x];
 
@@ -66,14 +72,18 @@ export const updateWorld = (world: Cell[][]): Cell[][] => {
             const newA = A + (Da * La - A * B * B + f * (1 - A));
             const newB = B + (Db * Lb + A * B * B - (k + f) * B);
 
-            newWorld[y].push({
+            next[y][x] = {
                 A: newA,
                 B: newB
-            });
+            };
         }
     }
 
-    return newWorld;
+    const tmp = world;
+    world = next;
+    next = tmp;
+
+    return world;
 };
 
 type NeighborWithWeight = { coord: Coordinates; weight: number };
