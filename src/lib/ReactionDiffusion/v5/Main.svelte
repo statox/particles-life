@@ -6,22 +6,21 @@
     import type { GUI } from 'dat.gui';
     import REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
+    import { PARAMETERS_CLASSES } from './pearsonClasses';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
     };
 
-    const settings = {
-        Da: 1,
-        Db: 0.5,
-        f: 0.055,
-        k: 0.062
-        // f: 0.0367,
-        // k: 0.0649
-    };
     const controls = {
+        presetParams: 4,
         reset: () => initProgram()
+    };
+
+    const simulationParameters = {
+        f: PARAMETERS_CLASSES[controls.presetParams].f,
+        k: PARAMETERS_CLASSES[controls.presetParams].k
     };
 
     let gui: GUI;
@@ -37,12 +36,19 @@
 
         const programFolder = gui.addFolder('Program');
         programFolder.open();
-        programFolder.add(settings, 'Da').name('Diffusion rate Red');
-        programFolder.add(settings, 'Db').name('Diffusion rate Green');
-        programFolder.add(settings, 'f').name('Feed rate');
-        programFolder.add(settings, 'k').name('Kill rate');
+        programFolder.add(simulationParameters, 'f').name('Feed rate').listen();
+        programFolder.add(simulationParameters, 'k').name('Kill rate').listen();
 
         programFolder.add(controls, 'reset').name('Reset simulation');
+
+        const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {
+            options[option.name] = index;
+            return options;
+        }, {} as { [name: string]: number });
+        programFolder.add(controls, 'presetParams', presetParamsOptions).onFinishChange(() => {
+            simulationParameters.f = PARAMETERS_CLASSES[controls.presetParams].f;
+            simulationParameters.k = PARAMETERS_CLASSES[controls.presetParams].k;
+        });
     };
 
     const initProgram = () => {
@@ -189,7 +195,11 @@ void main() {
         regl.frame(() => {
             setupQuad(() => {
                 regl.draw();
-                updateLife(settings);
+                updateLife({
+                    Da: 1,
+                    Db: 0.5,
+                    ...simulationParameters
+                });
             });
         });
     };
