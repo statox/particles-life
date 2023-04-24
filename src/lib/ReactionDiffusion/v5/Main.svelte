@@ -3,43 +3,81 @@
 -  https://regl-project.github.io/regl/www/gallery/sprites.js.html
 -->
 <script lang="ts">
+    import type { GUI } from 'dat.gui';
     import REGL from 'regl';
-    import { onMount } from 'svelte';
+    import { onDestroy, onMount } from 'svelte';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
     };
 
-    const RADIUS = 2 ** 10;
-    const seedRadius = RADIUS * 0.05;
+    const settings = {
+        Da: 1,
+        Db: 0.5,
+        f: 0.055,
+        k: 0.062
+        // f: 0.0367,
+        // k: 0.0649
+    };
+    const controls = {
+        reset: () => initProgram()
+    };
 
-    const INITIAL_CONDITIONS = Array(RADIUS * RADIUS)
-        .fill(0)
-        .map((_, index) => {
-            const y = Math.floor(index / RADIUS);
-            const x = index % RADIUS;
-            const dist = Math.hypot(RADIUS / 2 - x, RADIUS / 2 - y);
-            if (dist < seedRadius) {
-                return [0, 1, 0, 1];
-            }
+    let gui: GUI;
+    let regl: REGL.Regl;
 
-            if (Math.random() < 0.01) {
-                return [0, 1, 0, 1];
-            }
-            return [1, 0, 0, 1];
-        })
-        .flat();
+    const initGUI = async () => {
+        // Imported here to avoid "window is not defined" error
+        // https://github.com/dataarts/dat.gui/issues/271
+        const dat = await import('dat.gui');
+        gui = new dat.GUI();
 
-    onMount(() => {
+        gui.domElement.setAttribute('style', 'background-color: black');
+
+        const programFolder = gui.addFolder('Program');
+        programFolder.open();
+        programFolder.add(settings, 'Da').name('Diffusion rate Red');
+        programFolder.add(settings, 'Db').name('Diffusion rate Green');
+        programFolder.add(settings, 'f').name('Feed rate');
+        programFolder.add(settings, 'k').name('Kill rate');
+
+        programFolder.add(controls, 'reset').name('Reset simulation');
+    };
+
+    const initProgram = () => {
         const canvas = document.getElementById('canvas') as HTMLCanvasElement;
         if (!canvas) {
             throw new Error('Canvas container not ready');
         }
-        const regl = REGL({
+        if (regl) {
+            regl.destroy();
+        }
+        regl = REGL({
             extensions: ['OES_texture_float'],
             canvas
         });
+
+        const RADIUS = 2 ** 11;
+        const seedRadius = RADIUS * 0.05;
+
+        const INITIAL_CONDITIONS = Array(RADIUS * RADIUS)
+            .fill(0)
+            .map((_, index) => {
+                const y = Math.floor(index / RADIUS);
+                const x = index % RADIUS;
+                const dist = Math.hypot(RADIUS / 2 - x, RADIUS / 2 - y);
+                if (dist < seedRadius) {
+                    return [0, 1, 0, 1];
+                }
+
+                if (Math.random() < 0.01) {
+                    return [0, 1, 0, 1];
+                }
+                return [1, 0, 0, 1];
+            })
+            .flat();
+
         const state = Array(2)
             .fill(0)
             .map(() =>
@@ -151,14 +189,19 @@ void main() {
         regl.frame(() => {
             setupQuad(() => {
                 regl.draw();
-                updateLife({
-                    Da: 1,
-                    Db: 0.5,
-                    f: 0.055,
-                    k: 0.062
-                });
+                updateLife(settings);
             });
         });
+    };
+
+    onMount(() => {
+        initGUI();
+        initProgram();
+    });
+
+    onDestroy(() => {
+        gui.destroy();
+        regl.destroy();
     });
 </script>
 
