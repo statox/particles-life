@@ -3,6 +3,7 @@
  -  https://regl-project.github.io/regl/www/gallery/sprites.js.html
 -->
 <script lang="ts">
+    // @ts-nocheck
     import REGL from 'regl';
     // import mouse from 'mouse-change';
 
@@ -57,7 +58,7 @@
 
         depth: { enable: false },
 
-        framebuffer: ({ tick }) => SPRITES[(tick + 1) % 2],
+        framebuffer: (params: { tick: number }) => SPRITES[(params.tick + 1) % 2],
 
         uniforms: {
             state: ({ tick }) => SPRITES[tick % 2],
@@ -114,7 +115,7 @@
         },
 
         primitive: 'points',
-        offset: (context, { count }) => N * N - count,
+        offset: (_, params: { count: number }) => N * N - params.count,
         elements: null,
         count: regl.prop('count')
     });
