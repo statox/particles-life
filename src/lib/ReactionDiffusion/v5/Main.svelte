@@ -109,10 +109,10 @@ void main() {
 
             framebuffer: (params: { tick: number }) => state[(params.tick + 1) % 2],
             uniforms: {
-                Da: 1,
-                Db: 0.5,
-                f: 0.055,
-                k: 0.062
+                Da: regl.prop('Da'),
+                Db: regl.prop('Db'),
+                f: regl.prop('f'),
+                k: regl.prop('k')
             }
         });
 
@@ -151,7 +151,12 @@ void main() {
         regl.frame(() => {
             setupQuad(() => {
                 regl.draw();
-                updateLife();
+                updateLife({
+                    Da: 1,
+                    Db: 0.5,
+                    f: 0.055,
+                    k: 0.062
+                });
             });
         });
     });
