@@ -47,7 +47,7 @@ void main() {
     float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
 
     gl_FragColor = vec4(newA, newB, 0, 1);
-}`,framebuffer:({tick:a})=>f[(a+1)%2]}),h=s({frag:`
+}`,framebuffer:a=>f[(a.tick+1)%2]}),h=s({frag:`
 precision mediump float;
 uniform sampler2D prevState;
 varying vec2 uv;
