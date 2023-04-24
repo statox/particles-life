@@ -57,7 +57,13 @@
         const updateLife = regl({
             frag: `
 precision mediump float;
+
 uniform sampler2D prevState;
+uniform float Da;
+uniform float Db;
+uniform float f;
+uniform float k;
+
 varying vec2 uv;
 
 vec2 laplacianDiff() {
@@ -88,11 +94,6 @@ vec2 laplacianDiff() {
 }
 
 void main() {
-    float Da = 1.0;
-    float Db = 0.5;
-    float f = 0.055;
-    float k = 0.062;
-
     float A = texture2D(prevState, uv).r;
     float B = texture2D(prevState, uv).g;
 
@@ -106,7 +107,13 @@ void main() {
     gl_FragColor = vec4(newA, newB, 0, 1);
 }`,
 
-            framebuffer: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            framebuffer: (params: { tick: number }) => state[(params.tick + 1) % 2],
+            uniforms: {
+                Da: 1,
+                Db: 0.5,
+                f: 0.055,
+                k: 0.062
+            }
         });
 
         const setupQuad = regl({
