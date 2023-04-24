@@ -17,7 +17,8 @@
     const controls = {
         presetParams: 4,
         initialConditions: 'randomSpots',
-        reset: () => initProgram()
+        reset: () => initProgram(),
+        pause: false
     };
 
     const info = {
@@ -43,6 +44,7 @@
         gui.add(simulationParameters, 'f').name('Feed rate').listen();
         gui.add(simulationParameters, 'k').name('Kill rate').listen();
 
+        gui.add(controls, 'pause').name('Pause');
         gui.add(controls, 'reset').name('Reset simulation');
 
         const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {
@@ -65,6 +67,19 @@
 
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
+    };
+
+    const initEvents = () => {
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Space') {
+                controls.pause = !controls.pause;
+                return event.preventDefault();
+            }
+            if (event.code === 'KeyR') {
+                initProgram();
+                return event.preventDefault();
+            }
+        });
     };
 
     const initProgram = () => {
@@ -202,9 +217,12 @@ void main() {
         });
 
         regl.frame(() => {
-            info.iteration++;
             setupQuad(() => {
                 regl.draw();
+                if (controls.pause) {
+                    return;
+                }
+                info.iteration++;
                 updateLife({
                     Da: 1,
                     Db: 0.5,
@@ -216,6 +234,7 @@ void main() {
 
     onMount(() => {
         initGUI();
+        initEvents();
         initProgram();
     });
 
