@@ -20,6 +20,10 @@
         reset: () => initProgram()
     };
 
+    const info = {
+        iteration: 0
+    };
+
     const simulationParameters = {
         f: PARAMETERS_CLASSES[controls.presetParams].f,
         k: PARAMETERS_CLASSES[controls.presetParams].k
@@ -58,6 +62,9 @@
         gui.add(controls, 'initialConditions', initialConditionsOptions).onFinishChange(
             controls.reset
         );
+
+        const iterationController = gui.add(info, 'iteration').listen();
+        iterationController.domElement.style.pointerEvents = 'none';
     };
 
     const initProgram = () => {
@@ -72,6 +79,8 @@
             extensions: ['OES_texture_float'],
             canvas
         });
+
+        info.iteration = 0;
 
         const RADIUS = 2 ** 11;
 
@@ -193,6 +202,7 @@ void main() {
         });
 
         regl.frame(() => {
+            info.iteration++;
             setupQuad(() => {
                 regl.draw();
                 updateLife({
