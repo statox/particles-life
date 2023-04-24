@@ -6,6 +6,7 @@
     import type { GUI } from 'dat.gui';
     import REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
+    import { middleCircleAndRandomSpots, middleSpot, randomSpots } from './initialConditions';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
 
     const screenDimensions = {
@@ -15,6 +16,7 @@
 
     const controls = {
         presetParams: 4,
+        initialConditions: 'randomSpots',
         reset: () => initProgram()
     };
 
@@ -34,21 +36,28 @@
 
         gui.domElement.setAttribute('style', 'background-color: black');
 
-        const programFolder = gui.addFolder('Program');
-        programFolder.open();
-        programFolder.add(simulationParameters, 'f').name('Feed rate').listen();
-        programFolder.add(simulationParameters, 'k').name('Kill rate').listen();
+        gui.add(simulationParameters, 'f').name('Feed rate').listen();
+        gui.add(simulationParameters, 'k').name('Kill rate').listen();
 
-        programFolder.add(controls, 'reset').name('Reset simulation');
+        gui.add(controls, 'reset').name('Reset simulation');
 
         const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {
             options[option.name] = index;
             return options;
         }, {} as { [name: string]: number });
-        programFolder.add(controls, 'presetParams', presetParamsOptions).onFinishChange(() => {
+        gui.add(controls, 'presetParams', presetParamsOptions).onFinishChange(() => {
             simulationParameters.f = PARAMETERS_CLASSES[controls.presetParams].f;
             simulationParameters.k = PARAMETERS_CLASSES[controls.presetParams].k;
         });
+
+        const initialConditionsOptions = {
+            'Random spots': 'randomSpots',
+            'Middle spot': 'middleSpot',
+            'Middle + random': 'middleCircleAndRandomSpots'
+        };
+        gui.add(controls, 'initialConditions', initialConditionsOptions).onFinishChange(
+            controls.reset
+        );
     };
 
     const initProgram = () => {
@@ -65,24 +74,15 @@
         });
 
         const RADIUS = 2 ** 11;
-        const seedRadius = RADIUS * 0.05;
 
-        const INITIAL_CONDITIONS = Array(RADIUS * RADIUS)
-            .fill(0)
-            .map((_, index) => {
-                const y = Math.floor(index / RADIUS);
-                const x = index % RADIUS;
-                const dist = Math.hypot(RADIUS / 2 - x, RADIUS / 2 - y);
-                if (dist < seedRadius) {
-                    return [0, 1, 0, 1];
-                }
-
-                if (Math.random() < 0.01) {
-                    return [0, 1, 0, 1];
-                }
-                return [1, 0, 0, 1];
-            })
-            .flat();
+        let INITIAL_CONDITIONS: number[];
+        if (controls.initialConditions === 'randomSpots') {
+            INITIAL_CONDITIONS = randomSpots(RADIUS, 0.001);
+        } else if (controls.initialConditions === 'middleCircleAndRandomSpots') {
+            INITIAL_CONDITIONS = middleCircleAndRandomSpots(RADIUS, 0.005, 0.05);
+        } else {
+            INITIAL_CONDITIONS = middleSpot(RADIUS, 0.02);
+        }
 
         const state = Array(2)
             .fill(0)
