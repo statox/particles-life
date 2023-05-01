@@ -10,7 +10,6 @@
     import { PARAMETERS_CLASSES } from './pearsonClasses';
 
     import drawVS from './glsl/draw.vert.glsl';
-    import drawFS from './glsl/draw.frag.glsl';
     import updateFS from './glsl/update.frag.glsl';
     import colorsFS from './glsl/colors.frag.glsl';
 
@@ -156,9 +155,16 @@
 
         const updateLife = regl({
             frag: updateFS,
+            vert: drawVS,
+
+            attributes: {
+                position: [-4, -4, 4, -4, 0, 4]
+            },
+            count: 3,
 
             framebuffer: (params: { tick: number }) => state[(params.tick + 1) % 2],
             uniforms: {
+                prevState: (params: { tick: number }) => state[params.tick % 2],
                 Da: regl.prop('Da'),
                 Db: regl.prop('Db'),
                 f: regl.prop('f'),
@@ -172,38 +178,20 @@
             }
         });
 
-        const setupQuad = regl({
-            frag: drawFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-
-            uniforms: {
-                prevState: ({ tick }) => state[tick % 2]
-            },
-
-            depth: { enable: false },
-
-            count: 3
-        });
-
         regl.frame(() => {
-            setupQuad(() => {
-                if (!controls.pause) {
-                    info.iteration++;
-                }
-                updateLife({
-                    Da: 1,
-                    Db: 0.5,
-                    pauseSimulation: controls.pause,
-                    mousePosition: [mouseState.x, mouseState.y],
-                    penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
-                    penIsActive: mouseState.pressedLeft,
-                    eraserIsActive: mouseState.pressedRight,
-                    ...simulationParameters
-                });
+            if (!controls.pause) {
+                info.iteration++;
+            }
+
+            updateLife({
+                Da: 1,
+                Db: 0.5,
+                pauseSimulation: controls.pause,
+                mousePosition: [mouseState.x, mouseState.y],
+                penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
+                penIsActive: mouseState.pressedLeft,
+                eraserIsActive: mouseState.pressedRight,
+                ...simulationParameters
             });
 
             doColors({
