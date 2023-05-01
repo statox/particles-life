@@ -12,6 +12,7 @@
     import drawVS from './glsl/draw.vert.glsl';
     import drawFS from './glsl/draw.frag.glsl';
     import updateFS from './glsl/update.frag.glsl';
+    import colorsFS from './glsl/colors.frag.glsl';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -139,6 +140,20 @@
                 })
             );
 
+        const doColors = regl({
+            frag: colorsFS,
+            vert: drawVS,
+
+            attributes: {
+                position: [-4, -4, 4, -4, 0, 4]
+            },
+            count: 3,
+            uniforms: {
+                iteration: regl.prop('iteration'),
+                prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            }
+        });
+
         const updateLife = regl({
             frag: updateFS,
 
@@ -189,7 +204,10 @@
                     eraserIsActive: mouseState.pressedRight,
                     ...simulationParameters
                 });
-                regl.draw();
+            });
+
+            doColors({
+                iteration: info.iteration
             });
         });
     };
