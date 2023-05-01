@@ -18,11 +18,20 @@
         height: window.innerHeight - 10
     };
 
+    const WORLD_SIZE = 11; // Used as a power of 2
+
     const controls = {
         presetParams: 4,
         initialConditions: 'randomSpots',
         reset: () => initProgram(),
         pause: false
+    };
+
+    const mouseState = {
+        pressed: false,
+        x: 0,
+        y: 0,
+        penSize: 3
     };
 
     const info = {
@@ -71,6 +80,8 @@
 
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
+
+        gui.add(mouseState, 'penSize', 1, WORLD_SIZE, 1).name('Pen size');
     };
 
     const initEvents = () => {
@@ -91,6 +102,7 @@
         if (!canvas) {
             throw new Error('Canvas container not ready');
         }
+
         if (regl) {
             regl.destroy();
         }
@@ -101,7 +113,7 @@
 
         info.iteration = 0;
 
-        const RADIUS = 2 ** 11;
+        const RADIUS = 2 ** WORLD_SIZE;
 
         let INITIAL_CONDITIONS: number[];
         if (controls.initialConditions === 'randomSpots') {
@@ -135,7 +147,10 @@
                 Db: regl.prop('Db'),
                 f: regl.prop('f'),
                 k: regl.prop('k'),
-                radius: RADIUS
+                radius: RADIUS,
+                mousePosition: regl.prop('mousePosition'),
+                penRadius: regl.prop('penRadius'),
+                penIsActive: regl.prop('penIsActive')
             }
         });
 
@@ -166,10 +181,28 @@
                 updateLife({
                     Da: 1,
                     Db: 0.5,
+                    mousePosition: [mouseState.x, mouseState.y],
+                    penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
+                    penIsActive: mouseState.pressed,
                     ...simulationParameters
                 });
             });
         });
+    };
+
+    const handleMousemove = (event: any) => {
+        if (!event.currentTarget) {
+            throw new Error('No target for the onmousemove event');
+        }
+        if (!event.currentTarget.width || !event.currentTarget.height) {
+            throw new Error('No target dimensions for the onmousemove event target');
+        }
+        const { x, y } = event;
+        const { width, height } = event.currentTarget;
+        const relX = x / width;
+        const relY = (height - y) / height;
+        mouseState.x = relX;
+        mouseState.y = relY;
     };
 
     onMount(() => {
@@ -184,7 +217,14 @@
     });
 </script>
 
-<canvas id="canvas" width={screenDimensions.width} height={screenDimensions.height} />
+<canvas
+    on:mousemove={handleMousemove}
+    on:mousedown={() => (mouseState.pressed = true)}
+    on:mouseup={() => (mouseState.pressed = false)}
+    id="canvas"
+    width={screenDimensions.width}
+    height={screenDimensions.height}
+/>
 
 <style>
     #canvas {

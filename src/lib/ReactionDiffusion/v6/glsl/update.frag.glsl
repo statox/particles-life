@@ -7,6 +7,10 @@ uniform float Db;
 uniform float f;
 uniform float k;
 
+uniform vec2 mousePosition;
+uniform bool penIsActive;
+uniform float penRadius;
+
 varying vec2 uv;
 
 vec2 laplacianDiff() {
@@ -47,5 +51,9 @@ void main() {
     float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
     float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
 
+    if (penIsActive && distance(uv, mousePosition) < penRadius) {
+        newA = 0.0;
+        newB = 1.0;
+    }
     gl_FragColor = vec4(newA, newB, 0, 1);
 }
