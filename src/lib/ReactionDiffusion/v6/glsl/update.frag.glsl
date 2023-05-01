@@ -1,5 +1,6 @@
 precision mediump float;
 
+uniform float radius;
 uniform sampler2D prevState;
 uniform float Da;
 uniform float Db;
@@ -12,25 +13,25 @@ vec2 laplacianDiff() {
     vec2 r = vec2(0.0, 0.0);
 
     // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(${RADIUS})).rg * 0.05;
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
     // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(${RADIUS})).rg * 0.2;
+    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
     // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(${RADIUS})).rg * 0.05;
+    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
 
     // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(${RADIUS})).rg * 0.2;
+    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
     // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(${RADIUS})).rg * -1.0;
+    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
     // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(${RADIUS})).rg * 0.2;
+    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
 
     // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(${RADIUS})).rg * 0.05;
+    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
     // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(${RADIUS})).rg * 0.2;
+    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
     // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(${RADIUS})).rg * 0.05;
+    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
 
     return r;
 }
