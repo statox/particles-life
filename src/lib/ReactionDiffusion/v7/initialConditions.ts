@@ -22,6 +22,15 @@ export const middleCircleAndRandomSpots = (
         .flat();
 };
 
+export const empty = (radius: number) => {
+    return Array(radius * radius)
+        .fill(0)
+        .map(() => {
+            return [0, 0, 0, 1];
+        })
+        .flat();
+};
+
 export const randomSpots = (radius: number, birthChance: number) => {
     return Array(radius * radius)
         .fill(0)
