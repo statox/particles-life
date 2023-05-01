@@ -9,6 +9,9 @@
     import { middleCircleAndRandomSpots, middleSpot, randomSpots } from './initialConditions';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
 
+    import drawVS from './glsl/draw.vert.glsl';
+    import drawFS from './glsl/draw.frag.glsl';
+
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
@@ -185,23 +188,8 @@ void main() {
         });
 
         const setupQuad = regl({
-            frag: `
-precision mediump float;
-uniform sampler2D prevState;
-varying vec2 uv;
-void main() {
-    vec2 state = texture2D(prevState, uv).rg;
-    gl_FragColor = vec4(state, 0, 1);
-}`,
-
-            vert: `
-precision mediump float;
-attribute vec2 position;
-varying vec2 uv;
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}`,
+            frag: drawFS,
+            vert: drawVS,
 
             attributes: {
                 position: [-4, -4, 4, -4, 0, 4]
