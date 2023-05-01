@@ -2,6 +2,7 @@ precision mediump float;
 
 uniform float radius;
 uniform sampler2D prevState;
+uniform bool pauseSimulation;
 uniform float Da;
 uniform float Db;
 uniform float f;
@@ -53,11 +54,12 @@ void main() {
     float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
 
     if (penIsActive && distance(uv, mousePosition) < penRadius) {
-        newA = 0.0;
-        newB = 1.0;
+        gl_FragColor = vec4(0.0, 1.0, 0, 1);
     } else if (eraserIsActive && distance(uv, mousePosition) < penRadius) {
-        newA = 1.0;
-        newB = 0.0;
+        gl_FragColor = vec4(1.0, 0.0, 0, 1);
+    } else if (pauseSimulation) {
+        gl_FragColor = vec4(A, B, 0, 1);
+    } else {
+        gl_FragColor = vec4(newA, newB, 0, 1);
     }
-    gl_FragColor = vec4(newA, newB, 0, 1);
 }

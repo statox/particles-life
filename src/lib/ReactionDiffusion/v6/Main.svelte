@@ -149,6 +149,7 @@
                 f: regl.prop('f'),
                 k: regl.prop('k'),
                 radius: RADIUS,
+                pauseSimulation: regl.prop('pauseSimulation'),
                 mousePosition: regl.prop('mousePosition'),
                 penRadius: regl.prop('penRadius'),
                 penIsActive: regl.prop('penIsActive'),
@@ -176,13 +177,13 @@
         regl.frame(() => {
             setupQuad(() => {
                 regl.draw();
-                if (controls.pause) {
-                    return;
+                if (!controls.pause) {
+                    info.iteration++;
                 }
-                info.iteration++;
                 updateLife({
                     Da: 1,
                     Db: 0.5,
+                    pauseSimulation: controls.pause,
                     mousePosition: [mouseState.x, mouseState.y],
                     penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
                     penIsActive: mouseState.pressedLeft,
