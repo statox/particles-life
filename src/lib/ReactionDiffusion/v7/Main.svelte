@@ -176,7 +176,6 @@
 
         regl.frame(() => {
             setupQuad(() => {
-                regl.draw();
                 if (!controls.pause) {
                     info.iteration++;
                 }
@@ -190,6 +189,7 @@
                     eraserIsActive: mouseState.pressedRight,
                     ...simulationParameters
                 });
+                regl.draw();
             });
         });
     };
@@ -201,7 +201,11 @@
         if (!event.currentTarget.width || !event.currentTarget.height) {
             throw new Error('No target dimensions for the onmousemove event target');
         }
-        const { x, y } = event;
+
+        var elementRect = event.currentTarget.getBoundingClientRect();
+        const x = event.clientX - elementRect.left;
+        const y = event.clientY - elementRect.top;
+
         const { width, height } = event.currentTarget;
         const relX = x / width;
         const relY = (height - y) / height;
