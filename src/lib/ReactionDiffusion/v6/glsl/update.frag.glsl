@@ -9,6 +9,7 @@ uniform float k;
 
 uniform vec2 mousePosition;
 uniform bool penIsActive;
+uniform bool eraserIsActive;
 uniform float penRadius;
 
 varying vec2 uv;
@@ -54,6 +55,9 @@ void main() {
     if (penIsActive && distance(uv, mousePosition) < penRadius) {
         newA = 0.0;
         newB = 1.0;
+    } else if (eraserIsActive && distance(uv, mousePosition) < penRadius) {
+        newA = 1.0;
+        newB = 0.0;
     }
     gl_FragColor = vec4(newA, newB, 0, 1);
 }

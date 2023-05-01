@@ -28,7 +28,8 @@
     };
 
     const mouseState = {
-        pressed: false,
+        pressedLeft: false,
+        pressedRight: false,
         x: 0,
         y: 0,
         penSize: 3
@@ -150,7 +151,8 @@
                 radius: RADIUS,
                 mousePosition: regl.prop('mousePosition'),
                 penRadius: regl.prop('penRadius'),
-                penIsActive: regl.prop('penIsActive')
+                penIsActive: regl.prop('penIsActive'),
+                eraserIsActive: regl.prop('eraserIsActive')
             }
         });
 
@@ -183,7 +185,8 @@
                     Db: 0.5,
                     mousePosition: [mouseState.x, mouseState.y],
                     penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
-                    penIsActive: mouseState.pressed,
+                    penIsActive: mouseState.pressedLeft,
+                    eraserIsActive: mouseState.pressedRight,
                     ...simulationParameters
                 });
             });
@@ -205,6 +208,22 @@
         mouseState.y = relY;
     };
 
+    const handleMouseButton = (event: MouseEvent) => {
+        if (![0, 2].includes(event.button)) {
+            return;
+        }
+        if (!['mouseup', 'mousedown'].includes(event.type)) {
+            return;
+        }
+        let newState = event.type === 'mousedown';
+        if (event.button === 0) {
+            mouseState.pressedLeft = newState;
+        }
+        if (event.button === 2) {
+            mouseState.pressedRight = newState;
+        }
+    };
+
     onMount(() => {
         initGUI();
         initEvents();
@@ -219,8 +238,9 @@
 
 <canvas
     on:mousemove={handleMousemove}
-    on:mousedown={() => (mouseState.pressed = true)}
-    on:mouseup={() => (mouseState.pressed = false)}
+    on:mousedown|preventDefault={handleMouseButton}
+    on:mouseup={handleMouseButton}
+    on:contextmenu|preventDefault={(e) => e}
     id="canvas"
     width={screenDimensions.width}
     height={screenDimensions.height}
