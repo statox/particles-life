@@ -20,7 +20,7 @@
         height: window.innerHeight - 10
     };
 
-    const WORLD_SIZE = 11; // Used as a power of 2
+    let WORLD_SIZE = 8; // Used as a power of 2
 
     const controls = {
         presetParams: 4,
@@ -98,7 +98,7 @@
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
 
-        gui.add(mouseState, 'penSize', 1, WORLD_SIZE).name('Pen size');
+        gui.add(mouseState, 'penSize', 0, WORLD_SIZE).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
     };
 
@@ -244,6 +244,23 @@
         }
     };
 
+    const reset = () => {
+        if (isNaN(WORLD_SIZE)) {
+            return;
+        }
+        if (WORLD_SIZE > 11) {
+            WORLD_SIZE = 11;
+        }
+        if (WORLD_SIZE < 1) {
+            WORLD_SIZE = 1;
+        }
+        gui?.destroy();
+        regl?.destroy();
+
+        initGUI();
+        initProgram();
+    };
+
     onMount(() => {
         initGUI();
         initEvents();
@@ -264,6 +281,10 @@
         simulationParameters.k = k;
     }}
 />
+<div>
+    <label for="worldSize">World Size:</label>
+    <input id="worldSize" bind:value={WORLD_SIZE} type="number" step="1" on:change={reset} />
+</div>
 <canvas
     on:mousemove={handleMousemove}
     on:mousedown|preventDefault={handleMouseButton}
