@@ -23,7 +23,7 @@
 
     const controls = {
         presetParams: 4,
-        colors: 'blackwhite' as ColorMode,
+        colors: 'lerp' as ColorMode,
         initialConditions: 'randomSpots' as InitialConditionsMode,
         reset: () => initProgram(),
         pause: false
@@ -69,7 +69,8 @@
             'blackwhite',
             'whiteblack',
             'raw',
-            'timebasedblue'
+            'timebasedblue',
+            'lerp'
         ]);
 
         const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {

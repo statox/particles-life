@@ -6,8 +6,15 @@ import colorsTimeBasedBlueFS from './glsl/colors/timeBasedBlue.frag.glsl';
 import colorsGrayscaleFS from './glsl/colors/grayscale.frag.glsl';
 import colorsBlackWhiteFS from './glsl/colors/blackWhite.frag.glsl';
 import colorsWhiteBlackFS from './glsl/colors/whiteBlack.frag.glsl';
+import colorsLerpFS from './glsl/colors/lerp.frag.glsl';
 
-export type ColorMode = 'grayscale' | 'blackwhite' | 'whiteblack' | 'raw' | 'timebasedblue';
+export type ColorMode =
+    | 'lerp'
+    | 'grayscale'
+    | 'blackwhite'
+    | 'whiteblack'
+    | 'raw'
+    | 'timebasedblue';
 const colorCommands: {
     [k: string]: REGL.DrawCommand;
 } = {};
@@ -76,6 +83,21 @@ export const initColorsCommands = (
     });
     colorCommands['timebasedblue'] = regl({
         frag: colorsTimeBasedBlueFS,
+        vert: drawVS,
+
+        attributes: {
+            position: [-4, -4, 4, -4, 0, 4]
+        },
+        count: 3,
+        framebuffer: coloredOuput,
+        uniforms: {
+            iteration: regl.prop('iteration'),
+            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+        }
+    });
+
+    colorCommands['lerp'] = regl({
+        frag: colorsLerpFS,
         vert: drawVS,
 
         attributes: {
