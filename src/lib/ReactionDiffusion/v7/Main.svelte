@@ -72,7 +72,8 @@
             'raw',
             'timebasedblue',
             'lerp',
-            'mrob'
+            'mrob',
+            'redblue'
         ]);
 
         const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {
