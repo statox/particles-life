@@ -6,12 +6,7 @@
     import type { GUI } from 'dat.gui';
     import REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
-    import {
-        empty,
-        middleCircleAndRandomSpots,
-        middleSpot,
-        randomSpots
-    } from './initialConditions';
+    import { getInitialConditions, type InitialConditionsMode } from './initialConditions';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
 
     import drawVS from './glsl/draw.vert.glsl';
@@ -28,7 +23,7 @@
     const controls = {
         presetParams: 4,
         colors: 'blackwhite' as ColorMode,
-        initialConditions: 'randomSpots',
+        initialConditions: 'randomSpots' as InitialConditionsMode,
         reset: () => initProgram(),
         pause: false
     };
@@ -133,16 +128,7 @@
 
         const RADIUS = 2 ** WORLD_SIZE;
 
-        let INITIAL_CONDITIONS: number[];
-        if (controls.initialConditions === 'randomSpots') {
-            INITIAL_CONDITIONS = randomSpots(RADIUS, 0.001);
-        } else if (controls.initialConditions === 'middleCircleAndRandomSpots') {
-            INITIAL_CONDITIONS = middleCircleAndRandomSpots(RADIUS, 0.005, 0.05);
-        } else if (controls.initialConditions === 'empty') {
-            INITIAL_CONDITIONS = empty(RADIUS);
-        } else {
-            INITIAL_CONDITIONS = middleSpot(RADIUS, 0.02);
-        }
+        let INITIAL_CONDITIONS = getInitialConditions(controls.initialConditions, RADIUS);
 
         const state = Array(2)
             .fill(0)

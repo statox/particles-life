@@ -1,4 +1,23 @@
-export const middleCircleAndRandomSpots = (
+export type InitialConditionsMode =
+    | 'empty'
+    | 'randomSpots'
+    | 'middleCircleAndRandomSpots'
+    | 'empty';
+
+export const getInitialConditions = (mode: InitialConditionsMode, radius: number) => {
+    if (mode === 'randomSpots') {
+        return randomSpots(radius, 0.001);
+    }
+    if (mode === 'middleCircleAndRandomSpots') {
+        return middleCircleAndRandomSpots(radius, 0.005, 0.05);
+    }
+    if (mode === 'empty') {
+        return empty(radius);
+    }
+    return middleSpot(radius, 0.02);
+};
+
+const middleCircleAndRandomSpots = (
     radius: number,
     birthChance: number,
     middleSpotRadius: number
@@ -22,7 +41,7 @@ export const middleCircleAndRandomSpots = (
         .flat();
 };
 
-export const empty = (radius: number) => {
+const empty = (radius: number) => {
     return Array(radius * radius)
         .fill(0)
         .map(() => {
@@ -31,7 +50,7 @@ export const empty = (radius: number) => {
         .flat();
 };
 
-export const randomSpots = (radius: number, birthChance: number) => {
+const randomSpots = (radius: number, birthChance: number) => {
     return Array(radius * radius)
         .fill(0)
         .map(() => {
@@ -43,7 +62,7 @@ export const randomSpots = (radius: number, birthChance: number) => {
         .flat();
 };
 
-export const middleSpot = (radius: number, spotRadius: number) => {
+const middleSpot = (radius: number, spotRadius: number) => {
     return Array(radius * radius)
         .fill(0)
         .map((_, index) => {

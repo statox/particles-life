@@ -13,8 +13,6 @@ const colorCommands: {
 } = {};
 
 export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[]) => {
-    console.log({ regl, state });
-
     colorCommands['raw'] = regl({
         frag: colorsRawFS,
         vert: drawVS,
