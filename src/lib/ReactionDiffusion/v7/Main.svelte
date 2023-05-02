@@ -24,7 +24,7 @@
 
     const controls = {
         presetParams: 4,
-        colors: 'lerp' as ColorMode,
+        colors: 'mrob' as ColorMode,
         initialConditions: 'randomSpots' as InitialConditionsMode,
         reset: () => initProgram(),
         pause: false

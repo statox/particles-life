@@ -14,9 +14,12 @@ void main() {
     float A = texture2D(prevState, uv).r;
     float B = texture2D(prevState, uv).g;
 
-    vec3 color1 = vec3(0.0, 0.0, 1.0);
-    vec3 color2 = vec3(1.0, 0.0, 0.0);
-    vec3 result = vec3(A, 0.0, 1.0-A);
+    float red = A; // The more A the redder
+    float blue = 1.0 - A; // The less A the bleuer
+
+    float green = max(A, B) - min(A, B);
+
+    vec3 result = vec3(red, green, blue);
 
     gl_FragColor = vec4(result, 1.0);
 }
