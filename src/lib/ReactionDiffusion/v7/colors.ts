@@ -7,6 +7,7 @@ import colorsGrayscaleFS from './glsl/colors/grayscale.frag.glsl';
 import colorsBlackWhiteFS from './glsl/colors/blackWhite.frag.glsl';
 import colorsWhiteBlackFS from './glsl/colors/whiteBlack.frag.glsl';
 import colorsLerpFS from './glsl/colors/lerp.frag.glsl';
+import colorsMrobFS from './glsl/colors/mrob.frag.glsl';
 
 export type ColorMode =
     | 'lerp'
@@ -14,7 +15,8 @@ export type ColorMode =
     | 'blackwhite'
     | 'whiteblack'
     | 'raw'
-    | 'timebasedblue';
+    | 'timebasedblue'
+    | 'mrob';
 const colorCommands: {
     [k: string]: REGL.DrawCommand;
 } = {};
@@ -98,6 +100,21 @@ export const initColorsCommands = (
 
     colorCommands['lerp'] = regl({
         frag: colorsLerpFS,
+        vert: drawVS,
+
+        attributes: {
+            position: [-4, -4, 4, -4, 0, 4]
+        },
+        count: 3,
+        framebuffer: coloredOuput,
+        uniforms: {
+            iteration: regl.prop('iteration'),
+            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+        }
+    });
+
+    colorCommands['mrob'] = regl({
+        frag: colorsMrobFS,
         vert: drawVS,
 
         attributes: {
