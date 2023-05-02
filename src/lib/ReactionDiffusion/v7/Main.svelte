@@ -43,7 +43,8 @@
         pressedRight: false,
         x: 0,
         y: 0,
-        penSize: 3
+        penSize: 9,
+        penDensity: 0.3
     };
 
     const info = {
@@ -103,6 +104,7 @@
         iterationController.domElement.style.pointerEvents = 'none';
 
         gui.add(mouseState, 'penSize', 1, WORLD_SIZE, 1).name('Pen size');
+        gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
     };
 
     const initEvents = () => {
@@ -247,6 +249,7 @@
                 pauseSimulation: regl.prop('pauseSimulation'),
                 mousePosition: regl.prop('mousePosition'),
                 penRadius: regl.prop('penRadius'),
+                penDensity: regl.prop('penDensity'),
                 penIsActive: regl.prop('penIsActive'),
                 eraserIsActive: regl.prop('eraserIsActive')
             }
@@ -263,6 +266,7 @@
                 pauseSimulation: controls.pause,
                 mousePosition: [mouseState.x, mouseState.y],
                 penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
+                penDensity: mouseState.penDensity,
                 penIsActive: mouseState.pressedLeft,
                 eraserIsActive: mouseState.pressedRight,
                 ...simulationParameters

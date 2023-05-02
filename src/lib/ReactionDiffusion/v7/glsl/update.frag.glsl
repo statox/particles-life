@@ -12,8 +12,14 @@ uniform vec2 mousePosition;
 uniform bool penIsActive;
 uniform bool eraserIsActive;
 uniform float penRadius;
+uniform float penDensity;
 
 varying vec2 uv;
+
+// https://thebookofshaders.com/10/
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
+}
 
 vec2 laplacianDiff() {
     vec2 r = vec2(0.0, 0.0);
@@ -53,9 +59,11 @@ void main() {
     float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
     float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
 
-    if (penIsActive && distance(uv, mousePosition) < penRadius) {
+
+    float rnd = random(uv);
+    if (penIsActive && rnd < penDensity && distance(uv, mousePosition) < penRadius) {
         gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (eraserIsActive && distance(uv, mousePosition) < penRadius) {
+    } else if (eraserIsActive && rnd < penDensity && distance(uv, mousePosition) < penRadius) {
         gl_FragColor = vec4(1.0, 0.0, 0, 1);
     } else if (pauseSimulation) {
         gl_FragColor = vec4(A, B, 0, 1);
