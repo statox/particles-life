@@ -27,6 +27,45 @@
 
         return { f, k };
     };
+    const readMouse = (p5: p5) => {
+        const x = p5.mouseX;
+        const y = p5.mouseY;
+        if (x < 0 || y < 0 || x > p5.width || y > p5.height) {
+            return;
+        }
+        const { f, k } = coordsToFk({ x: p5.mouseX, y: p5.mouseY });
+        onUpdateParams({ f, k });
+    };
+
+    const drawClasses = (p5: p5) => {
+        p5.fill('blue');
+        for (const paramClass of PARAMETERS_CLASSES) {
+            const { x, y } = fkToCoords({ f: paramClass.f, k: paramClass.k });
+            p5.circle(x, y, 8);
+            p5.text(paramClass.name, x - p5.textWidth(paramClass.name) / 2, y - 10);
+        }
+    };
+
+    const drawTarget = (p5: p5) => {
+        p5.fill('red');
+        const { x, y } = fkToCoords({ f, k });
+        p5.text('F', 10, y > 10 ? y - 5 : y + 15);
+        p5.line(0, y, p5.width, y);
+
+        p5.text('K', x < p5.width - 10 ? x + 5 : x - 15, p5.height - 10);
+        p5.line(x, 0, x, p5.height);
+
+        p5.circle(x, y, 10);
+    };
+
+    const drawFKText = (p5: p5) => {
+        const lineF = `F: ${f.toFixed(4)}`;
+        const lineK = `K: ${k.toFixed(4)}`;
+
+        p5.fill('red');
+        p5.text(lineF, p5.width * 0.05, p5.height / 2);
+        p5.text(lineK, p5.width * 0.05, p5.height / 2 + p5.textSize() + 6);
+    };
 
     let _p5: p5;
     const sketch: Sketch = (p5) => {
@@ -43,29 +82,17 @@
         };
 
         p5.draw = () => {
+            p5.background(255);
+            p5.tint(150, 80);
             p5.image(background, 0, 0, p5.width, p5.height);
-            p5.fill('red');
-            for (const paramClass of PARAMETERS_CLASSES) {
-                const { x, y } = fkToCoords({ f: paramClass.f, k: paramClass.k });
-                p5.circle(x, y, 10);
-                p5.text(paramClass.name, x - p5.textWidth(paramClass.name) / 2, y - 10);
-            }
 
-            p5.fill('blue');
-            const { x, y } = fkToCoords({ f, k });
-            p5.line(0, y, p5.width, y);
-            p5.line(x, 0, x, p5.height);
-            p5.circle(x, y, 10);
-        };
+            drawClasses(p5);
+            drawTarget(p5);
+            drawFKText(p5);
 
-        p5.mousePressed = () => {
-            const x = p5.mouseX;
-            const y = p5.mouseY;
-            if (x < 0 || y < 0 || x > p5.width || y > p5.height) {
-                return;
+            if (p5.mouseIsPressed) {
+                readMouse(p5);
             }
-            const { f, k } = coordsToFk({ x: p5.mouseX, y: p5.mouseY });
-            onUpdateParams({ f, k });
         };
     };
 
