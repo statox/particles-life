@@ -3,6 +3,7 @@
 -  https://regl-project.github.io/regl/www/gallery/sprites.js.html
 -->
 <script lang="ts">
+    import FkSelector from './FKSelector.svelte';
     import type { GUI } from 'dat.gui';
     import REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
@@ -34,7 +35,7 @@
         pressedRight: false,
         x: 0,
         y: 0,
-        penSize: 7,
+        penSize: 3,
         penDensity: 0.3
     };
 
@@ -253,6 +254,14 @@
     });
 </script>
 
+<FkSelector
+    f={simulationParameters.f}
+    k={simulationParameters.k}
+    onUpdateParams={({ f, k }) => {
+        simulationParameters.f = f;
+        simulationParameters.k = k;
+    }}
+/>
 <canvas
     on:mousemove={handleMousemove}
     on:mousedown|preventDefault={handleMouseButton}
