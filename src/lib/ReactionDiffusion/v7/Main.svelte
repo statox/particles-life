@@ -12,6 +12,7 @@
     import drawVS from './glsl/draw.vert.glsl';
     import updateFS from './glsl/update.frag.glsl';
     import { doColors, initColorsCommands, type ColorMode } from './colors';
+    import { doCursor, initCursorCommand } from './cursor';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -33,7 +34,7 @@
         pressedRight: false,
         x: 0,
         y: 0,
-        penSize: 9,
+        penSize: 7,
         penDensity: 0.3
     };
 
@@ -93,7 +94,7 @@
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
 
-        gui.add(mouseState, 'penSize', 1, WORLD_SIZE, 1).name('Pen size');
+        gui.add(mouseState, 'penSize', 1, WORLD_SIZE).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
     };
 
@@ -143,8 +144,18 @@
                     depthStencil: false
                 })
             );
+        const coloredOutput = regl.framebuffer({
+            color: regl.texture({
+                radius: RADIUS,
+                data: INITIAL_CONDITIONS,
+                wrap: 'repeat',
+                type: 'float'
+            }),
+            depthStencil: false
+        });
 
-        initColorsCommands(regl, state);
+        initColorsCommands(regl, state, coloredOutput);
+        initCursorCommand(regl, coloredOutput);
 
         const updateLife = regl({
             frag: updateFS,
@@ -190,6 +201,7 @@
             });
 
             doColors(controls.colors, info);
+            doCursor(mouseState, WORLD_SIZE);
         });
     };
 
@@ -255,5 +267,6 @@
         position: absolute;
         right: 25px;
         margin-bottom: 50px;
+        cursor: none;
     }
 </style>

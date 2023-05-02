@@ -12,7 +12,11 @@ const colorCommands: {
     [k: string]: REGL.DrawCommand;
 } = {};
 
-export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[]) => {
+export const initColorsCommands = (
+    regl: REGL.Regl,
+    state: REGL.Framebuffer2D[],
+    coloredOuput: REGL.Framebuffer2D
+) => {
     colorCommands['raw'] = regl({
         frag: colorsRawFS,
         vert: drawVS,
@@ -21,6 +25,7 @@ export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[])
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
+        framebuffer: coloredOuput,
         uniforms: {
             iteration: regl.prop('iteration'),
             prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
@@ -35,6 +40,7 @@ export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[])
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
+        framebuffer: coloredOuput,
         uniforms: {
             iteration: regl.prop('iteration'),
             prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
@@ -48,6 +54,7 @@ export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[])
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
+        framebuffer: coloredOuput,
         uniforms: {
             iteration: regl.prop('iteration'),
             prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
@@ -61,6 +68,7 @@ export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[])
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
+        framebuffer: coloredOuput,
         uniforms: {
             iteration: regl.prop('iteration'),
             prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
@@ -74,6 +82,7 @@ export const initColorsCommands = (regl: REGL.Regl, state: REGL.Framebuffer2D[])
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
+        framebuffer: coloredOuput,
         uniforms: {
             iteration: regl.prop('iteration'),
             prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
