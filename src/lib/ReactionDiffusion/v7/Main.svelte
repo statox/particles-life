@@ -16,12 +16,7 @@
 
     import drawVS from './glsl/draw.vert.glsl';
     import updateFS from './glsl/update.frag.glsl';
-
-    import colorsRawFS from './glsl/colors/raw.frag.glsl';
-    import colorsTimeBasedBlueFS from './glsl/colors/timeBasedBlue.frag.glsl';
-    import colorsGrayscaleFS from './glsl/colors/grayscale.frag.glsl';
-    import colorsBlackWhiteFS from './glsl/colors/blackWhite.frag.glsl';
-    import colorsWhiteBlackFS from './glsl/colors/whiteBlack.frag.glsl';
+    import { doColors, initColorsCommands, type ColorMode } from './colors';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -32,7 +27,7 @@
 
     const controls = {
         presetParams: 4,
-        colors: 'blackWhite',
+        colors: 'blackwhite' as ColorMode,
         initialConditions: 'randomSpots',
         reset: () => initProgram(),
         pause: false
@@ -75,10 +70,10 @@
 
         gui.add(controls, 'colors', [
             'grayscale',
-            'blackWhite',
-            'whiteBlack',
+            'blackwhite',
+            'whiteblack',
             'raw',
-            'timeBasedBlue'
+            'timebasedblue'
         ]);
 
         const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {
@@ -163,71 +158,7 @@
                 })
             );
 
-        const doColorsRaw = regl({
-            frag: colorsRawFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-            count: 3,
-            uniforms: {
-                iteration: regl.prop('iteration'),
-                prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
-            }
-        });
-        const doColorsGrayscale = regl({
-            frag: colorsGrayscaleFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-            count: 3,
-            uniforms: {
-                iteration: regl.prop('iteration'),
-                prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
-            }
-        });
-        const doColorsBlackWhite = regl({
-            frag: colorsBlackWhiteFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-            count: 3,
-            uniforms: {
-                iteration: regl.prop('iteration'),
-                prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
-            }
-        });
-        const doColorsWhiteBlack = regl({
-            frag: colorsWhiteBlackFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-            count: 3,
-            uniforms: {
-                iteration: regl.prop('iteration'),
-                prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
-            }
-        });
-        const doColorsTimeBasedBlue = regl({
-            frag: colorsTimeBasedBlueFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-            count: 3,
-            uniforms: {
-                iteration: regl.prop('iteration'),
-                prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
-            }
-        });
+        initColorsCommands(regl, state);
 
         const updateLife = regl({
             frag: updateFS,
@@ -272,27 +203,7 @@
                 ...simulationParameters
             });
 
-            if (controls.colors === 'grayscale') {
-                doColorsGrayscale({
-                    iteration: info.iteration
-                });
-            } else if (controls.colors === 'timeBasedBlue') {
-                doColorsTimeBasedBlue({
-                    iteration: info.iteration
-                });
-            } else if (controls.colors === 'blackWhite') {
-                doColorsBlackWhite({
-                    iteration: info.iteration
-                });
-            } else if (controls.colors === 'whiteBlack') {
-                doColorsWhiteBlack({
-                    iteration: info.iteration
-                });
-            } else {
-                doColorsRaw({
-                    iteration: info.iteration
-                });
-            }
+            doColors(controls.colors, info);
         });
     };
 
