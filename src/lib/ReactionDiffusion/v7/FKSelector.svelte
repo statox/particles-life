@@ -9,6 +9,7 @@
     export let k: number;
     export let onUpdateParams: (params: { f: number; k: number }) => void;
 
+    let isOpen = true;
     const rangeF = [0.01, 0.09];
     const rangeK = [0.01, 0.08];
 
@@ -79,6 +80,7 @@
         p5.setup = () => {
             _p5 = p5;
             p5.createCanvas(500, 500);
+            p5.frameRate(25);
         };
 
         p5.draw = () => {
@@ -96,7 +98,34 @@
         };
     };
 
+    const toggleDisplay = () => {
+        isOpen = !isOpen;
+        if (!isOpen) {
+            _p5.remove();
+        }
+    };
+
     onDestroy(() => _p5.remove());
 </script>
 
-<P5 {sketch} />
+<div id="container">
+    <button id="toggleButton" on:click={toggleDisplay}>
+        {isOpen ? 'Close' : 'F/K selection'}
+    </button>
+    {#if isOpen}
+        <P5 {sketch} />
+    {/if}
+</div>
+
+<style>
+    #container {
+        position: fixed;
+        bottom: 0;
+        left: 25px;
+        z-index: 1;
+    }
+    #toggleButton {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+</style>
