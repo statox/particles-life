@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import type p5 from 'p5';
     import P5, { type Sketch } from 'p5-svelte';
     import { onDestroy } from 'svelte';
@@ -74,7 +75,7 @@
         p5.preload = () => {
             // Images from https://www.mrob.com
             // background = p5.loadImage('/pearsons-parameter-map.jpg');
-            background = p5.loadImage('/pearson-space.png');
+            background = p5.loadImage(base + '/pearson-space.png');
         };
 
         p5.setup = () => {
