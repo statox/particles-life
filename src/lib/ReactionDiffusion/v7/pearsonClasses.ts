@@ -50,7 +50,7 @@ export const PARAMETERS_CLASSES = [
     // Type eta: Similar to type gamma (γ), but instead of all stripes there is a mixture of spots and worms. Any longer or more serpentine stripes will break up into short pieces. Ongoing activity includes low-level oscillation seen in the ∂u/∂t component, and spots occasionally splitting off and/or rejoining the worms; but the system always reaches a steady state if run for longer than the 200,000 tu in Pearson's experiments
     {
         name: 'η 1',
-        type: 'epsilon',
+        type: 'eta',
         f: 0.034,
         k: 0.063
     },

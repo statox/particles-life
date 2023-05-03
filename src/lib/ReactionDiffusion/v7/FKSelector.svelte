@@ -2,13 +2,12 @@
     import { base } from '$app/paths';
     import type p5 from 'p5';
     import P5, { type Sketch } from 'p5-svelte';
-    import { onDestroy } from 'svelte';
+    import { onDestroy, createEventDispatcher } from 'svelte';
 
     import { PARAMETERS_CLASSES } from './pearsonClasses';
 
-    export let f: number;
-    export let k: number;
-    export let onUpdateParams: (params: { f: number; k: number }) => void;
+    const dispatch = createEventDispatcher<{ fkupdated: { f: number; k: number } }>();
+    let selectedClass = PARAMETERS_CLASSES[0];
 
     let isOpen = true;
     const rangeF = [0.01, 0.09];
@@ -36,7 +35,13 @@
             return;
         }
         const { f, k } = coordsToFk({ x: p5.mouseX, y: p5.mouseY });
-        onUpdateParams({ f, k });
+        selectedClass = {
+            f,
+            k,
+            name: 'custom',
+            type: 'manual'
+        };
+        dispatch('fkupdated', selectedClass);
     };
 
     const drawClasses = (p5: p5) => {
@@ -50,7 +55,7 @@
 
     const drawTarget = (p5: p5) => {
         p5.fill('red');
-        const { x, y } = fkToCoords({ f, k });
+        const { x, y } = fkToCoords(selectedClass);
         p5.text('F', 10, y > 10 ? y - 5 : y + 15);
         p5.line(0, y, p5.width, y);
 
@@ -61,6 +66,7 @@
     };
 
     const drawFKText = (p5: p5) => {
+        const { f, k } = selectedClass;
         const lineF = `F: ${f.toFixed(4)}`;
         const lineK = `K: ${k.toFixed(4)}`;
 
@@ -110,9 +116,20 @@
 </script>
 
 <div id="container">
-    <button id="toggleButton" on:click={toggleDisplay}>
+    <button class="full-width" id="toggleButton" on:click={toggleDisplay}>
         {isOpen ? 'Close' : 'F/K selection'}
     </button>
+    <select
+        class="full-width"
+        bind:value={selectedClass}
+        on:change={() => dispatch('fkupdated', selectedClass)}
+    >
+        {#each PARAMETERS_CLASSES as parametersClass}
+            <option value={parametersClass}>
+                {parametersClass.type} - {parametersClass.name}
+            </option>
+        {/each}
+    </select>
     {#if isOpen}
         <P5 {sketch} />
     {/if}
@@ -126,7 +143,10 @@
         z-index: 1;
     }
     #toggleButton {
-        width: 100%;
         margin-bottom: 4px;
+    }
+
+    .full-width {
+        width: 100%;
     }
 </style>

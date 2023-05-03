@@ -23,7 +23,6 @@
     let WORLD_SIZE = 8; // Used as a power of 2
 
     const controls = {
-        presetParams: 4,
         colors: 'mrob' as ColorMode,
         initialConditions: 'randomSpots' as InitialConditionsMode,
         reset: () => initProgram(),
@@ -43,9 +42,10 @@
         iteration: 0
     };
 
+    // Dummy initialization, changes are handled by FKSelector
     const simulationParameters = {
-        f: PARAMETERS_CLASSES[controls.presetParams].f,
-        k: PARAMETERS_CLASSES[controls.presetParams].k
+        f: PARAMETERS_CLASSES[0].f,
+        k: PARAMETERS_CLASSES[0].k
     };
 
     let gui: GUI;
@@ -58,9 +58,6 @@
         gui = new dat.GUI();
 
         gui.domElement.setAttribute('style', 'background-color: black');
-
-        gui.add(simulationParameters, 'f').name('Feed rate').listen();
-        gui.add(simulationParameters, 'k').name('Kill rate').listen();
 
         gui.add(controls, 'pause').name('Pause');
         gui.add(controls, 'reset').name('Reset simulation');
@@ -75,15 +72,6 @@
             'mrob',
             'redblue'
         ]);
-
-        const presetParamsOptions = PARAMETERS_CLASSES.reduce((options, option, index) => {
-            options[option.name] = index;
-            return options;
-        }, {} as { [name: string]: number });
-        gui.add(controls, 'presetParams', presetParamsOptions).onFinishChange(() => {
-            simulationParameters.f = PARAMETERS_CLASSES[controls.presetParams].f;
-            simulationParameters.k = PARAMETERS_CLASSES[controls.presetParams].k;
-        });
 
         const initialConditionsOptions = {
             'Random spots': 'randomSpots',
@@ -261,6 +249,11 @@
         initProgram();
     };
 
+    const onSimulationParamsUpdate = (event: CustomEvent<{ f: number; k: number }>) => {
+        simulationParameters.f = event.detail.f;
+        simulationParameters.k = event.detail.k;
+    };
+
     onMount(() => {
         initGUI();
         initEvents();
@@ -273,14 +266,8 @@
     });
 </script>
 
-<FkSelector
-    f={simulationParameters.f}
-    k={simulationParameters.k}
-    onUpdateParams={({ f, k }) => {
-        simulationParameters.f = f;
-        simulationParameters.k = k;
-    }}
-/>
+<FkSelector on:fkupdated={onSimulationParamsUpdate} />
+
 <div>
     <label for="worldSize">World Size:</label>
     <input id="worldSize" bind:value={WORLD_SIZE} type="number" step="1" on:change={reset} />
