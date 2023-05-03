@@ -9,7 +9,7 @@
     const dispatch = createEventDispatcher<{ fkupdated: { f: number; k: number } }>();
     let selectedClass = PARAMETERS_CLASSES[0];
 
-    let isOpen = true;
+    let isOpen = false;
     const rangeF = [0.01, 0.09];
     const rangeK = [0.01, 0.08];
 
@@ -119,18 +119,18 @@
     <button class="full-width" id="toggleButton" on:click={toggleDisplay}>
         {isOpen ? 'Close' : 'F/K selection'}
     </button>
-    <select
-        class="full-width"
-        bind:value={selectedClass}
-        on:change={() => dispatch('fkupdated', selectedClass)}
-    >
-        {#each PARAMETERS_CLASSES as parametersClass}
-            <option value={parametersClass}>
-                {parametersClass.type} - {parametersClass.name}
-            </option>
-        {/each}
-    </select>
     {#if isOpen}
+        <select
+            class="full-width"
+            bind:value={selectedClass}
+            on:change={() => dispatch('fkupdated', selectedClass)}
+        >
+            {#each PARAMETERS_CLASSES as parametersClass}
+                <option value={parametersClass}>
+                    {parametersClass.type} - {parametersClass.name}
+                </option>
+            {/each}
+        </select>
         <P5 {sketch} />
     {/if}
 </div>

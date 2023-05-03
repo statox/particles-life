@@ -14,13 +14,14 @@
     import updateFS from './glsl/update.frag.glsl';
     import { doColors, initColorsCommands, type ColorMode } from './colors';
     import { doCursor, initCursorCommand } from './cursor';
+    import { doZoom, initZoomCommand } from './zoom';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
     };
 
-    let WORLD_SIZE = 8; // Used as a power of 2
+    let WORLD_SIZE = 11; // Used as a power of 2
 
     const controls = {
         colors: 'mrob' as ColorMode,
@@ -35,7 +36,10 @@
         x: 0,
         y: 0,
         penSize: 3,
-        penDensity: 0.3
+        penDensity: 0.3,
+        zoomLevel: 1,
+        panX: 0.5,
+        panY: 0.5
     };
 
     const info = {
@@ -88,6 +92,10 @@
 
         gui.add(mouseState, 'penSize', 0, WORLD_SIZE).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
+
+        gui.add(mouseState, 'zoomLevel', 0, 1).name('Zoom level');
+        gui.add(mouseState, 'panX', 0, 1).name('pan x');
+        gui.add(mouseState, 'panY', 0, 1).name('pan y');
     };
 
     const initEvents = () => {
@@ -148,6 +156,7 @@
 
         initColorsCommands(regl, state, coloredOutput);
         initCursorCommand(regl, coloredOutput);
+        initZoomCommand(regl, coloredOutput);
 
         const updateLife = regl({
             frag: updateFS,
@@ -194,6 +203,7 @@
 
             doColors(controls.colors, info);
             doCursor(mouseState, WORLD_SIZE);
+            doZoom(mouseState);
         });
     };
 
@@ -287,6 +297,6 @@
         position: absolute;
         right: 25px;
         margin-bottom: 50px;
-        cursor: none;
+        /* cursor: none; */
     }
 </style>
