@@ -116,9 +116,9 @@
         mouseState.panY = relativeCoordinates.y;
 
         if (event.deltaY > 0) {
-            mouseState.zoomLevel *= 1.1;
+            mouseState.zoomLevel *= 1 + mouseState.zoomLevel / 2;
         } else {
-            mouseState.zoomLevel *= 0.9;
+            mouseState.zoomLevel *= 1 - mouseState.zoomLevel / 2;
         }
         if (mouseState.zoomLevel > 1) {
             mouseState.zoomLevel = 1;
