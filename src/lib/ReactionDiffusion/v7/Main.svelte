@@ -18,7 +18,8 @@
         initialConditions: 'randomSpots',
         reset: () => reset(),
         pause: false,
-        grid: false
+        grid: false,
+        speed: 50
     };
 
     const mouseState: MouseState = {
@@ -35,7 +36,7 @@
 
     const info: SimulationInfo = {
         iteration: 0,
-        worldSize: 8 // Used as a power of 2
+        worldSize: 9 // Used as a power of 2
     };
 
     // Dummy initialization, changes are handled by FKSelector
@@ -87,6 +88,7 @@
 
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
+        gui.add(controls, 'speed', 1, 500).name('Simulation speed');
 
         gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');

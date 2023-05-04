@@ -55,7 +55,7 @@ export const initProgram = (params: {
         }
 
         let outputSimulation = simulationTextures[(frameTick + 1) % 2];
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < controls.speed; i++) {
             frameTick++;
             const inputSimulation = simulationTextures[frameTick % 2];
             outputSimulation = simulationTextures[(frameTick + 1) % 2];
