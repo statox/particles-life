@@ -6,6 +6,7 @@
     import { PARAMETERS_CLASSES } from './pearsonClasses';
     import { initProgram } from './reglWrapper';
     import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
+    import { getMouseCoordsRelativeToElement } from './mouse';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -107,15 +108,9 @@
     };
 
     const handleMouseWheel = (event: WheelEvent) => {
-        var elementRect = event.currentTarget.getBoundingClientRect();
-        const x = event.clientX - elementRect.left;
-        const y = event.clientY - elementRect.top;
-
-        const { width, height } = event.currentTarget;
-        const relX = x / width;
-        const relY = (height - y) / height;
-        mouseState.panX = relX;
-        mouseState.panY = relY;
+        const relativeCoordinates = getMouseCoordsRelativeToElement(event);
+        mouseState.panX = relativeCoordinates.x;
+        mouseState.panY = relativeCoordinates.y;
 
         if (event.deltaY > 0) {
             mouseState.zoomLevel *= 1.1;
@@ -131,15 +126,9 @@
     };
 
     const handleMousemove = (event: MouseEvent) => {
-        var elementRect = event.currentTarget.getBoundingClientRect();
-        const x = event.clientX - elementRect.left;
-        const y = event.clientY - elementRect.top;
-
-        const { width, height } = event.currentTarget;
-        const relX = x / width;
-        const relY = (height - y) / height;
-        mouseState.x = relX;
-        mouseState.y = relY;
+        const relativeCoordinates = getMouseCoordsRelativeToElement(event);
+        mouseState.x = relativeCoordinates.x;
+        mouseState.y = relativeCoordinates.y;
     };
 
     const handleMouseButton = (event: MouseEvent) => {
