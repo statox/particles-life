@@ -10,18 +10,17 @@
     import { getInitialConditions, type InitialConditionsMode } from './initialConditions';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
 
-    import drawVS from './glsl/draw.vert.glsl';
-    import updateFS from './glsl/update.frag.glsl';
     import { doColors, initColorsCommands, type ColorMode } from './colors';
     import { doCursor, initCursorCommand } from './cursor';
     import { doZoom, initZoomCommand } from './zoom';
+    import { doSimulationUpdate, initSimulationUpdate } from './simulation';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
     };
 
-    let WORLD_SIZE = 11; // Used as a power of 2
+    let WORLD_SIZE = 8; // Used as a power of 2
 
     const controls = {
         colors: 'mrob' as ColorMode,
@@ -154,53 +153,22 @@
             depthStencil: false
         });
 
+        initSimulationUpdate(regl, RADIUS, state);
         initColorsCommands(regl, state, coloredOutput);
         initCursorCommand(regl, coloredOutput);
         initZoomCommand(regl, coloredOutput);
-
-        const updateLife = regl({
-            frag: updateFS,
-            vert: drawVS,
-
-            attributes: {
-                position: [-4, -4, 4, -4, 0, 4]
-            },
-            count: 3,
-
-            framebuffer: (params: { tick: number }) => state[(params.tick + 1) % 2],
-            uniforms: {
-                prevState: (params: { tick: number }) => state[params.tick % 2],
-                Da: regl.prop('Da'),
-                Db: regl.prop('Db'),
-                f: regl.prop('f'),
-                k: regl.prop('k'),
-                radius: RADIUS,
-                pauseSimulation: regl.prop('pauseSimulation'),
-                mousePosition: regl.prop('mousePosition'),
-                penRadius: regl.prop('penRadius'),
-                penDensity: regl.prop('penDensity'),
-                penIsActive: regl.prop('penIsActive'),
-                eraserIsActive: regl.prop('eraserIsActive')
-            }
-        });
 
         regl.frame(() => {
             if (!controls.pause) {
                 info.iteration++;
             }
 
-            updateLife({
-                Da: 1,
-                Db: 0.5,
+            doSimulationUpdate({
+                worldSize: WORLD_SIZE,
                 pauseSimulation: controls.pause,
-                mousePosition: [mouseState.x, mouseState.y],
-                penRadius: 1 / 2 ** (WORLD_SIZE - mouseState.penSize),
-                penDensity: mouseState.penDensity,
-                penIsActive: mouseState.pressedLeft,
-                eraserIsActive: mouseState.pressedRight,
-                ...simulationParameters
+                mouseState,
+                simulationParameters
             });
-
             doColors(controls.colors, info);
             doCursor(mouseState, WORLD_SIZE);
             doZoom(mouseState);
