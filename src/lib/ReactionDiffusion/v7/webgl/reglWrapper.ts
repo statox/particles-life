@@ -74,27 +74,40 @@ export const initProgram = (params: {
             info.iteration++;
         }
 
+        const inputSimulation = stateTextures[customTick % 2];
+        const outputSimulation = stateTextures[(customTick + 1) % 2];
         doSimulationUpdate({
-            inputBuffer: stateTextures[customTick % 2],
-            outputBuffer: stateTextures[(customTick + 1) % 2],
+            inputBuffer: inputSimulation,
+            outputBuffer: outputSimulation,
             worldSize: info.worldSize,
             pauseSimulation: controls.pause,
             mouseState,
             simulationParameters
         });
+
+        const inputStep1 = outputSimulation;
+        const outputStep1 = coloredOutput;
         doColors({
             colorMode: controls.colors,
-            inputBuffer: stateTextures[(customTick + 1) % 2],
+            inputBuffer: inputStep1,
             iteration: info.iteration,
-            outputBuffer: coloredOutput,
+            outputBuffer: outputStep1,
             zoomState: mouseState
         });
-        doGrid({ inputBuffer: coloredOutput, outputBuffer: gridOutput, zoomState: mouseState });
+
+        const inputStep2 = outputStep1;
+        const outputStep2 = gridOutput;
+        if (controls.grid) {
+            doGrid({ inputBuffer: inputStep2, outputBuffer: outputStep2, zoomState: mouseState });
+        }
+
+        const inputStep3 = controls.grid ? outputStep2 : outputStep1;
+        const outputStep3 = null;
         doCursor({
             mouseState,
             worldSize: info.worldSize,
-            inputBuffer: gridOutput,
-            outputBuffer: null
+            inputBuffer: inputStep3,
+            outputBuffer: outputStep3
         });
     });
 
