@@ -83,9 +83,9 @@
         gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
 
-        gui.add(mouseState, 'zoomLevel', 0, 1).name('Zoom level');
-        gui.add(mouseState, 'panX', 0, 1).name('pan x');
-        gui.add(mouseState, 'panY', 0, 1).name('pan y');
+        gui.add(mouseState, 'zoomLevel', 0, 1).name('Zoom level').listen();
+        gui.add(mouseState, 'panX', 0, 1).name('pan x').listen();
+        gui.add(mouseState, 'panY', 0, 1).name('pan y').listen();
     };
 
     const initEvents = () => {
@@ -101,14 +101,31 @@
         });
     };
 
-    const handleMousemove = (event: any) => {
-        if (!event.currentTarget) {
-            throw new Error('No target for the onmousemove event');
-        }
-        if (!event.currentTarget.width || !event.currentTarget.height) {
-            throw new Error('No target dimensions for the onmousemove event target');
-        }
+    const handleMouseWheel = (event: WheelEvent) => {
+        var elementRect = event.currentTarget.getBoundingClientRect();
+        const x = event.clientX - elementRect.left;
+        const y = event.clientY - elementRect.top;
 
+        const { width, height } = event.currentTarget;
+        const relX = x / width;
+        const relY = (height - y) / height;
+        mouseState.panX = relX;
+        mouseState.panY = relY;
+
+        if (event.deltaY > 0) {
+            mouseState.zoomLevel *= 1.1;
+        } else {
+            mouseState.zoomLevel *= 0.9;
+        }
+        if (mouseState.zoomLevel > 1) {
+            mouseState.zoomLevel = 1;
+        }
+        if (mouseState.zoomLevel < 0) {
+            mouseState.zoomLevel = 0;
+        }
+    }
+
+    const handleMousemove = (event: MouseEvent) => {
         var elementRect = event.currentTarget.getBoundingClientRect();
         const x = event.clientX - elementRect.left;
         const y = event.clientY - elementRect.top;
@@ -180,6 +197,7 @@
     on:mousemove={handleMousemove}
     on:mousedown|preventDefault={handleMouseButton}
     on:mouseup={handleMouseButton}
+    on:wheel|preventDefault={handleMouseWheel}
     on:contextmenu|preventDefault={(e) => e}
     id="canvas"
     width={screenDimensions.width}
