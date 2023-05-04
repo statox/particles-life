@@ -34,7 +34,7 @@ export const initProgram = (params: {
 
     const INITIAL_CONDITIONS = getInitialConditions(controls.initialConditions, RADIUS);
 
-    const state = Array(2)
+    const stateTextures = Array(2)
         .fill(0)
         .map(() =>
             regl.framebuffer({
@@ -57,8 +57,8 @@ export const initProgram = (params: {
         depthStencil: false
     });
 
-    initSimulationUpdate(regl, RADIUS, state);
-    initColorsCommands(regl, state, coloredOutput);
+    initSimulationUpdate(regl, RADIUS, stateTextures);
+    initColorsCommands(regl, stateTextures, coloredOutput);
     initCursorCommand(regl, coloredOutput);
     initZoomCommand(regl, coloredOutput);
 

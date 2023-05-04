@@ -24,8 +24,8 @@ const colorCommands: {
 
 export const initColorsCommands = (
     regl: REGL.Regl,
-    state: REGL.Framebuffer2D[],
-    coloredOuput: REGL.Framebuffer2D
+    stateTextures: REGL.Framebuffer2D[],
+    coloredTexture: REGL.Framebuffer2D
 ) => {
     colorCommands['raw'] = regl({
         frag: colorsRawFS,
@@ -35,10 +35,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
 
@@ -50,10 +50,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
     colorCommands['blackwhite'] = regl({
@@ -64,10 +64,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
     colorCommands['whiteblack'] = regl({
@@ -78,10 +78,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
     colorCommands['timebasedblue'] = regl({
@@ -92,10 +92,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
 
@@ -107,10 +107,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
 
@@ -122,10 +122,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
     colorCommands['redblue'] = regl({
@@ -136,10 +136,10 @@ export const initColorsCommands = (
             position: [-4, -4, 4, -4, 0, 4]
         },
         count: 3,
-        framebuffer: coloredOuput,
+        framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => state[(params.tick + 1) % 2]
+            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
     });
 };
