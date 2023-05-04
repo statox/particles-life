@@ -50,51 +50,72 @@ export const initProgram = (params: {
 
     let frameTick = 0; // Regl probably has something build in but I couldn't find it
     regl.frame(() => {
-        frameTick++;
         if (!controls.pause) {
             info.iteration++;
         }
-        let graphicsTexturesTick = 0;
 
-        const inputSimulation = simulationTextures[frameTick % 2];
-        const outputSimulation = simulationTextures[(frameTick + 1) % 2];
-        doSimulationUpdate({
-            inputBuffer: inputSimulation,
-            outputBuffer: outputSimulation,
-            worldSize: info.worldSize,
-            pauseSimulation: controls.pause,
-            mouseState,
-            simulationParameters
-        });
-
-        graphicsTexturesTick++;
-        const inputStep1 = outputSimulation;
-        const outputStep1 = graphicsTextures[graphicsTexturesTick % 2];
-        doColors({
-            colorMode: controls.colors,
-            inputBuffer: inputStep1,
-            iteration: info.iteration,
-            outputBuffer: outputStep1,
-            zoomState: mouseState
-        });
-
-        if (controls.grid) {
-            graphicsTexturesTick++;
-            const inputStep2 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
-            const outputStep2 = graphicsTextures[graphicsTexturesTick % 2];
-            doGrid({ inputBuffer: inputStep2, outputBuffer: outputStep2, zoomState: mouseState });
+        let outputSimulation = simulationTextures[(frameTick + 1) % 2];
+        for (let i = 0; i < 50; i++) {
+            frameTick++;
+            const inputSimulation = simulationTextures[frameTick % 2];
+            outputSimulation = simulationTextures[(frameTick + 1) % 2];
+            doSimulationUpdate({
+                inputBuffer: inputSimulation,
+                outputBuffer: outputSimulation,
+                worldSize: info.worldSize,
+                pauseSimulation: controls.pause,
+                mouseState,
+                simulationParameters
+            });
         }
 
-        graphicsTexturesTick++;
-        const inputStep3 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
-        const outputStep3 = null;
-        doCursor({
-            mouseState,
-            worldSize: info.worldSize,
-            inputBuffer: inputStep3,
-            outputBuffer: outputStep3
+        graphicPipeline({
+            inputTexture: outputSimulation,
+            graphicsTextures,
+            controls,
+            info,
+            mouseState
         });
     });
 
     return regl;
+};
+
+const graphicPipeline = (params: {
+    inputTexture: REGL.Framebuffer2D;
+    graphicsTextures: REGL.Framebuffer2D[];
+    controls: Controls;
+    info: SimulationInfo;
+    mouseState: MouseState;
+}) => {
+    const { inputTexture, graphicsTextures, controls, info, mouseState } = params;
+
+    let graphicsTexturesTick = 0;
+    graphicsTexturesTick++;
+    const inputStep1 = inputTexture;
+    const outputStep1 = graphicsTextures[graphicsTexturesTick % 2];
+    doColors({
+        colorMode: controls.colors,
+        inputBuffer: inputStep1,
+        iteration: info.iteration,
+        outputBuffer: outputStep1,
+        zoomState: mouseState
+    });
+
+    if (controls.grid) {
+        graphicsTexturesTick++;
+        const inputStep2 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
+        const outputStep2 = graphicsTextures[graphicsTexturesTick % 2];
+        doGrid({ inputBuffer: inputStep2, outputBuffer: outputStep2, zoomState: mouseState });
+    }
+
+    graphicsTexturesTick++;
+    const inputStep3 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
+    const outputStep3 = null;
+    doCursor({
+        mouseState,
+        worldSize: info.worldSize,
+        inputBuffer: inputStep3,
+        outputBuffer: outputStep3
+    });
 };
