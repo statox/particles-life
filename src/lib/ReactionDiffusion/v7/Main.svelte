@@ -49,9 +49,14 @@
         // Imported here to avoid "window is not defined" error
         // https://github.com/dataarts/dat.gui/issues/271
         const dat = await import('dat.gui');
-        gui = new dat.GUI();
+        gui = new dat.GUI({ autoPlace: false, closeOnTop: true });
 
-        gui.domElement.setAttribute('style', 'background-color: black');
+        gui.domElement.id = 'datgui';
+        const guiContainer = document.getElementById('datgui-container');
+        if (!guiContainer) {
+            throw new Error('Gui container not ready');
+        }
+        guiContainer.appendChild(gui.domElement);
 
         gui.add(controls, 'pause').name('Pause');
         gui.add(controls, 'reset').name('Reset simulation');
@@ -65,7 +70,7 @@
             'lerp',
             'mrob',
             'redblue'
-        ]);
+        ]).name('Color scheme');
 
         const initialConditionsOptions = {
             'Random spots': 'randomSpots',
@@ -73,9 +78,9 @@
             'Middle + random': 'middleCircleAndRandomSpots',
             Empty: 'empty'
         };
-        gui.add(controls, 'initialConditions', initialConditionsOptions).onFinishChange(
-            controls.reset
-        );
+        gui.add(controls, 'initialConditions', initialConditionsOptions)
+            .onFinishChange(controls.reset)
+            .name('Initial conditions');
 
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
@@ -123,7 +128,7 @@
         if (mouseState.zoomLevel < 0) {
             mouseState.zoomLevel = 0;
         }
-    }
+    };
 
     const handleMousemove = (event: MouseEvent) => {
         var elementRect = event.currentTarget.getBoundingClientRect();
@@ -188,6 +193,7 @@
 </script>
 
 <FkSelector on:fkupdated={onSimulationParamsUpdate} />
+<div id="datgui-container" />
 
 <div>
     <label for="worldSize">World Size:</label>
@@ -209,6 +215,13 @@
         position: absolute;
         right: 25px;
         margin-bottom: 50px;
-        /* cursor: none; */
+        cursor: none;
+    }
+
+    #datgui-container {
+        position: fixed;
+        bottom: 1em;
+        right: 25px;
+        z-index: 1;
     }
 </style>
