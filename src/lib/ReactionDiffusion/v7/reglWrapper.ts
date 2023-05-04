@@ -5,8 +5,6 @@ import { getInitialConditions } from './initialConditions';
 import { doSimulationUpdate, initSimulationUpdate } from './simulation';
 import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
 
-let regl: REGL.Regl;
-
 export const initProgram = (params: {
     controls: Controls;
     info: SimulationInfo;
@@ -19,10 +17,7 @@ export const initProgram = (params: {
         throw new Error('Canvas container not ready');
     }
 
-    if (regl) {
-        regl.destroy();
-    }
-    regl = REGL({
+    const regl = REGL({
         extensions: ['OES_texture_float'],
         canvas
     });

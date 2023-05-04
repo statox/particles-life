@@ -94,17 +94,17 @@
         gui.add(mouseState, 'panY', 0, 1).name('pan y').listen();
     };
 
-    const initEvents = () => {
-        document.addEventListener('keydown', (event) => {
-            if (event.code === 'Space') {
-                controls.pause = !controls.pause;
-                return event.preventDefault();
-            }
-            if (event.code === 'KeyR') {
-                reset();
-                return event.preventDefault();
-            }
-        });
+    const handleKeydown = (event: KeyboardEvent) => {
+        if (event.code === 'Space') {
+            controls.pause = !controls.pause;
+            event.preventDefault();
+            return;
+        }
+        if (event.code === 'KeyR' && !event.getModifierState('Control')) {
+            reset();
+            event.preventDefault();
+            return;
+        }
     };
 
     const handleMouseWheel = (event: WheelEvent) => {
@@ -157,11 +157,14 @@
         if (info.worldSize < 1) {
             info.worldSize = 1;
         }
-        gui?.destroy();
+        if (gui) {
+            document.getElementById(gui.domElement.id)?.remove();
+            gui.destroy();
+        }
         regl?.destroy();
 
         initGUI();
-        initProgram({ controls, info, mouseState, simulationParameters });
+        regl = initProgram({ controls, info, mouseState, simulationParameters });
     };
 
     const onSimulationParamsUpdate = (event: CustomEvent<{ f: number; k: number }>) => {
@@ -170,9 +173,7 @@
     };
 
     onMount(() => {
-        initGUI();
-        initEvents();
-        initProgram({ controls, info, mouseState, simulationParameters });
+        reset();
     });
 
     onDestroy(() => {
@@ -181,23 +182,33 @@
     });
 </script>
 
-<FkSelector on:fkupdated={onSimulationParamsUpdate} />
-<div id="datgui-container" />
+<svelte:window on:keydown={handleKeydown} />
+<main>
+    <FkSelector on:fkupdated={onSimulationParamsUpdate} />
+    <div id="datgui-container" />
 
-<div>
-    <label for="worldSize">World Size:</label>
-    <input id="worldSize" bind:value={info.worldSize} type="number" step="1" on:change={reset} />
-</div>
-<canvas
-    on:mousemove={handleMousemove}
-    on:mousedown|preventDefault={handleMouseButton}
-    on:mouseup={handleMouseButton}
-    on:wheel|preventDefault={handleMouseWheel}
-    on:contextmenu|preventDefault={(e) => e}
-    id="canvas"
-    width={screenDimensions.width}
-    height={screenDimensions.height}
-/>
+    <div>
+        <label for="worldSize">World Size:</label>
+        <input
+            id="worldSize"
+            bind:value={info.worldSize}
+            type="number"
+            step="1"
+            on:change={reset}
+        />
+    </div>
+    <canvas
+        on:mousemove={handleMousemove}
+        on:mousedown|preventDefault={handleMouseButton}
+        on:mouseup={handleMouseButton}
+        on:wheel|preventDefault={handleMouseWheel}
+        on:keydown|preventDefault={handleKeydown}
+        on:contextmenu|preventDefault={(e) => e}
+        id="canvas"
+        width={screenDimensions.width}
+        height={screenDimensions.height}
+    />
+</main>
 
 <style>
     #canvas {

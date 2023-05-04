@@ -77,6 +77,7 @@
 
     let _p5: p5;
     const sketch: Sketch = (p5) => {
+        _p5 = p5;
         let background: p5.Image;
         p5.preload = () => {
             // Images from https://www.mrob.com
@@ -85,7 +86,6 @@
         };
 
         p5.setup = () => {
-            _p5 = p5;
             p5.createCanvas(500, 500);
             p5.frameRate(25);
         };
@@ -112,7 +112,7 @@
         }
     };
 
-    onDestroy(() => _p5.remove());
+    onDestroy(() => _p5?.remove());
 </script>
 
 <div id="container">
