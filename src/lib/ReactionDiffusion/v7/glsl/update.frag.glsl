@@ -10,11 +10,11 @@ uniform float k;
 
 uniform bool penIsActive;
 uniform bool eraserIsActive;
-uniform float penRadius;
 uniform float penDensity;
 
 varying vec2 uv;
 varying vec2 mouseUv;
+varying float scaledPenRadius;
 
 // https://thebookofshaders.com/10/
 float random(vec2 st) {
@@ -61,9 +61,9 @@ void main() {
 
 
     float rnd = random(uv);
-    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < penRadius) {
+    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
         gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < penRadius) {
+    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
         gl_FragColor = vec4(1.0, 0.0, 0, 1);
     } else if (pauseSimulation) {
         gl_FragColor = vec4(A, B, 0, 1);
