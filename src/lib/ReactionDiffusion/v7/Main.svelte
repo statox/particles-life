@@ -9,8 +9,8 @@
     import { getMouseCoordsRelativeToElement } from './mouse';
 
     const screenDimensions = {
-        width: window.innerWidth - 50,
-        height: window.innerHeight - 10
+        width: Math.min(window.innerWidth, window.innerHeight) * 0.9,
+        height: Math.min(window.innerWidth, window.innerHeight) * 0.9
     };
 
     const controls: Controls = {
@@ -221,7 +221,6 @@
 <style>
     #canvas {
         position: absolute;
-        right: 25px;
         margin-bottom: 50px;
         cursor: none;
     }
