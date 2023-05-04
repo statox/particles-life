@@ -5,11 +5,7 @@ import gridFS from './glsl/grid.frag.glsl';
 
 let command: REGL.DrawCommand;
 
-export const initGridCommands = (
-    regl: REGL.Regl,
-    coloredTexture: REGL.Framebuffer2D,
-    outputTexture: REGL.Framebuffer2D | null
-) => {
+export const initGridCommands = (regl: REGL.Regl) => {
     command = regl({
         vert: gridVS,
         frag: gridFS,
@@ -25,9 +21,9 @@ export const initGridCommands = (
             ]
         },
         count: 6,
-        framebuffer: outputTexture,
+        framebuffer: regl.prop('outputBuffer'),
         uniforms: {
-            prevState: coloredTexture,
+            prevState: regl.prop('inputBuffer'),
             zoomLevel: regl.prop('zoomLevel'),
             pan: regl.prop('pan')
         }
@@ -35,10 +31,14 @@ export const initGridCommands = (
 };
 
 export const doGrid = (params: {
+    inputBuffer: REGL.Framebuffer2D;
+    outputBuffer: REGL.Framebuffer2D | null;
     zoomState: { zoomLevel: number; panX: number; panY: number };
 }) => {
-    const { zoomState } = params;
+    const { inputBuffer, outputBuffer, zoomState } = params;
     command({
+        inputBuffer,
+        outputBuffer,
         zoomLevel: zoomState.zoomLevel,
         pan: [zoomState.panX, zoomState.panY]
     });

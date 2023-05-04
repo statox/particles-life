@@ -63,9 +63,9 @@ export const initProgram = (params: {
     });
 
     initSimulationUpdate(regl, RADIUS, stateTextures);
-    initColorsCommands(regl, stateTextures, coloredOutput);
-    initGridCommands(regl, coloredOutput, gridOutput);
-    initCursorCommand(regl, gridOutput, null);
+    initColorsCommands(regl, stateTextures);
+    initGridCommands(regl);
+    initCursorCommand(regl);
 
     regl.frame(() => {
         if (!controls.pause) {
@@ -78,9 +78,19 @@ export const initProgram = (params: {
             mouseState,
             simulationParameters
         });
-        doColors({ colorMode: controls.colors, iteration: info.iteration, zoomState: mouseState });
-        doGrid({ zoomState: mouseState });
-        doCursor({ mouseState, worldSize: info.worldSize });
+        doColors({
+            colorMode: controls.colors,
+            iteration: info.iteration,
+            outputBuffer: coloredOutput,
+            zoomState: mouseState
+        });
+        doGrid({ inputBuffer: coloredOutput, outputBuffer: gridOutput, zoomState: mouseState });
+        doCursor({
+            mouseState,
+            worldSize: info.worldSize,
+            inputBuffer: gridOutput,
+            outputBuffer: null
+        });
     });
 
     return regl;

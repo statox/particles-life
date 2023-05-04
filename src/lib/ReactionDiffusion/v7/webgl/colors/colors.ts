@@ -22,11 +22,7 @@ const colorCommands: {
     [k: string]: REGL.DrawCommand;
 } = {};
 
-export const initColorsCommands = (
-    regl: REGL.Regl,
-    stateTextures: REGL.Framebuffer2D[],
-    coloredTexture: REGL.Framebuffer2D | null
-) => {
+export const initColorsCommands = (regl: REGL.Regl, stateTextures: REGL.Framebuffer2D[]) => {
     const commonSettings = {
         vert: colorsVS,
 
@@ -41,7 +37,7 @@ export const initColorsCommands = (
             ]
         },
         count: 6,
-        framebuffer: coloredTexture,
+        framebuffer: regl.prop('outputBuffer'),
         uniforms: {
             iteration: regl.prop('iteration'),
             zoomLevel: regl.prop('zoomLevel'),
@@ -90,13 +86,15 @@ export const initColorsCommands = (
 export const doColors = (params: {
     colorMode: ColorMode;
     iteration: number;
+    outputBuffer: REGL.Framebuffer2D | null;
     zoomState: { zoomLevel: number; panX: number; panY: number };
 }) => {
-    const { colorMode, iteration, zoomState } = params;
+    const { colorMode, iteration, outputBuffer, zoomState } = params;
     const command = colorCommands[colorMode] || colorCommands['raw'];
     command({
         iteration,
-        zoomLevel: zoomState.zoomLevel,
-        pan: [zoomState.panX, zoomState.panY]
+        outputBuffer,
+        pan: [zoomState.panX, zoomState.panY],
+        zoomLevel: zoomState.zoomLevel
     });
 };

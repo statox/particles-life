@@ -6,6 +6,7 @@ export type Controls = {
     initialConditions: InitialConditionsMode;
     reset: () => void;
     pause: boolean;
+    grid: boolean;
 };
 
 export type MouseState = {

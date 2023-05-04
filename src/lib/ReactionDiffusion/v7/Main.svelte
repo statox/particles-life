@@ -17,7 +17,8 @@
         colors: 'mrob',
         initialConditions: 'randomSpots',
         reset: () => reset(),
-        pause: false
+        pause: false,
+        grid: false
     };
 
     const mouseState: MouseState = {
@@ -60,6 +61,7 @@
         guiContainer.appendChild(gui.domElement);
 
         gui.add(controls, 'pause').name('Pause');
+        gui.add(controls, 'grid').name('Debug grid');
         gui.add(controls, 'reset').name('Reset simulation');
 
         gui.add(controls, 'colors', [
