@@ -2,6 +2,7 @@ import type REGL from 'regl';
 
 import updateFS from './glsl/update.frag.glsl';
 import drawVS from './glsl/draw.vert.glsl';
+import type { MouseState, SimulationParameters } from './types';
 
 let command: REGL.DrawCommand;
 export const initSimulationUpdate = (
@@ -31,7 +32,9 @@ export const initSimulationUpdate = (
             penRadius: regl.prop('penRadius'),
             penDensity: regl.prop('penDensity'),
             penIsActive: regl.prop('penIsActive'),
-            eraserIsActive: regl.prop('eraserIsActive')
+            eraserIsActive: regl.prop('eraserIsActive'),
+            zoomLevel: regl.prop('zoomLevel'),
+            pan: regl.prop('pan')
         }
     });
 };
@@ -39,22 +42,14 @@ export const initSimulationUpdate = (
 export const doSimulationUpdate = (params: {
     worldSize: number;
     pauseSimulation: boolean;
-    mouseState: {
-        x: number;
-        y: number;
-        penSize: number;
-        penDensity: number;
-        pressedLeft: boolean;
-        pressedRight: boolean;
-    };
-    simulationParameters: {
-        f: number;
-        k: number;
-    };
+    mouseState: MouseState;
+    simulationParameters: SimulationParameters;
 }) => {
     const { pauseSimulation, mouseState, simulationParameters, worldSize } = params;
     command({
         pauseSimulation,
+        zoomLevel: mouseState.zoomLevel,
+        pan: [mouseState.panX, mouseState.panY],
         mousePosition: [mouseState.x, mouseState.y],
         penRadius: 1 / 2 ** (worldSize - mouseState.penSize),
         penDensity: mouseState.penDensity,

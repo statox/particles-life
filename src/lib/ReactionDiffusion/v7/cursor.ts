@@ -1,6 +1,7 @@
 import type REGL from 'regl';
 import drawVS from './glsl/draw.vert.glsl';
 import cursorFS from './glsl/cursor.frag.glsl';
+import type { MouseState } from './types';
 
 let command: REGL.DrawCommand;
 export const initCursorCommand = (
@@ -34,17 +35,7 @@ export const initCursorCommand = (
     });
 };
 
-export const doCursor = (params: {
-    mouseState: {
-        x: number;
-        y: number;
-        penSize: number;
-        zoomLevel: number;
-        panX: number;
-        panY: number;
-    };
-    worldSize: number;
-}) => {
+export const doCursor = (params: { mouseState: MouseState; worldSize: number }) => {
     /*
      * Mouse parameters (position, penSize) are relative to the zoomed canvas
      * not to the underlying texture
