@@ -5,11 +5,7 @@ import updateVS from './glsl/update.vert.glsl';
 import type { MouseState, SimulationParameters } from '../../types';
 
 let command: REGL.DrawCommand;
-export const initSimulationUpdate = (
-    regl: REGL.Regl,
-    radius: number,
-    stateTextures: REGL.Framebuffer2D[]
-) => {
+export const initSimulationUpdate = (regl: REGL.Regl, radius: number) => {
     command = regl({
         frag: updateFS,
         vert: updateVS,
@@ -19,9 +15,9 @@ export const initSimulationUpdate = (
         },
         count: 3,
 
-        framebuffer: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2],
+        framebuffer: regl.prop('outputBuffer'),
         uniforms: {
-            prevState: (params: { tick: number }) => stateTextures[params.tick % 2],
+            prevState: regl.prop('inputBuffer'),
             Da: 1,
             Db: 0.5,
             f: regl.prop('f'),
@@ -40,13 +36,24 @@ export const initSimulationUpdate = (
 };
 
 export const doSimulationUpdate = (params: {
-    worldSize: number;
-    pauseSimulation: boolean;
+    inputBuffer: REGL.Framebuffer2D;
     mouseState: MouseState;
+    outputBuffer: REGL.Framebuffer2D | null;
+    pauseSimulation: boolean;
     simulationParameters: SimulationParameters;
+    worldSize: number;
 }) => {
-    const { pauseSimulation, mouseState, simulationParameters, worldSize } = params;
+    const {
+        inputBuffer,
+        outputBuffer,
+        pauseSimulation,
+        mouseState,
+        simulationParameters,
+        worldSize
+    } = params;
     command({
+        inputBuffer,
+        outputBuffer,
         pauseSimulation,
         zoomLevel: mouseState.zoomLevel,
         pan: [mouseState.panX, mouseState.panY],

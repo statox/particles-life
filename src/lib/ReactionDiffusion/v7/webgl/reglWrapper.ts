@@ -62,17 +62,21 @@ export const initProgram = (params: {
         depthStencil: false
     });
 
-    initSimulationUpdate(regl, RADIUS, stateTextures);
-    initColorsCommands(regl, stateTextures);
+    initSimulationUpdate(regl, RADIUS);
+    initColorsCommands(regl);
     initGridCommands(regl);
     initCursorCommand(regl);
 
+    let customTick = 0; // Regl probably has something build in but I couldn't find it
     regl.frame(() => {
+        customTick++;
         if (!controls.pause) {
             info.iteration++;
         }
 
         doSimulationUpdate({
+            inputBuffer: stateTextures[customTick % 2],
+            outputBuffer: stateTextures[(customTick + 1) % 2],
             worldSize: info.worldSize,
             pauseSimulation: controls.pause,
             mouseState,
@@ -80,6 +84,7 @@ export const initProgram = (params: {
         });
         doColors({
             colorMode: controls.colors,
+            inputBuffer: stateTextures[(customTick + 1) % 2],
             iteration: info.iteration,
             outputBuffer: coloredOutput,
             zoomState: mouseState
