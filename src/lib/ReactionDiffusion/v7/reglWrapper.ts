@@ -3,18 +3,18 @@ import { doColors, initColorsCommands } from './colors';
 import { doCursor, initCursorCommand } from './cursor';
 import { getInitialConditions } from './initialConditions';
 import { doSimulationUpdate, initSimulationUpdate } from './simulation';
+import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
 import { doZoom, initZoomCommand } from './zoom';
 
 let regl: REGL.Regl;
 
 export const initProgram = (params: {
-    controls: any;
-    info: any;
-    mouseState: any;
-    simulationParameters: any;
-    worldSize: number;
+    controls: Controls;
+    info: SimulationInfo;
+    mouseState: MouseState;
+    simulationParameters: SimulationParameters;
 }) => {
-    const { controls, info, mouseState, simulationParameters, worldSize } = params;
+    const { controls, info, mouseState, simulationParameters } = params;
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
     if (!canvas) {
         throw new Error('Canvas container not ready');
@@ -30,7 +30,7 @@ export const initProgram = (params: {
 
     info.iteration = 0;
 
-    const RADIUS = 2 ** worldSize;
+    const RADIUS = 2 ** info.worldSize;
 
     const INITIAL_CONDITIONS = getInitialConditions(controls.initialConditions, RADIUS);
 
@@ -68,13 +68,13 @@ export const initProgram = (params: {
         }
 
         doSimulationUpdate({
-            worldSize: worldSize,
+            worldSize: info.worldSize,
             pauseSimulation: controls.pause,
             mouseState,
             simulationParameters
         });
-        doColors(controls.colors, info);
-        doCursor(mouseState, worldSize);
+        doColors({ colorMode: controls.colors, iteration: info.iteration });
+        doCursor(mouseState, info.worldSize);
         doZoom(mouseState);
     });
 

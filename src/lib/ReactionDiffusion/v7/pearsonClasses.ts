@@ -1,7 +1,9 @@
 // Classes of parameters desccribed here
 // https://www.mrob.com/pub/comp/xmorphia/pearson-classes.html
 
-export const PARAMETERS_CLASSES = [
+import type { ParametersClass } from './types';
+
+export const PARAMETERS_CLASSES: ParametersClass[] = [
     {
         name: 'KarlSims',
         type: 'Unknown',

@@ -144,9 +144,10 @@ export const initColorsCommands = (
     });
 };
 
-export const doColors = (mode: ColorMode, info: { iteration: number }) => {
-    const command = colorCommands[mode] || colorCommands['raw'];
+export const doColors = (params: { colorMode: ColorMode; iteration: number }) => {
+    const { colorMode, iteration } = params;
+    const command = colorCommands[colorMode] || colorCommands['raw'];
     command({
-        iteration: info.iteration
+        iteration
     });
 };

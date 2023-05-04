@@ -4,25 +4,22 @@
     import type REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
-    import type { ColorMode } from './colors';
-    import type { InitialConditionsMode } from './initialConditions';
     import { initProgram } from './reglWrapper';
+    import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
         height: window.innerHeight - 10
     };
 
-    let WORLD_SIZE = 8; // Used as a power of 2
-
-    const controls = {
-        colors: 'mrob' as ColorMode,
-        initialConditions: 'randomSpots' as InitialConditionsMode,
+    const controls: Controls = {
+        colors: 'mrob',
+        initialConditions: 'randomSpots',
         reset: () => reset(),
         pause: false
     };
 
-    const mouseState = {
+    const mouseState: MouseState = {
         pressedLeft: false,
         pressedRight: false,
         x: 0,
@@ -34,12 +31,13 @@
         panY: 0.5
     };
 
-    const info = {
-        iteration: 0
+    const info: SimulationInfo = {
+        iteration: 0,
+        worldSize: 8 // Used as a power of 2
     };
 
     // Dummy initialization, changes are handled by FKSelector
-    const simulationParameters = {
+    const simulationParameters: SimulationParameters = {
         f: PARAMETERS_CLASSES[0].f,
         k: PARAMETERS_CLASSES[0].k
     };
@@ -82,7 +80,7 @@
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
 
-        gui.add(mouseState, 'penSize', 0, WORLD_SIZE).name('Pen size');
+        gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
 
         gui.add(mouseState, 'zoomLevel', 0, 1).name('Zoom level');
@@ -139,20 +137,20 @@
     };
 
     const reset = () => {
-        if (isNaN(WORLD_SIZE)) {
+        if (isNaN(info.worldSize)) {
             return;
         }
-        if (WORLD_SIZE > 11) {
-            WORLD_SIZE = 11;
+        if (info.worldSize > 11) {
+            info.worldSize = 11;
         }
-        if (WORLD_SIZE < 1) {
-            WORLD_SIZE = 1;
+        if (info.worldSize < 1) {
+            info.worldSize = 1;
         }
         gui?.destroy();
         regl?.destroy();
 
         initGUI();
-        initProgram({ controls, info, mouseState, simulationParameters, worldSize: WORLD_SIZE });
+        initProgram({ controls, info, mouseState, simulationParameters });
     };
 
     const onSimulationParamsUpdate = (event: CustomEvent<{ f: number; k: number }>) => {
@@ -163,7 +161,7 @@
     onMount(() => {
         initGUI();
         initEvents();
-        initProgram({ controls, info, mouseState, simulationParameters, worldSize: WORLD_SIZE });
+        initProgram({ controls, info, mouseState, simulationParameters });
     });
 
     onDestroy(() => {
@@ -176,7 +174,7 @@
 
 <div>
     <label for="worldSize">World Size:</label>
-    <input id="worldSize" bind:value={WORLD_SIZE} type="number" step="1" on:change={reset} />
+    <input id="worldSize" bind:value={info.worldSize} type="number" step="1" on:change={reset} />
 </div>
 <canvas
     on:mousemove={handleMousemove}
