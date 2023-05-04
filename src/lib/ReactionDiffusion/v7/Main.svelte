@@ -108,6 +108,9 @@
     };
 
     const handleMouseWheel = (event: WheelEvent) => {
+        if (!event.getModifierState('Control')) {
+            return;
+        }
         const relativeCoordinates = getMouseCoordsRelativeToElement(event);
         mouseState.panX = relativeCoordinates.x;
         mouseState.panY = relativeCoordinates.y;
@@ -123,6 +126,7 @@
         if (mouseState.zoomLevel < 0) {
             mouseState.zoomLevel = 0;
         }
+        event.preventDefault();
     };
 
     const handleMousemove = (event: MouseEvent) => {
@@ -201,7 +205,7 @@
         on:mousemove={handleMousemove}
         on:mousedown|preventDefault={handleMouseButton}
         on:mouseup={handleMouseButton}
-        on:wheel|preventDefault={handleMouseWheel}
+        on:wheel={handleMouseWheel}
         on:keydown|preventDefault={handleKeydown}
         on:contextmenu|preventDefault={(e) => e}
         id="canvas"
