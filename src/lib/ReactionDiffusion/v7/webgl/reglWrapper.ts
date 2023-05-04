@@ -4,6 +4,7 @@ import { doColors, initColorsCommands } from './colors/colors';
 import { doSimulationUpdate, initSimulationUpdate } from './simulation/simulation';
 import { getInitialConditions } from '../initialConditions';
 import type { Controls, MouseState, SimulationInfo, SimulationParameters } from '../types';
+import { doGrid, initGridCommands } from './grid/grid';
 
 export const initProgram = (params: {
     controls: Controls;
@@ -51,9 +52,20 @@ export const initProgram = (params: {
         depthStencil: false
     });
 
+    const gridOutput = regl.framebuffer({
+        color: regl.texture({
+            radius: RADIUS,
+            data: INITIAL_CONDITIONS,
+            wrap: 'repeat',
+            type: 'float'
+        }),
+        depthStencil: false
+    });
+
     initSimulationUpdate(regl, RADIUS, stateTextures);
     initColorsCommands(regl, stateTextures, coloredOutput);
-    initCursorCommand(regl, coloredOutput, null);
+    initGridCommands(regl, coloredOutput, gridOutput);
+    initCursorCommand(regl, gridOutput, null);
 
     regl.frame(() => {
         if (!controls.pause) {
@@ -67,6 +79,7 @@ export const initProgram = (params: {
             simulationParameters
         });
         doColors({ colorMode: controls.colors, iteration: info.iteration, zoomState: mouseState });
+        doGrid({ zoomState: mouseState });
         doCursor({ mouseState, worldSize: info.worldSize });
     });
 

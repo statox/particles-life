@@ -1,5 +1,5 @@
-import type { ColorMode } from './colors';
 import type { InitialConditionsMode } from './initialConditions';
+import type { ColorMode } from './webgl/colors/colors';
 
 export type Controls = {
     colors: ColorMode;
