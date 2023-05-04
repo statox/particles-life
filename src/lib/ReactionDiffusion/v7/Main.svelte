@@ -1,19 +1,12 @@
-<!--
-- Adapt regl sprites.js example to my code base
--  https://regl-project.github.io/regl/www/gallery/sprites.js.html
--->
 <script lang="ts">
     import FkSelector from './FKSelector.svelte';
     import type { GUI } from 'dat.gui';
-    import REGL from 'regl';
+    import type REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
-    import { getInitialConditions, type InitialConditionsMode } from './initialConditions';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
-
-    import { doColors, initColorsCommands, type ColorMode } from './colors';
-    import { doCursor, initCursorCommand } from './cursor';
-    import { doZoom, initZoomCommand } from './zoom';
-    import { doSimulationUpdate, initSimulationUpdate } from './simulation';
+    import type { ColorMode } from './colors';
+    import type { InitialConditionsMode } from './initialConditions';
+    import { initProgram } from './reglWrapper';
 
     const screenDimensions = {
         width: window.innerWidth - 50,
@@ -25,7 +18,7 @@
     const controls = {
         colors: 'mrob' as ColorMode,
         initialConditions: 'randomSpots' as InitialConditionsMode,
-        reset: () => initProgram(),
+        reset: () => reset(),
         pause: false
     };
 
@@ -104,74 +97,9 @@
                 return event.preventDefault();
             }
             if (event.code === 'KeyR') {
-                initProgram();
+                reset();
                 return event.preventDefault();
             }
-        });
-    };
-
-    const initProgram = () => {
-        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-        if (!canvas) {
-            throw new Error('Canvas container not ready');
-        }
-
-        if (regl) {
-            regl.destroy();
-        }
-        regl = REGL({
-            extensions: ['OES_texture_float'],
-            canvas
-        });
-
-        info.iteration = 0;
-
-        const RADIUS = 2 ** WORLD_SIZE;
-
-        let INITIAL_CONDITIONS = getInitialConditions(controls.initialConditions, RADIUS);
-
-        const state = Array(2)
-            .fill(0)
-            .map(() =>
-                regl.framebuffer({
-                    color: regl.texture({
-                        radius: RADIUS,
-                        data: INITIAL_CONDITIONS,
-                        wrap: 'repeat',
-                        type: 'float'
-                    }),
-                    depthStencil: false
-                })
-            );
-        const coloredOutput = regl.framebuffer({
-            color: regl.texture({
-                radius: RADIUS,
-                data: INITIAL_CONDITIONS,
-                wrap: 'repeat',
-                type: 'float'
-            }),
-            depthStencil: false
-        });
-
-        initSimulationUpdate(regl, RADIUS, state);
-        initColorsCommands(regl, state, coloredOutput);
-        initCursorCommand(regl, coloredOutput);
-        initZoomCommand(regl, coloredOutput);
-
-        regl.frame(() => {
-            if (!controls.pause) {
-                info.iteration++;
-            }
-
-            doSimulationUpdate({
-                worldSize: WORLD_SIZE,
-                pauseSimulation: controls.pause,
-                mouseState,
-                simulationParameters
-            });
-            doColors(controls.colors, info);
-            doCursor(mouseState, WORLD_SIZE);
-            doZoom(mouseState);
         });
     };
 
@@ -224,7 +152,7 @@
         regl?.destroy();
 
         initGUI();
-        initProgram();
+        initProgram({ controls, info, mouseState, simulationParameters, worldSize: WORLD_SIZE });
     };
 
     const onSimulationParamsUpdate = (event: CustomEvent<{ f: number; k: number }>) => {
@@ -235,7 +163,7 @@
     onMount(() => {
         initGUI();
         initEvents();
-        initProgram();
+        initProgram({ controls, info, mouseState, simulationParameters, worldSize: WORLD_SIZE });
     });
 
     onDestroy(() => {
