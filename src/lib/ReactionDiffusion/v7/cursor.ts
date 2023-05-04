@@ -1,5 +1,5 @@
 import type REGL from 'regl';
-import drawVS from './glsl/draw.vert.glsl';
+import cursorVS from './glsl/cursor.vert.glsl';
 import cursorFS from './glsl/cursor.frag.glsl';
 import type { MouseState } from './types';
 
@@ -11,7 +11,7 @@ export const initCursorCommand = (
 ) => {
     command = regl({
         frag: cursorFS,
-        vert: drawVS,
+        vert: cursorVS,
 
         attributes: {
             position: [

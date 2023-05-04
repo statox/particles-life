@@ -1,7 +1,7 @@
 import type REGL from 'regl';
 
 import updateFS from './glsl/update.frag.glsl';
-import drawVS from './glsl/draw.vert.glsl';
+import updateVS from './glsl/update.vert.glsl';
 import type { MouseState, SimulationParameters } from './types';
 
 let command: REGL.DrawCommand;
@@ -12,7 +12,7 @@ export const initSimulationUpdate = (
 ) => {
     command = regl({
         frag: updateFS,
-        vert: drawVS,
+        vert: updateVS,
 
         attributes: {
             position: [-4, -4, 4, -4, 0, 4]

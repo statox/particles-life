@@ -1,6 +1,6 @@
 import type REGL from 'regl';
 
-import zoomVS from './glsl/zoom.vert.glsl';
+import colorsVS from './glsl/colors.vert.glsl';
 import colorsRawFS from './glsl/colors/raw.frag.glsl';
 import colorsTimeBasedBlueFS from './glsl/colors/timeBasedBlue.frag.glsl';
 import colorsGrayscaleFS from './glsl/colors/grayscale.frag.glsl';
@@ -28,7 +28,7 @@ export const initColorsCommands = (
     coloredTexture: REGL.Framebuffer2D | null
 ) => {
     const commonSettings = {
-        vert: zoomVS,
+        vert: colorsVS,
 
         attributes: {
             position: [
