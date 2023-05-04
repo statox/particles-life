@@ -1,10 +1,8 @@
 import REGL from 'regl';
 import { doColors, initColorsCommands } from './colors';
-import { doCursor, initCursorCommand } from './cursor';
 import { getInitialConditions } from './initialConditions';
 import { doSimulationUpdate, initSimulationUpdate } from './simulation';
 import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
-import { doZoom, initZoomCommand } from './zoom';
 
 let regl: REGL.Regl;
 
@@ -47,20 +45,19 @@ export const initProgram = (params: {
                 depthStencil: false
             })
         );
-    const coloredOutput = regl.framebuffer({
-        color: regl.texture({
-            radius: RADIUS,
-            data: INITIAL_CONDITIONS,
-            wrap: 'repeat',
-            type: 'float'
-        }),
-        depthStencil: false
-    });
+    // const coloredOutput = regl.framebuffer({
+    //     color: regl.texture({
+    //         radius: RADIUS,
+    //         data: INITIAL_CONDITIONS,
+    //         wrap: 'repeat',
+    //         type: 'float'
+    //     }),
+    //     depthStencil: false
+    // });
 
     initSimulationUpdate(regl, RADIUS, stateTextures);
-    initColorsCommands(regl, stateTextures, coloredOutput);
-    initCursorCommand(regl, coloredOutput);
-    initZoomCommand(regl, coloredOutput);
+    initColorsCommands(regl, stateTextures, null);
+    // initCursorCommand(regl, coloredOutput);
 
     regl.frame(() => {
         if (!controls.pause) {
@@ -73,9 +70,8 @@ export const initProgram = (params: {
             mouseState,
             simulationParameters
         });
-        doColors({ colorMode: controls.colors, iteration: info.iteration });
-        doCursor(mouseState, info.worldSize);
-        doZoom(mouseState);
+        doColors({ colorMode: controls.colors, iteration: info.iteration, zoomState: mouseState });
+        // doCursor(mouseState, info.worldSize);
     });
 
     return regl;

@@ -1,6 +1,6 @@
 import type REGL from 'regl';
 
-import drawVS from './glsl/draw.vert.glsl';
+import zoomVS from './glsl/zoom.vert.glsl';
 import colorsRawFS from './glsl/colors/raw.frag.glsl';
 import colorsTimeBasedBlueFS from './glsl/colors/timeBasedBlue.frag.glsl';
 import colorsGrayscaleFS from './glsl/colors/grayscale.frag.glsl';
@@ -25,129 +25,78 @@ const colorCommands: {
 export const initColorsCommands = (
     regl: REGL.Regl,
     stateTextures: REGL.Framebuffer2D[],
-    coloredTexture: REGL.Framebuffer2D
+    coloredTexture: REGL.Framebuffer2D | null
 ) => {
-    colorCommands['raw'] = regl({
-        frag: colorsRawFS,
-        vert: drawVS,
+    const commonSettings = {
+        vert: zoomVS,
 
         attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
+            position: [
+                [1, -1],
+                [-1, -1],
+                [1, 1],
+                [1, 1],
+                [-1, -1],
+                [-1, 1]
+            ]
         },
-        count: 3,
+        count: 6,
         framebuffer: coloredTexture,
         uniforms: {
             iteration: regl.prop('iteration'),
+            zoomLevel: regl.prop('zoomLevel'),
+            pan: regl.prop('pan'),
             prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
         }
+    };
+
+    colorCommands['raw'] = regl({
+        frag: colorsRawFS,
+        ...commonSettings
     });
 
     colorCommands['grayscale'] = regl({
         frag: colorsGrayscaleFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
     colorCommands['blackwhite'] = regl({
         frag: colorsBlackWhiteFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
     colorCommands['whiteblack'] = regl({
         frag: colorsWhiteBlackFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
     colorCommands['timebasedblue'] = regl({
         frag: colorsTimeBasedBlueFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
 
     colorCommands['lerp'] = regl({
         frag: colorsLerpFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
 
     colorCommands['mrob'] = regl({
         frag: colorsMrobFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
     colorCommands['redblue'] = regl({
         frag: colorsRedBlueFS,
-        vert: drawVS,
-
-        attributes: {
-            position: [-4, -4, 4, -4, 0, 4]
-        },
-        count: 3,
-        framebuffer: coloredTexture,
-        uniforms: {
-            iteration: regl.prop('iteration'),
-            prevState: (params: { tick: number }) => stateTextures[(params.tick + 1) % 2]
-        }
+        ...commonSettings
     });
 };
 
-export const doColors = (params: { colorMode: ColorMode; iteration: number }) => {
-    const { colorMode, iteration } = params;
+export const doColors = (params: {
+    colorMode: ColorMode;
+    iteration: number;
+    zoomState: { zoomLevel: number; panX: number; panY: number };
+}) => {
+    const { colorMode, iteration, zoomState } = params;
     const command = colorCommands[colorMode] || colorCommands['raw'];
     command({
-        iteration
+        iteration,
+        zoomLevel: zoomState.zoomLevel,
+        pan: [zoomState.panX, zoomState.panY]
     });
 };
