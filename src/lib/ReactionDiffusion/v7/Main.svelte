@@ -15,7 +15,7 @@
 
     const controls: Controls = {
         colors: 'mrob',
-        initialConditions: 'randomSpots',
+        initialConditions: 'middleCircleAndRandomSpots',
         reset: () => reset(),
         pause: false,
         grid: false,

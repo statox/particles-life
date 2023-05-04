@@ -1,10 +1,10 @@
-import REGL from 'regl';
-import { doCursor, initCursorCommand } from './cursor/cursor';
 import { doColors, initColorsCommands } from './colors/colors';
 import { doSimulationUpdate, initSimulationUpdate } from './simulation/simulation';
 import { getInitialConditions } from '../initialConditions';
 import type { Controls, MouseState, SimulationInfo, SimulationParameters } from '../types';
 import { doGrid, initGridCommands } from './grid/grid';
+import { doCursor, initCursorCommand } from './cursor/cursor';
+import REGL from 'regl';
 
 export const initProgram = (params: {
     controls: Controls;
