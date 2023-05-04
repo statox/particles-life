@@ -1,7 +1,7 @@
 import type REGL from 'regl';
 import cursorVS from './glsl/cursor.vert.glsl';
 import cursorFS from './glsl/cursor.frag.glsl';
-import type { MouseState } from './types';
+import type { MouseState } from '../../types';
 
 let command: REGL.DrawCommand;
 export const initCursorCommand = (

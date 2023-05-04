@@ -2,7 +2,7 @@ import type REGL from 'regl';
 
 import updateFS from './glsl/update.frag.glsl';
 import updateVS from './glsl/update.vert.glsl';
-import type { MouseState, SimulationParameters } from './types';
+import type { MouseState, SimulationParameters } from '../../types';
 
 let command: REGL.DrawCommand;
 export const initSimulationUpdate = (

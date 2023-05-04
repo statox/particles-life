@@ -1,14 +1,14 @@
 import type REGL from 'regl';
 
 import colorsVS from './glsl/colors.vert.glsl';
-import colorsRawFS from './glsl/colors/raw.frag.glsl';
-import colorsTimeBasedBlueFS from './glsl/colors/timeBasedBlue.frag.glsl';
-import colorsGrayscaleFS from './glsl/colors/grayscale.frag.glsl';
-import colorsBlackWhiteFS from './glsl/colors/blackWhite.frag.glsl';
-import colorsWhiteBlackFS from './glsl/colors/whiteBlack.frag.glsl';
-import colorsLerpFS from './glsl/colors/lerp.frag.glsl';
-import colorsMrobFS from './glsl/colors/mrob.frag.glsl';
-import colorsRedBlueFS from './glsl/colors/redblue.frag.glsl';
+import colorsRawFS from './glsl/raw.frag.glsl';
+import colorsTimeBasedBlueFS from './glsl/timeBasedBlue.frag.glsl';
+import colorsGrayscaleFS from './glsl/grayscale.frag.glsl';
+import colorsBlackWhiteFS from './glsl/blackWhite.frag.glsl';
+import colorsWhiteBlackFS from './glsl/whiteBlack.frag.glsl';
+import colorsLerpFS from './glsl/lerp.frag.glsl';
+import colorsMrobFS from './glsl/mrob.frag.glsl';
+import colorsRedBlueFS from './glsl/redblue.frag.glsl';
 
 export type ColorMode =
     | 'lerp'

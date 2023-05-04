@@ -4,7 +4,7 @@
     import type REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
     import { PARAMETERS_CLASSES } from './pearsonClasses';
-    import { initProgram } from './reglWrapper';
+    import { initProgram } from './webgl';
     import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
     import { getMouseCoordsRelativeToElement } from './mouse';
 

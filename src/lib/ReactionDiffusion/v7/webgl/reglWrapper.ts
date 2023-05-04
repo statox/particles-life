@@ -1,9 +1,9 @@
 import REGL from 'regl';
-import { doColors, initColorsCommands } from './colors';
-import { doCursor, initCursorCommand } from './cursor';
-import { getInitialConditions } from './initialConditions';
-import { doSimulationUpdate, initSimulationUpdate } from './simulation';
-import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
+import { doCursor, initCursorCommand } from './cursor/cursor';
+import { doColors, initColorsCommands } from './colors/colors';
+import { doSimulationUpdate, initSimulationUpdate } from './simulation/simulation';
+import { getInitialConditions } from '../initialConditions';
+import type { Controls, MouseState, SimulationInfo, SimulationParameters } from '../types';
 
 export const initProgram = (params: {
     controls: Controls;
