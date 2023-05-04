@@ -29,53 +29,35 @@ export const initProgram = (params: {
 
     const INITIAL_CONDITIONS = getInitialConditions(controls.initialConditions, RADIUS);
 
-    const stateTextures = Array(2)
-        .fill(0)
-        .map(() =>
-            regl.framebuffer({
-                color: regl.texture({
-                    radius: RADIUS,
-                    data: INITIAL_CONDITIONS,
-                    wrap: 'repeat',
-                    type: 'float'
-                }),
-                depthStencil: false
-            })
-        );
-    const coloredOutput = regl.framebuffer({
-        color: regl.texture({
-            radius: RADIUS,
-            data: INITIAL_CONDITIONS,
-            wrap: 'repeat',
-            type: 'float'
-        }),
-        depthStencil: false
-    });
+    const makeFrameBuffer = () =>
+        regl.framebuffer({
+            color: regl.texture({
+                radius: RADIUS,
+                data: INITIAL_CONDITIONS,
+                wrap: 'repeat',
+                type: 'float'
+            }),
+            depthStencil: false
+        });
 
-    const gridOutput = regl.framebuffer({
-        color: regl.texture({
-            radius: RADIUS,
-            data: INITIAL_CONDITIONS,
-            wrap: 'repeat',
-            type: 'float'
-        }),
-        depthStencil: false
-    });
+    const simulationTextures = Array(2).fill(0).map(makeFrameBuffer);
+    const graphicsTextures = Array(2).fill(0).map(makeFrameBuffer);
 
     initSimulationUpdate(regl, RADIUS);
     initColorsCommands(regl);
     initGridCommands(regl);
     initCursorCommand(regl);
 
-    let customTick = 0; // Regl probably has something build in but I couldn't find it
+    let frameTick = 0; // Regl probably has something build in but I couldn't find it
     regl.frame(() => {
-        customTick++;
+        frameTick++;
         if (!controls.pause) {
             info.iteration++;
         }
+        let graphicsTexturesTick = 0;
 
-        const inputSimulation = stateTextures[customTick % 2];
-        const outputSimulation = stateTextures[(customTick + 1) % 2];
+        const inputSimulation = simulationTextures[frameTick % 2];
+        const outputSimulation = simulationTextures[(frameTick + 1) % 2];
         doSimulationUpdate({
             inputBuffer: inputSimulation,
             outputBuffer: outputSimulation,
@@ -85,8 +67,9 @@ export const initProgram = (params: {
             simulationParameters
         });
 
+        graphicsTexturesTick++;
         const inputStep1 = outputSimulation;
-        const outputStep1 = coloredOutput;
+        const outputStep1 = graphicsTextures[graphicsTexturesTick % 2];
         doColors({
             colorMode: controls.colors,
             inputBuffer: inputStep1,
@@ -95,13 +78,15 @@ export const initProgram = (params: {
             zoomState: mouseState
         });
 
-        const inputStep2 = outputStep1;
-        const outputStep2 = gridOutput;
         if (controls.grid) {
+            graphicsTexturesTick++;
+            const inputStep2 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
+            const outputStep2 = graphicsTextures[graphicsTexturesTick % 2];
             doGrid({ inputBuffer: inputStep2, outputBuffer: outputStep2, zoomState: mouseState });
         }
 
-        const inputStep3 = controls.grid ? outputStep2 : outputStep1;
+        graphicsTexturesTick++;
+        const inputStep3 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
         const outputStep3 = null;
         doCursor({
             mouseState,
