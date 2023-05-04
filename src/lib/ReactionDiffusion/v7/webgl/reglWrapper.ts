@@ -48,17 +48,16 @@ export const initProgram = (params: {
     initGridCommands(regl);
     initCursorCommand(regl);
 
-    let frameTick = 0; // Regl probably has something build in but I couldn't find it
     regl.frame(() => {
         if (!controls.pause) {
             info.iteration++;
         }
 
-        let outputSimulation = simulationTextures[(frameTick + 1) % 2];
+        let outputSimulation = simulationTextures[(info.iteration + 1) % 2];
         for (let i = 0; i < controls.speed; i++) {
-            frameTick++;
-            const inputSimulation = simulationTextures[frameTick % 2];
-            outputSimulation = simulationTextures[(frameTick + 1) % 2];
+            info.iteration++;
+            const inputSimulation = simulationTextures[info.iteration % 2];
+            outputSimulation = simulationTextures[(info.iteration + 1) % 2];
             doSimulationUpdate({
                 inputBuffer: inputSimulation,
                 outputBuffer: outputSimulation,
