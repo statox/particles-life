@@ -10,6 +10,12 @@ export const PARAMETERS_CLASSES: ParametersClass[] = [
         f: 0.055,
         k: 0.062
     },
+    {
+        name: 'Test',
+        type: 'Unknown',
+        f: 0.0353,
+        k: 0.0614
+    },
     // Type alpha: Spatial-temporal chaos composed mainly of wavelets and "fledgling spirals" that repeatedly grow and/or multiply and quickly annihilate upon hitting another object.
     {
         name: 'α 1',
@@ -75,6 +81,12 @@ export const PARAMETERS_CLASSES: ParametersClass[] = [
         type: 'iota',
         f: 0.046,
         k: 0.0594
+    },
+    {
+        name: 'κ 1',
+        type: 'kappa',
+        f: 0.082,
+        k: 0.06
     },
     // Type lambda:  Solitons that grow by mitosis (cell-division). After the space is filled, solitons rearrange into hexagonal grids, sometimes with grain boundaries. Eventually, all movement stops and the pattern is in a steady state
     {
