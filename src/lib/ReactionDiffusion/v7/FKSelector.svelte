@@ -86,7 +86,7 @@
         };
 
         p5.setup = () => {
-            p5.createCanvas(500, 500);
+            p5.createCanvas(300, 300);
             p5.frameRate(25);
         };
 

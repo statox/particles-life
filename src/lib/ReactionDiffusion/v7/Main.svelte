@@ -14,7 +14,7 @@
     };
 
     const controls: Controls = {
-        colors: 'mrob',
+        colors: 'A_IDL_CB_RdYiBu',
         initialConditions: 'middleCircleAndRandomSpots',
         reset: () => reset(),
         pause: false,
@@ -73,7 +73,13 @@
             'timebasedblue',
             'lerp',
             'mrob',
-            'redblue'
+            'redblue',
+            'A_gradiant1',
+            'A_gradiant2',
+            'A_MATLAB_cool',
+            'A_IDL_CB_RdBu',
+            'A_IDL_CB_RdYiBu',
+            'B_IDL_CB_RdYiBu'
         ]).name('Color scheme');
 
         const initialConditionsOptions = {

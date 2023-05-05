@@ -9,8 +9,20 @@ import colorsWhiteBlackFS from './glsl/whiteBlack.frag.glsl';
 import colorsLerpFS from './glsl/lerp.frag.glsl';
 import colorsMrobFS from './glsl/mrob.frag.glsl';
 import colorsRedBlueFS from './glsl/redblue.frag.glsl';
+import colorsA_Gradiant1FS from './glsl/A_gradiant1.frag.glsl';
+import colorsA_Gradiant2FS from './glsl/A_gradiant2.frag.glsl';
+import colorsA_MATLAB_coolFS from './glsl/A_MATLAB_cool.frag.glsl';
+import colorsA_IDL_CB_RdBuFS from './glsl/A_IDL_CB-RdBu.frag.glsl';
+import colorsA_IDL_CB_RdYiBuFS from './glsl/A_IDL_CB-RdYiBu.frag.glsl';
+import colorsB_IDL_CB_RdYiBuFS from './glsl/B_IDL_CB-RdYiBu.frag.glsl';
 
 export type ColorMode =
+    | 'A_gradiant1'
+    | 'A_gradiant2'
+    | 'A_MATLAB_cool'
+    | 'A_IDL_CB_RdBu'
+    | 'A_IDL_CB_RdYiBu'
+    | 'B_IDL_CB_RdYiBu'
     | 'lerp'
     | 'grayscale'
     | 'blackwhite'
@@ -48,6 +60,36 @@ export const initColorsCommands = (regl: REGL.Regl) => {
 
     colorCommands['raw'] = regl({
         frag: colorsRawFS,
+        ...commonSettings
+    });
+
+    colorCommands['A_gradiant1'] = regl({
+        frag: colorsA_Gradiant1FS,
+        ...commonSettings
+    });
+
+    colorCommands['A_gradiant2'] = regl({
+        frag: colorsA_Gradiant2FS,
+        ...commonSettings
+    });
+
+    colorCommands['A_MATLAB_cool'] = regl({
+        frag: colorsA_MATLAB_coolFS,
+        ...commonSettings
+    });
+
+    colorCommands['A_IDL_CB_RdBu'] = regl({
+        frag: colorsA_IDL_CB_RdBuFS,
+        ...commonSettings
+    });
+
+    colorCommands['A_IDL_CB_RdYiBu'] = regl({
+        frag: colorsA_IDL_CB_RdYiBuFS,
+        ...commonSettings
+    });
+
+    colorCommands['B_IDL_CB_RdYiBu'] = regl({
+        frag: colorsB_IDL_CB_RdYiBuFS,
         ...commonSettings
     });
 
