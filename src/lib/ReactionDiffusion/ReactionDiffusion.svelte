@@ -7,8 +7,10 @@
     import V5 from './v5/Main.svelte';
     import V6 from './v6/Main.svelte';
     import V7 from './v7/Main.svelte';
+    import ParametersMap from './parametersMap/Main.svelte';
 
     const tabs = [
+        { title: 'Parameters map', component: ParametersMap },
         { title: 'V7', component: V7 },
         { title: 'V6', component: V6 },
         { title: 'V5', component: V5 },

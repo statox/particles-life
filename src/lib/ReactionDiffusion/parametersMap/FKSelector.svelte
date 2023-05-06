@@ -10,9 +10,8 @@
     let selectedClass = PARAMETERS_CLASSES[0];
 
     let isOpen = false;
-
-    const rangeF = [0, 0.11];
-    const rangeK = [0.03, 0.08];
+    const rangeF = [0.01, 0.09];
+    const rangeK = [0.01, 0.08];
 
     const fkToCoords = (params: { f: number; k: number }) => {
         const { f, k } = params;
@@ -46,7 +45,7 @@
     };
 
     const drawClasses = (p5: p5) => {
-        p5.fill(96, 91, 239);
+        p5.fill('blue');
         for (const paramClass of PARAMETERS_CLASSES) {
             const { x, y } = fkToCoords({ f: paramClass.f, k: paramClass.k });
             p5.circle(x, y, 8);
@@ -83,12 +82,11 @@
         p5.preload = () => {
             // Images from https://www.mrob.com
             // background = p5.loadImage('/pearsons-parameter-map.jpg');
-            // background = p5.loadImage(base + '/pearson-space.png');
-            background = p5.loadImage(base + '/my_parameters_map.png');
+            background = p5.loadImage(base + '/pearson-space.png');
         };
 
         p5.setup = () => {
-            p5.createCanvas(400, 400);
+            p5.createCanvas(300, 300);
             p5.frameRate(25);
         };
 
