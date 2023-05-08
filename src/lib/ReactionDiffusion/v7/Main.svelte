@@ -36,7 +36,7 @@
 
     const info: SimulationInfo = {
         iteration: 0,
-        worldSize: 9 // Used as a power of 2
+        worldSize: 8 // Used as a power of 2
     };
 
     // Dummy initialization, changes are handled by FKSelector
@@ -210,6 +210,7 @@
             step="1"
             on:change={reset}
         />
+        <span>({2 ** info.worldSize} x {2 ** info.worldSize} : {2 ** (info.worldSize + 1)})</span>
     </div>
     <canvas
         on:mousemove={handleMousemove}

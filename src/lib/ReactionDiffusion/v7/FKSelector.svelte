@@ -46,10 +46,14 @@
     };
 
     const drawClasses = (p5: p5) => {
-        p5.fill(96, 91, 239);
+        p5.noStroke();
+        const textSizeSave = p5.textSize();
         for (const paramClass of PARAMETERS_CLASSES) {
             const { x, y } = fkToCoords({ f: paramClass.f, k: paramClass.k });
-            p5.circle(x, y, 8);
+            const isSelected = paramClass.f === selectedClass.f && paramClass.k === selectedClass.k;
+            p5.circle(x, y, 3);
+            p5.textSize(isSelected ? textSizeSave * 2 : textSizeSave);
+            p5.fill(isSelected ? [240, 240, 150] : [255, 255, 255]);
             p5.text(paramClass.name, x - p5.textWidth(paramClass.name) / 2, y - 10);
         }
     };
@@ -135,6 +139,7 @@
         {isOpen ? 'Close' : 'F/K selection'}
     </button>
     {#if isOpen}
+        <div>Select f and k parameters on the map of use a preset</div>
         <select
             class="full-width"
             bind:value={selectedClass}
