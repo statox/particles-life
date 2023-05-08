@@ -14,7 +14,7 @@
     };
 
     const controls: Controls = {
-        colors: 'A_IDL_CB_RdYiBu',
+        colors: 'A_transform_seismic',
         initialConditions: 'middleCircleAndRandomSpots',
         reset: () => reset(),
         pause: false,
@@ -79,6 +79,8 @@
             'A_MATLAB_cool',
             'A_IDL_CB_RdBu',
             'A_IDL_CB_RdYiBu',
+            'A_IDL_CB_BuYiRd',
+            'A_transform_seismic',
             'B_IDL_CB_RdYiBu'
         ]).name('Color scheme');
 
