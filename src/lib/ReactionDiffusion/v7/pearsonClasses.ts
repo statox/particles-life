@@ -48,6 +48,23 @@ export const PARAMETERS_CLASSES: ParametersClass[] = [
         f: 0.026,
         k: 0.051
     },
+    // Type delta:  Includes true Turing patterns and many parameter values that produce similar patterns through a presumably related effect.
+    // The true Turing pattern arises from a starting pattern that is all blue, with arbitrarily small noise or other irregularities.
+    // In "Turing-similar" systems, a pattern cannot arise from an all-blue starting state, instead they need to be "seeded" by a large amplitude disturbance
+    // (anything non-blue and at least as large as a typical negaton will usually suffice); and the pattern grows outward from the disturbance.
+    // In either case, the resulting pattern is a hexagonal array of negative spots, possibly with some stripes in place of rows of spots, and with grain boundaries that are asymptotically stable.
+    {
+        name: 'δ 1',
+        type: 'delta',
+        f: 0.03,
+        k: 0.055
+    },
+    {
+        name: 'δ 2',
+        type: 'delta',
+        f: 0.042,
+        k: 0.059
+    },
     // Type epsilon: Spatial-temporal chaos composed mainly of spots (resembling solitons but unstable). Rings can grow until they contact something else; spots with less symmetry tend to live longer and split via mitosis. Spots continually crowd each other out; after regions are opened up by die-outs; other spots on the boundary of the newly opened region quickly fill it in again.
     {
         name: 'ε 1',
@@ -88,11 +105,18 @@ export const PARAMETERS_CLASSES: ParametersClass[] = [
         f: 0.046,
         k: 0.0594
     },
+    // Stripes in isolation grow width-wise (usually by developing meanders to grow longer and more serpentine); some irregular blue shapes grow into corals. The final state is mostly all stripes, often with branching, and usually in multiple disjoint sets (hedgerow mazes).
     {
         name: 'κ 1',
         type: 'kappa',
         f: 0.082,
         k: 0.06
+    },
+    {
+        name: 'κ 2',
+        type: 'kappa',
+        f: 0.058,
+        k: 0.063
     },
     // Type lambda:  Solitons that grow by mitosis (cell-division). After the space is filled, solitons rearrange into hexagonal grids, sometimes with grain boundaries. Eventually, all movement stops and the pattern is in a steady state
     {
@@ -119,6 +143,13 @@ export const PARAMETERS_CLASSES: ParametersClass[] = [
         type: 'mu',
         f: 0.058,
         k: 0.065
+    },
+    // Type nu: Inert (non-mitotic) solitons. The number of solitons depends on the number and size of blue areas in the starting pattern. All large blue areas shrink and/or split up into solitons. The solitons then drift apart from each other to spread as uniformly as possible across the space
+    {
+        name: 'ν 2',
+        type: 'nu',
+        f: 0.046,
+        k: 0.067
     },
     //Type pi: supports stripes, loops, and spots, all of them negative. These form stable localised structures, both stationary and moving, and localised force-like interactions whose nature (attractive or repelling) oscillates in sign with increasing distance and whose strength decreases exponentially with distance. The combination of this force interaction and motion means that you also get rotating patterns.
     // Most significantly, the type pi patterns display such a great diversity that it is impossible to characterise the final outcome of a system just by looking at its initial state, except for a limited class of starting states (e.g. when the starting pattern consists only of lone negatons separated by large distances).

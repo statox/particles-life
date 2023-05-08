@@ -52,8 +52,6 @@ export const initColorsCommands = (regl: REGL.Regl) => {
         framebuffer: regl.prop('outputBuffer'),
         uniforms: {
             iteration: regl.prop('iteration'),
-            zoomLevel: regl.prop('zoomLevel'),
-            pan: regl.prop('pan'),
             prevState: regl.prop('inputBuffer')
         }
     };

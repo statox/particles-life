@@ -19,17 +19,18 @@ export const initSimulationUpdate = (regl: REGL.Regl, radius: number) => {
                 [-1, -1], // Top left
                 [-1, 1] // bottom left
             ],
-            // f: [maxF, maxF, minF, minF, maxF, minF],
-            // k: [maxK, minK, maxK, maxK, minK, minK],
             fk: (_, params) => {
                 const { maxF, minF, maxK, minK } = params.simulationParameters;
                 return [
+                    [minF, maxK],
+                    [minF, minK],
+
                     [maxF, maxK],
-                    [maxF, minK],
-                    [minF, maxK],
-                    [minF, maxK],
-                    [maxF, minK],
-                    [minF, minK]
+                    [maxF, maxK],
+
+                    [minF, minK],
+
+                    [maxF, minK]
                 ];
             }
         },
@@ -45,10 +46,7 @@ export const initSimulationUpdate = (regl: REGL.Regl, radius: number) => {
             mousePosition: regl.prop('mousePosition'),
             penRadius: regl.prop('penRadius'),
             penDensity: regl.prop('penDensity'),
-            penIsActive: regl.prop('penIsActive'),
-            eraserIsActive: regl.prop('eraserIsActive'),
-            zoomLevel: regl.prop('zoomLevel'),
-            pan: regl.prop('pan')
+            penIsActive: regl.prop('penIsActive')
         }
     });
 };

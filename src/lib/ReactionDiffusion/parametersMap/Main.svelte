@@ -13,11 +13,11 @@
 
     const controls: Controls = {
         colors: 'blackwhite',
-        initialConditions: 'empty',
+        initialConditions: 'full',
         reset: () => reset(),
         pause: false,
         grid: false,
-        speed: 6
+        speed: 10
     };
 
     const mouseState: MouseState = {
@@ -25,7 +25,7 @@
         pressedRight: false,
         x: 0,
         y: 0,
-        penSize: 6.5,
+        penSize: 12,
         penDensity: 0.3,
         zoomLevel: 1,
         panX: 0.5,
@@ -34,14 +34,21 @@
 
     const info: SimulationInfo = {
         iteration: 0,
-        worldSize: 10 // Used as a power of 2
+        worldSize: 12 // Used as a power of 2
     };
 
+    // const simulationParameters: ParametersMapParameters = {
+    //     minK: 0.03,
+    //     maxK: 0.08,
+    //     minF: 0,
+    //     maxF: 0.11
+    // };
+
     const simulationParameters: ParametersMapParameters = {
-        minK: 0.03,
-        maxK: 0.08,
+        minK: 0.02,
+        maxK: 0.07,
         minF: 0,
-        maxF: 0.11
+        maxF: 0.12
     };
 
     let gui: GUI;
@@ -85,7 +92,8 @@
             'Random spots': 'randomSpots',
             'Middle spot': 'middleSpot',
             'Middle + random': 'middleCircleAndRandomSpots',
-            Empty: 'empty'
+            Empty: 'empty',
+            Full: 'full'
         };
         gui.add(controls, 'initialConditions', initialConditionsOptions)
             .onFinishChange(controls.reset)
@@ -165,8 +173,8 @@
         if (isNaN(info.worldSize)) {
             return;
         }
-        if (info.worldSize > 11) {
-            info.worldSize = 11;
+        if (info.worldSize > 12) {
+            info.worldSize = 12;
         }
         if (info.worldSize < 1) {
             info.worldSize = 1;
@@ -222,7 +230,6 @@
     #canvas {
         position: absolute;
         margin-bottom: 50px;
-        cursor: none;
     }
 
     #datgui-container {

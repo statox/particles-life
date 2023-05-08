@@ -2,7 +2,8 @@ export type InitialConditionsMode =
     | 'empty'
     | 'randomSpots'
     | 'middleCircleAndRandomSpots'
-    | 'empty';
+    | 'empty'
+    | 'full';
 
 export const getInitialConditions = (mode: InitialConditionsMode, radius: number) => {
     if (mode === 'randomSpots') {
@@ -12,6 +13,9 @@ export const getInitialConditions = (mode: InitialConditionsMode, radius: number
         return middleCircleAndRandomSpots(radius, 0.005, 0.05);
     }
     if (mode === 'empty') {
+        return empty(radius);
+    }
+    if (mode === 'full') {
         return empty(radius);
     }
     return middleSpot(radius, 0.02);
@@ -48,6 +52,10 @@ const empty = (radius: number) => {
             return [0, 0, 0, 1];
         })
         .flat();
+};
+
+const full = (radius: number) => {
+    return empty(radius).map((_) => 1);
 };
 
 const randomSpots = (radius: number, birthChance: number) => {

@@ -66,8 +66,6 @@ void main() {
     float rnd = random(uv);
     if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
         gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
-        gl_FragColor = vec4(1.0, 0.0, 0, 1);
     } else if (pauseSimulation) {
         gl_FragColor = vec4(A, B, 0, 1);
     } else {
