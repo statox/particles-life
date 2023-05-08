@@ -10,8 +10,8 @@
     import ParametersMap from './parametersMap/Main.svelte';
 
     const tabs = [
-        { title: 'Parameters map', component: ParametersMap },
         { title: 'V7', component: V7 },
+        { title: 'Parameters map', component: ParametersMap },
         { title: 'V6', component: V6 },
         { title: 'V5', component: V5 },
         { title: 'V4', component: V4 },

@@ -11,16 +11,22 @@ export const PARAMETERS_CLASSES: ParametersClass[] = [
         k: 0.062
     },
     {
-        name: 'Test 1',
-        type: 'Unknown',
+        name: 'STX 1',
+        type: 'N.A',
         f: 0.0353,
         k: 0.0614
     },
     {
-        name: 'Never full population',
-        type: 'Unknown',
+        name: 'STX 2',
+        type: 'N.A',
         f: 0.0201,
         k: 0.0602
+    },
+    {
+        name: 'STX 2',
+        type: 'N.A',
+        f: 0.0181,
+        k: 0.0435
     },
     // Type alpha: Spatial-temporal chaos composed mainly of wavelets and "fledgling spirals" that repeatedly grow and/or multiply and quickly annihilate upon hitting another object.
     {

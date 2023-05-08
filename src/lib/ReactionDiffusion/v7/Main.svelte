@@ -96,7 +96,7 @@
 
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
-        gui.add(controls, 'speed', 1, 500).name('Simulation speed');
+        gui.add(controls, 'speed', 1, 200).name('Simulation speed');
 
         gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
