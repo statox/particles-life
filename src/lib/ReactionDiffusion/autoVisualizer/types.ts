@@ -7,6 +7,7 @@ export type Controls = {
     reset: () => void;
     pause: boolean;
     grid: boolean;
+    pen: boolean;
     speed: number;
 };
 

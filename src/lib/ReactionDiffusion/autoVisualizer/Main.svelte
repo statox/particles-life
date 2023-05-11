@@ -18,6 +18,7 @@
         reset: () => reset(),
         pause: false,
         grid: false,
+        pen: false,
         speed: 50
     };
 
@@ -62,6 +63,7 @@
 
         gui.add(controls, 'pause').name('Pause');
         gui.add(controls, 'grid').name('Debug grid');
+        gui.add(controls, 'pen').name('Show pen');
         gui.add(controls, 'reset').name('Reset simulation');
 
         gui.add(controls, 'colors', [

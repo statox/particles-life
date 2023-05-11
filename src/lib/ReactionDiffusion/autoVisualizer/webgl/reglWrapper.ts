@@ -92,7 +92,10 @@ const graphicPipeline = (params: {
     let graphicsTexturesTick = 0;
     graphicsTexturesTick++;
     const inputStep1 = inputTexture;
-    const outputStep1 = graphicsTextures[graphicsTexturesTick % 2];
+    let outputStep1: REGL.Framebuffer2D | null = graphicsTextures[graphicsTexturesTick % 2];
+    if (!controls.grid && !controls.pen) {
+        outputStep1 = null;
+    }
     doColors({
         colorMode: controls.colors,
         inputBuffer: inputStep1,
@@ -104,17 +107,22 @@ const graphicPipeline = (params: {
     if (controls.grid) {
         graphicsTexturesTick++;
         const inputStep2 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
-        const outputStep2 = graphicsTextures[graphicsTexturesTick % 2];
+        let outputStep2: REGL.Framebuffer2D | null = graphicsTextures[graphicsTexturesTick % 2];
+        if (!controls.pen) {
+            outputStep2 = null;
+        }
         doGrid({ inputBuffer: inputStep2, outputBuffer: outputStep2, zoomState: mouseState });
     }
 
-    graphicsTexturesTick++;
-    const inputStep3 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
-    const outputStep3 = null;
-    doCursor({
-        mouseState,
-        worldSize: info.worldSize,
-        inputBuffer: inputStep3,
-        outputBuffer: outputStep3
-    });
+    if (controls.pen) {
+        graphicsTexturesTick++;
+        const inputStep3 = graphicsTextures[(graphicsTexturesTick + 1) % 2];
+        const outputStep3 = null;
+        doCursor({
+            mouseState,
+            worldSize: info.worldSize,
+            inputBuffer: inputStep3,
+            outputBuffer: outputStep3
+        });
+    }
 };
