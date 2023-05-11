@@ -99,7 +99,7 @@
         iterationController.domElement.style.pointerEvents = 'none';
         gui.add(controls, 'speed', 1, 200).name('Simulation speed').listen();
 
-        gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size');
+        gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size').listen();
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
 
         gui.add(mouseState, 'zoomLevel', 0, 1).name('Zoom level').listen();
@@ -124,6 +124,7 @@
     const randomClick = () => {
         mouseState.x = Math.random();
         mouseState.y = Math.random();
+        mouseState.penSize = Math.random() * 3;
         mouseState.pressedLeft = true;
         setTimeout(() => (mouseState.pressedLeft = false), 500);
         autoclickInterval = setTimeout(randomClick, Math.random() * 5000);
