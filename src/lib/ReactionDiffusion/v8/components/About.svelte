@@ -3,9 +3,9 @@
     import SvelteMarkdown from 'svelte-markdown';
     import source from './about.md';
 
-    const markdownOptions = {
-        baseUrl: base
-    };
+    // Shitty hack because I didn't figure out how to tweak the pre-renderer
+    // to properly include the baseUrl in the image links
+    const sourceWithFixedLinks = source.replaceAll('{baseUrl}', base);
 </script>
 
-<SvelteMarkdown {source} options={markdownOptions} />
+<SvelteMarkdown source={sourceWithFixedLinks} />

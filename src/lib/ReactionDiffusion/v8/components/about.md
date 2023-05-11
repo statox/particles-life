@@ -29,11 +29,11 @@ The menu on the left allows the user to change the `f` and `k` parameters of the
 
 This unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation you can try to find many different patterns like the following:
 
-![pattern1](/reaction_diffusion_about/pattern1.png)
-![pattern2](/reaction_diffusion_about/pattern2.png)
-![pattern3](/reaction_diffusion_about/pattern3.png)
-![pattern4](/reaction_diffusion_about/pattern4.png)
-![pattern5](/reaction_diffusion_about/pattern5.png)
+![pattern1]({baseUrl}/reaction_diffusion_about/pattern1.png)
+![pattern2]({baseUrl}/reaction_diffusion_about/pattern2.png)
+![pattern3]({baseUrl}/reaction_diffusion_about/pattern3.png)
+![pattern4]({baseUrl}/reaction_diffusion_about/pattern4.png)
+![pattern5]({baseUrl}/reaction_diffusion_about/pattern5.png)
 
 ### Parameters map
 I used this tab to generate the parameters map used in the simulation parameters menu. By default the settings are lower compared to those I used to generate the final parameter map. Here the difference with the other tabs is that the `f` and `k` parameters of the simulation are uniform on the grid, they vary accross the screen to show the different possible patterns.
