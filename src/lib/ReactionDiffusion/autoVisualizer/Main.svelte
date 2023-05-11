@@ -96,7 +96,7 @@
 
         const iterationController = gui.add(info, 'iteration').listen();
         iterationController.domElement.style.pointerEvents = 'none';
-        gui.add(controls, 'speed', 1, 200).name('Simulation speed');
+        gui.add(controls, 'speed', 1, 200).name('Simulation speed').listen();
 
         gui.add(mouseState, 'penSize', 0, info.worldSize).name('Pen size');
         gui.add(mouseState, 'penDensity', 0, 1).name('Pen density');
@@ -186,6 +186,12 @@
     const onSimulationParamsUpdate = (event: CustomEvent<{ f: number; k: number }>) => {
         simulationParameters.f = event.detail.f;
         simulationParameters.k = event.detail.k;
+
+        if (simulationParameters.f > 0.03) {
+            controls.speed = 50;
+        } else {
+            controls.speed = 2;
+        }
     };
 
     onMount(() => {

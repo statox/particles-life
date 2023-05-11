@@ -180,10 +180,12 @@
     const moveFK = () => {
         let { f, k } = selectedClass;
 
-        const noiseF = _p5.noise(_p5.frameCount * 0.005);
-        const noiseK = _p5.noise(5321 + _p5.frameCount * 0.005);
-        f = f + (noiseF * 2 - 1) * (rangeF[1] - rangeF[0]) * 0.001;
-        k = k + (noiseK * 2 - 1) * (rangeF[1] - rangeF[0]) * 0.001;
+        const noiseK = _p5.noise(_p5.frameCount * 0.01);
+        const noiseF = _p5.noise(5321 + _p5.frameCount * 0.01);
+        const smallMove = Math.random() < 0.97;
+        const moveCoefficient = smallMove ? 0.001 : 0.01;
+        f = f + (noiseF * 2 - 1) * (rangeF[1] - rangeF[0]) * moveCoefficient;
+        k = k + (noiseK * 2 - 1) * (rangeK[1] - rangeK[0]) * moveCoefficient;
 
         selectedClass = {
             f,
