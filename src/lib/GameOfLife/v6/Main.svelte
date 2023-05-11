@@ -166,7 +166,7 @@
             };
 
             mouseCoordinates.x = mousePos.x / screenDimensions.width;
-            mouseCoordinates.y = mousePos.y / screenDimensions.height;
+            mouseCoordinates.y = 1 - mousePos.y / screenDimensions.height;
         });
 
         canvas.addEventListener('mousedown', (event) => {
