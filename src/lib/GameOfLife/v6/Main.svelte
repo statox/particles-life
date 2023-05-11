@@ -17,7 +17,7 @@
     };
     const settings = {
         program: {
-            pause: true,
+            pause: false,
             infiniteSource: false,
             drawMode: 'age_gradiant' as DrawingMode,
             reloadProgram: () => main()
