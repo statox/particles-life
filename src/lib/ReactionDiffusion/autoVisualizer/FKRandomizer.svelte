@@ -86,11 +86,11 @@
         for (let i = 0; i < vertices.length; i++) {
             const { x: xa, y: ya } = fkToCoords(vertices[i]);
             const { x: xb, y: yb } = fkToCoords(vertices[(i + 1) % vertices.length]);
-            p5.fill('green');
-            p5.stroke('green');
-            p5.strokeWeight(3);
-            p5.circle(xa, ya, 10);
-            p5.circle(xb, yb, 10);
+            p5.fill('white');
+            p5.stroke('white');
+            p5.strokeWeight(1);
+            p5.circle(xa, ya, 3);
+            p5.circle(xb, yb, 3);
             p5.line(xa, ya, xb, yb);
         }
     };
