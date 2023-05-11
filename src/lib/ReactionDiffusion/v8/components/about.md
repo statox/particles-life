@@ -8,12 +8,38 @@ For this project I wanted to learn more about reaction-diffusion systems. The sy
 
 The main parameters for these simulations are the `f` and `k` variables. I explain more in details what the correspond to in the next sections, for now just keep in mind that varying `f` and `k` make the simulation generate different kinds of patterns.
 
-The application contains 4 tabs you can explore:
+The application contains 4 tabs you can explore.
 
-- `Auto` This is my "artistic" stake at this simulation. The `f` and `k` parameters are contiually changing to automatically generate different kinds of patterns. A mecanism also regularly regenerates some amount of solution so that there is as few stable states as possible. You don't have to do anything, just load the tab and watch funny colors move on the screen.
-- `Manual` This is an interactive view of the model. The menu on the left allows the user to change the `f` and `k` parameters of the simulation and see how they influence the reaction. In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the `Ctrl` button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out). Finally the menu on the left allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...
-- `Parameters map` I used this tab to generate the parameters map used in the simulation parameters menu. By default the settings are lower compared to those I used to generate the final parameter map. Here the difference with the other tabs is that the `f` and `k` parameters of the simulation are uniform on the grid, they vary accross the screen to show the different possible patterns.
-- `Previous versions` It took me several iterations to get the results shown in the other tabs. This tab regroups my different iterations.
+### Auto
+This is my "artistic" stake at this simulation. The `f` and `k` parameters are contiually changing to automatically generate different kinds of patterns. A mecanism also regularly regenerates some amount of solution so that there is as few stable states as possible. You don't have to do anything, just load the tab and watch funny colors move on the screen.
+
+You can use the menu on the let to tweak how fast the `f` and `k` parameters change and how much they change each time.
+
+There are several configurations to try out and which give various results:
+
+- Increasing the change magnitude impacts the stability of the system. Small change magnitudes keeps `f` and `k` in a smaller area so the diversity of patterns generated is reduced, on the other hand larger magnitudes will create larger changes in the parameters space so it might create situations where the one of the chemical reacts with all of the other leaving a uniform colored texture.
+
+- Increasing the change rate makes the parameters get updated more often which might leave more time for configurations to stabilize and display all of their features.
+
+### Manual
+
+This is an interactive view of the model.
+
+The menu on the left allows the user to change the `f` and `k` parameters of the simulation and see how they influence the reaction. In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the `Ctrl` button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out). Finally the menu on the left allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...
+
+This unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation you can try to find many different patterns like the following:
+
+![pattern1](/reaction_diffusion_about/pattern1.png)
+![pattern2](/reaction_diffusion_about/pattern2.png)
+![pattern3](/reaction_diffusion_about/pattern3.png)
+![pattern4](/reaction_diffusion_about/pattern4.png)
+![pattern5](/reaction_diffusion_about/pattern5.png)
+
+### Parameters map
+I used this tab to generate the parameters map used in the simulation parameters menu. By default the settings are lower compared to those I used to generate the final parameter map. Here the difference with the other tabs is that the `f` and `k` parameters of the simulation are uniform on the grid, they vary accross the screen to show the different possible patterns.
+
+### Previous versions
+It took me several iterations to get the results shown in the other tabs. This tab regroups my different iterations.
 
 
 ## Resources
