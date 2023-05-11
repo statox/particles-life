@@ -37,6 +37,29 @@
 
         return { x, y };
     };
+    const coordsToFk = (params: { x: number; y: number }) => {
+        const { x, y } = params;
+
+        const f = _p5.map(y, _p5.height, 0, rangeF[0], rangeF[1]);
+        const k = _p5.map(x, 0, _p5.width, rangeK[0], rangeK[1]);
+
+        return { f, k };
+    };
+    const readMouse = (p5: p5) => {
+        const x = p5.mouseX;
+        const y = p5.mouseY;
+        if (x < 0 || y < 0 || x > p5.width || y > p5.height) {
+            return;
+        }
+        const { f, k } = coordsToFk({ x: p5.mouseX, y: p5.mouseY });
+        selectedClass = {
+            f,
+            k,
+            name: 'custom',
+            type: 'manual'
+        };
+        dispatch('fkupdated', selectedClass);
+    };
 
     const drawClasses = (p5: p5) => {
         p5.noStroke();
@@ -226,6 +249,12 @@
             drawFKText(p5);
 
             moveFK();
+
+            buttonIsPressed = false;
+            if (p5.mouseIsPressed) {
+                readMouse(p5);
+                buttonIsPressed = true;
+            }
         };
     };
 
