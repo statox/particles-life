@@ -7,10 +7,12 @@
     import V5 from './v5/Main.svelte';
     import V6 from './v6/Main.svelte';
     import V7 from './v7/Main.svelte';
+    import V8 from './v8/Main.svelte';
     import ParametersMap from './parametersMap/Main.svelte';
     import AutoVisualizer from './autoVisualizer/Main.svelte';
 
     const tabs = [
+        { title: 'V8', component: V8 },
         { title: 'Auto visualizer', component: AutoVisualizer },
         { title: 'V7', component: V7 },
         { title: 'Parameters map', component: ParametersMap },
