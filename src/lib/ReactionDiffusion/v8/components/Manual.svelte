@@ -78,6 +78,7 @@
             'A_gradiant1',
             'A_gradiant2',
             'A_MATLAB_cool',
+            'A_MATLAB_parula',
             'A_IDL_CB_RdBu',
             'A_IDL_CB_RdYiBu',
             'A_IDL_CB_BuYiRd',

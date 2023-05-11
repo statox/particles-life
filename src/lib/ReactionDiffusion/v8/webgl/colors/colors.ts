@@ -12,6 +12,7 @@ import colorsRedBlueFS from './glsl/redblue.frag.glsl';
 import colorsA_Gradiant1FS from './glsl/A_gradiant1.frag.glsl';
 import colorsA_Gradiant2FS from './glsl/A_gradiant2.frag.glsl';
 import colorsA_MATLAB_coolFS from './glsl/A_MATLAB_cool.frag.glsl';
+import colorsA_MATLAB_parulaFS from './glsl/A_MATLAB_parula.frag.glsl';
 import colorsA_IDL_CB_RdBuFS from './glsl/A_IDL_CB-RdBu.frag.glsl';
 import colorsA_IDL_CB_RdYiBuFS from './glsl/A_IDL_CB-RdYiBu.frag.glsl';
 import colorsA_IDL_CB_BuYiRdFS from './glsl/A_IDL_CB-BuYiRd.frag.glsl';
@@ -22,6 +23,7 @@ export type ColorMode =
     | 'A_gradiant1'
     | 'A_gradiant2'
     | 'A_MATLAB_cool'
+    | 'A_MATLAB_parula'
     | 'A_IDL_CB_RdBu'
     | 'A_IDL_CB_RdYiBu'
     | 'B_IDL_CB_RdYiBu'
@@ -84,6 +86,11 @@ export const initColorsCommands = (regl: REGL.Regl) => {
 
     colorCommands['A_MATLAB_cool'] = regl({
         frag: colorsA_MATLAB_coolFS,
+        ...commonSettings
+    });
+
+    colorCommands['A_MATLAB_parula'] = regl({
+        frag: colorsA_MATLAB_parulaFS,
         ...commonSettings
     });
 
