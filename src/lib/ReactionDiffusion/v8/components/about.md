@@ -109,7 +109,7 @@ void main() {
 
 Once my simulation started to work properly on the GPU I wanted to add some interactivity. This was an interesting phase for two reasons:
 
-First it was the opportunity to play with [dat.gui](https://github.com/dataarts/dat.gui/). This is a library which allows to easily create a graphical interface to modify the properties of a javascript object. I had already experimented with this library in my [previous game of life project](/gameoflife)
+First it was the opportunity to play with [dat.gui](https://github.com/dataarts/dat.gui/). This is a library which allows to easily create a graphical interface to modify the properties of a javascript object. I had already experimented with this library in my [previous game of life project]({baseUrl}/gameoflife)
 
 In this simulation I added the following settings:
 
@@ -143,7 +143,7 @@ This approach has the big advantage of keeping my code very modular and making i
 
 I also created the interface to select `f` and `k` on the parameters map. To do that, the first step was to create another type of simulation largely based on my previous experiements but where the `f` and `k` parameters are varying among the world. This way when initializing the world with small concentrations of the solutions and letting the simulation run for a few hundreds of thousands of iteration we get a nice map like this one
 
-![parameter map](/parameters_map.png)
+![parameter map]({baseUrl}/parameters_map.png)
 
 Some inpsiration I had for the parameters map:
 
