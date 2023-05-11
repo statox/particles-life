@@ -14,6 +14,7 @@
     const rangeF = [0, 0.12];
     const rangeK = [0.03, 0.07];
 
+    const center = { f: 0.0433, k: 0.0621 };
     const vertices = [
         { f: 0.1045, k: 0.0553 },
         { f: 0.0829, k: 0.0582 },
@@ -210,9 +211,18 @@
         const noiseK = _p5.noise(_p5.frameCount * 0.01);
         const noiseF = _p5.noise(5321 + _p5.frameCount * 0.01);
         const smallMove = Math.random() < 0.97;
-        const moveCoefficient = smallMove ? 0.001 : 0.01;
+        const moveCoefficient = smallMove ? 0.002 : 0.02;
+
         f = f + (noiseF * 2 - 1) * (rangeF[1] - rangeF[0]) * moveCoefficient;
         k = k + (noiseK * 2 - 1) * (rangeK[1] - rangeK[0]) * moveCoefficient;
+
+        // pull toward the barycenter of the bounding box to avoid getting stuck against the borders
+        const forceTowardCenter = {
+            f: f - center.f,
+            k: k - center.k
+        };
+        f = f - forceTowardCenter.f * 0.001;
+        k = k - forceTowardCenter.k * 0.001;
 
         selectedClass = {
             f,
