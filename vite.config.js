@@ -4,7 +4,7 @@ import plainText from 'vite-plugin-plain-text';
 /** @type {import('vite').UserConfig} */
 const config = {
     plugins: [
-        plainText(['**/*.glsl', '**/*.rle'], {
+        plainText(['**/*.md', '**/*.glsl', '**/*.rle'], {
             namedExport: false,
             dtsAutoGen: true,
             distAutoClean: false
