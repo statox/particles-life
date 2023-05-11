@@ -6,7 +6,6 @@
     import { PARAMETERS_CLASSES } from './pearsonClasses';
     import { initProgram } from './webgl';
     import type { Controls, MouseState, SimulationInfo, SimulationParameters } from './types';
-    import { getMouseCoordsRelativeToElement } from './mouse';
 
     const screenDimensions = {
         width: Math.min(window.innerWidth, window.innerHeight) * 0.9,
@@ -119,48 +118,13 @@
         }
     };
 
-    const handleMouseWheel = (event: WheelEvent) => {
-        if (!event.getModifierState('Control')) {
-            return;
-        }
-        const relativeCoordinates = getMouseCoordsRelativeToElement(event);
-        mouseState.panX = relativeCoordinates.x;
-        mouseState.panY = relativeCoordinates.y;
-
-        if (event.deltaY > 0) {
-            mouseState.zoomLevel *= 1 + mouseState.zoomLevel / 2;
-        } else {
-            mouseState.zoomLevel *= 1 - mouseState.zoomLevel / 2;
-        }
-        if (mouseState.zoomLevel > 1) {
-            mouseState.zoomLevel = 1;
-        }
-        if (mouseState.zoomLevel < 0) {
-            mouseState.zoomLevel = 0;
-        }
-        event.preventDefault();
-    };
-
-    const handleMousemove = (event: MouseEvent) => {
-        const relativeCoordinates = getMouseCoordsRelativeToElement(event);
-        mouseState.x = relativeCoordinates.x;
-        mouseState.y = relativeCoordinates.y;
-    };
-
-    const handleMouseButton = (event: MouseEvent) => {
-        if (![0, 2].includes(event.button)) {
-            return;
-        }
-        if (!['mouseup', 'mousedown'].includes(event.type)) {
-            return;
-        }
-        let newState = event.type === 'mousedown';
-        if (event.button === 0) {
-            mouseState.pressedLeft = newState;
-        }
-        if (event.button === 2) {
-            mouseState.pressedRight = newState;
-        }
+    let autoclickInterval: NodeJS.Timer;
+    const randomClick = () => {
+        mouseState.x = Math.random();
+        mouseState.y = Math.random();
+        mouseState.pressedLeft = true;
+        setTimeout(() => (mouseState.pressedLeft = false), 500);
+        autoclickInterval = setTimeout(randomClick, Math.random() * 5000);
     };
 
     const reset = () => {
@@ -181,6 +145,11 @@
 
         initGUI();
         regl = initProgram({ controls, info, mouseState, simulationParameters });
+
+        if (autoclickInterval) {
+            clearTimeout(autoclickInterval);
+        }
+        randomClick();
     };
 
     const onSimulationParamsUpdate = (event: CustomEvent<{ f: number; k: number }>) => {
@@ -221,11 +190,6 @@
         <span>({2 ** info.worldSize} x {2 ** info.worldSize} : {2 ** (info.worldSize + 1)})</span>
     </div>
     <canvas
-        on:mousemove={handleMousemove}
-        on:mousedown|preventDefault={handleMouseButton}
-        on:mouseup={handleMouseButton}
-        on:wheel={handleMouseWheel}
-        on:keydown|preventDefault={handleKeydown}
         on:contextmenu|preventDefault={(e) => e}
         id="canvas"
         width={screenDimensions.width}
