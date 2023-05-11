@@ -80,7 +80,7 @@ Here are some resources I have used to document myself to create this project:
 ### Prototyping with P5.js (v1, v2, v3)
 In versions v1, v2 and v3 were mostly prototyping to validate that I was understanding the math behind the model and the general idea of the simulation.
 
-These versions use the [p5.js](p5js.org/) framework to render and update the simulation. The world is represented by a 2D array in typescript and the update is a simple nested for loop iterating on each item of the grid and applying the formula.
+These versions use the [p5.js](https://p5js.org/) framework to render and update the simulation. The world is represented by a 2D array in typescript and the update is a simple nested for loop iterating on each item of the grid and applying the formula.
 
 The main difference between these 3 versions is the way I was updating the grid. In v1 I started with a very naive approach where I recreated the grid on each iteration. In v3 the algorithm is smarter, I create two grids when I built the world and then each update reads from one of the grids and writes to the other one which is then used by p5 to draw the canvas.
 
