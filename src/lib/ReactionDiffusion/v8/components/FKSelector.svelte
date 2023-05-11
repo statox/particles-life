@@ -160,7 +160,9 @@
         position: fixed;
         bottom: 0;
         left: 25px;
+        width: 400px;
         z-index: 1;
+        background-color: black;
     }
     #toggleButton {
         margin-bottom: 4px;

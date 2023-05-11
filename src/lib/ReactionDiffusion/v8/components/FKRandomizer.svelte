@@ -10,6 +10,8 @@
     let selectedClass = PARAMETERS_CLASSES[0];
 
     let isOpen = true;
+    let changeMag = 1; // [0, 5];
+    let changeRate = 100;
 
     const rangeF = [0, 0.12];
     const rangeK = [0.03, 0.07];
@@ -211,18 +213,18 @@
         const noiseK = _p5.noise(_p5.frameCount * 0.01);
         const noiseF = _p5.noise(5321 + _p5.frameCount * 0.01);
         const smallMove = Math.random() < 0.97;
-        const moveCoefficient = smallMove ? 0.002 : 0.02;
+        const moveCoefficient = smallMove ? 0.001 : 0.01;
 
-        f = f + (noiseF * 2 - 1) * (rangeF[1] - rangeF[0]) * moveCoefficient;
-        k = k + (noiseK * 2 - 1) * (rangeK[1] - rangeK[0]) * moveCoefficient;
+        f = f + (noiseF * 2 - 1) * (rangeF[1] - rangeF[0]) * moveCoefficient * changeMag;
+        k = k + (noiseK * 2 - 1) * (rangeK[1] - rangeK[0]) * moveCoefficient * changeMag;
 
         // pull toward the barycenter of the bounding box to avoid getting stuck against the borders
         const forceTowardCenter = {
             f: f - center.f,
             k: k - center.k
         };
-        f = f - forceTowardCenter.f * 0.001;
-        k = k - forceTowardCenter.k * 0.001;
+        f = f - forceTowardCenter.f * 0.001 * (changeMag / 2);
+        k = k - forceTowardCenter.k * 0.001 * (changeMag / 2);
 
         selectedClass = {
             f,
@@ -239,6 +241,8 @@
     const sketch: Sketch = (p5) => {
         _p5 = p5;
         let background: p5.Image;
+        let changeMagSlider: p5.Element;
+        let changeRateSlider: p5.Element;
         p5.preload = () => {
             background = p5.loadImage(base + '/parameters_map.png');
         };
@@ -246,6 +250,20 @@
         p5.setup = () => {
             p5.createCanvas(400, 400);
             p5.frameRate(55);
+
+            changeMagSlider = p5.createSlider(0, 5, 2, 0);
+            const changeMagSliderContainer = p5.select('#changeMag');
+            if (!changeMagSliderContainer) {
+                throw new Error('changeMag slider container not ready');
+            }
+            changeMagSlider.parent(changeMagSliderContainer);
+
+            changeRateSlider = p5.createSlider(1, 500, 100, 1);
+            const changeRateSliderContainer = p5.select('#changeRate');
+            if (!changeRateSliderContainer) {
+                throw new Error('changeRate slider container not ready');
+            }
+            changeRateSlider.parent(changeRateSliderContainer);
         };
 
         p5.draw = () => {
@@ -258,13 +276,18 @@
             drawTarget(p5);
             drawFKText(p5);
 
-            moveFK();
+            if (p5.frameCount % changeRate === 0) {
+                moveFK();
+            }
 
             buttonIsPressed = false;
             if (p5.mouseIsPressed) {
                 readMouse(p5);
                 buttonIsPressed = true;
             }
+
+            changeMag = Number(changeMagSlider.value());
+            changeRate = Number(changeRateSlider.value());
         };
     };
 
@@ -283,18 +306,18 @@
         {isOpen ? 'Close' : 'F/K selection'}
     </button>
     {#if isOpen}
-        <div>Select f and k parameters on the map of use a preset</div>
-        <select
-            class="full-width"
-            bind:value={selectedClass}
-            on:change={() => dispatch('fkupdated', selectedClass)}
-        >
-            {#each PARAMETERS_CLASSES as parametersClass}
-                <option value={parametersClass}>
-                    {parametersClass.type} - {parametersClass.name} (f/k {parametersClass.f} / {parametersClass.k})
-                </option>
-            {/each}
-        </select>
+        <div>
+            Modify the change rate to change how fast the selector walks around the parameters space
+            and the change magnitude to change how big each step taken by the selector is.
+        </div>
+        <div>
+            <label for="changeMag">changeMag</label>
+            <span id="changeMag" />{changeMag.toFixed(2)}
+        </div>
+        <div>
+            <label for="changeRate">changeRate</label>
+            <span id="changeRate" />{changeRate.toFixed(2)}
+        </div>
         <P5 {sketch} />
     {/if}
 </div>
@@ -304,7 +327,9 @@
         position: fixed;
         bottom: 0;
         left: 25px;
+        width: 400px;
         z-index: 1;
+        background-color: black;
     }
     #toggleButton {
         margin-bottom: 4px;
