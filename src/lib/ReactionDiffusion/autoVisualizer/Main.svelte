@@ -1,5 +1,5 @@
 <script lang="ts">
-    import FkSelector from './FKSelector.svelte';
+    import FkRandomizer from './FKRandomizer.svelte';
     import type { GUI } from 'dat.gui';
     import type REGL from 'regl';
     import { onDestroy, onMount } from 'svelte';
@@ -39,7 +39,7 @@
         worldSize: 8 // Used as a power of 2
     };
 
-    // Dummy initialization, changes are handled by FKSelector
+    // Dummy initialization, changes are handled by FKRandomizer
     const simulationParameters: SimulationParameters = {
         f: PARAMETERS_CLASSES[0].f,
         k: PARAMETERS_CLASSES[0].k
@@ -200,7 +200,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 <main>
-    <FkSelector on:fkupdated={onSimulationParamsUpdate} />
+    <FkRandomizer on:fkupdated={onSimulationParamsUpdate} />
     <div id="datgui-container" />
 
     <div>
