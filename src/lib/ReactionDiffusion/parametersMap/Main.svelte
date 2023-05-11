@@ -12,7 +12,7 @@
     };
 
     const controls: Controls = {
-        colors: 'blackwhite',
+        colors: 'B_IDL_CB_RdYiBu',
         initialConditions: 'full',
         reset: () => reset(),
         pause: false,
@@ -34,15 +34,8 @@
 
     const info: SimulationInfo = {
         iteration: 0,
-        worldSize: 12 // Used as a power of 2
+        worldSize: 10 // Used as a power of 2
     };
-
-    // const simulationParameters: ParametersMapParameters = {
-    //     minK: 0.03,
-    //     maxK: 0.08,
-    //     minF: 0,
-    //     maxF: 0.11
-    // };
 
     const simulationParameters: ParametersMapParameters = {
         minK: 0.02,
@@ -191,6 +184,8 @@
 
     onMount(() => {
         reset();
+        mouseState.pressedLeft = true;
+        setTimeout(() => (mouseState.pressedLeft = false), 10);
     });
 
     onDestroy(() => {
