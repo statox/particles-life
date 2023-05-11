@@ -120,7 +120,7 @@
         }
     };
 
-    let autoclickInterval: NodeJS.Timer;
+    let autoclickInterval: ReturnType<typeof setTimeout>;
     const randomClick = () => {
         mouseState.x = Math.random();
         mouseState.y = Math.random();
