@@ -85,7 +85,7 @@ This are two [madrepora corals](https://en.wikipedia.org/wiki/Madrepora) I took 
 ![madrepore_simulation_stripes1.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_stripes1.png)
 ![madrepore_simulation_stripes2.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_stripes2.png)
 
-This is a puffer fish picture from wikipedia ([1](https://commons.wikimedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG) [2](https://en.wikipedia.org/wiki/File:Giant_Pufferfish_skin_pattern_detail.jpg))
+This is a puffer fish picture from wikipedia ([[1]](https://commons.wikimedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG) [[2]](https://en.wikipedia.org/wiki/File:Giant_Pufferfish_skin_pattern_detail.jpg))
 
 ![800px-Giant_Puffer_fish_skin_pattern.JPG]({baseUrl}/reaction_diffusion_about/gallery/800px-Giant_Puffer_fish_skin_pattern.JPG)
 ![Giant_Pufferfish_skin_pattern_detail.jpg]({baseUrl}/reaction_diffusion_about/gallery/Giant_Pufferfish_skin_pattern_detail.jpg)
