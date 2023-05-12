@@ -2,8 +2,6 @@
 
 This page contains my experiementations aroud [reaction-diffusion systems](https://en.wikipedia.org/wiki/Reaction%E2%80%93diffusion_system).
 
-## What is this?
-
 For this project I wanted to learn more about reaction-diffusion systems. The systems I have been considering are mathematical models corresponding to a physical system in which two chemical substances react with each other while also diffusing in the environment. The simulation allows to compute the concentration of these chemical on a virtual grid and visualize these concentration over time.
 
 The main parameters for the simulation are the `f` and `k` variables. They correspond to the `f` and `k` parameters found in the litterature ([[1]](https://www.mrob.com/pub/comp/xmorphia/index.html#formula), [[2]](https://karlsims.com/rd.html)). I chose to constrain these parameters to the following intervals `f: [0, 0.12]` `k: [0.03, 0.07]`  which is a space slighty larger than the [uskate world](https://mrob.com/pub/comp/xmorphia/uskate-world.html) characterized by Robert Munafo.
@@ -151,12 +149,10 @@ Here are some resources I have used to document myself to create this project:
 
 ### Other implementations
 
-- https://www.redblobgames.com/x/2203-reaction-diffusion/
-- https://www.mrob.com/pub/comp/xmorphia/ogl/index.html
-- interesting colormaps and flows implemented. The interface is interesting.
-    https://www.karlsims.com/rdtool.html
-- Good interface to tweak colors
-    https://pmneila.github.io/jsexp/grayscott/
+- [Redblobgames](https://www.redblobgames.com/x/2203-reaction-diffusion/) Various configurations with creative results.
+- [Robert Munafo](https://www.mrob.com/pub/comp/xmorphia/ogl/index.html) Lots of presets to play with and a very good color picker.
+- [pmneila](https://pmneila.github.io/jsexp/grayscott/) About the same set of features as Robert's implementation, with a dark theme.
+- [Karlsims](https://www.karlsims.com/rdtool.html) Very good looking 3D like effect, flows applied to the whole grid and great interface.
 
 ## History of the project
 
