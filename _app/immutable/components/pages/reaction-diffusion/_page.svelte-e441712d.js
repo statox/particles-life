@@ -1,14 +1,14 @@
-import{o as $e,S as Q,i as J,s as ee,e as K,b as A,g as oe,t as k,d as re,f as b,h,X as ct,Y as ze,Z as yn,L as ke,w as N,x as G,y as U,_ as qe,$ as Ye,z as O,v as ie,a as q,c as Y,q as R,r as P,u as pe,B as ne,V as Sn,C as se,k as B,l as z,m as T,n as E,E as fe,F as ce,G as ue,a0 as et,D as w,a1 as En,a2 as An,a3 as Ge,T as Dn,a4 as Bn,U as Ie,K as Z,Q as ye,O as Se,a5 as we,P as Ae,M as Be,a6 as je,I as it,J as Ve,N as at}from"../../../chunks/index-4570ff94.js";import{T as on,a as rn,b as Me,c as Ne}from"../../../chunks/TabPanel-171143ae.js";import{b as Ze}from"../../../chunks/paths-b4419565.js";import{_ as Te}from"../../../chunks/preload-helper-41c905a7.js";import{R as Le}from"../../../chunks/regl-89b00fbf.js";function zn(){const a=console.warn;console.warn=e=>{e.includes("unknown prop")||e.includes("unexpected slot")||a(e)},$e(()=>{console.warn=a})}function ut(a,e,n){const o=a.slice();return o[18]=e[n],o}function pt(a,e,n){const o=a.slice();return o[18]=e[n],o}function mt(a,e,n){const o=a.slice();return o[10]=e[n],o}function dt(a,e,n){const o=a.slice();return o[13]=e[n],o[15]=n,o}function ht(a,e,n){const o=a.slice();return o[16]=e[n],o[15]=n,o}function vt(a,e,n){const o=a.slice();return o[7]=e[n],o}function Cn(a){let e,n,o,t;const i=[Rn,Ln,In],r=[];function s(l,f){return l[0]==="table"?0:l[0]==="list"?1:2}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,f){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o))},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function Tn(a){let e,n,o=a[1],t=[];for(let r=0;r<o.length;r+=1)t[r]=$t(vt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&34){o=r[1];let l;for(l=0;l<o.length;l+=1){const f=vt(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=$t(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function In(a){let e,n,o;const t=[a[6]];var i=a[5][a[0]];function r(s){let l={$$slots:{default:[Mn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&64?qe(t,[Ye(s[6])]):{};if(l&8388706&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5][s[0]])){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&b(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Ln(a){let e,n,o,t;const i=[Un,Nn],r=[];function s(l,f){return l[4]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,f){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o))},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function Rn(a){let e,n,o;var t=a[5].table;function i(r){return{props:{$$slots:{default:[Zn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&8388716&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].table)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Pn(a){let e=a[6].raw+"",n;return{c(){n=R(e)},l(o){n=P(o,e)},m(o,t){A(o,n,t)},p(o,t){t&64&&e!==(e=o[6].raw+"")&&pe(n,e)},i:ne,o:ne,d(o){o&&h(n)}}}function Fn(a){let e,n;return e=new Re({props:{tokens:a[1],renderers:a[5]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&2&&(i.tokens=o[1]),t&32&&(i.renderers=o[5]),e.$set(i)},i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Mn(a){let e,n,o,t;const i=[Fn,Pn],r=[];function s(l,f){return l[1]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,f){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o))},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function Nn(a){let e,n,o;const t=[{ordered:a[4]},a[6]];var i=a[5].list;function r(s){let l={$$slots:{default:[Vn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&80?qe(t,[l&16&&{ordered:s[4]},l&64&&Ye(s[6])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].list)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&b(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Un(a){let e,n,o;const t=[{ordered:a[4]},a[6]];var i=a[5].list;function r(s){let l={$$slots:{default:[Kn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&80?qe(t,[l&16&&{ordered:s[4]},l&64&&Ye(s[6])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].list)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&b(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function On(a){let e,n,o;return e=new Re({props:{tokens:a[18].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment),n=q()},l(t){G(e.$$.fragment,t),n=Y(t)},m(t,i){U(e,t,i),A(t,n,i),o=!0},p(t,i){const r={};i&64&&(r.tokens=t[18].tokens),i&32&&(r.renderers=t[5]),e.$set(r)},i(t){o||(b(e.$$.fragment,t),o=!0)},o(t){k(e.$$.fragment,t),o=!1},d(t){O(e,t),t&&h(n)}}}function gt(a){let e,n,o;const t=[a[18]];var i=a[5].unorderedlistitem||a[5].listitem;function r(s){let l={$$slots:{default:[On]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&64?qe(t,[Ye(s[18])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].unorderedlistitem||s[5].listitem)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&b(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Vn(a){let e,n,o=a[6].items,t=[];for(let r=0;r<o.length;r+=1)t[r]=gt(ut(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&96){o=r[6].items;let l;for(l=0;l<o.length;l+=1){const f=ut(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=gt(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function Hn(a){let e,n,o;return e=new Re({props:{tokens:a[18].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment),n=q()},l(t){G(e.$$.fragment,t),n=Y(t)},m(t,i){U(e,t,i),A(t,n,i),o=!0},p(t,i){const r={};i&64&&(r.tokens=t[18].tokens),i&32&&(r.renderers=t[5]),e.$set(r)},i(t){o||(b(e.$$.fragment,t),o=!0)},o(t){k(e.$$.fragment,t),o=!1},d(t){O(e,t),t&&h(n)}}}function xt(a){let e,n,o;const t=[a[18]];var i=a[5].orderedlistitem||a[5].listitem;function r(s){let l={$$slots:{default:[Hn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&64?qe(t,[Ye(s[18])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].orderedlistitem||s[5].listitem)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&b(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Kn(a){let e,n,o=a[6].items,t=[];for(let r=0;r<o.length;r+=1)t[r]=xt(pt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&96){o=r[6].items;let l;for(l=0;l<o.length;l+=1){const f=pt(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=xt(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function qn(a){let e,n,o;return e=new Re({props:{tokens:a[16].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment),n=q()},l(t){G(e.$$.fragment,t),n=Y(t)},m(t,i){U(e,t,i),A(t,n,i),o=!0},p(t,i){const r={};i&4&&(r.tokens=t[16].tokens),i&32&&(r.renderers=t[5]),e.$set(r)},i(t){o||(b(e.$$.fragment,t),o=!0)},o(t){k(e.$$.fragment,t),o=!1},d(t){O(e,t),t&&h(n)}}}function _t(a){let e,n,o;var t=a[5].tablecell;function i(r){return{props:{header:!0,align:r[6].align[r[15]]||"center",$$slots:{default:[qn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&64&&(l.align=r[6].align[r[15]]||"center"),s&8388644&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablecell)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Yn(a){let e,n,o=a[2],t=[];for(let r=0;r<o.length;r+=1)t[r]=_t(ht(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&100){o=r[2];let l;for(l=0;l<o.length;l+=1){const f=ht(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=_t(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function Gn(a){let e,n,o;var t=a[5].tablerow;function i(r){return{props:{$$slots:{default:[Yn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&8388708&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablerow)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Wn(a){let e,n;return e=new Re({props:{tokens:a[13].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&8&&(i.tokens=o[13].tokens),t&32&&(i.renderers=o[5]),e.$set(i)},i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function bt(a){let e,n,o;var t=a[5].tablecell;function i(r){return{props:{header:!1,align:r[6].align[r[15]]||"center",$$slots:{default:[Wn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&64&&(l.align=r[6].align[r[15]]||"center"),s&8388648&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablecell)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Xn(a){let e,n,o=a[10],t=[];for(let r=0;r<o.length;r+=1)t[r]=bt(dt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=q()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=Y(r)},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&104){o=r[10];let l;for(l=0;l<o.length;l+=1){const f=dt(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=bt(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function wt(a){let e,n,o;var t=a[5].tablerow;function i(r){return{props:{$$slots:{default:[Xn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&8388712&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablerow)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function jn(a){let e,n,o=a[3],t=[];for(let r=0;r<o.length;r+=1)t[r]=wt(mt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&104){o=r[3];let l;for(l=0;l<o.length;l+=1){const f=mt(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=wt(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function Zn(a){let e,n,o,t,i;var r=a[5].tablehead;function s(c){return{props:{$$slots:{default:[Gn]},$$scope:{ctx:c}}}}r&&(e=ie(r,s(a)));var l=a[5].tablebody;function f(c){return{props:{$$slots:{default:[jn]},$$scope:{ctx:c}}}}return l&&(o=ie(l,f(a))),{c(){e&&N(e.$$.fragment),n=q(),o&&N(o.$$.fragment),t=K()},l(c){e&&G(e.$$.fragment,c),n=Y(c),o&&G(o.$$.fragment,c),t=K()},m(c,u){e&&U(e,c,u),A(c,n,u),o&&U(o,c,u),A(c,t,u),i=!0},p(c,u){const p={};if(u&8388708&&(p.$$scope={dirty:u,ctx:c}),r!==(r=c[5].tablehead)){if(e){oe();const d=e;k(d.$$.fragment,1,0,()=>{O(d,1)}),re()}r?(e=ie(r,s(c)),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else r&&e.$set(p);const m={};if(u&8388712&&(m.$$scope={dirty:u,ctx:c}),l!==(l=c[5].tablebody)){if(o){oe();const d=o;k(d.$$.fragment,1,0,()=>{O(d,1)}),re()}l?(o=ie(l,f(c)),N(o.$$.fragment),b(o.$$.fragment,1),U(o,t.parentNode,t)):o=null}else l&&o.$set(m)},i(c){i||(e&&b(e.$$.fragment,c),o&&b(o.$$.fragment,c),i=!0)},o(c){e&&k(e.$$.fragment,c),o&&k(o.$$.fragment,c),i=!1},d(c){e&&O(e,c),c&&h(n),c&&h(t),o&&O(o,c)}}}function $t(a){let e,n;const o=[a[7],{renderers:a[5]}];let t={};for(let i=0;i<o.length;i+=1)t=ze(t,o[i]);return e=new Re({props:t}),{c(){N(e.$$.fragment)},l(i){G(e.$$.fragment,i)},m(i,r){U(e,i,r),n=!0},p(i,r){const s=r&34?qe(o,[r&2&&Ye(i[7]),r&32&&{renderers:i[5]}]):{};e.$set(s)},i(i){n||(b(e.$$.fragment,i),n=!0)},o(i){k(e.$$.fragment,i),n=!1},d(i){O(e,i)}}}function Qn(a){let e,n,o,t;const i=[Tn,Cn],r=[];function s(l,f){return l[0]?l[5][l[0]]?1:-1:0}return~(e=s(a))&&(n=r[e]=i[e](a)),{c(){n&&n.c(),o=K()},l(l){n&&n.l(l),o=K()},m(l,f){~e&&r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?~e&&r[e].p(l,f):(n&&(oe(),k(r[c],1,1,()=>{r[c]=null}),re()),~e?(n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o)):n=null)},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){~e&&r[e].d(l),l&&h(o)}}}function Jn(a,e,n){const o=["type","tokens","header","rows","ordered","renderers"];let t=ct(e,o),{type:i=void 0}=e,{tokens:r=void 0}=e,{header:s=void 0}=e,{rows:l=void 0}=e,{ordered:f=!1}=e,{renderers:c}=e;return zn(),a.$$set=u=>{e=ze(ze({},e),yn(u)),n(6,t=ct(e,o)),"type"in u&&n(0,i=u.type),"tokens"in u&&n(1,r=u.tokens),"header"in u&&n(2,s=u.header),"rows"in u&&n(3,l=u.rows),"ordered"in u&&n(4,f=u.ordered),"renderers"in u&&n(5,c=u.renderers)},[i,r,s,l,f,c,t]}let Re=class extends Q{constructor(e){super(),J(this,e,Jn,Qn,ee,{type:0,tokens:1,header:2,rows:3,ordered:4,renderers:5})}};function an(){return{async:!1,baseUrl:null,breaks:!1,extensions:null,gfm:!0,headerIds:!0,headerPrefix:"",highlight:null,hooks:null,langPrefix:"language-",mangle:!0,pedantic:!1,renderer:null,sanitize:!1,sanitizer:null,silent:!1,smartypants:!1,tokenizer:null,walkTokens:null,xhtml:!1}}let Pe=an();function e0(a){Pe=a}const ln=/[&<>"']/,t0=new RegExp(ln.source,"g"),sn=/[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,n0=new RegExp(sn.source,"g"),o0={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},kt=a=>o0[a];function be(a,e){if(e){if(ln.test(a))return a.replace(t0,kt)}else if(sn.test(a))return a.replace(n0,kt);return a}const r0=/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;function fn(a){return a.replace(r0,(e,n)=>(n=n.toLowerCase(),n==="colon"?":":n.charAt(0)==="#"?n.charAt(1)==="x"?String.fromCharCode(parseInt(n.substring(2),16)):String.fromCharCode(+n.substring(1)):""))}const i0=/(^|[^\[])\^/g;function le(a,e){a=typeof a=="string"?a:a.source,e=e||"";const n={replace:(o,t)=>(t=t.source||t,t=t.replace(i0,"$1"),a=a.replace(o,t),n),getRegex:()=>new RegExp(a,e)};return n}const a0=/[^\w:]/g,l0=/^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;function yt(a,e,n){if(a){let o;try{o=decodeURIComponent(fn(n)).replace(a0,"").toLowerCase()}catch{return null}if(o.indexOf("javascript:")===0||o.indexOf("vbscript:")===0||o.indexOf("data:")===0)return null}e&&!l0.test(n)&&(n=u0(e,n));try{n=encodeURI(n).replace(/%25/g,"%")}catch{return null}return n}const Qe={},s0=/^[^:]+:\/*[^/]*$/,f0=/^([^:]+:)[\s\S]*$/,c0=/^([^:]+:\/*[^/]*)[\s\S]*$/;function u0(a,e){Qe[" "+a]||(s0.test(a)?Qe[" "+a]=a+"/":Qe[" "+a]=Je(a,"/",!0)),a=Qe[" "+a];const n=a.indexOf(":")===-1;return e.substring(0,2)==="//"?n?e:a.replace(f0,"$1")+e:e.charAt(0)==="/"?n?e:a.replace(c0,"$1")+e:a+e}const tt={exec:function(){}};function St(a,e){const n=a.replace(/\|/g,(i,r,s)=>{let l=!1,f=r;for(;--f>=0&&s[f]==="\\";)l=!l;return l?"|":" |"}),o=n.split(/ \|/);let t=0;if(o[0].trim()||o.shift(),o.length>0&&!o[o.length-1].trim()&&o.pop(),o.length>e)o.splice(e);else for(;o.length<e;)o.push("");for(;t<o.length;t++)o[t]=o[t].trim().replace(/\\\|/g,"|");return o}function Je(a,e,n){const o=a.length;if(o===0)return"";let t=0;for(;t<o;){const i=a.charAt(o-t-1);if(i===e&&!n)t++;else if(i!==e&&n)t++;else break}return a.slice(0,o-t)}function p0(a,e){if(a.indexOf(e[1])===-1)return-1;const n=a.length;let o=0,t=0;for(;t<n;t++)if(a[t]==="\\")t++;else if(a[t]===e[0])o++;else if(a[t]===e[1]&&(o--,o<0))return t;return-1}function m0(a){a&&a.sanitize&&!a.silent&&console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options")}function Et(a,e){if(e<1)return"";let n="";for(;e>1;)e&1&&(n+=a),e>>=1,a+=a;return n+a}function At(a,e,n,o){const t=e.href,i=e.title?be(e.title):null,r=a[1].replace(/\\([\[\]])/g,"$1");if(a[0].charAt(0)!=="!"){o.state.inLink=!0;const s={type:"link",raw:n,href:t,title:i,text:r,tokens:o.inlineTokens(r)};return o.state.inLink=!1,s}return{type:"image",raw:n,href:t,title:i,text:be(r)}}function d0(a,e){const n=a.match(/^(\s+)(?:```)/);if(n===null)return e;const o=n[1];return e.split(`
+import{o as $e,S as Q,i as J,s as ee,e as K,b as A,g as oe,t as k,d as re,f as _,h,X as ct,Y as ze,Z as yn,L as ke,w as N,x as G,y as U,_ as qe,$ as Ye,z as O,v as ie,a as q,c as Y,q as R,r as P,u as pe,B as ne,V as Sn,C as se,k as B,l as z,m as T,n as y,E as fe,F as ce,G as ue,a0 as et,D as w,a1 as En,a2 as An,a3 as Ge,T as Dn,a4 as Bn,U as Ie,K as Z,Q as ye,O as Se,a5 as we,P as Ae,M as Be,a6 as je,I as it,J as Ve,N as at}from"../../../chunks/index-4570ff94.js";import{T as on,a as rn,b as Me,c as Ne}from"../../../chunks/TabPanel-171143ae.js";import{b as Ze}from"../../../chunks/paths-b4419565.js";import{_ as Te}from"../../../chunks/preload-helper-41c905a7.js";import{R as Le}from"../../../chunks/regl-89b00fbf.js";function zn(){const a=console.warn;console.warn=e=>{e.includes("unknown prop")||e.includes("unexpected slot")||a(e)},$e(()=>{console.warn=a})}function ut(a,e,n){const o=a.slice();return o[18]=e[n],o}function pt(a,e,n){const o=a.slice();return o[18]=e[n],o}function mt(a,e,n){const o=a.slice();return o[10]=e[n],o}function dt(a,e,n){const o=a.slice();return o[13]=e[n],o[15]=n,o}function ht(a,e,n){const o=a.slice();return o[16]=e[n],o[15]=n,o}function vt(a,e,n){const o=a.slice();return o[7]=e[n],o}function Cn(a){let e,n,o,t;const i=[Rn,Ln,In],r=[];function s(l,f){return l[0]==="table"?0:l[0]==="list"?1:2}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,f){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o))},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function Tn(a){let e,n,o=a[1],t=[];for(let r=0;r<o.length;r+=1)t[r]=$t(vt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&34){o=r[1];let l;for(l=0;l<o.length;l+=1){const f=vt(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=$t(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function In(a){let e,n,o;const t=[a[6]];var i=a[5][a[0]];function r(s){let l={$$slots:{default:[Mn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&64?qe(t,[Ye(s[6])]):{};if(l&8388706&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5][s[0]])){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&_(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Ln(a){let e,n,o,t;const i=[Un,Nn],r=[];function s(l,f){return l[4]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,f){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o))},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function Rn(a){let e,n,o;var t=a[5].table;function i(r){return{props:{$$slots:{default:[Zn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&8388716&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].table)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Pn(a){let e=a[6].raw+"",n;return{c(){n=R(e)},l(o){n=P(o,e)},m(o,t){A(o,n,t)},p(o,t){t&64&&e!==(e=o[6].raw+"")&&pe(n,e)},i:ne,o:ne,d(o){o&&h(n)}}}function Fn(a){let e,n;return e=new Re({props:{tokens:a[1],renderers:a[5]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&2&&(i.tokens=o[1]),t&32&&(i.renderers=o[5]),e.$set(i)},i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Mn(a){let e,n,o,t;const i=[Fn,Pn],r=[];function s(l,f){return l[1]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,f){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o))},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function Nn(a){let e,n,o;const t=[{ordered:a[4]},a[6]];var i=a[5].list;function r(s){let l={$$slots:{default:[Vn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&80?qe(t,[l&16&&{ordered:s[4]},l&64&&Ye(s[6])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].list)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&_(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Un(a){let e,n,o;const t=[{ordered:a[4]},a[6]];var i=a[5].list;function r(s){let l={$$slots:{default:[Kn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&80?qe(t,[l&16&&{ordered:s[4]},l&64&&Ye(s[6])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].list)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&_(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function On(a){let e,n,o;return e=new Re({props:{tokens:a[18].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment),n=q()},l(t){G(e.$$.fragment,t),n=Y(t)},m(t,i){U(e,t,i),A(t,n,i),o=!0},p(t,i){const r={};i&64&&(r.tokens=t[18].tokens),i&32&&(r.renderers=t[5]),e.$set(r)},i(t){o||(_(e.$$.fragment,t),o=!0)},o(t){k(e.$$.fragment,t),o=!1},d(t){O(e,t),t&&h(n)}}}function gt(a){let e,n,o;const t=[a[18]];var i=a[5].unorderedlistitem||a[5].listitem;function r(s){let l={$$slots:{default:[On]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&64?qe(t,[Ye(s[18])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].unorderedlistitem||s[5].listitem)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&_(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Vn(a){let e,n,o=a[6].items,t=[];for(let r=0;r<o.length;r+=1)t[r]=gt(ut(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&96){o=r[6].items;let l;for(l=0;l<o.length;l+=1){const f=ut(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=gt(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function Hn(a){let e,n,o;return e=new Re({props:{tokens:a[18].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment),n=q()},l(t){G(e.$$.fragment,t),n=Y(t)},m(t,i){U(e,t,i),A(t,n,i),o=!0},p(t,i){const r={};i&64&&(r.tokens=t[18].tokens),i&32&&(r.renderers=t[5]),e.$set(r)},i(t){o||(_(e.$$.fragment,t),o=!0)},o(t){k(e.$$.fragment,t),o=!1},d(t){O(e,t),t&&h(n)}}}function xt(a){let e,n,o;const t=[a[18]];var i=a[5].orderedlistitem||a[5].listitem;function r(s){let l={$$slots:{default:[Hn]},$$scope:{ctx:s}};for(let f=0;f<t.length;f+=1)l=ze(l,t[f]);return{props:l}}return i&&(e=ie(i,r(a))),{c(){e&&N(e.$$.fragment),n=K()},l(s){e&&G(e.$$.fragment,s),n=K()},m(s,l){e&&U(e,s,l),A(s,n,l),o=!0},p(s,l){const f=l&64?qe(t,[Ye(s[18])]):{};if(l&8388704&&(f.$$scope={dirty:l,ctx:s}),i!==(i=s[5].orderedlistitem||s[5].listitem)){if(e){oe();const c=e;k(c.$$.fragment,1,0,()=>{O(c,1)}),re()}i?(e=ie(i,r(s)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else i&&e.$set(f)},i(s){o||(e&&_(e.$$.fragment,s),o=!0)},o(s){e&&k(e.$$.fragment,s),o=!1},d(s){s&&h(n),e&&O(e,s)}}}function Kn(a){let e,n,o=a[6].items,t=[];for(let r=0;r<o.length;r+=1)t[r]=xt(pt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&96){o=r[6].items;let l;for(l=0;l<o.length;l+=1){const f=pt(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=xt(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function qn(a){let e,n,o;return e=new Re({props:{tokens:a[16].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment),n=q()},l(t){G(e.$$.fragment,t),n=Y(t)},m(t,i){U(e,t,i),A(t,n,i),o=!0},p(t,i){const r={};i&4&&(r.tokens=t[16].tokens),i&32&&(r.renderers=t[5]),e.$set(r)},i(t){o||(_(e.$$.fragment,t),o=!0)},o(t){k(e.$$.fragment,t),o=!1},d(t){O(e,t),t&&h(n)}}}function _t(a){let e,n,o;var t=a[5].tablecell;function i(r){return{props:{header:!0,align:r[6].align[r[15]]||"center",$$slots:{default:[qn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&64&&(l.align=r[6].align[r[15]]||"center"),s&8388644&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablecell)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Yn(a){let e,n,o=a[2],t=[];for(let r=0;r<o.length;r+=1)t[r]=_t(ht(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&100){o=r[2];let l;for(l=0;l<o.length;l+=1){const f=ht(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=_t(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function Gn(a){let e,n,o;var t=a[5].tablerow;function i(r){return{props:{$$slots:{default:[Yn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&8388708&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablerow)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Wn(a){let e,n;return e=new Re({props:{tokens:a[13].tokens,renderers:a[5]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&8&&(i.tokens=o[13].tokens),t&32&&(i.renderers=o[5]),e.$set(i)},i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function bt(a){let e,n,o;var t=a[5].tablecell;function i(r){return{props:{header:!1,align:r[6].align[r[15]]||"center",$$slots:{default:[Wn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&64&&(l.align=r[6].align[r[15]]||"center"),s&8388648&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablecell)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Xn(a){let e,n,o=a[10],t=[];for(let r=0;r<o.length;r+=1)t[r]=bt(dt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=q()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=Y(r)},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&104){o=r[10];let l;for(l=0;l<o.length;l+=1){const f=dt(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=bt(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function wt(a){let e,n,o;var t=a[5].tablerow;function i(r){return{props:{$$slots:{default:[Xn]},$$scope:{ctx:r}}}}return t&&(e=ie(t,i(a))),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){const l={};if(s&8388712&&(l.$$scope={dirty:s,ctx:r}),t!==(t=r[5].tablerow)){if(e){oe();const f=e;k(f.$$.fragment,1,0,()=>{O(f,1)}),re()}t?(e=ie(t,i(r)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else t&&e.$set(l)},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function jn(a){let e,n,o=a[3],t=[];for(let r=0;r<o.length;r+=1)t[r]=wt(mt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&104){o=r[3];let l;for(l=0;l<o.length;l+=1){const f=mt(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=wt(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function Zn(a){let e,n,o,t,i;var r=a[5].tablehead;function s(c){return{props:{$$slots:{default:[Gn]},$$scope:{ctx:c}}}}r&&(e=ie(r,s(a)));var l=a[5].tablebody;function f(c){return{props:{$$slots:{default:[jn]},$$scope:{ctx:c}}}}return l&&(o=ie(l,f(a))),{c(){e&&N(e.$$.fragment),n=q(),o&&N(o.$$.fragment),t=K()},l(c){e&&G(e.$$.fragment,c),n=Y(c),o&&G(o.$$.fragment,c),t=K()},m(c,u){e&&U(e,c,u),A(c,n,u),o&&U(o,c,u),A(c,t,u),i=!0},p(c,u){const p={};if(u&8388708&&(p.$$scope={dirty:u,ctx:c}),r!==(r=c[5].tablehead)){if(e){oe();const d=e;k(d.$$.fragment,1,0,()=>{O(d,1)}),re()}r?(e=ie(r,s(c)),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}else r&&e.$set(p);const m={};if(u&8388712&&(m.$$scope={dirty:u,ctx:c}),l!==(l=c[5].tablebody)){if(o){oe();const d=o;k(d.$$.fragment,1,0,()=>{O(d,1)}),re()}l?(o=ie(l,f(c)),N(o.$$.fragment),_(o.$$.fragment,1),U(o,t.parentNode,t)):o=null}else l&&o.$set(m)},i(c){i||(e&&_(e.$$.fragment,c),o&&_(o.$$.fragment,c),i=!0)},o(c){e&&k(e.$$.fragment,c),o&&k(o.$$.fragment,c),i=!1},d(c){e&&O(e,c),c&&h(n),c&&h(t),o&&O(o,c)}}}function $t(a){let e,n;const o=[a[7],{renderers:a[5]}];let t={};for(let i=0;i<o.length;i+=1)t=ze(t,o[i]);return e=new Re({props:t}),{c(){N(e.$$.fragment)},l(i){G(e.$$.fragment,i)},m(i,r){U(e,i,r),n=!0},p(i,r){const s=r&34?qe(o,[r&2&&Ye(i[7]),r&32&&{renderers:i[5]}]):{};e.$set(s)},i(i){n||(_(e.$$.fragment,i),n=!0)},o(i){k(e.$$.fragment,i),n=!1},d(i){O(e,i)}}}function Qn(a){let e,n,o,t;const i=[Tn,Cn],r=[];function s(l,f){return l[0]?l[5][l[0]]?1:-1:0}return~(e=s(a))&&(n=r[e]=i[e](a)),{c(){n&&n.c(),o=K()},l(l){n&&n.l(l),o=K()},m(l,f){~e&&r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?~e&&r[e].p(l,f):(n&&(oe(),k(r[c],1,1,()=>{r[c]=null}),re()),~e?(n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o)):n=null)},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){~e&&r[e].d(l),l&&h(o)}}}function Jn(a,e,n){const o=["type","tokens","header","rows","ordered","renderers"];let t=ct(e,o),{type:i=void 0}=e,{tokens:r=void 0}=e,{header:s=void 0}=e,{rows:l=void 0}=e,{ordered:f=!1}=e,{renderers:c}=e;return zn(),a.$$set=u=>{e=ze(ze({},e),yn(u)),n(6,t=ct(e,o)),"type"in u&&n(0,i=u.type),"tokens"in u&&n(1,r=u.tokens),"header"in u&&n(2,s=u.header),"rows"in u&&n(3,l=u.rows),"ordered"in u&&n(4,f=u.ordered),"renderers"in u&&n(5,c=u.renderers)},[i,r,s,l,f,c,t]}let Re=class extends Q{constructor(e){super(),J(this,e,Jn,Qn,ee,{type:0,tokens:1,header:2,rows:3,ordered:4,renderers:5})}};function an(){return{async:!1,baseUrl:null,breaks:!1,extensions:null,gfm:!0,headerIds:!0,headerPrefix:"",highlight:null,hooks:null,langPrefix:"language-",mangle:!0,pedantic:!1,renderer:null,sanitize:!1,sanitizer:null,silent:!1,smartypants:!1,tokenizer:null,walkTokens:null,xhtml:!1}}let Pe=an();function e0(a){Pe=a}const ln=/[&<>"']/,t0=new RegExp(ln.source,"g"),sn=/[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,n0=new RegExp(sn.source,"g"),o0={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},kt=a=>o0[a];function be(a,e){if(e){if(ln.test(a))return a.replace(t0,kt)}else if(sn.test(a))return a.replace(n0,kt);return a}const r0=/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;function fn(a){return a.replace(r0,(e,n)=>(n=n.toLowerCase(),n==="colon"?":":n.charAt(0)==="#"?n.charAt(1)==="x"?String.fromCharCode(parseInt(n.substring(2),16)):String.fromCharCode(+n.substring(1)):""))}const i0=/(^|[^\[])\^/g;function le(a,e){a=typeof a=="string"?a:a.source,e=e||"";const n={replace:(o,t)=>(t=t.source||t,t=t.replace(i0,"$1"),a=a.replace(o,t),n),getRegex:()=>new RegExp(a,e)};return n}const a0=/[^\w:]/g,l0=/^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;function yt(a,e,n){if(a){let o;try{o=decodeURIComponent(fn(n)).replace(a0,"").toLowerCase()}catch{return null}if(o.indexOf("javascript:")===0||o.indexOf("vbscript:")===0||o.indexOf("data:")===0)return null}e&&!l0.test(n)&&(n=u0(e,n));try{n=encodeURI(n).replace(/%25/g,"%")}catch{return null}return n}const Qe={},s0=/^[^:]+:\/*[^/]*$/,f0=/^([^:]+:)[\s\S]*$/,c0=/^([^:]+:\/*[^/]*)[\s\S]*$/;function u0(a,e){Qe[" "+a]||(s0.test(a)?Qe[" "+a]=a+"/":Qe[" "+a]=Je(a,"/",!0)),a=Qe[" "+a];const n=a.indexOf(":")===-1;return e.substring(0,2)==="//"?n?e:a.replace(f0,"$1")+e:e.charAt(0)==="/"?n?e:a.replace(c0,"$1")+e:a+e}const tt={exec:function(){}};function St(a,e){const n=a.replace(/\|/g,(i,r,s)=>{let l=!1,f=r;for(;--f>=0&&s[f]==="\\";)l=!l;return l?"|":" |"}),o=n.split(/ \|/);let t=0;if(o[0].trim()||o.shift(),o.length>0&&!o[o.length-1].trim()&&o.pop(),o.length>e)o.splice(e);else for(;o.length<e;)o.push("");for(;t<o.length;t++)o[t]=o[t].trim().replace(/\\\|/g,"|");return o}function Je(a,e,n){const o=a.length;if(o===0)return"";let t=0;for(;t<o;){const i=a.charAt(o-t-1);if(i===e&&!n)t++;else if(i!==e&&n)t++;else break}return a.slice(0,o-t)}function p0(a,e){if(a.indexOf(e[1])===-1)return-1;const n=a.length;let o=0,t=0;for(;t<n;t++)if(a[t]==="\\")t++;else if(a[t]===e[0])o++;else if(a[t]===e[1]&&(o--,o<0))return t;return-1}function m0(a){a&&a.sanitize&&!a.silent&&console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options")}function Et(a,e){if(e<1)return"";let n="";for(;e>1;)e&1&&(n+=a),e>>=1,a+=a;return n+a}function At(a,e,n,o){const t=e.href,i=e.title?be(e.title):null,r=a[1].replace(/\\([\[\]])/g,"$1");if(a[0].charAt(0)!=="!"){o.state.inLink=!0;const s={type:"link",raw:n,href:t,title:i,text:r,tokens:o.inlineTokens(r)};return o.state.inLink=!1,s}return{type:"image",raw:n,href:t,title:i,text:be(r)}}function d0(a,e){const n=a.match(/^(\s+)(?:```)/);if(n===null)return e;const o=n[1];return e.split(`
 `).map(t=>{const i=t.match(/^\s+/);if(i===null)return t;const[r]=i;return r.length>=o.length?t.slice(o.length):t}).join(`
 `)}class lt{constructor(e){this.options=e||Pe}space(e){const n=this.rules.block.newline.exec(e);if(n&&n[0].length>0)return{type:"space",raw:n[0]}}code(e){const n=this.rules.block.code.exec(e);if(n){const o=n[0].replace(/^ {1,4}/gm,"");return{type:"code",raw:n[0],codeBlockStyle:"indented",text:this.options.pedantic?o:Je(o,`
-`)}}}fences(e){const n=this.rules.block.fences.exec(e);if(n){const o=n[0],t=d0(o,n[3]||"");return{type:"code",raw:o,lang:n[2]?n[2].trim().replace(this.rules.inline._escapes,"$1"):n[2],text:t}}}heading(e){const n=this.rules.block.heading.exec(e);if(n){let o=n[2].trim();if(/#$/.test(o)){const t=Je(o,"#");(this.options.pedantic||!t||/ $/.test(t))&&(o=t.trim())}return{type:"heading",raw:n[0],depth:n[1].length,text:o,tokens:this.lexer.inline(o)}}}hr(e){const n=this.rules.block.hr.exec(e);if(n)return{type:"hr",raw:n[0]}}blockquote(e){const n=this.rules.block.blockquote.exec(e);if(n){const o=n[0].replace(/^ *>[ \t]?/gm,""),t=this.lexer.state.top;this.lexer.state.top=!0;const i=this.lexer.blockTokens(o);return this.lexer.state.top=t,{type:"blockquote",raw:n[0],tokens:i,text:o}}}list(e){let n=this.rules.block.list.exec(e);if(n){let o,t,i,r,s,l,f,c,u,p,m,d,g=n[1].trim();const C=g.length>1,S={type:"list",raw:"",ordered:C,start:C?+g.slice(0,-1):"",loose:!1,items:[]};g=C?`\\d{1,9}\\${g.slice(-1)}`:`\\${g}`,this.options.pedantic&&(g=C?g:"[*+-]");const y=new RegExp(`^( {0,3}${g})((?:[	 ][^\\n]*)?(?:\\n|$))`);for(;e&&(d=!1,!(!(n=y.exec(e))||this.rules.block.hr.test(e)));){if(o=n[0],e=e.substring(o.length),c=n[2].split(`
+`)}}}fences(e){const n=this.rules.block.fences.exec(e);if(n){const o=n[0],t=d0(o,n[3]||"");return{type:"code",raw:o,lang:n[2]?n[2].trim().replace(this.rules.inline._escapes,"$1"):n[2],text:t}}}heading(e){const n=this.rules.block.heading.exec(e);if(n){let o=n[2].trim();if(/#$/.test(o)){const t=Je(o,"#");(this.options.pedantic||!t||/ $/.test(t))&&(o=t.trim())}return{type:"heading",raw:n[0],depth:n[1].length,text:o,tokens:this.lexer.inline(o)}}}hr(e){const n=this.rules.block.hr.exec(e);if(n)return{type:"hr",raw:n[0]}}blockquote(e){const n=this.rules.block.blockquote.exec(e);if(n){const o=n[0].replace(/^ *>[ \t]?/gm,""),t=this.lexer.state.top;this.lexer.state.top=!0;const i=this.lexer.blockTokens(o);return this.lexer.state.top=t,{type:"blockquote",raw:n[0],tokens:i,text:o}}}list(e){let n=this.rules.block.list.exec(e);if(n){let o,t,i,r,s,l,f,c,u,p,m,d,g=n[1].trim();const C=g.length>1,E={type:"list",raw:"",ordered:C,start:C?+g.slice(0,-1):"",loose:!1,items:[]};g=C?`\\d{1,9}\\${g.slice(-1)}`:`\\${g}`,this.options.pedantic&&(g=C?g:"[*+-]");const S=new RegExp(`^( {0,3}${g})((?:[	 ][^\\n]*)?(?:\\n|$))`);for(;e&&(d=!1,!(!(n=S.exec(e))||this.rules.block.hr.test(e)));){if(o=n[0],e=e.substring(o.length),c=n[2].split(`
 `,1)[0].replace(/^\t+/,v=>" ".repeat(3*v.length)),u=e.split(`
 `,1)[0],this.options.pedantic?(r=2,m=c.trimLeft()):(r=n[2].search(/[^ ]/),r=r>4?1:r,m=c.slice(r),r+=n[1].length),l=!1,!c&&/^ *$/.test(u)&&(o+=u+`
 `,e=e.substring(u.length+1),d=!0),!d){const v=new RegExp(`^ {0,${Math.min(3,r-1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`),x=new RegExp(`^ {0,${Math.min(3,r-1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`),$=new RegExp(`^ {0,${Math.min(3,r-1)}}(?:\`\`\`|~~~)`),L=new RegExp(`^ {0,${Math.min(3,r-1)}}#`);for(;e&&(p=e.split(`
 `,1)[0],u=p,this.options.pedantic&&(u=u.replace(/^ {1,4}(?=( {4})*[^ ])/g,"  ")),!($.test(u)||L.test(u)||v.test(u)||x.test(e)));){if(u.search(/[^ ]/)>=r||!u.trim())m+=`
 `+u.slice(r);else{if(l||c.search(/[^ ]/)>=4||$.test(c)||L.test(c)||x.test(c))break;m+=`
 `+u}!l&&!u.trim()&&(l=!0),o+=p+`
-`,e=e.substring(p.length+1),c=u.slice(r)}}S.loose||(f?S.loose=!0:/\n *\n *$/.test(o)&&(f=!0)),this.options.gfm&&(t=/^\[[ xX]\] /.exec(m),t&&(i=t[0]!=="[ ] ",m=m.replace(/^\[[ xX]\] +/,""))),S.items.push({type:"list_item",raw:o,task:!!t,checked:i,loose:!1,text:m}),S.raw+=o}S.items[S.items.length-1].raw=o.trimRight(),S.items[S.items.length-1].text=m.trimRight(),S.raw=S.raw.trimRight();const M=S.items.length;for(s=0;s<M;s++)if(this.lexer.state.top=!1,S.items[s].tokens=this.lexer.blockTokens(S.items[s].text,[]),!S.loose){const v=S.items[s].tokens.filter($=>$.type==="space"),x=v.length>0&&v.some($=>/\n.*\n/.test($.raw));S.loose=x}if(S.loose)for(s=0;s<M;s++)S.items[s].loose=!0;return S}}html(e){const n=this.rules.block.html.exec(e);if(n){const o={type:"html",raw:n[0],pre:!this.options.sanitizer&&(n[1]==="pre"||n[1]==="script"||n[1]==="style"),text:n[0]};if(this.options.sanitize){const t=this.options.sanitizer?this.options.sanitizer(n[0]):be(n[0]);o.type="paragraph",o.text=t,o.tokens=this.lexer.inline(t)}return o}}def(e){const n=this.rules.block.def.exec(e);if(n){const o=n[1].toLowerCase().replace(/\s+/g," "),t=n[2]?n[2].replace(/^<(.*)>$/,"$1").replace(this.rules.inline._escapes,"$1"):"",i=n[3]?n[3].substring(1,n[3].length-1).replace(this.rules.inline._escapes,"$1"):n[3];return{type:"def",tag:o,raw:n[0],href:t,title:i}}}table(e){const n=this.rules.block.table.exec(e);if(n){const o={type:"table",header:St(n[1]).map(t=>({text:t})),align:n[2].replace(/^ *|\| *$/g,"").split(/ *\| */),rows:n[3]&&n[3].trim()?n[3].replace(/\n[ \t]*$/,"").split(`
+`,e=e.substring(p.length+1),c=u.slice(r)}}E.loose||(f?E.loose=!0:/\n *\n *$/.test(o)&&(f=!0)),this.options.gfm&&(t=/^\[[ xX]\] /.exec(m),t&&(i=t[0]!=="[ ] ",m=m.replace(/^\[[ xX]\] +/,""))),E.items.push({type:"list_item",raw:o,task:!!t,checked:i,loose:!1,text:m}),E.raw+=o}E.items[E.items.length-1].raw=o.trimRight(),E.items[E.items.length-1].text=m.trimRight(),E.raw=E.raw.trimRight();const M=E.items.length;for(s=0;s<M;s++)if(this.lexer.state.top=!1,E.items[s].tokens=this.lexer.blockTokens(E.items[s].text,[]),!E.loose){const v=E.items[s].tokens.filter($=>$.type==="space"),x=v.length>0&&v.some($=>/\n.*\n/.test($.raw));E.loose=x}if(E.loose)for(s=0;s<M;s++)E.items[s].loose=!0;return E}}html(e){const n=this.rules.block.html.exec(e);if(n){const o={type:"html",raw:n[0],pre:!this.options.sanitizer&&(n[1]==="pre"||n[1]==="script"||n[1]==="style"),text:n[0]};if(this.options.sanitize){const t=this.options.sanitizer?this.options.sanitizer(n[0]):be(n[0]);o.type="paragraph",o.text=t,o.tokens=this.lexer.inline(t)}return o}}def(e){const n=this.rules.block.def.exec(e);if(n){const o=n[1].toLowerCase().replace(/\s+/g," "),t=n[2]?n[2].replace(/^<(.*)>$/,"$1").replace(this.rules.inline._escapes,"$1"):"",i=n[3]?n[3].substring(1,n[3].length-1).replace(this.rules.inline._escapes,"$1"):n[3];return{type:"def",tag:o,raw:n[0],href:t,title:i}}}table(e){const n=this.rules.block.table.exec(e);if(n){const o={type:"table",header:St(n[1]).map(t=>({text:t})),align:n[2].replace(/^ *|\| *$/g,"").split(/ *\| */),rows:n[3]&&n[3].trim()?n[3].replace(/\n[ \t]*$/,"").split(`
 `):[]};if(o.header.length===o.align.length){o.raw=n[0];let t=o.align.length,i,r,s,l;for(i=0;i<t;i++)/^ *-+: *$/.test(o.align[i])?o.align[i]="right":/^ *:-+: *$/.test(o.align[i])?o.align[i]="center":/^ *:-+ *$/.test(o.align[i])?o.align[i]="left":o.align[i]=null;for(t=o.rows.length,i=0;i<t;i++)o.rows[i]=St(o.rows[i],o.header.length).map(f=>({text:f}));for(t=o.header.length,r=0;r<t;r++)o.header[r].tokens=this.lexer.inline(o.header[r].text);for(t=o.rows.length,r=0;r<t;r++)for(l=o.rows[r],s=0;s<l.length;s++)l[s].tokens=this.lexer.inline(l[s].text);return o}}}lheading(e){const n=this.rules.block.lheading.exec(e);if(n)return{type:"heading",raw:n[0],depth:n[2].charAt(0)==="="?1:2,text:n[1],tokens:this.lexer.inline(n[1])}}paragraph(e){const n=this.rules.block.paragraph.exec(e);if(n){const o=n[1].charAt(n[1].length-1)===`
 `?n[1].slice(0,-1):n[1];return{type:"paragraph",raw:n[0],text:o,tokens:this.lexer.inline(o)}}}text(e){const n=this.rules.block.text.exec(e);if(n)return{type:"text",raw:n[0],text:n[0],tokens:this.lexer.inline(n[0])}}escape(e){const n=this.rules.inline.escape.exec(e);if(n)return{type:"escape",raw:n[0],text:be(n[1])}}tag(e){const n=this.rules.inline.tag.exec(e);if(n)return!this.lexer.state.inLink&&/^<a /i.test(n[0])?this.lexer.state.inLink=!0:this.lexer.state.inLink&&/^<\/a>/i.test(n[0])&&(this.lexer.state.inLink=!1),!this.lexer.state.inRawBlock&&/^<(pre|code|kbd|script)(\s|>)/i.test(n[0])?this.lexer.state.inRawBlock=!0:this.lexer.state.inRawBlock&&/^<\/(pre|code|kbd|script)(\s|>)/i.test(n[0])&&(this.lexer.state.inRawBlock=!1),{type:this.options.sanitize?"text":"html",raw:n[0],inLink:this.lexer.state.inLink,inRawBlock:this.lexer.state.inRawBlock,text:this.options.sanitize?this.options.sanitizer?this.options.sanitizer(n[0]):be(n[0]):n[0]}}link(e){const n=this.rules.inline.link.exec(e);if(n){const o=n[2].trim();if(!this.options.pedantic&&/^</.test(o)){if(!/>$/.test(o))return;const r=Je(o.slice(0,-1),"\\");if((o.length-r.length)%2===0)return}else{const r=p0(n[2],"()");if(r>-1){const l=(n[0].indexOf("!")===0?5:4)+n[1].length+r;n[2]=n[2].substring(0,r),n[0]=n[0].substring(0,l).trim(),n[3]=""}}let t=n[2],i="";if(this.options.pedantic){const r=/^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(t);r&&(t=r[1],i=r[3])}else i=n[3]?n[3].slice(1,-1):"";return t=t.trim(),/^</.test(t)&&(this.options.pedantic&&!/>$/.test(o)?t=t.slice(1):t=t.slice(1,-1)),At(n,{href:t&&t.replace(this.rules.inline._escapes,"$1"),title:i&&i.replace(this.rules.inline._escapes,"$1")},n[0],this.lexer)}}reflink(e,n){let o;if((o=this.rules.inline.reflink.exec(e))||(o=this.rules.inline.nolink.exec(e))){let t=(o[2]||o[1]).replace(/\s+/g," ");if(t=n[t.toLowerCase()],!t){const i=o[0].charAt(0);return{type:"text",raw:i,text:i}}return At(o,t,o[0],this.lexer)}}emStrong(e,n,o=""){let t=this.rules.inline.emStrong.lDelim.exec(e);if(!t||t[3]&&o.match(/[\p{L}\p{N}]/u))return;const i=t[1]||t[2]||"";if(!i||i&&(o===""||this.rules.inline.punctuation.exec(o))){const r=t[0].length-1;let s,l,f=r,c=0;const u=t[0][0]==="*"?this.rules.inline.emStrong.rDelimAst:this.rules.inline.emStrong.rDelimUnd;for(u.lastIndex=0,n=n.slice(-1*e.length+r);(t=u.exec(n))!=null;){if(s=t[1]||t[2]||t[3]||t[4]||t[5]||t[6],!s)continue;if(l=s.length,t[3]||t[4]){f+=l;continue}else if((t[5]||t[6])&&r%3&&!((r+l)%3)){c+=l;continue}if(f-=l,f>0)continue;l=Math.min(l,l+f+c);const p=e.slice(0,r+t.index+(t[0].length-s.length)+l);if(Math.min(r,l)%2){const d=p.slice(1,-1);return{type:"em",raw:p,text:d,tokens:this.lexer.inlineTokens(d)}}const m=p.slice(2,-2);return{type:"strong",raw:p,text:m,tokens:this.lexer.inlineTokens(m)}}}}codespan(e){const n=this.rules.inline.code.exec(e);if(n){let o=n[2].replace(/\n/g," ");const t=/[^ ]/.test(o),i=/^ /.test(o)&&/ $/.test(o);return t&&i&&(o=o.substring(1,o.length-1)),o=be(o,!0),{type:"codespan",raw:n[0],text:o}}}br(e){const n=this.rules.inline.br.exec(e);if(n)return{type:"br",raw:n[0]}}del(e){const n=this.rules.inline.del.exec(e);if(n)return{type:"del",raw:n[0],text:n[2],tokens:this.lexer.inlineTokens(n[2])}}autolink(e,n){const o=this.rules.inline.autolink.exec(e);if(o){let t,i;return o[2]==="@"?(t=be(this.options.mangle?n(o[1]):o[1]),i="mailto:"+t):(t=be(o[1]),i=t),{type:"link",raw:o[0],text:t,href:i,tokens:[{type:"text",raw:t,text:t}]}}}url(e,n){let o;if(o=this.rules.inline.url.exec(e)){let t,i;if(o[2]==="@")t=be(this.options.mangle?n(o[0]):o[0]),i="mailto:"+t;else{let r;do r=o[0],o[0]=this.rules.inline._backpedal.exec(o[0])[0];while(r!==o[0]);t=be(o[0]),o[1]==="www."?i="http://"+o[0]:i=o[0]}return{type:"link",raw:o[0],text:t,href:i,tokens:[{type:"text",raw:t,text:t}]}}}inlineText(e,n){const o=this.rules.inline.text.exec(e);if(o){let t;return this.lexer.state.inRawBlock?t=this.options.sanitize?this.options.sanitizer?this.options.sanitizer(o[0]):be(o[0]):o[0]:t=be(this.options.smartypants?n(o[0]):o[0]),{type:"text",raw:o[0],text:t}}}}const W={newline:/^(?: *(?:\n|$))+/,code:/^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,fences:/^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,hr:/^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,heading:/^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,blockquote:/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,list:/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/,html:"^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))",def:/^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/,table:tt,lheading:/^((?:.|\n(?!\n))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,_paragraph:/^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,text:/^[^\n]+/};W._label=/(?!\s*\])(?:\\.|[^\[\]\\])+/;W._title=/(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/;W.def=le(W.def).replace("label",W._label).replace("title",W._title).getRegex();W.bullet=/(?:[*+-]|\d{1,9}[.)])/;W.listItemStart=le(/^( *)(bull) */).replace("bull",W.bullet).getRegex();W.list=le(W.list).replace(/bull/g,W.bullet).replace("hr","\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def","\\n+(?="+W.def.source+")").getRegex();W._tag="address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";W._comment=/<!--(?!-?>)[\s\S]*?(?:-->|$)/;W.html=le(W.html,"i").replace("comment",W._comment).replace("tag",W._tag).replace("attribute",/ +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();W.paragraph=le(W._paragraph).replace("hr",W.hr).replace("heading"," {0,3}#{1,6} ").replace("|lheading","").replace("|table","").replace("blockquote"," {0,3}>").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list"," {0,3}(?:[*+-]|1[.)]) ").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",W._tag).getRegex();W.blockquote=le(W.blockquote).replace("paragraph",W.paragraph).getRegex();W.normal={...W};W.gfm={...W.normal,table:"^ *([^\\n ].*\\|.*)\\n {0,3}(?:\\| *)?(:?-+:? *(?:\\| *:?-+:? *)*)(?:\\| *)?(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)"};W.gfm.table=le(W.gfm.table).replace("hr",W.hr).replace("heading"," {0,3}#{1,6} ").replace("blockquote"," {0,3}>").replace("code"," {4}[^\\n]").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list"," {0,3}(?:[*+-]|1[.)]) ").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",W._tag).getRegex();W.gfm.paragraph=le(W._paragraph).replace("hr",W.hr).replace("heading"," {0,3}#{1,6} ").replace("|lheading","").replace("table",W.gfm.table).replace("blockquote"," {0,3}>").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list"," {0,3}(?:[*+-]|1[.)]) ").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",W._tag).getRegex();W.pedantic={...W.normal,html:le(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment",W._comment).replace(/tag/g,"(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),def:/^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,heading:/^(#{1,6})(.*)(?:\n+|$)/,fences:tt,lheading:/^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,paragraph:le(W.normal._paragraph).replace("hr",W.hr).replace("heading",` *#{1,6} *[^
 ]`).replace("lheading",W.lheading).replace("blockquote"," {0,3}>").replace("|fences","").replace("|list","").replace("|html","").getRegex()};const H={escape:/^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,autolink:/^<(scheme:[^\s\x00-\x1f<>]*|email)>/,url:tt,tag:"^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",link:/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,reflink:/^!?\[(label)\]\[(ref)\]/,nolink:/^!?\[(ref)\](?:\[\])?/,reflinkSearch:"reflink|nolink(?!\\()",emStrong:{lDelim:/^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,rDelimAst:/^(?:[^_*\\]|\\.)*?\_\_(?:[^_*\\]|\\.)*?\*(?:[^_*\\]|\\.)*?(?=\_\_)|(?:[^*\\]|\\.)+(?=[^*])|[punct_](\*+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\*+)(?=[punct_\s]|$)|[punct_\s](\*+)(?=[^punct*_\s])|[\s](\*+)(?=[punct_])|[punct_](\*+)(?=[punct_])|(?:[^punct*_\s\\]|\\.)(\*+)(?=[^punct*_\s])/,rDelimUnd:/^(?:[^_*\\]|\\.)*?\*\*(?:[^_*\\]|\\.)*?\_(?:[^_*\\]|\\.)*?(?=\*\*)|(?:[^_\\]|\\.)+(?=[^_])|[punct*](\_+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\_+)(?=[punct*\s]|$)|[punct*\s](\_+)(?=[^punct*_\s])|[\s](\_+)(?=[punct*])|[punct*](\_+)(?=[punct*])/},code:/^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,br:/^( {2,}|\\)\n(?!\s*$)/,del:tt,text:/^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,punctuation:/^([\spunctuation])/};H._punctuation="!\"#$%&'()+\\-.,/:;<=>?@\\[\\]`^{|}~";H.punctuation=le(H.punctuation).replace(/punctuation/g,H._punctuation).getRegex();H.blockSkip=/\[[^\]]*?\]\([^\)]*?\)|`[^`]*?`|<[^>]*?>/g;H.escapedEmSt=/(?:^|[^\\])(?:\\\\)*\\[*_]/g;H._comment=le(W._comment).replace("(?:-->|$)","-->").getRegex();H.emStrong.lDelim=le(H.emStrong.lDelim).replace(/punct/g,H._punctuation).getRegex();H.emStrong.rDelimAst=le(H.emStrong.rDelimAst,"g").replace(/punct/g,H._punctuation).getRegex();H.emStrong.rDelimUnd=le(H.emStrong.rDelimUnd,"g").replace(/punct/g,H._punctuation).getRegex();H._escapes=/\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g;H._scheme=/[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;H._email=/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;H.autolink=le(H.autolink).replace("scheme",H._scheme).replace("email",H._email).getRegex();H._attribute=/\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;H.tag=le(H.tag).replace("comment",H._comment).replace("attribute",H._attribute).getRegex();H._label=/(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;H._href=/<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/;H._title=/"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/;H.link=le(H.link).replace("label",H._label).replace("href",H._href).replace("title",H._title).getRegex();H.reflink=le(H.reflink).replace("label",H._label).replace("ref",W._label).getRegex();H.nolink=le(H.nolink).replace("ref",W._label).getRegex();H.reflinkSearch=le(H.reflinkSearch,"g").replace("reflink",H.reflink).replace("nolink",H.nolink).getRegex();H.normal={...H};H.pedantic={...H.normal,strong:{start:/^__|\*\*/,middle:/^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,endAst:/\*\*(?!\*)/g,endUnd:/__(?!_)/g},em:{start:/^_|\*/,middle:/^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,endAst:/\*(?!\*)/g,endUnd:/_(?!_)/g},link:le(/^!?\[(label)\]\((.*?)\)/).replace("label",H._label).getRegex(),reflink:le(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label",H._label).getRegex()};H.gfm={...H.normal,escape:le(H.escape).replace("])","~|])").getRegex(),_extended_email:/[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,url:/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,_backpedal:/(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,del:/^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,text:/^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/};H.gfm.url=le(H.gfm.url,"i").replace("email",H.gfm._extended_email).getRegex();H.breaks={...H.gfm,br:le(H.br).replace("{2,}","*").getRegex(),text:le(H.gfm.text).replace("\\b_","\\b_| {2,}\\n").replace(/\{2,\}/g,"*").getRegex()};function h0(a){return a.replace(/---/g,"—").replace(/--/g,"–").replace(/(^|[-\u2014/(\[{"\s])'/g,"$1‘").replace(/'/g,"’").replace(/(^|[-\u2014/(\[{\u2018\s])"/g,"$1“").replace(/"/g,"”").replace(/\.{3}/g,"…")}function Dt(a){let e="",n,o;const t=a.length;for(n=0;n<t;n++)o=a.charCodeAt(n),Math.random()>.5&&(o="x"+o.toString(16)),e+="&#"+o+";";return e}class De{constructor(e){this.tokens=[],this.tokens.links=Object.create(null),this.options=e||Pe,this.options.tokenizer=this.options.tokenizer||new lt,this.tokenizer=this.options.tokenizer,this.tokenizer.options=this.options,this.tokenizer.lexer=this,this.inlineQueue=[],this.state={inLink:!1,inRawBlock:!1,top:!0};const n={block:W.normal,inline:H.normal};this.options.pedantic?(n.block=W.pedantic,n.inline=H.pedantic):this.options.gfm&&(n.block=W.gfm,this.options.breaks?n.inline=H.breaks:n.inline=H.gfm),this.tokenizer.rules=n}static get rules(){return{block:W,inline:H}}static lex(e,n){return new De(n).lex(e)}static lexInline(e,n){return new De(n).inlineTokens(e)}lex(e){e=e.replace(/\r\n|\r/g,`
@@ -41,9 +41,9 @@ ${e}</blockquote>
 `}tablerow(e){return`<tr>
 ${e}</tr>
 `}tablecell(e,n){const o=n.header?"th":"td";return(n.align?`<${o} align="${n.align}">`:`<${o}>`)+e+`</${o}>
-`}strong(e){return`<strong>${e}</strong>`}em(e){return`<em>${e}</em>`}codespan(e){return`<code>${e}</code>`}br(){return this.options.xhtml?"<br/>":"<br>"}del(e){return`<del>${e}</del>`}link(e,n,o){if(e=yt(this.options.sanitize,this.options.baseUrl,e),e===null)return o;let t='<a href="'+e+'"';return n&&(t+=' title="'+n+'"'),t+=">"+o+"</a>",t}image(e,n,o){if(e=yt(this.options.sanitize,this.options.baseUrl,e),e===null)return o;let t=`<img src="${e}" alt="${o}"`;return n&&(t+=` title="${n}"`),t+=this.options.xhtml?"/>":">",t}text(e){return e}}class cn{strong(e){return e}em(e){return e}codespan(e){return e}del(e){return e}html(e){return e}text(e){return e}link(e,n,o){return""+o}image(e,n,o){return""+o}br(){return""}}class ft{constructor(){this.seen={}}serialize(e){return e.toLowerCase().trim().replace(/<[!\/a-z].*?>/ig,"").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g,"").replace(/\s/g,"-")}getNextSafeSlug(e,n){let o=e,t=0;if(this.seen.hasOwnProperty(o)){t=this.seen[e];do t++,o=e+"-"+t;while(this.seen.hasOwnProperty(o))}return n||(this.seen[e]=t,this.seen[o]=0),o}slug(e,n={}){const o=this.serialize(e);return this.getNextSafeSlug(o,n.dryrun)}}class Ce{constructor(e){this.options=e||Pe,this.options.renderer=this.options.renderer||new st,this.renderer=this.options.renderer,this.renderer.options=this.options,this.textRenderer=new cn,this.slugger=new ft}static parse(e,n){return new Ce(n).parse(e)}static parseInline(e,n){return new Ce(n).parseInline(e)}parse(e,n=!0){let o="",t,i,r,s,l,f,c,u,p,m,d,g,C,S,y,M,v,x,$;const L=e.length;for(t=0;t<L;t++){if(m=e[t],this.options.extensions&&this.options.extensions.renderers&&this.options.extensions.renderers[m.type]&&($=this.options.extensions.renderers[m.type].call({parser:this},m),$!==!1||!["space","hr","heading","code","table","blockquote","list","html","paragraph","text"].includes(m.type))){o+=$||"";continue}switch(m.type){case"space":continue;case"hr":{o+=this.renderer.hr();continue}case"heading":{o+=this.renderer.heading(this.parseInline(m.tokens),m.depth,fn(this.parseInline(m.tokens,this.textRenderer)),this.slugger);continue}case"code":{o+=this.renderer.code(m.text,m.lang,m.escaped);continue}case"table":{for(u="",c="",s=m.header.length,i=0;i<s;i++)c+=this.renderer.tablecell(this.parseInline(m.header[i].tokens),{header:!0,align:m.align[i]});for(u+=this.renderer.tablerow(c),p="",s=m.rows.length,i=0;i<s;i++){for(f=m.rows[i],c="",l=f.length,r=0;r<l;r++)c+=this.renderer.tablecell(this.parseInline(f[r].tokens),{header:!1,align:m.align[r]});p+=this.renderer.tablerow(c)}o+=this.renderer.table(u,p);continue}case"blockquote":{p=this.parse(m.tokens),o+=this.renderer.blockquote(p);continue}case"list":{for(d=m.ordered,g=m.start,C=m.loose,s=m.items.length,p="",i=0;i<s;i++)y=m.items[i],M=y.checked,v=y.task,S="",y.task&&(x=this.renderer.checkbox(M),C?y.tokens.length>0&&y.tokens[0].type==="paragraph"?(y.tokens[0].text=x+" "+y.tokens[0].text,y.tokens[0].tokens&&y.tokens[0].tokens.length>0&&y.tokens[0].tokens[0].type==="text"&&(y.tokens[0].tokens[0].text=x+" "+y.tokens[0].tokens[0].text)):y.tokens.unshift({type:"text",text:x}):S+=x),S+=this.parse(y.tokens,C),p+=this.renderer.listitem(S,v,M);o+=this.renderer.list(p,d,g);continue}case"html":{o+=this.renderer.html(m.text);continue}case"paragraph":{o+=this.renderer.paragraph(this.parseInline(m.tokens));continue}case"text":{for(p=m.tokens?this.parseInline(m.tokens):m.text;t+1<L&&e[t+1].type==="text";)m=e[++t],p+=`
+`}strong(e){return`<strong>${e}</strong>`}em(e){return`<em>${e}</em>`}codespan(e){return`<code>${e}</code>`}br(){return this.options.xhtml?"<br/>":"<br>"}del(e){return`<del>${e}</del>`}link(e,n,o){if(e=yt(this.options.sanitize,this.options.baseUrl,e),e===null)return o;let t='<a href="'+e+'"';return n&&(t+=' title="'+n+'"'),t+=">"+o+"</a>",t}image(e,n,o){if(e=yt(this.options.sanitize,this.options.baseUrl,e),e===null)return o;let t=`<img src="${e}" alt="${o}"`;return n&&(t+=` title="${n}"`),t+=this.options.xhtml?"/>":">",t}text(e){return e}}class cn{strong(e){return e}em(e){return e}codespan(e){return e}del(e){return e}html(e){return e}text(e){return e}link(e,n,o){return""+o}image(e,n,o){return""+o}br(){return""}}class ft{constructor(){this.seen={}}serialize(e){return e.toLowerCase().trim().replace(/<[!\/a-z].*?>/ig,"").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g,"").replace(/\s/g,"-")}getNextSafeSlug(e,n){let o=e,t=0;if(this.seen.hasOwnProperty(o)){t=this.seen[e];do t++,o=e+"-"+t;while(this.seen.hasOwnProperty(o))}return n||(this.seen[e]=t,this.seen[o]=0),o}slug(e,n={}){const o=this.serialize(e);return this.getNextSafeSlug(o,n.dryrun)}}class Ce{constructor(e){this.options=e||Pe,this.options.renderer=this.options.renderer||new st,this.renderer=this.options.renderer,this.renderer.options=this.options,this.textRenderer=new cn,this.slugger=new ft}static parse(e,n){return new Ce(n).parse(e)}static parseInline(e,n){return new Ce(n).parseInline(e)}parse(e,n=!0){let o="",t,i,r,s,l,f,c,u,p,m,d,g,C,E,S,M,v,x,$;const L=e.length;for(t=0;t<L;t++){if(m=e[t],this.options.extensions&&this.options.extensions.renderers&&this.options.extensions.renderers[m.type]&&($=this.options.extensions.renderers[m.type].call({parser:this},m),$!==!1||!["space","hr","heading","code","table","blockquote","list","html","paragraph","text"].includes(m.type))){o+=$||"";continue}switch(m.type){case"space":continue;case"hr":{o+=this.renderer.hr();continue}case"heading":{o+=this.renderer.heading(this.parseInline(m.tokens),m.depth,fn(this.parseInline(m.tokens,this.textRenderer)),this.slugger);continue}case"code":{o+=this.renderer.code(m.text,m.lang,m.escaped);continue}case"table":{for(u="",c="",s=m.header.length,i=0;i<s;i++)c+=this.renderer.tablecell(this.parseInline(m.header[i].tokens),{header:!0,align:m.align[i]});for(u+=this.renderer.tablerow(c),p="",s=m.rows.length,i=0;i<s;i++){for(f=m.rows[i],c="",l=f.length,r=0;r<l;r++)c+=this.renderer.tablecell(this.parseInline(f[r].tokens),{header:!1,align:m.align[r]});p+=this.renderer.tablerow(c)}o+=this.renderer.table(u,p);continue}case"blockquote":{p=this.parse(m.tokens),o+=this.renderer.blockquote(p);continue}case"list":{for(d=m.ordered,g=m.start,C=m.loose,s=m.items.length,p="",i=0;i<s;i++)S=m.items[i],M=S.checked,v=S.task,E="",S.task&&(x=this.renderer.checkbox(M),C?S.tokens.length>0&&S.tokens[0].type==="paragraph"?(S.tokens[0].text=x+" "+S.tokens[0].text,S.tokens[0].tokens&&S.tokens[0].tokens.length>0&&S.tokens[0].tokens[0].type==="text"&&(S.tokens[0].tokens[0].text=x+" "+S.tokens[0].tokens[0].text)):S.tokens.unshift({type:"text",text:x}):E+=x),E+=this.parse(S.tokens,C),p+=this.renderer.listitem(E,v,M);o+=this.renderer.list(p,d,g);continue}case"html":{o+=this.renderer.html(m.text);continue}case"paragraph":{o+=this.renderer.paragraph(this.parseInline(m.tokens));continue}case"text":{for(p=m.tokens?this.parseInline(m.tokens):m.text;t+1<L&&e[t+1].type==="text";)m=e[++t],p+=`
 `+(m.tokens?this.parseInline(m.tokens):m.text);o+=n?this.renderer.paragraph(p):p;continue}default:{const D='Token with "'+m.type+'" type was not found.';if(this.options.silent){console.error(D);return}else throw new Error(D)}}}return o}parseInline(e,n){n=n||this.renderer;let o="",t,i,r;const s=e.length;for(t=0;t<s;t++){if(i=e[t],this.options.extensions&&this.options.extensions.renderers&&this.options.extensions.renderers[i.type]&&(r=this.options.extensions.renderers[i.type].call({parser:this},i),r!==!1||!["escape","html","link","image","strong","em","codespan","br","del","text"].includes(i.type))){o+=r||"";continue}switch(i.type){case"escape":{o+=n.text(i.text);break}case"html":{o+=n.html(i.text);break}case"link":{o+=n.link(i.href,i.title,this.parseInline(i.tokens,n));break}case"image":{o+=n.image(i.href,i.title,i.text);break}case"strong":{o+=n.strong(this.parseInline(i.tokens,n));break}case"em":{o+=n.em(this.parseInline(i.tokens,n));break}case"codespan":{o+=n.codespan(i.text);break}case"br":{o+=n.br();break}case"del":{o+=n.del(this.parseInline(i.tokens,n));break}case"text":{o+=n.text(i.text);break}default:{const l='Token with "'+i.type+'" type was not found.';if(this.options.silent){console.error(l);return}else throw new Error(l)}}}return o}}class ot{constructor(e){this.options=e||Pe}static passThroughHooks=new Set(["preprocess","postprocess"]);preprocess(e){return e}postprocess(e){return e}}function v0(a,e,n){return o=>{if(o.message+=`
-Please report this to https://github.com/markedjs/marked.`,a){const t="<p>An error occurred:</p><pre>"+be(o.message+"",!0)+"</pre>";if(e)return Promise.resolve(t);if(n){n(null,t);return}return t}if(e)return Promise.reject(o);if(n){n(o);return}throw o}}function un(a,e){return(n,o,t)=>{typeof o=="function"&&(t=o,o=null);const i={...o};o={...j.defaults,...i};const r=v0(o.silent,o.async,t);if(typeof n>"u"||n===null)return r(new Error("marked(): input parameter is undefined or null"));if(typeof n!="string")return r(new Error("marked(): input parameter is of type "+Object.prototype.toString.call(n)+", string expected"));if(m0(o),o.hooks&&(o.hooks.options=o),t){const s=o.highlight;let l;try{o.hooks&&(n=o.hooks.preprocess(n)),l=a(n,o)}catch(u){return r(u)}const f=function(u){let p;if(!u)try{o.walkTokens&&j.walkTokens(l,o.walkTokens),p=e(l,o),o.hooks&&(p=o.hooks.postprocess(p))}catch(m){u=m}return o.highlight=s,u?r(u):t(null,p)};if(!s||s.length<3||(delete o.highlight,!l.length))return f();let c=0;j.walkTokens(l,function(u){u.type==="code"&&(c++,setTimeout(()=>{s(u.text,u.lang,function(p,m){if(p)return f(p);m!=null&&m!==u.text&&(u.text=m,u.escaped=!0),c--,c===0&&f()})},0))}),c===0&&f();return}if(o.async)return Promise.resolve(o.hooks?o.hooks.preprocess(n):n).then(s=>a(s,o)).then(s=>o.walkTokens?Promise.all(j.walkTokens(s,o.walkTokens)).then(()=>s):s).then(s=>e(s,o)).then(s=>o.hooks?o.hooks.postprocess(s):s).catch(r);try{o.hooks&&(n=o.hooks.preprocess(n));const s=a(n,o);o.walkTokens&&j.walkTokens(s,o.walkTokens);let l=e(s,o);return o.hooks&&(l=o.hooks.postprocess(l)),l}catch(s){return r(s)}}}function j(a,e,n){return un(De.lex,Ce.parse)(a,e,n)}j.options=j.setOptions=function(a){return j.defaults={...j.defaults,...a},e0(j.defaults),j};j.getDefaults=an;j.defaults=Pe;j.use=function(...a){const e=j.defaults.extensions||{renderers:{},childTokens:{}};a.forEach(n=>{const o={...n};if(o.async=j.defaults.async||o.async||!1,n.extensions&&(n.extensions.forEach(t=>{if(!t.name)throw new Error("extension name required");if(t.renderer){const i=e.renderers[t.name];i?e.renderers[t.name]=function(...r){let s=t.renderer.apply(this,r);return s===!1&&(s=i.apply(this,r)),s}:e.renderers[t.name]=t.renderer}if(t.tokenizer){if(!t.level||t.level!=="block"&&t.level!=="inline")throw new Error("extension level must be 'block' or 'inline'");e[t.level]?e[t.level].unshift(t.tokenizer):e[t.level]=[t.tokenizer],t.start&&(t.level==="block"?e.startBlock?e.startBlock.push(t.start):e.startBlock=[t.start]:t.level==="inline"&&(e.startInline?e.startInline.push(t.start):e.startInline=[t.start]))}t.childTokens&&(e.childTokens[t.name]=t.childTokens)}),o.extensions=e),n.renderer){const t=j.defaults.renderer||new st;for(const i in n.renderer){const r=t[i];t[i]=(...s)=>{let l=n.renderer[i].apply(t,s);return l===!1&&(l=r.apply(t,s)),l}}o.renderer=t}if(n.tokenizer){const t=j.defaults.tokenizer||new lt;for(const i in n.tokenizer){const r=t[i];t[i]=(...s)=>{let l=n.tokenizer[i].apply(t,s);return l===!1&&(l=r.apply(t,s)),l}}o.tokenizer=t}if(n.hooks){const t=j.defaults.hooks||new ot;for(const i in n.hooks){const r=t[i];ot.passThroughHooks.has(i)?t[i]=s=>{if(j.defaults.async)return Promise.resolve(n.hooks[i].call(t,s)).then(f=>r.call(t,f));const l=n.hooks[i].call(t,s);return r.call(t,l)}:t[i]=(...s)=>{let l=n.hooks[i].apply(t,s);return l===!1&&(l=r.apply(t,s)),l}}o.hooks=t}if(n.walkTokens){const t=j.defaults.walkTokens;o.walkTokens=function(i){let r=[];return r.push(n.walkTokens.call(this,i)),t&&(r=r.concat(t.call(this,i))),r}}j.setOptions(o)})};j.walkTokens=function(a,e){let n=[];for(const o of a)switch(n=n.concat(e.call(j,o)),o.type){case"table":{for(const t of o.header)n=n.concat(j.walkTokens(t.tokens,e));for(const t of o.rows)for(const i of t)n=n.concat(j.walkTokens(i.tokens,e));break}case"list":{n=n.concat(j.walkTokens(o.items,e));break}default:j.defaults.extensions&&j.defaults.extensions.childTokens&&j.defaults.extensions.childTokens[o.type]?j.defaults.extensions.childTokens[o.type].forEach(function(t){n=n.concat(j.walkTokens(o[t],e))}):o.tokens&&(n=n.concat(j.walkTokens(o.tokens,e)))}return n};j.parseInline=un(De.lexInline,Ce.parseInline);j.Parser=Ce;j.parser=Ce.parse;j.Renderer=st;j.TextRenderer=cn;j.Lexer=De;j.lexer=De.lex;j.Tokenizer=lt;j.Slugger=ft;j.Hooks=ot;j.parse=j;j.options;j.setOptions;j.use;j.walkTokens;j.parseInline;Ce.parse;De.lex;const pn={};function g0(a){let e;return{c(){e=R(a[1])},l(n){e=P(n,a[1])},m(n,o){A(n,e,o)},p(n,o){o&2&&pe(e,n[1])},i:ne,o:ne,d(n){n&&h(e)}}}function x0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h6"),t&&t.c(),this.h()},l(i){e=z(i,"H6",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&E(e,"id",i[2])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function _0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h5"),t&&t.c(),this.h()},l(i){e=z(i,"H5",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&E(e,"id",i[2])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function b0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h4"),t&&t.c(),this.h()},l(i){e=z(i,"H4",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&E(e,"id",i[2])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function w0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h3"),t&&t.c(),this.h()},l(i){e=z(i,"H3",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&E(e,"id",i[2])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function $0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h2"),t&&t.c(),this.h()},l(i){e=z(i,"H2",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&E(e,"id",i[2])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function k0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h1"),t&&t.c(),this.h()},l(i){e=z(i,"H1",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&E(e,"id",i[2])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function y0(a){let e,n,o,t;const i=[k0,$0,w0,b0,_0,x0,g0],r=[];function s(l,f){return l[0]===1?0:l[0]===2?1:l[0]===3?2:l[0]===4?3:l[0]===5?4:l[0]===6?5:6}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o))},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function S0(a,e,n){let o,{$$slots:t={},$$scope:i}=e,{depth:r}=e,{raw:s}=e,{text:l}=e;const{slug:f,getOptions:c}=Sn(pn),u=c();return a.$$set=p=>{"depth"in p&&n(0,r=p.depth),"raw"in p&&n(1,s=p.raw),"text"in p&&n(3,l=p.text),"$$scope"in p&&n(4,i=p.$$scope)},a.$$.update=()=>{a.$$.dirty&8&&n(2,o=u.headerIds?u.headerPrefix+f(l):void 0)},[r,s,o,l,i,t]}class E0 extends Q{constructor(e){super(),J(this,e,S0,y0,ee,{depth:0,raw:1,text:3})}}function A0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("p"),t&&t.c()},l(i){e=z(i,"P",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function D0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class B0 extends Q{constructor(e){super(),J(this,e,D0,A0,ee,{})}}function z0(a){let e;const n=a[3].default,o=se(n,a,a[2],null);return{c(){o&&o.c()},l(t){o&&o.l(t)},m(t,i){o&&o.m(t,i),e=!0},p(t,[i]){o&&o.p&&(!e||i&4)&&fe(o,n,t,t[2],e?ue(n,t[2],i,null):ce(t[2]),null)},i(t){e||(b(o,t),e=!0)},o(t){k(o,t),e=!1},d(t){o&&o.d(t)}}}function C0(a,e,n){let{$$slots:o={},$$scope:t}=e,{text:i}=e,{raw:r}=e;return a.$$set=s=>{"text"in s&&n(0,i=s.text),"raw"in s&&n(1,r=s.raw),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class T0 extends Q{constructor(e){super(),J(this,e,C0,z0,ee,{text:0,raw:1})}}function I0(a){let e,n;return{c(){e=B("img"),this.h()},l(o){e=z(o,"IMG",{src:!0,title:!0,alt:!0}),this.h()},h(){et(e.src,n=a[0])||E(e,"src",n),E(e,"title",a[1]),E(e,"alt",a[2])},m(o,t){A(o,e,t)},p(o,[t]){t&1&&!et(e.src,n=o[0])&&E(e,"src",n),t&2&&E(e,"title",o[1]),t&4&&E(e,"alt",o[2])},i:ne,o:ne,d(o){o&&h(e)}}}function L0(a,e,n){let{href:o=""}=e,{title:t=void 0}=e,{text:i=""}=e;return a.$$set=r=>{"href"in r&&n(0,o=r.href),"title"in r&&n(1,t=r.title),"text"in r&&n(2,i=r.text)},[o,t,i]}class R0 extends Q{constructor(e){super(),J(this,e,L0,I0,ee,{href:0,title:1,text:2})}}function P0(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("a"),t&&t.c(),this.h()},l(i){e=z(i,"A",{href:!0,title:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"href",a[0]),E(e,"title",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&1)&&E(e,"href",i[0]),(!n||r&2)&&E(e,"title",i[1])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function F0(a,e,n){let{$$slots:o={},$$scope:t}=e,{href:i=""}=e,{title:r=void 0}=e;return a.$$set=s=>{"href"in s&&n(0,i=s.href),"title"in s&&n(1,r=s.title),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class M0 extends Q{constructor(e){super(),J(this,e,F0,P0,ee,{href:0,title:1})}}function N0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("em"),t&&t.c()},l(i){e=z(i,"EM",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function U0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class O0 extends Q{constructor(e){super(),J(this,e,U0,N0,ee,{})}}function V0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("del"),t&&t.c()},l(i){e=z(i,"DEL",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function H0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class K0 extends Q{constructor(e){super(),J(this,e,H0,V0,ee,{})}}function q0(a){let e,n=a[0].replace(/`/g,"")+"",o;return{c(){e=B("code"),o=R(n)},l(t){e=z(t,"CODE",{});var i=T(e);o=P(i,n),i.forEach(h)},m(t,i){A(t,e,i),w(e,o)},p(t,[i]){i&1&&n!==(n=t[0].replace(/`/g,"")+"")&&pe(o,n)},i:ne,o:ne,d(t){t&&h(e)}}}function Y0(a,e,n){let{raw:o}=e;return a.$$set=t=>{"raw"in t&&n(0,o=t.raw)},[o]}class G0 extends Q{constructor(e){super(),J(this,e,Y0,q0,ee,{raw:0})}}function W0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("strong"),t&&t.c()},l(i){e=z(i,"STRONG",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function X0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class j0 extends Q{constructor(e){super(),J(this,e,X0,W0,ee,{})}}function Z0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("table"),t&&t.c()},l(i){e=z(i,"TABLE",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Q0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class J0 extends Q{constructor(e){super(),J(this,e,Q0,Z0,ee,{})}}function eo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("thead"),t&&t.c()},l(i){e=z(i,"THEAD",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function to(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class no extends Q{constructor(e){super(),J(this,e,to,eo,ee,{})}}function oo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("tbody"),t&&t.c()},l(i){e=z(i,"TBODY",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function ro(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class io extends Q{constructor(e){super(),J(this,e,ro,oo,ee,{})}}function ao(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("tr"),t&&t.c()},l(i){e=z(i,"TR",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function lo(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class so extends Q{constructor(e){super(),J(this,e,lo,ao,ee,{})}}function fo(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("td"),t&&t.c(),this.h()},l(i){e=z(i,"TD",{align:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"align",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&2)&&E(e,"align",i[1])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function co(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("th"),t&&t.c(),this.h()},l(i){e=z(i,"TH",{align:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"align",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&2)&&E(e,"align",i[1])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function uo(a){let e,n,o,t;const i=[co,fo],r=[];function s(l,f){return l[0]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o))},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function po(a,e,n){let{$$slots:o={},$$scope:t}=e,{header:i}=e,{align:r}=e;return a.$$set=s=>{"header"in s&&n(0,i=s.header),"align"in s&&n(1,r=s.align),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class mo extends Q{constructor(e){super(),J(this,e,po,uo,ee,{header:0,align:1})}}function ho(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("ul"),t&&t.c()},l(i){e=z(i,"UL",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function vo(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("ol"),t&&t.c(),this.h()},l(i){e=z(i,"OL",{start:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){E(e,"start",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&2)&&E(e,"start",i[1])},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function go(a){let e,n,o,t;const i=[vo,ho],r=[];function s(l,f){return l[0]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),b(n,1),n.m(o.parentNode,o))},i(l){t||(b(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function xo(a,e,n){let{$$slots:o={},$$scope:t}=e,{ordered:i}=e,{start:r}=e;return a.$$set=s=>{"ordered"in s&&n(0,i=s.ordered),"start"in s&&n(1,r=s.start),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class _o extends Q{constructor(e){super(),J(this,e,xo,go,ee,{ordered:0,start:1})}}function bo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("li"),t&&t.c()},l(i){e=z(i,"LI",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function wo(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class $o extends Q{constructor(e){super(),J(this,e,wo,bo,ee,{})}}function ko(a){let e;return{c(){e=B("hr")},l(n){e=z(n,"HR",{})},m(n,o){A(n,e,o)},p:ne,i:ne,o:ne,d(n){n&&h(e)}}}class yo extends Q{constructor(e){super(),J(this,e,null,ko,ee,{})}}function So(a){let e,n;return{c(){e=new En(!1),n=K(),this.h()},l(o){e=An(o,!1),n=K(),this.h()},h(){e.a=n},m(o,t){e.m(a[0],o,t),A(o,n,t)},p(o,[t]){t&1&&e.p(o[0])},i:ne,o:ne,d(o){o&&h(n),o&&e.d()}}}function Eo(a,e,n){let{text:o}=e;return a.$$set=t=>{"text"in t&&n(0,o=t.text)},[o]}class Ao extends Q{constructor(e){super(),J(this,e,Eo,So,ee,{text:0})}}function Do(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("blockquote"),t&&t.c()},l(i){e=z(i,"BLOCKQUOTE",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Bo(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class zo extends Q{constructor(e){super(),J(this,e,Bo,Do,ee,{})}}function Co(a){let e,n,o;return{c(){e=B("pre"),n=B("code"),o=R(a[1]),this.h()},l(t){e=z(t,"PRE",{class:!0});var i=T(e);n=z(i,"CODE",{});var r=T(n);o=P(r,a[1]),r.forEach(h),i.forEach(h),this.h()},h(){E(e,"class",a[0])},m(t,i){A(t,e,i),w(e,n),w(n,o)},p(t,[i]){i&2&&pe(o,t[1]),i&1&&E(e,"class",t[0])},i:ne,o:ne,d(t){t&&h(e)}}}function To(a,e,n){let{lang:o}=e,{text:t}=e;return a.$$set=i=>{"lang"in i&&n(0,o=i.lang),"text"in i&&n(1,t=i.text)},[o,t]}class Io extends Q{constructor(e){super(),J(this,e,To,Co,ee,{lang:0,text:1})}}function Lo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("br"),t&&t.c()},l(i){e=z(i,"BR",{}),t&&t.l(i)},m(i,r){A(i,e,r),t&&t.m(i,r),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(b(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Ro(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class Po extends Q{constructor(e){super(),J(this,e,Ro,Lo,ee,{})}}const Fo={heading:E0,paragraph:B0,text:T0,image:R0,link:M0,em:O0,strong:j0,codespan:G0,del:K0,table:J0,tablehead:no,tablebody:io,tablerow:so,tablecell:mo,list:_o,orderedlistitem:null,unorderedlistitem:null,listitem:$o,hr:yo,html:Ao,blockquote:zo,code:Io,br:Po},Mo={baseUrl:null,breaks:!1,gfm:!0,headerIds:!0,headerPrefix:"",highlight:null,langPrefix:"language-",mangle:!0,pedantic:!1,renderer:null,sanitize:!1,sanitizer:null,silent:!1,smartLists:!1,smartypants:!1,tokenizer:null,xhtml:!1};function No(a){let e,n;return e=new Re({props:{tokens:a[0],renderers:a[1]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,[t]){const i={};t&1&&(i.tokens=o[0]),t&2&&(i.renderers=o[1]),e.$set(i)},i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Uo(a,e,n){let o,t,i,r,{source:s=[]}=e,{renderers:l={}}=e,{options:f={}}=e,{isInline:c=!1}=e;const u=Ge();let p,m,d;return Dn(pn,{slug:g=>t?t.slug(g):"",getOptions:()=>i}),$e(()=>{n(7,d=!0)}),a.$$set=g=>{"source"in g&&n(2,s=g.source),"renderers"in g&&n(3,l=g.renderers),"options"in g&&n(4,f=g.options),"isInline"in g&&n(5,c=g.isInline)},a.$$.update=()=>{a.$$.dirty&4&&n(8,o=Array.isArray(s)),a.$$.dirty&4&&(t=s?new ft:void 0),a.$$.dirty&16&&n(9,i={...Mo,...f}),a.$$.dirty&869&&(o?n(0,p=s):(n(6,m=new De(i)),n(0,p=c?m.inlineTokens(s):m.lex(s)),u("parsed",{tokens:p}))),a.$$.dirty&8&&n(1,r={...Fo,...l}),a.$$.dirty&385&&d&&!o&&u("parsed",{tokens:p})},[p,r,s,l,f,c,m,d,o,i]}class Oo extends Q{constructor(e){super(),J(this,e,Uo,No,ee,{source:2,renderers:3,options:4,isInline:5})}}function Vo(a){let e,n;return{c(){e=B("img"),this.h()},l(o){e=z(o,"IMG",{src:!0,title:!0,alt:!0,class:!0}),this.h()},h(){et(e.src,n=a[0])||E(e,"src",n),E(e,"title",a[1]),E(e,"alt",a[2]),E(e,"class","svelte-1pemytu")},m(o,t){A(o,e,t)},p(o,[t]){t&1&&!et(e.src,n=o[0])&&E(e,"src",n),t&2&&E(e,"title",o[1]),t&4&&E(e,"alt",o[2])},i:ne,o:ne,d(o){o&&h(e)}}}function Ho(a,e,n){let{href:o=""}=e,{title:t=void 0}=e,{text:i=""}=e;return a.$$set=r=>{"href"in r&&n(0,o=r.href),"title"in r&&n(1,t=r.title),"text"in r&&n(2,i=r.text)},[o,t,i]}class Ko extends Q{constructor(e){super(),J(this,e,Ho,Vo,ee,{href:0,title:1,text:2})}}const qo=`# Gray-Scott model for Reaction-Diffusion systems
+Please report this to https://github.com/markedjs/marked.`,a){const t="<p>An error occurred:</p><pre>"+be(o.message+"",!0)+"</pre>";if(e)return Promise.resolve(t);if(n){n(null,t);return}return t}if(e)return Promise.reject(o);if(n){n(o);return}throw o}}function un(a,e){return(n,o,t)=>{typeof o=="function"&&(t=o,o=null);const i={...o};o={...j.defaults,...i};const r=v0(o.silent,o.async,t);if(typeof n>"u"||n===null)return r(new Error("marked(): input parameter is undefined or null"));if(typeof n!="string")return r(new Error("marked(): input parameter is of type "+Object.prototype.toString.call(n)+", string expected"));if(m0(o),o.hooks&&(o.hooks.options=o),t){const s=o.highlight;let l;try{o.hooks&&(n=o.hooks.preprocess(n)),l=a(n,o)}catch(u){return r(u)}const f=function(u){let p;if(!u)try{o.walkTokens&&j.walkTokens(l,o.walkTokens),p=e(l,o),o.hooks&&(p=o.hooks.postprocess(p))}catch(m){u=m}return o.highlight=s,u?r(u):t(null,p)};if(!s||s.length<3||(delete o.highlight,!l.length))return f();let c=0;j.walkTokens(l,function(u){u.type==="code"&&(c++,setTimeout(()=>{s(u.text,u.lang,function(p,m){if(p)return f(p);m!=null&&m!==u.text&&(u.text=m,u.escaped=!0),c--,c===0&&f()})},0))}),c===0&&f();return}if(o.async)return Promise.resolve(o.hooks?o.hooks.preprocess(n):n).then(s=>a(s,o)).then(s=>o.walkTokens?Promise.all(j.walkTokens(s,o.walkTokens)).then(()=>s):s).then(s=>e(s,o)).then(s=>o.hooks?o.hooks.postprocess(s):s).catch(r);try{o.hooks&&(n=o.hooks.preprocess(n));const s=a(n,o);o.walkTokens&&j.walkTokens(s,o.walkTokens);let l=e(s,o);return o.hooks&&(l=o.hooks.postprocess(l)),l}catch(s){return r(s)}}}function j(a,e,n){return un(De.lex,Ce.parse)(a,e,n)}j.options=j.setOptions=function(a){return j.defaults={...j.defaults,...a},e0(j.defaults),j};j.getDefaults=an;j.defaults=Pe;j.use=function(...a){const e=j.defaults.extensions||{renderers:{},childTokens:{}};a.forEach(n=>{const o={...n};if(o.async=j.defaults.async||o.async||!1,n.extensions&&(n.extensions.forEach(t=>{if(!t.name)throw new Error("extension name required");if(t.renderer){const i=e.renderers[t.name];i?e.renderers[t.name]=function(...r){let s=t.renderer.apply(this,r);return s===!1&&(s=i.apply(this,r)),s}:e.renderers[t.name]=t.renderer}if(t.tokenizer){if(!t.level||t.level!=="block"&&t.level!=="inline")throw new Error("extension level must be 'block' or 'inline'");e[t.level]?e[t.level].unshift(t.tokenizer):e[t.level]=[t.tokenizer],t.start&&(t.level==="block"?e.startBlock?e.startBlock.push(t.start):e.startBlock=[t.start]:t.level==="inline"&&(e.startInline?e.startInline.push(t.start):e.startInline=[t.start]))}t.childTokens&&(e.childTokens[t.name]=t.childTokens)}),o.extensions=e),n.renderer){const t=j.defaults.renderer||new st;for(const i in n.renderer){const r=t[i];t[i]=(...s)=>{let l=n.renderer[i].apply(t,s);return l===!1&&(l=r.apply(t,s)),l}}o.renderer=t}if(n.tokenizer){const t=j.defaults.tokenizer||new lt;for(const i in n.tokenizer){const r=t[i];t[i]=(...s)=>{let l=n.tokenizer[i].apply(t,s);return l===!1&&(l=r.apply(t,s)),l}}o.tokenizer=t}if(n.hooks){const t=j.defaults.hooks||new ot;for(const i in n.hooks){const r=t[i];ot.passThroughHooks.has(i)?t[i]=s=>{if(j.defaults.async)return Promise.resolve(n.hooks[i].call(t,s)).then(f=>r.call(t,f));const l=n.hooks[i].call(t,s);return r.call(t,l)}:t[i]=(...s)=>{let l=n.hooks[i].apply(t,s);return l===!1&&(l=r.apply(t,s)),l}}o.hooks=t}if(n.walkTokens){const t=j.defaults.walkTokens;o.walkTokens=function(i){let r=[];return r.push(n.walkTokens.call(this,i)),t&&(r=r.concat(t.call(this,i))),r}}j.setOptions(o)})};j.walkTokens=function(a,e){let n=[];for(const o of a)switch(n=n.concat(e.call(j,o)),o.type){case"table":{for(const t of o.header)n=n.concat(j.walkTokens(t.tokens,e));for(const t of o.rows)for(const i of t)n=n.concat(j.walkTokens(i.tokens,e));break}case"list":{n=n.concat(j.walkTokens(o.items,e));break}default:j.defaults.extensions&&j.defaults.extensions.childTokens&&j.defaults.extensions.childTokens[o.type]?j.defaults.extensions.childTokens[o.type].forEach(function(t){n=n.concat(j.walkTokens(o[t],e))}):o.tokens&&(n=n.concat(j.walkTokens(o.tokens,e)))}return n};j.parseInline=un(De.lexInline,Ce.parseInline);j.Parser=Ce;j.parser=Ce.parse;j.Renderer=st;j.TextRenderer=cn;j.Lexer=De;j.lexer=De.lex;j.Tokenizer=lt;j.Slugger=ft;j.Hooks=ot;j.parse=j;j.options;j.setOptions;j.use;j.walkTokens;j.parseInline;Ce.parse;De.lex;const pn={};function g0(a){let e;return{c(){e=R(a[1])},l(n){e=P(n,a[1])},m(n,o){A(n,e,o)},p(n,o){o&2&&pe(e,n[1])},i:ne,o:ne,d(n){n&&h(e)}}}function x0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h6"),t&&t.c(),this.h()},l(i){e=z(i,"H6",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&y(e,"id",i[2])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function _0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h5"),t&&t.c(),this.h()},l(i){e=z(i,"H5",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&y(e,"id",i[2])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function b0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h4"),t&&t.c(),this.h()},l(i){e=z(i,"H4",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&y(e,"id",i[2])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function w0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h3"),t&&t.c(),this.h()},l(i){e=z(i,"H3",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&y(e,"id",i[2])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function $0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h2"),t&&t.c(),this.h()},l(i){e=z(i,"H2",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&y(e,"id",i[2])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function k0(a){let e,n;const o=a[5].default,t=se(o,a,a[4],null);return{c(){e=B("h1"),t&&t.c(),this.h()},l(i){e=z(i,"H1",{id:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"id",a[2])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&16)&&fe(t,o,i,i[4],n?ue(o,i[4],r,null):ce(i[4]),null),(!n||r&4)&&y(e,"id",i[2])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function y0(a){let e,n,o,t;const i=[k0,$0,w0,b0,_0,x0,g0],r=[];function s(l,f){return l[0]===1?0:l[0]===2?1:l[0]===3?2:l[0]===4?3:l[0]===5?4:l[0]===6?5:6}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o))},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function S0(a,e,n){let o,{$$slots:t={},$$scope:i}=e,{depth:r}=e,{raw:s}=e,{text:l}=e;const{slug:f,getOptions:c}=Sn(pn),u=c();return a.$$set=p=>{"depth"in p&&n(0,r=p.depth),"raw"in p&&n(1,s=p.raw),"text"in p&&n(3,l=p.text),"$$scope"in p&&n(4,i=p.$$scope)},a.$$.update=()=>{a.$$.dirty&8&&n(2,o=u.headerIds?u.headerPrefix+f(l):void 0)},[r,s,o,l,i,t]}class E0 extends Q{constructor(e){super(),J(this,e,S0,y0,ee,{depth:0,raw:1,text:3})}}function A0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("p"),t&&t.c()},l(i){e=z(i,"P",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function D0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class B0 extends Q{constructor(e){super(),J(this,e,D0,A0,ee,{})}}function z0(a){let e;const n=a[3].default,o=se(n,a,a[2],null);return{c(){o&&o.c()},l(t){o&&o.l(t)},m(t,i){o&&o.m(t,i),e=!0},p(t,[i]){o&&o.p&&(!e||i&4)&&fe(o,n,t,t[2],e?ue(n,t[2],i,null):ce(t[2]),null)},i(t){e||(_(o,t),e=!0)},o(t){k(o,t),e=!1},d(t){o&&o.d(t)}}}function C0(a,e,n){let{$$slots:o={},$$scope:t}=e,{text:i}=e,{raw:r}=e;return a.$$set=s=>{"text"in s&&n(0,i=s.text),"raw"in s&&n(1,r=s.raw),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class T0 extends Q{constructor(e){super(),J(this,e,C0,z0,ee,{text:0,raw:1})}}function I0(a){let e,n;return{c(){e=B("img"),this.h()},l(o){e=z(o,"IMG",{src:!0,title:!0,alt:!0}),this.h()},h(){et(e.src,n=a[0])||y(e,"src",n),y(e,"title",a[1]),y(e,"alt",a[2])},m(o,t){A(o,e,t)},p(o,[t]){t&1&&!et(e.src,n=o[0])&&y(e,"src",n),t&2&&y(e,"title",o[1]),t&4&&y(e,"alt",o[2])},i:ne,o:ne,d(o){o&&h(e)}}}function L0(a,e,n){let{href:o=""}=e,{title:t=void 0}=e,{text:i=""}=e;return a.$$set=r=>{"href"in r&&n(0,o=r.href),"title"in r&&n(1,t=r.title),"text"in r&&n(2,i=r.text)},[o,t,i]}class R0 extends Q{constructor(e){super(),J(this,e,L0,I0,ee,{href:0,title:1,text:2})}}function P0(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("a"),t&&t.c(),this.h()},l(i){e=z(i,"A",{href:!0,title:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"href",a[0]),y(e,"title",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&1)&&y(e,"href",i[0]),(!n||r&2)&&y(e,"title",i[1])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function F0(a,e,n){let{$$slots:o={},$$scope:t}=e,{href:i=""}=e,{title:r=void 0}=e;return a.$$set=s=>{"href"in s&&n(0,i=s.href),"title"in s&&n(1,r=s.title),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class M0 extends Q{constructor(e){super(),J(this,e,F0,P0,ee,{href:0,title:1})}}function N0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("em"),t&&t.c()},l(i){e=z(i,"EM",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function U0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class O0 extends Q{constructor(e){super(),J(this,e,U0,N0,ee,{})}}function V0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("del"),t&&t.c()},l(i){e=z(i,"DEL",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function H0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class K0 extends Q{constructor(e){super(),J(this,e,H0,V0,ee,{})}}function q0(a){let e,n=a[0].replace(/`/g,"")+"",o;return{c(){e=B("code"),o=R(n)},l(t){e=z(t,"CODE",{});var i=T(e);o=P(i,n),i.forEach(h)},m(t,i){A(t,e,i),w(e,o)},p(t,[i]){i&1&&n!==(n=t[0].replace(/`/g,"")+"")&&pe(o,n)},i:ne,o:ne,d(t){t&&h(e)}}}function Y0(a,e,n){let{raw:o}=e;return a.$$set=t=>{"raw"in t&&n(0,o=t.raw)},[o]}class G0 extends Q{constructor(e){super(),J(this,e,Y0,q0,ee,{raw:0})}}function W0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("strong"),t&&t.c()},l(i){e=z(i,"STRONG",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function X0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class j0 extends Q{constructor(e){super(),J(this,e,X0,W0,ee,{})}}function Z0(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("table"),t&&t.c()},l(i){e=z(i,"TABLE",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Q0(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class J0 extends Q{constructor(e){super(),J(this,e,Q0,Z0,ee,{})}}function eo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("thead"),t&&t.c()},l(i){e=z(i,"THEAD",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function to(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class no extends Q{constructor(e){super(),J(this,e,to,eo,ee,{})}}function oo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("tbody"),t&&t.c()},l(i){e=z(i,"TBODY",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function ro(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class io extends Q{constructor(e){super(),J(this,e,ro,oo,ee,{})}}function ao(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("tr"),t&&t.c()},l(i){e=z(i,"TR",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function lo(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class so extends Q{constructor(e){super(),J(this,e,lo,ao,ee,{})}}function fo(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("td"),t&&t.c(),this.h()},l(i){e=z(i,"TD",{align:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"align",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&2)&&y(e,"align",i[1])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function co(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("th"),t&&t.c(),this.h()},l(i){e=z(i,"TH",{align:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"align",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&2)&&y(e,"align",i[1])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function uo(a){let e,n,o,t;const i=[co,fo],r=[];function s(l,f){return l[0]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o))},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function po(a,e,n){let{$$slots:o={},$$scope:t}=e,{header:i}=e,{align:r}=e;return a.$$set=s=>{"header"in s&&n(0,i=s.header),"align"in s&&n(1,r=s.align),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class mo extends Q{constructor(e){super(),J(this,e,po,uo,ee,{header:0,align:1})}}function ho(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("ul"),t&&t.c()},l(i){e=z(i,"UL",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function vo(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("ol"),t&&t.c(),this.h()},l(i){e=z(i,"OL",{start:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"start",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,r){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&2)&&y(e,"start",i[1])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function go(a){let e,n,o,t;const i=[vo,ho],r=[];function s(l,f){return l[0]?0:1}return e=s(a),n=r[e]=i[e](a),{c(){n.c(),o=K()},l(l){n.l(l),o=K()},m(l,f){r[e].m(l,f),A(l,o,f),t=!0},p(l,[f]){let c=e;e=s(l),e===c?r[e].p(l,f):(oe(),k(r[c],1,1,()=>{r[c]=null}),re(),n=r[e],n?n.p(l,f):(n=r[e]=i[e](l),n.c()),_(n,1),n.m(o.parentNode,o))},i(l){t||(_(n),t=!0)},o(l){k(n),t=!1},d(l){r[e].d(l),l&&h(o)}}}function xo(a,e,n){let{$$slots:o={},$$scope:t}=e,{ordered:i}=e,{start:r}=e;return a.$$set=s=>{"ordered"in s&&n(0,i=s.ordered),"start"in s&&n(1,r=s.start),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class _o extends Q{constructor(e){super(),J(this,e,xo,go,ee,{ordered:0,start:1})}}function bo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("li"),t&&t.c()},l(i){e=z(i,"LI",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function wo(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class $o extends Q{constructor(e){super(),J(this,e,wo,bo,ee,{})}}function ko(a){let e;return{c(){e=B("hr")},l(n){e=z(n,"HR",{})},m(n,o){A(n,e,o)},p:ne,i:ne,o:ne,d(n){n&&h(e)}}}class yo extends Q{constructor(e){super(),J(this,e,null,ko,ee,{})}}function So(a){let e,n;return{c(){e=new En(!1),n=K(),this.h()},l(o){e=An(o,!1),n=K(),this.h()},h(){e.a=n},m(o,t){e.m(a[0],o,t),A(o,n,t)},p(o,[t]){t&1&&e.p(o[0])},i:ne,o:ne,d(o){o&&h(n),o&&e.d()}}}function Eo(a,e,n){let{text:o}=e;return a.$$set=t=>{"text"in t&&n(0,o=t.text)},[o]}class Ao extends Q{constructor(e){super(),J(this,e,Eo,So,ee,{text:0})}}function Do(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("blockquote"),t&&t.c()},l(i){e=z(i,"BLOCKQUOTE",{});var r=T(e);t&&t.l(r),r.forEach(h)},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Bo(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class zo extends Q{constructor(e){super(),J(this,e,Bo,Do,ee,{})}}function Co(a){let e,n,o;return{c(){e=B("pre"),n=B("code"),o=R(a[1]),this.h()},l(t){e=z(t,"PRE",{class:!0});var i=T(e);n=z(i,"CODE",{});var r=T(n);o=P(r,a[1]),r.forEach(h),i.forEach(h),this.h()},h(){y(e,"class",a[0])},m(t,i){A(t,e,i),w(e,n),w(n,o)},p(t,[i]){i&2&&pe(o,t[1]),i&1&&y(e,"class",t[0])},i:ne,o:ne,d(t){t&&h(e)}}}function To(a,e,n){let{lang:o}=e,{text:t}=e;return a.$$set=i=>{"lang"in i&&n(0,o=i.lang),"text"in i&&n(1,t=i.text)},[o,t]}class Io extends Q{constructor(e){super(),J(this,e,To,Co,ee,{lang:0,text:1})}}function Lo(a){let e,n;const o=a[1].default,t=se(o,a,a[0],null);return{c(){e=B("br"),t&&t.c()},l(i){e=z(i,"BR",{}),t&&t.l(i)},m(i,r){A(i,e,r),t&&t.m(i,r),n=!0},p(i,[r]){t&&t.p&&(!n||r&1)&&fe(t,o,i,i[0],n?ue(o,i[0],r,null):ce(i[0]),null)},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Ro(a,e,n){let{$$slots:o={},$$scope:t}=e;return a.$$set=i=>{"$$scope"in i&&n(0,t=i.$$scope)},[t,o]}class Po extends Q{constructor(e){super(),J(this,e,Ro,Lo,ee,{})}}const Fo={heading:E0,paragraph:B0,text:T0,image:R0,link:M0,em:O0,strong:j0,codespan:G0,del:K0,table:J0,tablehead:no,tablebody:io,tablerow:so,tablecell:mo,list:_o,orderedlistitem:null,unorderedlistitem:null,listitem:$o,hr:yo,html:Ao,blockquote:zo,code:Io,br:Po},Mo={baseUrl:null,breaks:!1,gfm:!0,headerIds:!0,headerPrefix:"",highlight:null,langPrefix:"language-",mangle:!0,pedantic:!1,renderer:null,sanitize:!1,sanitizer:null,silent:!1,smartLists:!1,smartypants:!1,tokenizer:null,xhtml:!1};function No(a){let e,n;return e=new Re({props:{tokens:a[0],renderers:a[1]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,[t]){const i={};t&1&&(i.tokens=o[0]),t&2&&(i.renderers=o[1]),e.$set(i)},i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Uo(a,e,n){let o,t,i,r,{source:s=[]}=e,{renderers:l={}}=e,{options:f={}}=e,{isInline:c=!1}=e;const u=Ge();let p,m,d;return Dn(pn,{slug:g=>t?t.slug(g):"",getOptions:()=>i}),$e(()=>{n(7,d=!0)}),a.$$set=g=>{"source"in g&&n(2,s=g.source),"renderers"in g&&n(3,l=g.renderers),"options"in g&&n(4,f=g.options),"isInline"in g&&n(5,c=g.isInline)},a.$$.update=()=>{a.$$.dirty&4&&n(8,o=Array.isArray(s)),a.$$.dirty&4&&(t=s?new ft:void 0),a.$$.dirty&16&&n(9,i={...Mo,...f}),a.$$.dirty&869&&(o?n(0,p=s):(n(6,m=new De(i)),n(0,p=c?m.inlineTokens(s):m.lex(s)),u("parsed",{tokens:p}))),a.$$.dirty&8&&n(1,r={...Fo,...l}),a.$$.dirty&385&&d&&!o&&u("parsed",{tokens:p})},[p,r,s,l,f,c,m,d,o,i]}class Oo extends Q{constructor(e){super(),J(this,e,Uo,No,ee,{source:2,renderers:3,options:4,isInline:5})}}function Vo(a){let e,n;return{c(){e=B("img"),this.h()},l(o){e=z(o,"IMG",{src:!0,title:!0,alt:!0,class:!0}),this.h()},h(){et(e.src,n=a[0])||y(e,"src",n),y(e,"title",a[1]),y(e,"alt",a[2]),y(e,"class","svelte-1pemytu")},m(o,t){A(o,e,t)},p(o,[t]){t&1&&!et(e.src,n=o[0])&&y(e,"src",n),t&2&&y(e,"title",o[1]),t&4&&y(e,"alt",o[2])},i:ne,o:ne,d(o){o&&h(e)}}}function Ho(a,e,n){let{href:o=""}=e,{title:t=void 0}=e,{text:i=""}=e;return a.$$set=r=>{"href"in r&&n(0,o=r.href),"title"in r&&n(1,t=r.title),"text"in r&&n(2,i=r.text)},[o,t,i]}class Ko extends Q{constructor(e){super(),J(this,e,Ho,Vo,ee,{href:0,title:1,text:2})}}function qo(a){let e,n;const o=a[3].default,t=se(o,a,a[2],null);return{c(){e=B("a"),t&&t.c(),this.h()},l(i){e=z(i,"A",{target:!0,rel:!0,href:!0,title:!0});var r=T(e);t&&t.l(r),r.forEach(h),this.h()},h(){y(e,"target","_blank"),y(e,"rel","noopener noreferrer"),y(e,"href",a[0]),y(e,"title",a[1])},m(i,r){A(i,e,r),t&&t.m(e,null),n=!0},p(i,[r]){t&&t.p&&(!n||r&4)&&fe(t,o,i,i[2],n?ue(o,i[2],r,null):ce(i[2]),null),(!n||r&1)&&y(e,"href",i[0]),(!n||r&2)&&y(e,"title",i[1])},i(i){n||(_(t,i),n=!0)},o(i){k(t,i),n=!1},d(i){i&&h(e),t&&t.d(i)}}}function Yo(a,e,n){let{$$slots:o={},$$scope:t}=e,{href:i=""}=e,{title:r=void 0}=e;return a.$$set=s=>{"href"in s&&n(0,i=s.href),"title"in s&&n(1,r=s.title),"$$scope"in s&&n(2,t=s.$$scope)},[i,r,t,o]}class Go extends Q{constructor(e){super(),J(this,e,Yo,qo,ee,{href:0,title:1})}}const Wo=`# Gray-Scott model for Reaction-Diffusion systems
 
 This page contains my experiementations aroud [reaction-diffusion systems](https://en.wikipedia.org/wiki/Reaction%E2%80%93diffusion_system).
 
@@ -130,7 +130,7 @@ This are two [madrepora corals](https://en.wikipedia.org/wiki/Madrepora) I took 
 ![madrepore_simulation_stripes1.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_stripes1.png)
 ![madrepore_simulation_stripes2.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_stripes2.png)
 
-This is a puffer fish picture from wikipedia ([1](https://commons.wikimedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG) [2](https://en.wikipedia.org/wiki/File:Giant_Pufferfish_skin_pattern_detail.jpg))
+This is a puffer fish picture from wikipedia ([[1]](https://commons.wikimedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG) [[2]](https://en.wikipedia.org/wiki/File:Giant_Pufferfish_skin_pattern_detail.jpg))
 
 ![800px-Giant_Puffer_fish_skin_pattern.JPG]({baseUrl}/reaction_diffusion_about/gallery/800px-Giant_Puffer_fish_skin_pattern.JPG)
 ![Giant_Pufferfish_skin_pattern_detail.jpg]({baseUrl}/reaction_diffusion_about/gallery/Giant_Pufferfish_skin_pattern_detail.jpg)
@@ -262,9 +262,9 @@ My last goal for this project was to create an infinite visualization based on t
 First the \`f\` and \`k\` parameters need to change regularly to create new patterns but they need to change slowly. A big step between two values of (f, k) often tend to destroy all the concentrations of chemicals. So reusing the menu component I created to select f and k, I added a bounding box of the values which create the most interesting patterns and then used a noise function to make the parameters vary slowly and consistenly over time.
 
 Even when changing \`f\` and \`k\` the chemicals tends to disappear from the system so I have a mecanism which simulates the user clicking on the screen to add more chemical.
-`;function Yo(a){let e,n;return e=new Oo({props:{source:a[0],renderers:{image:Ko}}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Go(a){return[qo.replaceAll("{baseUrl}",Ze)]}class Bt extends Q{constructor(e){super(),J(this,e,Go,Yo,ee,{})}}function Wo(a){let e,n,o;return{c(){e=B("div"),this.h()},l(t){e=z(t,"DIV",{style:!0,class:!0}),T(e).forEach(h),this.h()},h(){E(e,"style",a[0]),E(e,"class","m-0")},m(t,i){A(t,e,i),n||(o=Bn(a[1].call(null,e)),n=!0)},p(t,[i]){i&1&&E(e,"style",t[0])},i:ne,o:ne,d(t){t&&h(e),n=!1,o()}}}function Xo(a,e){return e.forEach(([n,o])=>a[n]=o),a}function jo(a,e,n){let{target:o=void 0}=e,{sketch:t=void 0}=e,{parentDivStyle:i="display: block;"}=e,{debug:r=!1}=e,s;const l=Ge(),f={ref(){l("ref",o)},instance(){l("instance",s)}};function c(u){return n(2,o=u),{destroy(){n(2,o=void 0)}}}return $e(async()=>{const u=await Te(()=>import("../../../chunks/p5.min-b96f42d1.js").then(g=>g.p),["../../../chunks/p5.min-b96f42d1.js","../../../chunks/regl-89b00fbf.js"],import.meta.url),{default:p}=u,d=Object.entries(u).filter(([g,C])=>C instanceof Function&&g[0]!=="_"&&g!=="default");r&&console.log("available p5 native classes",d),s=new p(g=>(g=Xo(g,d),r&&console.log("p5 instance",g),window._p5Instance=g,t(g)),o),f.ref(),f.instance()}),a.$$set=u=>{"target"in u&&n(2,o=u.target),"sketch"in u&&n(3,t=u.sketch),"parentDivStyle"in u&&n(0,i=u.parentDivStyle),"debug"in u&&n(4,r=u.debug)},[i,c,o,t,r]}class Fe extends Q{constructor(e){super(),J(this,e,jo,Wo,ee,{target:2,sketch:3,parentDivStyle:0,debug:4})}}const Ee=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"STX 1",type:"N.A",f:.0353,k:.0614},{name:"STX 2",type:"N.A",f:.0201,k:.0602},{name:"STX 2",type:"N.A",f:.0181,k:.0435},{name:"α 1",type:"alpha",f:.01,k:.047},{name:"α 2",type:"alpha",f:.014,k:.053},{name:"β 1",type:"beta",f:.014,k:.039},{name:"β 2",type:"beta",f:.026,k:.051},{name:"δ 1",type:"delta",f:.03,k:.055},{name:"δ 2",type:"delta",f:.042,k:.059},{name:"ε 1",type:"epsilon",f:.018,k:.055},{name:"ε 2",type:"epsilon",f:.022,k:.059},{name:"η 1",type:"eta",f:.034,k:.063},{name:"γ 1",type:"gamma",f:.022,k:.051},{name:"γ 2",type:"gamma",f:.026,k:.055},{name:"ι 1",type:"iota",f:.046,k:.0594},{name:"κ 1",type:"kappa",f:.082,k:.06},{name:"κ 2",type:"kappa",f:.058,k:.063},{name:"λ 1",type:"lambda",f:.026,k:.061},{name:"λ 2",type:"lambda",f:.034,k:.065},{name:"μ 1",type:"mu",f:.046,k:.065},{name:"μ 2",type:"mu",f:.058,k:.065},{name:"ν 2",type:"nu",f:.046,k:.067},{name:"π 1",type:"pi",f:.062,k:.061},{name:"ρ 1",type:"rho",f:.09,k:.059},{name:"ρ 2",type:"rho",f:.102,k:.055},{name:"σ 1",type:"sigma",f:.09,k:.057},{name:"θ 2",type:"sigma",f:.11,k:.0523},{name:"θ 1",type:"theta",f:.03,k:.057},{name:"θ 2",type:"theta",f:.038,k:.061},{name:"ξ 1",type:"xi",f:.01,k:.041},{name:"ξ 2",type:"xi",f:.014,k:.047},{name:"ζ 1",type:"zeta",f:.022,k:.061},{name:"ζ 2",type:"zeta",f:.026,k:.059}];function zt(a){let e,n,o,t,i,r,s,l,f=a[1].toFixed(2)+"",c,u,p,m,d,g,C,S=a[2].toFixed(2)+"",y,M,v,x;return v=new Fe({props:{sketch:a[4]}}),{c(){e=B("div"),n=R(`Modify the change rate to change how fast the selector walks around the parameters space
-            and the change magnitude to change how big each step taken by the selector is.`),o=q(),t=B("div"),i=B("label"),r=R("changeMag"),s=q(),l=B("span"),c=R(f),u=q(),p=B("div"),m=B("label"),d=R("changeRate"),g=q(),C=B("span"),y=R(S),M=q(),N(v.$$.fragment),this.h()},l($){e=z($,"DIV",{});var L=T(e);n=P(L,`Modify the change rate to change how fast the selector walks around the parameters space
-            and the change magnitude to change how big each step taken by the selector is.`),L.forEach(h),o=Y($),t=z($,"DIV",{});var D=T(t);i=z(D,"LABEL",{for:!0});var _=T(i);r=P(_,"changeMag"),_.forEach(h),s=Y(D),l=z(D,"SPAN",{id:!0}),T(l).forEach(h),c=P(D,f),D.forEach(h),u=Y($),p=z($,"DIV",{});var V=T(p);m=z(V,"LABEL",{for:!0});var X=T(m);d=P(X,"changeRate"),X.forEach(h),g=Y(V),C=z(V,"SPAN",{id:!0}),T(C).forEach(h),y=P(V,S),V.forEach(h),M=Y($),G(v.$$.fragment,$),this.h()},h(){E(i,"for","changeMag"),E(l,"id","changeMag"),E(m,"for","changeRate"),E(C,"id","changeRate")},m($,L){A($,e,L),w(e,n),A($,o,L),A($,t,L),w(t,i),w(i,r),w(t,s),w(t,l),w(t,c),A($,u,L),A($,p,L),w(p,m),w(m,d),w(p,g),w(p,C),w(p,y),A($,M,L),U(v,$,L),x=!0},p($,L){(!x||L&2)&&f!==(f=$[1].toFixed(2)+"")&&pe(c,f),(!x||L&4)&&S!==(S=$[2].toFixed(2)+"")&&pe(y,S)},i($){x||(b(v.$$.fragment,$),x=!0)},o($){k(v.$$.fragment,$),x=!1},d($){$&&h(e),$&&h(o),$&&h(t),$&&h(u),$&&h(p),$&&h(M),O(v,$)}}}function Zo(a){let e,n,o=a[0]?"Close":"F/K selection",t,i,r,s,l,f=a[0]&&zt(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){E(n,"class","full-width svelte-vk9dfi"),E(n,"id","toggleButton"),E(e,"id","container"),E(e,"class","svelte-vk9dfi"),Ie(e,"no-cursor",a[3])},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[5]),s=!0)},p(c,[u]){(!r||u&1)&&o!==(o=c[0]?"Close":"F/K selection")&&pe(t,o),c[0]?f?(f.p(c,u),u&1&&b(f,1)):(f=zt(c),f.c(),b(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re()),(!r||u&8)&&Ie(e,"no-cursor",c[3])},i(c){r||(b(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}function Qo(a,e){let n=!1,o=1/0,t=null;for(let i=0;i<e.length;i++){const r=e[i],s=e[(i+1)%e.length];if(a[0]===r[0]&&a[1]===r[1])return a;r[1]>a[1]!=s[1]>a[1]&&a[0]<(s[0]-r[0])*(a[1]-r[1])/(s[1]-r[1])+r[0]&&(n=!n);const f=Jo(a,r,s);f<o&&(o=f,t=er(a,r,s))}if(n)return a;if(!t)throw new Error("Now closest point found");return t}function Jo(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],Math.sqrt((a[0]-l[0])**2+(a[1]-l[1])**2)}function er(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],l}function tr(a,e,n){const o=Ge();let t=Ee[0],i=!0,r=1,s=100;const l=[0,.12],f=[.03,.07],c={f:.0433,k:.0621},u=[{f:.1045,k:.0553},{f:.0829,k:.0582},{f:.0664,k:.0595},{f:.0511,k:.0594},{f:.0307,k:.0549},{f:.017,k:.0467},{f:.005,k:.0335},{f:.0076,k:.0472},{f:.0166,k:.0594},{f:.0277,k:.0657},{f:.046,k:.0675},{f:.0757,k:.0643},{f:.0949,k:.0594}],p=_=>{const{f:V,k:X}=_,I=x.map(X,f[0],f[1],0,x.width),F=x.map(V,l[0],l[1],x.height,0);return{x:I,y:F}},m=_=>{const{x:V,y:X}=_,I=x.map(X,x.height,0,l[0],l[1]),F=x.map(V,0,x.width,f[0],f[1]);return{f:I,k:F}},d=_=>{const V=_.mouseX,X=_.mouseY;if(V<0||X<0||V>_.width||X>_.height)return;const{f:I,k:F}=m({x:_.mouseX,y:_.mouseY});t={f:I,k:F,name:"custom",type:"manual"},o("fkupdated",t)},g=_=>{_.noStroke();const V=_.textSize();for(const X of Ee){const{x:I,y:F}=p({f:X.f,k:X.k}),te=X.f===t.f&&X.k===t.k;_.circle(I,F,3),_.textSize(te?V*2:V),_.fill(te?[240,240,150]:[255,255,255]),_.text(X.name,I-_.textWidth(X.name)/2,F-10)}},C=_=>{_.noFill(),_.stroke("red"),_.strokeWeight(1);const{x:V,y:X}=p(t);_.text("F",10,X>10?X-5:X+15),_.line(0,X,_.width,X),_.text("K",V<_.width-10?V+5:V-15,_.height-10),_.line(V,0,V,_.height),_.circle(V,X,10)},S=_=>{const{f:V,k:X}=t,I=`F: ${V.toFixed(4)}`,F=`K: ${X.toFixed(4)}`,te=_.textSize(),xe=_.height*.05;_.textStyle(_.BOLD),_.textSize(xe),_.fill("white"),_.stroke(0),_.strokeWeight(1),_.text(I,_.width*.05,_.textSize()),_.text(F,_.width*.05,_.textSize()+_.textSize()+6),_.textStyle(_.NORMAL),_.textSize(te)},y=_=>{for(let V=0;V<u.length;V++){const{x:X,y:I}=p(u[V]),{x:F,y:te}=p(u[(V+1)%u.length]);_.fill("white"),_.stroke("white"),_.strokeWeight(1),_.circle(X,I,3),_.circle(F,te,3),_.line(X,I,F,te)}},M=()=>{const _=[t.f,t.k],V=u.map(I=>[I.f,I.k]),X=Qo(_,V);t.f=X[0],t.k=X[1]},v=()=>{let{f:_,k:V}=t;const X=x.noise(x.frameCount*.01),I=x.noise(5321+x.frameCount*.01),te=Math.random()<.97?.001:.01;_=_+(I*2-1)*(l[1]-l[0])*te*r,V=V+(X*2-1)*(f[1]-f[0])*te*r;const xe={f:_-c.f,k:V-c.k};_=_-xe.f*.001*(r/2),V=V-xe.k*.001*(r/2),t={f:_,k:V,name:"custom",type:"manual"},M(),o("fkupdated",t)};let x,$=!1;const L=_=>{x=_;let V,X,I;_.preload=()=>{V=_.loadImage(Ze+"/parameters_map.png")},_.setup=()=>{_.createCanvas(400,400),_.frameRate(55),X=_.createSlider(0,5,2,0);const F=_.select("#changeMag");if(!F)throw new Error("changeMag slider container not ready");X.parent(F),I=_.createSlider(1,500,100,1);const te=_.select("#changeRate");if(!te)throw new Error("changeRate slider container not ready");I.parent(te)},_.draw=()=>{_.background(255),_.tint(150,190),_.image(V,0,0,_.width,_.height),g(_),y(_),C(_),S(_),_.frameCount%s===0&&v(),n(3,$=!1),_.mouseIsPressed&&(d(_),n(3,$=!0)),n(1,r=Number(X.value())),n(2,s=Number(I.value()))}},D=()=>{n(0,i=!i),i||x.remove()};return ye(()=>x?.remove()),[i,r,s,$,L,D]}let nr=class extends Q{constructor(e){super(),J(this,e,tr,Zo,ee,{})}};const or=`precision mediump float;
+`;function Xo(a){let e,n;return e=new Oo({props:{source:a[0],renderers:{image:Ko,link:Go}}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function jo(a){return[Wo.replaceAll("{baseUrl}",Ze)]}class Bt extends Q{constructor(e){super(),J(this,e,jo,Xo,ee,{})}}function Zo(a){let e,n,o;return{c(){e=B("div"),this.h()},l(t){e=z(t,"DIV",{style:!0,class:!0}),T(e).forEach(h),this.h()},h(){y(e,"style",a[0]),y(e,"class","m-0")},m(t,i){A(t,e,i),n||(o=Bn(a[1].call(null,e)),n=!0)},p(t,[i]){i&1&&y(e,"style",t[0])},i:ne,o:ne,d(t){t&&h(e),n=!1,o()}}}function Qo(a,e){return e.forEach(([n,o])=>a[n]=o),a}function Jo(a,e,n){let{target:o=void 0}=e,{sketch:t=void 0}=e,{parentDivStyle:i="display: block;"}=e,{debug:r=!1}=e,s;const l=Ge(),f={ref(){l("ref",o)},instance(){l("instance",s)}};function c(u){return n(2,o=u),{destroy(){n(2,o=void 0)}}}return $e(async()=>{const u=await Te(()=>import("../../../chunks/p5.min-b96f42d1.js").then(g=>g.p),["../../../chunks/p5.min-b96f42d1.js","../../../chunks/regl-89b00fbf.js"],import.meta.url),{default:p}=u,d=Object.entries(u).filter(([g,C])=>C instanceof Function&&g[0]!=="_"&&g!=="default");r&&console.log("available p5 native classes",d),s=new p(g=>(g=Qo(g,d),r&&console.log("p5 instance",g),window._p5Instance=g,t(g)),o),f.ref(),f.instance()}),a.$$set=u=>{"target"in u&&n(2,o=u.target),"sketch"in u&&n(3,t=u.sketch),"parentDivStyle"in u&&n(0,i=u.parentDivStyle),"debug"in u&&n(4,r=u.debug)},[i,c,o,t,r]}class Fe extends Q{constructor(e){super(),J(this,e,Jo,Zo,ee,{target:2,sketch:3,parentDivStyle:0,debug:4})}}const Ee=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"STX 1",type:"N.A",f:.0353,k:.0614},{name:"STX 2",type:"N.A",f:.0201,k:.0602},{name:"STX 2",type:"N.A",f:.0181,k:.0435},{name:"α 1",type:"alpha",f:.01,k:.047},{name:"α 2",type:"alpha",f:.014,k:.053},{name:"β 1",type:"beta",f:.014,k:.039},{name:"β 2",type:"beta",f:.026,k:.051},{name:"δ 1",type:"delta",f:.03,k:.055},{name:"δ 2",type:"delta",f:.042,k:.059},{name:"ε 1",type:"epsilon",f:.018,k:.055},{name:"ε 2",type:"epsilon",f:.022,k:.059},{name:"η 1",type:"eta",f:.034,k:.063},{name:"γ 1",type:"gamma",f:.022,k:.051},{name:"γ 2",type:"gamma",f:.026,k:.055},{name:"ι 1",type:"iota",f:.046,k:.0594},{name:"κ 1",type:"kappa",f:.082,k:.06},{name:"κ 2",type:"kappa",f:.058,k:.063},{name:"λ 1",type:"lambda",f:.026,k:.061},{name:"λ 2",type:"lambda",f:.034,k:.065},{name:"μ 1",type:"mu",f:.046,k:.065},{name:"μ 2",type:"mu",f:.058,k:.065},{name:"ν 2",type:"nu",f:.046,k:.067},{name:"π 1",type:"pi",f:.062,k:.061},{name:"ρ 1",type:"rho",f:.09,k:.059},{name:"ρ 2",type:"rho",f:.102,k:.055},{name:"σ 1",type:"sigma",f:.09,k:.057},{name:"θ 2",type:"sigma",f:.11,k:.0523},{name:"θ 1",type:"theta",f:.03,k:.057},{name:"θ 2",type:"theta",f:.038,k:.061},{name:"ξ 1",type:"xi",f:.01,k:.041},{name:"ξ 2",type:"xi",f:.014,k:.047},{name:"ζ 1",type:"zeta",f:.022,k:.061},{name:"ζ 2",type:"zeta",f:.026,k:.059}];function zt(a){let e,n,o,t,i,r,s,l,f=a[1].toFixed(2)+"",c,u,p,m,d,g,C,E=a[2].toFixed(2)+"",S,M,v,x;return v=new Fe({props:{sketch:a[4]}}),{c(){e=B("div"),n=R(`Modify the change rate to change how fast the selector walks around the parameters space
+            and the change magnitude to change how big each step taken by the selector is.`),o=q(),t=B("div"),i=B("label"),r=R("changeMag"),s=q(),l=B("span"),c=R(f),u=q(),p=B("div"),m=B("label"),d=R("changeRate"),g=q(),C=B("span"),S=R(E),M=q(),N(v.$$.fragment),this.h()},l($){e=z($,"DIV",{});var L=T(e);n=P(L,`Modify the change rate to change how fast the selector walks around the parameters space
+            and the change magnitude to change how big each step taken by the selector is.`),L.forEach(h),o=Y($),t=z($,"DIV",{});var D=T(t);i=z(D,"LABEL",{for:!0});var b=T(i);r=P(b,"changeMag"),b.forEach(h),s=Y(D),l=z(D,"SPAN",{id:!0}),T(l).forEach(h),c=P(D,f),D.forEach(h),u=Y($),p=z($,"DIV",{});var V=T(p);m=z(V,"LABEL",{for:!0});var X=T(m);d=P(X,"changeRate"),X.forEach(h),g=Y(V),C=z(V,"SPAN",{id:!0}),T(C).forEach(h),S=P(V,E),V.forEach(h),M=Y($),G(v.$$.fragment,$),this.h()},h(){y(i,"for","changeMag"),y(l,"id","changeMag"),y(m,"for","changeRate"),y(C,"id","changeRate")},m($,L){A($,e,L),w(e,n),A($,o,L),A($,t,L),w(t,i),w(i,r),w(t,s),w(t,l),w(t,c),A($,u,L),A($,p,L),w(p,m),w(m,d),w(p,g),w(p,C),w(p,S),A($,M,L),U(v,$,L),x=!0},p($,L){(!x||L&2)&&f!==(f=$[1].toFixed(2)+"")&&pe(c,f),(!x||L&4)&&E!==(E=$[2].toFixed(2)+"")&&pe(S,E)},i($){x||(_(v.$$.fragment,$),x=!0)},o($){k(v.$$.fragment,$),x=!1},d($){$&&h(e),$&&h(o),$&&h(t),$&&h(u),$&&h(p),$&&h(M),O(v,$)}}}function er(a){let e,n,o=a[0]?"Close":"F/K selection",t,i,r,s,l,f=a[0]&&zt(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){y(n,"class","full-width svelte-vk9dfi"),y(n,"id","toggleButton"),y(e,"id","container"),y(e,"class","svelte-vk9dfi"),Ie(e,"no-cursor",a[3])},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[5]),s=!0)},p(c,[u]){(!r||u&1)&&o!==(o=c[0]?"Close":"F/K selection")&&pe(t,o),c[0]?f?(f.p(c,u),u&1&&_(f,1)):(f=zt(c),f.c(),_(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re()),(!r||u&8)&&Ie(e,"no-cursor",c[3])},i(c){r||(_(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}function tr(a,e){let n=!1,o=1/0,t=null;for(let i=0;i<e.length;i++){const r=e[i],s=e[(i+1)%e.length];if(a[0]===r[0]&&a[1]===r[1])return a;r[1]>a[1]!=s[1]>a[1]&&a[0]<(s[0]-r[0])*(a[1]-r[1])/(s[1]-r[1])+r[0]&&(n=!n);const f=nr(a,r,s);f<o&&(o=f,t=or(a,r,s))}if(n)return a;if(!t)throw new Error("Now closest point found");return t}function nr(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],Math.sqrt((a[0]-l[0])**2+(a[1]-l[1])**2)}function or(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],l}function rr(a,e,n){const o=Ge();let t=Ee[0],i=!0,r=1,s=100;const l=[0,.12],f=[.03,.07],c={f:.0433,k:.0621},u=[{f:.1045,k:.0553},{f:.0829,k:.0582},{f:.0664,k:.0595},{f:.0511,k:.0594},{f:.0307,k:.0549},{f:.017,k:.0467},{f:.005,k:.0335},{f:.0076,k:.0472},{f:.0166,k:.0594},{f:.0277,k:.0657},{f:.046,k:.0675},{f:.0757,k:.0643},{f:.0949,k:.0594}],p=b=>{const{f:V,k:X}=b,I=x.map(X,f[0],f[1],0,x.width),F=x.map(V,l[0],l[1],x.height,0);return{x:I,y:F}},m=b=>{const{x:V,y:X}=b,I=x.map(X,x.height,0,l[0],l[1]),F=x.map(V,0,x.width,f[0],f[1]);return{f:I,k:F}},d=b=>{const V=b.mouseX,X=b.mouseY;if(V<0||X<0||V>b.width||X>b.height)return;const{f:I,k:F}=m({x:b.mouseX,y:b.mouseY});t={f:I,k:F,name:"custom",type:"manual"},o("fkupdated",t)},g=b=>{b.noStroke();const V=b.textSize();for(const X of Ee){const{x:I,y:F}=p({f:X.f,k:X.k}),te=X.f===t.f&&X.k===t.k;b.circle(I,F,3),b.textSize(te?V*2:V),b.fill(te?[240,240,150]:[255,255,255]),b.text(X.name,I-b.textWidth(X.name)/2,F-10)}},C=b=>{b.noFill(),b.stroke("red"),b.strokeWeight(1);const{x:V,y:X}=p(t);b.text("F",10,X>10?X-5:X+15),b.line(0,X,b.width,X),b.text("K",V<b.width-10?V+5:V-15,b.height-10),b.line(V,0,V,b.height),b.circle(V,X,10)},E=b=>{const{f:V,k:X}=t,I=`F: ${V.toFixed(4)}`,F=`K: ${X.toFixed(4)}`,te=b.textSize(),xe=b.height*.05;b.textStyle(b.BOLD),b.textSize(xe),b.fill("white"),b.stroke(0),b.strokeWeight(1),b.text(I,b.width*.05,b.textSize()),b.text(F,b.width*.05,b.textSize()+b.textSize()+6),b.textStyle(b.NORMAL),b.textSize(te)},S=b=>{for(let V=0;V<u.length;V++){const{x:X,y:I}=p(u[V]),{x:F,y:te}=p(u[(V+1)%u.length]);b.fill("white"),b.stroke("white"),b.strokeWeight(1),b.circle(X,I,3),b.circle(F,te,3),b.line(X,I,F,te)}},M=()=>{const b=[t.f,t.k],V=u.map(I=>[I.f,I.k]),X=tr(b,V);t.f=X[0],t.k=X[1]},v=()=>{let{f:b,k:V}=t;const X=x.noise(x.frameCount*.01),I=x.noise(5321+x.frameCount*.01),te=Math.random()<.97?.001:.01;b=b+(I*2-1)*(l[1]-l[0])*te*r,V=V+(X*2-1)*(f[1]-f[0])*te*r;const xe={f:b-c.f,k:V-c.k};b=b-xe.f*.001*(r/2),V=V-xe.k*.001*(r/2),t={f:b,k:V,name:"custom",type:"manual"},M(),o("fkupdated",t)};let x,$=!1;const L=b=>{x=b;let V,X,I;b.preload=()=>{V=b.loadImage(Ze+"/parameters_map.png")},b.setup=()=>{b.createCanvas(400,400),b.frameRate(55),X=b.createSlider(0,5,2,0);const F=b.select("#changeMag");if(!F)throw new Error("changeMag slider container not ready");X.parent(F),I=b.createSlider(1,500,100,1);const te=b.select("#changeRate");if(!te)throw new Error("changeRate slider container not ready");I.parent(te)},b.draw=()=>{b.background(255),b.tint(150,190),b.image(V,0,0,b.width,b.height),g(b),S(b),C(b),E(b),b.frameCount%s===0&&v(),n(3,$=!1),b.mouseIsPressed&&(d(b),n(3,$=!0)),n(1,r=Number(X.value())),n(2,s=Number(I.value()))}},D=()=>{n(0,i=!i),i||x.remove()};return ye(()=>x?.remove()),[i,r,s,$,L,D]}let ir=class extends Q{constructor(e){super(),J(this,e,rr,er,ee,{})}};const ar=`precision mediump float;
 attribute vec2 position;
 uniform float zoomLevel;    // 1 full size, 0 max zoom
 uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
@@ -274,7 +274,7 @@ void main() {
     uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
     gl_Position = vec4(position, 0, 1);
 }
-`,rr=`precision mediump float;
+`,lr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -287,7 +287,7 @@ void main() {
     gl_FragColor = vec4(A, B, 0.0, 1.0);
 }
 
-`,ir=`precision mediump float;
+`,sr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -304,7 +304,7 @@ void main() {
     }
     gl_FragColor = vec4(A, B, val, 1.0);
 }
-`,ar=`precision mediump float;
+`,fr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -319,7 +319,7 @@ void main() {
     gl_FragColor = vec4(val, val, val, 1.0);
 }
 
-`,lr=`precision mediump float;
+`,cr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -333,7 +333,7 @@ void main() {
 
     gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
 }
-`,sr=`precision mediump float;
+`,ur=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -347,7 +347,7 @@ void main() {
 
     gl_FragColor = vec4(val, val, val, 1.0);
 }
-`,fr=`precision mediump float;
+`,pr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -399,7 +399,7 @@ void main() {
 
     gl_FragColor = vec4(result, 1.0);
 }
-`,cr=`// Colors scheme inspired by Robert Munafo described here:
+`,mr=`// Colors scheme inspired by Robert Munafo described here:
 // https://www.mrob.com/pub/comp/xmorphia/index.html
 // 
 // A is blue
@@ -424,7 +424,7 @@ void main() {
 
     gl_FragColor = vec4(result, 1.0);
 }
-`,ur=`// Colors scheme inspired by Robert Munafo described here:
+`,dr=`// Colors scheme inspired by Robert Munafo described here:
 // https://www.mrob.com/pub/comp/xmorphia/index.html
 // 
 // A is blue
@@ -446,7 +446,7 @@ void main() {
 
     gl_FragColor = vec4(result, 1.0);
 }
-`,pr=`precision mediump float;
+`,hr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -464,7 +464,7 @@ void main() {
         gl_FragColor = vec4(0.0, A, 0.0, 1.0);
     }
 }
-`,mr=`precision mediump float;
+`,vr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -494,7 +494,7 @@ void main() {
     }
 
 }
-`,dr=`precision mediump float;
+`,gr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -532,7 +532,7 @@ void main() {
     }
 
 }
-`,hr=`precision mediump float;
+`,xr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -947,7 +947,7 @@ void main() {
         gl_FragColor = vec4(softColor);
     }
 }
-`,vr=`precision mediump float;
+`,_r=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -1011,246 +1011,6 @@ vec4 colormap(float x) {
 	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
 	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
 	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,gr=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
-float colormap_red(float x) {
-	if (x < 0.09790863520700754) {
-		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
-	} else if (x < 0.2001887081633112) {
-		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
-	} else if (x < 0.3190117539655621) {
-		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
-	} else if (x < 0.500517389125164) {
-		return 255.0;
-	} else if (x < 0.6068377196788788) {
-		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
-	} else if (x < 0.9017468988895416) {
-		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
-	} else {
-		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09638568758964539) {
-		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
-	} else if (x < 0.4987066686153412) {
-		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
-	} else if (x < 0.6047312345537269) {
-		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
-	} else if (x < 0.7067635953426361) {
-		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
-	} else {
-		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.09982818011951204) {
-		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
-	} else if (x < 0.2958717460833126) {
-		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
-	} else if (x < 0.4900527540014758) {
-		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
-	} else if (x < 0.6017014681258838) {
-		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
-	} else if (x < 0.7015737100463595) {
-		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
-	} else if (x < 0.8237156500567735) {
-		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
-	} else {
-		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,xr=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
-float colormap_red(float x) {
-	if (x < 0.09790863520700754) {
-		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
-	} else if (x < 0.2001887081633112) {
-		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
-	} else if (x < 0.3190117539655621) {
-		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
-	} else if (x < 0.500517389125164) {
-		return 255.0;
-	} else if (x < 0.6068377196788788) {
-		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
-	} else if (x < 0.9017468988895416) {
-		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
-	} else {
-		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09638568758964539) {
-		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
-	} else if (x < 0.4987066686153412) {
-		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
-	} else if (x < 0.6047312345537269) {
-		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
-	} else if (x < 0.7067635953426361) {
-		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
-	} else {
-		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.09982818011951204) {
-		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
-	} else if (x < 0.2958717460833126) {
-		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
-	} else if (x < 0.4900527540014758) {
-		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
-	} else if (x < 0.6017014681258838) {
-		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
-	} else if (x < 0.7015737100463595) {
-		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
-	} else if (x < 0.8237156500567735) {
-		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
-	} else {
-		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap(1.0 - (A-0.4)*(1.0/0.6));
-
-
-    if (A > 0.6) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,_r=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/transform_seismic.frag
-float colormap_f(float x) {
-    return ((-2010.0 * x + 2502.5950459) * x - 481.763180924) / 255.0;
-}
-
-float colormap_red(float x) {
-    if (x < 0.0) {
-        return 3.0 / 255.0;
-    } else if (x < 0.238) {
-        return ((-1810.0 * x + 414.49) * x + 3.87702) / 255.0;
-    } else if (x < 51611.0 / 108060.0) {
-        return (344441250.0 / 323659.0 * x - 23422005.0 / 92474.0) / 255.0;
-    } else if (x < 25851.0 / 34402.0) {
-        return 1.0;
-    } else if (x <= 1.0) {
-        return (-688.04 * x + 772.02) / 255.0;
-    } else {
-        return 83.0 / 255.0;
-    }
-}
-
-float colormap_green(float x) {
-    if (x < 0.0) {
-        return 0.0;
-    } else if (x < 0.238) {
-        return 0.0;
-    } else if (x < 51611.0 / 108060.0) {
-        return colormap_f(x);
-    } else if (x < 0.739376978894039) {
-        float xx = x - 51611.0 / 108060.0;
-        return ((-914.74 * xx - 734.72) * xx + 255.) / 255.0;
-    } else {
-        return 0.0;
-    }
-}
-
-float colormap_blue(float x) {
-    if (x < 0.0) {
-        return 19.0 / 255.0;
-    } else if (x < 0.238) {
-        float xx = x - 0.238;
-        return (((1624.6 * xx + 1191.4) * xx + 1180.2) * xx + 255.0) / 255.0;
-    } else if (x < 51611.0 / 108060.0) {
-        return 1.0;
-    } else if (x < 174.5 / 256.0) {
-        return (-951.67322673866 * x + 709.532730938451) / 255.0;
-    } else if (x < 0.745745353439206) {
-        return (-705.250074130877 * x + 559.620050530617) / 255.0;
-    } else if (x <= 1.0) {
-        return ((-399.29 * x + 655.71) * x - 233.25) / 255.0;
-    } else {
-        return 23.0 / 255.0;
-    }
-}
-
-vec4 colormap(float x) {
-    return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
 }
 
 void main() {
@@ -1339,439 +1099,6 @@ void main() {
 
     vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
 
-    vec4 softColor = colormap((B-0.1)*(1.0/0.9));
-
-
-    if (B < 0.1) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,he={},wr=a=>{const e={vert:or,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}};he.raw=a({frag:rr,...e}),he.A_transform_seismic=a({frag:_r,...e}),he.A_gradiant1=a({frag:pr,...e}),he.A_gradiant2=a({frag:mr,...e}),he.A_MATLAB_cool=a({frag:dr,...e}),he.A_MATLAB_parula=a({frag:hr,...e}),he.A_IDL_CB_RdBu=a({frag:vr,...e}),he.A_IDL_CB_RdYiBu=a({frag:gr,...e}),he.A_IDL_CB_BuYiRd=a({frag:xr,...e}),he.B_IDL_CB_RdYiBu=a({frag:br,...e}),he.grayscale=a({frag:ar,...e}),he.blackwhite=a({frag:lr,...e}),he.whiteblack=a({frag:sr,...e}),he.timebasedblue=a({frag:ir,...e}),he.lerp=a({frag:fr,...e}),he.mrob=a({frag:cr,...e}),he.redblue=a({frag:ur,...e})},$r=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(he[e]||he.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},kr=`precision mediump float;
-
-uniform float radius;
-uniform sampler2D prevState;
-uniform bool pauseSimulation;
-uniform float Da;
-uniform float Db;
-uniform float f;
-uniform float k;
-
-uniform bool penIsActive;
-uniform bool eraserIsActive;
-uniform float penDensity;
-
-varying vec2 uv;
-varying vec2 mouseUv;
-varying float scaledPenRadius;
-
-// https://thebookofshaders.com/10/
-float random(vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
-}
-
-vec2 laplacianDiff() {
-    vec2 r = vec2(0.0, 0.0);
-
-    // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
-    // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
-    // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
-
-    // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
-    // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
-    // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
-
-    // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
-    // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
-    // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
-
-    return r;
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec2 L = laplacianDiff();
-    float La = L.r;
-    float Lb = L.g;
-
-    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
-    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
-
-
-    float rnd = random(uv);
-    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
-        gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
-        gl_FragColor = vec4(1.0, 0.0, 0, 1);
-    } else if (pauseSimulation) {
-        gl_FragColor = vec4(A, B, 0, 1);
-    } else {
-        gl_FragColor = vec4(newA, newB, 0, 1);
-    }
-}
-`,yr=`precision mediump float;
-
-uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-uniform float penRadius;
-
-attribute vec2 position;
-
-varying vec2 uv;
-varying vec2 mouseUv;
-varying float scaledPenRadius;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    mouseUv = (mousePosition * zoomLevel) + pan * (1.0 - zoomLevel);
-    scaledPenRadius = penRadius * zoomLevel;
-    gl_Position = vec4(position, 0, 1);
-}
-`;let mn;const Sr=(a,e)=>{mn=a({frag:kr,vert:yr,attributes:{position:[-4,-4,4,-4,0,4]},count:3,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,f:a.prop("f"),k:a.prop("k"),radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive"),eraserIsActive:a.prop("eraserIsActive"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Er=a=>{const{inputBuffer:e,outputBuffer:n,pauseSimulation:o,mouseState:t,simulationParameters:i,worldSize:r}=a;mn({inputBuffer:e,outputBuffer:n,pauseSimulation:o,zoomLevel:t.zoomLevel,pan:[t.panX,t.panY],mousePosition:[t.x,t.y],penRadius:1/2**(r-t.penSize),penDensity:t.penDensity,penIsActive:t.pressedLeft,eraserIsActive:t.pressedRight,...i})},Ar=(a,e)=>a==="randomSpots"?zr(e,.001):a==="middleCircleAndRandomSpots"?Dr(e,.005,.05):a==="empty"?Br(e):Cr(e,.02),Dr=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},Br=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),zr=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),Cr=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),Tr=`precision highp float;
-
-attribute vec2 position;
-
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
-    gl_Position = vec4(position, 0, 1);
-}
-`,Ir=`precision highp float;
-
-uniform sampler2D prevState;
-
-varying vec2 uv;
-
-void main() {
-    vec4 color = texture2D(prevState, uv);
-
-    float division = 10.0;
-    float column = mod(uv.x, 1.0 / division);
-    float c = column * division;
-
-    float row = mod(uv.y, 1.0 / division);
-    float r = row * division;
-
-    // I haven't found a way to compare the value to an exact value
-    // Might be a precision issue, or just that I'm missing something
-    if (c < 0.05 || r < 0.05) {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else {
-       gl_FragColor = color;
-    }
-}
-`;let dn;const Lr=a=>{dn=a({vert:Tr,frag:Ir,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Rr=a=>{const{inputBuffer:e,outputBuffer:n,zoomState:o}=a;dn({inputBuffer:e,outputBuffer:n,zoomLevel:o.zoomLevel,pan:[o.panX,o.panY]})},Pr=`precision mediump float;
-
-uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-
-attribute vec2 position;
-
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}
-`,Fr=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform vec2 mousePosition;
-uniform float penRadius;
-
-varying vec2 uv;
-
-void main() {
-    vec4 color = texture2D(prevState, uv);
-
-    float d = distance(uv, mousePosition);
-    if (
-        (d >= penRadius && d <= penRadius + 0.001) ||
-        (uv.x >= mousePosition.x - 0.001 && uv.x <= mousePosition.x + 0.001 && uv.y >= mousePosition.y - 0.01 && uv.y <= mousePosition.y + 0.01) ||
-        (uv.x >= mousePosition.x - 0.01 && uv.x <= mousePosition.x + 0.01 && uv.y >= mousePosition.y - 0.001 && uv.y <= mousePosition.y + 0.001))
-    {
-        gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
-    } else {
-        gl_FragColor = color;
-    }
-}
-`;let hn;const Mr=a=>{hn=a({frag:Fr,vert:Pr,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}})},Nr=a=>{const{inputBuffer:e,mouseState:n,outputBuffer:o,worldSize:t}=a;hn({inputBuffer:e,outputBuffer:o,mousePosition:[n.x,n.y],penRadius:1/2**(t-n.penSize),zoomLevel:n.zoomLevel,pan:[n.panX,n.panY]})},vn=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=Ar(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f),u=Array(2).fill(0).map(f);return Sr(r,s),wr(r),Lr(r),Mr(r),r.frame(()=>{e.pause||n.iteration++;let p=c[(n.iteration+1)%2];for(let m=0;m<e.speed;m++){n.iteration++;const d=c[n.iteration%2];p=c[(n.iteration+1)%2],Er({inputBuffer:d,outputBuffer:p,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}Ur({inputTexture:p,graphicsTextures:u,controls:e,info:n,mouseState:o})}),r},Ur=a=>{const{inputTexture:e,graphicsTextures:n,controls:o,info:t,mouseState:i}=a;let r=0;r++;const s=e;let l=n[r%2];if(!o.grid&&!o.pen&&(l=null),$r({colorMode:o.colors,inputBuffer:s,iteration:t.iteration,outputBuffer:l,zoomState:i}),o.grid){r++;const f=n[(r+1)%2];let c=n[r%2];o.pen||(c=null),Rr({inputBuffer:f,outputBuffer:c,zoomState:i})}if(o.pen){r++;const f=n[(r+1)%2],c=null;Nr({mouseState:i,worldSize:t.worldSize,inputBuffer:f,outputBuffer:c})}};const{window:Or}=je;function Vr(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,S=2**a[0].worldSize+"",y,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,_,V,X;return n=new nr({}),n.$on("fkupdated",a[4]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),y=R(S),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),y=P(ae,S),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){E(t,"id","datgui-container"),E(t,"class","svelte-198vt5w"),E(s,"for","worldSize"),E(c,"id","worldSize"),E(c,"type","number"),E(c,"step","1"),E(D,"id","canvas"),E(D,"width",a[1].width),E(D,"height",a[1].height),E(D,"class","svelte-198vt5w")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,y),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),_=!0,V||(X=[Z(Or,"keydown",a[2]),Z(c,"input",a[5]),Z(c,"change",a[3]),Z(D,"contextmenu",we(Hr))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!_||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!_||F&1)&&S!==(S=2**I[0].worldSize+"")&&pe(y,S),(!_||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){_||(b(n.$$.fragment,I),_=!0)},o(I){k(n.$$.fragment,I),_=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const Hr=a=>a;function Kr(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>d(),pause:!1,grid:!1,pen:!1,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:Ee[0].f,k:Ee[0].k};let l,f;const c=async()=>{const S=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new S.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const y=document.getElementById("datgui-container");if(!y)throw new Error("Gui container not ready");y.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"pen").name("Show pen"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_MATLAB_parula","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const M={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",M).onFinishChange(t.reset).name("Initial conditions");const v=l.add(r,"iteration").listen();v.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed").listen(),l.add(i,"penSize",0,r.worldSize).name("Pen size").listen(),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=S=>{if(S.code==="Space"){t.pause=!t.pause,S.preventDefault();return}if(S.code==="KeyR"&&!S.getModifierState("Control")){d(),S.preventDefault();return}};let p;const m=()=>{i.x=Math.random(),i.y=Math.random(),i.penSize=Math.random()*3,i.pressedLeft=!0,setTimeout(()=>i.pressedLeft=!1,500),p=setTimeout(m,Math.random()*5e3)},d=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=vn({controls:t,info:r,mouseState:i,simulationParameters:s}),p&&clearTimeout(p),m())},g=S=>{s.f=S.detail.f,s.k=S.detail.k,s.f>.06?t.speed=70:s.f>.03?t.speed=50:t.speed=2};$e(()=>{d()}),ye(()=>{l.destroy(),f.destroy()});function C(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,d,g,C]}class Ct extends Q{constructor(e){super(),J(this,e,Kr,Vr,ee,{})}}function Tt(a,e,n){const o=a.slice();return o[17]=e[n],o}function It(a){let e,n,o,t,i,r,s,l,f,c=Ee,u=[];for(let p=0;p<c.length;p+=1)u[p]=Lt(Tt(a,c,p));return r=new Fe({props:{sketch:a[4]}}),{c(){e=B("div"),n=R("Select f and k parameters on the map of use a preset"),o=q(),t=B("select");for(let p=0;p<u.length;p+=1)u[p].c();i=q(),N(r.$$.fragment),this.h()},l(p){e=z(p,"DIV",{});var m=T(e);n=P(m,"Select f and k parameters on the map of use a preset"),m.forEach(h),o=Y(p),t=z(p,"SELECT",{class:!0});var d=T(t);for(let g=0;g<u.length;g+=1)u[g].l(d);d.forEach(h),i=Y(p),G(r.$$.fragment,p),this.h()},h(){E(t,"class","full-width svelte-vk9dfi"),a[0]===void 0&&it(()=>a[6].call(t))},m(p,m){A(p,e,m),w(e,n),A(p,o,m),A(p,t,m);for(let d=0;d<u.length;d+=1)u[d].m(t,null);Ve(t,a[0]),A(p,i,m),U(r,p,m),s=!0,l||(f=[Z(t,"change",a[6]),Z(t,"change",a[7])],l=!0)},p(p,m){if(m&0){c=Ee;let d;for(d=0;d<c.length;d+=1){const g=Tt(p,c,d);u[d]?u[d].p(g,m):(u[d]=Lt(g),u[d].c(),u[d].m(t,null))}for(;d<u.length;d+=1)u[d].d(1);u.length=c.length}m&1&&Ve(t,p[0])},i(p){s||(b(r.$$.fragment,p),s=!0)},o(p){k(r.$$.fragment,p),s=!1},d(p){p&&h(e),p&&h(o),p&&h(t),ke(u,p),p&&h(i),O(r,p),l=!1,Be(f)}}}function Lt(a){let e,n=a[17].type+"",o,t,i=a[17].name+"",r,s,l=a[17].f+"",f,c,u=a[17].k+"",p,m;return{c(){e=B("option"),o=R(n),t=R(" - "),r=R(i),s=R(" (f/k "),f=R(l),c=R(" / "),p=R(u),m=R(`)
-                `),this.h()},l(d){e=z(d,"OPTION",{});var g=T(e);o=P(g,n),t=P(g," - "),r=P(g,i),s=P(g," (f/k "),f=P(g,l),c=P(g," / "),p=P(g,u),m=P(g,`)
-                `),g.forEach(h),this.h()},h(){e.__value=a[17],e.value=e.__value},m(d,g){A(d,e,g),w(e,o),w(e,t),w(e,r),w(e,s),w(e,f),w(e,c),w(e,p),w(e,m)},p:ne,d(d){d&&h(e)}}}function qr(a){let e,n,o=a[1]?"Close":"F/K selection",t,i,r,s,l,f=a[1]&&It(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){E(n,"class","full-width svelte-vk9dfi"),E(n,"id","toggleButton"),E(e,"id","container"),E(e,"class","svelte-vk9dfi"),Ie(e,"no-cursor",a[2])},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[5]),s=!0)},p(c,[u]){(!r||u&2)&&o!==(o=c[1]?"Close":"F/K selection")&&pe(t,o),c[1]?f?(f.p(c,u),u&2&&b(f,1)):(f=It(c),f.c(),b(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re()),(!r||u&4)&&Ie(e,"no-cursor",c[2])},i(c){r||(b(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}function Yr(a,e,n){const o=Ge();let t=Ee[0],i=!0;const r=[0,.12],s=[.03,.07],l=v=>{const{f:x,k:$}=v,L=d.map($,s[0],s[1],0,d.width),D=d.map(x,r[0],r[1],d.height,0);return{x:L,y:D}},f=v=>{const{x,y:$}=v,L=d.map($,d.height,0,r[0],r[1]),D=d.map(x,0,d.width,s[0],s[1]);return{f:L,k:D}},c=v=>{const x=v.mouseX,$=v.mouseY;if(x<0||$<0||x>v.width||$>v.height)return;const{f:L,k:D}=f({x:v.mouseX,y:v.mouseY});n(0,t={f:L,k:D,name:"custom",type:"manual"}),o("fkupdated",t)},u=v=>{v.noStroke();const x=v.textSize();for(const $ of Ee){const{x:L,y:D}=l({f:$.f,k:$.k}),_=$.f===t.f&&$.k===t.k;v.circle(L,D,3),v.textSize(_?x*2:x),v.fill(_?[240,240,150]:[255,255,255]),v.text($.name,L-v.textWidth($.name)/2,D-10)}},p=v=>{v.noFill(),v.stroke("red");const{x,y:$}=l(t);v.text("F",10,$>10?$-5:$+15),v.line(0,$,v.width,$),v.text("K",x<v.width-10?x+5:x-15,v.height-10),v.line(x,0,x,v.height),v.circle(x,$,10)},m=v=>{const{f:x,k:$}=t,L=`F: ${x.toFixed(4)}`,D=`K: ${$.toFixed(4)}`,_=v.textSize(),V=v.height*.05;v.textStyle(v.BOLD),v.textSize(V),v.fill("white"),v.stroke(0),v.strokeWeight(1),v.text(L,v.width*.05,v.textSize()),v.text(D,v.width*.05,v.textSize()+v.textSize()+6),v.textStyle(v.NORMAL),v.textSize(_)};let d,g=!1;const C=v=>{d=v;let x;v.preload=()=>{x=v.loadImage(Ze+"/parameters_map.png")},v.setup=()=>{v.createCanvas(400,400),v.frameRate(55)},v.draw=()=>{v.background(255),v.tint(150,190),v.image(x,0,0,v.width,v.height),u(v),p(v),m(v),n(2,g=!1),v.mouseIsPressed&&(c(v),n(2,g=!0))}},S=()=>{n(1,i=!i),i||d.remove()};ye(()=>d?.remove());function y(){t=at(this),n(0,t)}return[t,i,g,o,C,S,y,()=>o("fkupdated",t)]}let Gr=class extends Q{constructor(e){super(),J(this,e,Yr,qr,ee,{})}};const Rt=a=>{if(!a.currentTarget)throw new Error("Event has no currentTarget");const e=a.currentTarget,n=e.getBoundingClientRect(),o=a.clientX-n.left,t=a.clientY-n.top,{width:i,height:r}=e,s=o/i,l=(r-t)/r;return{x:s,y:l}};const{window:Wr}=je;function Xr(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,S=2**a[0].worldSize+"",y,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,_,V,X;return n=new Gr({}),n.$on("fkupdated",a[7]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),y=R(S),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),y=P(ae,S),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){E(t,"id","datgui-container"),E(t,"class","svelte-18zf5fr"),E(s,"for","worldSize"),E(c,"id","worldSize"),E(c,"type","number"),E(c,"step","1"),E(D,"id","canvas"),E(D,"width",a[1].width),E(D,"height",a[1].height),E(D,"class","svelte-18zf5fr")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,y),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),_=!0,V||(X=[Z(Wr,"keydown",a[2]),Z(c,"input",a[8]),Z(c,"change",a[6]),Z(D,"mousemove",a[4]),Z(D,"mousedown",we(a[5])),Z(D,"mouseup",a[5]),Z(D,"wheel",a[3]),Z(D,"keydown",we(a[2])),Z(D,"contextmenu",we(jr))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!_||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!_||F&1)&&S!==(S=2**I[0].worldSize+"")&&pe(y,S),(!_||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){_||(b(n.$$.fragment,I),_=!0)},o(I){k(n.$$.fragment,I),_=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const jr=a=>a;function Zr(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>g(),pause:!1,grid:!1,pen:!0,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:Ee[0].f,k:Ee[0].k};let l,f;const c=async()=>{const y=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new y.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const M=document.getElementById("datgui-container");if(!M)throw new Error("Gui container not ready");M.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_MATLAB_parula","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const v={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",v).onFinishChange(t.reset).name("Initial conditions");const x=l.add(r,"iteration").listen();x.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed"),l.add(i,"penSize",0,r.worldSize).name("Pen size"),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=y=>{if(y.code==="Space"){t.pause=!t.pause,y.preventDefault();return}if(y.code==="KeyR"&&!y.getModifierState("Control")){g(),y.preventDefault();return}},p=y=>{if(!y.getModifierState("Control"))return;const M=Rt(y);i.panX=M.x,i.panY=M.y,y.deltaY>0?i.zoomLevel*=1+i.zoomLevel/2:i.zoomLevel*=1-i.zoomLevel/2,i.zoomLevel>1&&(i.zoomLevel=1),i.zoomLevel<0&&(i.zoomLevel=0),y.preventDefault()},m=y=>{const M=Rt(y);i.x=M.x,i.y=M.y},d=y=>{if(![0,2].includes(y.button)||!["mouseup","mousedown"].includes(y.type))return;let M=y.type==="mousedown";y.button===0&&(i.pressedLeft=M),y.button===2&&(i.pressedRight=M)},g=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=vn({controls:t,info:r,mouseState:i,simulationParameters:s}))},C=y=>{s.f=y.detail.f,s.k=y.detail.k};$e(()=>{g()}),ye(()=>{l.destroy(),f.destroy()});function S(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,p,m,d,g,C,S]}class Pt extends Q{constructor(e){super(),J(this,e,Zr,Xr,ee,{})}}const Qr=`precision mediump float;
-attribute vec2 position;
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}
-`,Jr=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    gl_FragColor = vec4(A, B, 0.0, 1.0);
-}
-
-`,ei=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float PI = 3.14159265359;
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = sin(iteration*PI/180.0);
-    if (val < 0.0) {
-        val = -1.0 * val;
-    }
-    gl_FragColor = vec4(A, B, val, 1.0);
-}
-`,ti=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (A + B) / 2.0;
-
-    gl_FragColor = vec4(val, val, val, 1.0);
-}
-
-`,ni=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (1.0 + A - B) / 2.0;
-
-    gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
-}
-`,oi=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (1.0 + A - B) / 2.0;
-
-    gl_FragColor = vec4(val, val, val, 1.0);
-}
-`,ri=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
-vec3 rgb2hsv(vec3 c) {
-    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
-    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
-    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
-
-    float d = q.x - min(q.w, q.y);
-    float e = 1.0e-10;
-    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
-}
-
-// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
-vec3 hsv2rgb(vec3 c) {
-    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    // vec3 color1 = vec3(1.0, 0.0, 0.0);
-    // vec3 color2 = vec3(0.0, 1.0, 0.0);
-    // vec3 result = color1 * A + color2 * B;
-
-    vec3 color1RGB = vec3(0.639, 0.941, 0.717);
-    vec3 color2RGB = vec3(0.929, 0.082, 0.705);
-
-    vec3 color1HSV = rgb2hsv(color1RGB);
-    vec3 color2HSV = rgb2hsv(color2RGB);
-
-    float color1Offset = (cos(iteration * 0.001) + 1.0) * 0.5;
-    float color1newH = 0.5 * (color1HSV.x + color1Offset);
-    vec3 color1newHSV = vec3(color1newH, color1HSV.g, color1HSV.b);
-
-    float color2Offset = (cos(iteration * 0.002)) * 0.5;
-    float color2newH = 0.5 * (color2HSV.x + color2Offset + 0.33);
-    vec3 color2newHSV = vec3(color2newH, color2HSV.g, color2HSV.b);
-
-
-    vec3 resultHSV = color1newHSV * A + color2newHSV * B;
-    vec3 result = hsv2rgb(resultHSV);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,ii=`// Colors scheme inspired by Robert Munafo described here:
-// https://www.mrob.com/pub/comp/xmorphia/index.html
-// 
-// A is blue
-// B is red
-
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float red = A; // The more A the redder
-    float blue = 1.0 - A; // The less A the bleuer
-
-    float green = max(A, B) - min(A, B);
-
-    vec3 result = vec3(red, green, blue);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,ai=`// Colors scheme inspired by Robert Munafo described here:
-// https://www.mrob.com/pub/comp/xmorphia/index.html
-// 
-// A is blue
-// B is red
-
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec3 color1 = vec3(0.0, 0.0, 1.0);
-    vec3 color2 = vec3(1.0, 0.0, 0.0);
-    vec3 result = vec3(A, 0.0, 1.0-A);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,li=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    if (A > 0.9) {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else if (A > 0.4) {
-        gl_FragColor = vec4(1.0 - A, 0.0, 0.0, 1.0);
-    } else { 
-        gl_FragColor = vec4(0.0, A, 0.0, 1.0);
-    }
-}
-`,si=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
-    vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
-    vec4 color = mix(blue, red, A);
-
-    vec4 softRed = vec4(0.8588, 0.2824, 0.3765, 1.0);
-    vec4 softBlue = vec4(0.2824, 0.3882, 0.8588, 1.0);
-    // vec4 softColor = mix(blue, red, (A-0.4)/0.6);
-    // vec4 softColor = mix(blue, red, (A-0.4)/0.4);
-    vec4 softColor = mix(softBlue, softRed, 1.0-A);
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(color);
-    }
-
-}
-`,fi=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/MATLAB_cool.frag
-float colormap_red(float x) {
-    return (1.0 + 1.0 / 63.0) * x - 1.0 / 63.0;
-}
-
-float colormap_green(float x) {
-    return -(1.0 + 1.0 / 63.0) * x + (1.0 + 1.0 / 63.0);
-}
-
-vec4 colormap(float x) {
-    float r = clamp(colormap_red(x), 0.0, 1.0);
-    float g = clamp(colormap_green(x), 0.0, 1.0);
-    float b = 1.0;
-    return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
     vec4 softColor = colormap((A-0.4)*(1.0/0.6));
 
 
@@ -1782,983 +1109,7 @@ void main() {
     }
 
 }
-`,ci=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdBu.frag
-float colormap_red(float x) {
-	if (x < 0.09771832105856419) {
-		return 7.60263247863246E+02 * x + 1.02931623931624E+02;
-	} else if (x < 0.3017162107441106) {
-		return (-2.54380938558548E+02 * x + 4.29911571188803E+02) * x + 1.37642085716717E+02;
-	} else if (x < 0.4014205790737471) {
-		return 8.67103448276151E+01 * x + 2.18034482758611E+02;
-	} else if (x < 0.5019932233215039) {
-		return -6.15461538461498E+01 * x + 2.77547692307680E+02;
-	} else if (x < 0.5969483882550937) {
-		return -3.77588522588624E+02 * x + 4.36198819698878E+02;
-	} else if (x < 0.8046060096654594) {
-		return (-6.51345897546620E+02 * x + 2.09780968434337E+02) * x + 3.17674951640855E+02;
-	} else {
-		return -3.08431855203590E+02 * x + 3.12956742081421E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09881640500975222) {
-		return 2.41408547008547E+02 * x + 3.50427350427364E-01;
-	} else if (x < 0.5000816285610199) {
-		return ((((1.98531871433258E+04 * x - 2.64108262469187E+04) * x + 1.10991785969817E+04) * x - 1.92958444776211E+03) * x + 8.39569642882186E+02) * x - 4.82944517518776E+01;
-	} else if (x < 0.8922355473041534) {
-		return (((6.16712686949223E+03 * x - 1.59084026055125E+04) * x + 1.45172137257997E+04) * x - 5.80944127411621E+03) * x + 1.12477959061948E+03;
-	} else {
-		return -5.28313797313699E+02 * x + 5.78459299959206E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.1033699568661857) {
-		return 1.30256410256410E+02 * x + 3.08518518518519E+01;
-	} else if (x < 0.2037526071071625) {
-		return 3.38458128078815E+02 * x + 9.33004926108412E+00;
-	} else if (x < 0.2973267734050751) {
-		return (-1.06345054944861E+02 * x + 5.93327252747168E+02) * x - 3.81852747252658E+01;
-	} else if (x < 0.4029109179973602) {
-		return 6.68959706959723E+02 * x - 7.00740740740798E+01;
-	} else if (x < 0.5006715489526758) {
-		return 4.87348695652202E+02 * x + 3.09898550724286E+00;
-	} else if (x < 0.6004396902588283) {
-		return -6.85799999999829E+01 * x + 2.81436666666663E+02;
-	} else if (x < 0.702576607465744) {
-		return -1.81331701891043E+02 * x + 3.49137263626287E+02;
-	} else if (x < 0.9010407030582428) {
-		return (2.06124143164576E+02 * x - 5.78166906665595E+02) * x + 5.26198653917172E+02;
-	} else {
-		return -7.36990769230737E+02 * x + 8.36652307692262E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,ui=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
-float colormap_red(float x) {
-	if (x < 0.09790863520700754) {
-		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
-	} else if (x < 0.2001887081633112) {
-		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
-	} else if (x < 0.3190117539655621) {
-		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
-	} else if (x < 0.500517389125164) {
-		return 255.0;
-	} else if (x < 0.6068377196788788) {
-		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
-	} else if (x < 0.9017468988895416) {
-		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
-	} else {
-		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09638568758964539) {
-		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
-	} else if (x < 0.4987066686153412) {
-		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
-	} else if (x < 0.6047312345537269) {
-		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
-	} else if (x < 0.7067635953426361) {
-		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
-	} else {
-		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.09982818011951204) {
-		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
-	} else if (x < 0.2958717460833126) {
-		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
-	} else if (x < 0.4900527540014758) {
-		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
-	} else if (x < 0.6017014681258838) {
-		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
-	} else if (x < 0.7015737100463595) {
-		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
-	} else if (x < 0.8237156500567735) {
-		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
-	} else {
-		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,pi=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
-float colormap_red(float x) {
-	if (x < 0.09790863520700754) {
-		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
-	} else if (x < 0.2001887081633112) {
-		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
-	} else if (x < 0.3190117539655621) {
-		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
-	} else if (x < 0.500517389125164) {
-		return 255.0;
-	} else if (x < 0.6068377196788788) {
-		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
-	} else if (x < 0.9017468988895416) {
-		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
-	} else {
-		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09638568758964539) {
-		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
-	} else if (x < 0.4987066686153412) {
-		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
-	} else if (x < 0.6047312345537269) {
-		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
-	} else if (x < 0.7067635953426361) {
-		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
-	} else {
-		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.09982818011951204) {
-		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
-	} else if (x < 0.2958717460833126) {
-		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
-	} else if (x < 0.4900527540014758) {
-		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
-	} else if (x < 0.6017014681258838) {
-		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
-	} else if (x < 0.7015737100463595) {
-		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
-	} else if (x < 0.8237156500567735) {
-		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
-	} else {
-		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((B-0.1)*(1.0/0.9));
-
-
-    if (B < 0.1) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,_e={},mi=a=>{const e={vert:Qr,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),prevState:a.prop("inputBuffer")}};_e.raw=a({frag:Jr,...e}),_e.A_gradiant1=a({frag:li,...e}),_e.A_gradiant2=a({frag:si,...e}),_e.A_MATLAB_cool=a({frag:fi,...e}),_e.A_IDL_CB_RdBu=a({frag:ci,...e}),_e.A_IDL_CB_RdYiBu=a({frag:ui,...e}),_e.B_IDL_CB_RdYiBu=a({frag:pi,...e}),_e.grayscale=a({frag:ti,...e}),_e.blackwhite=a({frag:ni,...e}),_e.whiteblack=a({frag:oi,...e}),_e.timebasedblue=a({frag:ei,...e}),_e.lerp=a({frag:ri,...e}),_e.mrob=a({frag:ii,...e}),_e.redblue=a({frag:ai,...e})},di=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(_e[e]||_e.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},hi=`precision mediump float;
-
-uniform float radius;
-uniform sampler2D prevState;
-uniform bool pauseSimulation;
-uniform float Da;
-uniform float Db;
-
-varying vec2 v_fk;
-
-uniform bool penIsActive;
-uniform bool eraserIsActive;
-uniform float penDensity;
-
-varying vec2 uv;
-varying vec2 mouseUv;
-varying float scaledPenRadius;
-
-// https://thebookofshaders.com/10/
-float random(vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
-}
-
-vec2 laplacianDiff() {
-    vec2 r = vec2(0.0, 0.0);
-
-    // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
-    // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
-    // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
-
-    // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
-    // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
-    // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
-
-    // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
-    // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
-    // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
-
-    return r;
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec2 L = laplacianDiff();
-    float La = L.r;
-    float Lb = L.g;
-
-    float f = v_fk.x;
-    float k = v_fk.y;
-
-    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
-    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
-
-
-    float rnd = random(uv);
-    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
-        gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (pauseSimulation) {
-        gl_FragColor = vec4(A, B, 0, 1);
-    } else {
-        gl_FragColor = vec4(newA, newB, 0, 1);
-    }
-}
-`,vi=`precision mediump float;
-
-uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
-uniform float penRadius;
-
-attribute vec2 position;
-attribute vec2 fk;
-
-varying vec2 uv;
-varying vec2 mouseUv;
-varying float scaledPenRadius;
-varying vec2 v_fk;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    v_fk = fk;
-    mouseUv = mousePosition;
-    scaledPenRadius = penRadius;
-    gl_Position = vec4(position, 0, 1);
-}
-`;let gn;const gi=(a,e)=>{gn=a({frag:hi,vert:vi,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]],fk:(n,o)=>{const{maxF:t,minF:i,maxK:r,minK:s}=o.simulationParameters;return[[i,r],[i,s],[t,r],[t,r],[i,s],[t,s]]}},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive")}})},xi=a=>{const{inputBuffer:e,outputBuffer:n,simulationParameters:o,pauseSimulation:t,mouseState:i,worldSize:r}=a;gn({inputBuffer:e,outputBuffer:n,pauseSimulation:t,zoomLevel:i.zoomLevel,pan:[i.panX,i.panY],mousePosition:[i.x,i.y],penRadius:1/2**(r-i.penSize),penDensity:i.penDensity,penIsActive:i.pressedLeft,eraserIsActive:i.pressedRight,simulationParameters:o})},_i=(a,e)=>a==="randomSpots"?wi(e,.001):a==="middleCircleAndRandomSpots"?bi(e,.005,.05):a==="empty"||a==="full"?Ft(e):$i(e,.02),bi=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},Ft=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),wi=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),$i=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),ki=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=_i(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f);return gi(r,s),mi(r),r.frame(()=>{e.pause||n.iteration++;let u=c[(n.iteration+1)%2];for(let p=0;p<e.speed;p++){n.iteration++;const m=c[n.iteration%2];u=c[(n.iteration+1)%2],xi({inputBuffer:m,outputBuffer:u,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}di({colorMode:e.colors,inputBuffer:u,iteration:n.iteration,outputBuffer:null,zoomState:o})}),r},Mt=a=>{if(!a.currentTarget)throw new Error("Event has no currentTarget");const e=a.currentTarget,n=e.getBoundingClientRect(),o=a.clientX-n.left,t=a.clientY-n.top,{width:i,height:r}=e,s=o/i,l=(r-t)/r;return{x:s,y:l}};const{window:yi}=je;function Si(a){let e,n,o,t,i,r,s,l,f,c,u,p;return{c(){e=B("main"),n=B("div"),o=q(),t=B("div"),i=B("label"),r=R("World Size:"),s=q(),l=B("input"),f=q(),c=B("canvas"),this.h()},l(m){e=z(m,"MAIN",{});var d=T(e);n=z(d,"DIV",{id:!0,class:!0}),T(n).forEach(h),o=Y(d),t=z(d,"DIV",{});var g=T(t);i=z(g,"LABEL",{for:!0});var C=T(i);r=P(C,"World Size:"),C.forEach(h),s=Y(g),l=z(g,"INPUT",{id:!0,type:!0,step:!0}),g.forEach(h),f=Y(d),c=z(d,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(c).forEach(h),d.forEach(h),this.h()},h(){E(n,"id","datgui-container"),E(n,"class","svelte-198vt5w"),E(i,"for","worldSize"),E(l,"id","worldSize"),E(l,"type","number"),E(l,"step","1"),E(c,"id","canvas"),E(c,"width",a[1].width),E(c,"height",a[1].height),E(c,"class","svelte-198vt5w")},m(m,d){A(m,e,d),w(e,n),w(e,o),w(e,t),w(t,i),w(i,r),w(t,s),w(t,l),Se(l,a[0].worldSize),w(e,f),w(e,c),u||(p=[Z(yi,"keydown",a[2]),Z(l,"input",a[7]),Z(l,"change",a[6]),Z(c,"mousemove",a[4]),Z(c,"mousedown",we(a[5])),Z(c,"mouseup",a[5]),Z(c,"wheel",a[3]),Z(c,"keydown",we(a[2])),Z(c,"contextmenu",we(Ei))],u=!0)},p(m,[d]){d&1&&Ae(l.value)!==m[0].worldSize&&Se(l,m[0].worldSize)},i:ne,o:ne,d(m){m&&h(e),u=!1,Be(p)}}}const Ei=a=>a;function Ai(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"B_IDL_CB_RdYiBu",initialConditions:"full",reset:()=>g(),pause:!1,grid:!1,speed:10},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:12,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:10},s={minK:.02,maxK:.07,minF:0,maxF:.12};let l,f;const c=async()=>{const S=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new S.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const y=document.getElementById("datgui-container");if(!y)throw new Error("Gui container not ready");y.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","B_IDL_CB_RdYiBu"]).name("Color scheme");const M={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty",Full:"full"};l.add(t,"initialConditions",M).onFinishChange(t.reset).name("Initial conditions");const v=l.add(r,"iteration").listen();v.domElement.style.pointerEvents="none",l.add(t,"speed",1,500).name("Simulation speed"),l.add(i,"penSize",0,r.worldSize).name("Pen size"),l.add(i,"penDensity",0,1).name("Pen density"),l.add(s,"minK",0,s.maxK),l.add(s,"maxK",s.minK,1),l.add(s,"minF",0,s.maxF),l.add(s,"maxF",s.minF,1)},u=S=>{if(S.code==="Space"){t.pause=!t.pause,S.preventDefault();return}if(S.code==="KeyR"&&!S.getModifierState("Control")){g(),S.preventDefault();return}},p=S=>{if(!S.getModifierState("Control"))return;const y=Mt(S);i.panX=y.x,i.panY=y.y,S.deltaY>0?i.zoomLevel*=1+i.zoomLevel/2:i.zoomLevel*=1-i.zoomLevel/2,i.zoomLevel>1&&(i.zoomLevel=1),i.zoomLevel<0&&(i.zoomLevel=0),S.preventDefault()},m=S=>{const y=Mt(S);i.x=y.x,i.y=y.y},d=S=>{if(![0,2].includes(S.button)||!["mouseup","mousedown"].includes(S.type))return;let y=S.type==="mousedown";S.button===0&&(i.pressedLeft=y),S.button===2&&(i.pressedRight=y)},g=()=>{isNaN(r.worldSize)||(r.worldSize>12&&n(0,r.worldSize=12,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=ki({controls:t,info:r,mouseState:i,simulationParameters:s}))};$e(()=>{g(),i.pressedLeft=!0,setTimeout(()=>i.pressedLeft=!1,10)}),ye(()=>{l.destroy(),f.destroy()});function C(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,p,m,d,g,C]}let rt=class extends Q{constructor(e){super(),J(this,e,Ai,Si,ee,{})}};const Di=a=>{const e=[];for(let r=0;r<a.height;r++){e.push([]);for(let s=0;s<a.width;s++)e[e.length-1].push({A:1,B:0})}const n=5,o=5,t=Math.floor(a.width/2),i=Math.floor(a.height/2);for(let r=i-o;r<i+o;r++)for(let s=t-n;s<t+n;s++)e[r][s].B=1;return e},Bi=(a,e)=>{const n={width:a.width/e[0].length,height:a.height/e.length};for(let o=0;o<e.length;o++)for(let t=0;t<e[0].length;t++){const{A:i,B:r}=e[o][t];a.fill(i*255,r*255,0),a.rect(t*n.width,o*n.height,n.width,n.height)}},zi=1,Ci=.5,Nt=.055,Ti=.062,Ii=a=>{const e=[];for(let n=0;n<a.length;n++){e.push([]);for(let o=0;o<a[0].length;o++){const{A:t,B:i}=a[n][o],r=Ut(a,{x:o,y:n},"A"),s=Ut(a,{x:o,y:n},"B"),l=t+(zi*r-t*i*i+Nt*(1-t)),f=i+(Ci*s+t*i*i-(Ti+Nt)*i);e[n].push({A:l,B:f})}}return e},Ut=(a,e,n)=>{const o=Li(a,e);let t=0;for(const i of o){const{coord:r,weight:s}=i;t+=a[r.y][r.x][n]*s}return t},Li=(a,e)=>{const{x:n,y:o}=e,t=a[0].length,i=a.length,r={coord:{x:n>0?n-1:t-1,y:o>0?o-1:i-1},weight:.05},s={coord:{x:n,y:o>0?o-1:i-1},weight:.2},l={coord:{x:n<t-1?n+1:0,y:o>0?o-1:i-1},weight:.05},f={coord:{x:n>0?n-1:t-1,y:o},weight:.2},c={coord:{x:n,y:o},weight:-1},u={coord:{x:n<t-1?n+1:0,y:o},weight:.2},p={coord:{x:n>0?n-1:t-1,y:o<i-1?o+1:0},weight:.05},m={coord:{x:n,y:o<i-1?o+1:0},weight:.2},d={coord:{x:n<t-1?n+1:0,y:o<i-1?o+1:0},weight:.05};return[r,s,l,f,c,u,p,m,d]};function Ri(a){let e,n;return e=new Fe({props:{sketch:a[0]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Pi(a){const e={width:200,height:200};let n;return[t=>{let i;t.setup=()=>{n=t,t.createCanvas(500,500),t.noStroke(),i=Di(e)},t.draw=()=>{t.background(0);for(let r=0;r<20;r++)i=Ii(i);Bi(n,i)}}]}let Fi=class extends Q{constructor(e){super(),J(this,e,Pi,Ri,ee,{})}},me,Ue;const Mi=a=>{me=[],Ue=[];for(let i=0;i<a.height;i++){me.push([]),Ue.push([]);for(let r=0;r<a.width;r++)me[me.length-1].push({A:1,B:0}),Ue[me.length-1].push({A:1,B:0})}const e=5,n=5,o=Math.floor(a.width/2),t=Math.floor(a.height/2);for(let i=t-n;i<t+n;i++)for(let r=o-e;r<o+e;r++)me[i][r].B=1;return me},Ni=a=>{const e={width:a.width/me[0].length,height:a.height/me.length};for(let n=0;n<me.length;n++)for(let o=0;o<me[0].length;o++){const{A:t,B:i}=me[n][o];a.fill(t*255,i*255,0),a.rect(o*e.width,n*e.height,e.width,e.height)}},Ui=1,Oi=.5,Ot=.055,Vi=.062,Hi=()=>{for(let e=0;e<me.length;e++)for(let n=0;n<me[0].length;n++){const{A:o,B:t}=me[e][n],i=Vt(me,{x:n,y:e},"A"),r=Vt(me,{x:n,y:e},"B"),s=o+(Ui*i-o*t*t+Ot*(1-o)),l=t+(Oi*r+o*t*t-(Vi+Ot)*t);Ue[e][n]={A:s,B:l}}const a=me;return me=Ue,Ue=a,me},Vt=(a,e,n)=>{const o=Ki(a,e);let t=0;for(const i of o){const{coord:r,weight:s}=i;t+=a[r.y][r.x][n]*s}return t},Ki=(a,e)=>{const{x:n,y:o}=e,t=a[0].length,i=a.length,r={coord:{x:n>0?n-1:t-1,y:o>0?o-1:i-1},weight:.05},s={coord:{x:n,y:o>0?o-1:i-1},weight:.2},l={coord:{x:n<t-1?n+1:0,y:o>0?o-1:i-1},weight:.05},f={coord:{x:n>0?n-1:t-1,y:o},weight:.2},c={coord:{x:n,y:o},weight:-1},u={coord:{x:n<t-1?n+1:0,y:o},weight:.2},p={coord:{x:n>0?n-1:t-1,y:o<i-1?o+1:0},weight:.05},m={coord:{x:n,y:o<i-1?o+1:0},weight:.2},d={coord:{x:n<t-1?n+1:0,y:o<i-1?o+1:0},weight:.05};return[r,s,l,f,c,u,p,m,d]};function qi(a){let e,n;return e=new Fe({props:{sketch:a[0]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Yi(a){const e={width:200,height:200};let n;return[t=>{t.setup=()=>{n=t,t.createCanvas(500,500),t.noStroke(),Mi(e)},t.draw=()=>{for(let i=0;i<5;i++)Hi();Ni(n)}}]}let Gi=class extends Q{constructor(e){super(),J(this,e,Yi,qi,ee,{})}},de,Oe;const Wi=a=>{de=[],Oe=[];for(let i=0;i<a.height;i++){de.push([]),Oe.push([]);for(let r=0;r<a.width;r++)de[de.length-1].push({A:1,B:0}),Oe[de.length-1].push({A:1,B:0})}const e=5,n=5,o=Math.floor(a.width/2),t=Math.floor(a.height/2);for(let i=t-n;i<t+n;i++)for(let r=o-e;r<o+e;r++)de[i][r].B=1;return de},Xi=a=>{const e={width:a.width/de[0].length,height:a.height/de.length};for(let n=0;n<de.length;n++)for(let o=0;o<de[0].length;o++){const{A:t,B:i}=de[n][o];a.fill(t*255,i*255,0),a.rect(o*e.width,n*e.height,e.width,e.height)}},ji=1,Zi=.5,Ht=.055,Qi=.062,Ji=()=>{for(let e=0;e<de.length;e++)for(let n=0;n<de[0].length;n++){const{A:o,B:t}=de[e][n],i=Kt(de,{x:n,y:e},"A"),r=Kt(de,{x:n,y:e},"B"),s=o+(ji*i-o*t*t+Ht*(1-o)),l=t+(Zi*r+o*t*t-(Qi+Ht)*t);Oe[e][n]={A:s,B:l}}const a=de;return de=Oe,Oe=a,de},Kt=(a,e,n)=>{const o=ea(a,e);let t=0;for(const i of o){const{coord:r,weight:s}=i;t+=a[r.y][r.x][n]*s}return t},ea=(a,e)=>{const{x:n,y:o}=e,t=a[0].length,i=a.length,r={coord:{x:n>0?n-1:t-1,y:o>0?o-1:i-1},weight:.05},s={coord:{x:n,y:o>0?o-1:i-1},weight:.2},l={coord:{x:n<t-1?n+1:0,y:o>0?o-1:i-1},weight:.05},f={coord:{x:n>0?n-1:t-1,y:o},weight:.2},c={coord:{x:n,y:o},weight:-1},u={coord:{x:n<t-1?n+1:0,y:o},weight:.2},p={coord:{x:n>0?n-1:t-1,y:o<i-1?o+1:0},weight:.05},m={coord:{x:n,y:o<i-1?o+1:0},weight:.2},d={coord:{x:n<t-1?n+1:0,y:o<i-1?o+1:0},weight:.05};return[r,s,l,f,c,u,p,m,d]};function ta(a){let e,n;return e=new Fe({props:{sketch:a[0]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function na(a){const e={width:200,height:200};let n;return[t=>{t.setup=()=>{n=t,t.createCanvas(500,500),t.noStroke(),Wi(e)},t.draw=()=>{for(let i=0;i<5;i++)Ji();Xi(n)}}]}let oa=class extends Q{constructor(e){super(),J(this,e,na,ta,ee,{})}};function ra(a){let e;return{c(){e=B("canvas"),this.h()},l(n){e=z(n,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(e).forEach(h),this.h()},h(){E(e,"id","canvas"),E(e,"width",a[0].width),E(e,"height",a[0].height),E(e,"class","svelte-1b0ol19")},m(n,o){A(n,e,o)},p:ne,i:ne,o:ne,d(n){n&&h(e)}}}function ia(a){const e={width:window.innerWidth-50,height:window.innerHeight-10},n=2**10,o=n*.05,t=Array(n*n).fill(0).map((i,r)=>{const s=Math.floor(r/n),l=r%n;return Math.hypot(n/2-l,n/2-s)<o?[0,1,0,1]:Math.random()<.01?[0,1,0,1]:[1,0,0,1]}).flat();return $e(()=>{const i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i}),s=Array(2).fill(0).map(()=>r.framebuffer({color:r.texture({radius:n,data:t,wrap:"repeat",type:"float"}),depthStencil:!1})),l=r({frag:`
-precision mediump float;
-uniform sampler2D prevState;
-varying vec2 uv;
-
-vec2 laplacianDiff() {
-    vec2 r = vec2(0.0, 0.0);
-
-    // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(${n})).rg * 0.05;
-    // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(${n})).rg * 0.2;
-    // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(${n})).rg * 0.05;
-
-    // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(${n})).rg * 0.2;
-    // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(${n})).rg * -1.0;
-    // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(${n})).rg * 0.2;
-
-    // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(${n})).rg * 0.05;
-    // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(${n})).rg * 0.2;
-    // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(${n})).rg * 0.05;
-
-    return r;
-}
-
-void main() {
-    float Da = 1.0;
-    float Db = 0.5;
-    float f = 0.055;
-    float k = 0.062;
-
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec2 L = laplacianDiff();
-    float La = L.r;
-    float Lb = L.g;
-
-    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
-    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
-
-    gl_FragColor = vec4(newA, newB, 0, 1);
-}`,framebuffer:c=>s[(c.tick+1)%2]}),f=r({frag:`
-precision mediump float;
-uniform sampler2D prevState;
-varying vec2 uv;
-void main() {
-    vec2 state = texture2D(prevState, uv).rg;
-    gl_FragColor = vec4(state, 0, 1);
-}`,vert:`
-precision mediump float;
-attribute vec2 position;
-varying vec2 uv;
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}`,attributes:{position:[-4,-4,4,-4,0,4]},uniforms:{prevState:({tick:c})=>s[c%2]},depth:{enable:!1},count:3});r.frame(()=>{f(()=>{r.draw(),l()})})}),[e]}let aa=class extends Q{constructor(e){super(),J(this,e,ia,ra,ee,{})}};const la=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},sa=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),fa=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),We=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"Alpha 1",type:"alpha",f:.01,k:.047},{name:"Alpha 2",type:"alpha",f:.014,k:.053},{name:"Beta 1",type:"beta",f:.014,k:.039},{name:"Beta 2",type:"beta",f:.026,k:.051},{name:"Epsilon 1",type:"epsilon",f:.018,k:.055},{name:"Epsilon 2",type:"epsilon",f:.022,k:.059},{name:"Epsilon 1",type:"epsilon",f:.034,k:.063},{name:"Gamma 1",type:"gamma",f:.022,k:.051},{name:"Gamma 2",type:"gamma",f:.026,k:.055},{name:"Iota 1",type:"iota",f:.046,k:.0594},{name:"Lambda 1",type:"lambda",f:.026,k:.061},{name:"Lambda 2",type:"lambda",f:.034,k:.065},{name:"Mu 1",type:"mu",f:.046,k:.065},{name:"Mu 2",type:"mu",f:.058,k:.065},{name:"Pi 1",type:"pi",f:.062,k:.061},{name:"Rho 1",type:"rho",f:.09,k:.059},{name:"Rho 2",type:"rho",f:.102,k:.055},{name:"Sigma 1",type:"sigma",f:.09,k:.057},{name:"Sigma 2",type:"sigma",f:.11,k:.0523},{name:"Theta 1",type:"theta",f:.03,k:.057},{name:"Theta 2",type:"theta",f:.038,k:.061},{name:"Xi 1",type:"xi",f:.01,k:.041},{name:"Xi 2",type:"xi",f:.014,k:.047},{name:"Zeta 1",type:"zeta",f:.022,k:.061},{name:"Zeta 2",type:"zeta",f:.026,k:.059}];function ca(a){let e;return{c(){e=B("canvas"),this.h()},l(n){e=z(n,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(e).forEach(h),this.h()},h(){E(e,"id","canvas"),E(e,"width",a[0].width),E(e,"height",a[0].height),E(e,"class","svelte-1b0ol19")},m(n,o){A(n,e,o)},p:ne,i:ne,o:ne,d(n){n&&h(e)}}}function ua(a){const e={width:window.innerWidth-50,height:window.innerHeight-10},n={presetParams:4,initialConditions:"randomSpots",reset:()=>f(),pause:!1},o={iteration:0},t={f:We[n.presetParams].f,k:We[n.presetParams].k};let i,r;const s=async()=>{const c=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);i=new c.GUI,i.domElement.setAttribute("style","background-color: black"),i.add(t,"f").name("Feed rate").listen(),i.add(t,"k").name("Kill rate").listen(),i.add(n,"pause").name("Pause"),i.add(n,"reset").name("Reset simulation");const u=We.reduce((d,g,C)=>(d[g.name]=C,d),{});i.add(n,"presetParams",u).onFinishChange(()=>{t.f=We[n.presetParams].f,t.k=We[n.presetParams].k});const p={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots"};i.add(n,"initialConditions",p).onFinishChange(n.reset);const m=i.add(o,"iteration").listen();m.domElement.style.pointerEvents="none"},l=()=>{document.addEventListener("keydown",c=>{if(c.code==="Space")return n.pause=!n.pause,c.preventDefault();if(c.code==="KeyR")return f(),c.preventDefault()})},f=()=>{const c=document.getElementById("canvas");if(!c)throw new Error("Canvas container not ready");r&&r.destroy(),r=Le({extensions:["OES_texture_float"],canvas:c}),o.iteration=0;const u=2**11;let p;n.initialConditions==="randomSpots"?p=sa(u,.001):n.initialConditions==="middleCircleAndRandomSpots"?p=la(u,.005,.05):p=fa(u,.02);const m=Array(2).fill(0).map(()=>r.framebuffer({color:r.texture({radius:u,data:p,wrap:"repeat",type:"float"}),depthStencil:!1})),d=r({frag:`
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float Da;
-uniform float Db;
-uniform float f;
-uniform float k;
-
-varying vec2 uv;
-
-vec2 laplacianDiff() {
-    vec2 r = vec2(0.0, 0.0);
-
-    // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(${u})).rg * 0.05;
-    // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(${u})).rg * 0.2;
-    // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(${u})).rg * 0.05;
-
-    // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(${u})).rg * 0.2;
-    // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(${u})).rg * -1.0;
-    // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(${u})).rg * 0.2;
-
-    // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(${u})).rg * 0.05;
-    // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(${u})).rg * 0.2;
-    // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(${u})).rg * 0.05;
-
-    return r;
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec2 L = laplacianDiff();
-    float La = L.r;
-    float Lb = L.g;
-
-    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
-    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
-
-    gl_FragColor = vec4(newA, newB, 0, 1);
-}`,framebuffer:C=>m[(C.tick+1)%2],uniforms:{Da:r.prop("Da"),Db:r.prop("Db"),f:r.prop("f"),k:r.prop("k")}}),g=r({frag:`
-precision mediump float;
-uniform sampler2D prevState;
-varying vec2 uv;
-void main() {
-    vec2 state = texture2D(prevState, uv).rg;
-    gl_FragColor = vec4(state, 0, 1);
-}`,vert:`
-precision mediump float;
-attribute vec2 position;
-varying vec2 uv;
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}`,attributes:{position:[-4,-4,4,-4,0,4]},uniforms:{prevState:({tick:C})=>m[C%2]},depth:{enable:!1},count:3});r.frame(()=>{g(()=>{r.draw(),!n.pause&&(o.iteration++,d({Da:1,Db:.5,...t}))})})};return $e(()=>{s(),l(),f()}),ye(()=>{i.destroy(),r.destroy()}),[e]}let pa=class extends Q{constructor(e){super(),J(this,e,ua,ca,ee,{})}};const ma=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},da=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),ha=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),Xe=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"Alpha 1",type:"alpha",f:.01,k:.047},{name:"Alpha 2",type:"alpha",f:.014,k:.053},{name:"Beta 1",type:"beta",f:.014,k:.039},{name:"Beta 2",type:"beta",f:.026,k:.051},{name:"Epsilon 1",type:"epsilon",f:.018,k:.055},{name:"Epsilon 2",type:"epsilon",f:.022,k:.059},{name:"Epsilon 1",type:"epsilon",f:.034,k:.063},{name:"Gamma 1",type:"gamma",f:.022,k:.051},{name:"Gamma 2",type:"gamma",f:.026,k:.055},{name:"Iota 1",type:"iota",f:.046,k:.0594},{name:"Lambda 1",type:"lambda",f:.026,k:.061},{name:"Lambda 2",type:"lambda",f:.034,k:.065},{name:"Mu 1",type:"mu",f:.046,k:.065},{name:"Mu 2",type:"mu",f:.058,k:.065},{name:"Pi 1",type:"pi",f:.062,k:.061},{name:"Rho 1",type:"rho",f:.09,k:.059},{name:"Rho 2",type:"rho",f:.102,k:.055},{name:"Sigma 1",type:"sigma",f:.09,k:.057},{name:"Sigma 2",type:"sigma",f:.11,k:.0523},{name:"Theta 1",type:"theta",f:.03,k:.057},{name:"Theta 2",type:"theta",f:.038,k:.061},{name:"Xi 1",type:"xi",f:.01,k:.041},{name:"Xi 2",type:"xi",f:.014,k:.047},{name:"Zeta 1",type:"zeta",f:.022,k:.061},{name:"Zeta 2",type:"zeta",f:.026,k:.059}],va=`precision mediump float;
-attribute vec2 position;
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}
-`,ga=`precision mediump float;
-uniform sampler2D prevState;
-varying vec2 uv;
-
-void main() {
-    vec2 state = texture2D(prevState, uv).rg;
-    gl_FragColor = vec4(state, 0, 1);
-}
-`,xa=`precision mediump float;
-
-uniform float radius;
-uniform sampler2D prevState;
-uniform bool pauseSimulation;
-uniform float Da;
-uniform float Db;
-uniform float f;
-uniform float k;
-
-uniform vec2 mousePosition;
-uniform bool penIsActive;
-uniform bool eraserIsActive;
-uniform float penRadius;
-
-varying vec2 uv;
-
-vec2 laplacianDiff() {
-    vec2 r = vec2(0.0, 0.0);
-
-    // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
-    // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
-    // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
-
-    // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
-    // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
-    // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
-
-    // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
-    // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
-    // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
-
-    return r;
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec2 L = laplacianDiff();
-    float La = L.r;
-    float Lb = L.g;
-
-    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
-    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
-
-    if (penIsActive && distance(uv, mousePosition) < penRadius) {
-        gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (eraserIsActive && distance(uv, mousePosition) < penRadius) {
-        gl_FragColor = vec4(1.0, 0.0, 0, 1);
-    } else if (pauseSimulation) {
-        gl_FragColor = vec4(A, B, 0, 1);
-    } else {
-        gl_FragColor = vec4(newA, newB, 0, 1);
-    }
-}
-`;function _a(a){let e,n,o;return{c(){e=B("canvas"),this.h()},l(t){e=z(t,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(e).forEach(h),this.h()},h(){E(e,"id","canvas"),E(e,"width",a[0].width),E(e,"height",a[0].height),E(e,"class","svelte-1b0ol19")},m(t,i){A(t,e,i),n||(o=[Z(e,"mousemove",a[1]),Z(e,"mousedown",we(a[2])),Z(e,"mouseup",a[2]),Z(e,"contextmenu",we(ba))],n=!0)},p:ne,i:ne,o:ne,d(t){t&&h(e),n=!1,Be(o)}}}const nt=11,ba=a=>a;function wa(a){const e={width:window.innerWidth-50,height:window.innerHeight-10},n={presetParams:4,initialConditions:"randomSpots",reset:()=>c(),pause:!1},o={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3},t={iteration:0},i={f:Xe[n.presetParams].f,k:Xe[n.presetParams].k};let r,s;const l=async()=>{const m=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);r=new m.GUI,r.domElement.setAttribute("style","background-color: black"),r.add(i,"f").name("Feed rate").listen(),r.add(i,"k").name("Kill rate").listen(),r.add(n,"pause").name("Pause"),r.add(n,"reset").name("Reset simulation");const d=Xe.reduce((S,y,M)=>(S[y.name]=M,S),{});r.add(n,"presetParams",d).onFinishChange(()=>{i.f=Xe[n.presetParams].f,i.k=Xe[n.presetParams].k});const g={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots"};r.add(n,"initialConditions",g).onFinishChange(n.reset);const C=r.add(t,"iteration").listen();C.domElement.style.pointerEvents="none",r.add(o,"penSize",1,nt,1).name("Pen size")},f=()=>{document.addEventListener("keydown",m=>{if(m.code==="Space")return n.pause=!n.pause,m.preventDefault();if(m.code==="KeyR")return c(),m.preventDefault()})},c=()=>{const m=document.getElementById("canvas");if(!m)throw new Error("Canvas container not ready");s&&s.destroy(),s=Le({extensions:["OES_texture_float"],canvas:m}),t.iteration=0;const d=2**nt;let g;n.initialConditions==="randomSpots"?g=da(d,.001):n.initialConditions==="middleCircleAndRandomSpots"?g=ma(d,.005,.05):g=ha(d,.02);const C=Array(2).fill(0).map(()=>s.framebuffer({color:s.texture({radius:d,data:g,wrap:"repeat",type:"float"}),depthStencil:!1})),S=s({frag:xa,framebuffer:M=>C[(M.tick+1)%2],uniforms:{Da:s.prop("Da"),Db:s.prop("Db"),f:s.prop("f"),k:s.prop("k"),radius:d,pauseSimulation:s.prop("pauseSimulation"),mousePosition:s.prop("mousePosition"),penRadius:s.prop("penRadius"),penIsActive:s.prop("penIsActive"),eraserIsActive:s.prop("eraserIsActive")}}),y=s({frag:ga,vert:va,attributes:{position:[-4,-4,4,-4,0,4]},uniforms:{prevState:({tick:M})=>C[M%2]},depth:{enable:!1},count:3});s.frame(()=>{y(()=>{s.draw(),n.pause||t.iteration++,S({Da:1,Db:.5,pauseSimulation:n.pause,mousePosition:[o.x,o.y],penRadius:1/2**(nt-o.penSize),penIsActive:o.pressedLeft,eraserIsActive:o.pressedRight,...i})})})},u=m=>{if(!m.currentTarget)throw new Error("No target for the onmousemove event");if(!m.currentTarget.width||!m.currentTarget.height)throw new Error("No target dimensions for the onmousemove event target");const{x:d,y:g}=m,{width:C,height:S}=m.currentTarget,y=d/C,M=(S-g)/S;o.x=y,o.y=M},p=m=>{if(![0,2].includes(m.button)||!["mouseup","mousedown"].includes(m.type))return;let d=m.type==="mousedown";m.button===0&&(o.pressedLeft=d),m.button===2&&(o.pressedRight=d)};return $e(()=>{l(),f(),c()}),ye(()=>{r.destroy(),s.destroy()}),[e,u,p]}let $a=class extends Q{constructor(e){super(),J(this,e,wa,_a,ee,{})}};const He=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"STX 1",type:"N.A",f:.0353,k:.0614},{name:"STX 2",type:"N.A",f:.0201,k:.0602},{name:"STX 2",type:"N.A",f:.0181,k:.0435},{name:"α 1",type:"alpha",f:.01,k:.047},{name:"α 2",type:"alpha",f:.014,k:.053},{name:"β 1",type:"beta",f:.014,k:.039},{name:"β 2",type:"beta",f:.026,k:.051},{name:"δ 1",type:"delta",f:.03,k:.055},{name:"δ 2",type:"delta",f:.042,k:.059},{name:"ε 1",type:"epsilon",f:.018,k:.055},{name:"ε 2",type:"epsilon",f:.022,k:.059},{name:"η 1",type:"eta",f:.034,k:.063},{name:"γ 1",type:"gamma",f:.022,k:.051},{name:"γ 2",type:"gamma",f:.026,k:.055},{name:"ι 1",type:"iota",f:.046,k:.0594},{name:"κ 1",type:"kappa",f:.082,k:.06},{name:"κ 2",type:"kappa",f:.058,k:.063},{name:"λ 1",type:"lambda",f:.026,k:.061},{name:"λ 2",type:"lambda",f:.034,k:.065},{name:"μ 1",type:"mu",f:.046,k:.065},{name:"μ 2",type:"mu",f:.058,k:.065},{name:"ν 2",type:"nu",f:.046,k:.067},{name:"π 1",type:"pi",f:.062,k:.061},{name:"ρ 1",type:"rho",f:.09,k:.059},{name:"ρ 2",type:"rho",f:.102,k:.055},{name:"σ 1",type:"sigma",f:.09,k:.057},{name:"θ 2",type:"sigma",f:.11,k:.0523},{name:"θ 1",type:"theta",f:.03,k:.057},{name:"θ 2",type:"theta",f:.038,k:.061},{name:"ξ 1",type:"xi",f:.01,k:.041},{name:"ξ 2",type:"xi",f:.014,k:.047},{name:"ζ 1",type:"zeta",f:.022,k:.061},{name:"ζ 2",type:"zeta",f:.026,k:.059}];function qt(a,e,n){const o=a.slice();return o[17]=e[n],o}function Yt(a){let e,n,o,t,i,r,s,l,f,c=He,u=[];for(let p=0;p<c.length;p+=1)u[p]=Gt(qt(a,c,p));return r=new Fe({props:{sketch:a[4]}}),{c(){e=B("div"),n=R("Select f and k parameters on the map of use a preset"),o=q(),t=B("select");for(let p=0;p<u.length;p+=1)u[p].c();i=q(),N(r.$$.fragment),this.h()},l(p){e=z(p,"DIV",{});var m=T(e);n=P(m,"Select f and k parameters on the map of use a preset"),m.forEach(h),o=Y(p),t=z(p,"SELECT",{class:!0});var d=T(t);for(let g=0;g<u.length;g+=1)u[g].l(d);d.forEach(h),i=Y(p),G(r.$$.fragment,p),this.h()},h(){E(t,"class","full-width svelte-1qznlxf"),a[0]===void 0&&it(()=>a[6].call(t))},m(p,m){A(p,e,m),w(e,n),A(p,o,m),A(p,t,m);for(let d=0;d<u.length;d+=1)u[d].m(t,null);Ve(t,a[0]),A(p,i,m),U(r,p,m),s=!0,l||(f=[Z(t,"change",a[6]),Z(t,"change",a[7])],l=!0)},p(p,m){if(m&0){c=He;let d;for(d=0;d<c.length;d+=1){const g=qt(p,c,d);u[d]?u[d].p(g,m):(u[d]=Gt(g),u[d].c(),u[d].m(t,null))}for(;d<u.length;d+=1)u[d].d(1);u.length=c.length}m&1&&Ve(t,p[0])},i(p){s||(b(r.$$.fragment,p),s=!0)},o(p){k(r.$$.fragment,p),s=!1},d(p){p&&h(e),p&&h(o),p&&h(t),ke(u,p),p&&h(i),O(r,p),l=!1,Be(f)}}}function Gt(a){let e,n=a[17].type+"",o,t,i=a[17].name+"",r,s,l=a[17].f+"",f,c,u=a[17].k+"",p,m;return{c(){e=B("option"),o=R(n),t=R(" - "),r=R(i),s=R(" (f/k "),f=R(l),c=R(" / "),p=R(u),m=R(`)
-                `),this.h()},l(d){e=z(d,"OPTION",{});var g=T(e);o=P(g,n),t=P(g," - "),r=P(g,i),s=P(g," (f/k "),f=P(g,l),c=P(g," / "),p=P(g,u),m=P(g,`)
-                `),g.forEach(h),this.h()},h(){e.__value=a[17],e.value=e.__value},m(d,g){A(d,e,g),w(e,o),w(e,t),w(e,r),w(e,s),w(e,f),w(e,c),w(e,p),w(e,m)},p:ne,d(d){d&&h(e)}}}function ka(a){let e,n,o=a[1]?"Close":"F/K selection",t,i,r,s,l,f=a[1]&&Yt(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){E(n,"class","full-width svelte-1qznlxf"),E(n,"id","toggleButton"),E(e,"id","container"),E(e,"class","svelte-1qznlxf"),Ie(e,"no-cursor",a[2])},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[5]),s=!0)},p(c,[u]){(!r||u&2)&&o!==(o=c[1]?"Close":"F/K selection")&&pe(t,o),c[1]?f?(f.p(c,u),u&2&&b(f,1)):(f=Yt(c),f.c(),b(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re()),(!r||u&4)&&Ie(e,"no-cursor",c[2])},i(c){r||(b(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}function ya(a,e,n){const o=Ge();let t=He[0],i=!0;const r=[0,.12],s=[.03,.07],l=v=>{const{f:x,k:$}=v,L=d.map($,s[0],s[1],0,d.width),D=d.map(x,r[0],r[1],d.height,0);return{x:L,y:D}},f=v=>{const{x,y:$}=v,L=d.map($,d.height,0,r[0],r[1]),D=d.map(x,0,d.width,s[0],s[1]);return{f:L,k:D}},c=v=>{const x=v.mouseX,$=v.mouseY;if(x<0||$<0||x>v.width||$>v.height)return;const{f:L,k:D}=f({x:v.mouseX,y:v.mouseY});n(0,t={f:L,k:D,name:"custom",type:"manual"}),o("fkupdated",t)},u=v=>{v.noStroke();const x=v.textSize();for(const $ of He){const{x:L,y:D}=l({f:$.f,k:$.k}),_=$.f===t.f&&$.k===t.k;v.circle(L,D,3),v.textSize(_?x*2:x),v.fill(_?[240,240,150]:[255,255,255]),v.text($.name,L-v.textWidth($.name)/2,D-10)}},p=v=>{v.noFill(),v.stroke("red");const{x,y:$}=l(t);v.text("F",10,$>10?$-5:$+15),v.line(0,$,v.width,$),v.text("K",x<v.width-10?x+5:x-15,v.height-10),v.line(x,0,x,v.height),v.circle(x,$,10)},m=v=>{const{f:x,k:$}=t,L=`F: ${x.toFixed(4)}`,D=`K: ${$.toFixed(4)}`,_=v.textSize(),V=v.height*.05;v.textStyle(v.BOLD),v.textSize(V),v.fill("white"),v.stroke(0),v.strokeWeight(1),v.text(L,v.width*.05,v.textSize()),v.text(D,v.width*.05,v.textSize()+v.textSize()+6),v.textStyle(v.NORMAL),v.textSize(_)};let d,g=!1;const C=v=>{d=v;let x;v.preload=()=>{x=v.loadImage(Ze+"/parameters_map.png")},v.setup=()=>{v.createCanvas(400,400),v.frameRate(55)},v.draw=()=>{v.background(255),v.tint(150,190),v.image(x,0,0,v.width,v.height),u(v),p(v),m(v),n(2,g=!1),v.mouseIsPressed&&(c(v),n(2,g=!0))}},S=()=>{n(1,i=!i),i||d.remove()};ye(()=>d?.remove());function y(){t=at(this),n(0,t)}return[t,i,g,o,C,S,y,()=>o("fkupdated",t)]}class Sa extends Q{constructor(e){super(),J(this,e,ya,ka,ee,{})}}const Ea=`precision mediump float;
-attribute vec2 position;
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
-    gl_Position = vec4(position, 0, 1);
-}
-`,Aa=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    gl_FragColor = vec4(A, B, 0.0, 1.0);
-}
-
-`,Da=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float PI = 3.14159265359;
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = sin(iteration*PI/180.0);
-    if (val < 0.0) {
-        val = -1.0 * val;
-    }
-    gl_FragColor = vec4(A, B, val, 1.0);
-}
-`,Ba=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (A + B) / 2.0;
-
-    gl_FragColor = vec4(val, val, val, 1.0);
-}
-
-`,za=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (1.0 + A - B) / 2.0;
-
-    gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
-}
-`,Ca=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (1.0 + A - B) / 2.0;
-
-    gl_FragColor = vec4(val, val, val, 1.0);
-}
-`,Ta=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
-vec3 rgb2hsv(vec3 c) {
-    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
-    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
-    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
-
-    float d = q.x - min(q.w, q.y);
-    float e = 1.0e-10;
-    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
-}
-
-// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
-vec3 hsv2rgb(vec3 c) {
-    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    // vec3 color1 = vec3(1.0, 0.0, 0.0);
-    // vec3 color2 = vec3(0.0, 1.0, 0.0);
-    // vec3 result = color1 * A + color2 * B;
-
-    vec3 color1RGB = vec3(0.639, 0.941, 0.717);
-    vec3 color2RGB = vec3(0.929, 0.082, 0.705);
-
-    vec3 color1HSV = rgb2hsv(color1RGB);
-    vec3 color2HSV = rgb2hsv(color2RGB);
-
-    float color1Offset = (cos(iteration * 0.001) + 1.0) * 0.5;
-    float color1newH = 0.5 * (color1HSV.x + color1Offset);
-    vec3 color1newHSV = vec3(color1newH, color1HSV.g, color1HSV.b);
-
-    float color2Offset = (cos(iteration * 0.002)) * 0.5;
-    float color2newH = 0.5 * (color2HSV.x + color2Offset + 0.33);
-    vec3 color2newHSV = vec3(color2newH, color2HSV.g, color2HSV.b);
-
-
-    vec3 resultHSV = color1newHSV * A + color2newHSV * B;
-    vec3 result = hsv2rgb(resultHSV);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,Ia=`// Colors scheme inspired by Robert Munafo described here:
-// https://www.mrob.com/pub/comp/xmorphia/index.html
-// 
-// A is blue
-// B is red
-
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float red = A; // The more A the redder
-    float blue = 1.0 - A; // The less A the bleuer
-
-    float green = max(A, B) - min(A, B);
-
-    vec3 result = vec3(red, green, blue);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,La=`// Colors scheme inspired by Robert Munafo described here:
-// https://www.mrob.com/pub/comp/xmorphia/index.html
-// 
-// A is blue
-// B is red
-
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec3 color1 = vec3(0.0, 0.0, 1.0);
-    vec3 color2 = vec3(1.0, 0.0, 0.0);
-    vec3 result = vec3(A, 0.0, 1.0-A);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,Ra=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    if (A > 0.9) {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else if (A > 0.4) {
-        gl_FragColor = vec4(1.0 - A, 0.0, 0.0, 1.0);
-    } else { 
-        gl_FragColor = vec4(0.0, A, 0.0, 1.0);
-    }
-}
-`,Pa=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
-    vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
-    vec4 color = mix(blue, red, A);
-
-    vec4 softRed = vec4(0.8588, 0.2824, 0.3765, 1.0);
-    vec4 softBlue = vec4(0.2824, 0.3882, 0.8588, 1.0);
-    // vec4 softColor = mix(blue, red, (A-0.4)/0.6);
-    // vec4 softColor = mix(blue, red, (A-0.4)/0.4);
-    vec4 softColor = mix(softBlue, softRed, 1.0-A);
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(color);
-    }
-
-}
-`,Fa=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/MATLAB_cool.frag
-float colormap_red(float x) {
-    return (1.0 + 1.0 / 63.0) * x - 1.0 / 63.0;
-}
-
-float colormap_green(float x) {
-    return -(1.0 + 1.0 / 63.0) * x + (1.0 + 1.0 / 63.0);
-}
-
-vec4 colormap(float x) {
-    float r = clamp(colormap_red(x), 0.0, 1.0);
-    float g = clamp(colormap_green(x), 0.0, 1.0);
-    float b = 1.0;
-    return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,Ma=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdBu.frag
-float colormap_red(float x) {
-	if (x < 0.09771832105856419) {
-		return 7.60263247863246E+02 * x + 1.02931623931624E+02;
-	} else if (x < 0.3017162107441106) {
-		return (-2.54380938558548E+02 * x + 4.29911571188803E+02) * x + 1.37642085716717E+02;
-	} else if (x < 0.4014205790737471) {
-		return 8.67103448276151E+01 * x + 2.18034482758611E+02;
-	} else if (x < 0.5019932233215039) {
-		return -6.15461538461498E+01 * x + 2.77547692307680E+02;
-	} else if (x < 0.5969483882550937) {
-		return -3.77588522588624E+02 * x + 4.36198819698878E+02;
-	} else if (x < 0.8046060096654594) {
-		return (-6.51345897546620E+02 * x + 2.09780968434337E+02) * x + 3.17674951640855E+02;
-	} else {
-		return -3.08431855203590E+02 * x + 3.12956742081421E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09881640500975222) {
-		return 2.41408547008547E+02 * x + 3.50427350427364E-01;
-	} else if (x < 0.5000816285610199) {
-		return ((((1.98531871433258E+04 * x - 2.64108262469187E+04) * x + 1.10991785969817E+04) * x - 1.92958444776211E+03) * x + 8.39569642882186E+02) * x - 4.82944517518776E+01;
-	} else if (x < 0.8922355473041534) {
-		return (((6.16712686949223E+03 * x - 1.59084026055125E+04) * x + 1.45172137257997E+04) * x - 5.80944127411621E+03) * x + 1.12477959061948E+03;
-	} else {
-		return -5.28313797313699E+02 * x + 5.78459299959206E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.1033699568661857) {
-		return 1.30256410256410E+02 * x + 3.08518518518519E+01;
-	} else if (x < 0.2037526071071625) {
-		return 3.38458128078815E+02 * x + 9.33004926108412E+00;
-	} else if (x < 0.2973267734050751) {
-		return (-1.06345054944861E+02 * x + 5.93327252747168E+02) * x - 3.81852747252658E+01;
-	} else if (x < 0.4029109179973602) {
-		return 6.68959706959723E+02 * x - 7.00740740740798E+01;
-	} else if (x < 0.5006715489526758) {
-		return 4.87348695652202E+02 * x + 3.09898550724286E+00;
-	} else if (x < 0.6004396902588283) {
-		return -6.85799999999829E+01 * x + 2.81436666666663E+02;
-	} else if (x < 0.702576607465744) {
-		return -1.81331701891043E+02 * x + 3.49137263626287E+02;
-	} else if (x < 0.9010407030582428) {
-		return (2.06124143164576E+02 * x - 5.78166906665595E+02) * x + 5.26198653917172E+02;
-	} else {
-		return -7.36990769230737E+02 * x + 8.36652307692262E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,Na=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
-float colormap_red(float x) {
-	if (x < 0.09790863520700754) {
-		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
-	} else if (x < 0.2001887081633112) {
-		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
-	} else if (x < 0.3190117539655621) {
-		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
-	} else if (x < 0.500517389125164) {
-		return 255.0;
-	} else if (x < 0.6068377196788788) {
-		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
-	} else if (x < 0.9017468988895416) {
-		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
-	} else {
-		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09638568758964539) {
-		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
-	} else if (x < 0.4987066686153412) {
-		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
-	} else if (x < 0.6047312345537269) {
-		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
-	} else if (x < 0.7067635953426361) {
-		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
-	} else {
-		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.09982818011951204) {
-		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
-	} else if (x < 0.2958717460833126) {
-		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
-	} else if (x < 0.4900527540014758) {
-		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
-	} else if (x < 0.6017014681258838) {
-		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
-	} else if (x < 0.7015737100463595) {
-		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
-	} else if (x < 0.8237156500567735) {
-		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
-	} else {
-		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,Ua=`precision mediump float;
+`,wr=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -2837,7 +1188,7 @@ void main() {
     }
 
 }
-`,Oa=`precision mediump float;
+`,$r=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -2900,6 +1251,1415 @@ float colormap_blue(float x) {
 
 vec4 colormap(float x) {
     return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,kr=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
+float colormap_red(float x) {
+	if (x < 0.09790863520700754) {
+		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
+	} else if (x < 0.2001887081633112) {
+		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
+	} else if (x < 0.3190117539655621) {
+		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
+	} else if (x < 0.500517389125164) {
+		return 255.0;
+	} else if (x < 0.6068377196788788) {
+		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
+	} else if (x < 0.9017468988895416) {
+		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
+	} else {
+		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09638568758964539) {
+		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
+	} else if (x < 0.4987066686153412) {
+		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
+	} else if (x < 0.6047312345537269) {
+		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
+	} else if (x < 0.7067635953426361) {
+		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
+	} else {
+		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.09982818011951204) {
+		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
+	} else if (x < 0.2958717460833126) {
+		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
+	} else if (x < 0.4900527540014758) {
+		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
+	} else if (x < 0.6017014681258838) {
+		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
+	} else if (x < 0.7015737100463595) {
+		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
+	} else if (x < 0.8237156500567735) {
+		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
+	} else {
+		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((B-0.1)*(1.0/0.9));
+
+
+    if (B < 0.1) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,he={},yr=a=>{const e={vert:ar,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}};he.raw=a({frag:lr,...e}),he.A_transform_seismic=a({frag:$r,...e}),he.A_gradiant1=a({frag:hr,...e}),he.A_gradiant2=a({frag:vr,...e}),he.A_MATLAB_cool=a({frag:gr,...e}),he.A_MATLAB_parula=a({frag:xr,...e}),he.A_IDL_CB_RdBu=a({frag:_r,...e}),he.A_IDL_CB_RdYiBu=a({frag:br,...e}),he.A_IDL_CB_BuYiRd=a({frag:wr,...e}),he.B_IDL_CB_RdYiBu=a({frag:kr,...e}),he.grayscale=a({frag:fr,...e}),he.blackwhite=a({frag:cr,...e}),he.whiteblack=a({frag:ur,...e}),he.timebasedblue=a({frag:sr,...e}),he.lerp=a({frag:pr,...e}),he.mrob=a({frag:mr,...e}),he.redblue=a({frag:dr,...e})},Sr=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(he[e]||he.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},Er=`precision mediump float;
+
+uniform float radius;
+uniform sampler2D prevState;
+uniform bool pauseSimulation;
+uniform float Da;
+uniform float Db;
+uniform float f;
+uniform float k;
+
+uniform bool penIsActive;
+uniform bool eraserIsActive;
+uniform float penDensity;
+
+varying vec2 uv;
+varying vec2 mouseUv;
+varying float scaledPenRadius;
+
+// https://thebookofshaders.com/10/
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
+}
+
+vec2 laplacianDiff() {
+    vec2 r = vec2(0.0, 0.0);
+
+    // top left
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
+    // top
+    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
+    // top right
+    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
+
+    // left
+    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
+    // middle
+    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
+    // right
+    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
+
+    // bottom left
+    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
+    // bottom
+    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
+    // bottom right
+    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
+
+    return r;
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec2 L = laplacianDiff();
+    float La = L.r;
+    float Lb = L.g;
+
+    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
+    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
+
+
+    float rnd = random(uv);
+    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
+        gl_FragColor = vec4(0.0, 1.0, 0, 1);
+    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
+        gl_FragColor = vec4(1.0, 0.0, 0, 1);
+    } else if (pauseSimulation) {
+        gl_FragColor = vec4(A, B, 0, 1);
+    } else {
+        gl_FragColor = vec4(newA, newB, 0, 1);
+    }
+}
+`,Ar=`precision mediump float;
+
+uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+uniform float penRadius;
+
+attribute vec2 position;
+
+varying vec2 uv;
+varying vec2 mouseUv;
+varying float scaledPenRadius;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    mouseUv = (mousePosition * zoomLevel) + pan * (1.0 - zoomLevel);
+    scaledPenRadius = penRadius * zoomLevel;
+    gl_Position = vec4(position, 0, 1);
+}
+`;let mn;const Dr=(a,e)=>{mn=a({frag:Er,vert:Ar,attributes:{position:[-4,-4,4,-4,0,4]},count:3,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,f:a.prop("f"),k:a.prop("k"),radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive"),eraserIsActive:a.prop("eraserIsActive"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Br=a=>{const{inputBuffer:e,outputBuffer:n,pauseSimulation:o,mouseState:t,simulationParameters:i,worldSize:r}=a;mn({inputBuffer:e,outputBuffer:n,pauseSimulation:o,zoomLevel:t.zoomLevel,pan:[t.panX,t.panY],mousePosition:[t.x,t.y],penRadius:1/2**(r-t.penSize),penDensity:t.penDensity,penIsActive:t.pressedLeft,eraserIsActive:t.pressedRight,...i})},zr=(a,e)=>a==="randomSpots"?Ir(e,.001):a==="middleCircleAndRandomSpots"?Cr(e,.005,.05):a==="empty"?Tr(e):Lr(e,.02),Cr=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},Tr=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),Ir=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),Lr=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),Rr=`precision highp float;
+
+attribute vec2 position;
+
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
+    gl_Position = vec4(position, 0, 1);
+}
+`,Pr=`precision highp float;
+
+uniform sampler2D prevState;
+
+varying vec2 uv;
+
+void main() {
+    vec4 color = texture2D(prevState, uv);
+
+    float division = 10.0;
+    float column = mod(uv.x, 1.0 / division);
+    float c = column * division;
+
+    float row = mod(uv.y, 1.0 / division);
+    float r = row * division;
+
+    // I haven't found a way to compare the value to an exact value
+    // Might be a precision issue, or just that I'm missing something
+    if (c < 0.05 || r < 0.05) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    } else {
+       gl_FragColor = color;
+    }
+}
+`;let dn;const Fr=a=>{dn=a({vert:Rr,frag:Pr,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Mr=a=>{const{inputBuffer:e,outputBuffer:n,zoomState:o}=a;dn({inputBuffer:e,outputBuffer:n,zoomLevel:o.zoomLevel,pan:[o.panX,o.panY]})},Nr=`precision mediump float;
+
+uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+
+attribute vec2 position;
+
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    gl_Position = vec4(position, 0, 1);
+}
+`,Ur=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform vec2 mousePosition;
+uniform float penRadius;
+
+varying vec2 uv;
+
+void main() {
+    vec4 color = texture2D(prevState, uv);
+
+    float d = distance(uv, mousePosition);
+    if (
+        (d >= penRadius && d <= penRadius + 0.001) ||
+        (uv.x >= mousePosition.x - 0.001 && uv.x <= mousePosition.x + 0.001 && uv.y >= mousePosition.y - 0.01 && uv.y <= mousePosition.y + 0.01) ||
+        (uv.x >= mousePosition.x - 0.01 && uv.x <= mousePosition.x + 0.01 && uv.y >= mousePosition.y - 0.001 && uv.y <= mousePosition.y + 0.001))
+    {
+        gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
+    } else {
+        gl_FragColor = color;
+    }
+}
+`;let hn;const Or=a=>{hn=a({frag:Ur,vert:Nr,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}})},Vr=a=>{const{inputBuffer:e,mouseState:n,outputBuffer:o,worldSize:t}=a;hn({inputBuffer:e,outputBuffer:o,mousePosition:[n.x,n.y],penRadius:1/2**(t-n.penSize),zoomLevel:n.zoomLevel,pan:[n.panX,n.panY]})},vn=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=zr(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f),u=Array(2).fill(0).map(f);return Dr(r,s),yr(r),Fr(r),Or(r),r.frame(()=>{e.pause||n.iteration++;let p=c[(n.iteration+1)%2];for(let m=0;m<e.speed;m++){n.iteration++;const d=c[n.iteration%2];p=c[(n.iteration+1)%2],Br({inputBuffer:d,outputBuffer:p,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}Hr({inputTexture:p,graphicsTextures:u,controls:e,info:n,mouseState:o})}),r},Hr=a=>{const{inputTexture:e,graphicsTextures:n,controls:o,info:t,mouseState:i}=a;let r=0;r++;const s=e;let l=n[r%2];if(!o.grid&&!o.pen&&(l=null),Sr({colorMode:o.colors,inputBuffer:s,iteration:t.iteration,outputBuffer:l,zoomState:i}),o.grid){r++;const f=n[(r+1)%2];let c=n[r%2];o.pen||(c=null),Mr({inputBuffer:f,outputBuffer:c,zoomState:i})}if(o.pen){r++;const f=n[(r+1)%2],c=null;Vr({mouseState:i,worldSize:t.worldSize,inputBuffer:f,outputBuffer:c})}};const{window:Kr}=je;function qr(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,E=2**a[0].worldSize+"",S,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,b,V,X;return n=new ir({}),n.$on("fkupdated",a[4]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),S=R(E),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),S=P(ae,E),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){y(t,"id","datgui-container"),y(t,"class","svelte-198vt5w"),y(s,"for","worldSize"),y(c,"id","worldSize"),y(c,"type","number"),y(c,"step","1"),y(D,"id","canvas"),y(D,"width",a[1].width),y(D,"height",a[1].height),y(D,"class","svelte-198vt5w")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,S),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),b=!0,V||(X=[Z(Kr,"keydown",a[2]),Z(c,"input",a[5]),Z(c,"change",a[3]),Z(D,"contextmenu",we(Yr))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!b||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!b||F&1)&&E!==(E=2**I[0].worldSize+"")&&pe(S,E),(!b||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){b||(_(n.$$.fragment,I),b=!0)},o(I){k(n.$$.fragment,I),b=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const Yr=a=>a;function Gr(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>d(),pause:!1,grid:!1,pen:!1,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:Ee[0].f,k:Ee[0].k};let l,f;const c=async()=>{const E=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new E.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const S=document.getElementById("datgui-container");if(!S)throw new Error("Gui container not ready");S.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"pen").name("Show pen"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_MATLAB_parula","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const M={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",M).onFinishChange(t.reset).name("Initial conditions");const v=l.add(r,"iteration").listen();v.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed").listen(),l.add(i,"penSize",0,r.worldSize).name("Pen size").listen(),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=E=>{if(E.code==="Space"){t.pause=!t.pause,E.preventDefault();return}if(E.code==="KeyR"&&!E.getModifierState("Control")){d(),E.preventDefault();return}};let p;const m=()=>{i.x=Math.random(),i.y=Math.random(),i.penSize=Math.random()*3,i.pressedLeft=!0,setTimeout(()=>i.pressedLeft=!1,500),p=setTimeout(m,Math.random()*5e3)},d=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=vn({controls:t,info:r,mouseState:i,simulationParameters:s}),p&&clearTimeout(p),m())},g=E=>{s.f=E.detail.f,s.k=E.detail.k,s.f>.06?t.speed=70:s.f>.03?t.speed=50:t.speed=2};$e(()=>{d()}),ye(()=>{l.destroy(),f.destroy()});function C(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,d,g,C]}class Ct extends Q{constructor(e){super(),J(this,e,Gr,qr,ee,{})}}function Tt(a,e,n){const o=a.slice();return o[17]=e[n],o}function It(a){let e,n,o,t,i,r,s,l,f,c=Ee,u=[];for(let p=0;p<c.length;p+=1)u[p]=Lt(Tt(a,c,p));return r=new Fe({props:{sketch:a[4]}}),{c(){e=B("div"),n=R("Select f and k parameters on the map of use a preset"),o=q(),t=B("select");for(let p=0;p<u.length;p+=1)u[p].c();i=q(),N(r.$$.fragment),this.h()},l(p){e=z(p,"DIV",{});var m=T(e);n=P(m,"Select f and k parameters on the map of use a preset"),m.forEach(h),o=Y(p),t=z(p,"SELECT",{class:!0});var d=T(t);for(let g=0;g<u.length;g+=1)u[g].l(d);d.forEach(h),i=Y(p),G(r.$$.fragment,p),this.h()},h(){y(t,"class","full-width svelte-vk9dfi"),a[0]===void 0&&it(()=>a[6].call(t))},m(p,m){A(p,e,m),w(e,n),A(p,o,m),A(p,t,m);for(let d=0;d<u.length;d+=1)u[d].m(t,null);Ve(t,a[0]),A(p,i,m),U(r,p,m),s=!0,l||(f=[Z(t,"change",a[6]),Z(t,"change",a[7])],l=!0)},p(p,m){if(m&0){c=Ee;let d;for(d=0;d<c.length;d+=1){const g=Tt(p,c,d);u[d]?u[d].p(g,m):(u[d]=Lt(g),u[d].c(),u[d].m(t,null))}for(;d<u.length;d+=1)u[d].d(1);u.length=c.length}m&1&&Ve(t,p[0])},i(p){s||(_(r.$$.fragment,p),s=!0)},o(p){k(r.$$.fragment,p),s=!1},d(p){p&&h(e),p&&h(o),p&&h(t),ke(u,p),p&&h(i),O(r,p),l=!1,Be(f)}}}function Lt(a){let e,n=a[17].type+"",o,t,i=a[17].name+"",r,s,l=a[17].f+"",f,c,u=a[17].k+"",p,m;return{c(){e=B("option"),o=R(n),t=R(" - "),r=R(i),s=R(" (f/k "),f=R(l),c=R(" / "),p=R(u),m=R(`)
+                `),this.h()},l(d){e=z(d,"OPTION",{});var g=T(e);o=P(g,n),t=P(g," - "),r=P(g,i),s=P(g," (f/k "),f=P(g,l),c=P(g," / "),p=P(g,u),m=P(g,`)
+                `),g.forEach(h),this.h()},h(){e.__value=a[17],e.value=e.__value},m(d,g){A(d,e,g),w(e,o),w(e,t),w(e,r),w(e,s),w(e,f),w(e,c),w(e,p),w(e,m)},p:ne,d(d){d&&h(e)}}}function Wr(a){let e,n,o=a[1]?"Close":"F/K selection",t,i,r,s,l,f=a[1]&&It(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){y(n,"class","full-width svelte-vk9dfi"),y(n,"id","toggleButton"),y(e,"id","container"),y(e,"class","svelte-vk9dfi"),Ie(e,"no-cursor",a[2])},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[5]),s=!0)},p(c,[u]){(!r||u&2)&&o!==(o=c[1]?"Close":"F/K selection")&&pe(t,o),c[1]?f?(f.p(c,u),u&2&&_(f,1)):(f=It(c),f.c(),_(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re()),(!r||u&4)&&Ie(e,"no-cursor",c[2])},i(c){r||(_(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}function Xr(a,e,n){const o=Ge();let t=Ee[0],i=!0;const r=[0,.12],s=[.03,.07],l=v=>{const{f:x,k:$}=v,L=d.map($,s[0],s[1],0,d.width),D=d.map(x,r[0],r[1],d.height,0);return{x:L,y:D}},f=v=>{const{x,y:$}=v,L=d.map($,d.height,0,r[0],r[1]),D=d.map(x,0,d.width,s[0],s[1]);return{f:L,k:D}},c=v=>{const x=v.mouseX,$=v.mouseY;if(x<0||$<0||x>v.width||$>v.height)return;const{f:L,k:D}=f({x:v.mouseX,y:v.mouseY});n(0,t={f:L,k:D,name:"custom",type:"manual"}),o("fkupdated",t)},u=v=>{v.noStroke();const x=v.textSize();for(const $ of Ee){const{x:L,y:D}=l({f:$.f,k:$.k}),b=$.f===t.f&&$.k===t.k;v.circle(L,D,3),v.textSize(b?x*2:x),v.fill(b?[240,240,150]:[255,255,255]),v.text($.name,L-v.textWidth($.name)/2,D-10)}},p=v=>{v.noFill(),v.stroke("red");const{x,y:$}=l(t);v.text("F",10,$>10?$-5:$+15),v.line(0,$,v.width,$),v.text("K",x<v.width-10?x+5:x-15,v.height-10),v.line(x,0,x,v.height),v.circle(x,$,10)},m=v=>{const{f:x,k:$}=t,L=`F: ${x.toFixed(4)}`,D=`K: ${$.toFixed(4)}`,b=v.textSize(),V=v.height*.05;v.textStyle(v.BOLD),v.textSize(V),v.fill("white"),v.stroke(0),v.strokeWeight(1),v.text(L,v.width*.05,v.textSize()),v.text(D,v.width*.05,v.textSize()+v.textSize()+6),v.textStyle(v.NORMAL),v.textSize(b)};let d,g=!1;const C=v=>{d=v;let x;v.preload=()=>{x=v.loadImage(Ze+"/parameters_map.png")},v.setup=()=>{v.createCanvas(400,400),v.frameRate(55)},v.draw=()=>{v.background(255),v.tint(150,190),v.image(x,0,0,v.width,v.height),u(v),p(v),m(v),n(2,g=!1),v.mouseIsPressed&&(c(v),n(2,g=!0))}},E=()=>{n(1,i=!i),i||d.remove()};ye(()=>d?.remove());function S(){t=at(this),n(0,t)}return[t,i,g,o,C,E,S,()=>o("fkupdated",t)]}let jr=class extends Q{constructor(e){super(),J(this,e,Xr,Wr,ee,{})}};const Rt=a=>{if(!a.currentTarget)throw new Error("Event has no currentTarget");const e=a.currentTarget,n=e.getBoundingClientRect(),o=a.clientX-n.left,t=a.clientY-n.top,{width:i,height:r}=e,s=o/i,l=(r-t)/r;return{x:s,y:l}};const{window:Zr}=je;function Qr(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,E=2**a[0].worldSize+"",S,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,b,V,X;return n=new jr({}),n.$on("fkupdated",a[7]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),S=R(E),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),S=P(ae,E),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){y(t,"id","datgui-container"),y(t,"class","svelte-18zf5fr"),y(s,"for","worldSize"),y(c,"id","worldSize"),y(c,"type","number"),y(c,"step","1"),y(D,"id","canvas"),y(D,"width",a[1].width),y(D,"height",a[1].height),y(D,"class","svelte-18zf5fr")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,S),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),b=!0,V||(X=[Z(Zr,"keydown",a[2]),Z(c,"input",a[8]),Z(c,"change",a[6]),Z(D,"mousemove",a[4]),Z(D,"mousedown",we(a[5])),Z(D,"mouseup",a[5]),Z(D,"wheel",a[3]),Z(D,"keydown",we(a[2])),Z(D,"contextmenu",we(Jr))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!b||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!b||F&1)&&E!==(E=2**I[0].worldSize+"")&&pe(S,E),(!b||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){b||(_(n.$$.fragment,I),b=!0)},o(I){k(n.$$.fragment,I),b=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const Jr=a=>a;function ei(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>g(),pause:!1,grid:!1,pen:!0,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:Ee[0].f,k:Ee[0].k};let l,f;const c=async()=>{const S=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new S.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const M=document.getElementById("datgui-container");if(!M)throw new Error("Gui container not ready");M.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"pen").name("Show pen"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_MATLAB_parula","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const v={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",v).onFinishChange(t.reset).name("Initial conditions");const x=l.add(r,"iteration").listen();x.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed"),l.add(i,"penSize",0,r.worldSize).name("Pen size"),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=S=>{if(S.code==="Space"){t.pause=!t.pause,S.preventDefault();return}if(S.code==="KeyR"&&!S.getModifierState("Control")){g(),S.preventDefault();return}},p=S=>{if(!S.getModifierState("Control"))return;const M=Rt(S);i.panX=M.x,i.panY=M.y,S.deltaY>0?i.zoomLevel*=1+i.zoomLevel/2:i.zoomLevel*=1-i.zoomLevel/2,i.zoomLevel>1&&(i.zoomLevel=1),i.zoomLevel<0&&(i.zoomLevel=0),S.preventDefault()},m=S=>{const M=Rt(S);i.x=M.x,i.y=M.y},d=S=>{if(![0,2].includes(S.button)||!["mouseup","mousedown"].includes(S.type))return;let M=S.type==="mousedown";S.button===0&&(i.pressedLeft=M),S.button===2&&(i.pressedRight=M)},g=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=vn({controls:t,info:r,mouseState:i,simulationParameters:s}))},C=S=>{s.f=S.detail.f,s.k=S.detail.k};$e(()=>{g()}),ye(()=>{l.destroy(),f.destroy()});function E(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,p,m,d,g,C,E]}class Pt extends Q{constructor(e){super(),J(this,e,ei,Qr,ee,{})}}const ti=`precision mediump float;
+attribute vec2 position;
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    gl_Position = vec4(position, 0, 1);
+}
+`,ni=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    gl_FragColor = vec4(A, B, 0.0, 1.0);
+}
+
+`,oi=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float PI = 3.14159265359;
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = sin(iteration*PI/180.0);
+    if (val < 0.0) {
+        val = -1.0 * val;
+    }
+    gl_FragColor = vec4(A, B, val, 1.0);
+}
+`,ri=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (A + B) / 2.0;
+
+    gl_FragColor = vec4(val, val, val, 1.0);
+}
+
+`,ii=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (1.0 + A - B) / 2.0;
+
+    gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
+}
+`,ai=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (1.0 + A - B) / 2.0;
+
+    gl_FragColor = vec4(val, val, val, 1.0);
+}
+`,li=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
+vec3 rgb2hsv(vec3 c) {
+    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
+vec3 hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    // vec3 color1 = vec3(1.0, 0.0, 0.0);
+    // vec3 color2 = vec3(0.0, 1.0, 0.0);
+    // vec3 result = color1 * A + color2 * B;
+
+    vec3 color1RGB = vec3(0.639, 0.941, 0.717);
+    vec3 color2RGB = vec3(0.929, 0.082, 0.705);
+
+    vec3 color1HSV = rgb2hsv(color1RGB);
+    vec3 color2HSV = rgb2hsv(color2RGB);
+
+    float color1Offset = (cos(iteration * 0.001) + 1.0) * 0.5;
+    float color1newH = 0.5 * (color1HSV.x + color1Offset);
+    vec3 color1newHSV = vec3(color1newH, color1HSV.g, color1HSV.b);
+
+    float color2Offset = (cos(iteration * 0.002)) * 0.5;
+    float color2newH = 0.5 * (color2HSV.x + color2Offset + 0.33);
+    vec3 color2newHSV = vec3(color2newH, color2HSV.g, color2HSV.b);
+
+
+    vec3 resultHSV = color1newHSV * A + color2newHSV * B;
+    vec3 result = hsv2rgb(resultHSV);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,si=`// Colors scheme inspired by Robert Munafo described here:
+// https://www.mrob.com/pub/comp/xmorphia/index.html
+// 
+// A is blue
+// B is red
+
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float red = A; // The more A the redder
+    float blue = 1.0 - A; // The less A the bleuer
+
+    float green = max(A, B) - min(A, B);
+
+    vec3 result = vec3(red, green, blue);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,fi=`// Colors scheme inspired by Robert Munafo described here:
+// https://www.mrob.com/pub/comp/xmorphia/index.html
+// 
+// A is blue
+// B is red
+
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec3 color1 = vec3(0.0, 0.0, 1.0);
+    vec3 color2 = vec3(1.0, 0.0, 0.0);
+    vec3 result = vec3(A, 0.0, 1.0-A);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,ci=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    if (A > 0.9) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    } else if (A > 0.4) {
+        gl_FragColor = vec4(1.0 - A, 0.0, 0.0, 1.0);
+    } else { 
+        gl_FragColor = vec4(0.0, A, 0.0, 1.0);
+    }
+}
+`,ui=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
+    vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
+    vec4 color = mix(blue, red, A);
+
+    vec4 softRed = vec4(0.8588, 0.2824, 0.3765, 1.0);
+    vec4 softBlue = vec4(0.2824, 0.3882, 0.8588, 1.0);
+    // vec4 softColor = mix(blue, red, (A-0.4)/0.6);
+    // vec4 softColor = mix(blue, red, (A-0.4)/0.4);
+    vec4 softColor = mix(softBlue, softRed, 1.0-A);
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(color);
+    }
+
+}
+`,pi=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/MATLAB_cool.frag
+float colormap_red(float x) {
+    return (1.0 + 1.0 / 63.0) * x - 1.0 / 63.0;
+}
+
+float colormap_green(float x) {
+    return -(1.0 + 1.0 / 63.0) * x + (1.0 + 1.0 / 63.0);
+}
+
+vec4 colormap(float x) {
+    float r = clamp(colormap_red(x), 0.0, 1.0);
+    float g = clamp(colormap_green(x), 0.0, 1.0);
+    float b = 1.0;
+    return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,mi=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdBu.frag
+float colormap_red(float x) {
+	if (x < 0.09771832105856419) {
+		return 7.60263247863246E+02 * x + 1.02931623931624E+02;
+	} else if (x < 0.3017162107441106) {
+		return (-2.54380938558548E+02 * x + 4.29911571188803E+02) * x + 1.37642085716717E+02;
+	} else if (x < 0.4014205790737471) {
+		return 8.67103448276151E+01 * x + 2.18034482758611E+02;
+	} else if (x < 0.5019932233215039) {
+		return -6.15461538461498E+01 * x + 2.77547692307680E+02;
+	} else if (x < 0.5969483882550937) {
+		return -3.77588522588624E+02 * x + 4.36198819698878E+02;
+	} else if (x < 0.8046060096654594) {
+		return (-6.51345897546620E+02 * x + 2.09780968434337E+02) * x + 3.17674951640855E+02;
+	} else {
+		return -3.08431855203590E+02 * x + 3.12956742081421E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09881640500975222) {
+		return 2.41408547008547E+02 * x + 3.50427350427364E-01;
+	} else if (x < 0.5000816285610199) {
+		return ((((1.98531871433258E+04 * x - 2.64108262469187E+04) * x + 1.10991785969817E+04) * x - 1.92958444776211E+03) * x + 8.39569642882186E+02) * x - 4.82944517518776E+01;
+	} else if (x < 0.8922355473041534) {
+		return (((6.16712686949223E+03 * x - 1.59084026055125E+04) * x + 1.45172137257997E+04) * x - 5.80944127411621E+03) * x + 1.12477959061948E+03;
+	} else {
+		return -5.28313797313699E+02 * x + 5.78459299959206E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.1033699568661857) {
+		return 1.30256410256410E+02 * x + 3.08518518518519E+01;
+	} else if (x < 0.2037526071071625) {
+		return 3.38458128078815E+02 * x + 9.33004926108412E+00;
+	} else if (x < 0.2973267734050751) {
+		return (-1.06345054944861E+02 * x + 5.93327252747168E+02) * x - 3.81852747252658E+01;
+	} else if (x < 0.4029109179973602) {
+		return 6.68959706959723E+02 * x - 7.00740740740798E+01;
+	} else if (x < 0.5006715489526758) {
+		return 4.87348695652202E+02 * x + 3.09898550724286E+00;
+	} else if (x < 0.6004396902588283) {
+		return -6.85799999999829E+01 * x + 2.81436666666663E+02;
+	} else if (x < 0.702576607465744) {
+		return -1.81331701891043E+02 * x + 3.49137263626287E+02;
+	} else if (x < 0.9010407030582428) {
+		return (2.06124143164576E+02 * x - 5.78166906665595E+02) * x + 5.26198653917172E+02;
+	} else {
+		return -7.36990769230737E+02 * x + 8.36652307692262E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,di=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
+float colormap_red(float x) {
+	if (x < 0.09790863520700754) {
+		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
+	} else if (x < 0.2001887081633112) {
+		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
+	} else if (x < 0.3190117539655621) {
+		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
+	} else if (x < 0.500517389125164) {
+		return 255.0;
+	} else if (x < 0.6068377196788788) {
+		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
+	} else if (x < 0.9017468988895416) {
+		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
+	} else {
+		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09638568758964539) {
+		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
+	} else if (x < 0.4987066686153412) {
+		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
+	} else if (x < 0.6047312345537269) {
+		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
+	} else if (x < 0.7067635953426361) {
+		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
+	} else {
+		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.09982818011951204) {
+		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
+	} else if (x < 0.2958717460833126) {
+		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
+	} else if (x < 0.4900527540014758) {
+		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
+	} else if (x < 0.6017014681258838) {
+		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
+	} else if (x < 0.7015737100463595) {
+		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
+	} else if (x < 0.8237156500567735) {
+		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
+	} else {
+		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,hi=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
+float colormap_red(float x) {
+	if (x < 0.09790863520700754) {
+		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
+	} else if (x < 0.2001887081633112) {
+		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
+	} else if (x < 0.3190117539655621) {
+		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
+	} else if (x < 0.500517389125164) {
+		return 255.0;
+	} else if (x < 0.6068377196788788) {
+		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
+	} else if (x < 0.9017468988895416) {
+		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
+	} else {
+		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09638568758964539) {
+		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
+	} else if (x < 0.4987066686153412) {
+		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
+	} else if (x < 0.6047312345537269) {
+		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
+	} else if (x < 0.7067635953426361) {
+		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
+	} else {
+		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.09982818011951204) {
+		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
+	} else if (x < 0.2958717460833126) {
+		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
+	} else if (x < 0.4900527540014758) {
+		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
+	} else if (x < 0.6017014681258838) {
+		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
+	} else if (x < 0.7015737100463595) {
+		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
+	} else if (x < 0.8237156500567735) {
+		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
+	} else {
+		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((B-0.1)*(1.0/0.9));
+
+
+    if (B < 0.1) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,_e={},vi=a=>{const e={vert:ti,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),prevState:a.prop("inputBuffer")}};_e.raw=a({frag:ni,...e}),_e.A_gradiant1=a({frag:ci,...e}),_e.A_gradiant2=a({frag:ui,...e}),_e.A_MATLAB_cool=a({frag:pi,...e}),_e.A_IDL_CB_RdBu=a({frag:mi,...e}),_e.A_IDL_CB_RdYiBu=a({frag:di,...e}),_e.B_IDL_CB_RdYiBu=a({frag:hi,...e}),_e.grayscale=a({frag:ri,...e}),_e.blackwhite=a({frag:ii,...e}),_e.whiteblack=a({frag:ai,...e}),_e.timebasedblue=a({frag:oi,...e}),_e.lerp=a({frag:li,...e}),_e.mrob=a({frag:si,...e}),_e.redblue=a({frag:fi,...e})},gi=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(_e[e]||_e.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},xi=`precision mediump float;
+
+uniform float radius;
+uniform sampler2D prevState;
+uniform bool pauseSimulation;
+uniform float Da;
+uniform float Db;
+
+varying vec2 v_fk;
+
+uniform bool penIsActive;
+uniform bool eraserIsActive;
+uniform float penDensity;
+
+varying vec2 uv;
+varying vec2 mouseUv;
+varying float scaledPenRadius;
+
+// https://thebookofshaders.com/10/
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
+}
+
+vec2 laplacianDiff() {
+    vec2 r = vec2(0.0, 0.0);
+
+    // top left
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
+    // top
+    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
+    // top right
+    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
+
+    // left
+    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
+    // middle
+    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
+    // right
+    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
+
+    // bottom left
+    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
+    // bottom
+    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
+    // bottom right
+    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
+
+    return r;
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec2 L = laplacianDiff();
+    float La = L.r;
+    float Lb = L.g;
+
+    float f = v_fk.x;
+    float k = v_fk.y;
+
+    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
+    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
+
+
+    float rnd = random(uv);
+    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
+        gl_FragColor = vec4(0.0, 1.0, 0, 1);
+    } else if (pauseSimulation) {
+        gl_FragColor = vec4(A, B, 0, 1);
+    } else {
+        gl_FragColor = vec4(newA, newB, 0, 1);
+    }
+}
+`,_i=`precision mediump float;
+
+uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
+uniform float penRadius;
+
+attribute vec2 position;
+attribute vec2 fk;
+
+varying vec2 uv;
+varying vec2 mouseUv;
+varying float scaledPenRadius;
+varying vec2 v_fk;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    v_fk = fk;
+    mouseUv = mousePosition;
+    scaledPenRadius = penRadius;
+    gl_Position = vec4(position, 0, 1);
+}
+`;let gn;const bi=(a,e)=>{gn=a({frag:xi,vert:_i,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]],fk:(n,o)=>{const{maxF:t,minF:i,maxK:r,minK:s}=o.simulationParameters;return[[i,r],[i,s],[t,r],[t,r],[i,s],[t,s]]}},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive")}})},wi=a=>{const{inputBuffer:e,outputBuffer:n,simulationParameters:o,pauseSimulation:t,mouseState:i,worldSize:r}=a;gn({inputBuffer:e,outputBuffer:n,pauseSimulation:t,zoomLevel:i.zoomLevel,pan:[i.panX,i.panY],mousePosition:[i.x,i.y],penRadius:1/2**(r-i.penSize),penDensity:i.penDensity,penIsActive:i.pressedLeft,eraserIsActive:i.pressedRight,simulationParameters:o})},$i=(a,e)=>a==="randomSpots"?yi(e,.001):a==="middleCircleAndRandomSpots"?ki(e,.005,.05):a==="empty"||a==="full"?Ft(e):Si(e,.02),ki=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},Ft=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),yi=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),Si=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),Ei=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=$i(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f);return bi(r,s),vi(r),r.frame(()=>{e.pause||n.iteration++;let u=c[(n.iteration+1)%2];for(let p=0;p<e.speed;p++){n.iteration++;const m=c[n.iteration%2];u=c[(n.iteration+1)%2],wi({inputBuffer:m,outputBuffer:u,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}gi({colorMode:e.colors,inputBuffer:u,iteration:n.iteration,outputBuffer:null,zoomState:o})}),r},Mt=a=>{if(!a.currentTarget)throw new Error("Event has no currentTarget");const e=a.currentTarget,n=e.getBoundingClientRect(),o=a.clientX-n.left,t=a.clientY-n.top,{width:i,height:r}=e,s=o/i,l=(r-t)/r;return{x:s,y:l}};const{window:Ai}=je;function Di(a){let e,n,o,t,i,r,s,l,f,c,u,p;return{c(){e=B("main"),n=B("div"),o=q(),t=B("div"),i=B("label"),r=R("World Size:"),s=q(),l=B("input"),f=q(),c=B("canvas"),this.h()},l(m){e=z(m,"MAIN",{});var d=T(e);n=z(d,"DIV",{id:!0,class:!0}),T(n).forEach(h),o=Y(d),t=z(d,"DIV",{});var g=T(t);i=z(g,"LABEL",{for:!0});var C=T(i);r=P(C,"World Size:"),C.forEach(h),s=Y(g),l=z(g,"INPUT",{id:!0,type:!0,step:!0}),g.forEach(h),f=Y(d),c=z(d,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(c).forEach(h),d.forEach(h),this.h()},h(){y(n,"id","datgui-container"),y(n,"class","svelte-198vt5w"),y(i,"for","worldSize"),y(l,"id","worldSize"),y(l,"type","number"),y(l,"step","1"),y(c,"id","canvas"),y(c,"width",a[1].width),y(c,"height",a[1].height),y(c,"class","svelte-198vt5w")},m(m,d){A(m,e,d),w(e,n),w(e,o),w(e,t),w(t,i),w(i,r),w(t,s),w(t,l),Se(l,a[0].worldSize),w(e,f),w(e,c),u||(p=[Z(Ai,"keydown",a[2]),Z(l,"input",a[7]),Z(l,"change",a[6]),Z(c,"mousemove",a[4]),Z(c,"mousedown",we(a[5])),Z(c,"mouseup",a[5]),Z(c,"wheel",a[3]),Z(c,"keydown",we(a[2])),Z(c,"contextmenu",we(Bi))],u=!0)},p(m,[d]){d&1&&Ae(l.value)!==m[0].worldSize&&Se(l,m[0].worldSize)},i:ne,o:ne,d(m){m&&h(e),u=!1,Be(p)}}}const Bi=a=>a;function zi(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"B_IDL_CB_RdYiBu",initialConditions:"full",reset:()=>g(),pause:!1,grid:!1,speed:10},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:12,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:10},s={minK:.02,maxK:.07,minF:0,maxF:.12};let l,f;const c=async()=>{const E=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new E.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const S=document.getElementById("datgui-container");if(!S)throw new Error("Gui container not ready");S.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","B_IDL_CB_RdYiBu"]).name("Color scheme");const M={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty",Full:"full"};l.add(t,"initialConditions",M).onFinishChange(t.reset).name("Initial conditions");const v=l.add(r,"iteration").listen();v.domElement.style.pointerEvents="none",l.add(t,"speed",1,500).name("Simulation speed"),l.add(i,"penSize",0,r.worldSize).name("Pen size"),l.add(i,"penDensity",0,1).name("Pen density"),l.add(s,"minK",0,s.maxK),l.add(s,"maxK",s.minK,1),l.add(s,"minF",0,s.maxF),l.add(s,"maxF",s.minF,1)},u=E=>{if(E.code==="Space"){t.pause=!t.pause,E.preventDefault();return}if(E.code==="KeyR"&&!E.getModifierState("Control")){g(),E.preventDefault();return}},p=E=>{if(!E.getModifierState("Control"))return;const S=Mt(E);i.panX=S.x,i.panY=S.y,E.deltaY>0?i.zoomLevel*=1+i.zoomLevel/2:i.zoomLevel*=1-i.zoomLevel/2,i.zoomLevel>1&&(i.zoomLevel=1),i.zoomLevel<0&&(i.zoomLevel=0),E.preventDefault()},m=E=>{const S=Mt(E);i.x=S.x,i.y=S.y},d=E=>{if(![0,2].includes(E.button)||!["mouseup","mousedown"].includes(E.type))return;let S=E.type==="mousedown";E.button===0&&(i.pressedLeft=S),E.button===2&&(i.pressedRight=S)},g=()=>{isNaN(r.worldSize)||(r.worldSize>12&&n(0,r.worldSize=12,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=Ei({controls:t,info:r,mouseState:i,simulationParameters:s}))};$e(()=>{g(),i.pressedLeft=!0,setTimeout(()=>i.pressedLeft=!1,10)}),ye(()=>{l.destroy(),f.destroy()});function C(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,p,m,d,g,C]}let rt=class extends Q{constructor(e){super(),J(this,e,zi,Di,ee,{})}};const Ci=a=>{const e=[];for(let r=0;r<a.height;r++){e.push([]);for(let s=0;s<a.width;s++)e[e.length-1].push({A:1,B:0})}const n=5,o=5,t=Math.floor(a.width/2),i=Math.floor(a.height/2);for(let r=i-o;r<i+o;r++)for(let s=t-n;s<t+n;s++)e[r][s].B=1;return e},Ti=(a,e)=>{const n={width:a.width/e[0].length,height:a.height/e.length};for(let o=0;o<e.length;o++)for(let t=0;t<e[0].length;t++){const{A:i,B:r}=e[o][t];a.fill(i*255,r*255,0),a.rect(t*n.width,o*n.height,n.width,n.height)}},Ii=1,Li=.5,Nt=.055,Ri=.062,Pi=a=>{const e=[];for(let n=0;n<a.length;n++){e.push([]);for(let o=0;o<a[0].length;o++){const{A:t,B:i}=a[n][o],r=Ut(a,{x:o,y:n},"A"),s=Ut(a,{x:o,y:n},"B"),l=t+(Ii*r-t*i*i+Nt*(1-t)),f=i+(Li*s+t*i*i-(Ri+Nt)*i);e[n].push({A:l,B:f})}}return e},Ut=(a,e,n)=>{const o=Fi(a,e);let t=0;for(const i of o){const{coord:r,weight:s}=i;t+=a[r.y][r.x][n]*s}return t},Fi=(a,e)=>{const{x:n,y:o}=e,t=a[0].length,i=a.length,r={coord:{x:n>0?n-1:t-1,y:o>0?o-1:i-1},weight:.05},s={coord:{x:n,y:o>0?o-1:i-1},weight:.2},l={coord:{x:n<t-1?n+1:0,y:o>0?o-1:i-1},weight:.05},f={coord:{x:n>0?n-1:t-1,y:o},weight:.2},c={coord:{x:n,y:o},weight:-1},u={coord:{x:n<t-1?n+1:0,y:o},weight:.2},p={coord:{x:n>0?n-1:t-1,y:o<i-1?o+1:0},weight:.05},m={coord:{x:n,y:o<i-1?o+1:0},weight:.2},d={coord:{x:n<t-1?n+1:0,y:o<i-1?o+1:0},weight:.05};return[r,s,l,f,c,u,p,m,d]};function Mi(a){let e,n;return e=new Fe({props:{sketch:a[0]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Ni(a){const e={width:200,height:200};let n;return[t=>{let i;t.setup=()=>{n=t,t.createCanvas(500,500),t.noStroke(),i=Ci(e)},t.draw=()=>{t.background(0);for(let r=0;r<20;r++)i=Pi(i);Ti(n,i)}}]}let Ui=class extends Q{constructor(e){super(),J(this,e,Ni,Mi,ee,{})}},me,Ue;const Oi=a=>{me=[],Ue=[];for(let i=0;i<a.height;i++){me.push([]),Ue.push([]);for(let r=0;r<a.width;r++)me[me.length-1].push({A:1,B:0}),Ue[me.length-1].push({A:1,B:0})}const e=5,n=5,o=Math.floor(a.width/2),t=Math.floor(a.height/2);for(let i=t-n;i<t+n;i++)for(let r=o-e;r<o+e;r++)me[i][r].B=1;return me},Vi=a=>{const e={width:a.width/me[0].length,height:a.height/me.length};for(let n=0;n<me.length;n++)for(let o=0;o<me[0].length;o++){const{A:t,B:i}=me[n][o];a.fill(t*255,i*255,0),a.rect(o*e.width,n*e.height,e.width,e.height)}},Hi=1,Ki=.5,Ot=.055,qi=.062,Yi=()=>{for(let e=0;e<me.length;e++)for(let n=0;n<me[0].length;n++){const{A:o,B:t}=me[e][n],i=Vt(me,{x:n,y:e},"A"),r=Vt(me,{x:n,y:e},"B"),s=o+(Hi*i-o*t*t+Ot*(1-o)),l=t+(Ki*r+o*t*t-(qi+Ot)*t);Ue[e][n]={A:s,B:l}}const a=me;return me=Ue,Ue=a,me},Vt=(a,e,n)=>{const o=Gi(a,e);let t=0;for(const i of o){const{coord:r,weight:s}=i;t+=a[r.y][r.x][n]*s}return t},Gi=(a,e)=>{const{x:n,y:o}=e,t=a[0].length,i=a.length,r={coord:{x:n>0?n-1:t-1,y:o>0?o-1:i-1},weight:.05},s={coord:{x:n,y:o>0?o-1:i-1},weight:.2},l={coord:{x:n<t-1?n+1:0,y:o>0?o-1:i-1},weight:.05},f={coord:{x:n>0?n-1:t-1,y:o},weight:.2},c={coord:{x:n,y:o},weight:-1},u={coord:{x:n<t-1?n+1:0,y:o},weight:.2},p={coord:{x:n>0?n-1:t-1,y:o<i-1?o+1:0},weight:.05},m={coord:{x:n,y:o<i-1?o+1:0},weight:.2},d={coord:{x:n<t-1?n+1:0,y:o<i-1?o+1:0},weight:.05};return[r,s,l,f,c,u,p,m,d]};function Wi(a){let e,n;return e=new Fe({props:{sketch:a[0]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function Xi(a){const e={width:200,height:200};let n;return[t=>{t.setup=()=>{n=t,t.createCanvas(500,500),t.noStroke(),Oi(e)},t.draw=()=>{for(let i=0;i<5;i++)Yi();Vi(n)}}]}let ji=class extends Q{constructor(e){super(),J(this,e,Xi,Wi,ee,{})}},de,Oe;const Zi=a=>{de=[],Oe=[];for(let i=0;i<a.height;i++){de.push([]),Oe.push([]);for(let r=0;r<a.width;r++)de[de.length-1].push({A:1,B:0}),Oe[de.length-1].push({A:1,B:0})}const e=5,n=5,o=Math.floor(a.width/2),t=Math.floor(a.height/2);for(let i=t-n;i<t+n;i++)for(let r=o-e;r<o+e;r++)de[i][r].B=1;return de},Qi=a=>{const e={width:a.width/de[0].length,height:a.height/de.length};for(let n=0;n<de.length;n++)for(let o=0;o<de[0].length;o++){const{A:t,B:i}=de[n][o];a.fill(t*255,i*255,0),a.rect(o*e.width,n*e.height,e.width,e.height)}},Ji=1,ea=.5,Ht=.055,ta=.062,na=()=>{for(let e=0;e<de.length;e++)for(let n=0;n<de[0].length;n++){const{A:o,B:t}=de[e][n],i=Kt(de,{x:n,y:e},"A"),r=Kt(de,{x:n,y:e},"B"),s=o+(Ji*i-o*t*t+Ht*(1-o)),l=t+(ea*r+o*t*t-(ta+Ht)*t);Oe[e][n]={A:s,B:l}}const a=de;return de=Oe,Oe=a,de},Kt=(a,e,n)=>{const o=oa(a,e);let t=0;for(const i of o){const{coord:r,weight:s}=i;t+=a[r.y][r.x][n]*s}return t},oa=(a,e)=>{const{x:n,y:o}=e,t=a[0].length,i=a.length,r={coord:{x:n>0?n-1:t-1,y:o>0?o-1:i-1},weight:.05},s={coord:{x:n,y:o>0?o-1:i-1},weight:.2},l={coord:{x:n<t-1?n+1:0,y:o>0?o-1:i-1},weight:.05},f={coord:{x:n>0?n-1:t-1,y:o},weight:.2},c={coord:{x:n,y:o},weight:-1},u={coord:{x:n<t-1?n+1:0,y:o},weight:.2},p={coord:{x:n>0?n-1:t-1,y:o<i-1?o+1:0},weight:.05},m={coord:{x:n,y:o<i-1?o+1:0},weight:.2},d={coord:{x:n<t-1?n+1:0,y:o<i-1?o+1:0},weight:.05};return[r,s,l,f,c,u,p,m,d]};function ra(a){let e,n;return e=new Fe({props:{sketch:a[0]}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function ia(a){const e={width:200,height:200};let n;return[t=>{t.setup=()=>{n=t,t.createCanvas(500,500),t.noStroke(),Zi(e)},t.draw=()=>{for(let i=0;i<5;i++)na();Qi(n)}}]}let aa=class extends Q{constructor(e){super(),J(this,e,ia,ra,ee,{})}};function la(a){let e;return{c(){e=B("canvas"),this.h()},l(n){e=z(n,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(e).forEach(h),this.h()},h(){y(e,"id","canvas"),y(e,"width",a[0].width),y(e,"height",a[0].height),y(e,"class","svelte-1b0ol19")},m(n,o){A(n,e,o)},p:ne,i:ne,o:ne,d(n){n&&h(e)}}}function sa(a){const e={width:window.innerWidth-50,height:window.innerHeight-10},n=2**10,o=n*.05,t=Array(n*n).fill(0).map((i,r)=>{const s=Math.floor(r/n),l=r%n;return Math.hypot(n/2-l,n/2-s)<o?[0,1,0,1]:Math.random()<.01?[0,1,0,1]:[1,0,0,1]}).flat();return $e(()=>{const i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i}),s=Array(2).fill(0).map(()=>r.framebuffer({color:r.texture({radius:n,data:t,wrap:"repeat",type:"float"}),depthStencil:!1})),l=r({frag:`
+precision mediump float;
+uniform sampler2D prevState;
+varying vec2 uv;
+
+vec2 laplacianDiff() {
+    vec2 r = vec2(0.0, 0.0);
+
+    // top left
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(${n})).rg * 0.05;
+    // top
+    r += texture2D(prevState, uv+vec2(0,-1)/float(${n})).rg * 0.2;
+    // top right
+    r += texture2D(prevState, uv+vec2(1,-1)/float(${n})).rg * 0.05;
+
+    // left
+    r += texture2D(prevState, uv+vec2(-1,0)/float(${n})).rg * 0.2;
+    // middle
+    r += texture2D(prevState, uv+vec2(0,0)/float(${n})).rg * -1.0;
+    // right
+    r += texture2D(prevState, uv+vec2(1,0)/float(${n})).rg * 0.2;
+
+    // bottom left
+    r += texture2D(prevState, uv+vec2(-1,1)/float(${n})).rg * 0.05;
+    // bottom
+    r += texture2D(prevState, uv+vec2(0,1)/float(${n})).rg * 0.2;
+    // bottom right
+    r += texture2D(prevState, uv+vec2(1,1)/float(${n})).rg * 0.05;
+
+    return r;
+}
+
+void main() {
+    float Da = 1.0;
+    float Db = 0.5;
+    float f = 0.055;
+    float k = 0.062;
+
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec2 L = laplacianDiff();
+    float La = L.r;
+    float Lb = L.g;
+
+    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
+    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
+
+    gl_FragColor = vec4(newA, newB, 0, 1);
+}`,framebuffer:c=>s[(c.tick+1)%2]}),f=r({frag:`
+precision mediump float;
+uniform sampler2D prevState;
+varying vec2 uv;
+void main() {
+    vec2 state = texture2D(prevState, uv).rg;
+    gl_FragColor = vec4(state, 0, 1);
+}`,vert:`
+precision mediump float;
+attribute vec2 position;
+varying vec2 uv;
+void main() {
+    uv = 0.5 * (position + 1.0);
+    gl_Position = vec4(position, 0, 1);
+}`,attributes:{position:[-4,-4,4,-4,0,4]},uniforms:{prevState:({tick:c})=>s[c%2]},depth:{enable:!1},count:3});r.frame(()=>{f(()=>{r.draw(),l()})})}),[e]}let fa=class extends Q{constructor(e){super(),J(this,e,sa,la,ee,{})}};const ca=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},ua=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),pa=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),We=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"Alpha 1",type:"alpha",f:.01,k:.047},{name:"Alpha 2",type:"alpha",f:.014,k:.053},{name:"Beta 1",type:"beta",f:.014,k:.039},{name:"Beta 2",type:"beta",f:.026,k:.051},{name:"Epsilon 1",type:"epsilon",f:.018,k:.055},{name:"Epsilon 2",type:"epsilon",f:.022,k:.059},{name:"Epsilon 1",type:"epsilon",f:.034,k:.063},{name:"Gamma 1",type:"gamma",f:.022,k:.051},{name:"Gamma 2",type:"gamma",f:.026,k:.055},{name:"Iota 1",type:"iota",f:.046,k:.0594},{name:"Lambda 1",type:"lambda",f:.026,k:.061},{name:"Lambda 2",type:"lambda",f:.034,k:.065},{name:"Mu 1",type:"mu",f:.046,k:.065},{name:"Mu 2",type:"mu",f:.058,k:.065},{name:"Pi 1",type:"pi",f:.062,k:.061},{name:"Rho 1",type:"rho",f:.09,k:.059},{name:"Rho 2",type:"rho",f:.102,k:.055},{name:"Sigma 1",type:"sigma",f:.09,k:.057},{name:"Sigma 2",type:"sigma",f:.11,k:.0523},{name:"Theta 1",type:"theta",f:.03,k:.057},{name:"Theta 2",type:"theta",f:.038,k:.061},{name:"Xi 1",type:"xi",f:.01,k:.041},{name:"Xi 2",type:"xi",f:.014,k:.047},{name:"Zeta 1",type:"zeta",f:.022,k:.061},{name:"Zeta 2",type:"zeta",f:.026,k:.059}];function ma(a){let e;return{c(){e=B("canvas"),this.h()},l(n){e=z(n,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(e).forEach(h),this.h()},h(){y(e,"id","canvas"),y(e,"width",a[0].width),y(e,"height",a[0].height),y(e,"class","svelte-1b0ol19")},m(n,o){A(n,e,o)},p:ne,i:ne,o:ne,d(n){n&&h(e)}}}function da(a){const e={width:window.innerWidth-50,height:window.innerHeight-10},n={presetParams:4,initialConditions:"randomSpots",reset:()=>f(),pause:!1},o={iteration:0},t={f:We[n.presetParams].f,k:We[n.presetParams].k};let i,r;const s=async()=>{const c=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);i=new c.GUI,i.domElement.setAttribute("style","background-color: black"),i.add(t,"f").name("Feed rate").listen(),i.add(t,"k").name("Kill rate").listen(),i.add(n,"pause").name("Pause"),i.add(n,"reset").name("Reset simulation");const u=We.reduce((d,g,C)=>(d[g.name]=C,d),{});i.add(n,"presetParams",u).onFinishChange(()=>{t.f=We[n.presetParams].f,t.k=We[n.presetParams].k});const p={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots"};i.add(n,"initialConditions",p).onFinishChange(n.reset);const m=i.add(o,"iteration").listen();m.domElement.style.pointerEvents="none"},l=()=>{document.addEventListener("keydown",c=>{if(c.code==="Space")return n.pause=!n.pause,c.preventDefault();if(c.code==="KeyR")return f(),c.preventDefault()})},f=()=>{const c=document.getElementById("canvas");if(!c)throw new Error("Canvas container not ready");r&&r.destroy(),r=Le({extensions:["OES_texture_float"],canvas:c}),o.iteration=0;const u=2**11;let p;n.initialConditions==="randomSpots"?p=ua(u,.001):n.initialConditions==="middleCircleAndRandomSpots"?p=ca(u,.005,.05):p=pa(u,.02);const m=Array(2).fill(0).map(()=>r.framebuffer({color:r.texture({radius:u,data:p,wrap:"repeat",type:"float"}),depthStencil:!1})),d=r({frag:`
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float Da;
+uniform float Db;
+uniform float f;
+uniform float k;
+
+varying vec2 uv;
+
+vec2 laplacianDiff() {
+    vec2 r = vec2(0.0, 0.0);
+
+    // top left
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(${u})).rg * 0.05;
+    // top
+    r += texture2D(prevState, uv+vec2(0,-1)/float(${u})).rg * 0.2;
+    // top right
+    r += texture2D(prevState, uv+vec2(1,-1)/float(${u})).rg * 0.05;
+
+    // left
+    r += texture2D(prevState, uv+vec2(-1,0)/float(${u})).rg * 0.2;
+    // middle
+    r += texture2D(prevState, uv+vec2(0,0)/float(${u})).rg * -1.0;
+    // right
+    r += texture2D(prevState, uv+vec2(1,0)/float(${u})).rg * 0.2;
+
+    // bottom left
+    r += texture2D(prevState, uv+vec2(-1,1)/float(${u})).rg * 0.05;
+    // bottom
+    r += texture2D(prevState, uv+vec2(0,1)/float(${u})).rg * 0.2;
+    // bottom right
+    r += texture2D(prevState, uv+vec2(1,1)/float(${u})).rg * 0.05;
+
+    return r;
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec2 L = laplacianDiff();
+    float La = L.r;
+    float Lb = L.g;
+
+    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
+    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
+
+    gl_FragColor = vec4(newA, newB, 0, 1);
+}`,framebuffer:C=>m[(C.tick+1)%2],uniforms:{Da:r.prop("Da"),Db:r.prop("Db"),f:r.prop("f"),k:r.prop("k")}}),g=r({frag:`
+precision mediump float;
+uniform sampler2D prevState;
+varying vec2 uv;
+void main() {
+    vec2 state = texture2D(prevState, uv).rg;
+    gl_FragColor = vec4(state, 0, 1);
+}`,vert:`
+precision mediump float;
+attribute vec2 position;
+varying vec2 uv;
+void main() {
+    uv = 0.5 * (position + 1.0);
+    gl_Position = vec4(position, 0, 1);
+}`,attributes:{position:[-4,-4,4,-4,0,4]},uniforms:{prevState:({tick:C})=>m[C%2]},depth:{enable:!1},count:3});r.frame(()=>{g(()=>{r.draw(),!n.pause&&(o.iteration++,d({Da:1,Db:.5,...t}))})})};return $e(()=>{s(),l(),f()}),ye(()=>{i.destroy(),r.destroy()}),[e]}let ha=class extends Q{constructor(e){super(),J(this,e,da,ma,ee,{})}};const va=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},ga=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),xa=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),Xe=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"Alpha 1",type:"alpha",f:.01,k:.047},{name:"Alpha 2",type:"alpha",f:.014,k:.053},{name:"Beta 1",type:"beta",f:.014,k:.039},{name:"Beta 2",type:"beta",f:.026,k:.051},{name:"Epsilon 1",type:"epsilon",f:.018,k:.055},{name:"Epsilon 2",type:"epsilon",f:.022,k:.059},{name:"Epsilon 1",type:"epsilon",f:.034,k:.063},{name:"Gamma 1",type:"gamma",f:.022,k:.051},{name:"Gamma 2",type:"gamma",f:.026,k:.055},{name:"Iota 1",type:"iota",f:.046,k:.0594},{name:"Lambda 1",type:"lambda",f:.026,k:.061},{name:"Lambda 2",type:"lambda",f:.034,k:.065},{name:"Mu 1",type:"mu",f:.046,k:.065},{name:"Mu 2",type:"mu",f:.058,k:.065},{name:"Pi 1",type:"pi",f:.062,k:.061},{name:"Rho 1",type:"rho",f:.09,k:.059},{name:"Rho 2",type:"rho",f:.102,k:.055},{name:"Sigma 1",type:"sigma",f:.09,k:.057},{name:"Sigma 2",type:"sigma",f:.11,k:.0523},{name:"Theta 1",type:"theta",f:.03,k:.057},{name:"Theta 2",type:"theta",f:.038,k:.061},{name:"Xi 1",type:"xi",f:.01,k:.041},{name:"Xi 2",type:"xi",f:.014,k:.047},{name:"Zeta 1",type:"zeta",f:.022,k:.061},{name:"Zeta 2",type:"zeta",f:.026,k:.059}],_a=`precision mediump float;
+attribute vec2 position;
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    gl_Position = vec4(position, 0, 1);
+}
+`,ba=`precision mediump float;
+uniform sampler2D prevState;
+varying vec2 uv;
+
+void main() {
+    vec2 state = texture2D(prevState, uv).rg;
+    gl_FragColor = vec4(state, 0, 1);
+}
+`,wa=`precision mediump float;
+
+uniform float radius;
+uniform sampler2D prevState;
+uniform bool pauseSimulation;
+uniform float Da;
+uniform float Db;
+uniform float f;
+uniform float k;
+
+uniform vec2 mousePosition;
+uniform bool penIsActive;
+uniform bool eraserIsActive;
+uniform float penRadius;
+
+varying vec2 uv;
+
+vec2 laplacianDiff() {
+    vec2 r = vec2(0.0, 0.0);
+
+    // top left
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
+    // top
+    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
+    // top right
+    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
+
+    // left
+    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
+    // middle
+    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
+    // right
+    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
+
+    // bottom left
+    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
+    // bottom
+    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
+    // bottom right
+    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
+
+    return r;
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec2 L = laplacianDiff();
+    float La = L.r;
+    float Lb = L.g;
+
+    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
+    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
+
+    if (penIsActive && distance(uv, mousePosition) < penRadius) {
+        gl_FragColor = vec4(0.0, 1.0, 0, 1);
+    } else if (eraserIsActive && distance(uv, mousePosition) < penRadius) {
+        gl_FragColor = vec4(1.0, 0.0, 0, 1);
+    } else if (pauseSimulation) {
+        gl_FragColor = vec4(A, B, 0, 1);
+    } else {
+        gl_FragColor = vec4(newA, newB, 0, 1);
+    }
+}
+`;function $a(a){let e,n,o;return{c(){e=B("canvas"),this.h()},l(t){e=z(t,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(e).forEach(h),this.h()},h(){y(e,"id","canvas"),y(e,"width",a[0].width),y(e,"height",a[0].height),y(e,"class","svelte-1b0ol19")},m(t,i){A(t,e,i),n||(o=[Z(e,"mousemove",a[1]),Z(e,"mousedown",we(a[2])),Z(e,"mouseup",a[2]),Z(e,"contextmenu",we(ka))],n=!0)},p:ne,i:ne,o:ne,d(t){t&&h(e),n=!1,Be(o)}}}const nt=11,ka=a=>a;function ya(a){const e={width:window.innerWidth-50,height:window.innerHeight-10},n={presetParams:4,initialConditions:"randomSpots",reset:()=>c(),pause:!1},o={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3},t={iteration:0},i={f:Xe[n.presetParams].f,k:Xe[n.presetParams].k};let r,s;const l=async()=>{const m=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);r=new m.GUI,r.domElement.setAttribute("style","background-color: black"),r.add(i,"f").name("Feed rate").listen(),r.add(i,"k").name("Kill rate").listen(),r.add(n,"pause").name("Pause"),r.add(n,"reset").name("Reset simulation");const d=Xe.reduce((E,S,M)=>(E[S.name]=M,E),{});r.add(n,"presetParams",d).onFinishChange(()=>{i.f=Xe[n.presetParams].f,i.k=Xe[n.presetParams].k});const g={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots"};r.add(n,"initialConditions",g).onFinishChange(n.reset);const C=r.add(t,"iteration").listen();C.domElement.style.pointerEvents="none",r.add(o,"penSize",1,nt,1).name("Pen size")},f=()=>{document.addEventListener("keydown",m=>{if(m.code==="Space")return n.pause=!n.pause,m.preventDefault();if(m.code==="KeyR")return c(),m.preventDefault()})},c=()=>{const m=document.getElementById("canvas");if(!m)throw new Error("Canvas container not ready");s&&s.destroy(),s=Le({extensions:["OES_texture_float"],canvas:m}),t.iteration=0;const d=2**nt;let g;n.initialConditions==="randomSpots"?g=ga(d,.001):n.initialConditions==="middleCircleAndRandomSpots"?g=va(d,.005,.05):g=xa(d,.02);const C=Array(2).fill(0).map(()=>s.framebuffer({color:s.texture({radius:d,data:g,wrap:"repeat",type:"float"}),depthStencil:!1})),E=s({frag:wa,framebuffer:M=>C[(M.tick+1)%2],uniforms:{Da:s.prop("Da"),Db:s.prop("Db"),f:s.prop("f"),k:s.prop("k"),radius:d,pauseSimulation:s.prop("pauseSimulation"),mousePosition:s.prop("mousePosition"),penRadius:s.prop("penRadius"),penIsActive:s.prop("penIsActive"),eraserIsActive:s.prop("eraserIsActive")}}),S=s({frag:ba,vert:_a,attributes:{position:[-4,-4,4,-4,0,4]},uniforms:{prevState:({tick:M})=>C[M%2]},depth:{enable:!1},count:3});s.frame(()=>{S(()=>{s.draw(),n.pause||t.iteration++,E({Da:1,Db:.5,pauseSimulation:n.pause,mousePosition:[o.x,o.y],penRadius:1/2**(nt-o.penSize),penIsActive:o.pressedLeft,eraserIsActive:o.pressedRight,...i})})})},u=m=>{if(!m.currentTarget)throw new Error("No target for the onmousemove event");if(!m.currentTarget.width||!m.currentTarget.height)throw new Error("No target dimensions for the onmousemove event target");const{x:d,y:g}=m,{width:C,height:E}=m.currentTarget,S=d/C,M=(E-g)/E;o.x=S,o.y=M},p=m=>{if(![0,2].includes(m.button)||!["mouseup","mousedown"].includes(m.type))return;let d=m.type==="mousedown";m.button===0&&(o.pressedLeft=d),m.button===2&&(o.pressedRight=d)};return $e(()=>{l(),f(),c()}),ye(()=>{r.destroy(),s.destroy()}),[e,u,p]}let Sa=class extends Q{constructor(e){super(),J(this,e,ya,$a,ee,{})}};const He=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"STX 1",type:"N.A",f:.0353,k:.0614},{name:"STX 2",type:"N.A",f:.0201,k:.0602},{name:"STX 2",type:"N.A",f:.0181,k:.0435},{name:"α 1",type:"alpha",f:.01,k:.047},{name:"α 2",type:"alpha",f:.014,k:.053},{name:"β 1",type:"beta",f:.014,k:.039},{name:"β 2",type:"beta",f:.026,k:.051},{name:"δ 1",type:"delta",f:.03,k:.055},{name:"δ 2",type:"delta",f:.042,k:.059},{name:"ε 1",type:"epsilon",f:.018,k:.055},{name:"ε 2",type:"epsilon",f:.022,k:.059},{name:"η 1",type:"eta",f:.034,k:.063},{name:"γ 1",type:"gamma",f:.022,k:.051},{name:"γ 2",type:"gamma",f:.026,k:.055},{name:"ι 1",type:"iota",f:.046,k:.0594},{name:"κ 1",type:"kappa",f:.082,k:.06},{name:"κ 2",type:"kappa",f:.058,k:.063},{name:"λ 1",type:"lambda",f:.026,k:.061},{name:"λ 2",type:"lambda",f:.034,k:.065},{name:"μ 1",type:"mu",f:.046,k:.065},{name:"μ 2",type:"mu",f:.058,k:.065},{name:"ν 2",type:"nu",f:.046,k:.067},{name:"π 1",type:"pi",f:.062,k:.061},{name:"ρ 1",type:"rho",f:.09,k:.059},{name:"ρ 2",type:"rho",f:.102,k:.055},{name:"σ 1",type:"sigma",f:.09,k:.057},{name:"θ 2",type:"sigma",f:.11,k:.0523},{name:"θ 1",type:"theta",f:.03,k:.057},{name:"θ 2",type:"theta",f:.038,k:.061},{name:"ξ 1",type:"xi",f:.01,k:.041},{name:"ξ 2",type:"xi",f:.014,k:.047},{name:"ζ 1",type:"zeta",f:.022,k:.061},{name:"ζ 2",type:"zeta",f:.026,k:.059}];function qt(a,e,n){const o=a.slice();return o[17]=e[n],o}function Yt(a){let e,n,o,t,i,r,s,l,f,c=He,u=[];for(let p=0;p<c.length;p+=1)u[p]=Gt(qt(a,c,p));return r=new Fe({props:{sketch:a[4]}}),{c(){e=B("div"),n=R("Select f and k parameters on the map of use a preset"),o=q(),t=B("select");for(let p=0;p<u.length;p+=1)u[p].c();i=q(),N(r.$$.fragment),this.h()},l(p){e=z(p,"DIV",{});var m=T(e);n=P(m,"Select f and k parameters on the map of use a preset"),m.forEach(h),o=Y(p),t=z(p,"SELECT",{class:!0});var d=T(t);for(let g=0;g<u.length;g+=1)u[g].l(d);d.forEach(h),i=Y(p),G(r.$$.fragment,p),this.h()},h(){y(t,"class","full-width svelte-1qznlxf"),a[0]===void 0&&it(()=>a[6].call(t))},m(p,m){A(p,e,m),w(e,n),A(p,o,m),A(p,t,m);for(let d=0;d<u.length;d+=1)u[d].m(t,null);Ve(t,a[0]),A(p,i,m),U(r,p,m),s=!0,l||(f=[Z(t,"change",a[6]),Z(t,"change",a[7])],l=!0)},p(p,m){if(m&0){c=He;let d;for(d=0;d<c.length;d+=1){const g=qt(p,c,d);u[d]?u[d].p(g,m):(u[d]=Gt(g),u[d].c(),u[d].m(t,null))}for(;d<u.length;d+=1)u[d].d(1);u.length=c.length}m&1&&Ve(t,p[0])},i(p){s||(_(r.$$.fragment,p),s=!0)},o(p){k(r.$$.fragment,p),s=!1},d(p){p&&h(e),p&&h(o),p&&h(t),ke(u,p),p&&h(i),O(r,p),l=!1,Be(f)}}}function Gt(a){let e,n=a[17].type+"",o,t,i=a[17].name+"",r,s,l=a[17].f+"",f,c,u=a[17].k+"",p,m;return{c(){e=B("option"),o=R(n),t=R(" - "),r=R(i),s=R(" (f/k "),f=R(l),c=R(" / "),p=R(u),m=R(`)
+                `),this.h()},l(d){e=z(d,"OPTION",{});var g=T(e);o=P(g,n),t=P(g," - "),r=P(g,i),s=P(g," (f/k "),f=P(g,l),c=P(g," / "),p=P(g,u),m=P(g,`)
+                `),g.forEach(h),this.h()},h(){e.__value=a[17],e.value=e.__value},m(d,g){A(d,e,g),w(e,o),w(e,t),w(e,r),w(e,s),w(e,f),w(e,c),w(e,p),w(e,m)},p:ne,d(d){d&&h(e)}}}function Ea(a){let e,n,o=a[1]?"Close":"F/K selection",t,i,r,s,l,f=a[1]&&Yt(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){y(n,"class","full-width svelte-1qznlxf"),y(n,"id","toggleButton"),y(e,"id","container"),y(e,"class","svelte-1qznlxf"),Ie(e,"no-cursor",a[2])},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[5]),s=!0)},p(c,[u]){(!r||u&2)&&o!==(o=c[1]?"Close":"F/K selection")&&pe(t,o),c[1]?f?(f.p(c,u),u&2&&_(f,1)):(f=Yt(c),f.c(),_(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re()),(!r||u&4)&&Ie(e,"no-cursor",c[2])},i(c){r||(_(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}function Aa(a,e,n){const o=Ge();let t=He[0],i=!0;const r=[0,.12],s=[.03,.07],l=v=>{const{f:x,k:$}=v,L=d.map($,s[0],s[1],0,d.width),D=d.map(x,r[0],r[1],d.height,0);return{x:L,y:D}},f=v=>{const{x,y:$}=v,L=d.map($,d.height,0,r[0],r[1]),D=d.map(x,0,d.width,s[0],s[1]);return{f:L,k:D}},c=v=>{const x=v.mouseX,$=v.mouseY;if(x<0||$<0||x>v.width||$>v.height)return;const{f:L,k:D}=f({x:v.mouseX,y:v.mouseY});n(0,t={f:L,k:D,name:"custom",type:"manual"}),o("fkupdated",t)},u=v=>{v.noStroke();const x=v.textSize();for(const $ of He){const{x:L,y:D}=l({f:$.f,k:$.k}),b=$.f===t.f&&$.k===t.k;v.circle(L,D,3),v.textSize(b?x*2:x),v.fill(b?[240,240,150]:[255,255,255]),v.text($.name,L-v.textWidth($.name)/2,D-10)}},p=v=>{v.noFill(),v.stroke("red");const{x,y:$}=l(t);v.text("F",10,$>10?$-5:$+15),v.line(0,$,v.width,$),v.text("K",x<v.width-10?x+5:x-15,v.height-10),v.line(x,0,x,v.height),v.circle(x,$,10)},m=v=>{const{f:x,k:$}=t,L=`F: ${x.toFixed(4)}`,D=`K: ${$.toFixed(4)}`,b=v.textSize(),V=v.height*.05;v.textStyle(v.BOLD),v.textSize(V),v.fill("white"),v.stroke(0),v.strokeWeight(1),v.text(L,v.width*.05,v.textSize()),v.text(D,v.width*.05,v.textSize()+v.textSize()+6),v.textStyle(v.NORMAL),v.textSize(b)};let d,g=!1;const C=v=>{d=v;let x;v.preload=()=>{x=v.loadImage(Ze+"/parameters_map.png")},v.setup=()=>{v.createCanvas(400,400),v.frameRate(55)},v.draw=()=>{v.background(255),v.tint(150,190),v.image(x,0,0,v.width,v.height),u(v),p(v),m(v),n(2,g=!1),v.mouseIsPressed&&(c(v),n(2,g=!0))}},E=()=>{n(1,i=!i),i||d.remove()};ye(()=>d?.remove());function S(){t=at(this),n(0,t)}return[t,i,g,o,C,E,S,()=>o("fkupdated",t)]}class Da extends Q{constructor(e){super(),J(this,e,Aa,Ea,ee,{})}}const Ba=`precision mediump float;
+attribute vec2 position;
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
+    gl_Position = vec4(position, 0, 1);
+}
+`,za=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    gl_FragColor = vec4(A, B, 0.0, 1.0);
+}
+
+`,Ca=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float PI = 3.14159265359;
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = sin(iteration*PI/180.0);
+    if (val < 0.0) {
+        val = -1.0 * val;
+    }
+    gl_FragColor = vec4(A, B, val, 1.0);
+}
+`,Ta=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (A + B) / 2.0;
+
+    gl_FragColor = vec4(val, val, val, 1.0);
+}
+
+`,Ia=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (1.0 + A - B) / 2.0;
+
+    gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
+}
+`,La=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (1.0 + A - B) / 2.0;
+
+    gl_FragColor = vec4(val, val, val, 1.0);
+}
+`,Ra=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
+vec3 rgb2hsv(vec3 c) {
+    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
+vec3 hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    // vec3 color1 = vec3(1.0, 0.0, 0.0);
+    // vec3 color2 = vec3(0.0, 1.0, 0.0);
+    // vec3 result = color1 * A + color2 * B;
+
+    vec3 color1RGB = vec3(0.639, 0.941, 0.717);
+    vec3 color2RGB = vec3(0.929, 0.082, 0.705);
+
+    vec3 color1HSV = rgb2hsv(color1RGB);
+    vec3 color2HSV = rgb2hsv(color2RGB);
+
+    float color1Offset = (cos(iteration * 0.001) + 1.0) * 0.5;
+    float color1newH = 0.5 * (color1HSV.x + color1Offset);
+    vec3 color1newHSV = vec3(color1newH, color1HSV.g, color1HSV.b);
+
+    float color2Offset = (cos(iteration * 0.002)) * 0.5;
+    float color2newH = 0.5 * (color2HSV.x + color2Offset + 0.33);
+    vec3 color2newHSV = vec3(color2newH, color2HSV.g, color2HSV.b);
+
+
+    vec3 resultHSV = color1newHSV * A + color2newHSV * B;
+    vec3 result = hsv2rgb(resultHSV);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,Pa=`// Colors scheme inspired by Robert Munafo described here:
+// https://www.mrob.com/pub/comp/xmorphia/index.html
+// 
+// A is blue
+// B is red
+
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float red = A; // The more A the redder
+    float blue = 1.0 - A; // The less A the bleuer
+
+    float green = max(A, B) - min(A, B);
+
+    vec3 result = vec3(red, green, blue);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,Fa=`// Colors scheme inspired by Robert Munafo described here:
+// https://www.mrob.com/pub/comp/xmorphia/index.html
+// 
+// A is blue
+// B is red
+
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec3 color1 = vec3(0.0, 0.0, 1.0);
+    vec3 color2 = vec3(1.0, 0.0, 0.0);
+    vec3 result = vec3(A, 0.0, 1.0-A);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,Ma=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    if (A > 0.9) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    } else if (A > 0.4) {
+        gl_FragColor = vec4(1.0 - A, 0.0, 0.0, 1.0);
+    } else { 
+        gl_FragColor = vec4(0.0, A, 0.0, 1.0);
+    }
+}
+`,Na=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
+    vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
+    vec4 color = mix(blue, red, A);
+
+    vec4 softRed = vec4(0.8588, 0.2824, 0.3765, 1.0);
+    vec4 softBlue = vec4(0.2824, 0.3882, 0.8588, 1.0);
+    // vec4 softColor = mix(blue, red, (A-0.4)/0.6);
+    // vec4 softColor = mix(blue, red, (A-0.4)/0.4);
+    vec4 softColor = mix(softBlue, softRed, 1.0-A);
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(color);
+    }
+
+}
+`,Ua=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/MATLAB_cool.frag
+float colormap_red(float x) {
+    return (1.0 + 1.0 / 63.0) * x - 1.0 / 63.0;
+}
+
+float colormap_green(float x) {
+    return -(1.0 + 1.0 / 63.0) * x + (1.0 + 1.0 / 63.0);
+}
+
+vec4 colormap(float x) {
+    float r = clamp(colormap_red(x), 0.0, 1.0);
+    float g = clamp(colormap_green(x), 0.0, 1.0);
+    float b = 1.0;
+    return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,Oa=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdBu.frag
+float colormap_red(float x) {
+	if (x < 0.09771832105856419) {
+		return 7.60263247863246E+02 * x + 1.02931623931624E+02;
+	} else if (x < 0.3017162107441106) {
+		return (-2.54380938558548E+02 * x + 4.29911571188803E+02) * x + 1.37642085716717E+02;
+	} else if (x < 0.4014205790737471) {
+		return 8.67103448276151E+01 * x + 2.18034482758611E+02;
+	} else if (x < 0.5019932233215039) {
+		return -6.15461538461498E+01 * x + 2.77547692307680E+02;
+	} else if (x < 0.5969483882550937) {
+		return -3.77588522588624E+02 * x + 4.36198819698878E+02;
+	} else if (x < 0.8046060096654594) {
+		return (-6.51345897546620E+02 * x + 2.09780968434337E+02) * x + 3.17674951640855E+02;
+	} else {
+		return -3.08431855203590E+02 * x + 3.12956742081421E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09881640500975222) {
+		return 2.41408547008547E+02 * x + 3.50427350427364E-01;
+	} else if (x < 0.5000816285610199) {
+		return ((((1.98531871433258E+04 * x - 2.64108262469187E+04) * x + 1.10991785969817E+04) * x - 1.92958444776211E+03) * x + 8.39569642882186E+02) * x - 4.82944517518776E+01;
+	} else if (x < 0.8922355473041534) {
+		return (((6.16712686949223E+03 * x - 1.59084026055125E+04) * x + 1.45172137257997E+04) * x - 5.80944127411621E+03) * x + 1.12477959061948E+03;
+	} else {
+		return -5.28313797313699E+02 * x + 5.78459299959206E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.1033699568661857) {
+		return 1.30256410256410E+02 * x + 3.08518518518519E+01;
+	} else if (x < 0.2037526071071625) {
+		return 3.38458128078815E+02 * x + 9.33004926108412E+00;
+	} else if (x < 0.2973267734050751) {
+		return (-1.06345054944861E+02 * x + 5.93327252747168E+02) * x - 3.81852747252658E+01;
+	} else if (x < 0.4029109179973602) {
+		return 6.68959706959723E+02 * x - 7.00740740740798E+01;
+	} else if (x < 0.5006715489526758) {
+		return 4.87348695652202E+02 * x + 3.09898550724286E+00;
+	} else if (x < 0.6004396902588283) {
+		return -6.85799999999829E+01 * x + 2.81436666666663E+02;
+	} else if (x < 0.702576607465744) {
+		return -1.81331701891043E+02 * x + 3.49137263626287E+02;
+	} else if (x < 0.9010407030582428) {
+		return (2.06124143164576E+02 * x - 5.78166906665595E+02) * x + 5.26198653917172E+02;
+	} else {
+		return -7.36990769230737E+02 * x + 8.36652307692262E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
 }
 
 void main() {
@@ -2988,441 +2748,6 @@ void main() {
 
     vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
 
-    vec4 softColor = colormap((B-0.1)*(1.0/0.9));
-
-
-    if (B < 0.1) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,ve={},Ha=a=>{const e={vert:Ea,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}};ve.raw=a({frag:Aa,...e}),ve.A_transform_seismic=a({frag:Oa,...e}),ve.A_gradiant1=a({frag:Ra,...e}),ve.A_gradiant2=a({frag:Pa,...e}),ve.A_MATLAB_cool=a({frag:Fa,...e}),ve.A_IDL_CB_RdBu=a({frag:Ma,...e}),ve.A_IDL_CB_RdYiBu=a({frag:Na,...e}),ve.A_IDL_CB_BuYiRd=a({frag:Ua,...e}),ve.B_IDL_CB_RdYiBu=a({frag:Va,...e}),ve.grayscale=a({frag:Ba,...e}),ve.blackwhite=a({frag:za,...e}),ve.whiteblack=a({frag:Ca,...e}),ve.timebasedblue=a({frag:Da,...e}),ve.lerp=a({frag:Ta,...e}),ve.mrob=a({frag:Ia,...e}),ve.redblue=a({frag:La,...e})},Ka=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(ve[e]||ve.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},qa=`precision mediump float;
-
-uniform float radius;
-uniform sampler2D prevState;
-uniform bool pauseSimulation;
-uniform float Da;
-uniform float Db;
-uniform float f;
-uniform float k;
-
-uniform bool penIsActive;
-uniform bool eraserIsActive;
-uniform float penDensity;
-
-varying vec2 uv;
-varying vec2 mouseUv;
-varying float scaledPenRadius;
-
-// https://thebookofshaders.com/10/
-float random(vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
-}
-
-vec2 laplacianDiff() {
-    vec2 r = vec2(0.0, 0.0);
-
-    // top left
-    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
-    // top
-    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
-    // top right
-    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
-
-    // left
-    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
-    // middle
-    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
-    // right
-    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
-
-    // bottom left
-    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
-    // bottom
-    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
-    // bottom right
-    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
-
-    return r;
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec2 L = laplacianDiff();
-    float La = L.r;
-    float Lb = L.g;
-
-    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
-    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
-
-
-    float rnd = random(uv);
-    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
-        gl_FragColor = vec4(0.0, 1.0, 0, 1);
-    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
-        gl_FragColor = vec4(1.0, 0.0, 0, 1);
-    } else if (pauseSimulation) {
-        gl_FragColor = vec4(A, B, 0, 1);
-    } else {
-        gl_FragColor = vec4(newA, newB, 0, 1);
-    }
-}
-`,Ya=`precision mediump float;
-
-uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-uniform float penRadius;
-
-attribute vec2 position;
-
-varying vec2 uv;
-varying vec2 mouseUv;
-varying float scaledPenRadius;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    mouseUv = (mousePosition * zoomLevel) + pan * (1.0 - zoomLevel);
-    scaledPenRadius = penRadius * zoomLevel;
-    gl_Position = vec4(position, 0, 1);
-}
-`;let xn;const Ga=(a,e)=>{xn=a({frag:qa,vert:Ya,attributes:{position:[-4,-4,4,-4,0,4]},count:3,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,f:a.prop("f"),k:a.prop("k"),radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive"),eraserIsActive:a.prop("eraserIsActive"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Wa=a=>{const{inputBuffer:e,outputBuffer:n,pauseSimulation:o,mouseState:t,simulationParameters:i,worldSize:r}=a;xn({inputBuffer:e,outputBuffer:n,pauseSimulation:o,zoomLevel:t.zoomLevel,pan:[t.panX,t.panY],mousePosition:[t.x,t.y],penRadius:1/2**(r-t.penSize),penDensity:t.penDensity,penIsActive:t.pressedLeft,eraserIsActive:t.pressedRight,...i})},Xa=(a,e)=>a==="randomSpots"?Qa(e,.001):a==="middleCircleAndRandomSpots"?ja(e,.005,.05):a==="empty"?Za(e):Ja(e,.02),ja=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},Za=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),Qa=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),Ja=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),el=`precision highp float;
-
-attribute vec2 position;
-
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
-    gl_Position = vec4(position, 0, 1);
-}
-`,tl=`precision highp float;
-
-uniform sampler2D prevState;
-
-varying vec2 uv;
-
-void main() {
-    vec4 color = texture2D(prevState, uv);
-
-    float division = 10.0;
-    float column = mod(uv.x, 1.0 / division);
-    float c = column * division;
-
-    float row = mod(uv.y, 1.0 / division);
-    float r = row * division;
-
-    // I haven't found a way to compare the value to an exact value
-    // Might be a precision issue, or just that I'm missing something
-    if (c < 0.05 || r < 0.05) {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else {
-       gl_FragColor = color;
-    }
-}
-`;let _n;const nl=a=>{_n=a({vert:el,frag:tl,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},ol=a=>{const{inputBuffer:e,outputBuffer:n,zoomState:o}=a;_n({inputBuffer:e,outputBuffer:n,zoomLevel:o.zoomLevel,pan:[o.panX,o.panY]})},rl=`precision mediump float;
-
-uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-
-attribute vec2 position;
-
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0);
-    gl_Position = vec4(position, 0, 1);
-}
-`,il=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform vec2 mousePosition;
-uniform float penRadius;
-
-varying vec2 uv;
-
-void main() {
-    vec4 color = texture2D(prevState, uv);
-
-    float d = distance(uv, mousePosition);
-    if (
-        (d >= penRadius && d <= penRadius + 0.001) ||
-        (uv.x >= mousePosition.x - 0.001 && uv.x <= mousePosition.x + 0.001 && uv.y >= mousePosition.y - 0.01 && uv.y <= mousePosition.y + 0.01) ||
-        (uv.x >= mousePosition.x - 0.01 && uv.x <= mousePosition.x + 0.01 && uv.y >= mousePosition.y - 0.001 && uv.y <= mousePosition.y + 0.001))
-    {
-        gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
-    } else {
-        gl_FragColor = color;
-    }
-}
-`;let bn;const al=a=>{bn=a({frag:il,vert:rl,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}})},ll=a=>{const{inputBuffer:e,mouseState:n,outputBuffer:o,worldSize:t}=a;bn({inputBuffer:e,outputBuffer:o,mousePosition:[n.x,n.y],penRadius:1/2**(t-n.penSize),zoomLevel:n.zoomLevel,pan:[n.panX,n.panY]})},sl=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=Xa(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f),u=Array(2).fill(0).map(f);return Ga(r,s),Ha(r),nl(r),al(r),r.frame(()=>{e.pause||n.iteration++;let p=c[(n.iteration+1)%2];for(let m=0;m<e.speed;m++){n.iteration++;const d=c[n.iteration%2];p=c[(n.iteration+1)%2],Wa({inputBuffer:d,outputBuffer:p,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}fl({inputTexture:p,graphicsTextures:u,controls:e,info:n,mouseState:o})}),r},fl=a=>{const{inputTexture:e,graphicsTextures:n,controls:o,info:t,mouseState:i}=a;let r=0;r++;const s=e,l=n[r%2];if(Ka({colorMode:o.colors,inputBuffer:s,iteration:t.iteration,outputBuffer:l,zoomState:i}),o.grid){r++;const u=n[(r+1)%2],p=n[r%2];ol({inputBuffer:u,outputBuffer:p,zoomState:i})}r++;const f=n[(r+1)%2],c=null;ll({mouseState:i,worldSize:t.worldSize,inputBuffer:f,outputBuffer:c})},Wt=a=>{if(!a.currentTarget)throw new Error("Event has no currentTarget");const e=a.currentTarget,n=e.getBoundingClientRect(),o=a.clientX-n.left,t=a.clientY-n.top,{width:i,height:r}=e,s=o/i,l=(r-t)/r;return{x:s,y:l}};const{window:cl}=je;function ul(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,S=2**a[0].worldSize+"",y,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,_,V,X;return n=new Sa({}),n.$on("fkupdated",a[7]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),y=R(S),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),y=P(ae,S),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){E(t,"id","datgui-container"),E(t,"class","svelte-18zf5fr"),E(s,"for","worldSize"),E(c,"id","worldSize"),E(c,"type","number"),E(c,"step","1"),E(D,"id","canvas"),E(D,"width",a[1].width),E(D,"height",a[1].height),E(D,"class","svelte-18zf5fr")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,y),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),_=!0,V||(X=[Z(cl,"keydown",a[2]),Z(c,"input",a[8]),Z(c,"change",a[6]),Z(D,"mousemove",a[4]),Z(D,"mousedown",we(a[5])),Z(D,"mouseup",a[5]),Z(D,"wheel",a[3]),Z(D,"keydown",we(a[2])),Z(D,"contextmenu",we(pl))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!_||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!_||F&1)&&S!==(S=2**I[0].worldSize+"")&&pe(y,S),(!_||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){_||(b(n.$$.fragment,I),_=!0)},o(I){k(n.$$.fragment,I),_=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const pl=a=>a;function ml(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>g(),pause:!1,grid:!1,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:He[0].f,k:He[0].k};let l,f;const c=async()=>{const y=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new y.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const M=document.getElementById("datgui-container");if(!M)throw new Error("Gui container not ready");M.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const v={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",v).onFinishChange(t.reset).name("Initial conditions");const x=l.add(r,"iteration").listen();x.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed"),l.add(i,"penSize",0,r.worldSize).name("Pen size"),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=y=>{if(y.code==="Space"){t.pause=!t.pause,y.preventDefault();return}if(y.code==="KeyR"&&!y.getModifierState("Control")){g(),y.preventDefault();return}},p=y=>{if(!y.getModifierState("Control"))return;const M=Wt(y);i.panX=M.x,i.panY=M.y,y.deltaY>0?i.zoomLevel*=1+i.zoomLevel/2:i.zoomLevel*=1-i.zoomLevel/2,i.zoomLevel>1&&(i.zoomLevel=1),i.zoomLevel<0&&(i.zoomLevel=0),y.preventDefault()},m=y=>{const M=Wt(y);i.x=M.x,i.y=M.y},d=y=>{if(![0,2].includes(y.button)||!["mouseup","mousedown"].includes(y.type))return;let M=y.type==="mousedown";y.button===0&&(i.pressedLeft=M),y.button===2&&(i.pressedRight=M)},g=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=sl({controls:t,info:r,mouseState:i,simulationParameters:s}))},C=y=>{s.f=y.detail.f,s.k=y.detail.k};$e(()=>{g()}),ye(()=>{l.destroy(),f.destroy()});function S(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,p,m,d,g,C,S]}let dl=class extends Q{constructor(e){super(),J(this,e,ml,ul,ee,{})}};const Ke=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"STX 1",type:"N.A",f:.0353,k:.0614},{name:"STX 2",type:"N.A",f:.0201,k:.0602},{name:"STX 2",type:"N.A",f:.0181,k:.0435},{name:"α 1",type:"alpha",f:.01,k:.047},{name:"α 2",type:"alpha",f:.014,k:.053},{name:"β 1",type:"beta",f:.014,k:.039},{name:"β 2",type:"beta",f:.026,k:.051},{name:"δ 1",type:"delta",f:.03,k:.055},{name:"δ 2",type:"delta",f:.042,k:.059},{name:"ε 1",type:"epsilon",f:.018,k:.055},{name:"ε 2",type:"epsilon",f:.022,k:.059},{name:"η 1",type:"eta",f:.034,k:.063},{name:"γ 1",type:"gamma",f:.022,k:.051},{name:"γ 2",type:"gamma",f:.026,k:.055},{name:"ι 1",type:"iota",f:.046,k:.0594},{name:"κ 1",type:"kappa",f:.082,k:.06},{name:"κ 2",type:"kappa",f:.058,k:.063},{name:"λ 1",type:"lambda",f:.026,k:.061},{name:"λ 2",type:"lambda",f:.034,k:.065},{name:"μ 1",type:"mu",f:.046,k:.065},{name:"μ 2",type:"mu",f:.058,k:.065},{name:"ν 2",type:"nu",f:.046,k:.067},{name:"π 1",type:"pi",f:.062,k:.061},{name:"ρ 1",type:"rho",f:.09,k:.059},{name:"ρ 2",type:"rho",f:.102,k:.055},{name:"σ 1",type:"sigma",f:.09,k:.057},{name:"θ 2",type:"sigma",f:.11,k:.0523},{name:"θ 1",type:"theta",f:.03,k:.057},{name:"θ 2",type:"theta",f:.038,k:.061},{name:"ξ 1",type:"xi",f:.01,k:.041},{name:"ξ 2",type:"xi",f:.014,k:.047},{name:"ζ 1",type:"zeta",f:.022,k:.061},{name:"ζ 2",type:"zeta",f:.026,k:.059}];function Xt(a,e,n){const o=a.slice();return o[18]=e[n],o}function jt(a){let e,n,o,t,i,r,s,l,f,c=Ke,u=[];for(let p=0;p<c.length;p+=1)u[p]=Zt(Xt(a,c,p));return r=new Fe({props:{sketch:a[3]}}),{c(){e=B("div"),n=R("Select f and k parameters on the map of use a preset"),o=q(),t=B("select");for(let p=0;p<u.length;p+=1)u[p].c();i=q(),N(r.$$.fragment),this.h()},l(p){e=z(p,"DIV",{});var m=T(e);n=P(m,"Select f and k parameters on the map of use a preset"),m.forEach(h),o=Y(p),t=z(p,"SELECT",{class:!0});var d=T(t);for(let g=0;g<u.length;g+=1)u[g].l(d);d.forEach(h),i=Y(p),G(r.$$.fragment,p),this.h()},h(){E(t,"class","full-width svelte-1qznlxf"),a[0]===void 0&&it(()=>a[5].call(t))},m(p,m){A(p,e,m),w(e,n),A(p,o,m),A(p,t,m);for(let d=0;d<u.length;d+=1)u[d].m(t,null);Ve(t,a[0]),A(p,i,m),U(r,p,m),s=!0,l||(f=[Z(t,"change",a[5]),Z(t,"change",a[6])],l=!0)},p(p,m){if(m&0){c=Ke;let d;for(d=0;d<c.length;d+=1){const g=Xt(p,c,d);u[d]?u[d].p(g,m):(u[d]=Zt(g),u[d].c(),u[d].m(t,null))}for(;d<u.length;d+=1)u[d].d(1);u.length=c.length}m&1&&Ve(t,p[0])},i(p){s||(b(r.$$.fragment,p),s=!0)},o(p){k(r.$$.fragment,p),s=!1},d(p){p&&h(e),p&&h(o),p&&h(t),ke(u,p),p&&h(i),O(r,p),l=!1,Be(f)}}}function Zt(a){let e,n=a[18].type+"",o,t,i=a[18].name+"",r,s,l=a[18].f+"",f,c,u=a[18].k+"",p,m;return{c(){e=B("option"),o=R(n),t=R(" - "),r=R(i),s=R(" (f/k "),f=R(l),c=R(" / "),p=R(u),m=R(`)
-                `),this.h()},l(d){e=z(d,"OPTION",{});var g=T(e);o=P(g,n),t=P(g," - "),r=P(g,i),s=P(g," (f/k "),f=P(g,l),c=P(g," / "),p=P(g,u),m=P(g,`)
-                `),g.forEach(h),this.h()},h(){e.__value=a[18],e.value=e.__value},m(d,g){A(d,e,g),w(e,o),w(e,t),w(e,r),w(e,s),w(e,f),w(e,c),w(e,p),w(e,m)},p:ne,d(d){d&&h(e)}}}function hl(a){let e,n,o=a[1]?"Close":"F/K selection",t,i,r,s,l,f=a[1]&&jt(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){E(n,"class","full-width svelte-1qznlxf"),E(n,"id","toggleButton"),E(e,"id","container"),E(e,"class","svelte-1qznlxf"),Ie(e,"no-cursor",vl)},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[4]),s=!0)},p(c,[u]){(!r||u&2)&&o!==(o=c[1]?"Close":"F/K selection")&&pe(t,o),c[1]?f?(f.p(c,u),u&2&&b(f,1)):(f=jt(c),f.c(),b(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re())},i(c){r||(b(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}let vl=!1;function gl(a,e){let n=!1,o=1/0,t=null;for(let i=0;i<e.length;i++){const r=e[i],s=e[(i+1)%e.length];if(a[0]===r[0]&&a[1]===r[1])return a;r[1]>a[1]!=s[1]>a[1]&&a[0]<(s[0]-r[0])*(a[1]-r[1])/(s[1]-r[1])+r[0]&&(n=!n);const f=xl(a,r,s);f<o&&(o=f,t=_l(a,r,s))}if(n)return a;if(!t)throw new Error("Now closest point found");return t}function xl(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],Math.sqrt((a[0]-l[0])**2+(a[1]-l[1])**2)}function _l(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],l}function bl(a,e,n){const o=Ge();let t=Ke[0],i=!0;const r=[0,.12],s=[.03,.07],l=[{f:.1045,k:.0553},{f:.0829,k:.0582},{f:.0664,k:.0595},{f:.0511,k:.0594},{f:.0307,k:.0549},{f:.017,k:.0467},{f:.005,k:.0335},{f:.0076,k:.0472},{f:.0166,k:.0594},{f:.0277,k:.0657},{f:.046,k:.0675},{f:.0757,k:.0643},{f:.0949,k:.0594}],f=x=>{const{f:$,k:L}=x,D=C.map(L,s[0],s[1],0,C.width),_=C.map($,r[0],r[1],C.height,0);return{x:D,y:_}},c=x=>{x.noStroke();const $=x.textSize();for(const L of Ke){const{x:D,y:_}=f({f:L.f,k:L.k}),V=L.f===t.f&&L.k===t.k;x.circle(D,_,3),x.textSize(V?$*2:$),x.fill(V?[240,240,150]:[255,255,255]),x.text(L.name,D-x.textWidth(L.name)/2,_-10)}},u=x=>{x.noFill(),x.stroke("red"),x.strokeWeight(1);const{x:$,y:L}=f(t);x.text("F",10,L>10?L-5:L+15),x.line(0,L,x.width,L),x.text("K",$<x.width-10?$+5:$-15,x.height-10),x.line($,0,$,x.height),x.circle($,L,10)},p=x=>{const{f:$,k:L}=t,D=`F: ${$.toFixed(4)}`,_=`K: ${L.toFixed(4)}`,V=x.textSize(),X=x.height*.05;x.textStyle(x.BOLD),x.textSize(X),x.fill("white"),x.stroke(0),x.strokeWeight(1),x.text(D,x.width*.05,x.textSize()),x.text(_,x.width*.05,x.textSize()+x.textSize()+6),x.textStyle(x.NORMAL),x.textSize(V)},m=x=>{for(let $=0;$<l.length;$++){const{x:L,y:D}=f(l[$]),{x:_,y:V}=f(l[($+1)%l.length]);x.fill("white"),x.stroke("white"),x.strokeWeight(1),x.circle(L,D,3),x.circle(_,V,3),x.line(L,D,_,V)}},d=()=>{const x=[t.f,t.k],$=l.map(D=>[D.f,D.k]),L=gl(x,$);n(0,t.f=L[0],t),n(0,t.k=L[1],t)},g=()=>{let{f:x,k:$}=t;const L=C.noise(C.frameCount*.01),D=C.noise(5321+C.frameCount*.01),V=Math.random()<.97?.001:.01;x=x+(D*2-1)*(r[1]-r[0])*V,$=$+(L*2-1)*(s[1]-s[0])*V,n(0,t={f:x,k:$,name:"custom",type:"manual"}),d(),o("fkupdated",t)};let C;const S=x=>{C=x;let $;x.preload=()=>{$=x.loadImage(Ze+"/parameters_map.png")},x.setup=()=>{x.createCanvas(400,400),x.frameRate(55)},x.draw=()=>{x.background(255),x.tint(150,190),x.image($,0,0,x.width,x.height),c(x),m(x),u(x),p(x),g()}},y=()=>{n(1,i=!i),i||C.remove()};ye(()=>C?.remove());function M(){t=at(this),n(0,t)}return[t,i,o,S,y,M,()=>o("fkupdated",t)]}class wl extends Q{constructor(e){super(),J(this,e,bl,hl,ee,{})}}const $l=`precision mediump float;
-attribute vec2 position;
-uniform float zoomLevel;    // 1 full size, 0 max zoom
-uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
-varying vec2 uv;
-
-void main() {
-    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
-    gl_Position = vec4(position, 0, 1);
-}
-`,kl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    gl_FragColor = vec4(A, B, 0.0, 1.0);
-}
-
-`,yl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float PI = 3.14159265359;
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = sin(iteration*PI/180.0);
-    if (val < 0.0) {
-        val = -1.0 * val;
-    }
-    gl_FragColor = vec4(A, B, val, 1.0);
-}
-`,Sl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (A + B) / 2.0;
-
-    gl_FragColor = vec4(val, val, val, 1.0);
-}
-
-`,El=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (1.0 + A - B) / 2.0;
-
-    gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
-}
-`,Al=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float val = (1.0 + A - B) / 2.0;
-
-    gl_FragColor = vec4(val, val, val, 1.0);
-}
-`,Dl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
-vec3 rgb2hsv(vec3 c) {
-    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
-    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
-    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
-
-    float d = q.x - min(q.w, q.y);
-    float e = 1.0e-10;
-    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
-}
-
-// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
-vec3 hsv2rgb(vec3 c) {
-    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    // vec3 color1 = vec3(1.0, 0.0, 0.0);
-    // vec3 color2 = vec3(0.0, 1.0, 0.0);
-    // vec3 result = color1 * A + color2 * B;
-
-    vec3 color1RGB = vec3(0.639, 0.941, 0.717);
-    vec3 color2RGB = vec3(0.929, 0.082, 0.705);
-
-    vec3 color1HSV = rgb2hsv(color1RGB);
-    vec3 color2HSV = rgb2hsv(color2RGB);
-
-    float color1Offset = (cos(iteration * 0.001) + 1.0) * 0.5;
-    float color1newH = 0.5 * (color1HSV.x + color1Offset);
-    vec3 color1newHSV = vec3(color1newH, color1HSV.g, color1HSV.b);
-
-    float color2Offset = (cos(iteration * 0.002)) * 0.5;
-    float color2newH = 0.5 * (color2HSV.x + color2Offset + 0.33);
-    vec3 color2newHSV = vec3(color2newH, color2HSV.g, color2HSV.b);
-
-
-    vec3 resultHSV = color1newHSV * A + color2newHSV * B;
-    vec3 result = hsv2rgb(resultHSV);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,Bl=`// Colors scheme inspired by Robert Munafo described here:
-// https://www.mrob.com/pub/comp/xmorphia/index.html
-// 
-// A is blue
-// B is red
-
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    float red = A; // The more A the redder
-    float blue = 1.0 - A; // The less A the bleuer
-
-    float green = max(A, B) - min(A, B);
-
-    vec3 result = vec3(red, green, blue);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,zl=`// Colors scheme inspired by Robert Munafo described here:
-// https://www.mrob.com/pub/comp/xmorphia/index.html
-// 
-// A is blue
-// B is red
-
-precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec3 color1 = vec3(0.0, 0.0, 1.0);
-    vec3 color2 = vec3(1.0, 0.0, 0.0);
-    vec3 result = vec3(A, 0.0, 1.0-A);
-
-    gl_FragColor = vec4(result, 1.0);
-}
-`,Cl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    if (A > 0.9) {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else if (A > 0.4) {
-        gl_FragColor = vec4(1.0 - A, 0.0, 0.0, 1.0);
-    } else { 
-        gl_FragColor = vec4(0.0, A, 0.0, 1.0);
-    }
-}
-`,Tl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
-    vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
-    vec4 color = mix(blue, red, A);
-
-    vec4 softRed = vec4(0.8588, 0.2824, 0.3765, 1.0);
-    vec4 softBlue = vec4(0.2824, 0.3882, 0.8588, 1.0);
-    // vec4 softColor = mix(blue, red, (A-0.4)/0.6);
-    // vec4 softColor = mix(blue, red, (A-0.4)/0.4);
-    vec4 softColor = mix(softBlue, softRed, 1.0-A);
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(color);
-    }
-
-}
-`,Il=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/MATLAB_cool.frag
-float colormap_red(float x) {
-    return (1.0 + 1.0 / 63.0) * x - 1.0 / 63.0;
-}
-
-float colormap_green(float x) {
-    return -(1.0 + 1.0 / 63.0) * x + (1.0 + 1.0 / 63.0);
-}
-
-vec4 colormap(float x) {
-    float r = clamp(colormap_red(x), 0.0, 1.0);
-    float g = clamp(colormap_green(x), 0.0, 1.0);
-    float b = 1.0;
-    return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
     vec4 softColor = colormap((A-0.4)*(1.0/0.6));
 
 
@@ -3433,169 +2758,7 @@ void main() {
     }
 
 }
-`,Ll=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdBu.frag
-float colormap_red(float x) {
-	if (x < 0.09771832105856419) {
-		return 7.60263247863246E+02 * x + 1.02931623931624E+02;
-	} else if (x < 0.3017162107441106) {
-		return (-2.54380938558548E+02 * x + 4.29911571188803E+02) * x + 1.37642085716717E+02;
-	} else if (x < 0.4014205790737471) {
-		return 8.67103448276151E+01 * x + 2.18034482758611E+02;
-	} else if (x < 0.5019932233215039) {
-		return -6.15461538461498E+01 * x + 2.77547692307680E+02;
-	} else if (x < 0.5969483882550937) {
-		return -3.77588522588624E+02 * x + 4.36198819698878E+02;
-	} else if (x < 0.8046060096654594) {
-		return (-6.51345897546620E+02 * x + 2.09780968434337E+02) * x + 3.17674951640855E+02;
-	} else {
-		return -3.08431855203590E+02 * x + 3.12956742081421E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09881640500975222) {
-		return 2.41408547008547E+02 * x + 3.50427350427364E-01;
-	} else if (x < 0.5000816285610199) {
-		return ((((1.98531871433258E+04 * x - 2.64108262469187E+04) * x + 1.10991785969817E+04) * x - 1.92958444776211E+03) * x + 8.39569642882186E+02) * x - 4.82944517518776E+01;
-	} else if (x < 0.8922355473041534) {
-		return (((6.16712686949223E+03 * x - 1.59084026055125E+04) * x + 1.45172137257997E+04) * x - 5.80944127411621E+03) * x + 1.12477959061948E+03;
-	} else {
-		return -5.28313797313699E+02 * x + 5.78459299959206E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.1033699568661857) {
-		return 1.30256410256410E+02 * x + 3.08518518518519E+01;
-	} else if (x < 0.2037526071071625) {
-		return 3.38458128078815E+02 * x + 9.33004926108412E+00;
-	} else if (x < 0.2973267734050751) {
-		return (-1.06345054944861E+02 * x + 5.93327252747168E+02) * x - 3.81852747252658E+01;
-	} else if (x < 0.4029109179973602) {
-		return 6.68959706959723E+02 * x - 7.00740740740798E+01;
-	} else if (x < 0.5006715489526758) {
-		return 4.87348695652202E+02 * x + 3.09898550724286E+00;
-	} else if (x < 0.6004396902588283) {
-		return -6.85799999999829E+01 * x + 2.81436666666663E+02;
-	} else if (x < 0.702576607465744) {
-		return -1.81331701891043E+02 * x + 3.49137263626287E+02;
-	} else if (x < 0.9010407030582428) {
-		return (2.06124143164576E+02 * x - 5.78166906665595E+02) * x + 5.26198653917172E+02;
-	} else {
-		return -7.36990769230737E+02 * x + 8.36652307692262E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,Rl=`precision mediump float;
-
-uniform sampler2D prevState;
-uniform float iteration;
-varying vec2 uv;
-
-// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
-float colormap_red(float x) {
-	if (x < 0.09790863520700754) {
-		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
-	} else if (x < 0.2001887081633112) {
-		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
-	} else if (x < 0.3190117539655621) {
-		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
-	} else if (x < 0.500517389125164) {
-		return 255.0;
-	} else if (x < 0.6068377196788788) {
-		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
-	} else if (x < 0.9017468988895416) {
-		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
-	} else {
-		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
-	}
-}
-
-float colormap_green(float x) {
-	if (x < 0.09638568758964539) {
-		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
-	} else if (x < 0.4987066686153412) {
-		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
-	} else if (x < 0.6047312345537269) {
-		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
-	} else if (x < 0.7067635953426361) {
-		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
-	} else {
-		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
-	}
-}
-
-float colormap_blue(float x) {
-	if (x < 0.09982818011951204) {
-		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
-	} else if (x < 0.2958717460833126) {
-		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
-	} else if (x < 0.4900527540014758) {
-		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
-	} else if (x < 0.6017014681258838) {
-		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
-	} else if (x < 0.7015737100463595) {
-		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
-	} else if (x < 0.8237156500567735) {
-		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
-	} else {
-		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
-	}
-}
-
-vec4 colormap(float x) {
-	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
-	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
-	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-	return vec4(r, g, b, 1.0);
-}
-
-void main() {
-    float A = texture2D(prevState, uv).r;
-    float B = texture2D(prevState, uv).g;
-
-    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
-
-    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
-
-
-    if (A < 0.4) {
-        gl_FragColor = vec4(black);
-    } else {
-        gl_FragColor = vec4(softColor);
-    }
-
-}
-`,Pl=`precision mediump float;
+`,Ha=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -3674,7 +2837,7 @@ void main() {
     }
 
 }
-`,Fl=`precision mediump float;
+`,Ka=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform float iteration;
@@ -3737,6 +2900,603 @@ float colormap_blue(float x) {
 
 vec4 colormap(float x) {
     return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,qa=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
+float colormap_red(float x) {
+	if (x < 0.09790863520700754) {
+		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
+	} else if (x < 0.2001887081633112) {
+		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
+	} else if (x < 0.3190117539655621) {
+		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
+	} else if (x < 0.500517389125164) {
+		return 255.0;
+	} else if (x < 0.6068377196788788) {
+		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
+	} else if (x < 0.9017468988895416) {
+		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
+	} else {
+		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09638568758964539) {
+		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
+	} else if (x < 0.4987066686153412) {
+		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
+	} else if (x < 0.6047312345537269) {
+		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
+	} else if (x < 0.7067635953426361) {
+		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
+	} else {
+		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.09982818011951204) {
+		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
+	} else if (x < 0.2958717460833126) {
+		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
+	} else if (x < 0.4900527540014758) {
+		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
+	} else if (x < 0.6017014681258838) {
+		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
+	} else if (x < 0.7015737100463595) {
+		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
+	} else if (x < 0.8237156500567735) {
+		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
+	} else {
+		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((B-0.1)*(1.0/0.9));
+
+
+    if (B < 0.1) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,ve={},Ya=a=>{const e={vert:Ba,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}};ve.raw=a({frag:za,...e}),ve.A_transform_seismic=a({frag:Ka,...e}),ve.A_gradiant1=a({frag:Ma,...e}),ve.A_gradiant2=a({frag:Na,...e}),ve.A_MATLAB_cool=a({frag:Ua,...e}),ve.A_IDL_CB_RdBu=a({frag:Oa,...e}),ve.A_IDL_CB_RdYiBu=a({frag:Va,...e}),ve.A_IDL_CB_BuYiRd=a({frag:Ha,...e}),ve.B_IDL_CB_RdYiBu=a({frag:qa,...e}),ve.grayscale=a({frag:Ta,...e}),ve.blackwhite=a({frag:Ia,...e}),ve.whiteblack=a({frag:La,...e}),ve.timebasedblue=a({frag:Ca,...e}),ve.lerp=a({frag:Ra,...e}),ve.mrob=a({frag:Pa,...e}),ve.redblue=a({frag:Fa,...e})},Ga=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(ve[e]||ve.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},Wa=`precision mediump float;
+
+uniform float radius;
+uniform sampler2D prevState;
+uniform bool pauseSimulation;
+uniform float Da;
+uniform float Db;
+uniform float f;
+uniform float k;
+
+uniform bool penIsActive;
+uniform bool eraserIsActive;
+uniform float penDensity;
+
+varying vec2 uv;
+varying vec2 mouseUv;
+varying float scaledPenRadius;
+
+// https://thebookofshaders.com/10/
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
+}
+
+vec2 laplacianDiff() {
+    vec2 r = vec2(0.0, 0.0);
+
+    // top left
+    r += texture2D(prevState, uv+vec2(-1,-1)/float(radius)).rg * 0.05;
+    // top
+    r += texture2D(prevState, uv+vec2(0,-1)/float(radius)).rg * 0.2;
+    // top right
+    r += texture2D(prevState, uv+vec2(1,-1)/float(radius)).rg * 0.05;
+
+    // left
+    r += texture2D(prevState, uv+vec2(-1,0)/float(radius)).rg * 0.2;
+    // middle
+    r += texture2D(prevState, uv+vec2(0,0)/float(radius)).rg * -1.0;
+    // right
+    r += texture2D(prevState, uv+vec2(1,0)/float(radius)).rg * 0.2;
+
+    // bottom left
+    r += texture2D(prevState, uv+vec2(-1,1)/float(radius)).rg * 0.05;
+    // bottom
+    r += texture2D(prevState, uv+vec2(0,1)/float(radius)).rg * 0.2;
+    // bottom right
+    r += texture2D(prevState, uv+vec2(1,1)/float(radius)).rg * 0.05;
+
+    return r;
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec2 L = laplacianDiff();
+    float La = L.r;
+    float Lb = L.g;
+
+    float newA = A + ((Da * La) - (A * B * B) + (f * (1.0 - A)));
+    float newB = B + ((Db * Lb) + (A * B * B) - ((k + f) * B));
+
+
+    float rnd = random(uv);
+    if (penIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
+        gl_FragColor = vec4(0.0, 1.0, 0, 1);
+    } else if (eraserIsActive && rnd < penDensity && distance(uv, mouseUv) < scaledPenRadius) {
+        gl_FragColor = vec4(1.0, 0.0, 0, 1);
+    } else if (pauseSimulation) {
+        gl_FragColor = vec4(A, B, 0, 1);
+    } else {
+        gl_FragColor = vec4(newA, newB, 0, 1);
+    }
+}
+`,Xa=`precision mediump float;
+
+uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+uniform float penRadius;
+
+attribute vec2 position;
+
+varying vec2 uv;
+varying vec2 mouseUv;
+varying float scaledPenRadius;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    mouseUv = (mousePosition * zoomLevel) + pan * (1.0 - zoomLevel);
+    scaledPenRadius = penRadius * zoomLevel;
+    gl_Position = vec4(position, 0, 1);
+}
+`;let xn;const ja=(a,e)=>{xn=a({frag:Wa,vert:Xa,attributes:{position:[-4,-4,4,-4,0,4]},count:3,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,f:a.prop("f"),k:a.prop("k"),radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive"),eraserIsActive:a.prop("eraserIsActive"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Za=a=>{const{inputBuffer:e,outputBuffer:n,pauseSimulation:o,mouseState:t,simulationParameters:i,worldSize:r}=a;xn({inputBuffer:e,outputBuffer:n,pauseSimulation:o,zoomLevel:t.zoomLevel,pan:[t.panX,t.panY],mousePosition:[t.x,t.y],penRadius:1/2**(r-t.penSize),penDensity:t.penDensity,penIsActive:t.pressedLeft,eraserIsActive:t.pressedRight,...i})},Qa=(a,e)=>a==="randomSpots"?tl(e,.001):a==="middleCircleAndRandomSpots"?Ja(e,.005,.05):a==="empty"?el(e):nl(e,.02),Ja=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},el=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),tl=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),nl=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),ol=`precision highp float;
+
+attribute vec2 position;
+
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
+    gl_Position = vec4(position, 0, 1);
+}
+`,rl=`precision highp float;
+
+uniform sampler2D prevState;
+
+varying vec2 uv;
+
+void main() {
+    vec4 color = texture2D(prevState, uv);
+
+    float division = 10.0;
+    float column = mod(uv.x, 1.0 / division);
+    float c = column * division;
+
+    float row = mod(uv.y, 1.0 / division);
+    float r = row * division;
+
+    // I haven't found a way to compare the value to an exact value
+    // Might be a precision issue, or just that I'm missing something
+    if (c < 0.05 || r < 0.05) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    } else {
+       gl_FragColor = color;
+    }
+}
+`;let _n;const il=a=>{_n=a({vert:ol,frag:rl,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},al=a=>{const{inputBuffer:e,outputBuffer:n,zoomState:o}=a;_n({inputBuffer:e,outputBuffer:n,zoomLevel:o.zoomLevel,pan:[o.panX,o.panY]})},ll=`precision mediump float;
+
+uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+
+attribute vec2 position;
+
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0);
+    gl_Position = vec4(position, 0, 1);
+}
+`,sl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform vec2 mousePosition;
+uniform float penRadius;
+
+varying vec2 uv;
+
+void main() {
+    vec4 color = texture2D(prevState, uv);
+
+    float d = distance(uv, mousePosition);
+    if (
+        (d >= penRadius && d <= penRadius + 0.001) ||
+        (uv.x >= mousePosition.x - 0.001 && uv.x <= mousePosition.x + 0.001 && uv.y >= mousePosition.y - 0.01 && uv.y <= mousePosition.y + 0.01) ||
+        (uv.x >= mousePosition.x - 0.01 && uv.x <= mousePosition.x + 0.01 && uv.y >= mousePosition.y - 0.001 && uv.y <= mousePosition.y + 0.001))
+    {
+        gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
+    } else {
+        gl_FragColor = color;
+    }
+}
+`;let bn;const fl=a=>{bn=a({frag:sl,vert:ll,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}})},cl=a=>{const{inputBuffer:e,mouseState:n,outputBuffer:o,worldSize:t}=a;bn({inputBuffer:e,outputBuffer:o,mousePosition:[n.x,n.y],penRadius:1/2**(t-n.penSize),zoomLevel:n.zoomLevel,pan:[n.panX,n.panY]})},ul=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=Qa(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f),u=Array(2).fill(0).map(f);return ja(r,s),Ya(r),il(r),fl(r),r.frame(()=>{e.pause||n.iteration++;let p=c[(n.iteration+1)%2];for(let m=0;m<e.speed;m++){n.iteration++;const d=c[n.iteration%2];p=c[(n.iteration+1)%2],Za({inputBuffer:d,outputBuffer:p,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}pl({inputTexture:p,graphicsTextures:u,controls:e,info:n,mouseState:o})}),r},pl=a=>{const{inputTexture:e,graphicsTextures:n,controls:o,info:t,mouseState:i}=a;let r=0;r++;const s=e,l=n[r%2];if(Ga({colorMode:o.colors,inputBuffer:s,iteration:t.iteration,outputBuffer:l,zoomState:i}),o.grid){r++;const u=n[(r+1)%2],p=n[r%2];al({inputBuffer:u,outputBuffer:p,zoomState:i})}r++;const f=n[(r+1)%2],c=null;cl({mouseState:i,worldSize:t.worldSize,inputBuffer:f,outputBuffer:c})},Wt=a=>{if(!a.currentTarget)throw new Error("Event has no currentTarget");const e=a.currentTarget,n=e.getBoundingClientRect(),o=a.clientX-n.left,t=a.clientY-n.top,{width:i,height:r}=e,s=o/i,l=(r-t)/r;return{x:s,y:l}};const{window:ml}=je;function dl(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,E=2**a[0].worldSize+"",S,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,b,V,X;return n=new Da({}),n.$on("fkupdated",a[7]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),S=R(E),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),S=P(ae,E),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){y(t,"id","datgui-container"),y(t,"class","svelte-18zf5fr"),y(s,"for","worldSize"),y(c,"id","worldSize"),y(c,"type","number"),y(c,"step","1"),y(D,"id","canvas"),y(D,"width",a[1].width),y(D,"height",a[1].height),y(D,"class","svelte-18zf5fr")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,S),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),b=!0,V||(X=[Z(ml,"keydown",a[2]),Z(c,"input",a[8]),Z(c,"change",a[6]),Z(D,"mousemove",a[4]),Z(D,"mousedown",we(a[5])),Z(D,"mouseup",a[5]),Z(D,"wheel",a[3]),Z(D,"keydown",we(a[2])),Z(D,"contextmenu",we(hl))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!b||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!b||F&1)&&E!==(E=2**I[0].worldSize+"")&&pe(S,E),(!b||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){b||(_(n.$$.fragment,I),b=!0)},o(I){k(n.$$.fragment,I),b=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const hl=a=>a;function vl(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>g(),pause:!1,grid:!1,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:He[0].f,k:He[0].k};let l,f;const c=async()=>{const S=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new S.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const M=document.getElementById("datgui-container");if(!M)throw new Error("Gui container not ready");M.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const v={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",v).onFinishChange(t.reset).name("Initial conditions");const x=l.add(r,"iteration").listen();x.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed"),l.add(i,"penSize",0,r.worldSize).name("Pen size"),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=S=>{if(S.code==="Space"){t.pause=!t.pause,S.preventDefault();return}if(S.code==="KeyR"&&!S.getModifierState("Control")){g(),S.preventDefault();return}},p=S=>{if(!S.getModifierState("Control"))return;const M=Wt(S);i.panX=M.x,i.panY=M.y,S.deltaY>0?i.zoomLevel*=1+i.zoomLevel/2:i.zoomLevel*=1-i.zoomLevel/2,i.zoomLevel>1&&(i.zoomLevel=1),i.zoomLevel<0&&(i.zoomLevel=0),S.preventDefault()},m=S=>{const M=Wt(S);i.x=M.x,i.y=M.y},d=S=>{if(![0,2].includes(S.button)||!["mouseup","mousedown"].includes(S.type))return;let M=S.type==="mousedown";S.button===0&&(i.pressedLeft=M),S.button===2&&(i.pressedRight=M)},g=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=ul({controls:t,info:r,mouseState:i,simulationParameters:s}))},C=S=>{s.f=S.detail.f,s.k=S.detail.k};$e(()=>{g()}),ye(()=>{l.destroy(),f.destroy()});function E(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,p,m,d,g,C,E]}let gl=class extends Q{constructor(e){super(),J(this,e,vl,dl,ee,{})}};const Ke=[{name:"KarlSims",type:"Unknown",f:.055,k:.062},{name:"STX 1",type:"N.A",f:.0353,k:.0614},{name:"STX 2",type:"N.A",f:.0201,k:.0602},{name:"STX 2",type:"N.A",f:.0181,k:.0435},{name:"α 1",type:"alpha",f:.01,k:.047},{name:"α 2",type:"alpha",f:.014,k:.053},{name:"β 1",type:"beta",f:.014,k:.039},{name:"β 2",type:"beta",f:.026,k:.051},{name:"δ 1",type:"delta",f:.03,k:.055},{name:"δ 2",type:"delta",f:.042,k:.059},{name:"ε 1",type:"epsilon",f:.018,k:.055},{name:"ε 2",type:"epsilon",f:.022,k:.059},{name:"η 1",type:"eta",f:.034,k:.063},{name:"γ 1",type:"gamma",f:.022,k:.051},{name:"γ 2",type:"gamma",f:.026,k:.055},{name:"ι 1",type:"iota",f:.046,k:.0594},{name:"κ 1",type:"kappa",f:.082,k:.06},{name:"κ 2",type:"kappa",f:.058,k:.063},{name:"λ 1",type:"lambda",f:.026,k:.061},{name:"λ 2",type:"lambda",f:.034,k:.065},{name:"μ 1",type:"mu",f:.046,k:.065},{name:"μ 2",type:"mu",f:.058,k:.065},{name:"ν 2",type:"nu",f:.046,k:.067},{name:"π 1",type:"pi",f:.062,k:.061},{name:"ρ 1",type:"rho",f:.09,k:.059},{name:"ρ 2",type:"rho",f:.102,k:.055},{name:"σ 1",type:"sigma",f:.09,k:.057},{name:"θ 2",type:"sigma",f:.11,k:.0523},{name:"θ 1",type:"theta",f:.03,k:.057},{name:"θ 2",type:"theta",f:.038,k:.061},{name:"ξ 1",type:"xi",f:.01,k:.041},{name:"ξ 2",type:"xi",f:.014,k:.047},{name:"ζ 1",type:"zeta",f:.022,k:.061},{name:"ζ 2",type:"zeta",f:.026,k:.059}];function Xt(a,e,n){const o=a.slice();return o[18]=e[n],o}function jt(a){let e,n,o,t,i,r,s,l,f,c=Ke,u=[];for(let p=0;p<c.length;p+=1)u[p]=Zt(Xt(a,c,p));return r=new Fe({props:{sketch:a[3]}}),{c(){e=B("div"),n=R("Select f and k parameters on the map of use a preset"),o=q(),t=B("select");for(let p=0;p<u.length;p+=1)u[p].c();i=q(),N(r.$$.fragment),this.h()},l(p){e=z(p,"DIV",{});var m=T(e);n=P(m,"Select f and k parameters on the map of use a preset"),m.forEach(h),o=Y(p),t=z(p,"SELECT",{class:!0});var d=T(t);for(let g=0;g<u.length;g+=1)u[g].l(d);d.forEach(h),i=Y(p),G(r.$$.fragment,p),this.h()},h(){y(t,"class","full-width svelte-1qznlxf"),a[0]===void 0&&it(()=>a[5].call(t))},m(p,m){A(p,e,m),w(e,n),A(p,o,m),A(p,t,m);for(let d=0;d<u.length;d+=1)u[d].m(t,null);Ve(t,a[0]),A(p,i,m),U(r,p,m),s=!0,l||(f=[Z(t,"change",a[5]),Z(t,"change",a[6])],l=!0)},p(p,m){if(m&0){c=Ke;let d;for(d=0;d<c.length;d+=1){const g=Xt(p,c,d);u[d]?u[d].p(g,m):(u[d]=Zt(g),u[d].c(),u[d].m(t,null))}for(;d<u.length;d+=1)u[d].d(1);u.length=c.length}m&1&&Ve(t,p[0])},i(p){s||(_(r.$$.fragment,p),s=!0)},o(p){k(r.$$.fragment,p),s=!1},d(p){p&&h(e),p&&h(o),p&&h(t),ke(u,p),p&&h(i),O(r,p),l=!1,Be(f)}}}function Zt(a){let e,n=a[18].type+"",o,t,i=a[18].name+"",r,s,l=a[18].f+"",f,c,u=a[18].k+"",p,m;return{c(){e=B("option"),o=R(n),t=R(" - "),r=R(i),s=R(" (f/k "),f=R(l),c=R(" / "),p=R(u),m=R(`)
+                `),this.h()},l(d){e=z(d,"OPTION",{});var g=T(e);o=P(g,n),t=P(g," - "),r=P(g,i),s=P(g," (f/k "),f=P(g,l),c=P(g," / "),p=P(g,u),m=P(g,`)
+                `),g.forEach(h),this.h()},h(){e.__value=a[18],e.value=e.__value},m(d,g){A(d,e,g),w(e,o),w(e,t),w(e,r),w(e,s),w(e,f),w(e,c),w(e,p),w(e,m)},p:ne,d(d){d&&h(e)}}}function xl(a){let e,n,o=a[1]?"Close":"F/K selection",t,i,r,s,l,f=a[1]&&jt(a);return{c(){e=B("div"),n=B("button"),t=R(o),i=q(),f&&f.c(),this.h()},l(c){e=z(c,"DIV",{id:!0,class:!0});var u=T(e);n=z(u,"BUTTON",{class:!0,id:!0});var p=T(n);t=P(p,o),p.forEach(h),i=Y(u),f&&f.l(u),u.forEach(h),this.h()},h(){y(n,"class","full-width svelte-1qznlxf"),y(n,"id","toggleButton"),y(e,"id","container"),y(e,"class","svelte-1qznlxf"),Ie(e,"no-cursor",_l)},m(c,u){A(c,e,u),w(e,n),w(n,t),w(e,i),f&&f.m(e,null),r=!0,s||(l=Z(n,"click",a[4]),s=!0)},p(c,[u]){(!r||u&2)&&o!==(o=c[1]?"Close":"F/K selection")&&pe(t,o),c[1]?f?(f.p(c,u),u&2&&_(f,1)):(f=jt(c),f.c(),_(f,1),f.m(e,null)):f&&(oe(),k(f,1,1,()=>{f=null}),re())},i(c){r||(_(f),r=!0)},o(c){k(f),r=!1},d(c){c&&h(e),f&&f.d(),s=!1,l()}}}let _l=!1;function bl(a,e){let n=!1,o=1/0,t=null;for(let i=0;i<e.length;i++){const r=e[i],s=e[(i+1)%e.length];if(a[0]===r[0]&&a[1]===r[1])return a;r[1]>a[1]!=s[1]>a[1]&&a[0]<(s[0]-r[0])*(a[1]-r[1])/(s[1]-r[1])+r[0]&&(n=!n);const f=wl(a,r,s);f<o&&(o=f,t=$l(a,r,s))}if(n)return a;if(!t)throw new Error("Now closest point found");return t}function wl(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],Math.sqrt((a[0]-l[0])**2+(a[1]-l[1])**2)}function $l(a,e,n){const o=[n[0]-e[0],n[1]-e[1]],t=[a[0]-e[0],a[1]-e[1]],i=o[0]*t[0]+o[1]*t[1],r=o[0]*o[0]+o[1]*o[1],s=i/r;let l;return s<0?l=e:s>1?l=n:l=[e[0]+s*o[0],e[1]+s*o[1]],l}function kl(a,e,n){const o=Ge();let t=Ke[0],i=!0;const r=[0,.12],s=[.03,.07],l=[{f:.1045,k:.0553},{f:.0829,k:.0582},{f:.0664,k:.0595},{f:.0511,k:.0594},{f:.0307,k:.0549},{f:.017,k:.0467},{f:.005,k:.0335},{f:.0076,k:.0472},{f:.0166,k:.0594},{f:.0277,k:.0657},{f:.046,k:.0675},{f:.0757,k:.0643},{f:.0949,k:.0594}],f=x=>{const{f:$,k:L}=x,D=C.map(L,s[0],s[1],0,C.width),b=C.map($,r[0],r[1],C.height,0);return{x:D,y:b}},c=x=>{x.noStroke();const $=x.textSize();for(const L of Ke){const{x:D,y:b}=f({f:L.f,k:L.k}),V=L.f===t.f&&L.k===t.k;x.circle(D,b,3),x.textSize(V?$*2:$),x.fill(V?[240,240,150]:[255,255,255]),x.text(L.name,D-x.textWidth(L.name)/2,b-10)}},u=x=>{x.noFill(),x.stroke("red"),x.strokeWeight(1);const{x:$,y:L}=f(t);x.text("F",10,L>10?L-5:L+15),x.line(0,L,x.width,L),x.text("K",$<x.width-10?$+5:$-15,x.height-10),x.line($,0,$,x.height),x.circle($,L,10)},p=x=>{const{f:$,k:L}=t,D=`F: ${$.toFixed(4)}`,b=`K: ${L.toFixed(4)}`,V=x.textSize(),X=x.height*.05;x.textStyle(x.BOLD),x.textSize(X),x.fill("white"),x.stroke(0),x.strokeWeight(1),x.text(D,x.width*.05,x.textSize()),x.text(b,x.width*.05,x.textSize()+x.textSize()+6),x.textStyle(x.NORMAL),x.textSize(V)},m=x=>{for(let $=0;$<l.length;$++){const{x:L,y:D}=f(l[$]),{x:b,y:V}=f(l[($+1)%l.length]);x.fill("white"),x.stroke("white"),x.strokeWeight(1),x.circle(L,D,3),x.circle(b,V,3),x.line(L,D,b,V)}},d=()=>{const x=[t.f,t.k],$=l.map(D=>[D.f,D.k]),L=bl(x,$);n(0,t.f=L[0],t),n(0,t.k=L[1],t)},g=()=>{let{f:x,k:$}=t;const L=C.noise(C.frameCount*.01),D=C.noise(5321+C.frameCount*.01),V=Math.random()<.97?.001:.01;x=x+(D*2-1)*(r[1]-r[0])*V,$=$+(L*2-1)*(s[1]-s[0])*V,n(0,t={f:x,k:$,name:"custom",type:"manual"}),d(),o("fkupdated",t)};let C;const E=x=>{C=x;let $;x.preload=()=>{$=x.loadImage(Ze+"/parameters_map.png")},x.setup=()=>{x.createCanvas(400,400),x.frameRate(55)},x.draw=()=>{x.background(255),x.tint(150,190),x.image($,0,0,x.width,x.height),c(x),m(x),u(x),p(x),g()}},S=()=>{n(1,i=!i),i||C.remove()};ye(()=>C?.remove());function M(){t=at(this),n(0,t)}return[t,i,o,E,S,M,()=>o("fkupdated",t)]}class yl extends Q{constructor(e){super(),J(this,e,kl,xl,ee,{})}}const Sl=`precision mediump float;
+attribute vec2 position;
+uniform float zoomLevel;    // 1 full size, 0 max zoom
+uniform vec2 pan;   // in range [0, 1], [0, 0]  is bottom left, [1, 1] top right
+varying vec2 uv;
+
+void main() {
+    uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
+    gl_Position = vec4(position, 0, 1);
+}
+`,El=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    gl_FragColor = vec4(A, B, 0.0, 1.0);
+}
+
+`,Al=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float PI = 3.14159265359;
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = sin(iteration*PI/180.0);
+    if (val < 0.0) {
+        val = -1.0 * val;
+    }
+    gl_FragColor = vec4(A, B, val, 1.0);
+}
+`,Dl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (A + B) / 2.0;
+
+    gl_FragColor = vec4(val, val, val, 1.0);
+}
+
+`,Bl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (1.0 + A - B) / 2.0;
+
+    gl_FragColor = vec4(1.0 - val, 1.0 - val, 1.0 - val, 1.0);
+}
+`,zl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float val = (1.0 + A - B) / 2.0;
+
+    gl_FragColor = vec4(val, val, val, 1.0);
+}
+`,Cl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
+vec3 rgb2hsv(vec3 c) {
+    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+// All components are in the range [0...1], including hue. (https://stackoverflow.com/a/17897228)
+vec3 hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    // vec3 color1 = vec3(1.0, 0.0, 0.0);
+    // vec3 color2 = vec3(0.0, 1.0, 0.0);
+    // vec3 result = color1 * A + color2 * B;
+
+    vec3 color1RGB = vec3(0.639, 0.941, 0.717);
+    vec3 color2RGB = vec3(0.929, 0.082, 0.705);
+
+    vec3 color1HSV = rgb2hsv(color1RGB);
+    vec3 color2HSV = rgb2hsv(color2RGB);
+
+    float color1Offset = (cos(iteration * 0.001) + 1.0) * 0.5;
+    float color1newH = 0.5 * (color1HSV.x + color1Offset);
+    vec3 color1newHSV = vec3(color1newH, color1HSV.g, color1HSV.b);
+
+    float color2Offset = (cos(iteration * 0.002)) * 0.5;
+    float color2newH = 0.5 * (color2HSV.x + color2Offset + 0.33);
+    vec3 color2newHSV = vec3(color2newH, color2HSV.g, color2HSV.b);
+
+
+    vec3 resultHSV = color1newHSV * A + color2newHSV * B;
+    vec3 result = hsv2rgb(resultHSV);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,Tl=`// Colors scheme inspired by Robert Munafo described here:
+// https://www.mrob.com/pub/comp/xmorphia/index.html
+// 
+// A is blue
+// B is red
+
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    float red = A; // The more A the redder
+    float blue = 1.0 - A; // The less A the bleuer
+
+    float green = max(A, B) - min(A, B);
+
+    vec3 result = vec3(red, green, blue);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,Il=`// Colors scheme inspired by Robert Munafo described here:
+// https://www.mrob.com/pub/comp/xmorphia/index.html
+// 
+// A is blue
+// B is red
+
+precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec3 color1 = vec3(0.0, 0.0, 1.0);
+    vec3 color2 = vec3(1.0, 0.0, 0.0);
+    vec3 result = vec3(A, 0.0, 1.0-A);
+
+    gl_FragColor = vec4(result, 1.0);
+}
+`,Ll=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    if (A > 0.9) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    } else if (A > 0.4) {
+        gl_FragColor = vec4(1.0 - A, 0.0, 0.0, 1.0);
+    } else { 
+        gl_FragColor = vec4(0.0, A, 0.0, 1.0);
+    }
+}
+`,Rl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
+    vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
+    vec4 color = mix(blue, red, A);
+
+    vec4 softRed = vec4(0.8588, 0.2824, 0.3765, 1.0);
+    vec4 softBlue = vec4(0.2824, 0.3882, 0.8588, 1.0);
+    // vec4 softColor = mix(blue, red, (A-0.4)/0.6);
+    // vec4 softColor = mix(blue, red, (A-0.4)/0.4);
+    vec4 softColor = mix(softBlue, softRed, 1.0-A);
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(color);
+    }
+
+}
+`,Pl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/MATLAB_cool.frag
+float colormap_red(float x) {
+    return (1.0 + 1.0 / 63.0) * x - 1.0 / 63.0;
+}
+
+float colormap_green(float x) {
+    return -(1.0 + 1.0 / 63.0) * x + (1.0 + 1.0 / 63.0);
+}
+
+vec4 colormap(float x) {
+    float r = clamp(colormap_red(x), 0.0, 1.0);
+    float g = clamp(colormap_green(x), 0.0, 1.0);
+    float b = 1.0;
+    return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,Fl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdBu.frag
+float colormap_red(float x) {
+	if (x < 0.09771832105856419) {
+		return 7.60263247863246E+02 * x + 1.02931623931624E+02;
+	} else if (x < 0.3017162107441106) {
+		return (-2.54380938558548E+02 * x + 4.29911571188803E+02) * x + 1.37642085716717E+02;
+	} else if (x < 0.4014205790737471) {
+		return 8.67103448276151E+01 * x + 2.18034482758611E+02;
+	} else if (x < 0.5019932233215039) {
+		return -6.15461538461498E+01 * x + 2.77547692307680E+02;
+	} else if (x < 0.5969483882550937) {
+		return -3.77588522588624E+02 * x + 4.36198819698878E+02;
+	} else if (x < 0.8046060096654594) {
+		return (-6.51345897546620E+02 * x + 2.09780968434337E+02) * x + 3.17674951640855E+02;
+	} else {
+		return -3.08431855203590E+02 * x + 3.12956742081421E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09881640500975222) {
+		return 2.41408547008547E+02 * x + 3.50427350427364E-01;
+	} else if (x < 0.5000816285610199) {
+		return ((((1.98531871433258E+04 * x - 2.64108262469187E+04) * x + 1.10991785969817E+04) * x - 1.92958444776211E+03) * x + 8.39569642882186E+02) * x - 4.82944517518776E+01;
+	} else if (x < 0.8922355473041534) {
+		return (((6.16712686949223E+03 * x - 1.59084026055125E+04) * x + 1.45172137257997E+04) * x - 5.80944127411621E+03) * x + 1.12477959061948E+03;
+	} else {
+		return -5.28313797313699E+02 * x + 5.78459299959206E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.1033699568661857) {
+		return 1.30256410256410E+02 * x + 3.08518518518519E+01;
+	} else if (x < 0.2037526071071625) {
+		return 3.38458128078815E+02 * x + 9.33004926108412E+00;
+	} else if (x < 0.2973267734050751) {
+		return (-1.06345054944861E+02 * x + 5.93327252747168E+02) * x - 3.81852747252658E+01;
+	} else if (x < 0.4029109179973602) {
+		return 6.68959706959723E+02 * x - 7.00740740740798E+01;
+	} else if (x < 0.5006715489526758) {
+		return 4.87348695652202E+02 * x + 3.09898550724286E+00;
+	} else if (x < 0.6004396902588283) {
+		return -6.85799999999829E+01 * x + 2.81436666666663E+02;
+	} else if (x < 0.702576607465744) {
+		return -1.81331701891043E+02 * x + 3.49137263626287E+02;
+	} else if (x < 0.9010407030582428) {
+		return (2.06124143164576E+02 * x - 5.78166906665595E+02) * x + 5.26198653917172E+02;
+	} else {
+		return -7.36990769230737E+02 * x + 8.36652307692262E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
 }
 
 void main() {
@@ -3825,6 +3585,246 @@ void main() {
 
     vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
 
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,Nl=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
+float colormap_red(float x) {
+	if (x < 0.09790863520700754) {
+		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
+	} else if (x < 0.2001887081633112) {
+		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
+	} else if (x < 0.3190117539655621) {
+		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
+	} else if (x < 0.500517389125164) {
+		return 255.0;
+	} else if (x < 0.6068377196788788) {
+		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
+	} else if (x < 0.9017468988895416) {
+		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
+	} else {
+		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09638568758964539) {
+		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
+	} else if (x < 0.4987066686153412) {
+		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
+	} else if (x < 0.6047312345537269) {
+		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
+	} else if (x < 0.7067635953426361) {
+		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
+	} else {
+		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.09982818011951204) {
+		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
+	} else if (x < 0.2958717460833126) {
+		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
+	} else if (x < 0.4900527540014758) {
+		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
+	} else if (x < 0.6017014681258838) {
+		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
+	} else if (x < 0.7015737100463595) {
+		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
+	} else if (x < 0.8237156500567735) {
+		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
+	} else {
+		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap(1.0 - (A-0.4)*(1.0/0.6));
+
+
+    if (A > 0.6) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,Ul=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/transform_seismic.frag
+float colormap_f(float x) {
+    return ((-2010.0 * x + 2502.5950459) * x - 481.763180924) / 255.0;
+}
+
+float colormap_red(float x) {
+    if (x < 0.0) {
+        return 3.0 / 255.0;
+    } else if (x < 0.238) {
+        return ((-1810.0 * x + 414.49) * x + 3.87702) / 255.0;
+    } else if (x < 51611.0 / 108060.0) {
+        return (344441250.0 / 323659.0 * x - 23422005.0 / 92474.0) / 255.0;
+    } else if (x < 25851.0 / 34402.0) {
+        return 1.0;
+    } else if (x <= 1.0) {
+        return (-688.04 * x + 772.02) / 255.0;
+    } else {
+        return 83.0 / 255.0;
+    }
+}
+
+float colormap_green(float x) {
+    if (x < 0.0) {
+        return 0.0;
+    } else if (x < 0.238) {
+        return 0.0;
+    } else if (x < 51611.0 / 108060.0) {
+        return colormap_f(x);
+    } else if (x < 0.739376978894039) {
+        float xx = x - 51611.0 / 108060.0;
+        return ((-914.74 * xx - 734.72) * xx + 255.) / 255.0;
+    } else {
+        return 0.0;
+    }
+}
+
+float colormap_blue(float x) {
+    if (x < 0.0) {
+        return 19.0 / 255.0;
+    } else if (x < 0.238) {
+        float xx = x - 0.238;
+        return (((1624.6 * xx + 1191.4) * xx + 1180.2) * xx + 255.0) / 255.0;
+    } else if (x < 51611.0 / 108060.0) {
+        return 1.0;
+    } else if (x < 174.5 / 256.0) {
+        return (-951.67322673866 * x + 709.532730938451) / 255.0;
+    } else if (x < 0.745745353439206) {
+        return (-705.250074130877 * x + 559.620050530617) / 255.0;
+    } else if (x <= 1.0) {
+        return ((-399.29 * x + 655.71) * x - 233.25) / 255.0;
+    } else {
+        return 23.0 / 255.0;
+    }
+}
+
+vec4 colormap(float x) {
+    return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
+    vec4 softColor = colormap((A-0.4)*(1.0/0.6));
+
+
+    if (A < 0.4) {
+        gl_FragColor = vec4(black);
+    } else {
+        gl_FragColor = vec4(softColor);
+    }
+
+}
+`,Ol=`precision mediump float;
+
+uniform sampler2D prevState;
+uniform float iteration;
+varying vec2 uv;
+
+// https://github.com/Polymole/glsl-colormap/blob/master/shaders/IDL_CB-RdYiBu.frag
+float colormap_red(float x) {
+	if (x < 0.09790863520700754) {
+		return 5.14512820512820E+02 * x + 1.64641025641026E+02;
+	} else if (x < 0.2001887081633112) {
+		return 2.83195402298854E+02 * x + 1.87288998357964E+02;
+	} else if (x < 0.3190117539655621) {
+		return 9.27301587301214E+01 * x + 2.25417989417999E+02;
+	} else if (x < 0.500517389125164) {
+		return 255.0;
+	} else if (x < 0.6068377196788788) {
+		return -3.04674876847379E+02 * x + 4.07495073891681E+02;
+	} else if (x < 0.9017468988895416) {
+		return (1.55336390191951E+02 * x - 7.56394659038288E+02) * x + 6.24412733169483E+02;
+	} else {
+		return -1.88350769230735E+02 * x + 2.38492307692292E+02;
+	}
+}
+
+float colormap_green(float x) {
+	if (x < 0.09638568758964539) {
+		return 4.81427692307692E+02 * x + 4.61538461538488E-01;
+	} else if (x < 0.4987066686153412) {
+		return ((((3.25545903568267E+04 * x - 4.24067109461319E+04) * x + 1.83751375886345E+04) * x - 3.19145329617892E+03) * x + 8.08315127034676E+02) * x - 1.44611527812961E+01;
+	} else if (x < 0.6047312345537269) {
+		return -1.18449917898218E+02 * x + 3.14234811165860E+02;
+	} else if (x < 0.7067635953426361) {
+		return -2.70822112753102E+02 * x + 4.06379036672115E+02;
+	} else {
+		return (-4.62308723214883E+02 * x + 2.42936159122279E+02) * x + 2.74203431802418E+02;
+	}
+}
+
+float colormap_blue(float x) {
+	if (x < 0.09982818011951204) {
+		return 1.64123076923076E+01 * x + 3.72646153846154E+01;
+	} else if (x < 0.2958717460833126) {
+		return 2.87014675052409E+02 * x + 1.02508735150248E+01;
+	} else if (x < 0.4900527540014758) {
+		return 4.65475113122167E+02 * x - 4.25505279034673E+01;
+	} else if (x < 0.6017014681258838) {
+		return 5.61032967032998E+02 * x - 8.93789173789407E+01;
+	} else if (x < 0.7015737100463595) {
+		return -1.51655677655728E+02 * x + 3.39446886446912E+02;
+	} else if (x < 0.8237156500567735) {
+		return -2.43405347593559E+02 * x + 4.03816042780725E+02;
+	} else {
+		return -3.00296889157305E+02 * x + 4.50678495922638E+02;
+	}
+}
+
+vec4 colormap(float x) {
+	float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
+	float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
+	float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
+	return vec4(r, g, b, 1.0);
+}
+
+void main() {
+    float A = texture2D(prevState, uv).r;
+    float B = texture2D(prevState, uv).g;
+
+    vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+
     vec4 softColor = colormap((B-0.1)*(1.0/0.9));
 
 
@@ -3835,7 +3835,7 @@ void main() {
     }
 
 }
-`,ge={},Nl=a=>{const e={vert:$l,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}};ge.raw=a({frag:kl,...e}),ge.A_transform_seismic=a({frag:Fl,...e}),ge.A_gradiant1=a({frag:Cl,...e}),ge.A_gradiant2=a({frag:Tl,...e}),ge.A_MATLAB_cool=a({frag:Il,...e}),ge.A_IDL_CB_RdBu=a({frag:Ll,...e}),ge.A_IDL_CB_RdYiBu=a({frag:Rl,...e}),ge.A_IDL_CB_BuYiRd=a({frag:Pl,...e}),ge.B_IDL_CB_RdYiBu=a({frag:Ml,...e}),ge.grayscale=a({frag:Sl,...e}),ge.blackwhite=a({frag:El,...e}),ge.whiteblack=a({frag:Al,...e}),ge.timebasedblue=a({frag:yl,...e}),ge.lerp=a({frag:Dl,...e}),ge.mrob=a({frag:Bl,...e}),ge.redblue=a({frag:zl,...e})},Ul=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(ge[e]||ge.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},Ol=`precision mediump float;
+`,ge={},Vl=a=>{const e={vert:Sl,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{iteration:a.prop("iteration"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}};ge.raw=a({frag:El,...e}),ge.A_transform_seismic=a({frag:Ul,...e}),ge.A_gradiant1=a({frag:Ll,...e}),ge.A_gradiant2=a({frag:Rl,...e}),ge.A_MATLAB_cool=a({frag:Pl,...e}),ge.A_IDL_CB_RdBu=a({frag:Fl,...e}),ge.A_IDL_CB_RdYiBu=a({frag:Ml,...e}),ge.A_IDL_CB_BuYiRd=a({frag:Nl,...e}),ge.B_IDL_CB_RdYiBu=a({frag:Ol,...e}),ge.grayscale=a({frag:Dl,...e}),ge.blackwhite=a({frag:Bl,...e}),ge.whiteblack=a({frag:zl,...e}),ge.timebasedblue=a({frag:Al,...e}),ge.lerp=a({frag:Cl,...e}),ge.mrob=a({frag:Tl,...e}),ge.redblue=a({frag:Il,...e})},Hl=a=>{const{colorMode:e,inputBuffer:n,iteration:o,outputBuffer:t,zoomState:i}=a;(ge[e]||ge.raw)({inputBuffer:n,iteration:o,outputBuffer:t,pan:[i.panX,i.panY],zoomLevel:i.zoomLevel})},Kl=`precision mediump float;
 
 uniform float radius;
 uniform sampler2D prevState;
@@ -3908,7 +3908,7 @@ void main() {
         gl_FragColor = vec4(newA, newB, 0, 1);
     }
 }
-`,Vl=`precision mediump float;
+`,ql=`precision mediump float;
 
 uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
 uniform float zoomLevel;    // 1 full size, 0 max zoom
@@ -3927,7 +3927,7 @@ void main() {
     scaledPenRadius = penRadius * zoomLevel;
     gl_Position = vec4(position, 0, 1);
 }
-`;let wn;const Hl=(a,e)=>{wn=a({frag:Ol,vert:Vl,attributes:{position:[-4,-4,4,-4,0,4]},count:3,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,f:a.prop("f"),k:a.prop("k"),radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive"),eraserIsActive:a.prop("eraserIsActive"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Kl=a=>{const{inputBuffer:e,outputBuffer:n,pauseSimulation:o,mouseState:t,simulationParameters:i,worldSize:r}=a;wn({inputBuffer:e,outputBuffer:n,pauseSimulation:o,zoomLevel:t.zoomLevel,pan:[t.panX,t.panY],mousePosition:[t.x,t.y],penRadius:1/2**(r-t.penSize),penDensity:t.penDensity,penIsActive:t.pressedLeft,eraserIsActive:t.pressedRight,...i})},ql=(a,e)=>a==="randomSpots"?Wl(e,.001):a==="middleCircleAndRandomSpots"?Yl(e,.005,.05):a==="empty"?Gl(e):Xl(e,.02),Yl=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},Gl=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),Wl=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),Xl=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),jl=`precision highp float;
+`;let wn;const Yl=(a,e)=>{wn=a({frag:Kl,vert:ql,attributes:{position:[-4,-4,4,-4,0,4]},count:3,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),Da:1,Db:.5,f:a.prop("f"),k:a.prop("k"),radius:e,pauseSimulation:a.prop("pauseSimulation"),mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),penDensity:a.prop("penDensity"),penIsActive:a.prop("penIsActive"),eraserIsActive:a.prop("eraserIsActive"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Gl=a=>{const{inputBuffer:e,outputBuffer:n,pauseSimulation:o,mouseState:t,simulationParameters:i,worldSize:r}=a;wn({inputBuffer:e,outputBuffer:n,pauseSimulation:o,zoomLevel:t.zoomLevel,pan:[t.panX,t.panY],mousePosition:[t.x,t.y],penRadius:1/2**(r-t.penSize),penDensity:t.penDensity,penIsActive:t.pressedLeft,eraserIsActive:t.pressedRight,...i})},Wl=(a,e)=>a==="randomSpots"?Zl(e,.001):a==="middleCircleAndRandomSpots"?Xl(e,.005,.05):a==="empty"?jl(e):Ql(e,.02),Xl=(a,e,n)=>{const o=a*n;return Array(a*a).fill(0).map((t,i)=>{const r=Math.floor(i/a),s=i%a;return Math.hypot(a/2-s,a/2-r)<o?[0,1,0,1]:Math.random()<e?[0,1,0,1]:[1,0,0,1]}).flat()},jl=a=>Array(a*a).fill(0).map(()=>[0,0,0,1]).flat(),Zl=(a,e)=>Array(a*a).fill(0).map(()=>Math.random()<e?[0,1,0,1]:[1,0,0,1]).flat(),Ql=(a,e)=>Array(a*a).fill(0).map((n,o)=>{const t=Math.floor(o/a),i=o%a;return Math.hypot(a/2-i,a/2-t)<e*a?[0,1,0,1]:[1,0,0,1]}).flat(),Jl=`precision highp float;
 
 attribute vec2 position;
 
@@ -3940,7 +3940,7 @@ void main() {
     uv = 0.5 * (position + 1.0) * zoomLevel + pan * (1.0 - zoomLevel);
     gl_Position = vec4(position, 0, 1);
 }
-`,Zl=`precision highp float;
+`,es=`precision highp float;
 
 uniform sampler2D prevState;
 
@@ -3964,7 +3964,7 @@ void main() {
        gl_FragColor = color;
     }
 }
-`;let $n;const Ql=a=>{$n=a({vert:jl,frag:Zl,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},Jl=a=>{const{inputBuffer:e,outputBuffer:n,zoomState:o}=a;$n({inputBuffer:e,outputBuffer:n,zoomLevel:o.zoomLevel,pan:[o.panX,o.panY]})},es=`precision mediump float;
+`;let $n;const ts=a=>{$n=a({vert:Jl,frag:es,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{prevState:a.prop("inputBuffer"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan")}})},ns=a=>{const{inputBuffer:e,outputBuffer:n,zoomState:o}=a;$n({inputBuffer:e,outputBuffer:n,zoomLevel:o.zoomLevel,pan:[o.panX,o.panY]})},os=`precision mediump float;
 
 uniform vec2 mousePosition; // in range [0, 1] on the zoomed screen
 uniform float zoomLevel;    // 1 full size, 0 max zoom
@@ -3978,7 +3978,7 @@ void main() {
     uv = 0.5 * (position + 1.0);
     gl_Position = vec4(position, 0, 1);
 }
-`,ts=`precision mediump float;
+`,rs=`precision mediump float;
 
 uniform sampler2D prevState;
 uniform vec2 mousePosition;
@@ -4000,12 +4000,12 @@ void main() {
         gl_FragColor = color;
     }
 }
-`;let kn;const ns=a=>{kn=a({frag:ts,vert:es,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}})},os=a=>{const{inputBuffer:e,mouseState:n,outputBuffer:o,worldSize:t}=a;kn({inputBuffer:e,outputBuffer:o,mousePosition:[n.x,n.y],penRadius:1/2**(t-n.penSize),zoomLevel:n.zoomLevel,pan:[n.panX,n.panY]})},rs=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=ql(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f),u=Array(2).fill(0).map(f);return Hl(r,s),Nl(r),Ql(r),ns(r),r.frame(()=>{e.pause||n.iteration++;let p=c[(n.iteration+1)%2];for(let m=0;m<e.speed;m++){n.iteration++;const d=c[n.iteration%2];p=c[(n.iteration+1)%2],Kl({inputBuffer:d,outputBuffer:p,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}is({inputTexture:p,graphicsTextures:u,controls:e,info:n,mouseState:o})}),r},is=a=>{const{inputTexture:e,graphicsTextures:n,controls:o,info:t,mouseState:i}=a;let r=0;r++;const s=e;let l=n[r%2];if(!o.grid&&!o.pen&&(l=null),Ul({colorMode:o.colors,inputBuffer:s,iteration:t.iteration,outputBuffer:l,zoomState:i}),o.grid){r++;const f=n[(r+1)%2];let c=n[r%2];o.pen||(c=null),Jl({inputBuffer:f,outputBuffer:c,zoomState:i})}if(o.pen){r++;const f=n[(r+1)%2],c=null;os({mouseState:i,worldSize:t.worldSize,inputBuffer:f,outputBuffer:c})}};const{window:as}=je;function ls(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,S=2**a[0].worldSize+"",y,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,_,V,X;return n=new wl({}),n.$on("fkupdated",a[4]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),y=R(S),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),y=P(ae,S),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){E(t,"id","datgui-container"),E(t,"class","svelte-18zf5fr"),E(s,"for","worldSize"),E(c,"id","worldSize"),E(c,"type","number"),E(c,"step","1"),E(D,"id","canvas"),E(D,"width",a[1].width),E(D,"height",a[1].height),E(D,"class","svelte-18zf5fr")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,y),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),_=!0,V||(X=[Z(as,"keydown",a[2]),Z(c,"input",a[5]),Z(c,"change",a[3]),Z(D,"contextmenu",we(ss))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!_||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!_||F&1)&&S!==(S=2**I[0].worldSize+"")&&pe(y,S),(!_||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){_||(b(n.$$.fragment,I),_=!0)},o(I){k(n.$$.fragment,I),_=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const ss=a=>a;function fs(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>d(),pause:!1,grid:!1,pen:!1,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:Ke[0].f,k:Ke[0].k};let l,f;const c=async()=>{const S=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new S.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const y=document.getElementById("datgui-container");if(!y)throw new Error("Gui container not ready");y.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"pen").name("Show pen"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const M={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",M).onFinishChange(t.reset).name("Initial conditions");const v=l.add(r,"iteration").listen();v.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed").listen(),l.add(i,"penSize",0,r.worldSize).name("Pen size").listen(),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=S=>{if(S.code==="Space"){t.pause=!t.pause,S.preventDefault();return}if(S.code==="KeyR"&&!S.getModifierState("Control")){d(),S.preventDefault();return}};let p;const m=()=>{i.x=Math.random(),i.y=Math.random(),i.penSize=Math.random()*3,i.pressedLeft=!0,setTimeout(()=>i.pressedLeft=!1,500),p=setTimeout(m,Math.random()*5e3)},d=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=rs({controls:t,info:r,mouseState:i,simulationParameters:s}),p&&clearTimeout(p),m())},g=S=>{s.f=S.detail.f,s.k=S.detail.k,s.f>.03?t.speed=50:t.speed=2};$e(()=>{d()}),ye(()=>{l.destroy(),f.destroy()});function C(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,d,g,C]}let cs=class extends Q{constructor(e){super(),J(this,e,fs,ls,ee,{})}};function Qt(a,e,n){const o=a.slice();return o[1]=e[n],o}function Jt(a,e,n){const o=a.slice();return o[1]=e[n],o}function us(a){let e=a[1].title+"",n;return{c(){n=R(e)},l(o){n=P(o,e)},m(o,t){A(o,n,t)},p:ne,d(o){o&&h(n)}}}function en(a){let e,n;return e=new Ne({props:{$$slots:{default:[us]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&64&&(i.$$scope={dirty:t,ctx:o}),e.$set(i)},i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function ps(a){let e,n,o=a[0],t=[];for(let r=0;r<o.length;r+=1)t[r]=en(Jt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&1){o=r[0];let l;for(l=0;l<o.length;l+=1){const f=Jt(r,o,l);t[l]?(t[l].p(f,s),b(t[l],1)):(t[l]=en(f),t[l].c(),b(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)b(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function ms(a){let e,n,o;var t=a[1].component;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=q()},l(r){e&&G(e.$$.fragment,r),n=Y(r)},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=r[1].component)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){e&&O(e,r),r&&h(n)}}}function tn(a){let e,n;return e=new Me({props:{$$slots:{default:[ms]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&64&&(i.$$scope={dirty:t,ctx:o}),e.$set(i)},i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function ds(a){let e,n,o,t;e=new rn({props:{$$slots:{default:[ps]},$$scope:{ctx:a}}});let i=a[0],r=[];for(let l=0;l<i.length;l+=1)r[l]=tn(Qt(a,i,l));const s=l=>k(r[l],1,1,()=>{r[l]=null});return{c(){N(e.$$.fragment),n=q();for(let l=0;l<r.length;l+=1)r[l].c();o=K()},l(l){G(e.$$.fragment,l),n=Y(l);for(let f=0;f<r.length;f+=1)r[f].l(l);o=K()},m(l,f){U(e,l,f),A(l,n,f);for(let c=0;c<r.length;c+=1)r[c].m(l,f);A(l,o,f),t=!0},p(l,f){const c={};if(f&64&&(c.$$scope={dirty:f,ctx:l}),e.$set(c),f&1){i=l[0];let u;for(u=0;u<i.length;u+=1){const p=Qt(l,i,u);r[u]?(r[u].p(p,f),b(r[u],1)):(r[u]=tn(p),r[u].c(),b(r[u],1),r[u].m(o.parentNode,o))}for(oe(),u=i.length;u<r.length;u+=1)s(u);re()}},i(l){if(!t){b(e.$$.fragment,l);for(let f=0;f<i.length;f+=1)b(r[f]);t=!0}},o(l){k(e.$$.fragment,l),r=r.filter(Boolean);for(let f=0;f<r.length;f+=1)k(r[f]);t=!1},d(l){O(e,l),l&&h(n),ke(r,l),l&&h(o)}}}function hs(a){let e,n,o,t,i,r,s,l,f,c,u,p,m;return p=new on({props:{$$slots:{default:[ds]},$$scope:{ctx:a}}}),{c(){e=B("p"),n=R(`Here is a list of the various iterations I have made before I got the final version of this
+`;let kn;const is=a=>{kn=a({frag:rs,vert:os,attributes:{position:[[1,-1],[-1,-1],[1,1],[1,1],[-1,-1],[-1,1]]},count:6,framebuffer:a.prop("outputBuffer"),uniforms:{mousePosition:a.prop("mousePosition"),penRadius:a.prop("penRadius"),zoomLevel:a.prop("zoomLevel"),pan:a.prop("pan"),prevState:a.prop("inputBuffer")}})},as=a=>{const{inputBuffer:e,mouseState:n,outputBuffer:o,worldSize:t}=a;kn({inputBuffer:e,outputBuffer:o,mousePosition:[n.x,n.y],penRadius:1/2**(t-n.penSize),zoomLevel:n.zoomLevel,pan:[n.panX,n.panY]})},ls=a=>{const{controls:e,info:n,mouseState:o,simulationParameters:t}=a,i=document.getElementById("canvas");if(!i)throw new Error("Canvas container not ready");const r=Le({extensions:["OES_texture_float"],canvas:i});n.iteration=0;const s=2**n.worldSize,l=Wl(e.initialConditions,s),f=()=>r.framebuffer({color:r.texture({radius:s,data:l,wrap:"repeat",type:"float"}),depthStencil:!1}),c=Array(2).fill(0).map(f),u=Array(2).fill(0).map(f);return Yl(r,s),Vl(r),ts(r),is(r),r.frame(()=>{e.pause||n.iteration++;let p=c[(n.iteration+1)%2];for(let m=0;m<e.speed;m++){n.iteration++;const d=c[n.iteration%2];p=c[(n.iteration+1)%2],Gl({inputBuffer:d,outputBuffer:p,worldSize:n.worldSize,pauseSimulation:e.pause,mouseState:o,simulationParameters:t})}ss({inputTexture:p,graphicsTextures:u,controls:e,info:n,mouseState:o})}),r},ss=a=>{const{inputTexture:e,graphicsTextures:n,controls:o,info:t,mouseState:i}=a;let r=0;r++;const s=e;let l=n[r%2];if(!o.grid&&!o.pen&&(l=null),Hl({colorMode:o.colors,inputBuffer:s,iteration:t.iteration,outputBuffer:l,zoomState:i}),o.grid){r++;const f=n[(r+1)%2];let c=n[r%2];o.pen||(c=null),ns({inputBuffer:f,outputBuffer:c,zoomState:i})}if(o.pen){r++;const f=n[(r+1)%2],c=null;as({mouseState:i,worldSize:t.worldSize,inputBuffer:f,outputBuffer:c})}};const{window:fs}=je;function cs(a){let e,n,o,t,i,r,s,l,f,c,u,p,m,d=2**a[0].worldSize+"",g,C,E=2**a[0].worldSize+"",S,M,v=2**(a[0].worldSize+1)+"",x,$,L,D,b,V,X;return n=new yl({}),n.$on("fkupdated",a[4]),{c(){e=B("main"),N(n.$$.fragment),o=q(),t=B("div"),i=q(),r=B("div"),s=B("label"),l=R("World Size:"),f=q(),c=B("input"),u=q(),p=B("span"),m=R("("),g=R(d),C=R(" x "),S=R(E),M=R(" : "),x=R(v),$=R(")"),L=q(),D=B("canvas"),this.h()},l(I){e=z(I,"MAIN",{});var F=T(e);G(n.$$.fragment,F),o=Y(F),t=z(F,"DIV",{id:!0,class:!0}),T(t).forEach(h),i=Y(F),r=z(F,"DIV",{});var te=T(r);s=z(te,"LABEL",{for:!0});var xe=T(s);l=P(xe,"World Size:"),xe.forEach(h),f=Y(te),c=z(te,"INPUT",{id:!0,type:!0,step:!0}),u=Y(te),p=z(te,"SPAN",{});var ae=T(p);m=P(ae,"("),g=P(ae,d),C=P(ae," x "),S=P(ae,E),M=P(ae," : "),x=P(ae,v),$=P(ae,")"),ae.forEach(h),te.forEach(h),L=Y(F),D=z(F,"CANVAS",{id:!0,width:!0,height:!0,class:!0}),T(D).forEach(h),F.forEach(h),this.h()},h(){y(t,"id","datgui-container"),y(t,"class","svelte-18zf5fr"),y(s,"for","worldSize"),y(c,"id","worldSize"),y(c,"type","number"),y(c,"step","1"),y(D,"id","canvas"),y(D,"width",a[1].width),y(D,"height",a[1].height),y(D,"class","svelte-18zf5fr")},m(I,F){A(I,e,F),U(n,e,null),w(e,o),w(e,t),w(e,i),w(e,r),w(r,s),w(s,l),w(r,f),w(r,c),Se(c,a[0].worldSize),w(r,u),w(r,p),w(p,m),w(p,g),w(p,C),w(p,S),w(p,M),w(p,x),w(p,$),w(e,L),w(e,D),b=!0,V||(X=[Z(fs,"keydown",a[2]),Z(c,"input",a[5]),Z(c,"change",a[3]),Z(D,"contextmenu",we(us))],V=!0)},p(I,[F]){F&1&&Ae(c.value)!==I[0].worldSize&&Se(c,I[0].worldSize),(!b||F&1)&&d!==(d=2**I[0].worldSize+"")&&pe(g,d),(!b||F&1)&&E!==(E=2**I[0].worldSize+"")&&pe(S,E),(!b||F&1)&&v!==(v=2**(I[0].worldSize+1)+"")&&pe(x,v)},i(I){b||(_(n.$$.fragment,I),b=!0)},o(I){k(n.$$.fragment,I),b=!1},d(I){I&&h(e),O(n),V=!1,Be(X)}}}const us=a=>a;function ps(a,e,n){const o={width:Math.min(window.innerWidth,window.innerHeight)*.9,height:Math.min(window.innerWidth,window.innerHeight)*.9},t={colors:"A_transform_seismic",initialConditions:"middleCircleAndRandomSpots",reset:()=>d(),pause:!1,grid:!1,pen:!1,speed:50},i={pressedLeft:!1,pressedRight:!1,x:0,y:0,penSize:3,penDensity:.3,zoomLevel:1,panX:.5,panY:.5},r={iteration:0,worldSize:8},s={f:Ke[0].f,k:Ke[0].k};let l,f;const c=async()=>{const E=await Te(()=>import("../../../chunks/dat.gui.module-69d90d27.js"),[],import.meta.url);l=new E.GUI({autoPlace:!1,closeOnTop:!0}),l.domElement.id="datgui";const S=document.getElementById("datgui-container");if(!S)throw new Error("Gui container not ready");S.appendChild(l.domElement),l.add(t,"pause").name("Pause"),l.add(t,"grid").name("Debug grid"),l.add(t,"pen").name("Show pen"),l.add(t,"reset").name("Reset simulation"),l.add(t,"colors",["grayscale","blackwhite","whiteblack","raw","timebasedblue","lerp","mrob","redblue","A_gradiant1","A_gradiant2","A_MATLAB_cool","A_IDL_CB_RdBu","A_IDL_CB_RdYiBu","A_IDL_CB_BuYiRd","A_transform_seismic","B_IDL_CB_RdYiBu"]).name("Color scheme");const M={"Random spots":"randomSpots","Middle spot":"middleSpot","Middle + random":"middleCircleAndRandomSpots",Empty:"empty"};l.add(t,"initialConditions",M).onFinishChange(t.reset).name("Initial conditions");const v=l.add(r,"iteration").listen();v.domElement.style.pointerEvents="none",l.add(t,"speed",1,200).name("Simulation speed").listen(),l.add(i,"penSize",0,r.worldSize).name("Pen size").listen(),l.add(i,"penDensity",0,1).name("Pen density"),l.add(i,"zoomLevel",0,1).name("Zoom level").listen(),l.add(i,"panX",0,1).name("pan x").listen(),l.add(i,"panY",0,1).name("pan y").listen()},u=E=>{if(E.code==="Space"){t.pause=!t.pause,E.preventDefault();return}if(E.code==="KeyR"&&!E.getModifierState("Control")){d(),E.preventDefault();return}};let p;const m=()=>{i.x=Math.random(),i.y=Math.random(),i.penSize=Math.random()*3,i.pressedLeft=!0,setTimeout(()=>i.pressedLeft=!1,500),p=setTimeout(m,Math.random()*5e3)},d=()=>{isNaN(r.worldSize)||(r.worldSize>11&&n(0,r.worldSize=11,r),r.worldSize<1&&n(0,r.worldSize=1,r),l&&(document.getElementById(l.domElement.id)?.remove(),l.destroy()),f?.destroy(),c(),f=ls({controls:t,info:r,mouseState:i,simulationParameters:s}),p&&clearTimeout(p),m())},g=E=>{s.f=E.detail.f,s.k=E.detail.k,s.f>.03?t.speed=50:t.speed=2};$e(()=>{d()}),ye(()=>{l.destroy(),f.destroy()});function C(){r.worldSize=Ae(this.value),n(0,r)}return[r,o,u,d,g,C]}let ms=class extends Q{constructor(e){super(),J(this,e,ps,cs,ee,{})}};function Qt(a,e,n){const o=a.slice();return o[1]=e[n],o}function Jt(a,e,n){const o=a.slice();return o[1]=e[n],o}function ds(a){let e=a[1].title+"",n;return{c(){n=R(e)},l(o){n=P(o,e)},m(o,t){A(o,n,t)},p:ne,d(o){o&&h(n)}}}function en(a){let e,n;return e=new Ne({props:{$$slots:{default:[ds]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&64&&(i.$$scope={dirty:t,ctx:o}),e.$set(i)},i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function hs(a){let e,n,o=a[0],t=[];for(let r=0;r<o.length;r+=1)t[r]=en(Jt(a,o,r));const i=r=>k(t[r],1,1,()=>{t[r]=null});return{c(){for(let r=0;r<t.length;r+=1)t[r].c();e=K()},l(r){for(let s=0;s<t.length;s+=1)t[s].l(r);e=K()},m(r,s){for(let l=0;l<t.length;l+=1)t[l].m(r,s);A(r,e,s),n=!0},p(r,s){if(s&1){o=r[0];let l;for(l=0;l<o.length;l+=1){const f=Jt(r,o,l);t[l]?(t[l].p(f,s),_(t[l],1)):(t[l]=en(f),t[l].c(),_(t[l],1),t[l].m(e.parentNode,e))}for(oe(),l=o.length;l<t.length;l+=1)i(l);re()}},i(r){if(!n){for(let s=0;s<o.length;s+=1)_(t[s]);n=!0}},o(r){t=t.filter(Boolean);for(let s=0;s<t.length;s+=1)k(t[s]);n=!1},d(r){ke(t,r),r&&h(e)}}}function vs(a){let e,n,o;var t=a[1].component;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=q()},l(r){e&&G(e.$$.fragment,r),n=Y(r)},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=r[1].component)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){e&&O(e,r),r&&h(n)}}}function tn(a){let e,n;return e=new Me({props:{$$slots:{default:[vs]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p(o,t){const i={};t&64&&(i.$$scope={dirty:t,ctx:o}),e.$set(i)},i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}function gs(a){let e,n,o,t;e=new rn({props:{$$slots:{default:[hs]},$$scope:{ctx:a}}});let i=a[0],r=[];for(let l=0;l<i.length;l+=1)r[l]=tn(Qt(a,i,l));const s=l=>k(r[l],1,1,()=>{r[l]=null});return{c(){N(e.$$.fragment),n=q();for(let l=0;l<r.length;l+=1)r[l].c();o=K()},l(l){G(e.$$.fragment,l),n=Y(l);for(let f=0;f<r.length;f+=1)r[f].l(l);o=K()},m(l,f){U(e,l,f),A(l,n,f);for(let c=0;c<r.length;c+=1)r[c].m(l,f);A(l,o,f),t=!0},p(l,f){const c={};if(f&64&&(c.$$scope={dirty:f,ctx:l}),e.$set(c),f&1){i=l[0];let u;for(u=0;u<i.length;u+=1){const p=Qt(l,i,u);r[u]?(r[u].p(p,f),_(r[u],1)):(r[u]=tn(p),r[u].c(),_(r[u],1),r[u].m(o.parentNode,o))}for(oe(),u=i.length;u<r.length;u+=1)s(u);re()}},i(l){if(!t){_(e.$$.fragment,l);for(let f=0;f<i.length;f+=1)_(r[f]);t=!0}},o(l){k(e.$$.fragment,l),r=r.filter(Boolean);for(let f=0;f<r.length;f+=1)k(r[f]);t=!1},d(l){O(e,l),l&&h(n),ke(r,l),l&&h(o)}}}function xs(a){let e,n,o,t,i,r,s,l,f,c,u,p,m;return p=new on({props:{$$slots:{default:[gs]},$$scope:{ctx:a}}}),{c(){e=B("p"),n=R(`Here is a list of the various iterations I have made before I got the final version of this
     project.`),o=q(),t=B("div"),i=B("p"),r=R(`Some of the previous versions have a bug and the code is not cleaned up properly when the
         page unload. Which make that when navigating between different versions it is possible to
         end up in a state where several simulation are running in parallel.`),s=q(),l=B("p"),f=R(`To avoid this kind of issues make sure the refresh the page each time you select a new
         version`),c=q(),u=B("div"),N(p.$$.fragment),this.h()},l(d){e=z(d,"P",{});var g=T(e);n=P(g,`Here is a list of the various iterations I have made before I got the final version of this
-    project.`),g.forEach(h),o=Y(d),t=z(d,"DIV",{class:!0});var C=T(t);i=z(C,"P",{});var S=T(i);r=P(S,`Some of the previous versions have a bug and the code is not cleaned up properly when the
+    project.`),g.forEach(h),o=Y(d),t=z(d,"DIV",{class:!0});var C=T(t);i=z(C,"P",{});var E=T(i);r=P(E,`Some of the previous versions have a bug and the code is not cleaned up properly when the
         page unload. Which make that when navigating between different versions it is possible to
-        end up in a state where several simulation are running in parallel.`),S.forEach(h),s=Y(C),l=z(C,"P",{});var y=T(l);f=P(y,`To avoid this kind of issues make sure the refresh the page each time you select a new
-        version`),y.forEach(h),C.forEach(h),c=Y(d),u=z(d,"DIV",{});var M=T(u);G(p.$$.fragment,M),M.forEach(h),this.h()},h(){E(t,"class","warning")},m(d,g){A(d,e,g),w(e,n),A(d,o,g),A(d,t,g),w(t,i),w(i,r),w(t,s),w(t,l),w(l,f),A(d,c,g),A(d,u,g),U(p,u,null),m=!0},p(d,[g]){const C={};g&64&&(C.$$scope={dirty:g,ctx:d}),p.$set(C)},i(d){m||(b(p.$$.fragment,d),m=!0)},o(d){k(p.$$.fragment,d),m=!1},d(d){d&&h(e),d&&h(o),d&&h(t),d&&h(c),d&&h(u),O(p)}}}function vs(a){return[[{title:"Auto visualizer",component:cs},{title:"V7",component:dl},{title:"Parameters map",component:rt},{title:"V6",component:$a},{title:"V5",component:pa},{title:"V4",component:aa},{title:"V3",component:oa},{title:"V2",component:Gi},{title:"V1",component:Fi}]]}class nn extends Q{constructor(e){super(),J(this,e,vs,hs,ee,{})}}function gs(a){let e;return{c(){e=R("About")},l(n){e=P(n,"About")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function xs(a){let e;return{c(){e=R("Auto")},l(n){e=P(n,"Auto")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function _s(a){let e;return{c(){e=R("Manual")},l(n){e=P(n,"Manual")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function bs(a){let e;return{c(){e=R("Parameters map")},l(n){e=P(n,"Parameters map")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function ws(a){let e;return{c(){e=R("Previous versions")},l(n){e=P(n,"Previous versions")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function $s(a){let e,n,o,t,i,r,s,l,f,c;return e=new Ne({props:{$$slots:{default:[gs]},$$scope:{ctx:a}}}),o=new Ne({props:{$$slots:{default:[xs]},$$scope:{ctx:a}}}),i=new Ne({props:{$$slots:{default:[_s]},$$scope:{ctx:a}}}),s=new Ne({props:{$$slots:{default:[bs]},$$scope:{ctx:a}}}),f=new Ne({props:{$$slots:{default:[ws]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment),n=q(),N(o.$$.fragment),t=q(),N(i.$$.fragment),r=q(),N(s.$$.fragment),l=q(),N(f.$$.fragment)},l(u){G(e.$$.fragment,u),n=Y(u),G(o.$$.fragment,u),t=Y(u),G(i.$$.fragment,u),r=Y(u),G(s.$$.fragment,u),l=Y(u),G(f.$$.fragment,u)},m(u,p){U(e,u,p),A(u,n,p),U(o,u,p),A(u,t,p),U(i,u,p),A(u,r,p),U(s,u,p),A(u,l,p),U(f,u,p),c=!0},p(u,p){const m={};p&1&&(m.$$scope={dirty:p,ctx:u}),e.$set(m);const d={};p&1&&(d.$$scope={dirty:p,ctx:u}),o.$set(d);const g={};p&1&&(g.$$scope={dirty:p,ctx:u}),i.$set(g);const C={};p&1&&(C.$$scope={dirty:p,ctx:u}),s.$set(C);const S={};p&1&&(S.$$scope={dirty:p,ctx:u}),f.$set(S)},i(u){c||(b(e.$$.fragment,u),b(o.$$.fragment,u),b(i.$$.fragment,u),b(s.$$.fragment,u),b(f.$$.fragment,u),c=!0)},o(u){k(e.$$.fragment,u),k(o.$$.fragment,u),k(i.$$.fragment,u),k(s.$$.fragment,u),k(f.$$.fragment,u),c=!1},d(u){O(e,u),u&&h(n),O(o,u),u&&h(t),O(i,u),u&&h(r),O(s,u),u&&h(l),O(f,u)}}}function ks(a){let e,n,o;var t=Bt;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=Bt)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function ys(a){let e,n,o;var t=Ct;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=Ct)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Ss(a){let e,n,o;var t=Pt;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=Pt)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Es(a){let e,n,o;var t=rt;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=rt)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function As(a){let e,n,o;var t=nn;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=nn)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),b(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&b(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Ds(a){let e,n,o,t,i,r,s,l,f,c,u,p;return e=new rn({props:{$$slots:{default:[$s]},$$scope:{ctx:a}}}),o=new Me({props:{$$slots:{default:[ks]},$$scope:{ctx:a}}}),i=new Me({props:{$$slots:{default:[ys]},$$scope:{ctx:a}}}),s=new Me({props:{$$slots:{default:[Ss]},$$scope:{ctx:a}}}),f=new Me({props:{$$slots:{default:[Es]},$$scope:{ctx:a}}}),u=new Me({props:{$$slots:{default:[As]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment),n=q(),N(o.$$.fragment),t=q(),N(i.$$.fragment),r=q(),N(s.$$.fragment),l=q(),N(f.$$.fragment),c=q(),N(u.$$.fragment)},l(m){G(e.$$.fragment,m),n=Y(m),G(o.$$.fragment,m),t=Y(m),G(i.$$.fragment,m),r=Y(m),G(s.$$.fragment,m),l=Y(m),G(f.$$.fragment,m),c=Y(m),G(u.$$.fragment,m)},m(m,d){U(e,m,d),A(m,n,d),U(o,m,d),A(m,t,d),U(i,m,d),A(m,r,d),U(s,m,d),A(m,l,d),U(f,m,d),A(m,c,d),U(u,m,d),p=!0},p(m,d){const g={};d&1&&(g.$$scope={dirty:d,ctx:m}),e.$set(g);const C={};d&1&&(C.$$scope={dirty:d,ctx:m}),o.$set(C);const S={};d&1&&(S.$$scope={dirty:d,ctx:m}),i.$set(S);const y={};d&1&&(y.$$scope={dirty:d,ctx:m}),s.$set(y);const M={};d&1&&(M.$$scope={dirty:d,ctx:m}),f.$set(M);const v={};d&1&&(v.$$scope={dirty:d,ctx:m}),u.$set(v)},i(m){p||(b(e.$$.fragment,m),b(o.$$.fragment,m),b(i.$$.fragment,m),b(s.$$.fragment,m),b(f.$$.fragment,m),b(u.$$.fragment,m),p=!0)},o(m){k(e.$$.fragment,m),k(o.$$.fragment,m),k(i.$$.fragment,m),k(s.$$.fragment,m),k(f.$$.fragment,m),k(u.$$.fragment,m),p=!1},d(m){O(e,m),m&&h(n),O(o,m),m&&h(t),O(i,m),m&&h(r),O(s,m),m&&h(l),O(f,m),m&&h(c),O(u,m)}}}function Bs(a){let e,n,o;return n=new on({props:{$$slots:{default:[Ds]},$$scope:{ctx:a}}}),{c(){e=B("div"),N(n.$$.fragment)},l(t){e=z(t,"DIV",{});var i=T(e);G(n.$$.fragment,i),i.forEach(h)},m(t,i){A(t,e,i),U(n,e,null),o=!0},p(t,[i]){const r={};i&1&&(r.$$scope={dirty:i,ctx:t}),n.$set(r)},i(t){o||(b(n.$$.fragment,t),o=!0)},o(t){k(n.$$.fragment,t),o=!1},d(t){t&&h(e),O(n)}}}class zs extends Q{constructor(e){super(),J(this,e,null,Bs,ee,{})}}function Cs(a){let e,n;return e=new zs({}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}class Ts extends Q{constructor(e){super(),J(this,e,null,Cs,ee,{})}}function Is(a){let e,n;return e=new Ts({}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(b(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}class Zs extends Q{constructor(e){super(),J(this,e,null,Is,ee,{})}}export{Zs as default};
+        end up in a state where several simulation are running in parallel.`),E.forEach(h),s=Y(C),l=z(C,"P",{});var S=T(l);f=P(S,`To avoid this kind of issues make sure the refresh the page each time you select a new
+        version`),S.forEach(h),C.forEach(h),c=Y(d),u=z(d,"DIV",{});var M=T(u);G(p.$$.fragment,M),M.forEach(h),this.h()},h(){y(t,"class","warning")},m(d,g){A(d,e,g),w(e,n),A(d,o,g),A(d,t,g),w(t,i),w(i,r),w(t,s),w(t,l),w(l,f),A(d,c,g),A(d,u,g),U(p,u,null),m=!0},p(d,[g]){const C={};g&64&&(C.$$scope={dirty:g,ctx:d}),p.$set(C)},i(d){m||(_(p.$$.fragment,d),m=!0)},o(d){k(p.$$.fragment,d),m=!1},d(d){d&&h(e),d&&h(o),d&&h(t),d&&h(c),d&&h(u),O(p)}}}function _s(a){return[[{title:"Auto visualizer",component:ms},{title:"V7",component:gl},{title:"Parameters map",component:rt},{title:"V6",component:Sa},{title:"V5",component:ha},{title:"V4",component:fa},{title:"V3",component:aa},{title:"V2",component:ji},{title:"V1",component:Ui}]]}class nn extends Q{constructor(e){super(),J(this,e,_s,xs,ee,{})}}function bs(a){let e;return{c(){e=R("About")},l(n){e=P(n,"About")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function ws(a){let e;return{c(){e=R("Auto")},l(n){e=P(n,"Auto")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function $s(a){let e;return{c(){e=R("Manual")},l(n){e=P(n,"Manual")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function ks(a){let e;return{c(){e=R("Parameters map")},l(n){e=P(n,"Parameters map")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function ys(a){let e;return{c(){e=R("Previous versions")},l(n){e=P(n,"Previous versions")},m(n,o){A(n,e,o)},d(n){n&&h(e)}}}function Ss(a){let e,n,o,t,i,r,s,l,f,c;return e=new Ne({props:{$$slots:{default:[bs]},$$scope:{ctx:a}}}),o=new Ne({props:{$$slots:{default:[ws]},$$scope:{ctx:a}}}),i=new Ne({props:{$$slots:{default:[$s]},$$scope:{ctx:a}}}),s=new Ne({props:{$$slots:{default:[ks]},$$scope:{ctx:a}}}),f=new Ne({props:{$$slots:{default:[ys]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment),n=q(),N(o.$$.fragment),t=q(),N(i.$$.fragment),r=q(),N(s.$$.fragment),l=q(),N(f.$$.fragment)},l(u){G(e.$$.fragment,u),n=Y(u),G(o.$$.fragment,u),t=Y(u),G(i.$$.fragment,u),r=Y(u),G(s.$$.fragment,u),l=Y(u),G(f.$$.fragment,u)},m(u,p){U(e,u,p),A(u,n,p),U(o,u,p),A(u,t,p),U(i,u,p),A(u,r,p),U(s,u,p),A(u,l,p),U(f,u,p),c=!0},p(u,p){const m={};p&1&&(m.$$scope={dirty:p,ctx:u}),e.$set(m);const d={};p&1&&(d.$$scope={dirty:p,ctx:u}),o.$set(d);const g={};p&1&&(g.$$scope={dirty:p,ctx:u}),i.$set(g);const C={};p&1&&(C.$$scope={dirty:p,ctx:u}),s.$set(C);const E={};p&1&&(E.$$scope={dirty:p,ctx:u}),f.$set(E)},i(u){c||(_(e.$$.fragment,u),_(o.$$.fragment,u),_(i.$$.fragment,u),_(s.$$.fragment,u),_(f.$$.fragment,u),c=!0)},o(u){k(e.$$.fragment,u),k(o.$$.fragment,u),k(i.$$.fragment,u),k(s.$$.fragment,u),k(f.$$.fragment,u),c=!1},d(u){O(e,u),u&&h(n),O(o,u),u&&h(t),O(i,u),u&&h(r),O(s,u),u&&h(l),O(f,u)}}}function Es(a){let e,n,o;var t=Bt;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=Bt)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function As(a){let e,n,o;var t=Ct;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=Ct)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Ds(a){let e,n,o;var t=Pt;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=Pt)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Bs(a){let e,n,o;var t=rt;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=rt)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function zs(a){let e,n,o;var t=nn;function i(r){return{}}return t&&(e=ie(t,i())),{c(){e&&N(e.$$.fragment),n=K()},l(r){e&&G(e.$$.fragment,r),n=K()},m(r,s){e&&U(e,r,s),A(r,n,s),o=!0},p(r,s){if(t!==(t=nn)){if(e){oe();const l=e;k(l.$$.fragment,1,0,()=>{O(l,1)}),re()}t?(e=ie(t,i()),N(e.$$.fragment),_(e.$$.fragment,1),U(e,n.parentNode,n)):e=null}},i(r){o||(e&&_(e.$$.fragment,r),o=!0)},o(r){e&&k(e.$$.fragment,r),o=!1},d(r){r&&h(n),e&&O(e,r)}}}function Cs(a){let e,n,o,t,i,r,s,l,f,c,u,p;return e=new rn({props:{$$slots:{default:[Ss]},$$scope:{ctx:a}}}),o=new Me({props:{$$slots:{default:[Es]},$$scope:{ctx:a}}}),i=new Me({props:{$$slots:{default:[As]},$$scope:{ctx:a}}}),s=new Me({props:{$$slots:{default:[Ds]},$$scope:{ctx:a}}}),f=new Me({props:{$$slots:{default:[Bs]},$$scope:{ctx:a}}}),u=new Me({props:{$$slots:{default:[zs]},$$scope:{ctx:a}}}),{c(){N(e.$$.fragment),n=q(),N(o.$$.fragment),t=q(),N(i.$$.fragment),r=q(),N(s.$$.fragment),l=q(),N(f.$$.fragment),c=q(),N(u.$$.fragment)},l(m){G(e.$$.fragment,m),n=Y(m),G(o.$$.fragment,m),t=Y(m),G(i.$$.fragment,m),r=Y(m),G(s.$$.fragment,m),l=Y(m),G(f.$$.fragment,m),c=Y(m),G(u.$$.fragment,m)},m(m,d){U(e,m,d),A(m,n,d),U(o,m,d),A(m,t,d),U(i,m,d),A(m,r,d),U(s,m,d),A(m,l,d),U(f,m,d),A(m,c,d),U(u,m,d),p=!0},p(m,d){const g={};d&1&&(g.$$scope={dirty:d,ctx:m}),e.$set(g);const C={};d&1&&(C.$$scope={dirty:d,ctx:m}),o.$set(C);const E={};d&1&&(E.$$scope={dirty:d,ctx:m}),i.$set(E);const S={};d&1&&(S.$$scope={dirty:d,ctx:m}),s.$set(S);const M={};d&1&&(M.$$scope={dirty:d,ctx:m}),f.$set(M);const v={};d&1&&(v.$$scope={dirty:d,ctx:m}),u.$set(v)},i(m){p||(_(e.$$.fragment,m),_(o.$$.fragment,m),_(i.$$.fragment,m),_(s.$$.fragment,m),_(f.$$.fragment,m),_(u.$$.fragment,m),p=!0)},o(m){k(e.$$.fragment,m),k(o.$$.fragment,m),k(i.$$.fragment,m),k(s.$$.fragment,m),k(f.$$.fragment,m),k(u.$$.fragment,m),p=!1},d(m){O(e,m),m&&h(n),O(o,m),m&&h(t),O(i,m),m&&h(r),O(s,m),m&&h(l),O(f,m),m&&h(c),O(u,m)}}}function Ts(a){let e,n,o;return n=new on({props:{$$slots:{default:[Cs]},$$scope:{ctx:a}}}),{c(){e=B("div"),N(n.$$.fragment)},l(t){e=z(t,"DIV",{});var i=T(e);G(n.$$.fragment,i),i.forEach(h)},m(t,i){A(t,e,i),U(n,e,null),o=!0},p(t,[i]){const r={};i&1&&(r.$$scope={dirty:i,ctx:t}),n.$set(r)},i(t){o||(_(n.$$.fragment,t),o=!0)},o(t){k(n.$$.fragment,t),o=!1},d(t){t&&h(e),O(n)}}}class Is extends Q{constructor(e){super(),J(this,e,null,Ts,ee,{})}}function Ls(a){let e,n;return e=new Is({}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}class Rs extends Q{constructor(e){super(),J(this,e,null,Ls,ee,{})}}function Ps(a){let e,n;return e=new Rs({}),{c(){N(e.$$.fragment)},l(o){G(e.$$.fragment,o)},m(o,t){U(e,o,t),n=!0},p:ne,i(o){n||(_(e.$$.fragment,o),n=!0)},o(o){k(e.$$.fragment,o),n=!1},d(o){O(e,o)}}}class e1 extends Q{constructor(e){super(),J(this,e,null,Ps,ee,{})}}export{e1 as default};
