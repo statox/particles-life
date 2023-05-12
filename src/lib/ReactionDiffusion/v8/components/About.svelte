@@ -1,6 +1,7 @@
 <script>
     import { base } from '$app/paths';
     import SvelteMarkdown from 'svelte-markdown';
+    import ImageRenderer from './renderer/ImageAbout.svelte';
     import source from './about.md';
 
     // Shitty hack because I didn't figure out how to tweak the pre-renderer
@@ -8,4 +9,4 @@
     const sourceWithFixedLinks = source.replaceAll('{baseUrl}', base);
 </script>
 
-<SvelteMarkdown source={sourceWithFixedLinks} />
+<SvelteMarkdown source={sourceWithFixedLinks} renderers={{ image: ImageRenderer }} />

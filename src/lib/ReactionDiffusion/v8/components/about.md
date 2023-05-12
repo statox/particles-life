@@ -72,6 +72,7 @@ The reason why this model is so fascinating is because it gives us a glance at h
 This is hard to reproduce exact existing patterns because nature is complex whereas this model is quite simple but here are a few similarities I have found:
 
 This are two [madrepora corals](https://en.wikipedia.org/wiki/Madrepora) I took in picture at [La Grande galerie de l'Évolution](https://fr.wikipedia.org/wiki/Grande_galerie_de_l%27%C3%89volution) in Paris:
+
 ![madrepore_museum_spots.JPEG]({baseUrl}/reaction_diffusion_about/gallery/madrepore_museum_spots.JPEG)
 ![madrepore_simulation_spots.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_spots.png)
 ![madrepore_museum_stripes.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_museum_stripes.png)
@@ -86,14 +87,14 @@ This is a puffer fish picture from wikipedia ([1](https://commons.wikimedia.org/
 ![tbd_simulation_stripes_spots.png]({baseUrl}/reaction_diffusion_about/gallery/tbd_simulation_stripes_spots.png)
 
 Here are some behavior ressembling to cells mitosis
+
 ![cells_division.gif]({baseUrl}/reaction_diffusion_about/gallery/cells_division.gif)
 ![cells_division2.gif]({baseUrl}/reaction_diffusion_about/gallery/cells_division2.gif)
 
-
 A fish [from shutterstock](https://www.shutterstock.com/image-photo/goldspotted-rabbitfish-siganus-punctatus-bali-521298034) not sure which specy this is:
+
 ![fish_spots.jpg]({baseUrl}/reaction_diffusion_about/gallery/fish_spots.jpg)
 ![tbd_simulation_regular_spots.png]({baseUrl}/reaction_diffusion_about/gallery/tbd_simulation_regular_spots.png)
-
 
 ## Resources
 
