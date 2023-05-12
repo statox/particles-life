@@ -11,8 +11,8 @@
     <Tabs>
         <TabList>
             <Tab>About</Tab>
-            <Tab>Auto</Tab>
             <Tab>Manual</Tab>
+            <Tab>Auto</Tab>
             <Tab>Parameters map</Tab>
             <Tab>Previous versions</Tab>
         </TabList>
@@ -21,10 +21,10 @@
             <svelte:component this={About} />
         </TabPanel>
         <TabPanel>
-            <svelte:component this={Auto} />
+            <svelte:component this={Manual} />
         </TabPanel>
         <TabPanel>
-            <svelte:component this={Manual} />
+            <svelte:component this={Auto} />
         </TabPanel>
         <TabPanel>
             <svelte:component this={ParametersMap} />

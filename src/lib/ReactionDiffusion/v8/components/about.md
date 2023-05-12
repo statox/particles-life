@@ -4,28 +4,28 @@ This page contains my experiementations aroud [reaction-diffusion systems](https
 
 ## What is this?
 
-For this project I wanted to learn more about reaction-diffusion systems. The systems I have been considering are mathematical models corresponding to a physical system in which two chemical substances react with each other while also diffusing in the environment.
+For this project I wanted to learn more about reaction-diffusion systems. The systems I have been considering are mathematical models corresponding to a physical system in which two chemical substances react with each other while also diffusing in the environment. The simulation allows to compute the concentration of these chemical on a virtual grid and visualize these concentration over time.
 
-The main parameters for these simulations are the `f` and `k` variables. I explain more in details what they correspond to in the next sections, for now just keep in mind that varying `f` and `k` make the simulation generate different kinds of patterns.
+The main parameters for the simulation are the `f` and `k` variables. They correspond to the `f` and `k` parameters found in the litterature ([[1]](https://www.mrob.com/pub/comp/xmorphia/index.html#formula), [[2]](https://karlsims.com/rd.html)). I chose to constrain these parameters to the following intervals `f: [0, 0.12]` `k: [0.03, 0.07]`  which is a space slighty larger than the [uskate world](https://mrob.com/pub/comp/xmorphia/uskate-world.html) characterized by Robert Munafo.
+
+The next sections explain more about these parameters, for now if you don't know what they are just keep in mind that varying `f` and `k` make the simulation generate different kinds of patterns.
 
 The application contains 4 tabs you can explore.
 
-### Auto
-This is my "artistic" stake at this simulation. The `f` and `k` parameters are contiually changing to automatically generate different kinds of patterns. A mecanism also regularly regenerates some amount of solution so that there is as few stable states as possible. You don't have to do anything, just load the tab and watch funny colors move on the screen.
-
-You can use the menu on the let to tweak how fast the `f` and `k` parameters change and how much they change each time.
-
-There are several configurations to try out and which give various results:
-
-- Increasing the change magnitude impacts the stability of the system. Small change magnitudes keeps `f` and `k` in a smaller area so the diversity of patterns generated is reduced, on the other hand larger magnitudes will create larger changes in the parameters space so it might create situations where the one of the chemical reacts with all of the other leaving a uniform colored texture.
-
-- Increasing the change rate makes the parameters get updated more often which might leave more time for configurations to stabilize and display all of their features.
-
 ### Manual
-
 This is an interactive view of the model.
 
-The menu on the left allows the user to change the `f` and `k` parameters of the simulation and see how they influence the reaction. In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the `Ctrl` button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out). Finally the menu on the left allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...
+The menu on the left allows the user to change the `f` and `k` parameters of the simulation and see how they influence the reaction. It is also possible to select a few preset with the drop down menu.
+
+![fkselector]({baseUrl}/reaction_diffusion_about/fkselector.gif)
+
+In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the `Ctrl` button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out).
+
+![interface]({baseUrl}/reaction_diffusion_about/interface.gif)
+
+Finally the menu on the right allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...
+
+![settings]({baseUrl}/reaction_diffusion_about/settings.png)
 
 Unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation. A few tips to get interesting patterns:
 
@@ -41,8 +41,30 @@ You can try to find many different patterns like the following:
 ![pattern4]({baseUrl}/reaction_diffusion_about/pattern4.png)
 ![pattern5]({baseUrl}/reaction_diffusion_about/pattern5.png)
 
+### Auto
+This is my "artistic" stake at this simulation. The `f` and `k` parameters are contiually changing to automatically generate different kinds of patterns. A mecanism also regularly regenerates some amount of solution so that there is as few stable states as possible. You don't have to do anything, just load the tab and watch funny colors move on the screen.
+
+You can use the menu on the let to tweak how fast the `f` and `k` parameters change and how much they change each time. In this tab the `fk` parameters are bound to the white polygon as this is the area with the most interesting parameters classes.
+
+![fkrandomizer.gif]({baseUrl}/reaction_diffusion_about/fkrandomizer.gif)
+
+There are several configurations to try out and which give various results:
+
+- Increasing the change magnitude impacts the stability of the system. Small change magnitudes keeps `f` and `k` in a smaller area so the diversity of patterns generated is reduced, on the other hand larger magnitudes will create larger changes in the parameters space so it might create situations where the one of the chemical reacts with all of the other leaving a uniform colored texture.
+
+- Increasing the change rate makes the parameters get updated more often which might leave more time for configurations to stabilize and display all of their features.
+
 ### Parameters map
-I used this tab to generate the parameters map used in the simulation parameters menu. By default the settings are lower compared to those I used to generate the final parameter map. Here the difference with the other tabs is that the `f` and `k` parameters of the simulation are uniform on the grid, they vary accross the screen to show the different possible patterns.
+I used this tab to generate the parameters map used in the simulation parameters menu. Here the difference with the other tabs is that the `f` and `k` parameters of the simulation are not uniform accross the grid, they vary accross the screen to show the different possible patterns.
+
+At the top of the page there is an input allowing to change the size of the underlying simulation. Increasing this parameter increases the definition of the simulation and gives a more detailled parameter map, of course it also increases the load on the GPU runing the simulation. By default this setting is set lower than what I used to generate the final parameter map. To generate the parameters map in the `fk` selector of the other tabs I used a world size of 12 (which makes a texture of 4096x4096 pixels and the simulation ran for ~140.000 iterations. I was curious to see what would happen with more iterations but it turns out the evolution is not significant after the first hundred thousands iterations:
+
+![parameters_map_timelapse_0]({baseUrl}/reaction_diffusion_about/parameters_map_timelapse_0.png)
+![parameters_map_timelapse_1]({baseUrl}/reaction_diffusion_about/parameters_map_timelapse_1.png)
+![parameters_map_timelapse_2]({baseUrl}/reaction_diffusion_about/parameters_map_timelapse_2.png)
+![parameters_map_timelapse_3]({baseUrl}/reaction_diffusion_about/parameters_map_timelapse_3.png)
+![parameters_map_timelapse_4]({baseUrl}/reaction_diffusion_about/parameters_map_timelapse_4.png)
+
 
 ### Previous versions
 It took me several iterations to get the results shown in the other tabs. This tab regroups my different iterations.
@@ -63,7 +85,8 @@ The equations show 3 things:
 - The chenicals react together and the impact their concentration (which makes sense if 1 U and 2 V create 3 V then during the reaction the concentration of U diminishes and the concentration of P increases)
 - `f` and `k` are respectively a "feed rate" and a "kill rate" which allow the model to keep evolving.
 
-[Karlsims](https://karlsims.com/rd.html) as the clearest explaination of these equations.
+[Karlsims](https://karlsims.com/rd.html) has the clearest explaination of these equations.
+[mrob](https://www.mrob.com/pub/comp/xmorphia/index.html#formula) also has a good explanation.
 
 The way that I represents this system in my head is as follow:
 
