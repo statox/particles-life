@@ -27,7 +27,13 @@ This is an interactive view of the model.
 
 The menu on the left allows the user to change the `f` and `k` parameters of the simulation and see how they influence the reaction. In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the `Ctrl` button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out). Finally the menu on the left allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...
 
-This unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation you can try to find many different patterns like the following:
+Unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation. A few tips to get interesting patterns:
+
+- Don't change the `f` and `k` values too quickly, abrupt changes tend to stabilize the system very quickly.
+- In the selection menu on the left try the orange area of the parameters map is the area which tends to produce more patterns. By moving around you'll find that there are a few differnt areas: the bottom left tends to produce largely chaotic patterns, a little bit higher and on the right we find patterns ressembling cells divisions, higher up are worms on the left and dots on the right with different characteristics as we go higher on the `f` axis.
+- If the simulation stabilize completely either use the mouse to add new chemical, hit `r` to reset the world or move `fk` around.
+
+You can try to find many different patterns like the following:
 
 ![pattern1]({baseUrl}/reaction_diffusion_about/pattern1.png)
 ![pattern2]({baseUrl}/reaction_diffusion_about/pattern2.png)
