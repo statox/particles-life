@@ -6,7 +6,7 @@ This page contains my experiementations aroud [reaction-diffusion systems](https
 
 For this project I wanted to learn more about reaction-diffusion systems. The systems I have been considering are mathematical models corresponding to a physical system in which two chemical substances react with each other while also diffusing in the environment.
 
-The main parameters for these simulations are the `f` and `k` variables. I explain more in details what the correspond to in the next sections, for now just keep in mind that varying `f` and `k` make the simulation generate different kinds of patterns.
+The main parameters for these simulations are the `f` and `k` variables. I explain more in details what they correspond to in the next sections, for now just keep in mind that varying `f` and `k` make the simulation generate different kinds of patterns.
 
 The application contains 4 tabs you can explore.
 
@@ -40,6 +40,59 @@ I used this tab to generate the parameters map used in the simulation parameters
 
 ### Previous versions
 It took me several iterations to get the results shown in the other tabs. This tab regroups my different iterations.
+
+## Gray-Scott model
+
+The Gray-Scott model is a simulation of two chemicals reacting together. Here the chemicals are named U and V.
+
+The environement is represented with a 2D grid in which each pixel holds a level of concentration of each chemical. The simulation consist of updating the grid following these equations (picture taken [here](https://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/)):
+
+![gray scott equations]({baseUrl}/reaction_diffusion_about/gray-scott-equations.gif)
+
+The chemical reaction section shows that when 1 unit of U and 2 units of V are in contact they react to become 3 units of V. The second part showing the V produces P is not really considered in the implementation, P only represents a byproduct of the reaction which is necessary for the math to work but doesn't really impacts the simulation.
+
+The equations show 3 things:
+
+- Both chemicals diffuse over time and the diffusion from one spot depends on the concentration of the chemical in the surrounding spots
+- The chenicals react together and the impact their concentration (which makes sense if 1 U and 2 V create 3 V then during the reaction the concentration of U diminishes and the concentration of P increases)
+- `f` and `k` are respectively a "feed rate" and a "kill rate" which allow the model to keep evolving.
+
+[Karlsims](https://karlsims.com/rd.html) as the clearest explaination of these equations.
+
+The way that I represents this system in my head is as follow:
+
+- Let's have two tanks containing the solutions one on top of the other.
+- Both tanks are separated by a semi porous membrane which only allow the U solution from the bottom to go the tank above containing V.
+- What we see in my simulation is the surface of the top tank while the U solution is slowly introduced to the V and both react together.
+
+## Turing patterns
+
+The reason why this model is so fascinating is because it gives us a glance at how ordered patterns can emerge from the randomness of nature. This concept which was theorized in 1952 by Alan Turing and is named [Turing patterns](https://en.wikipedia.org/wiki/Turing_pattern)
+
+This is hard to reproduce exact existing patterns because nature is complex whereas this model is quite simple but here are a few similarities I have found:
+
+This are two [madrepora corals](https://en.wikipedia.org/wiki/Madrepora) I took in picture at [La Grande galerie de l'Évolution](https://fr.wikipedia.org/wiki/Grande_galerie_de_l%27%C3%89volution) in Paris:
+![madrepore_museum_spots.JPEG]({baseUrl}/reaction_diffusion_about/gallery/madrepore_museum_spots.JPEG)
+![madrepore_simulation_spots.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_spots.png)
+![madrepore_museum_stripes.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_museum_stripes.png)
+![madrepore_simulation_stripes1.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_stripes1.png)
+![madrepore_simulation_stripes2.png]({baseUrl}/reaction_diffusion_about/gallery/madrepore_simulation_stripes2.png)
+
+This is a puffer fish picture from wikipedia ([1](https://commons.wikimedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG) [2](https://en.wikipedia.org/wiki/File:Giant_Pufferfish_skin_pattern_detail.jpg))
+
+![800px-Giant_Puffer_fish_skin_pattern.JPG]({baseUrl}/reaction_diffusion_about/gallery/800px-Giant_Puffer_fish_skin_pattern.JPG)
+![Giant_Pufferfish_skin_pattern_detail.jpg]({baseUrl}/reaction_diffusion_about/gallery/Giant_Pufferfish_skin_pattern_detail.jpg)
+![tbd_simulation_stripes.png]({baseUrl}/reaction_diffusion_about/gallery/tbd_simulation_stripes.png)
+![tbd_simulation_stripes_spots.png]({baseUrl}/reaction_diffusion_about/gallery/tbd_simulation_stripes_spots.png)
+
+Here are some behavior ressembling to cells mitosis
+![cells_division.gif]({baseUrl}/reaction_diffusion_about/gallery/cells_division.gif)
+![cells_division2.gif]({baseUrl}/reaction_diffusion_about/gallery/cells_division2.gif)
+
+
+A fish [from shutterstock](https://www.shutterstock.com/image-photo/goldspotted-rabbitfish-siganus-punctatus-bali-521298034) not sure which specy this is:
+![fish_spots.jpg]({baseUrl}/reaction_diffusion_about/gallery/fish_spots.jpg)
+![tbd_simulation_regular_spots.png]({baseUrl}/reaction_diffusion_about/gallery/tbd_simulation_regular_spots.png)
 
 
 ## Resources

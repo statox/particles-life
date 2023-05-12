@@ -160,7 +160,9 @@
         simulationParameters.f = event.detail.f;
         simulationParameters.k = event.detail.k;
 
-        if (simulationParameters.f > 0.03) {
+        if (simulationParameters.f > 0.06) {
+            controls.speed = 70;
+        } else if (simulationParameters.f > 0.03) {
             controls.speed = 50;
         } else {
             controls.speed = 2;
