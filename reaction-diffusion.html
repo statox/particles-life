@@ -11,7 +11,7 @@
 		<link href="/particles-life/_app/immutable/assets/_layout-2d7f1649.css" rel="stylesheet">
 		<link href="/particles-life/_app/immutable/assets/_page-8760b20d.css" rel="stylesheet">
 		<link href="/particles-life/_app/immutable/assets/TabPanel-6417fb07.css" rel="stylesheet">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/start-af00f522.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/start-2ecb2b2e.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-4570ff94.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/singletons-db36cfa4.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/index-68bf9c47.js">
@@ -20,7 +20,7 @@
 		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/_layout.svelte-f85f3c05.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/reaction-diffusion/_page.svelte-04a51503.js">
+		<link rel="modulepreload" href="/particles-life/_app/immutable/components/pages/reaction-diffusion/_page.svelte-bbe4803e.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/TabPanel-171143ae.js">
 		<link rel="modulepreload" href="/particles-life/_app/immutable/chunks/regl-89b00fbf.js">
 </head>
@@ -45,7 +45,10 @@
 
         <div id="svelte-tabs-20" class="svelte-tabs__tab-panel svelte-epfyet" role="tabpanel"><h1 id="gray-scott-model-for-reaction-diffusion-systems">Gray-Scott model for Reaction-Diffusion systems</h1><p>This page contains my experiementations aroud <a href="https://en.wikipedia.org/wiki/Reaction%E2%80%93diffusion_system">reaction-diffusion systems</a>.</p><h2 id="what-is-this">What is this?</h2><p>For this project I wanted to learn more about reaction-diffusion systems. The systems I have been considering are mathematical models corresponding to a physical system in which two chemical substances react with each other while also diffusing in the environment.</p><p>The main parameters for these simulations are the <code>f</code> and <code>k</code> variables. I explain more in details what they correspond to in the next sections, for now just keep in mind that varying <code>f</code> and <code>k</code> make the simulation generate different kinds of patterns.</p><p>The application contains 4 tabs you can explore.</p><h3 id="auto">Auto</h3><p>This is my "artistic" stake at this simulation. The <code>f</code> and <code>k</code> parameters are contiually changing to automatically generate different kinds of patterns. A mecanism also regularly regenerates some amount of solution so that there is as few stable states as possible. You don't have to do anything, just load the tab and watch funny colors move on the screen.</p><p>You can use the menu on the let to tweak how fast the <code>f</code> and <code>k</code> parameters change and how much they change each time.</p><p>There are several configurations to try out and which give various results:</p><ul><li>Increasing the change magnitude impacts the stability of the system. Small change magnitudes keeps <code>f</code> and <code>k</code> in a smaller area so the diversity of patterns generated is reduced, on the other hand larger magnitudes will create larger changes in the parameters space so it might create situations where the one of the chemical reacts with all of the other leaving a uniform colored texture.
             </li><li>Increasing the change rate makes the parameters get updated more often which might leave more time for configurations to stabilize and display all of their features.
-            </li></ul><h3 id="manual">Manual</h3><p>This is an interactive view of the model.</p><p>The menu on the left allows the user to change the <code>f</code> and <code>k</code> parameters of the simulation and see how they influence the reaction. In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the <code>Ctrl</code> button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out). Finally the menu on the left allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...</p><p>This unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation you can try to find many different patterns like the following:</p><p><img src="/particles-life/reaction_diffusion_about/pattern1.png" alt="pattern1" class="svelte-1pemytu">
+            </li></ul><h3 id="manual">Manual</h3><p>This is an interactive view of the model.</p><p>The menu on the left allows the user to change the <code>f</code> and <code>k</code> parameters of the simulation and see how they influence the reaction. In the center screen the user can drop some amout of solution by moving the mouse around and clicking the left mouse button, the solution can also be removed with the right mouse button. The user can also zoom in the simulation by holding the <code>Ctrl</code> button and scrolling with the mouse wheel (note that there is a bug in the zoom mecanism which move the simulation around when zooming in/out). Finally the menu on the left allows the user to tweak various parameters like the color scheme used, the speed of the simulation, and the initial conditions, the pen setting to add or remove the solution, etc...</p><p>Unlike the Auto tab, this simulation runs a configuration continuously and let the user tweak the parameters as they want. This is a good tool to understand how each parameter impacts the simulation. A few tips to get interesting patterns:</p><ul><li>Don't change the <code>f</code> and <code>k</code> values too quickly, abrupt changes tend to stabilize the system very quickly.
+            </li><li>In the selection menu on the left try the orange area of the parameters map is the area which tends to produce more patterns. By moving around you'll find that there are a few differnt areas: the bottom left tends to produce largely chaotic patterns, a little bit higher and on the right we find patterns ressembling cells divisions, higher up are worms on the left and dots on the right with different characteristics as we go higher on the <code>f</code> axis.
+            </li><li>If the simulation stabilize completely either use the mouse to add new chemical, hit <code>r</code> to reset the world or move <code>fk</code> around.
+            </li></ul><p>You can try to find many different patterns like the following:</p><p><img src="/particles-life/reaction_diffusion_about/pattern1.png" alt="pattern1" class="svelte-1pemytu">
 <img src="/particles-life/reaction_diffusion_about/pattern2.png" alt="pattern2" class="svelte-1pemytu">
 <img src="/particles-life/reaction_diffusion_about/pattern3.png" alt="pattern3" class="svelte-1pemytu">
 <img src="/particles-life/reaction_diffusion_about/pattern4.png" alt="pattern4" class="svelte-1pemytu">
@@ -111,14 +114,14 @@ void main() {
         <div id="svelte-tabs-24" class="svelte-tabs__tab-panel svelte-epfyet" role="tabpanel"></div></div></div>
 
 
-		<script type="module" data-sveltekit-hydrate="1pbzv6c">
-			import { start } from "/particles-life/_app/immutable/start-af00f522.js";
+		<script type="module" data-sveltekit-hydrate="atho9f">
+			import { start } from "/particles-life/_app/immutable/start-2ecb2b2e.js";
 
 			start({
 				env: {},
 				paths: {"base":"/particles-life","assets":"/particles-life"},
-				target: document.querySelector('[data-sveltekit-hydrate="1pbzv6c"]').parentNode,
-				version: "1683916432101",
+				target: document.querySelector('[data-sveltekit-hydrate="atho9f"]').parentNode,
+				version: "1683916899182",
 				hydrate: {
 					node_ids: [0, 4],
 					data: [null,null],
