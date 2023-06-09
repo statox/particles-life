@@ -251,14 +251,14 @@
             p5.createCanvas(400, 400);
             p5.frameRate(55);
 
-            changeMagSlider = p5.createSlider(0, 5, 2, 0);
+            changeMagSlider = p5.createSlider(0, 10, 6, 0);
             const changeMagSliderContainer = p5.select('#changeMag');
             if (!changeMagSliderContainer) {
                 throw new Error('changeMag slider container not ready');
             }
             changeMagSlider.parent(changeMagSliderContainer);
 
-            changeRateSlider = p5.createSlider(1, 500, 100, 1);
+            changeRateSlider = p5.createSlider(1, 80, 30, 1);
             const changeRateSliderContainer = p5.select('#changeRate');
             if (!changeRateSliderContainer) {
                 throw new Error('changeRate slider container not ready');
