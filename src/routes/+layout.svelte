@@ -10,6 +10,7 @@
         <a href="{base}/gameoflife">Game Of Life</a> |
         <a href="{base}/reaction-diffusion">Reaction-diffusion</a> |
         <a href="{base}/shaders">Test shaders</a> |
+        <a href="{base}/soft-bodies">Soft bodies</a> |
     </nav>
 </header>
 
