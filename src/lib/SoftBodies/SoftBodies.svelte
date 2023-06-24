@@ -8,6 +8,7 @@
         pos: { x: number; y: number };
         vel: { x: number; y: number };
         acc: { x: number; y: number };
+        history: { x: number; y: number }[];
     };
     type Connection = {
         pointA: Point;
@@ -55,7 +56,7 @@
     const update = (points: Point[], connections: Connection[]) => {
         for (const point of points) {
             point.acc = { x: 0, y: 0 };
-            applyGravity(point);
+            // applyGravity(point);
         }
         for (const connection of connections) {
             applyConnection(connection);
@@ -67,6 +68,11 @@
             point.pos.x += point.vel.x * 0.9;
             point.pos.y += point.vel.y * 0.9;
             constrainToScreen(point);
+
+            point.history.push({ ...point.pos });
+            if (point.history.length > 100) {
+                point.history.shift();
+            }
         }
     };
 
@@ -104,31 +110,41 @@
 
             update(points, connections);
 
-            for (const connection of connections) {
-                const { pointA, pointB, length } = connection;
-                const { x: x1, y: y1 } = pointA.pos;
-                const { x: x2, y: y2 } = pointB.pos;
+            // for (const connection of connections) {
+            //     const { pointA, pointB, length } = connection;
+            //     const { x: x1, y: y1 } = pointA.pos;
+            //     const { x: x2, y: y2 } = pointB.pos;
 
-                const d = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            //     const d = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
-                if (d >= length) {
-                    const s = p5.map(d, length, 2 * length, 0, 1);
-                    const c = p5.lerpColor(p5.color('white'), p5.color('green'), s);
-                    p5.stroke(c);
-                } else {
-                    const s = p5.map(d, length, 0, 0, 1);
-                    const c = p5.lerpColor(p5.color('white'), p5.color('red'), s);
-                    p5.stroke(c);
+            //     if (d >= length) {
+            //         const s = p5.map(d, length, 2 * length, 0, 1);
+            //         const c = p5.lerpColor(p5.color('white'), p5.color('green'), s);
+            //         p5.stroke(c);
+            //     } else {
+            //         const s = p5.map(d, length, 0, 0, 1);
+            //         const c = p5.lerpColor(p5.color('white'), p5.color('red'), s);
+            //         p5.stroke(c);
+            //     }
+            //     p5.line(x1, y1, x2, y2);
+            // }
+
+            for (let j = 0; j < points[0].history.length; j++) {
+                for (let i = 0; i < points.length; i++) {
+                    const point = points[i];
+                    const c = [
+                        [255, 0, 0],
+                        [0, 255, 0],
+                        [255, 255, 0]
+                    ][i];
+                    const normalizedJ = p5.map(j, 0, point.history.length, 0, 1);
+                    const alpha = (1 - Math.exp(-normalizedJ)) * 255;
+                    p5.fill([...c, alpha]);
+                    p5.noStroke();
+                    const p = point.history[j];
+                    const size = (1 - Math.exp(-normalizedJ)) * 8;
+                    p5.circle(p.x, p.y, size);
                 }
-                p5.line(x1, y1, x2, y2);
-            }
-
-            for (let i = 0; i < points.length; i++) {
-                const point = points[i];
-                const c = ['red', 'green', 'yellow'][i];
-                p5.fill(c);
-                p5.noStroke();
-                p5.circle(point.pos.x, point.pos.y, 14);
             }
         };
     };
@@ -137,24 +153,27 @@
         points = [];
         points.push({
             id: 1,
-            //pos: { x: Math.random() * _p5.width, y: Math.random() * _p5.height },
+            // pos: { x: Math.random() * _p5.width, y: Math.random() * _p5.height },
             pos: { x: 250, y: 250 },
             vel: { x: 0, y: 0 },
-            acc: { x: 0, y: 0 }
+            acc: { x: 0, y: 0 },
+            history: []
         });
         points.push({
             id: 2,
             // pos: { x: Math.random() * _p5.width, y: Math.random() * _p5.height },
             pos: { x: 150, y: 250 },
             vel: { x: 0, y: 0 },
-            acc: { x: 0, y: 0 }
+            acc: { x: 0, y: 0 },
+            history: []
         });
         points.push({
             id: 2,
             // pos: { x: Math.random() * _p5.width, y: Math.random() * _p5.height },
             pos: { x: 350, y: 250 },
             vel: { x: 0, y: 0 },
-            acc: { x: 0, y: 0 }
+            acc: { x: 0, y: 0 },
+            history: []
         });
 
         connections = [];
