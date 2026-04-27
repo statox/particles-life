@@ -27,7 +27,7 @@
     </p>
     <p>
         I created several tools to explore this simulation. <b
-            >Start with the <a href="{base}/particles-life/infinie">Infinite universes</a></b
+            >Start with the <a href="{base}/particles-life/infinite">Infinite universes</a></b
         >
         it shows random universes and it's a good way to discover many different patterns. Then you should
         try the
